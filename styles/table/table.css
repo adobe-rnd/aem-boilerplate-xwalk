@@ -81,10 +81,15 @@
     border-radius: unset;
 }
 
-.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(2),
-.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(3) {
-    border-radius: 0 10px 0 0;
+.section.fees-charges-wrapper.four-col-table .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(2),
+.section.fees-charges-wrapper.four-col-table .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(3) {
+    border-radius: unset;
+}
 
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(2),
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(3),
+.section.fees-charges-wrapper.four-col-table .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(4) {
+    border-radius: 0 10px 0 0;
 }
 
 .section.one-col-table .code-wrapper .code>div>table>tbody>tr :nth-child(2) {
@@ -163,6 +168,10 @@
     text-align: center;
 }
 
+.section.fees-charges-wrapper.four-col-table .code-wrapper .code.block {
+    margin-bottom: 40px;
+}
+
 @media screen and (max-width: 767px) {
     .section.fees-charges-wrapper .default-content-wrapper h2 {
         font-size: 1.25rem;
@@ -233,6 +242,9 @@
     .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr :first-child {
         width: 20px;
         height: 12px;
+    }
+    .section.fees-charges-wrapper.four-col-table .code-wrapper .code.block {
+        margin-bottom: 24px;
     }
 }
 
