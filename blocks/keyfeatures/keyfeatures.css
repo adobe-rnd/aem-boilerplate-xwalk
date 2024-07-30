@@ -37,6 +37,10 @@
     height: 267px;
 }
 
+.section.home-loans-products-wrapper.personal-loan-products-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper .keyfeatures .homeloanteaser .cmp-teaser .cmp-teaser__link{
+    height: 260px;
+}
+
 .section.home-loans-products-wrapper .homeloanteaser a:nth-child(2) img{
     position: absolute;
     top: 17px;
@@ -254,6 +258,9 @@
         padding: 16px 24px;
         max-height: 207px;
         height: 100%;
+    }
+    .section.home-loans-products-wrapper.home-loans-product-mob-align .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper .keyfeatures .homeloanteaser .cmp-teaser .cmp-teaser__link {
+        max-height: 235px;
     }
     .section.home-loans-products-wrapper.loan-product-two-cards .wrappercreation-wrapper .wrappercreation .wrapper-creation-container {
         grid-template-columns: 1fr

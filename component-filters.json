@@ -86,7 +86,8 @@
       "calculatorsection",
       "aprcalculator",
       "gstcalculator",
-      "partpaymentcalculator"
+      "partpaymentcalculator",
+      "authorisedagencies"
     ]
   },
   {

@@ -91,7 +91,7 @@
 }
 
 .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser .foreground {
-  width: 62%;
+  width: 62.50%;
 }
 
 .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser .foreground .long-description {
@@ -403,7 +403,7 @@
 }
 
 .banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
-  width: 70%;
+  width: 72%;
 }
 
 @media (min-width:1024px) and (max-width:1366px) {

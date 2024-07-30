@@ -42,7 +42,7 @@ text-decoration: none;
 }
 
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
     .personal-loan-green-banner .teaserv2.block .rte-text-description p{
         font-size: 0.875rem;
         line-height: 20px;
