@@ -87,7 +87,8 @@
       "aprcalculator",
       "gstcalculator",
       "partpaymentcalculator",
-      "authorisedagencies"
+      "authorisedagencies",
+      "fontawesome"
     ]
   },
   {
