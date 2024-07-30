@@ -398,6 +398,7 @@ table {
     font-size: 9pt;
     margin-left: 14px;
     padding: 4px 10px;
+    font-family: 'Nunito-Regular', sans-serif;
  }
  
 
@@ -607,7 +608,6 @@ table {
      }
 
      .documents-required-brown .accordion-group .accordion recommeded {
-        font-family: 'Nunito-Regular',sans-serif;
         font-size: 10px;
         font-weight: 400;
         margin-left: 8px;

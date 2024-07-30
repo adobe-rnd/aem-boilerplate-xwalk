@@ -177,6 +177,9 @@
         font-size: 0.75rem;
         line-height: 16px;
     }
+    .section.tab-with-cards-wrapper .panel-container .teaser.block .background>.foreground .text .long-description>p>br {
+        display: none
+    }
 }
 
 @media only screen and (max-width: 425px) {
