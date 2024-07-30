@@ -131,7 +131,7 @@ export function generateTeaserDOM(props, classes) {
         } else {
           applyLoanNow(
             eyebrow.textContent.trim() + " " + title.textContent.trim(),
-            "",
+            targetObject.pageName,
             "banner",
             targetObject.pageName
           );
@@ -142,7 +142,8 @@ export function generateTeaserDOM(props, classes) {
     });
   });
   try {
-    if (classes?.includes("click-able")) {
+    const checkClass = [...classes];
+    if (checkClass?.includes("click-able")) {
       teaserDOM.children[0].addEventListener("click", function (e) {
         location.href = firstCta.innerText;
       });

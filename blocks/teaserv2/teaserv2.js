@@ -68,6 +68,13 @@ export function renderTeaserHTMLFactory(props) {
     container.append(bgImageDiv);
   }
 
+  /* if (container.tagName === "A" && container.href !== '') {
+    container.append(bgImageDiv);
+    return container;
+  }else{
+    return bgImageDiv;
+  } */
+
   return container;
 }
 

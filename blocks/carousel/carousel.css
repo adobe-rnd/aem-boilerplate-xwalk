@@ -402,6 +402,10 @@
   bottom: 20%;
 }
 
+.banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
+  width: 72%;
+}
+
 @media (min-width:1024px) and (max-width:1366px) {
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
     width: 312px;
@@ -567,7 +571,8 @@
     margin-top: 20px;
   }
 
-  .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.teaser-block-two .foreground {
+  .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.teaser-block-two .foreground,
+  .banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
     width: 100%;
   }
 
@@ -627,6 +632,12 @@
   }
   .section.banner-carousel-wrapper.cities-page-align-banner .carousel-wrapper .carousel .panel-container .teaser {
     min-height: 400px;
+  }
+  .section.banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>p>br {
+    display: none;
+  }
+  .section.banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description {
+    margin-right: 10px;
   }
 }
 
@@ -830,11 +841,20 @@
   .section.banner-carousel-wrapper.cities-page-align-banner .carousel-wrapper .carousel .panel-container .teaser {
     min-height: 400px;
   }
+  .section.banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>p>br {
+    display: none;
+  }
+  .banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
+    width: 53%;
+  }
 }
 
 @media screen and (min-width:1025px) and (max-width: 1300px) {
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five>.background .foreground {
     width: 52%;
+  }
+  .banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
+    width: 85%;
   }
 }
 

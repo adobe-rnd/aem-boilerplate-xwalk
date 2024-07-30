@@ -1,3 +1,5 @@
+import { targetObject } from "./scripts/scripts.js";
+
 window.dataLayer = window.dataLayer || [];
 export function headerInteraction(click_text, menu_category, cta_position, page_type) {
     try {
@@ -181,6 +183,34 @@ export function verifyOtp(click_text, page_type, user_id) {
             'click_text': click_text,
             'page_type': page_type,
             'user_id': user_id,
+        });
+    } catch (error) {
+        console.warn(error);
+    }
+}
+
+export function faqInteraction(data) {
+    try {
+        const {click_text} = data;
+        window.dataLayer.push({
+            'event': 'faq_click',
+            'click_text': click_text || "",
+            'page_type': targetObject.pageName || "",
+        });
+    } catch (error) {
+        console.warn(error);
+    }
+}
+
+export function ReadMoreInteraction(data) {
+    try {
+        const {} = data;
+        window.dataLayer.push({
+            'event': 'read_more',
+            'article_name' : article_name || '',
+            'cta_position' : cta_position || '',
+            'click_header' : click_header || '',
+            'page_type': targetObject.pageName || '',
         });
     } catch (error) {
         console.warn(error);

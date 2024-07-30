@@ -190,12 +190,6 @@
   .section.choose-us-css .default-content-wrapper h2 {
     font-size: 1.25rem;
   }
-
-  .section.choose-us-css .default-content-wrapper p {
-    font-size: .875rem;
-    line-height: 1.25rem;
-  }
-
   .section.choose-us-css.home-loan-finance-card-fw .columns-wrapper .columns.block>div:last-child {
     padding-top: 24px;
   }
@@ -243,7 +237,6 @@
   .section.choose-us-css.home-loan-finance-card-fw .columns-wrapper .columns.block>div:last-child {
     padding-top: 24px;
   }
-  .section.choose-us-css .default-content-wrapper p,
   .section.choose-us-css .columns-wrapper .columns div div :nth-child(3),
   .section.choose-us-css .columns-wrapper .columns div div :nth-child(3)>strong  {
     font-size: 0.875rem;

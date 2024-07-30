@@ -1,4 +1,6 @@
+import { faqInteraction } from "../../dl.js";
 import { fetchPlaceholders } from "../../scripts/aem.js";
+import { targetObject } from "../../scripts/scripts.js";
 import { documentRequired, generateAccordionDOM } from "../accordion/accordion.js";
 
 export default async function decorate(block) {
@@ -47,6 +49,16 @@ function openFunctionFAQ(block) {
           title.closest("details").removeAttribute("open");
           title.classList.remove("active");
         });
+
+         /*  FAQ Analytics Start */
+          try {
+            const dataAnalytics = {};
+            dataAnalytics.click_text = title.textContent.trim();
+            faqInteraction(dataAnalytics);
+          } catch (error) {
+            console.warn(error);
+          }
+       /*  FAQ Analytics End */
 
         this.classList.toggle("active");
       }

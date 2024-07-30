@@ -1,6 +1,4 @@
-/* .section.company-details-wrapper .tab-link-wrapper {
-    position: relative;
-} */
+
 
 .section.company-details-wrapper .tab-link-wrapper button.prev,
 .section.financial-reports-carousel .tab-link-wrapper .tab-link.block>div>div .glider-prev{
@@ -136,15 +134,14 @@
 }
 
 @media screen and (max-width:1024px) {
-    .section.financial-reports-carousel{
-        position: relative;
-    }
     .section.company-details-wrapper .tab-link-wrapper .tab-link.block {
         margin: 0;
         padding-top: 16px;
         height: auto;
     }
-
+    .section.financial-reports-carousel .tab-link-wrapper .tab-link.block{
+        transform: unset;
+    }
     .section.company-details-wrapper .tab-link-wrapper .tab-link.block div:nth-child(3),
     .section.company-details-wrapper .tab-link-wrapper .tab-link.block div:nth-child(4),
     .section.company-details-wrapper .tab-link-wrapper .tab-link.block div:nth-child(5) {
@@ -313,7 +310,10 @@
         transform: translateY(-50%);
         width: 30px;
     }
-
+    body.overlay-active.financial-reports-carousel{
+        position: unset;
+        background-color: unset;
+    } 
     /* Modal and Overlay Styles */
     .section.company-details-wrapper .tab-link-wrapper .tab-link.block>.compony-details,
     .section.financial-reports-carousel .tab-link-wrapper .tab-link.block>.compony-details{

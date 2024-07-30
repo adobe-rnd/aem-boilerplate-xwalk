@@ -105,6 +105,9 @@
         left: 2.5px;
         height: 5px;
     }
+    .section.embed-wrapper.embed-text-center .embed-wrapper .embed .embed-placeholder>picture>img {
+        border-radius: 15px;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -302,6 +305,14 @@
     height: 560px;
     max-height: 560px;
     max-width: 1022px;
+}
+
+@media screen and (min-width:1025px) and (max-width: 1300px) {
+    .section.embed-text-center .embed-wrapper .embed>div,
+    .section.embed-text-center .embed-wrapper .embed {
+        max-height: 461px;
+        max-width: 820px;
+    }
 }
 
 /* our stories video css end */

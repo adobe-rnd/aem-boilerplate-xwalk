@@ -1,6 +1,9 @@
 .section.documents-required-brown{
     background-color: rgb(255, 247, 244);
 }
+.section.documents-required-purple {
+    background-color: #EEF3FF;
+}
 .section.documents-required-brown .accordion-group{
     background-color: #fff;
     border-radius: 24px;
@@ -472,6 +475,12 @@ table {
         background-size: 100%;
         top: 26px;
         margin-left: 12px;
+    }
+    .section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion:nth-child(3) details::before {
+        top: 20px;
+    }
+    .section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion details summary div::before {
+        top: 0;
     }
     .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary div h3{
         font-size: 0.875rem;

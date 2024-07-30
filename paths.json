@@ -36,6 +36,7 @@
     "/content/piramalfinance-eds/in/en/api/placeholder:/api/placeholder.json",
     "/content/piramalfinance-eds/in/en/api/metadata:/api/metadata.json",
     "/content/piramalfinance-eds/in/en/metadata:/metadata.json",
-    "/content/piramalfinance-eds/in/en/api/test:/api/test.json"
+    "/content/piramalfinance-eds/in/en/api/test:/api/test.json",
+    "/content/piramalfinance-eds/in/en/api/authorisedagencies:/api/authorisedagencies.json"
   ]
 }

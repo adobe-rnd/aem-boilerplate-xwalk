@@ -31,7 +31,7 @@
 
 .section.fees-charges-wrapper .default-content-wrapper p>strong {
     color: #000;
-    font-family: 'Nunito-Bold',sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 18px;
     font-weight: 700;
     line-height: 24px;
@@ -67,27 +67,32 @@
     border-radius: 9px 0px 0 0;
     max-width: unset;
 }
-.section.fees-charges-wrapper .code-wrapper .code.block>div>table>tbody>tr > td > p {
-   height: unset;
-   width: unset;
+
+.section.fees-charges-wrapper .code-wrapper .code.block>div>table>tbody>tr>td>p {
+    height: unset;
+    width: unset;
 }
 
 .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr :nth-child(2) {
     /* border-radius: 0 10px 0 0; */
 }
-.section.three-col-table > .code-wrapper .code.block > div > table > tbody > tr:nth-child(1) > th:nth-child(2){
+
+.section.three-col-table>.code-wrapper .code.block>div>table>tbody>tr:nth-child(1)>th:nth-child(2) {
     border-radius: unset;
 }
-.section.fees-charges-wrapper .code-wrapper .code > div > table > tbody > tr:nth-child(1) > th:nth-child(2),
-.section.fees-charges-wrapper .code-wrapper .code > div > table > tbody > tr:nth-child(1) > th:nth-child(3){
+
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(2),
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(3) {
     border-radius: 0 10px 0 0;
 
 }
-.section.one-col-table .code-wrapper .code>div>table>tbody>tr :nth-child(2){
+
+.section.one-col-table .code-wrapper .code>div>table>tbody>tr :nth-child(2) {
     border-left: unset;
     text-align: center;
     width: 15.2%;
 }
+
 .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr:last-child td {
     border-bottom: unset;
 }
@@ -115,46 +120,49 @@
 
 
 .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td>p>strong>span {
-    font-family: 'Nunito-Bold',sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
 }
 
 /* table with image  */
-.section.fees-charges-wrapper.three-col-table .code-wrapper .code > div > table > tbody > tr>th,
-.section.fees-charges-wrapper.three-col-table .code-wrapper .code > div > table > tbody > tr>td {
+.section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>th,
+.section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>td {
     width: 33.33%;
     text-align: center;
 }
 
-.section.fees-charges-wrapper.three-col-table .code-wrapper .code > div > table > tbody > tr>td>p {
+.section.fees-charges-wrapper.four-col-table .code-wrapper .code>div>table>tbody>tr>th,
+.section.fees-charges-wrapper.four-col-table .code-wrapper .code>div>table>tbody>tr>td {
+    width: 25%;
+    text-align: center;
+}
+
+.section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>td>p {
     position: relative;
     display: inline-block;
     margin-top: 18px;
 }
 
-.section.fees-charges-wrapper.three-col-table .code-wrapper .code > div > table > tbody > tr>td>p>img {
+.section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>td>p>img {
     position: absolute;
     width: 18px;
     height: 18px;
     top: -17px;
     left: 20%;
 }
-.section.fees-charges-wrapper.three-col-table > .code-wrapper > .code.block > div > table>tbody>tr>td>p>strong>span{
+
+.section.fees-charges-wrapper.three-col-table>.code-wrapper>.code.block>div>table>tbody>tr>td>p>strong>span {
     color: #20303f;
     font-family: Nunito-Regular, sans-serif;
     font-size: 1pc;
     font-weight: 400;
     line-height: 24px;
 }
+
 .section.fees-charges-wrapper.table-text-center-align .code-wrapper .code>div>table>tbody>tr>th,
 .section.fees-charges-wrapper.table-text-center-align .code-wrapper .code>div>table>tbody>tr>td {
     text-align: center;
 }
-/* .section.fees-charges-wrapper.one-col-table .code-wrapper > .code.block > div > table > tbody > tr:nth-child(2) > td:nth-child(2){
-        width: 10% !important;
-} */
-/* .section.fees-charges-wrapper.one-col-table .code-wrapper > .code.block > div > table > tbody > tr > td:nth-child(1){
-    width: 73% !important;
-} */
+
 @media screen and (max-width: 767px) {
     .section.fees-charges-wrapper .default-content-wrapper h2 {
         font-size: 1.25rem;
@@ -193,34 +201,41 @@
         line-height: 20px;
     }
 
-    .section.fees-charges-wrapper.three-col-table .code-wrapper .code > div > table > tbody > tr>td>p>img {
+    .section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>td>p>img {
         width: 20px;
         height: 12px;
         top: 2px;
         left: -13px;
     }
 
-    .section.fees-charges-wrapper.three-col-table .code-wrapper .code.block>div {
+    .section.fees-charges-wrapper.three-col-table .code-wrapper .code.block>div,
+    .section.fees-charges-wrapper.four-col-table .code-wrapper .code.block>div {
         overflow-x: scroll;
         scrollbar-width: none;
     }
 
-    .section.fees-charges-wrapper.three-col-table .code-wrapper .code.block > div > table > tbody > tr>th, 
-    .section.fees-charges-wrapper.three-col-table .code-wrapper .code.block > div > table > tbody > tr>td {
+    .section.fees-charges-wrapper.three-col-table .code-wrapper .code.block>div>table>tbody>tr>th,
+    .section.fees-charges-wrapper.three-col-table .code-wrapper .code.block>div>table>tbody>tr>td,
+    .section.fees-charges-wrapper.four-col-table .code-wrapper .code.block>div>table>tbody>tr>th,
+    .section.fees-charges-wrapper.four-col-table .code-wrapper .code.block>div>table>tbody>tr>td {
         min-width: 166px;
     }
-    .section.fees-charges-wrapper.three-col-table > .code-wrapper > .code.block > div > table>tbody>tr>td>p>strong>span{
+
+    .section.fees-charges-wrapper.three-col-table>.code-wrapper>.code.block>div>table>tbody>tr>td>p>strong>span {
         font-size: 12px;
         line-height: 16px;
     }
-    .section.fees-charges-wrapper.three-col-table .code-wrapper .code > div > table > tbody > tr>td>p{
+
+    .section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>td>p {
         margin-top: unset;
     }
-    .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr :first-child{
+
+    .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr :first-child {
         width: 20px;
         height: 12px;
     }
 }
+
 /* fees and charges end */
 
 
@@ -279,6 +294,7 @@
         padding: 20px 0;
     }
 }
+
 /* microfinance loans table end */
 
 
@@ -310,9 +326,10 @@
     padding: 8px;
 }
 
-.section.csr-commitee-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(odd){
+.section.csr-commitee-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(odd) {
     background-color: var(--lightgrey);
 }
+
 /* csr committee table end */
 
 
@@ -326,8 +343,7 @@
     text-decoration: none;
 }
 
-.section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr>td>u>a,
-.section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(3)>td:nth-child(3) {
+.section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr>td>u>a{
     color: var(--orange);
     text-decoration: underline;
     text-decoration-color: var(--orange);
@@ -347,6 +363,23 @@
     text-decoration: underline;
     text-decoration-color: var(--orange);
 }
+
+.section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(2),
+.section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(3) {
+    border-radius: unset;
+}
+.section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr :first-child{
+    width: auto !important;
+    height: auto !important;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr th:first-child,
+    .section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr td:first-child,
+    .section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr td ul{
+        width: auto;
+        height: auto;
+    }
+}
 /* offer document table end */
 
 
@@ -358,14 +391,14 @@
     font-weight: 800;
     line-height: 42px;
     margin: 24px 0;
-} 
+}
 
 .section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>th {
     vertical-align: baseline;
 }
 
 .section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(2) {
-   word-break: break-all;
+    word-break: break-all;
 }
 
 .section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(3) {
@@ -374,7 +407,7 @@
     word-break: break-all;
 }
 
-.section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(3)> p {
+.section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(3)>p {
     color: var(--black);
     font-family: Nunito-Regular, sans-serif;
     font-size: 0.875rem;
@@ -387,16 +420,18 @@
         font-size: 1.125rem;
         line-height: 27px;
         margin: 40px 0 14px;
-    } 
+    }
 
     .section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(3) {
         padding: 8px;
     }
+
     .section.offer-document-table-wrapper .default-content-wrapper h2 {
         font-size: 1rem;
         line-height: 24px;
     }
-    .section.fees-charges-wrapper.three-col-table .code-wrapper .code > div > table > tbody > tr>td>p>img{
+
+    .section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>td>p>img {
         width: 12px;
         height: 12px;
         left: -12px;
@@ -404,16 +439,18 @@
         border-radius: unset;
     }
 }
+
 /* statutory committees table end */
 @media screen and (min-width:768px) and (max-width:1024px) {
-    .section.fees-charges-wrapper.three-col-table .code-wrapper .code > div > table > tbody > tr>td>p>img{
+    .section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>td>p>img {
         width: 12px;
         height: 12px;
         left: 39%;
         top: -12px;
         border-radius: unset;
     }
-    .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr :first-child{
+
+    .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr :first-child {
         width: 20px;
         height: 12px;
     }

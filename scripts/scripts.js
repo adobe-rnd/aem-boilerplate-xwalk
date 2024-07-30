@@ -68,7 +68,7 @@ export let targetObject = {
   isMobile: window.matchMedia("(max-width: 767px)").matches,
   ctaPosition: "Top Menu Bar",
   ctaPosition: "Top Menu Bar",
-  pageName: pathname[pathname.length - 1],
+  pageName: pathname[pathname.length - 1] || "home-page",
   isTab: window.matchMedia("(max-width: 1024px)").matches,
 };
 
@@ -309,7 +309,6 @@ export function createCarousle(block, prevButton, nextButton) {
       }
     : function () {
         // Desktop
-        currentTranslate = (currentSlide * -carouselInner.clientWidth) / visibleSlides;
         currentTranslate = (currentSlide * -carouselInner.clientWidth) / visibleSlides;
         console.log("currentSlide :: ", currentSlide);
         console.log("-carouselInner.clientWidth :: ", -carouselInner.clientWidth);
