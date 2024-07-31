@@ -137,11 +137,11 @@ let eligibilityinputdiv = "";
         <div class="outputdiv">
             <div class="output-parent">
                 <div class="mainoutput">
-                    <img data-src="${callJson.calendarbox}"
-                        class="outputimg lozad" alt="calendar" src="${callJson.calendarbox}">
-                    <img data-src="${callJson.calendarmobile}"
+                    <img data-src="${callJson.calendarboxemi}"
+                        class="outputimg lozad" alt="calendar" src="${callJson.calendarboxemi}">
+                    <img data-src="${callJson.calendarboxemimobile}"
                         class="outputimg2 lozad" alt="calendar"
-                        src="${callJson.calendarmobile}"
+                        src="${callJson.calendarboxemimobile}"
                         data-loaded="true">
 
                     <p class="outputdes">
@@ -170,11 +170,11 @@ const eligibilitydiv = callJson.chechboxelibilityobj.chechboxemi
         <div class="outputdiv">
             <div class="output-parent">
                 <div class="mainoutput">
-                    <img data-src="${callJson.calendarbox}"
-                        class="outputimg lozad" alt="calendar" src="${callJson.calendarbox}">
-                    <img data-src="${callJson.calendarmobile}"
+                    <img data-src="${callJson.calendarmobileelg}"
+                        class="outputimg lozad" alt="calendar" src="${callJson.calendarmobileelg}">
+                    <img data-src="${callJson.calendarmobileelgmobile}"
                         class="outputimg2 lozad" alt="calendar"
-                        src="${callJson.calendarmobile}"
+                        src="${callJson.calendarmobileelgmobile}"
                         data-loaded="true">
 
                     <p class="outputdes">
