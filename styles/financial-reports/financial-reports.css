@@ -2,6 +2,7 @@
     padding-bottom: 35px;
     background-color: var(--rosewhite);
 }
+.section.financial-reports-carousel .default-content-wrapper >h1,
 .section.financial-reports-carousel .default-content-wrapper >h2{
     margin: 0;
     color: #333;
