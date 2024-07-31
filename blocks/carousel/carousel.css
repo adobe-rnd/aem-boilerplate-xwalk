@@ -406,6 +406,14 @@
   width: 72%;
 }
 
+.section.banner-carousel-wrapper.self-employed-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+  right: 20px;
+}
+
+.section.banner-carousel-wrapper.term-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+  right: 100px;
+}
+
 @media (min-width:1024px) and (max-width:1366px) {
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
     width: 312px;
@@ -548,7 +556,8 @@
   }
 
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
-  .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+  .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
+  .section.banner-carousel-wrapper.term-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
     right: 16px;
   }
 
@@ -638,6 +647,9 @@
   }
   .section.banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description {
     margin-right: 10px;
+  }
+  .section.banner-carousel-wrapper.self-employed-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+    right: 10px;
   }
 }
 
@@ -758,7 +770,8 @@
     width: 200px;
   }
 
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
+  .section.banner-carousel-wrapper.term-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
     right: 16px;
   }
 
@@ -847,6 +860,9 @@
   .banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
     width: 53%;
   }
+  .section.banner-carousel-wrapper.self-employed-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+    right: 10px;
+    }
 }
 
 @media screen and (min-width:1025px) and (max-width: 1300px) {
