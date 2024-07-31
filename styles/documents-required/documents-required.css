@@ -411,6 +411,11 @@ table {
    top: 30px;
 }
 
+.section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion details:not(:has(p)) summary div::before {
+    top: 0;
+}
+
+
 @media screen and (max-width:1400px) {
     .section.documents-required-brown{
         /* padding-bottom: 72px; */
@@ -486,12 +491,6 @@ table {
         top: 26px;
         margin-left: 12px;
     }
-    /* .section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion:nth-child(3) details::before {
-        top: 20px;
-    }
-    .section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion details summary div::before {
-        top: 0;
-    } */
     .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary div h3{
         font-size: 0.875rem;
         line-height: 20px;
