@@ -18,10 +18,6 @@ export default async function decorate(block) {
     `<div class="forName">
         <li><a href="{url}" title="{text}">{text}</a></li>    
     </div>`,
-    function (data) {
-      data.url = data.url.endsWith(".html") ? data.url : data.url + ".html";
-      return data;
-    }
   );
   block.innerHTML = "<ul>" + li + "</ul>";
 }
