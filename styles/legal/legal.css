@@ -114,7 +114,6 @@
         content: "";
     }
 }
-
 /* legal banner css end */
 
 
@@ -170,11 +169,13 @@
 }
 
 .section.legal-privacy-policy-wrapper .default-content-wrapper p a {
-    color: var(--orange);
+    color: #333;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
     text-decoration: none;
 }
-
-
 
 @media screen and (max-width:1024px) {
     .section.legal-privacy-policy-wrapper .default-content-wrapper p {
@@ -189,7 +190,6 @@
         padding: 0 16px;
     }
 }
-
 /* legal privacy policy css end */
 
 /* legal disclaimer css start */
@@ -205,7 +205,6 @@
     color: var(--orange);
     text-decoration: none;
 }
-
 /* legal disclaimer css end */
 
 
@@ -218,12 +217,14 @@
     font-weight: 700;
 }
 
+.section.legal-website-usage-wrapper .default-content-wrapper p a {
+    color: var(--orange);
+}
 /* legal website usage css end */
 
 /* legal whatsapp terms and conditions css start */
 .section.whatsapp-terms-conditions-wrapper .default-content-wrapper p {
     padding: 0 32px;
-    ;
 }
 
 .section.whatsapp-terms-conditions-wrapper .default-content-wrapper ul li {
@@ -233,12 +234,10 @@
 @media screen and (max-width:1024px) {
     .section.whatsapp-terms-conditions-wrapper .default-content-wrapper p {
         padding: 0 16px;
-        ;
     }
 
     .section.whatsapp-terms-conditions-wrapper .default-content-wrapper ul li {
         padding: 5px 16px;
     }
 }
-
 /* legal whatsapp terms and conditions css end */
