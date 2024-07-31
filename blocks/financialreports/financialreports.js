@@ -122,13 +122,18 @@ export default async function decorate(block) {
 // Function to handle click on inner accordion titles
 export function handleInnerAccordionClick(event) {
     var parent = event.target.parentNode;
-    parent.querySelectorAll('.innerSubAccordianData').forEach(function (el) {
-        if (el.classList.contains("active")) {
-            parent.classList.remove("active")
-            // el.querySelectorAll('.innerSubAccordianData').forEach(function (ele) {
-            //     ele.style.display = "none";
-            // });
-            el.style.display = "none";
+    parent.closest('.grey-border').querySelectorAll('.subAccordianContent').forEach(function (el) {
+
+        console.log(event.target);
+        if (event.target.closest(".subAccordianContent") === el) {
+
+        } else {
+            el.querySelectorAll('.innersubAccordianContent').forEach(function (each) {
+                each.classList.remove("active");
+            })
+            el.querySelectorAll('.innerSubAccordianData').forEach(function (each) {
+                each.style.display = "none";
+            })
         }
     });
     var siblings = getSiblings(parent);
