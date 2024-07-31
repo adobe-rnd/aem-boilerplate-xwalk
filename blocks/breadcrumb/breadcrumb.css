@@ -72,6 +72,11 @@
         line-height: 16px;
     }
 }
+@media screen and (max-width:767px) {
+    .section.breadcrumb-handle.breadcrumb-handle-mob .breadcrumb-wrapper .breadcrumb-separator {
+        padding: 0 6px;
+    }
+}
 @media screen and (min-width: 1025px) and (max-width: 1300px){
     .section.breadcrumb-handle .breadcrumb-wrapper{
         padding: 0 120px;

@@ -29,9 +29,9 @@
     border-bottom: unset;
     border-right: 1px solid var(--zinc);
     color: var(--black);
-    font-family: "Nunito-Bold", sans-serif;
+    font-family: "Nunito-regular", sans-serif;
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 24px;
     padding: 0 24px;
     cursor: pointer;
@@ -47,6 +47,7 @@
 
 .section.tab-with-cards-wrapper .tab-name-wrapper .tab-name.block .carousel-inner>div.active {
     color: var(--orange);
+    font-family: 'Nunito-Bold', sans-serif;
 }
 
 .section.tab-with-cards-wrapper .panel-container,
@@ -105,6 +106,11 @@
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 20px;
+}
+
+.section.tab-with-cards-wrapper .panel-container .teaser.block .background>.foreground .text .long-description,
+.section.tab-with-cards-wrapper .wrappercreation-wrapper .wrapper-creation-container .teaser.block .background>.foreground .text .long-description {
+    min-height: 60px;
 }
 
 .section.tab-with-cards-wrapper .wrappercreation-wrapper .wrapper-creation-container .teaser.block .background>.foreground .text .long-description>p>a>sub {
@@ -176,6 +182,13 @@
     .section.tab-with-cards-wrapper .wrappercreation-wrapper .wrapper-creation-container .teaser.block .background>.foreground .text .long-description>p>a>sub {
         font-size: 0.75rem;
         line-height: 16px;
+    }
+    .section.tab-with-cards-wrapper .panel-container .teaser.block .background>.foreground .text .long-description>p>br {
+        display: none
+    }
+    .section.tab-with-cards-wrapper .panel-container .teaser.block .background>.foreground .text .long-description,
+    .section.tab-with-cards-wrapper .wrappercreation-wrapper .wrapper-creation-container .teaser.block .background>.foreground .text .long-description {
+        min-height: 60px;
     }
 }
 

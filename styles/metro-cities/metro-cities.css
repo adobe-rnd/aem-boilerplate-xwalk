@@ -67,6 +67,10 @@
     color: #f26841
 }
 
+.section.metro-cities-wrapper.personal-loan-metro-cities .default-content-wrapper>h2 {
+    padding-bottom: 48px;
+}
+
 @media screen and (max-width:767px) {
     .section.metro-cities-wrapper .default-content-wrapper {
         padding: 40px 16px 0;
@@ -93,6 +97,9 @@
     .section.metro-cities-wrapper .city-list-wrapper .city-list > ul {
         grid-template-columns: repeat(1, minmax(0, 1fr));
     }
+    .section.metro-cities-wrapper.personal-loan-metro-cities .default-content-wrapper>h2 {
+        padding-bottom: 24px;
+    }
 }
 
 @media (min-width:767px) and (max-width:1024px) {
@@ -101,6 +108,10 @@
     }
     .section.metro-cities-wrapper .city-list-wrapper {
         padding: 0 16px 80px 16px;
+    }
+    .section.metro-cities-wrapper .default-content-wrapper>ul, 
+    .section.metro-cities-wrapper .city-list-wrapper .city-list > ul {
+        gap: 24px 12px;
     }
 }
 
