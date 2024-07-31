@@ -240,7 +240,7 @@
     font-size: 48px;
     font-weight: 800;
     line-height: 72px;
-    margin-top: 39px;
+    padding-top: 69px;
 }
 .section.financial-reports-carousel .default-content-wrapper >p{
     padding-top: 16px;
@@ -334,7 +334,7 @@
     color: #333;
     display: block;
     font-family: Nunito-Regular, sans-serif;
-    font-size: 1pc;
+    font-size: 1rem;
     line-height: 24px;
     position: relative;
     padding: 1pc 50px 1pc 18px;
@@ -383,18 +383,30 @@
     color: #000;
 }
 
-.section.financial-report-content-wrap .financialreports-wrapper .financialreports .accordianpdf-section .container .accordianContent .accordianBox .subAccordianWrap .subAccordianBox .subAccordianContent .publicDisclosuresWrap.innerSubAccordianData>ul>li::after {
+/* .section.financial-report-content-wrap .financialreports-wrapper .financialreports .accordianpdf-section .container .accordianContent .accordianBox .subAccordianWrap .subAccordianBox .subAccordianContent .publicDisclosuresWrap.innerSubAccordianData>ul>li::after {
     content: "";
     font-family: FontAwesome;
     position: absolute;
     right: 24px;
     top: 25%;
 
+} */
+.section.financial-report-content-wrap .financialreports-wrapper .financialreports .accordianpdf-section .container .accordianContent .accordianBox .subAccordianWrap .subAccordianBox .subAccordianContent .publicDisclosuresWrap.innerSubAccordianData>ul>li::after {
+    content: "\eadf";
+    position: absolute;
+    right: 24px;
+    top: 25%;
+    font-family: 'icomoon' !important;
+
 }
 
-.section.financial-report-content-wrap .financialreports-wrapper .financialreports .accordianpdf-section .container .accordianContent .accordianBox .subAccordianWrap .subAccordianBox .subAccordianContent .publicDisclosuresWrap.innerSubAccordianData>ul>li>a:hover {
+.section.financial-report-content-wrap .financialreports-wrapper .financialreports .accordianpdf-section .container .accordianContent .accordianBox .subAccordianWrap .subAccordianBox .subAccordianContent .publicDisclosuresWrap.innerSubAccordianData>ul>li:hover>a {
     color: var(--orange);
     text-decoration: none;
+}
+.section.financial-report-content-wrap .financialreports-wrapper .financialreports .accordianpdf-section .container .accordianContent .accordianBox .subAccordianWrap .subAccordianBox .subAccordianContent .publicDisclosuresWrap.innerSubAccordianData>ul>li:hover{
+    cursor: pointer;
+    color: var(--orange);
 }
 
 .section.financial-report-content-wrap .financialreports-wrapper .financialreports .accordianpdf-section .container .accordianContent .accordianBox .subAccordianWrap .subAccordianBox .grey-border {
