@@ -702,7 +702,7 @@ async function loadingCustomCss() {
     `${window.hlx.codeBasePath}/styles/legal/legal.css`,
     `${window.hlx.codeBasePath}/styles/calculator-mob-carousel/calculator-mob-carousel.css`,
     `${window.hlx.codeBasePath}/styles/media/media-list.css`,
-    `${window.hlx.codeBasePath}/styles/financial-reports/financial-reports.css`,
+    `${window.hlx.codeBasePath}/styles/table-whatsapp-btn/table-whatsapp-btn.css`,
   ];
 
   loadCssArray.forEach(async (eachCss) => {
