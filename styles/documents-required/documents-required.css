@@ -348,6 +348,12 @@ table {
 .section.documents-required-brown .accordion-group-wrapper{
     padding-bottom: 72px;
 }
+.section.documents-required-brown.document-required-whatsapp-btn-align .accordion-group-wrapper {
+    padding-top: 90px;
+}
+.section.documents-required-brown.document-required-whatsapp-btn-align .default-content-wrapper .button-container {
+    top: 15px;
+}
 .section.documents-required-brown .accordion.block > details > div > ul > li > p strong{
     color: #f26841;
     font-family: Nunito-Bold, sans-serif;
@@ -401,6 +407,9 @@ table {
     font-family: 'Nunito-Regular', sans-serif;
  }
  
+.section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion details:not(:has(p))::before {
+   top: 30px;
+}
 
 @media screen and (max-width:1400px) {
     .section.documents-required-brown{
@@ -477,12 +486,12 @@ table {
         top: 26px;
         margin-left: 12px;
     }
-    .section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion:nth-child(3) details::before {
+    /* .section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion:nth-child(3) details::before {
         top: 20px;
     }
     .section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion details summary div::before {
         top: 0;
-    }
+    } */
     .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary div h3{
         font-size: 0.875rem;
         line-height: 20px;
@@ -614,6 +623,16 @@ table {
         padding: 1.5px 4.5px;
      }
 
+     .section.documents-required-brown.document-required-whatsapp-btn-align .accordion-group-wrapper {
+        padding-top: 0;
+    }
+    .section.documents-required-brown.document-required-whatsapp-btn-align .default-content-wrapper .button-container {
+        top: 20px;
+    }
+
+    .section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion details:not(:has(p))::before {
+        top: 13px;
+     }
 }
 @media screen and (min-width:768px) and (max-width:1024px) {
     .section.documents-required-brown .default-content-wrapper .button-container{     
