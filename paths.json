@@ -7,6 +7,7 @@
     "/content/piramalfinance-eds/in/en/api/redirects:/api/redirects.json",
     "/content/piramalfinance-eds/in/en/api/cust-testimonial:/api/cust-testimonial.json",
     "/content/piramalfinance-eds/in/en/api/cust-testimonial-business-loan:/api/cust-testimonial-business-loan.json",
+    "/content/piramalfinance-eds/in/en/api/cust-testimonial-business-loan-working-capital:/api/cust-testimonial-business-loan-working-capital.json",
     "/content/piramalfinance-eds/in/en/api/home-emi-calc:/api/home-emi-calc.json",
     "/content/piramalfinance-eds/in/en/api/home-eligi-calc:/api/home-eligi-calc.json",
     "/content/piramalfinance-eds/in/en/api/lead-form:/api/lead-form.json",

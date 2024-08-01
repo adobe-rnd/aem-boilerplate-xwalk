@@ -39,6 +39,7 @@ function openFormColumn(block){
           statemasterGetStatesApi();
           validationJSFunc();
           formOpen();
+          e.preventDefault();
         });
       });
     }

@@ -33,31 +33,19 @@
     color: var(--white);
     text-decoration: none;
 }
-
 .section.annual-reports-wrapper .default-content-wrapper ul>li>a::after {
-    content: "";
-    background-image: url('/content/dam/piramalfinance/company/stakeholders/pdf-icon.png');
+    content: "\eadf";
+    font-family: 'icomoon' !important;
     position: absolute;
     right: 24px;
     top: 35%;
     height: 20px;
     width: 20px;
-    background-size: contain;
-    background-repeat: no-repeat;
     color: #333;
 }
 
 .section.annual-reports-wrapper .default-content-wrapper ul>li>a:hover::after {
-    content: "";
-    background-image: url('/content/dam/piramalfinance/company/stakeholders/pdf-white.png');
-    position: absolute;
-    right: 24px;
-    top: 35%;
-    height: 20px;
-    width: 20px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    color: #333;
+   color: var(--white);
 }
 
 @media screen and (max-width: 767px) {
@@ -137,30 +125,20 @@
 
 .section.offer-documents-wrapper .default-content-wrapper ul>li>a::after,
 .section.offer-documents-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .offer-documents-wrapper .offer-documents .richtext .cmp-text >p::after {
-    content: "";
-    background-image: url('/content/dam/piramalfinance/company/stakeholders/download-icon.png');
+    content: "\e900";
+    font-family: 'icomoon-download' !important;
     position: absolute;
     right: 24px;
-    top: 35%;
+    top: 50%;
+    line-height: 1px;
     height: 20px;
     width: 20px;
-    background-size: contain;
-    background-repeat: no-repeat;
     color: #333;
 }
 
 .section.offer-documents-wrapper .default-content-wrapper ul>li>a:hover::after,
 .section.offer-documents-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .offer-documents-wrapper .offer-documents .richtext .cmp-text:hover >p::after {
-    content: "";
-    background-image: url('/content/dam/piramalfinance/company/stakeholders/download-icon-white.png');
-    position: absolute;
-    right: 24px;
-    top: 35%;
-    height: 20px;
-    width: 20px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    color: #333;
+    color: var(--white);
 }
 
 /* offer documents end */

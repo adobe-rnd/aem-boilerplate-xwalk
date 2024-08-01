@@ -187,6 +187,7 @@ export default function decorate(block) {
           statemasterGetStatesApi();
           validationJSFunc();
           formOpen();
+          e.preventDefault();
         });
       });
     } catch (error) {
