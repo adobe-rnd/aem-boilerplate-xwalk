@@ -986,17 +986,17 @@
     padding-top: 60px;
   }
   .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
-    width: 600px;
-    height: 409px;
-  }
-  .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
-    bottom: -58px;
+    width: 814px;
+    height: 394px;
   }
   .banner-carousel-wrapper.careers-page-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
     width: 80%;
-    padding-top: 40px;
+    padding-top: 120px;
   }
   .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .carousel .panel-container .teaser {
-    min-height: 435px;
+    min-height: 627px;
   } 
+  .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+    right: 120px;
+  }
 }

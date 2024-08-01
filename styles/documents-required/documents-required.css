@@ -415,6 +415,13 @@ table {
     top: 0;
 }
 
+.section.documents-required-brown.document-required-accordion-img-swap .accordion-group-wrapper .accordion-group .accordion:nth-last-child(2) details::before{
+    background-image: url('/content/dam/piramalfinance/product-page/home-loan/co-applicants.svg');
+}
+
+.section.documents-required-brown.document-required-accordion-img-swap .accordion-group-wrapper .accordion-group .accordion:last-child details::before{
+    background-image: url('/content/dam/piramalfinance/product-page/home-loan/photo.svg');
+}
 
 @media screen and (max-width:1400px) {
     .section.documents-required-brown{
