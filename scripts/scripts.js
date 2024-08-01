@@ -703,6 +703,7 @@ async function loadingCustomCss() {
     `${window.hlx.codeBasePath}/styles/calculator-mob-carousel/calculator-mob-carousel.css`,
     `${window.hlx.codeBasePath}/styles/media/media-list.css`,
     `${window.hlx.codeBasePath}/styles/table-whatsapp-btn/table-whatsapp-btn.css`,
+    `${window.hlx.codeBasePath}/styles/financial-reports/financial-reports.css`,
   ];
 
   loadCssArray.forEach(async (eachCss) => {
@@ -719,7 +720,7 @@ body?.addEventListener("click", function (e) {
     document.body.style.overflow = "scroll";
     document.querySelector(".modal-overlay").classList.remove("overlay");
     document.querySelector(".modal-overlay").classList.add("dp-none");
-    document.querySelector(".modal-overlay").style.zIndex = 0;
+    // document.querySelector(".modal-overlay").style.zIndex = 0;
   } else if (!e.target.closest(".nav-drop")) {
     //console.log("don't close nav");
 
