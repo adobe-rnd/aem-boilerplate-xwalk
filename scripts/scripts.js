@@ -712,7 +712,7 @@ async function loadingCustomCss() {
   });
 }
 
-let body = document.querySelector("body");
+export let body = document.querySelector("body");
 body?.addEventListener("click", function (e) {
   // e.stopImmediatePropagation();
   let loaninnerform = document.querySelector(".loan-form-sub-parent") || "";

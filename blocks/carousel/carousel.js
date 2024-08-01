@@ -1,4 +1,4 @@
-import { createCarousle, targetObject } from '../../scripts/scripts.js';
+import { body, createCarousle, targetObject } from '../../scripts/scripts.js';
 import { applyLoanFormClick, formOpen } from '../applyloanform/applyloanforms.js';
 import { buttonCLick } from '../applyloanform/loanformapi.js';
 import { loanutmForm } from '../applyloanform/loanutm.js';
@@ -197,7 +197,10 @@ export default function decorate(block) {
     if (buttonContainer.children.length) {
       block.append(buttonContainer)
       isrotate && setInterval(function () {
-        slideNextEventHandler();
+        debugger;
+        if ((body.style.overflowY != 'hidden') ) {
+          slideNextEventHandler();
+        }
       }, 7000);
     };
   } else {
