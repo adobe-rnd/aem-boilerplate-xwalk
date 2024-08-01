@@ -8,7 +8,18 @@
     color: #333;
     margin-bottom: 40px;
 }
-
+.section.table-full-row .default-content-wrapper >p{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #000;
+    display: block;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    padding: .5rem .25rem;
+    text-align: center;
+}
 .section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group {
     padding: 0;
 }
