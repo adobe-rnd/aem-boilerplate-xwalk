@@ -188,7 +188,7 @@
     }
     .section.tab-with-cards-wrapper .panel-container .teaser.block .background>.foreground .text .long-description,
     .section.tab-with-cards-wrapper .wrappercreation-wrapper .wrapper-creation-container .teaser.block .background>.foreground .text .long-description {
-        min-height: 60px;
+        min-height: unset;
     }
 }
 

@@ -116,7 +116,7 @@ textarea:focus {
   --skyblue: #DEF3FD;
   --light-gray: #F8FAFF;
   --light-pink: #FEEBE7;
-  --light-violet: #ECE4F2
+  --light-violet: #ECE4F2;
   /* fonts */
   --body-font-family: roboto, roboto-fallback;
   --heading-font-family: var(--body-font-family);
