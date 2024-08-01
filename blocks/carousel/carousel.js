@@ -197,7 +197,6 @@ export default function decorate(block) {
     if (buttonContainer.children.length) {
       block.append(buttonContainer)
       isrotate && setInterval(function () {
-        debugger;
         if ((body.style.overflowY != 'hidden') ) {
           slideNextEventHandler();
         }
