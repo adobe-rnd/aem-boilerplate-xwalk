@@ -414,6 +414,11 @@
   right: 100px;
 }
 
+.section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>h1,
+.section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>p {
+  display: none
+}
+
 @media (min-width:1024px) and (max-width:1366px) {
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
     width: 312px;
@@ -650,6 +655,35 @@
   }
   .section.banner-carousel-wrapper.self-employed-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
     right: 10px;
+  }
+  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>h1,
+  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>p {
+    display: block;
+  }
+
+  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>h1 {
+    color: var(--black);
+    font-family: "Nunito-Extrabold", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 32px;
+    margin: unset;
+  }
+  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>p {
+    color: var(--gradient-gray);
+    font-family: "Nunito-Regular", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 20px;
+    margin-top: 12px;
+  }
+  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .title>h1,
+  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .eyebrow,
+  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>p {
+    display: none;
+  }
+  .banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .carousel .panel-container .teaser .foreground .long-description {
+    margin-top: 0;
   }
 }
 
