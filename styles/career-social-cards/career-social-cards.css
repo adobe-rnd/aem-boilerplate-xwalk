@@ -53,6 +53,7 @@
     font-family: Nunito-Bold, sans-serif;
     font-size: 1.25rem;
     line-height: 28px;
+    text-decoration: none;
 }
 .section.career-social-cards .default-content-wrapper{
     flex: 2;
