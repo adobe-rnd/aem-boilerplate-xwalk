@@ -51,4 +51,43 @@
     line-height: 22px;
 }
 
+.section.grievance-redressal-levels .default-content-wrapper p{
+    color: #000;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 22px;
+    margin-top: 16px;
+}
+.section.grievance-redressal-levels .default-content-wrapper p >a{
+    color: #f26841;
+    cursor: pointer;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 22px;
+}
+.section.grievance-redressal-levels .default-content-wrapper p >a:hover{
+    text-decoration: none;
+}
+.section.grievance-redressal-levels .default-content-wrapper p >strong{
+    color: #000;
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 800;
+    line-height: 24px;
+}
+.section.grievance-redressal-levels .default-content-wrapper ul{
+    list-style-type: disc;
+    margin-left: 24px;
+    margin-top: 16px;
+}
+.section.grievance-redressal-levels .default-content-wrapper >ul >li{
+    color: #000;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0;
+}
 /* grievance redressal levels  End */
