@@ -101,8 +101,8 @@
         border-top: 3px solid transparent;
         border-bottom: 3px solid transparent;
         border-left: 4px solid;
-        top: 1.5px;
-        left: 2.5px;
+        top: 1px;
+        left: 2px;
         height: 5px;
     }
     .section.embed-wrapper.embed-text-center .embed-wrapper .embed .embed-placeholder>picture>img {
