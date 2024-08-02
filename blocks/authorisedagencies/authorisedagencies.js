@@ -41,7 +41,7 @@ export default async function decorate(block) {
             inputLocation.className = 'cityBlack';
             citiesContainer.style.display = 'none';
         })
-        let span = document.createElement('span');
+        let span = document.createElement('span');  
         span.textContent = city;
         label.appendChild(input);
         label.appendChild(span);
