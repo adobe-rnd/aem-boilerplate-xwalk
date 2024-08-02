@@ -81,8 +81,14 @@ export default async function decorate(block) {
     const breadcrumb = createElement('nav', '', {
         'aria-label': 'Breadcrumb',
     });
-    const HomeLink = createLink({ path: '', name: 'HomePage', url: window.location.origin, label: 'Home' });
-    const breadcrumbLinks = [HomeLink.outerHTML];
+    
+    let breadcrumbLinks = [];
+    if(startLevel == 'hidehome'){
+        startLevel = '';
+    }else{
+        const HomeLink = createLink({ path: '', name: 'HomePage', url: window.location.origin, label: 'Home' });
+        breadcrumbLinks = [HomeLink.outerHTML];
+    }
 
     window.setTimeout(async () => {
         const path = window.location.pathname;
