@@ -2,13 +2,13 @@ import { loanProductsAnalytics } from "./teaserv2-analytics.js";
 
 export default function decorate(block) {
   const props = Array.from(block.children, (row) => row.firstElementChild);
-  const renderTeaserHTML = renderTeaserHTMLFactory(props);
+  const renderTeaserHTML = renderTeaserHTMLFactory(props, block);
   block.innerHTML = "";
   block.append(renderTeaserHTML);
   loanProductsAnalytics(block);
 }
 
-export function renderTeaserHTMLFactory(props) {
+export function renderTeaserHTMLFactory(props, block) {
 
   const isDesktop = window.matchMedia('(min-width: 900px)');
   const isMobile = window.matchMedia('(max-width: 767px)');
@@ -26,14 +26,22 @@ export function renderTeaserHTMLFactory(props) {
   const container = document.createElement("a");
   if (mainLink) container.href = mainLink;
 
-  const bgImageSrc = bgImage?.querySelector("picture > img")?.src || "";
-  const mobileSrc = mobileImg?.querySelector("picture > img")?.src || "";
+  let bgImageSrc = bgImage?.querySelector("picture > img")?.src || "";
+  let mobileSrc = mobileImg?.querySelector("picture > img")?.src || "";
   const bgBannerColor = bgColor?.textContent.trim()?.src || "";
   const bgImageDiv = createElement("div", "bg-image");
 
-  if (isDesktop) {
+  if(block?.closest('.section').classList.contains('corporate-financing-banner-wrapper')){
+    if (isDesktop.matches) {
+      bgImageSrc = bgImageSrc.split("?")[0];
+    }else if (isMobile.matches) {
+      mobileSrc = mobileSrc.split("?")[0];
+    }
+  }
+
+  if (isDesktop.matches) {
     if (bgImageSrc) bgImageDiv.style.backgroundImage = `url(${bgImageSrc})`;
-  } else if (isMobile) {
+  } else if (isMobile.matches) {
     if (mobileSrc) bgImageDiv.style.backgroundImage = `url(${mobileSrc})`;
   }
 
