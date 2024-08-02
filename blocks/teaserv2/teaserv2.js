@@ -10,7 +10,7 @@ export default function decorate(block) {
 
 export function renderTeaserHTMLFactory(props, block) {
 
-  const isDesktop = window.matchMedia('(min-width: 900px)');
+  const isDesktop = window.matchMedia('(min-width: 768px)');
   const isMobile = window.matchMedia('(max-width: 767px)');
 
   let [mainHref, bgImage, frontImage, title, description, mobileDescription, button, buttonHref, bgColor, teaserv2Attr, textwithinnerhtml, mobileImg] = props;

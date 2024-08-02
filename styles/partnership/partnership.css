@@ -48,6 +48,11 @@
     box-shadow: 0 4px 9pt rgba(51, 51, 51, .078);
 }
 
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text>.cmp-text:hover {
+    -webkit-box-shadow: 0 25px 50px -9pt rgba(0,0,0,.25);
+    box-shadow: 0 25px 50px -9pt rgba(0,0,0,.25);
+}
+
 .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text>.cmp-text div picture>img {
     width: 206px;
     height: 86px;
@@ -115,6 +120,7 @@
     position: absolute;
     top: 15px;
     right: 15px;
+    cursor: pointer;
 }
 
 .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p,

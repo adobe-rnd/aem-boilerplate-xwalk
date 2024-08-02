@@ -16,6 +16,7 @@
     "/content/piramalfinance-eds/in/en/api/personal-loan-city:/api/personal-loan-city.json",
     "/content/piramalfinance-eds/in/en/api/bussiness-loan-city:/api/bussiness-loan-city.json",
     "/content/piramalfinance-eds/in/en/api/document-kyc:/api/document-kyc.json",
+    "/content/piramalfinance-eds/in/en/api/documents-required-kyc.json",
     "/content/piramalfinance-eds/in/en/api/only-salaried-and-business:/api/only-salaried-and-business.json",
     "/content/piramalfinance-eds/in/en/api/personal-loan-document:/api/personal-loan-document.json",
     "/content/piramalfinance-eds/in/en/api/construction-loan-document:/api/construction-loan-document.json",
