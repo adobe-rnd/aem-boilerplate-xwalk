@@ -111,8 +111,7 @@
     gap: 48px;
 }
 
-.section.company-details-wrapper.about-us-company-details .tab-link-wrapper .tab-link.block>div>div>ul>li a,
-.section.financial-reports-carousel .tab-link-wrapper .tab-link.block>div .glider .glider-track li a {
+.section.company-details-wrapper.about-us-company-details .tab-link-wrapper .tab-link.block>div>div>ul>li a {
     font-family: 'Nunito-Bold', sans-serif;
     border: 1px solid #333333;
 }
