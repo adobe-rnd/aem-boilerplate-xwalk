@@ -197,16 +197,29 @@
 .section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text>p>.title {
     margin: 24px 0;
     display: block;
+    font-size: 1.75rem;
 }
-
-.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text>p:nth-child(2) {
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div ul li::before{
+    background-color: #333;
+    border-radius: 50%;
+    content: "";
+    display: inline-table;
+    height: 8px;
+    margin-right: 10px;
+    margin-top: 7px;
+    vertical-align: top;
+    width: 8px;
+}
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text>p:nth-child(2),
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text>p:nth-child(2) span {
     color: #333;
     display: flex;
-    font-family: Nunito-Bold, sans-serif;
-    font-size: 1pc;
-    font-weight: 800;
+    font-family: 'Nunito-Bold', sans-serif;
+    font-size: 1rem;
+    /* font-weight: 800; */
     line-height: 24px;
     margin-bottom: 24px;
+    display: block;
 }
 
 .section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .cross-container>img {
@@ -241,8 +254,8 @@
     margin: 0;
 }
 .section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div ul{
-    margin-left: 16px;
-    list-style-type: disc;
+    margin-left: 0;
+    list-style-type: none;
     color: rgba(0, 0, 0, .871);
     font-family: Nunito-Regular, sans-serif;
     font-size: 1pc;
