@@ -66,8 +66,9 @@
     }
     .section.authorised-agencies-banner .teaser-wrapper .teaser .background .front-picture img{
         display: block;
+        margin-left: 30px;
     }
-    .section.authorised-agencies-banner .teaser-wrapper .teaser .background .foreground .text .title h2 {
+    .section.authorised-agencies-banner .teaser-wrapper .teaser .background .foreground .text .title h1 {
         font-family: Nunito-Extrabold, sans-serif;
         font-size: 2.5rem;
         font-weight: 800;
@@ -155,7 +156,7 @@
 }
 
 .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .cities-container fieldset {
-    background: #fff;
+    background: var(--white);
     box-shadow: 0 2pc 2pc -8px rgba(0, 0, 0, .08), 0 0 2pc -8px rgba(0, 0, 0, .12), 0 0 1px rgba(0, 0, 0, .2);
     max-height: 354px;
     max-width: 296px;
@@ -170,7 +171,7 @@
 }
 
 .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .cities-container fieldset legend{
-    color: #f26841;
+    color: var(--orange);
     font-family: Nunito-Bold, sans-serif;
     font-size: 1rem;
     font-weight: 700;
@@ -187,7 +188,7 @@
 }
 
 .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .cities-container fieldset label input{
-    accent-color: #000;
+    accent-color: var(--black);
     border: 1px solid #a9a9a9;
     border-radius: 50%;
     height: 20px;
@@ -197,7 +198,7 @@
 }
 
 .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .cities-container fieldset label span{
-    color: #000;
+    color: var(--black);
     cursor: pointer;
     font-family: Nunito-Regular, sans-serif;
     font-size: 1rem;
@@ -293,5 +294,4 @@
         gap: 10px;
     }
 }
-
 /* partner authorised agencies css end */
