@@ -9,7 +9,7 @@ export default async function decorate(block) {
     let selectContainerWrapper = createAndAppend('div', "", "select-container-wrapper");
     let selectContainer = createAndAppend('div', "", "select-container");
     let cardContainer = createAndAppend('div', "", "card-container");
-    
+
     let selectText = createAndAppend('label', "", "");
     selectText.textContent = "Select Location";
 
@@ -34,14 +34,14 @@ export default async function decorate(block) {
         input.type = 'radio';
         input.value = city;
         input.name = "branchlocation";
-        input.addEventListener('change', ()=> {
+        input.addEventListener('change', () => {
             displayCards(city);
             inputLocationValue = city;
             inputLocation.placeholder = city;
-            inputLocation.className = 'cityBlack' ;
+            inputLocation.className = 'cityBlack';
             citiesContainer.style.display = 'none';
         })
-        let span = document.createElement('span');
+        let span = document.createElement('span');  
         span.textContent = city;
         label.appendChild(input);
         label.appendChild(span);
@@ -49,8 +49,8 @@ export default async function decorate(block) {
     })
 
     citiesContainer.style.display = 'none';
-    inputLocation.addEventListener('click', ()=> {
-        citiesContainer.style.display = citiesContainer.style.display === 'none'? 'block' : 'none';
+    inputLocation.addEventListener('click', () => {
+        citiesContainer.style.display = citiesContainer.style.display === 'none' ? 'block' : 'none';
         selectContainer.classList.toggle('open');
     })
 
@@ -61,84 +61,51 @@ export default async function decorate(block) {
         return newNode;
     }
 
-    function displayCards(selectedCityName){
+    function displayCards(selectedCityName) {
         cardContainer.innerHTML = "";
         let dataToDisplay = selectedCityName ? { [selectedCityName]: jsonResponseData[selectedCityName] } : jsonResponseData;
 
         for (let city in dataToDisplay) {
-        dataToDisplay[city].forEach(data => {
-            let card = document.createElement('div');
-            card.className = "card";
-    
-            let elementLocation = createAndAppend('div', '', '');
-            let location = createAndAppend('p', 'Location', '');
-            elementLocation.appendChild(location);
+            dataToDisplay[city].forEach(data => {
+                let card = document.createElement('div');
+                card.className = "card";
 
-            let arr = data['Location'].split(' '); 
-            let locationValue = document.createElement('p');
+                let elementLocation = createAndAppend('div', '', '');
+                let location = createAndAppend('p', 'Location', '');
+                elementLocation.appendChild(location);
 
-            arr.forEach(item =>{
-                let location = item.toLowerCase();
-                let newLocation = location.charAt(0).toUpperCase() + location.slice(1); 
-                locationValue.textContent += newLocation + ' ';
+                let arr = data['Location'].split(' ');
+                let locationValue = document.createElement('p');
+
+                arr.forEach(item => {
+                    let location = item.toLowerCase();
+                    let newLocation = location.charAt(0).toUpperCase() + location.slice(1);
+                    locationValue.textContent += newLocation + ' ';
+                })
+                elementLocation.appendChild(locationValue);
+                card.appendChild(elementLocation);
+
+                function createSection(card, label, value) {
+                    let element = createAndAppend('div', '', '');
+                    let labelElement = createAndAppend('p', label, '');
+                    let valueElement = createAndAppend('p', value, '');
+                    element.appendChild(labelElement);
+                    element.appendChild(valueElement);
+                    card.appendChild(element);
+                }
+
+                createSection(card, 'Agency Address', data['Agency Address']);
+                createSection(card, 'Vendor Name:', data['Vendor Name']);
+                createSection(card, 'Date of Agreement:', data['Date of Agreement']);
+                createSection(card, 'Date of Expiry:', data['Date of Expiry']);
+                createSection(card, 'Tenure:', data['Tenure']);
+                createSection(card, 'Agency Signatory:', data['Agency owner']);
+                createSection(card, 'Contact No.:', data['Contact No']);
+
+                cardContainer.appendChild(card);
+                block.appendChild(cardContainer);
             })
-            
-            elementLocation.appendChild(locationValue);
-            card.appendChild(elementLocation);
-
-            let elementAgencyAddress = createAndAppend('div', '', '');
-            let agencyAddress = createAndAppend('p', 'Agency Address', '');
-            let agencyAddressValue = createAndAppend('p', data['Agency Address'], '');
-            elementAgencyAddress.appendChild(agencyAddress);
-            elementAgencyAddress.appendChild(agencyAddressValue);
-            card.appendChild(elementAgencyAddress);
-
-            let elementVendorName = createAndAppend('div', '', '');
-            let vendorName = createAndAppend('p', 'Vendor Name:', '');
-            let vendorNameValue = createAndAppend('p', data['Vendor Name'], '');
-            elementVendorName.appendChild(vendorName);
-            elementVendorName.appendChild(vendorNameValue);
-            card.appendChild(elementVendorName);
-
-            let elementAgreementDate = createAndAppend('div', '', '');
-            let agreementDate = createAndAppend('p', 'Date of Agreement:', '');
-            let agreementDateValue = createAndAppend('p', data['Date of Agreement'], '');
-            elementAgreementDate.appendChild(agreementDate);
-            elementAgreementDate.appendChild(agreementDateValue);
-            card.appendChild(elementAgreementDate);
-
-            let elementExpirytDate = createAndAppend('div', '', '');
-            let ExpiryDate = createAndAppend('p', 'Date of Expiry:', '');
-            let ExpiryDateValue = createAndAppend('p', data['Date of Expiry'], '');
-            elementExpirytDate.appendChild(ExpiryDate);
-            elementExpirytDate.appendChild(ExpiryDateValue);
-            card.appendChild(elementExpirytDate);
-
-            let elementTenure = createAndAppend('div', '', '');
-            let tenure = createAndAppend('p', 'Tenure:', '');
-            let tenureValue = createAndAppend('p', data['Tenure'], '');
-            elementTenure.appendChild(tenure);
-            elementTenure.appendChild(tenureValue);
-            card.appendChild(elementTenure);
-
-            let elementAgencySignatory = createAndAppend('div', '', '');
-            let agencySignatory = createAndAppend('p', 'Agency Signatory:', '');
-            let agencySignatoryValue = createAndAppend('p', data['Agency owner'], '');
-            elementAgencySignatory.appendChild(agencySignatory);
-            elementAgencySignatory.appendChild(agencySignatoryValue);
-            card.appendChild(elementAgencySignatory);
-
-            let elementContactNo = createAndAppend('div', '', '');
-            let contactNo = createAndAppend('p', 'Contact No.:', '');
-            let contactNoValue = createAndAppend('p', data['Contact No'], '');
-            elementContactNo.appendChild(contactNo);
-            elementContactNo.appendChild(contactNoValue);
-            card.appendChild(elementContactNo);
-
-            cardContainer.appendChild(card);
-            block.appendChild(cardContainer);
-        })
-    }
+        }
     }
     selectContainer.appendChild(selectText);
     selectContainer.appendChild(inputLocation);
@@ -148,7 +115,7 @@ export default async function decorate(block) {
 
     block.appendChild(selectContainerWrapper);
     displayCards();
-}   
+}
 export async function fetchApiCall(cfurl) {
     const response = await fetchAPI("GET", cfurl);
     const responseJson = await response.json();
