@@ -6,8 +6,9 @@
     object-fit: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100%;
     width: 100%;
+    min-height: 529px;
 }
 
 .section.corporate-financing-banner-wrapper .teaserv2-wrapper .teaserv2>a .bg-image .description .containerimage {
@@ -70,6 +71,9 @@
     .section.corporate-financing-banner-wrapper .rte-text-description > p {
         width: 100%;
     }
+    .section.corporate-financing-banner-wrapper .teaserv2-wrapper .teaserv2>a .bg-image {
+        background-size: 100% 100%;
+    }
 }
 
 @media screen and (max-width:767px) {
@@ -92,6 +96,9 @@
     }
     .section.corporate-financing-banner-wrapper .rte-text-description{
         max-width: unset;
+    }
+    .section.corporate-financing-banner-wrapper .teaserv2-wrapper .teaserv2>a .bg-image {
+        min-height: 440px;
     }
 }
 
