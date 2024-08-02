@@ -15,7 +15,10 @@
 .section.annual-reports-wrapper .default-content-wrapper ul>li {
     margin-bottom: 16px;
 }
-
+.section.annual-reports-wrapper .default-content-wrapper ul>li>a sub{
+    font-size: 1rem;
+    font-family: 'Nunito-Regular', sans-serif;
+}
 .section.annual-reports-wrapper .default-content-wrapper ul>li>a {
     background: var(--whitesmoke);
     border-radius: 4px;
