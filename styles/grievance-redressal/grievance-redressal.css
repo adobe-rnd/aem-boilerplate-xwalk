@@ -142,6 +142,9 @@ margin-top: 16px;
     line-height: 22px;
     margin-top: 1pc;
 }
+.section.stakeholder-contact .columns-wrapper .columns>div >div p:nth-child(n+2) strong{
+margin-top: -16px;
+}
 /* stakeholder contact end */
 /* Stakeholder Insurance Services Start */
 .section.stakeholder-insurance-services .columns-wrapper .columns>div>div>h2{
@@ -229,6 +232,9 @@ margin-top: 16px;
 .section.insurance-services .accordion-group-wrapper .accordion-group .accordion>details>div>ul {
     border: none;
     list-style: disc;
+}
+.section.insurance-services .accordion-group-wrapper .accordion-group .accordion>details>div>ul li::after{
+    display: none;
 }
 .section.insurance-services .accordion-group-wrapper .accordion-group .accordion>details>div>ul li{
     padding: 0;
