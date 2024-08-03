@@ -9,24 +9,18 @@
     padding-bottom: 8px;
 }
 
-.section.fees-charges-wrapper .default-content-wrapper p {
-    color: #666;
-    display: block;
+.section.fees-charges-wrapper .default-content-wrapper p,
+.section.fees-charges-wrapper .default-content-wrapper p>em {
+    color: var(--black);
     font-family: 'Nunito-Regular', sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 400;
     line-height: 28px;
     padding-bottom: 8px;
 }
 
-.section.fees-charges-wrapper .default-content-wrapper p {
-    color: var(--black);
-    display: block;
-    font-family: 'Nunito-Regular', sans-serif;
-    font-size: 1.125rem;
-    font-weight: 400;
-    line-height: 28px;
-    padding-bottom: 0;
+.section.fees-charges-wrapper .default-content-wrapper p>em {
+    line-height: 24px;
 }
 
 .section.fees-charges-wrapper .default-content-wrapper p>strong {
@@ -35,6 +29,11 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 24px;
+}
+
+.section.fees-charges-wrapper .default-content-wrapper p>a {
+    color: var(--orange);
+    text-decoration: none;
 }
 
 .section.fees-charges-wrapper .code-wrapper .code>div>table {
@@ -129,6 +128,11 @@
 }
 
 /* table with image  */
+.section.fees-charges-wrapper.two-col-table .code-wrapper .code>div>table>tbody>tr>th,
+.section.fees-charges-wrapper.two-col-table .code-wrapper .code>div>table>tbody>tr>td {
+    width: 50%;
+}
+
 .section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>th,
 .section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>td {
     width: 33.33%;
@@ -179,12 +183,6 @@
         padding-bottom: 4px;
     }
 
-    .section.fees-charges-wrapper .default-content-wrapper p {
-        font-size: 0.875rem;
-        line-height: 20px;
-        padding-bottom: 4px;
-    }
-
     .section.fees-charges-wrapper .code-wrapper .code>div>table {
         margin-top: 8px;
     }
@@ -205,9 +203,11 @@
     }
 
     .section.fees-charges-wrapper .default-content-wrapper p,
+    .section.fees-charges-wrapper .default-content-wrapper p>em,
     .section.fees-charges-wrapper .default-content-wrapper p>strong {
         font-size: 0.875rem;
         line-height: 20px;
+        padding-bottom: 4px;
     }
 
     .section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>td>p>img {

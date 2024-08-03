@@ -402,7 +402,8 @@
   bottom: 20%;
 }
 
-.banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
+.banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .carousel .panel-container .teaser .foreground,
+.banner-carousel-wrapper.personal-loan-sub-page-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
   width: 72%;
 }
 
@@ -410,7 +411,8 @@
   right: 20px;
 }
 
-.section.banner-carousel-wrapper.business-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+.section.banner-carousel-wrapper.business-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
+.section.banner-carousel-wrapper.personal-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
   right: 140px;
 }
 
@@ -454,7 +456,8 @@
   }
 
   .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser .foreground,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five>.background .foreground {
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five>.background .foreground ,
+  .banner-carousel-wrapper.personal-loan-sub-page-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
     width: 100%;
     min-height: 450px;
     padding: 0 16px;
@@ -562,7 +565,8 @@
 
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
   .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
-  .section.banner-carousel-wrapper.business-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+  .section.banner-carousel-wrapper.business-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
+  .section.banner-carousel-wrapper.personal-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
     right: 16px;
   }
 
@@ -698,7 +702,8 @@
   }
 
   .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser .foreground,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five>.background .foreground {
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five>.background .foreground,
+  .banner-carousel-wrapper.personal-loan-sub-page-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
     width: 100%;
     min-height: 450px;
     padding: 0 16px;
@@ -805,7 +810,8 @@
   }
 
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
-  .section.banner-carousel-wrapper.business-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+  .section.banner-carousel-wrapper.business-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
+  .section.banner-carousel-wrapper.personal-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
     right: 16px;
   }
 
@@ -997,7 +1003,8 @@
     min-height: 627px;
   } 
   .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
-  .section.banner-carousel-wrapper.business-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+  .section.banner-carousel-wrapper.business-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
+  .section.banner-carousel-wrapper.personal-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
     right: 120px;
   }
 }
