@@ -445,257 +445,7 @@
   }
 }
 
-@media screen and (max-width:767px) {
-  .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser {
-    min-height: 450px;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background {
-    padding: 0;
-    background-size: 100% 100%;
-  }
-
-  .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser .foreground,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five>.background .foreground ,
-  .banner-carousel-wrapper.personal-loan-sub-page-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
-    width: 100%;
-    min-height: 450px;
-    padding: 0 16px;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .title>h2,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .title>h1,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .eyebrow,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five .background .foreground .text .title>h3,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five .background .foreground .text .title>h1,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five .background .foreground .text .eyebrow,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six .background .foreground .text .title>h3,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six .background .foreground .text .title>h1,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six .background .foreground .text .eyebrow,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-seven .background .foreground .text .title>h3,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-seven .background .foreground .text .title>h1,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-seven .background .foreground .text .eyebrow,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>h2,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>h2>strong {
-    font-size: 1.5rem;
-    line-height: 32px;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five>.background .foreground .text .long-description>p,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five>.background .foreground .text .long-description>p>em,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five>.background .foreground .text .long-description>p>strong,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>p,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-one>.background .foreground .text .long-description>p,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-seven>.background .foreground .text .long-description>p,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.--skyblue>.background .foreground .text .long-description>p {
-    font-size: .875rem;
-    line-height: 20px;
-  }
-
-  .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser .foreground .long-description {
-    margin-top: 12px;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .cta>a,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li>p>a {
-    font-size: .875rem;
-    line-height: 17px;
-    padding: 14px 16px;
-    margin: 0;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .cta {
-    margin-top: 24px;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description {
-    margin-right: 0;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li {
-    align-items: start;
-    gap: 20px;
-    flex-direction: column;
-    margin-top: 24px;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li>ul>li {
-    font-size: .75rem;
-    line-height: 16px;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li>ul>li>a {
-    font-size: .875rem;
-    line-height: 20px;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text {
-    padding-top: 40px;
-  }
-
-  .section.banner-carousel-wrapper.breadcrumb-container .carousel-wrapper .panel-container .teaser.block>.background .foreground .text {
-    padding-top: 64px;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .carousel.block .button-container {
-    left: 12px;
-    /* bottom: 40px; */
-    gap: 8px;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .carousel.block .button-container>button {
-    height: 5px;
-    width: 5px;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .carousel.block .button-container>button.selected {
-    width: 13px;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-two>.background .foreground .text .eyebrow {
-    font-size: .875rem;
-    line-height: 16px;
-    margin-bottom: 12px;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
-    height: 170px;
-    width: 200px;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
-  .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
-  .section.banner-carousel-wrapper.business-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
-  .section.banner-carousel-wrapper.personal-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
-    right: 16px;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-two>.background .front-picture {
-    bottom: 0;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-seven>.background .foreground .cta-image-wrapper {
-    gap: 12px;
-    margin-top: 24px;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-seven>.background .foreground .text .cta-image-wrapper .cta-image>a>picture>img {
-    height: 30px;
-    width: 100px;
-    border-radius: 2px;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-one>.background .foreground .text .long-description>p {
-    margin-top: 20px;
-  }
-
-  .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.teaser-block-two .foreground,
-  .banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
-    width: 100%;
-  }
-
-  .section.banner-carousel-wrapper.rm-apply-btn-in-mob .carousel-wrapper .teaser.teaser-block-six>.background .foreground .text .short-description>ul>li>p {
-    display: none;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .text .cta-image-wrapper {
-    margin-top: 12px;
-    column-gap: 10px;
-    align-items: flex-start;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .text .cta-image-wrapper .img-with-text-wrap {
-    max-width: 80px;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .text .cta-image-wrapper .img-with-text-wrap .cta-image>a img {
-    width: 40px;
-    height: 40px;
-    display: block;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .text .cta-image-wrapper .img-with-text-wrap p {
-    font-size: 0.875rem;
-    line-height: 20px;
-    padding-top: 4px;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner>.background .front-picture img {
-    width: 240px;
-    height: 200px;
-  }
-
-  .banner-carousel-wrapper.careers-page-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
-    padding-top: unset;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>p {
-    margin-top: 12px;
-  }
-
-  .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .carousel .panel-container .teaser {
-    min-height: 450px;
-  }
-
-  .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
-    height: 154px;
-    width: 100%;
-  }
-
-  .section.banner-carousel-wrapper.cities-page-align-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li {
-    margin-top: 36px;
-  }
-  .section.banner-carousel-wrapper.cities-page-align-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
-    bottom: 0;
-  }
-  .section.banner-carousel-wrapper.cities-page-align-banner .carousel-wrapper .carousel .panel-container .teaser {
-    min-height: 400px;
-  }
-  .section.banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>p>br {
-    display: none;
-  }
-  .section.banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description {
-    margin-right: 10px;
-  }
-  .section.banner-carousel-wrapper.self-employed-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
-    right: 10px;
-  }
-  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>h1,
-  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>p {
-    display: block;
-  }
-
-  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>h1 {
-    color: var(--black);
-    font-family: "Nunito-Extrabold", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 800;
-    line-height: 32px;
-    margin: unset;
-  }
-  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>p {
-    color: var(--gradient-gray);
-    font-family: "Nunito-Regular", sans-serif;
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 20px;
-    margin-top: 12px;
-  }
-  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .title>h1,
-  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .eyebrow,
-  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>p {
-    display: none;
-  }
-  .banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .carousel .panel-container .teaser .foreground .long-description {
-    margin-top: 0;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser {
-    min-height: 440px;
-  }
-
+@media screen and (max-width:1024px) {
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background {
     padding: 0;
     background-size: 100% 100%;
@@ -785,7 +535,6 @@
 
   .section.banner-carousel-wrapper .carousel-wrapper .carousel.block .button-container {
     left: 12px;
-    /* bottom: 40px; */
     gap: 8px;
   }
 
@@ -834,10 +583,6 @@
     margin-top: 20px;
   }
 
-  .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.teaser-block-two .foreground {
-    width: 50%;
-  }
-
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .text .cta-image-wrapper {
     margin-top: 12px;
     column-gap: 10px;
@@ -869,6 +614,107 @@
     padding-top: unset;
   }
 
+  .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
+    height: 154px;
+  }
+
+  .section.banner-carousel-wrapper.cities-page-align-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li {
+    margin-top: 36px;
+  }
+  .section.banner-carousel-wrapper.cities-page-align-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+    bottom: 0;
+  }
+  .section.banner-carousel-wrapper.cities-page-align-banner .carousel-wrapper .carousel .panel-container .teaser {
+    min-height: 400px;
+  }
+  .section.banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>p>br {
+    display: none;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser {
+    min-height: 450px;
+  }
+
+  .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+    right: 16px;
+  }
+
+  .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.teaser-block-two .foreground,
+  .banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
+    width: 100%;
+  }
+
+  .section.banner-carousel-wrapper.rm-apply-btn-in-mob .carousel-wrapper .teaser.teaser-block-six>.background .foreground .text .short-description>ul>li>p {
+    display: none;
+  }
+
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>p {
+    margin-top: 12px;
+  }
+
+  .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .carousel .panel-container .teaser {
+    min-height: 450px;
+  }
+
+  .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
+    width: 100%;
+  }
+
+  .section.banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description {
+    margin-right: 10px;
+  }
+  .section.banner-carousel-wrapper.self-employed-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+    right: 10px;
+  }
+  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>h1,
+  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>p {
+    display: block;
+  }
+
+  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>h1 {
+    color: var(--black);
+    font-family: "Nunito-Extrabold", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 32px;
+    margin: unset;
+  }
+  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>p {
+    color: var(--gradient-gray);
+    font-family: "Nunito-Regular", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 20px;
+    margin-top: 12px;
+  }
+  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .title>h1,
+  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .eyebrow,
+  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>p {
+    display: none;
+  }
+  .banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .carousel .panel-container .teaser .foreground .long-description {
+    margin-top: 0;
+  }
+  .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser .foreground .long-description>p {
+      white-space: normal;
+  }
+
+  .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser .foreground .long-description>p>br {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser {
+    min-height: 440px;
+  }
+
+  .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.teaser-block-two .foreground {
+    width: 50%;
+  }
+
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>p {
     margin-top: 20px;
   }
@@ -885,41 +731,13 @@
   .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
     right: 60px;
   }
-  .section.banner-carousel-wrapper.cities-page-align-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li {
-    margin-top: 36px;
-  }
-  .section.banner-carousel-wrapper.cities-page-align-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
-    bottom: 0;
-  }
-  .section.banner-carousel-wrapper.cities-page-align-banner .carousel-wrapper .carousel .panel-container .teaser {
-    min-height: 400px;
-  }
-  .section.banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>p>br {
-    display: none;
-  }
   .banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
     width: 53%;
   }
   .section.banner-carousel-wrapper.self-employed-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
     right: 10px;
-    }
-}
-
-@media screen and (min-width:1025px) and (max-width: 1300px) {
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five>.background .foreground {
-    width: 52%;
-  }
-  .banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
-    width: 85%;
   }
 }
-
-/* @media screen and (min-width:768px) and (max-width:1024px) {
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background {
-    padding: 0 16px;
-    background-color: red;
-  }
-} */
 
 /* homepage top banner carousel css end */
 
@@ -940,6 +758,13 @@
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1300px) {
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five>.background .foreground {
+    width: 52%;
+  }
+
+  .banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
+    width: 85%;
+  }
 
   .section.banner-scale-img .carousel-wrapper .carousel .panel-container .teaser {
     min-height: 443px;
