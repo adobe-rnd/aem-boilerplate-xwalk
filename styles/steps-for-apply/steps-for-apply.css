@@ -8,7 +8,8 @@
     margin-bottom: 16px;
 }
 .section.steps-for-apply .default-content-wrapper >p,
-.section.steps-for-apply .default-content-wrapper >h5{
+.section.steps-for-apply .default-content-wrapper >h5,
+.section.steps-for-apply .default-content-wrapper >h4{
     color: #000;
     display: block;
     font-family: 'Nunito-Regular', sans-serif;
@@ -27,7 +28,8 @@
     line-height: 24px;
     min-width: 53px;
 }
-.section.steps-for-apply .default-content-wrapper >h5>strong {
+.section.steps-for-apply .default-content-wrapper >h5>strong,
+.section.steps-for-apply .default-content-wrapper >h4>strong {
     font-style: normal;
     color: #000;
     font-family: 'Nunito-Bold',sans-serif;
@@ -36,10 +38,31 @@
     line-height: 24px;
 }
 
+.section.steps-for-apply .default-content-wrapper >h4,
+.section.steps-for-apply .default-content-wrapper >h4>strong {
+    font-size: 1.125rem;
+}
+
+.section.steps-for-apply-black .default-content-wrapper >p >strong {
+    color: var(--black)
+}
+
 @media screen and (max-width: 767px) {
     .section.steps-for-apply .default-content-wrapper >h2{
         font-size: 1.125rem;
         line-height: 27px;
+    }
+    .section.steps-for-apply .default-content-wrapper >h4,
+    .section.steps-for-apply .default-content-wrapper >h4>strong {
+        font-size: 0.875rem;
+        line-height: 20px;
+    }
+    .section.steps-for-apply.steps-for-apply-black .default-content-wrapper >p {
+        padding-left: unset;
+    }
+    .section.steps-for-apply.steps-for-apply-black .default-content-wrapper >p >strong {
+        position: unset;
+        display: block
     }
 }
 
