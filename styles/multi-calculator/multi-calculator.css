@@ -8,8 +8,9 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
-    margin-top: 35px;
+    padding-top: 70px;
     padding-bottom: 40px;
+    min-height: 260px;
 }
 
 .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .title h2,
@@ -17,19 +18,19 @@
 .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .eyebrow {
     color: var(--black);
     display: inline-block;
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2.5rem;
     font-weight: 800;
     line-height: 60px;
-    margin-bottom: 16px;
 }
 
 .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .long-description p {
     color: #666;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 32px;
+    margin-top: 16px;
 }
 
 .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .foreground {
@@ -41,6 +42,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .front-picture picture>img {
@@ -48,48 +50,35 @@
     width: 124px;
 }
 
-@media screen and (max-width: 767px) {
-    .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .long-description p {
-        font-size: 0.875rem;
-        line-height: 20px;
-    }
-
+@media screen and (max-width:1024px) {
     .section.multi-calculator-wrapper .teaser-wrapper .teaser .background img {
         display: none;
     }
+
     .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .title h2,
     .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .title h1,
     .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .eyebrow {
         font-size: 1.5rem;
         line-height: 32px;
-        margin-bottom: 8px;
     }
+
     .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .long-description p {
         display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .long-description p {
+        font-size: 0.875rem;
+        line-height: 20px;
+        margin-top: 8px;
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .section.multi-calculator-wrapper .teaser-wrapper .teaser .background {
         align-items: center;
-        padding-top: 24px;
-        margin-top: 0;
-    }
-
-    .section.multi-calculator-wrapper .teaser-wrapper .teaser .background img {
-        display: none;
-    }
-
-    .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .title h2,
-    .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .title h1,
-    .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .eyebrow {
-        font-size: 1.5rem;
-        line-height: 32px;
-        margin-bottom: 8px;
-    }
-
-    .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .long-description p {
-        display: none;
+        padding-top: 55px;
     }
 }
 
