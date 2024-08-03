@@ -697,13 +697,13 @@
   .banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .carousel .panel-container .teaser .foreground .long-description {
     margin-top: 0;
   }
-  .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser .foreground .long-description>p {
+  /* .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser .foreground .long-description>p {
       white-space: normal;
   }
 
   .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser .foreground .long-description>p>br {
     display: none;
-  }
+  } */
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
