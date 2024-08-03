@@ -131,17 +131,52 @@
     line-height: 24px;
     text-decoration: none;
 }
-
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div h2{
+    color: rgba(0, 0, 0, .871);
+    display: block;
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 24px;
+    margin-bottom: 8px;
+    margin-top: 1pc;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div >p >strong >em{
+    color: rgba(0, 0, 0, .871);
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 24px;
+    font-style: normal;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div  >h3{
+    color: rgba(0, 0, 0, .871);
+    display: block;
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 24px;
+    padding-top: 16px;
+}
 .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div ul {
     list-style: unset;
-    margin-left: 15px;
+    margin-left: 16px;
 }
-
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div ul >li{
+    color: rgba(0, 0, 0, .871);
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    padding-bottom: 8px;
+}
 .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p>strong {
     color: rgba(0, 0, 0, .871);
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1rem;
     line-height: 24px;
+    display: contents;
+
 }
 
 @media screen and (min-width:768px) and (max-width:1024px) {
@@ -244,11 +279,15 @@
     .section.co-lending-partnership-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container {
         grid-template-columns: 1fr;
     }
+    .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text{
+        padding: 46px 24px 1pc;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .section.co-lending-partnership-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+   
 }
 /* co-lending partnership tab css start */
