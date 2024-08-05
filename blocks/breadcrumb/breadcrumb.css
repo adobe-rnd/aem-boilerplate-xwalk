@@ -73,8 +73,12 @@
     }
 }
 @media screen and (max-width:767px) {
-    .section.breadcrumb-handle.breadcrumb-handle-mob .breadcrumb-wrapper .breadcrumb-separator {
-        padding: 0 6px;
+    .section.breadcrumb-handle.breadcrumb-handle-mob .breadcrumb-wrapper .breadcrumb nav {
+        overflow-x: auto;
+        padding-bottom: 3px;
+    }
+    .section.breadcrumb-handle > .breadcrumb-wrapper > .breadcrumb.block > nav > a{
+        white-space: nowrap;
     }
 }
 @media screen and (min-width: 1025px) and (max-width: 1300px){

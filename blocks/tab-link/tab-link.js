@@ -2,6 +2,9 @@ import { createButton, createCarousle, getProps, targetObject } from "../../scri
 import Glider from "../carousel/glider.min.js";
 
 export default function decorate(block) {
+
+    const isDesktop = window.matchMedia('(min-width: 1025px)');
+    const isTab = window.matchMedia('(max-width: 1024px)');
     //console.log("tab link block");
     const [, classes, prev, next , configData] = getProps(block, {
         picture: true
@@ -39,6 +42,13 @@ export default function decorate(block) {
             btnContainer.append(prevButton);
             btnContainer.append(nextButton);
             const container = block.querySelector("ul");
+            container?.querySelectorAll('li')?.forEach(function (eachLi) {
+                const eachLiText = eachLi.textContent.trim();
+                if(eachLiText.includes("$") && isDesktop.matches){
+                    eachLi.querySelector('a').innerText = eachLiText.split("$")[0]?.trim();
+                }
+            })
+
             div.append(container);
             div.append(btnContainer);
             block.append(div);
@@ -70,6 +80,14 @@ export default function decorate(block) {
             </div>`
     block.insertBefore(div, block.children[0]);
     const model = block.children[1];
+    model?.querySelectorAll('li')?.forEach(function (eachLi) {
+        const eachLiText = eachLi.textContent.trim();
+        if(eachLiText.includes("$") && isTab.matches){
+            eachLi.querySelector('a').innerText = eachLiText.split("$")[1]?.trim();
+        }else if(eachLiText.includes("$") && isDesktop.matches){
+            eachLi.querySelector('a').innerText = eachLiText.split("$")[0]?.trim();
+        }
+    })
     model.classList.add("compony-details");
     div.querySelector(".active-tab-name").addEventListener('click', function (e) {
         // if (e.currentTarget.classList) {
