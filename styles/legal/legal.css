@@ -3,6 +3,7 @@
     margin-top: 40px;
     padding: 0;
     align-items: center;
+    min-height: unset;
 }
 
 .section.legal-banner-wrapper .teaser-wrapper .teaser .background .foreground {
@@ -14,7 +15,7 @@
     justify-content: flex-end;
 }
 
-.section.legal-banner-wrapper .teaser-wrapper .teaser .background .foreground .text .title h2 {
+.section.legal-banner-wrapper .teaser-wrapper .teaser .background .foreground .text .title h1 {
     color: #333;
     font-family: Nunito-Extrabold, sans-serif;
     font-size: 3rem;
@@ -33,6 +34,11 @@
 
 .section.company-details-wrapper.legal-banner-wrapper .tab-link-wrapper .tab-link.block>div>div>ul {
     gap: 16px;
+}
+
+.section..multi-calculator-wrapper.company-details-wrapper.legal-banner-wrapper .tab-link-wrapper .tab-link .compony-details div ul li a{
+    color: #333;
+    font-family: Nunito-Regular, sans-serif;
 }
 
 .section.company-details-wrapper.legal-banner-wrapper .tab-link-wrapper .tab-link .compony-details div ul li strong a::after,
@@ -54,8 +60,8 @@
 @media screen and (max-width: 1024px) {
     .section.legal-banner-wrapper .teaser-wrapper .teaser .background {
         margin: 0;
-        padding-bottom: 28px;
-        padding-top: 32.8px;
+        padding-bottom: 28.8px;
+        padding-top: 32px;
         align-items: flex-end;
         gap: 30px;
     }
@@ -72,7 +78,7 @@
         width: 52px;
     }
 
-    .section.legal-banner-wrapper .teaser-wrapper .teaser .background .foreground .text .title h2 {
+    .section.legal-banner-wrapper .teaser-wrapper .teaser .background .foreground .text .title h1 {
         font-size: 1.5rem;
         line-height: 36px;
     }
@@ -112,6 +118,17 @@
     .section.company-details-wrapper.legal-banner-wrapper .tab-link-wrapper .tab-link .compony-details div ul li strong a::after,
     .section.company-details-wrapper.legal-banner-wrapper .tab-link-wrapper .tab-link .compony-details div ul li a::after {
         content: "";
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .section.legal-banner-wrapper .teaser-wrapper .teaser .background {
+        padding-bottom: 26px;
+        padding-top: 25.4px;
+    }
+
+    .section.company-details-wrapper.legal-banner-wrapper .breadcrumb-wrapper .breadcrumb {
+        padding-top: 10px;
     }
 }
 /* legal banner css end */
