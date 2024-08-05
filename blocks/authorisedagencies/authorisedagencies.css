@@ -2,6 +2,12 @@
 .section.authorised-agencies-banner .teaser-wrapper .teaser .background {   
     padding-bottom: 0;
     margin-top: 66.4px;
+    min-height: unset;
+    padding: 0;
+}
+
+.section.authorised-agencies-banner .teaser-wrapper .teaser .background .front-picture {
+    align-items: flex-start;
 }
 
 .section.authorised-agencies-banner .teaser-wrapper .teaser .background .foreground .text .long-description .button-container a{
@@ -74,6 +80,9 @@
         font-weight: 800;
         line-height: 60px;
         margin-bottom: 16px;
+    }
+    .section.authorised-agencies-banner .teaser-wrapper .teaser .background .foreground .text .long-description .button-container {
+        margin: 0;
     }
 }
 
