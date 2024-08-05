@@ -1,19 +1,20 @@
 /* media banner css start */
 .section.multi-calculator-wrapper.media-banner .teaser-wrapper .teaser .background {
-    margin-top: 67.4px;
+    min-height: unset;
+    padding-top: 67px;
 }
 
 @media screen and (min-width:768px) and (max-width:1024px) {
     .section.multi-calculator-wrapper.media-banner .teaser-wrapper .teaser .background {
         padding: 0;
-        margin-top: 57px;
-        margin-bottom: 11px;
+        margin-top: 60px;
+        margin-bottom: 8px;
     }
 }
 
 @media screen and (max-width:1024px) {
     .section.multi-calculator-wrapper.media-banner .teaser-wrapper .teaser .background {
-        padding-bottom: 14px;
+        padding-bottom: 22px;
     }
 }
 
