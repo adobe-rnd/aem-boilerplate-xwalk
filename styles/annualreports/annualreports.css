@@ -124,7 +124,12 @@
 .section.offer-documents-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .offer-documents-wrapper .offer-documents .richtext .cmp-text{
    padding: 0;
    box-shadow: unset;
+   /* background-color: unset; */
 }
+.section.offer-documents-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .offer-documents-wrapper .offer-documents .richtext .cmp-text:hover{
+   background-color: unset;
+   box-shadow: unset;
+ }
 
 .section.offer-documents-wrapper .default-content-wrapper ul>li>a::after,
 .section.offer-documents-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .offer-documents-wrapper .offer-documents .richtext .cmp-text >p::after {
@@ -147,7 +152,6 @@
 /* offer documents end */
 
 /* Modal start */
-
 .section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText {
     max-width: 60pc;
     position: relative;

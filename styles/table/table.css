@@ -338,10 +338,12 @@
     padding: 8px;
 }
 
-.section.csr-commitee-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(odd) {
+.section.tr-odd-greycolor .code-wrapper .code>div>table>tbody>tr:nth-child(odd) {
     background-color: var(--lightgrey);
 }
-
+.section.tr-even-greycolor .code-wrapper .code>div>table>tbody>tr:nth-child(even){
+    background-color: var(--lightgrey);
+}
 /* csr committee table end */
 
 

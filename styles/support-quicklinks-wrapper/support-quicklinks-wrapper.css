@@ -1,0 +1,39 @@
+.section.support-quicklinks-wrapper .default-content-wrapper h1{
+    color: #333;
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 5pc;
+    margin-bottom: 40px;
+    margin-top: 16px;
+    position: relative;
+    text-align: center;
+}
+.section.support-quicklinks-wrapper .default-content-wrapper h1::after{
+    background-color: #da4e34;
+    bottom: 0;
+    content: "";
+    height: 3px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 100px;
+}
+.section.support-quicklinks-wrapper .accordion-group-wrapper {
+    border-radius: 12px;
+    box-shadow: 0 8px 24px -6px rgba(0, 0, 0, .08), 0 0 1px rgba(0, 0, 0, .4);
+    padding: 8px 24px;
+}
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group{
+    padding: 0;
+    margin: 0;
+}
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion{
+    border-bottom: 1px dashed #e6e6e6;
+    padding: 24px 0;
+}
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details,
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details summary{
+    margin: 0;
+    padding: 0;
+}

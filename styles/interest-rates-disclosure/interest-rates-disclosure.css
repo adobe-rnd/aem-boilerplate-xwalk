@@ -74,6 +74,7 @@
 .section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>summary.active {
     background: var(--orange);
     color: var(--background-color);
+    border-radius: unset;
 }
 
 .section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>summary.active::after {
@@ -127,14 +128,21 @@
     color: var(--text-color);
     display: block;
 }
-
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li>ul>li>a sub{
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem; 
+}
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li>ul>li>a sub:first-child{
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem; 
+}
 .section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li>ul>li>a:hover{
     text-decoration: none;
 }
 
 .section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li::after {
-    content: "";
-    background-image: url('/content/dam/piramalfinance/company/stakeholders/pdf-icon.png');
+    content: "\eadf";
+    font-family: 'icomoon' !important;
     position: absolute;
     right: 24px;
     top: 35%;
@@ -143,6 +151,9 @@
     background-size: contain;
     background-repeat: no-repeat;
     color: #333;
+}
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li:hover::after{
+    color: var(--orange);
 }
 .section.stakeholder-disclosures .default-content-wrapper h2{
     margin-top: 16px;

@@ -53,7 +53,15 @@
     font-weight: 400;
     line-height: 22px;
 }
-
+.section.grievance-redressal-levels .columns-wrapper .columns>div>div>p>a sub{
+    color: #f26841;
+    cursor: pointer;
+    font-family: Nunito-Regular, sans-serif;
+} 
+.section.grievance-redressal-levels .columns-wrapper .columns>div>div>p>a sub:hover,
+.section.grievance-redressal-levels .columns-wrapper .columns>div>div>p>a:hover{
+    text-decoration: none;
+}
 .section.grievance-redressal-levels .default-content-wrapper p {
     color: #000;
     font-family: Nunito-Regular, sans-serif;
@@ -105,16 +113,19 @@
 }
 
 .section.grivience-text-review .default-content-wrapper p   {
-
-color: #000;
-font-family: Nunito-Regular, sans-serif;
-font-size: 1rem;
-font-weight: 400;
-line-height: 22px;
-margin-top: 16px;
+    color: #000;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 22px;
+    margin-top: 16px;
 
 }
-
+.section.grivience-text-review .default-content-wrapper p strong{
+    color: #000;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+}
 @media screen and (max-width:767px) {
     .section.grievance-redressal-levels .columns-wrapper .columns{
         grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -219,12 +230,33 @@ margin-top: -16px;
     line-height: 22px;
     margin-top: 16px;
 }
+.section.mld-valuation p a sub{
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+}
 .section.mld-valuation p a{
     color: var(--orange)
 }
 
 .section.insurance-services .accordion-group-wrapper .accordion-group .accordion>details>summary>div>p a{
     color: var(--orange);
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+}
+.section.insurance-services .accordion-group-wrapper .accordion-group .accordion>details>summary>div>p a:hover{
+    text-decoration: none;
+}
+.section.insurance-services .accordion-group-wrapper .accordion-group .accordion>details>summary >div{
+    width: 96.5%;
+}
+.section.insurance-services .accordion-group-wrapper .accordion-group .accordion>details>summary::after{
+    right: 75px;
+}
+.section.insurance-services .accordion-group-wrapper .accordion-group .accordion>details>summary>div>p a sub{
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
 }
 .section.insurance-services .accordion-group-wrapper .accordion-group .accordion>details>summary.active>div>p a{
     color: var(--white);
@@ -246,4 +278,5 @@ margin-top: -16px;
     font-weight: 400;
     line-height: 24px;
     padding-left: 5px;
+    cursor: auto;
 }
