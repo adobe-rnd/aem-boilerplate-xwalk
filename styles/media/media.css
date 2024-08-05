@@ -1,23 +1,54 @@
+/* media banner css start */
+.section.multi-calculator-wrapper.media-banner .teaser-wrapper .teaser .background {
+    min-height: unset;
+    padding-top: 67px;
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+    .section.multi-calculator-wrapper.media-banner .teaser-wrapper .teaser .background {
+        padding: 0;
+        margin-top: 60px;
+        margin-bottom: 8px;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .section.multi-calculator-wrapper.media-banner .teaser-wrapper .teaser .background {
+        padding-bottom: 22px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .section.multi-calculator-wrapper.media-banner .teaser-wrapper .teaser .background {
+        flex-direction: column;
+        margin: 0;
+        padding-top: 61.4px;
+    }
+}
+/* media banner css end */
+
 .section.media-coverage-wrapper .tab-link-wrapper .tab-link ul li a{
+    background-color: #fff;
+    border: 1px solid #333;
     border-radius: 9999px;
     cursor: pointer;
     display: block;
     margin-right: 4pc;
     padding: 8px 24px;
     width: fit-content;
-    background-color: #365069;
-    border: 1px solid #365069;
+    color: #000;
     font-family: Nunito-Semibold, sans-serif;
-    font-size: 1pc;
+    font-size: 1rem;
     font-weight: 600;
     line-height: 24px;
-    color: #fff;
     text-decoration: none;
 }
-.section.media-coverage-wrapper .tab-link-wrapper .tab-link ul li:nth-child(2) a{
-    background-color: #fff;
-    color: #333;
+.section.media-coverage-wrapper .tab-link-wrapper .tab-link ul li strong a{
+    background-color: #365069;
+    border: 1px solid #365069;
+    color: #fff;
 }
+
 .section.media-coverage-wrapper .tab-link-wrapper .tab-link ul{
     display: flex;
     margin-bottom: 24px;
@@ -36,6 +67,11 @@
     top: 20%;
     width: 1px;
 }
+
+.section.media-coverage-wrapper .tab-link-wrapper .tab-link ul li:nth-child(2):after{
+    content: unset;
+}
+
 /* media coverage and press conference tab and cards component */
 
 .section.media-cards-wrapper .carousel-inner{
@@ -43,27 +79,27 @@
     flex-wrap: wrap;
     padding-left: 0;
     list-style: none;
-    border-bottom: 2px solid #e5e7eb;
-    gap: 1pc;
-    margin-bottom: 3pc;
+    border-bottom: 2px solid var(--solitude);
+    gap: 16px;
+    margin-bottom: 48px;
     width: fit-content;
 }
     .section.media-cards-wrapper .carousel-item{
-    color: #000;
+    color: var(--black);
     font-family: Nunito-Regular, sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
-    line-height: 2pc;
+    line-height: 32px;
     margin-bottom: -1px;
     padding: 0 0 9px;
 }
 .section.media-cards-wrapper .carousel-item.active{
-    border-bottom: 2px solid #f26841;
-    color: #f26841;
+    border-bottom: 2px solid var(--orange);
+    color: var(--orange);
     font-family: Nunito-Extrabold, sans-serif;
     font-size: 1.5rem;
     font-weight: 800;
-    line-height: 2pc;
+    line-height: 32px;
 }
 .section.media-cards-wrapper .panel-container{
     display: grid;
@@ -80,19 +116,19 @@
     padding: 8px 0;
 }
 .section.media-cards-wrapper .long-description ul li{
-    color: #666;
+    color: var(--gradient-gray);
     font-family: Nunito-Semibold, sans-serif;
     font-size: 0.875rem;
     line-height: 20px;
 }
 .section.media-cards-wrapper .long-description ul li a{
-    color: #666;
+    color: var(--gradient-gray);
     font-family: Nunito-Semibold, sans-serif;
     font-size: 0.875rem;
     line-height: 20px;
 }
-.section.media-cards-wrapper .long-description ul li:nth-child(2) a{
-    color: #f26841;
+.section.media-cards-wrapper .long-description ul li:nth-child(2) a sub{
+    color: var(--orange);
     font-family: Nunito-Bold, sans-serif;
     font-size: 1rem;
     line-height: 24px;
@@ -103,35 +139,31 @@
     -webkit-line-clamp: 2;
     display: -webkit-box;
     overflow: hidden;
-    color: #000;
+    color: var(--black);
     font-family: Nunito-Regular, sans-serif;
-    font-size: 1pc;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
 }
 .section.media-cards-wrapper .panel-container .teaser{
     box-shadow: 0 5px 10px rgba(0, 0, 0, .12);
     border-radius: 16px;
+    cursor: pointer;
 }
 .section.media-cards-wrapper .foreground{
     padding: 16px;
 }
 .section.media-cards-wrapper .front-picture{   
     align-items: flex-end;
-    background-color: #365069;
-    border-radius: 1pc 1pc 0 0;
+    background-color: var(--greyishblue);
+    border-radius: 16px 16px 0 0;
     display: flex;
-    height: 6pc;
+    height: 96px;
     justify-content: center;
     width: 100%;
 }
 .section.media-cards-wrapper .front-picture picture{
     display: flex;
-}
-.section.media-cards-wrapper .tab-container-wrapper:last-child .tab-container .panel-container .teaser .background .front-picture picture img{
-    height: 44px;
-    margin-bottom: 25px;
-    width: 108px;
 }
 .section.press-release-card-wrapper .default-content-wrapper ul li:nth-child(1){
     font-size: 0.75rem;
@@ -148,8 +180,8 @@
     margin-bottom: 16px;
 }
 .section.press-release-card-wrapper .default-content-wrapper ul:hover{
-    background-color: #f26841;
-    color: #fff;
+    background-color: var(--orange);
+    color: var(--white);
 }
 .section.press-release-card-wrapper .default-content-wrapper ul li{
     font-family: Nunito-Bold, sans-serif;
@@ -157,22 +189,22 @@
 .section.press-release-card-wrapper .default-content-wrapper{
     padding-top: 48px;
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
     .section.media-cards-wrapper .panel-container{
         gap: 16px;
         grid-template-columns: 1fr;
         margin-top: 24px;
     }
     .section.media-cards-wrapper .carousel-item.active{
-        font-size: 1pc;
+        font-size: 1rem;
         line-height: 24px;
     }
     .section.media-cards-wrapper .carousel-item{
-        font-size: 1pc;
+        font-size: 1rem;
         line-height: 24px;
     }
     .section.media-cards-wrapper .carousel-inner{
-        margin: 1pc auto 24px;
+        margin: 16px auto 24px;
     }
     .section.media-coverage-wrapper .tab-link-wrapper .tab-link ul li a{
         font-size: 0.75rem;
@@ -181,6 +213,7 @@
     }
     .section.media-coverage-wrapper .tab-link-wrapper .tab-link ul li:nth-child(2) a{
         font-size: 0.75rem;
+        margin: 0;
     }
     .section.media-coverage-wrapper .tab-link-wrapper .tab-link ul{
         justify-content: center;
