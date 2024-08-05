@@ -51,10 +51,6 @@
 }
 
 @media screen and (max-width:1024px) {
-    .section.multi-calculator-wrapper .teaser-wrapper .teaser .background img {
-        display: none;
-    }
-
     .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .title h2,
     .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .title h1,
     .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .eyebrow {
@@ -62,8 +58,14 @@
         line-height: 32px;
     }
 
-    .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .long-description p {
+    .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .long-description p,
+    .section.multi-calculator-wrapper .teaser-wrapper .teaser .background img,
+    .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .front-picture {
         display: none;
+    }
+    .section.multi-calculator-wrapper .teaser-wrapper .teaser .background {
+        flex-direction: row;
+        min-height: 168px;
     }
 }
 
