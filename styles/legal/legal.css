@@ -36,7 +36,7 @@
     gap: 16px;
 }
 
-.section..multi-calculator-wrapper.company-details-wrapper.legal-banner-wrapper .tab-link-wrapper .tab-link .compony-details div ul li a{
+.section.multi-calculator-wrapper.company-details-wrapper.legal-banner-wrapper .tab-link-wrapper .tab-link .compony-details div ul li a{
     color: #333;
     font-family: Nunito-Regular, sans-serif;
 }
@@ -46,7 +46,7 @@
     content: none;
 }
 
-.section.company-details-wrapper.legal-banner-wrapper .tab-link-wrapper .tab-link.block>div>div>ul>li>strong>a {
+.section.multi-calculator-wrapper.company-details-wrapper.legal-banner-wrapper .tab-link-wrapper .tab-link .compony-details div ul li strong a{
     color: var(--swansdown);
     border: 1px solid var(--greyishblue);
 }
