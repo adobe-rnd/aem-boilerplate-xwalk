@@ -60,16 +60,18 @@
 @media screen and (max-width: 1024px) {
     .section.legal-banner-wrapper .teaser-wrapper .teaser .background {
         margin: 0;
-        padding-bottom: 28.8px;
-        padding-top: 32px;
+        padding-bottom: 27.8px;
+        padding-top: 33px;
         align-items: flex-end;
         gap: 30px;
+        flex-direction: row-reverse;
     }
 
     .section.legal-banner-wrapper .teaser-wrapper .teaser .background .front-picture {
         max-width: unset;
         width: auto;
         margin-right: 16px;
+        display: block;
     }
 
     .section.legal-banner-wrapper .teaser-wrapper .teaser .background .front-picture>picture>img {
@@ -122,6 +124,10 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px){
+    .section.multi-calculator-wrapper.legal-banner-wrapper .teaser-wrapper .teaser .background {
+        flex-direction: row-reverse;
+    }
+
     .section.legal-banner-wrapper .teaser-wrapper .teaser .background {
         padding-bottom: 26px;
         padding-top: 25.4px;
