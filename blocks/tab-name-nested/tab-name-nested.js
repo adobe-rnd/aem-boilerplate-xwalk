@@ -2,7 +2,7 @@ import { createButton, createCarousle, getProps } from "../../scripts/scripts.js
 import { generateTabName } from "../tab-name/tab-name.js";
 
 export default function decorate(block) {
-    const [parentTabName, parentTabId, child1TabName, child1TabId, child2TabName, child2TabId, prev, next, child1Type, child2Type] = getProps(block, {
+    let [parentTabName, parentTabId, child1TabName, child1TabId, child2TabName, child2TabId, prev, next, child1Type, child2Type] = getProps(block, {
         picture: true
     });
     // const names = parentTabName.split(",");
@@ -13,8 +13,8 @@ export default function decorate(block) {
     // const child2ids = child2TabId.split(",");
     const copyblock = copyElements(block);
     block.innerHTML = "";
-    const child1 = generateTabName(createBlockElement([copyblock.children[2], copyblock.children[3], "", child1Type, prev, next]))
-    const child2 = generateTabName(createBlockElement([copyblock.children[4], copyblock.children[5], "", child2Type, prev, next]))
+    let child1 = generateTabName(createBlockElement([copyblock.children[2], copyblock.children[3], "", child1Type, prev, next]))
+    let child2 = generateTabName(createBlockElement([copyblock.children[4], copyblock.children[5], "", child2Type, prev, next]))
     child1.dataset.id = ids[0];
     child2.dataset.id = ids[1];
     child1.classList.add("nested-tab-name-child", "active")
@@ -22,6 +22,13 @@ export default function decorate(block) {
     block.append(generateTabName(createBlockElement([copyblock.children[0], copyblock.children[1], "", "", "<", ">"])));
     block.append(child1);
     block.append(child2);
+
+    child1Type = "glider"
+    if(child1Type == "glider" || child2Type == "glider"){
+        child1.classList.add('glider-int');
+        child2.classList.add('glider-int');
+        createGlidder(block, prev, next);
+    }
 }
 
 function copyElements(el) {
@@ -36,4 +43,37 @@ function createBlockElement(children) {
         block.append(copyElements(child));
     })
     return block;
+}
+
+
+function createGlidder(block, prev, next) {
+  let gliderIntClass = block.querySelectorAll(".glider-int");
+
+  gliderIntClass.forEach(function (eachGliderInt, index) {
+    let gliderInt = eachGliderInt.querySelector(".carousel-inner");
+
+    const gliderPrevButton = createGliderButton(`prev-${index}`, prev?.outerHTML);
+    const gliderNextButton = createGliderButton(`next-${index}`, next?.outerHTML);
+
+    eachGliderInt.append(gliderPrevButton);
+    eachGliderInt.append(gliderNextButton);
+    let currentPrevButton = eachGliderInt.querySelector('.glider-prev-'+index+'');
+    let currentNextButton = eachGliderInt.querySelector('.glider-next-'+index+'');
+
+    new Glider(eachGliderInt.querySelector(".carousel-inner"), {
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      arrows: {
+        prev: currentPrevButton,
+        next: currentNextButton,
+      },
+    });
+  });
+}
+
+function createGliderButton(text, picture){
+    const button = document.createElement("button");
+    button.classList.add(`glider-${text}`, text);
+    button.innerHTML = (picture);
+    return button;
 }
