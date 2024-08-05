@@ -60,8 +60,8 @@
 
 .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text {
     display: block;
-    margin: 0 2pc;
-    padding: 73px 24px 1pc;
+    /* margin: 0 2pc; */
+    padding: 40px 24px 16px;
 }
 .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .popup-parent-cont{
     overflow-y: auto;
@@ -121,6 +121,7 @@
     top: 15px;
     right: 15px;
     cursor: pointer;
+    width: 20px;
 }
 
 .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p,
