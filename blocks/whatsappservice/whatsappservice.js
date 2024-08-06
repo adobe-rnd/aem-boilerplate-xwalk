@@ -5,7 +5,7 @@ export default function decorate(block) {
 }
 
 function renderWhatsAppFactory(props, block) {
-  const [frontaImage, description, buttonText, buttonHref, placholder, spantext, uppertext, submitText, tnc, checkbox] = props;
+  const [frontImage, description, buttonText, buttonHref, placeholder, spantext, uppertext, submitText, tnc, checkbox] = props;
 
   const checboxHtml =
     checkbox?.textContent.trim() === "true"
@@ -21,22 +21,20 @@ function renderWhatsAppFactory(props, block) {
       : "";
 
   const html = `<div class="whats-app-service">
-    <div class="front-image">${frontaImage.innerHTML}</div>
+    <div class="front-image">${frontImage.innerHTML}</div>
     <div class="description">${description.innerHTML}</div>
 
-    <div class="mobile-button">
-        <a href="${buttonHref.textContent.trim()}">
-            <button>${buttonText.innerHTML}</button>
-        </a>
-    </div>
+    <a href="${buttonHref.textContent.trim()}" class="mobile-button">
+        <button>${buttonText.innerHTML}</button>
+    </a>
 
     <div class="input-field">
 
         <div class="cmp-form-text">
             <label for="form-text-1975602141">${uppertext.textContent.trim()}</label>
             <span class="inptContainer"><span class="countryCode">${spantext.textContent.trim()}</span>
-                <input class="cmp-form-text__text" data-cmp-hook-form-text="input" type="text" id="form-text-1975602141"
-                    placeholder="${placholder.textContent.trim()}" name="number" spellcheck="true"
+                <input class="cmp-form-text__text" data-cmp-hook-form-text="input" type="text" maxlength="10" id="form-text-1975602141"
+                    placeholder="${placeholder.textContent.trim()}" name="number" spellcheck="true"
                     aria-describedby="form-text-1975602141-helpMessage">
             </span>
         </div>
@@ -49,7 +47,7 @@ function renderWhatsAppFactory(props, block) {
     </div>
 
     ${checboxHtml}
-    
+
 </div>`;
 
   return html;
