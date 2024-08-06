@@ -112,7 +112,6 @@
 }
 .section.media-cards-wrapper .long-description ul{
     display: flex;
-    justify-content: space-between;
     padding: 8px 0;
 }
 .section.media-cards-wrapper .long-description ul li{
@@ -127,6 +126,7 @@
     font-size: 0.875rem;
     line-height: 20px;
 }
+.section.media-cards-wrapper .long-description ul li:nth-child(3) a sub,
 .section.media-cards-wrapper .long-description ul li:nth-child(2) a sub{
     color: var(--orange);
     font-family: Nunito-Bold, sans-serif;
@@ -189,6 +189,30 @@
 .section.press-release-card-wrapper .default-content-wrapper{
     padding-top: 48px;
 }
+
+.section.media-cards-wrapper .teaser .background {
+    position: relative;
+}
+.section.media-cards-wrapper .long-description ul li:nth-child(3)>a,
+.section.media-cards-wrapper .long-description ul li:nth-child(2)>a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.section.media-cards-wrapper .long-description ul li:nth-child(3) a sub,
+.section.media-cards-wrapper .long-description ul li:nth-child(2)>a sub{
+    position: absolute;
+    bottom: 22px;
+    right: 15px;
+}
+
+.section.media-cards-wrapper .long-description ul li:nth-child(1){
+    padding-right: 3px;
+}
+
 @media screen and (max-width:767px) {
     .section.media-cards-wrapper .panel-container{
         gap: 16px;
@@ -221,4 +245,19 @@
     .section.media-coverage-wrapper .tab-link-wrapper .tab-link ul li::after{
         right: 10%;
     }
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+    .section.media-cards-wrapper .long-description ul li:nth-child(1){
+        width: 75px; 
+    }
+
+    .section.media-cards-wrapper .long-description ul li:nth-child(2) {
+        width: 68px;
+    }
+    
+    .section.media-cards-wrapper .long-description ul li:last-child a sub{
+        width: 40px;
+        line-height: 22px;
+    }    
 }
