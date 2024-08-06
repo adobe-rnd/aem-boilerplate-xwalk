@@ -2316,20 +2316,8 @@
     "fields": [
       {
         "component": "reference",
-        "name": "reference1",
-        "label": "Background Image",
-        "valueType": "string"
-      },
-      {
-        "component": "reference",
-        "label": "Mobile Front Image",
+        "label": "Front Image",
         "name": "reference2",
-        "valueType": "string"
-      },
-      {
-        "component": "reference",
-        "label": "Desktop Front Image",
-        "name": "reference3",
         "valueType": "string"
       },
       {
@@ -2382,7 +2370,7 @@
             "valueType": "string"
           },
           {
-            "component": "text",
+            "component": "richtext",
             "label": "T & C",
             "name": "text8",
             "valueType": "string"
