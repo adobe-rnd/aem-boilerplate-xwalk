@@ -2,9 +2,6 @@
     position: relative;
     max-width: 1240px;
     margin: 0 auto;
-}
-
-.section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service {
     min-height: 482px;
     padding-top: 86px;
 }
@@ -45,7 +42,7 @@
     margin-top: 24px;
     display: flex;
     align-items: center;
-    column-gap: 16px;
+    column-gap: 20px;
 }
 
 .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .input-field .cmp-form-text {
@@ -220,3 +217,17 @@
         height: 224px;
     }
 }
+
+@media screen and (min-width:1025px) and (max-width: 1300px) {
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service {
+      max-width: 81.25%;
+    }
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .front-image img {
+        width: 440px;
+        height: 371px;
+    }
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .front-image {
+        right: 4%;
+        bottom: 40px;
+    }
+  }
