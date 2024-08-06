@@ -56,12 +56,13 @@
 .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text>.cmp-text div picture>img {
     width: 206px;
     height: 86px;
+    object-fit: contain;
 }
 
 .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text {
     display: block;
-    margin: 0 2pc;
-    padding: 73px 24px 1pc;
+    /* margin: 0 2pc; */
+    padding: 40px 24px 16px;
 }
 .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .popup-parent-cont{
     overflow-y: auto;
@@ -121,10 +122,33 @@
     top: 15px;
     right: 15px;
     cursor: pointer;
+    width: 20px;
 }
-
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p, .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p em{
+    padding-top: .5rem;
+    display: block;
+    color: rgba(0, 0, 0, .871);
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    text-decoration: none;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p, .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p em sub {
+    color: rgba(0, 0, 0, .871);
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    text-decoration: none;
+}
 .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p,
 .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p a {
+    color: rgba(0, 0, 0, .871);
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    text-decoration: none;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p a sub{
     color: rgba(0, 0, 0, .871);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
@@ -140,6 +164,23 @@
     line-height: 24px;
     margin-bottom: 8px;
     margin-top: 1pc;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div h2 strong{
+    color: rgba(0, 0, 0, .871);
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 24px;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div h2 a sub{
+    color: rgba(0, 0, 0, .871);
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    text-decoration: none;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div h2 a:hover{
+  text-decoration: none;
 }
 .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div >p >strong >em{
     color: rgba(0, 0, 0, .871);

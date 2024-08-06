@@ -181,7 +181,7 @@ export default function decorate(block) {
       slideNextEventHandler();
     })
 
-    try {
+    /* try {
       document.querySelectorAll('.open-form-on-click') && document.querySelectorAll('.open-form-on-click .button-container').forEach(function (eachApplyFormClick) {
         eachApplyFormClick.addEventListener('click', async (e) => {
           statemasterGetStatesApi();
@@ -192,7 +192,7 @@ export default function decorate(block) {
       });
     } catch (error) {
       console.warn(error);
-    }
+    } */
 
     if (buttonContainer.children.length) {
       block.append(buttonContainer)

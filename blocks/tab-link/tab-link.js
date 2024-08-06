@@ -68,7 +68,10 @@ export default function decorate(block) {
         }
     }
     const heading = block.querySelector("p");
-    const activeTab = block.querySelector("strong");
+    let activeTab = block.querySelector("strong");
+    if(activeTab.textContent.trim().includes("$")) {
+        activeTab.querySelector('a').innerText = activeTab.textContent.trim().split("$")[1]?.trim();
+    }
     const div = document.createElement("div");
     // heading.remove();
     div.innerHTML = `
@@ -84,8 +87,6 @@ export default function decorate(block) {
         const eachLiText = eachLi.textContent.trim();
         if(eachLiText.includes("$") && isTab.matches){
             eachLi.querySelector('a').innerText = eachLiText.split("$")[1]?.trim();
-        }else if(eachLiText.includes("$") && isDesktop.matches){
-            eachLi.querySelector('a').innerText = eachLiText.split("$")[0]?.trim();
         }
     })
     model.classList.add("compony-details");
@@ -116,4 +117,11 @@ export default function decorate(block) {
         document.body.classList.remove("overlay-active");
         document.body.style.overflow = "auto";
     });
+
+    setTimeout(() => {
+        block.querySelector(".tab-link ul").scroll({
+            left : block.querySelector(".tab-link ul li strong").getBoundingClientRect().left-block.querySelector(".tab-link ul li").getBoundingClientRect().width-45,
+            behavior : "smooth"
+        })
+    }, 100);
 }
