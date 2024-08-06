@@ -695,7 +695,7 @@ table {
     .section.documents-required-brown.document-required-accordion-img table:nth-child(7) > tbody > tr > td:nth-last-child(2),
     .section.documents-required-brown.document-required-accordion-img table:nth-child(8) > tbody > tr > td:nth-last-child(2),
     .section.documents-required-brown.document-required-accordion-img table:nth-child(9) > tbody > tr > td:nth-last-child(2) {
-        width: 23%;
+        width: 20%;
     }
 }
 @media screen and (min-width:768px) and (max-width:1024px) {
