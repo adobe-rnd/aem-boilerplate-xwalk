@@ -2310,5 +2310,91 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "whatsappservice",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "reference1",
+        "label": "Background Image",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "label": "Mobile Front Image",
+        "name": "reference2",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "label": "Desktop Front Image",
+        "name": "reference3",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text1",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text2",
+        "label": "Mobile Button Text",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "text3",
+        "label": "Mobile Button Href",
+        "valueType": "string"
+      },
+      {
+        "component": "container",
+        "label": "Container",
+        "name": "container",
+        "valueType": "string",
+        "collapsible": false,
+        "fields": [
+          {
+            "component": "text",
+            "label": "Placholder",
+            "name": "text4",
+            "valueType": "string"
+          },
+          {
+            "component": "text",
+            "label": "Span Text",
+            "name": "text5",
+            "valueType": "string"
+          },
+          {
+            "component": "text",
+            "label": "Upper Text",
+            "name": "text6",
+            "valueType": "string"
+          },
+          {
+            "component": "text",
+            "label": "Submit Button Text",
+            "name": "text7",
+            "valueType": "string"
+          },
+          {
+            "component": "text",
+            "label": "T & C",
+            "name": "text8",
+            "valueType": "string"
+          },
+          {
+            "component": "boolean",
+            "label": "Checbox",
+            "name": "boolean",
+            "valueType": "boolean"
+          }
+        ]
+      }
+    ]
   }
 ]
