@@ -102,10 +102,13 @@
     background: var(--orange);
     border: none;
     border-radius: 5px;
-    cursor: pointer;
     padding: 16px 26px;
-    opacity: .3;
     margin: 0;
+}
+
+.section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .input-field .button.desktopButton>button:disabled {
+    opacity: .3;
+    cursor: default;
 }
 
 .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .input-field .button.desktopButton>button>span {
