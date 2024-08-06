@@ -1,7 +1,9 @@
 /* media banner css start */
 .section.multi-calculator-wrapper.media-banner .teaser-wrapper .teaser .background {
     min-height: unset;
-    padding-top: 67px;
+    align-items: center;
+    padding-top: 74px;
+    padding-bottom: 62px;
 }
 
 @media screen and (min-width:768px) and (max-width:1024px) {
