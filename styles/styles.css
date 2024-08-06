@@ -524,6 +524,9 @@ main img {
 .section.bg-violet {
   background-color: #F7F9FD;
 }
+.section.bg-green {
+  background-color: #F1FAF4;
+}
 
 /* column classes */
 @media screen and (min-width: 768px) {
