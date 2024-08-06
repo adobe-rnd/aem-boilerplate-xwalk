@@ -423,6 +423,37 @@ table {
     background-image: url('/content/dam/piramalfinance/product-page/home-loan/photo.svg');
 }
 
+.section.documents-required-brown.document-required-accordion-img table:nth-child(2) > tbody > tr> th:nth-child(3), 
+.section.documents-required-brown.document-required-accordion-img table:nth-child(2) > tbody > tr> th:nth-child(2),
+.section.documents-required-brown.document-required-accordion-img table:nth-child(3) > tbody > tr > td:last-child,
+.section.documents-required-brown.document-required-accordion-img table:nth-child(4) > tbody > tr > td:last-child,
+.section.documents-required-brown.document-required-accordion-img table:nth-child(5) > tbody > tr > td:last-child,
+.section.documents-required-brown.document-required-accordion-img table:nth-child(6) > tbody > tr > td:last-child,
+.section.documents-required-brown.document-required-accordion-img table:nth-child(7) > tbody > tr > td:last-child,
+.section.documents-required-brown.document-required-accordion-img table:nth-child(8) > tbody > tr > td:last-child,
+.section.documents-required-brown.document-required-accordion-img table:nth-child(9) > tbody > tr > td:last-child,
+.section.documents-required-brown.document-required-accordion-img table:nth-child(3) > tbody > tr > td:nth-last-child(2),
+.section.documents-required-brown.document-required-accordion-img table:nth-child(4) > tbody > tr > td:nth-last-child(2),
+.section.documents-required-brown.document-required-accordion-img table:nth-child(5) > tbody > tr > td:nth-last-child(2),
+.section.documents-required-brown.document-required-accordion-img table:nth-child(6) > tbody > tr > td:nth-last-child(2),
+.section.documents-required-brown.document-required-accordion-img table:nth-child(7) > tbody > tr > td:nth-last-child(2),
+.section.documents-required-brown.document-required-accordion-img table:nth-child(8) > tbody > tr > td:nth-last-child(2),
+.section.documents-required-brown.document-required-accordion-img table:nth-child(9) > tbody > tr > td:nth-last-child(2){
+   width: 17%;
+}
+
+.section.documents-required-brown.document-required-accordion-img table:nth-child(3) > tbody > tr > td:nth-last-child(2) > img, 
+.section.documents-required-brown.document-required-accordion-img table:nth-child(4) > tbody > tr > td:nth-last-child(2) > img, 
+.section.documents-required-brown.document-required-accordion-img table:nth-child(5) > tbody > tr > td:nth-last-child(2) > img, 
+.section.documents-required-brown.document-required-accordion-img table:nth-child(6) > tbody > tr > td:nth-last-child(2) > img, 
+.section.documents-required-brown.document-required-accordion-img table:nth-child(7) > tbody > tr > td:nth-last-child(2) > img, 
+.section.documents-required-brown.document-required-accordion-img table:nth-child(8) > tbody > tr > td:nth-last-child(2) > img, 
+.section.documents-required-brown.document-required-accordion-img table:nth-child(9) > tbody > tr > td:nth-last-child(2) > img {
+    margin-right: 20px;
+    height: 18px;
+    width: 18px;
+}
+
 @media screen and (max-width:1400px) {
     .section.documents-required-brown{
         /* padding-bottom: 72px; */
@@ -639,6 +670,33 @@ table {
     .section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion details:not(:has(p))::before {
         top: 13px;
      }
+     .section.documents-required-brown.document-required-accordion-img table:nth-child(3) > tbody > tr > td:nth-last-child(2) > img, 
+     .section.documents-required-brown.document-required-accordion-img table:nth-child(4) > tbody > tr > td:nth-last-child(2) > img, 
+     .section.documents-required-brown.document-required-accordion-img table:nth-child(5) > tbody > tr > td:nth-last-child(2) > img, 
+     .section.documents-required-brown.document-required-accordion-img table:nth-child(6) > tbody > tr > td:nth-last-child(2) > img, 
+     .section.documents-required-brown.document-required-accordion-img table:nth-child(7) > tbody > tr > td:nth-last-child(2) > img, 
+     .section.documents-required-brown.document-required-accordion-img table:nth-child(8) > tbody > tr > td:nth-last-child(2) > img, 
+     .section.documents-required-brown.document-required-accordion-img table:nth-child(9) > tbody > tr > td:nth-last-child(2) > img {
+        margin-right: 19px;
+        height: 12px;
+        width: 12px;
+    }
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(3) > tbody > tr > td:last-child,
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(4) > tbody > tr > td:last-child,
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(5) > tbody > tr > td:last-child,
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(6) > tbody > tr > td:last-child,
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(7) > tbody > tr > td:last-child,
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(8) > tbody > tr > td:last-child,
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(9) > tbody > tr > td:last-child,
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(3) > tbody > tr > td:nth-last-child(2),
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(4) > tbody > tr > td:nth-last-child(2),
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(5) > tbody > tr > td:nth-last-child(2),
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(6) > tbody > tr > td:nth-last-child(2),
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(7) > tbody > tr > td:nth-last-child(2),
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(8) > tbody > tr > td:nth-last-child(2),
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(9) > tbody > tr > td:nth-last-child(2) {
+        width: 20%;
+    }
 }
 @media screen and (min-width:768px) and (max-width:1024px) {
     .section.documents-required-brown .default-content-wrapper .button-container{     
