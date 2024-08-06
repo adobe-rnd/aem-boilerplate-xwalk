@@ -708,6 +708,7 @@ async function loadingCustomCss() {
     `${window.hlx.codeBasePath}/styles/table-whatsapp-btn/table-whatsapp-btn.css`,
     `${window.hlx.codeBasePath}/styles/financial-reports/financial-reports.css`,
     `${window.hlx.codeBasePath}/styles/support-quicklinks-wrapper/support-quicklinks-wrapper.css`,
+    `${window.hlx.codeBasePath}/styles/whatsApp-service-wrapper/whatsApp-service-wrapper.css`,
     `${window.hlx.codeBasePath}/styles/sarfaesi-wholesale/sarfaesi-wholesale.css`,
   ];
 
