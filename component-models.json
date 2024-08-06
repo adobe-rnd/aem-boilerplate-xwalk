@@ -2333,7 +2333,7 @@
         "valueType": "string"
       },
       {
-        "component": "text-input",
+        "component": "richtext",
         "name": "text1",
         "label": "Description",
         "valueType": "string"
@@ -2345,7 +2345,7 @@
         "valueType": "string"
       },
       {
-        "component": "text",
+        "component": "text-input",
         "name": "text3",
         "label": "Mobile Button Href",
         "valueType": "string"
@@ -2355,7 +2355,7 @@
         "label": "Single Input Field on Banner",
         "name": "container",
         "valueType": "string",
-        "collapsible": false,
+        "collapsible": true,
         "fields": [
           {
             "component": "text",
