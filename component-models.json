@@ -2352,7 +2352,7 @@
       },
       {
         "component": "container",
-        "label": "Container",
+        "label": "Single Input Field on Banner",
         "name": "container",
         "valueType": "string",
         "collapsible": false,
