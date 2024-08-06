@@ -712,11 +712,8 @@ async function loadingCustomCss() {
     `${window.hlx.codeBasePath}/styles/whatsApp-service-wrapper/whatsApp-service-wrapper.css`,
     `${window.hlx.codeBasePath}/styles/sarfaesi-wholesale/sarfaesi-wholesale.css`,
     `${window.hlx.codeBasePath}/styles/whatsapp-service-loan-products/whatsapp-service-loan-products.css`,
-<<<<<<< HEAD
     `${window.hlx.codeBasePath}/styles/forms-formats/forms-formats.css`,
-=======
     `${window.hlx.codeBasePath}/styles/whatsapp-service-banner/whatsapp-service-banner.css`,
->>>>>>> 8dd3703e74c55918ae6871d81abbafbe9294a8b2
   ];
 
   loadCssArray.forEach(async (eachCss) => {
