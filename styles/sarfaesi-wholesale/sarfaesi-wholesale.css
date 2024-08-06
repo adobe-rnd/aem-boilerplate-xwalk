@@ -1,0 +1,56 @@
+.section.sarfaesi-wholesale-wrapper .code-wrapper{
+    border: 1px solid #000;
+    margin: 0 auto !important;
+    padding: 30px 10px;
+    width: 90%;
+    max-width: 90% !important;
+    overflow: auto;
+    scrollbar-width: thin;
+}
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child{
+    background-color: #fa4616;
+    border-bottom: 1px solid #c5c4c4;
+}
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th{
+    text-align: center;
+    vertical-align: middle;
+    padding: 2px;
+    min-width: 21.64px;
+    color: #fff;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 0.813rem;
+}
+
+/* .section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child td strong span{
+    line-height: 19.5px;
+    text-align: center;
+    color: #fff;
+    padding: 2px;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 0.813rem;
+} */
+
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td {
+    border: 1px solid #c5c4c4;
+    /* border-bottom: unset; */
+    border-right: unset;
+    border-top: unset;
+    vertical-align: middle;
+    text-align: center;
+}
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td:last-child{
+    border-right: 1px solid #c5c4c4;
+}
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td span{
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 0.75rem;
+}
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(2){
+    min-width: 80.4px;
+}
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(3){
+    min-width: 79.28px;
+}
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(4){
+    min-width: 79.28px;
+}
