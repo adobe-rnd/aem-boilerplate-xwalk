@@ -1,0 +1,87 @@
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation  .wrapper-creation-container {
+    border-radius: 12px;
+    box-shadow: 0 8px 24px -6px rgba(0, 0, 0, .08), 0 0 1px rgba(0, 0, 0, .4);
+    padding: 24px 24px 0;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation  .wrapper-creation-container .columns-wrapper .columns{
+    padding-bottom: 24px;
+    padding-left: 75pt;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation  .wrapper-creation-container .columns-wrapper .columns div:nth-child(2){
+    margin-top: 24px;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation  .wrapper-creation-container .columns-wrapper .columns div div{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation  .wrapper-creation-container .columns-wrapper .columns div div p,
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation  .wrapper-creation-container .default-content-wrapper p{
+    color: #666;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation  .wrapper-creation-container .columns-wrapper .columns div div p>strong{
+    color: #4d4d4d;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation  .wrapper-creation-container .columns-wrapper .columns div div p>strong>a,
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation  .wrapper-creation-container .columns-wrapper .columns div div p>a{
+    color: #f26841;
+    text-decoration: none;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation  .wrapper-creation-container .columns-wrapper .columns div div p>a{
+    margin: 0;
+    padding: 0;
+    border-radius: unset;
+    background-color: unset;
+    border: unset;
+    text-align: unset;
+    color: #4d4d4d;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation  .wrapper-creation-container .default-content-wrapper p {
+    height: 100%;
+    border-style: dotted;
+    border-top: 1px dashed #e6e6e6;
+    padding: 10px 0;
+    position: relative;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation  .wrapper-creation-container .default-content-wrapper p>strong{
+    color: #000;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation  .wrapper-creation-container .default-content-wrapper p>strong::after{
+    content: "";
+    border: solid #58595b;
+    border-radius: 2px;
+    border-width: 0 2px 2px 0;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 5px;
+    position: absolute;
+    right: 4px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
