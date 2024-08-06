@@ -41,3 +41,77 @@
         width: 100%;
     }
 }
+
+/* E Auction sale Financial Start */
+
+.section.e-auction-fin-assets .accordion-group-wrapper .accordion-group .accordion details div{
+    padding: 0 !important;
+    border: unset !important ;
+}
+
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li>a sub{
+    cursor: pointer;
+    display: block;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+}
+/* E Auction sale Financial End */
+
+.section.e-auction-table .code-wrapper .code >div >table tbody tr:first-child th{
+    min-width: 107.11px;
+}
+.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(2){
+    min-width: 45.2px;
+}
+
+.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(3){
+
+    min-width: 96px;
+}
+.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(4){
+    min-width: 74.39px;
+}
+.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(5){
+    min-width: 328.24px;
+}
+.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(6){
+    min-width: 86.25px;
+}
+.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(7){
+    min-width: 86.25px;
+}
+.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(8){
+    min-width: 72.59px;
+}
+.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(9){
+    min-width: 79.31px;
+}
+.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(10){
+    min-width: 77.8px;
+}
+
+.section.e-auction-table.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(11){
+    min-width: 50.29px;
+}
+
+.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(12){
+    min-width: 36.35px;
+}
+
+.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(13){
+    min-width: 58px;
+}
+
+.section.e-auction-table.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(14){
+    min-width: 78.4px;
+}
+.section.e-auction-table.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(15){
+    min-width: 74px;
+}
+.section.e-auction-table.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(16){
+    min-width: 70px;
+}
+.section.e-auction-table.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(17){
+    min-width: 61px;
+}
