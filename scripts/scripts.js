@@ -1,4 +1,6 @@
-import { overlay } from "../blocks/applyloanform/applyloanforms.js";
+import { formOpen, overlay } from "../blocks/applyloanform/applyloanforms.js";
+import { statemasterGetStatesApi } from "../blocks/applyloanform/statemasterapi.js";
+import { validationJSFunc } from "../blocks/applyloanform/validation.js";
 import { toggleAllNavSections } from "../blocks/header/header.js";
 import { sampleRUM, loadHeader, loadFooter, decorateButtons, decorateIcons, decorateSections, decorateBlocks, decorateTemplateAndTheme, waitForLCP, loadBlocks, loadCSS, fetchPlaceholders } from "./aem.js";
 const LCP_BLOCKS = []; // add your LCP blocks to the list
@@ -706,6 +708,12 @@ async function loadingCustomCss() {
     `${window.hlx.codeBasePath}/styles/table-whatsapp-btn/table-whatsapp-btn.css`,
     `${window.hlx.codeBasePath}/styles/financial-reports/financial-reports.css`,
     `${window.hlx.codeBasePath}/styles/support-quicklinks-wrapper/support-quicklinks-wrapper.css`,
+    `${window.hlx.codeBasePath}/styles/support-contact-us/support-contact-us.css`,
+    `${window.hlx.codeBasePath}/styles/whatsApp-service-wrapper/whatsApp-service-wrapper.css`,
+    `${window.hlx.codeBasePath}/styles/sarfaesi-wholesale/sarfaesi-wholesale.css`,
+    `${window.hlx.codeBasePath}/styles/whatsapp-service-loan-products/whatsapp-service-loan-products.css`,
+    `${window.hlx.codeBasePath}/styles/forms-formats/forms-formats.css`,
+    `${window.hlx.codeBasePath}/styles/whatsapp-service-banner/whatsapp-service-banner.css`,
   ];
 
   loadCssArray.forEach(async (eachCss) => {
@@ -752,3 +760,18 @@ body?.addEventListener("click", function (e) {
     e.currentTarget.querySelector(".stake-pop-up.dp-block")?.classList.remove("dp-block");
   }
 });
+
+setTimeout(() => {
+  try {
+    document.querySelectorAll('.open-form-on-click') && document.querySelectorAll('.open-form-on-click .button-container').forEach(function (eachApplyFormClick) {
+      eachApplyFormClick.addEventListener('click', async (e) => {
+        statemasterGetStatesApi();
+        validationJSFunc();
+        formOpen();
+        e.preventDefault();
+      });
+    });
+  } catch (error) {
+    console.warn(error);
+  }
+}, 5000);

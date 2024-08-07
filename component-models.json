@@ -2318,5 +2318,79 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "whatsappservice",
+    "fields": [
+      {
+        "component": "reference",
+        "label": "Front Image",
+        "name": "reference2",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "text1",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text2",
+        "label": "Mobile Button Text",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text3",
+        "label": "Mobile Button Href",
+        "valueType": "string"
+      },
+      {
+        "component": "container",
+        "label": "Single Input Field on Banner",
+        "name": "container",
+        "valueType": "string",
+        "collapsible": true,
+        "fields": [
+          {
+            "component": "text",
+            "label": "Placholder",
+            "name": "text4",
+            "valueType": "string"
+          },
+          {
+            "component": "text",
+            "label": "Span Text",
+            "name": "text5",
+            "valueType": "string"
+          },
+          {
+            "component": "text",
+            "label": "Upper Text",
+            "name": "text6",
+            "valueType": "string"
+          },
+          {
+            "component": "text",
+            "label": "Submit Button Text",
+            "name": "text7",
+            "valueType": "string"
+          },
+          {
+            "component": "richtext",
+            "label": "T & C",
+            "name": "text8",
+            "valueType": "string"
+          },
+          {
+            "component": "boolean",
+            "label": "Checbox",
+            "name": "boolean",
+            "valueType": "boolean"
+          }
+        ]
+      }
+    ]
   }
 ]

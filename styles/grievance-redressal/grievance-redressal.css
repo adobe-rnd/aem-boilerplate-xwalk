@@ -280,3 +280,14 @@ margin-top: -16px;
     padding-left: 5px;
     cursor: auto;
 }
+@media screen and (max-width:768px) {
+    .section.insurance-services .accordion-group-wrapper .accordion-group .accordion>details>summary >div{
+        width: 100%;
+    }
+    .section.insurance-services .accordion-group-wrapper .accordion-group .accordion>details>summary::after{
+        right: 20px;
+    } 
+    .section.interest-rates-accordian-wrapper.insurance-services .accordion-group-wrapper .accordion-group .accordion>details>summary{
+        padding: 20px 44px 20px 16px;
+    }
+}
