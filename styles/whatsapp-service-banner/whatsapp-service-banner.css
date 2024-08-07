@@ -1,38 +1,35 @@
-.section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service { 
+.section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service {
     position: relative;
     max-width: 1240px;
     margin: 0 auto;
-}
-
-.section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service {
     min-height: 482px;
     padding-top: 86px;
 }
 
-.section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .front-image { 
+.section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .front-image {
     position: absolute;
-    right: 0;
+    right: 30px;
     bottom: 0;
 }
 
-.section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .front-image img{ 
+.section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .front-image img {
     width: 487px;
     height: 412px;
 }
 
 .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .description>p>strong {
     display: block;
-    font-family: 'Nunito-Extrabold',sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 3rem;
-    line-height: 45px;
+    line-height: 60px;
     color: var(--darkcharcoal);
     opacity: 1;
 }
 
-.section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .description>p {
+.section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .description>p:last-child {
     margin-top: 17px;
     color: var(--gradient-gray);
-    font-family: 'Nunito-Regular',sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.5rem;
     line-height: 2pc;
 }
@@ -45,7 +42,7 @@
     margin-top: 24px;
     display: flex;
     align-items: center;
-    column-gap: 16px;
+    column-gap: 20px;
 }
 
 .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .input-field .cmp-form-text {
@@ -61,7 +58,7 @@
 .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .input-field .cmp-form-text label {
     background-color: #f1faf4;
     color: var(--greyishblue);
-    font-family: 'Nunito-Regular',sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 0.75rem;
     left: 1pc;
     padding-left: 4px;
@@ -81,7 +78,7 @@
 
 .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .input-field .cmp-form-text .inptContainer .countryCode {
     color: var(--greyishblue);
-    font-family: 'Nunito-Regular',sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     line-height: 1.5rem;
 }
@@ -90,7 +87,7 @@
     background: transparent;
     border: none;
     border-radius: 4px;
-    font-family: 'Nunito-Regular',sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     line-height: 24px;
     max-height: 40px;
@@ -113,13 +110,13 @@
 
 .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .input-field .button.desktopButton>button>span {
     color: #fff;
-    font-family: 'Nunito-Bold',sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
     line-height: 26px;
 }
 
-.section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .checkbox-field .cmp-form-options__field-label{
+.section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .checkbox-field .cmp-form-options__field-label {
     display: block;
     margin-top: 12px;
 }
@@ -143,3 +140,95 @@
 .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .checkbox-field .cmp-form-options__field-label .cmp-form-options__field-description>p>a {
     text-decoration: underline;
 }
+
+@media screen and (max-width:767px) {
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service {
+        padding: 64px 16px 0;
+    }
+
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .front-image {
+        left: 10%;
+        right: 0;
+    }
+
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .front-image img {
+        width: 278px;
+        height: 218px;
+    }
+
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .description>p>strong {
+        font-size: 1.5rem;
+        line-height: 32px;
+    }
+
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .description>p:last-child {
+        font-size: 0.875rem;
+        line-height: 20px;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service {
+        min-height: 500px;
+    }
+
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .input-field,
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .checkbox-field .cmp-form-options__field-label {
+        display: none;
+    }
+
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .mobile-button {
+        display: block;
+        margin-top: 24px;
+    }
+
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .mobile-button>button {
+        margin: 0;
+        border-radius: 8px;
+        padding: 1pc 20px;
+        background-color: var(--orange);
+        border: unset;
+    }
+
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .mobile-button>button>p {
+        font-size: 0.875rem;
+        line-height: 16px;
+        color: var(--white);
+        font-family: 'Nunito-Bold', sans-serif;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service {
+        padding: 86px 16px 0;
+    }
+
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .description {
+        width: 60%;
+    }
+
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .front-image {
+        position: absolute;
+        right: 60px;
+        top: 86px;
+    }
+
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .front-image img {
+        width: 266px;
+        height: 224px;
+    }
+}
+
+@media screen and (min-width:1025px) and (max-width: 1300px) {
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service {
+      max-width: 81.25%;
+    }
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .front-image img {
+        width: 440px;
+        height: 371px;
+    }
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .front-image {
+        right: 4%;
+        bottom: 40px;
+    }
+  }
