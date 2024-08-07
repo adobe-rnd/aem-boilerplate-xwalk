@@ -115,3 +115,31 @@
 .section.e-auction-table.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(17){
     min-width: 61px;
 }
+/* e auction table ends */
+
+.section.e-auction-sale-notice .default-content-wrapper >h2{
+    color: #000;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 24px;
+    margin-bottom: 24px;
+}
+.section.e-auction-sale-notice .default-content-wrapper p{
+    color: #000;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 24px;
+} 
+.section.e-auction-sale-notice .default-content-wrapper p a{
+    color: var(--orange);
+    margin: 0;
+    padding: 0;
+    background: unset;
+    border: unset;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 24px;
+}  

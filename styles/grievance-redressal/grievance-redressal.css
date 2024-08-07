@@ -248,7 +248,7 @@ margin-top: -16px;
     text-decoration: none;
 }
 .section.insurance-services .accordion-group-wrapper .accordion-group .accordion>details>summary >div{
-    width: 96.5%;
+    width: 93.5%;
 }
 .section.insurance-services .accordion-group-wrapper .accordion-group .accordion>details>summary::after{
     right: 75px;
@@ -279,4 +279,20 @@ margin-top: -16px;
     line-height: 24px;
     padding-left: 5px;
     cursor: auto;
+}
+@media screen and (max-width:768px) {
+    .section.insurance-services .accordion-group-wrapper .accordion-group .accordion>details>summary >div{
+        width: 100%;
+    }
+    .section.insurance-services .accordion-group-wrapper .accordion-group .accordion>details>summary::after{
+        right: 20px;
+    } 
+    .section.interest-rates-accordian-wrapper.insurance-services .accordion-group-wrapper .accordion-group .accordion>details>summary{
+        padding: 20px 44px 20px 16px;
+    }
+}
+@media  (min-width:1025px) and (max-width:1300px) {
+    .section.grievance-redressal-levels .columns-wrapper .columns>div>div>h2{
+        min-height: 36px;
+    }
 }
