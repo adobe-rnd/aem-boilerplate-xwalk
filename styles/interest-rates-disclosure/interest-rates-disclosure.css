@@ -20,6 +20,10 @@
     padding: .5rem .25rem;
     text-align: center;
 }
+.section.table-full-row .code-wrapper .code>div>table{
+    width: 100% !important;
+    height: auto;
+}
 .section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group {
     padding: 0;
 }
