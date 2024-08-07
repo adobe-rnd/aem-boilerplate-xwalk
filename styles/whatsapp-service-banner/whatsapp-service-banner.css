@@ -8,7 +8,7 @@
 
 .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .front-image {
     position: absolute;
-    right: 0;
+    right: 30px;
     bottom: 0;
 }
 
@@ -148,6 +148,7 @@
 
     .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .front-image {
         left: 10%;
+        right: 0;
     }
 
     .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .front-image img {
