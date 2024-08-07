@@ -54,7 +54,19 @@
     font-family:' Nunito-Regular', sans-serif !important;
     font-size: 0.75rem;
     line-height: 19.5px;
+    color: #000;
 }
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td span a,
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td span a sub{
+    font-family:' Nunito-Regular', sans-serif !important;
+    font-size: 0.75rem;
+    line-height: 19.5px;
+    color: #000;
+}
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td span a:hover{
+    text-decoration: none;
+}
+
 .section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(2){
     min-width: 80.4px;
 }
