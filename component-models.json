@@ -403,6 +403,19 @@
     ]
   },
   {
+    "id": "faq",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "faq",
+        "value": "",
+        "label": "FAQ API Path",
+        "description": "Sets the path of the FAQ."
+      }
+    ]
+  },
+  {
     "id": "offer-documents",
     "fields": [
       {
