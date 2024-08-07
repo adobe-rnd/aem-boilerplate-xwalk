@@ -122,6 +122,9 @@
     font-weight: 400;
     line-height: 24px;
 }
+.section.list-content-wrapper.company-mt-56 .default-content-wrapper h2 {
+    margin-top: 56px;
+}
 @media screen and (max-width: 767px) {
 /* list content common css start  */
     .section.list-content-wrapper .default-content-wrapper h2,
@@ -164,4 +167,10 @@
         white-space: pre;
         display: block;
     }
+}
+
+@media screen and (max-width:1024px) {
+    .section.list-content-wrapper.company-mt-56 .default-content-wrapper h2 {
+        margin-top: unset
+    } 
 }

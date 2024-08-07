@@ -171,6 +171,12 @@
     .section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child .carousel-inner .carousel-item {
         flex: 0 0 50%;
     }
+
+    .section.awards-recognition-wrapper .default-content-wrapper h3 {
+        font-size: 1.5rem;
+        line-height: 2pc;
+        margin-bottom: unset;
+    }
 }
 
 
@@ -180,7 +186,7 @@
     gap: 0;
 }
 
-.section.awards-content-tab-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background .foreground .text .long-description p:first-child{
+.section.awards-content-tab-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background .foreground .text .long-description p:first-child>strong{
     color: var(--orange);
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
@@ -202,7 +208,7 @@
         padding: 16px;
     } 
 
-    .section.awards-content-tab-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background .foreground .text .long-description p:first-child{
+    .section.awards-content-tab-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background .foreground .text .long-description p:first-child>strong {
         font-size: 1rem;
         line-height: 24px;
     }
