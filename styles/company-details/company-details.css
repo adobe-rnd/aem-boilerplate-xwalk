@@ -269,7 +269,7 @@
         margin: 0 1pc;
         position: absolute;
         top: 8px;
-        width: 9px;
+        width: 8.5px;
         border: unset;
     }
 
@@ -396,7 +396,7 @@
     }
 
     .section.company-details-wrapper.about-us-company-details .tab-link-wrapper .tab-link.block {
-        margin-top: 25px;
+        margin-top: 0;
         padding: 24px 0;
     }
 }

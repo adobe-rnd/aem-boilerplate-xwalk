@@ -528,6 +528,10 @@ main img {
   background-color: #F1FAF4;
 }
 
+.section.about-us-mt-56 {
+  margin-top: 56px;
+}
+
 /* column classes */
 @media screen and (min-width: 768px) {
   .col-1 {
@@ -885,6 +889,10 @@ main .section.highlight {
   .section.page-container>div {
     max-width: 100% !important;
     padding: 0 16px;
+  }
+
+  .section.about-us-mt-56 {
+    margin-top: unset;
   }
 }
 
