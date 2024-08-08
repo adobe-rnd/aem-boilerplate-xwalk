@@ -412,7 +412,7 @@
 }
 
 .section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(2) {
-    word-break: break-all;
+    /* word-break: break-all; */
 }
 
 .section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(3) {
