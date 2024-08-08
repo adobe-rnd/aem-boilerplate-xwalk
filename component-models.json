@@ -406,12 +406,11 @@
     "id": "faq",
     "fields": [
       {
-        "component": "text",
+        "component": "richtext",
         "valueType": "string",
-        "name": "faq",
+        "name": "FAQ",
         "value": "",
-        "label": "FAQ API Path",
-        "description": "Sets the path of the FAQ."
+        "label": "FAQ Content"
       }
     ]
   },
