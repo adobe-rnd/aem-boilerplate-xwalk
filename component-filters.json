@@ -1,13 +1,7 @@
 [
   {
     "id": "main",
-    "components": [
-      "section",
-      "title",
-      "tab-name",
-      "tab-container",
-      "container"
-    ]
+    "components": ["section", "title", "tab-name", "tab-container", "container"]
   },
   {
     "id": "columns",
@@ -58,6 +52,7 @@
       "imgwithlink",
       "testimonial",
       "financialreports",
+      "faq",
       "offer-documents",
       "carousel",
       "teaser",
@@ -94,9 +89,7 @@
   },
   {
     "id": "cards",
-    "components": [
-      "card"
-    ]
+    "components": ["card"]
   },
   {
     "id": "carousel",
@@ -124,9 +117,7 @@
   },
   {
     "id": "tab-name",
-    "components": [
-      "tab-container"
-    ]
+    "components": ["tab-container"]
   },
   {
     "id": "tab",
@@ -141,13 +132,11 @@
       "teaser",
       "columns",
       "container"
-  ]
+    ]
   },
   {
     "id": "tabs",
-    "components": [
-      "tabs", "tab", "container"
-  ]
+    "components": ["tabs", "tab", "container"]
   },
   {
     "id": "accordion",
@@ -167,12 +156,12 @@
       "editor": ["removeformat"]
     }
   },
-  { 
-  "id" : "div",
-  "components": null
+  {
+    "id": "div",
+    "components": null
   },
   {
-    "id":"container",
-    "components" : []
+    "id": "container",
+    "components": []
   }
 ]

@@ -29,7 +29,7 @@
     top: 65px;
 }
 
-.section.piramal-group-ajay-info .teaserv2-wrapper .teaserv2 a .bg-image .description {
+.section.piramal-group-ajay-info .teaserv2-wrapper .teaserv2>a>.bg-image .description>div>div>div>div>div>div>div>div>div>div>div>div {
     color: rgba(0, 0, 0, .871);
     font-family: Nunito-Regular, sans-serif;
     font-size: 1.25rem;
@@ -70,7 +70,7 @@
         top: 70px;
     }
 
-    .section.piramal-group-ajay-info .teaserv2-wrapper .teaserv2 a .bg-image .description {
+    .section.piramal-group-ajay-info .teaserv2-wrapper .teaserv2>a>.bg-image .description>div>div>div>div>div>div>div>div>div>div>div>div {
         font-size: 0.875rem;
         left: 130px;
         line-height: 20px;

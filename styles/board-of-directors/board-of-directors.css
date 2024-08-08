@@ -1,9 +1,15 @@
+.section.board-of-directors-wrapper.teaser-container {
+    padding: 0;
+}
+
 .section.board-of-directors-wrapper .default-content-wrapper>h2,
 .section.board-directors-wrapper.tab-name-container .default-content-wrapper>h2 {
-    font-family: Nunito-Extrabold, sans-serif;
-    font-size: 2.5rem;
-    line-height: 48px;
-    margin-bottom: 40px;
+    color: var(--black);
+    display: block;
+    font-family: 'Nunito-Extrabold',sans-serif;
+    font-size: 2pc;
+    line-height: 40px;
+    margin-bottom: 24px;
 }
 
 .section.board-of-directors-wrapper .wrapper-creation-container,
@@ -62,15 +68,16 @@
     height: 35px;
     background-size: contain;
     background-position: center;
-    right: 0;
+    right: 3px;
     bottom: 0;
-    background-image: url('../../images/MoreButton.png');
+    /* background-image: url('../../images/MoreButton.png'); */
+    background-image: url('/content/dam/piramalfinance/product-page/home-loan/MoreButton.png');
 }
 
 .section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground .text .title h3,
 .section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background .text .title h3 {
     color: #000;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
     line-height: 28px;
@@ -80,7 +87,7 @@
 .section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background .text .long-description>p {
     text-decoration: none;
     color: #000;
-    font-family: Nunito-regular, sans-serif;
+    font-family: 'Nunito-regular', sans-serif;
     font-size: 1rem;
     line-height: 24px;
 }
@@ -97,12 +104,18 @@
     font-size: 1.5rem;
     line-height: 2rem;
     cursor: pointer;
+    color: #000;
+    font-family: 'Nunito-Regular',sans-serif;
+    line-height: 2pc;
 }
 
 .section.board-of-directors-wrapper.tab-container-container .tab-name-wrapper .tab-name .carousel-inner .carousel-item.active {
-    border-bottom-color: rgb(245, 134, 103);
     border-bottom: 2px solid;
-    color: rgb(245, 134, 103);
+    color: var(--orange);
+    font-family: 'Nunito-Extrabold',sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 2pc;
 }
 
 
@@ -112,6 +125,12 @@
     .section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container {
         grid-template-columns: auto auto;
         justify-content: space-around;
+    }
+
+    .section.board-of-directors-wrapper.tab-container-container .tab-name-wrapper .tab-name .carousel-inner .carousel-item.active,
+    .section.board-of-directors-wrapper.tab-container-container .tab-name-wrapper .tab-name .carousel-inner .carousel-item {
+        font-size: 1rem;
+        line-height: 24px;
     }
 }
 
@@ -133,5 +152,16 @@
     .section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background {
         height: 152px;
         width: 152px;
+    }
+
+    .section.board-of-directors-wrapper.tab-container-container .tab-name-wrapper .tab-name .carousel-inner {
+        gap: 24px;
+    }
+
+    .section.board-of-directors-wrapper .default-content-wrapper>h2,
+    .section.board-directors-wrapper.tab-name-container .default-content-wrapper>h2 {
+        font-size: 1.25rem;
+        line-height: 28px;
+        margin-bottom: 20px;
     }
 }
