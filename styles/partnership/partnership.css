@@ -26,9 +26,12 @@
 
 .section.partnership-tab-content .rte-wrapper .rte.block ul>li>strong>a {
     color: var(--orange);
-    border-bottom: 2px solid var(--orange);
     font-family: 'Nunito-Extrabold', sans-serif;
     font-weight: 800;
+}
+
+.section.partnership-tab-content .rte-wrapper .rte.block ul>li:has(> strong) {
+    border-bottom: 2px solid var(--orange);
 }
 
 .section.partnership-image-popup .wrappercreation-wrapper .wrapper-creation-container {
@@ -251,7 +254,6 @@
 
     .section.partnership-tab-content .rte-wrapper .rte.block ul>li>strong>a {
         color: var(--orange);
-        border-bottom: unset;
     }
 
     .section.partnership-image-popup .wrappercreation-wrapper .wrapper-creation-container {
