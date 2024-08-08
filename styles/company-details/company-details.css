@@ -201,7 +201,7 @@
         position: relative;
         text-align: center;
         color: #010812;
-        font-family: Nunito-Bold, sans-serif;
+        font-family: 'Nunito-Bold', sans-serif;
         font-size: 1.125rem;
         font-weight: 700;
         line-height: 27px;
@@ -258,7 +258,7 @@
         width: 15px;
     }
 
-    .section.company-details-wrapper .tab-link-wrapper .tab-link.block>div>div>ul>li>strong a::after {
+    .section.company-details-wrapper .tab-link-wrapper .tab-link.block>div>div>ul>li>strong>a::after {
         background: #000;
         border-radius: 50%;
         content: "";
