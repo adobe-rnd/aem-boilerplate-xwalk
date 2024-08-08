@@ -25,15 +25,17 @@
     border: none;
 }
 .section.ratings-card-wrapper .cards-wrapper .cards ul li .cards-card-body .button-container .button{
-    font-family: Nunito-Extrabold, sans-serif;
-    font-size: 1.25rem;
-    line-height: 28px;
     text-align: center;
     text-decoration: underline;
     display: inline-block;
     background: unset;
     color: black;
     margin: unset;
+}
+.section.ratings-card-wrapper .cards-wrapper .cards ul li .cards-card-body .button-container .button>sub {
+    font-family: 'Nunito-Extrabold', sans-serif;
+    font-size: 1.25rem;
+    line-height: 28px;
 }
 .section.ratings-card-wrapper .cards-wrapper .cards ul li .cards-card-body{
     margin: unset;
