@@ -258,7 +258,8 @@
         width: 15px;
     }
 
-    .section.company-details-wrapper .tab-link-wrapper .tab-link.block>div>div>ul>li>strong>a::after {
+    .section.company-details-wrapper .tab-link-wrapper .tab-link.block>div>div>ul>li>strong>a::after,
+    .section.company-details-wrapper .tab-link-wrapper .tab-link.block>div>div>ul>li>strong>a:last-child::after {
         background: #000;
         border-radius: 50%;
         content: "";
