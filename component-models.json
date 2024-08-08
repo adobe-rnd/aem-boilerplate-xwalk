@@ -399,6 +399,23 @@
             "value": "secondary"
           }
         ]
+      },
+      {
+        "component": "select",
+        "name": "sortingtype",
+        "value": "desc",
+        "label": "Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Ascending",
+            "value": "ascending"
+          },
+          {
+            "name": "Descending ",
+            "value": "descending "
+          }
+        ]
       }
     ]
   },
