@@ -71,31 +71,40 @@
     text-decoration: none;
 }
 
-.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(2){
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(2),
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child td:nth-child(2){
     min-width: 80.4px;
 }
-.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(3){
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(3),
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child td:nth-child(3){
     min-width: 79.28px;
 }
-.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(4){
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(4),
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child td:nth-child(4){
     min-width: 79.28px;
 }
-.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(5){
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(5),
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child td:nth-child(5){
     min-width: 160.3px;
 }
-.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(6){
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(6),
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child td:nth-child(6){
     min-width: 144.64px;
 }
-.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(7){
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(7),
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child td:nth-child(7){
     min-width: 225.35px;
 }
-.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(8){
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(8),
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child td:nth-child(8){
     min-width: 97.33px;
 }
-.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(9){
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(9),
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child td:nth-child(9){
     min-width: 91.69px;
 }
-.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(12){
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(12),
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child td:nth-child(12){
     min-width: 92.43px;
 }
 /* .section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(11){
