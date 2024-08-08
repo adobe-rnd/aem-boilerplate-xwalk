@@ -2,16 +2,35 @@ import { fetchAPI, getProps, renderHelper } from "../../scripts/scripts.js";
 
 export default async function decorate(block) {
     const props = getProps(block);
-    const [url, type] = props;
+    const [url, type, sortType] = props;
     block.innerHTML = "";
     try {
         const resp = await fetchAPI("GET", url);
         const data = await resp.json();
         const years = data.result[0];
-        Object.keys(years).forEach(function (year) {
+        let sortedYears;
+        if (sortType === 'ascending') {
+        sortedYears = Object.keys(years).sort((a, b) => a - b)
+        }
+        else{
+        sortedYears = Object.keys(years).sort((a, b) => b - a)
+        }
+        // Object.keys(years).forEach(function (year) {
+        const monthOrder = [
+            'January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'
+        ];
+        sortedYears.forEach(function (year) {
             const months = years[year][0];
+            let sortedMonths;
+            if (sortType === 'ascending') {
+                sortedMonths = Object.keys(months).sort((a, b) => monthOrder.indexOf(a) - monthOrder.indexOf(b));
+            } else {
+                sortedMonths = Object.keys(months).sort((a, b) => monthOrder.indexOf(b) - monthOrder.indexOf(a));
+            }
             let monthsli = '';
-            Object.keys(months).forEach(function (month) {
+            // Object.keys(months).forEach(function (month) {
+            sortedMonths.forEach(function (month) {
                 monthsli += `  
                                 <div class="subAccordianContent" style="display: nona;">
                                     <div class="publicDisclosuresWrap">
