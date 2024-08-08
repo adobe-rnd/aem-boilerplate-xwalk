@@ -1,3 +1,4 @@
+import { fetchAPI } from "../../scripts/scripts.js";
 import { generateOTPAPI, getAccessToken, resendOtpAPI, showNetworkFailedScreen, verfyOtpAPI } from "../applyloanform/loanformapi.js";
 
 let time_limit = 30;
@@ -274,9 +275,13 @@ function getWhatsappServicesApi(mobileNumber) {
 
   return new Promise(function (resolve, reject) {
     let whatsappServiceUrl = "https://apisit.piramal.com/customer-orchestrator/v1/partner/campaign/+91" + mobileNumber + "/event-based-triggered";
-    callPostAPI(whatsappServiceUrl, requesObj).then(function (response) {
+    debugger;
+    fetchAPI("POST", whatsappServiceUrl, requesObj).then(function (response) {
       resolve(response.responseJson);
     });
+    /* callPostAPI(whatsappServiceUrl, requesObj).then(function (response) {
+      resolve(response.responseJson);
+    }); */
   });
 }
 
