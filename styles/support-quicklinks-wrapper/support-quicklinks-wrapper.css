@@ -95,7 +95,15 @@
     line-height: 21px;
     text-decoration: underline;
 }
-
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li strong a{
+    color: #000;
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 21px;
+    word-break: break-all;
+    text-decoration: none;
+}
 @media screen and (max-width: 1024px) {
 
     .section.support-quicklinks-wrapper .default-content-wrapper h1{
