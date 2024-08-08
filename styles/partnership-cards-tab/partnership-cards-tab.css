@@ -24,8 +24,8 @@
 }
 
 .section.cards-tab-content-wrapper .tab-name-wrapper .tab-name.block .carousel-inner>div>img {
-    height: 89px;
-    width: 199px;
+    height: 59px;
+    width: 237px;
 }
 
 .section.cards-tab-content-wrapper .tab-name-wrapper .tab-name.block .carousel-inner>div.active {
@@ -74,7 +74,7 @@
     position: unset;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
     .section.cards-tab-content-wrapper .default-content-wrapper h2 {
         font-size: 1.25rem;
         line-height: 28px;
@@ -94,5 +94,11 @@
         margin-top: 8px;
         font-size: 0.875rem;
         line-height: 20px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+    .section.cards-tab-content-wrapper .tab-name-wrapper .tab-name.block .carousel-inner>div>img {
+        width: 234px;
     }
 }

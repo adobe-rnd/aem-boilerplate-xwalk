@@ -386,7 +386,7 @@
         border: 1px solid var(--orange);
     }
 
-    .section.company-details-wrapper.about-us-company-details .tab-link-wrapper .tab-link.block>div>div>ul>li>strong a::after {
+    .section.company-details-wrapper.about-us-company-details .tab-link-wrapper .tab-link.block>div>div>ul>li>strong>a::after {
         background: var(--orange);
     }
 
