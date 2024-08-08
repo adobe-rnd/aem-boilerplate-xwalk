@@ -765,7 +765,7 @@ body?.addEventListener("click", function (e) {
     });
   }
   if (!e.target.closest(".stake-pop-up")) {
-    if(document.querySelector(".cmp-text.active")) document.querySelector(".cmp-text.active").classList.remove("active")
+    if(document.querySelector(".partnership-tab-content.partnership-image-popup .cmp-text.active")) document.querySelector(".cmp-text.active").classList.remove("active")
     document.querySelectorAll(".stake-pop-up").forEach((ele) => {
       ele.classList.remove("dp-block");
       ele.classList.add("dp-none");
