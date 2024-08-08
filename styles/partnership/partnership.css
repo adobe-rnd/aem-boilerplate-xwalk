@@ -26,9 +26,12 @@
 
 .section.partnership-tab-content .rte-wrapper .rte.block ul>li>strong>a {
     color: var(--orange);
-    border-bottom: 2px solid var(--orange);
     font-family: 'Nunito-Extrabold', sans-serif;
     font-weight: 800;
+}
+
+.section.partnership-tab-content .rte-wrapper .rte.block ul>li:has(> strong) {
+    border-bottom: 2px solid var(--orange);
 }
 
 .section.partnership-image-popup .wrappercreation-wrapper .wrapper-creation-container {
@@ -49,7 +52,9 @@
     width: 100%;
     box-shadow: 0 4px 9pt rgba(51, 51, 51, .078);
 }
-
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text>.cmp-text.active{
+    border-bottom: 8px solid #f26841;
+}
 .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text>.cmp-text:hover {
     -webkit-box-shadow: 0 25px 50px -9pt rgba(0,0,0,.25);
     box-shadow: 0 25px 50px -9pt rgba(0,0,0,.25);
@@ -68,8 +73,10 @@
 }
 .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .popup-parent-cont{
     overflow-y: auto;
+    padding: 8px 24px;
 }
-.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text>p {
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text >.cpm-sub-text>p {
+    /* padding: 8px 24px; */
     text-align: center;
 }
 
@@ -126,8 +133,8 @@
     cursor: pointer;
     width: 20px;
 }
-.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p, .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p em{
-    padding-top: .5rem;
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p,
+ .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p em{
     display: block;
     color: rgba(0, 0, 0, .871);
     font-family: 'Nunito-Regular', sans-serif;
@@ -135,7 +142,8 @@
     line-height: 24px;
     text-decoration: none;
 }
-.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p, .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p em sub {
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p,
+ .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p em sub {
     color: rgba(0, 0, 0, .871);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
@@ -191,6 +199,7 @@
     font-weight: 800;
     line-height: 24px;
     font-style: normal;
+    display: contents;
 }
 .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div  >h3{
     color: rgba(0, 0, 0, .871);
@@ -245,7 +254,6 @@
 
     .section.partnership-tab-content .rte-wrapper .rte.block ul>li>strong>a {
         color: var(--orange);
-        border-bottom: unset;
     }
 
     .section.partnership-image-popup .wrappercreation-wrapper .wrapper-creation-container {

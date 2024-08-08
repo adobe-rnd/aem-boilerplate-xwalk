@@ -76,20 +76,15 @@
     /* border-radius: 0 10px 0 0; */
 }
 
-.section.three-col-table>.code-wrapper .code.block>div>table>tbody>tr:nth-child(1)>th:nth-child(2) {
-    border-radius: unset;
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>th:first-child {
+    border-radius: 10px 0 0 0;
 }
 
-.section.fees-charges-wrapper.four-col-table .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(2),
-.section.fees-charges-wrapper.four-col-table .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(3) {
-    border-radius: unset;
-}
-
-.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(2),
-.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(3),
-.section.fees-charges-wrapper.four-col-table .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(4) {
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>th:last-child{
     border-radius: 0 10px 0 0;
 }
+
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th
 
 .section.one-col-table .code-wrapper .code>div>table>tbody>tr :nth-child(2) {
     border-left: unset;
@@ -167,6 +162,18 @@
     line-height: 24px;
 }
 
+.section.fees-charges-wrapper.five-col-table .code-wrapper .code>div>table>tbody>tr>th,
+.section.fees-charges-wrapper.five-col-table .code-wrapper .code>div>table>tbody>tr>td {
+    width: 20%;
+    text-align: center;
+}
+
+.section.fees-charges-wrapper.six-col-table .code-wrapper .code>div>table>tbody>tr>th,
+.section.fees-charges-wrapper.six-col-table .code-wrapper .code>div>table>tbody>tr>td {
+    width: 16%;
+    text-align: center;
+}
+
 .section.fees-charges-wrapper.table-text-center-align .code-wrapper .code>div>table>tbody>tr>th,
 .section.fees-charges-wrapper.table-text-center-align .code-wrapper .code>div>table>tbody>tr>td {
     text-align: center;
@@ -218,7 +225,9 @@
     }
 
     .section.fees-charges-wrapper.three-col-table .code-wrapper .code.block>div,
-    .section.fees-charges-wrapper.four-col-table .code-wrapper .code.block>div {
+    .section.fees-charges-wrapper.four-col-table .code-wrapper .code.block>div,
+    .section.fees-charges-wrapper.five-col-table .code-wrapper .code.block>div,
+    .section.fees-charges-wrapper.six-col-table .code-wrapper .code.block>div {
         overflow-x: scroll;
         scrollbar-width: none;
     }
@@ -226,7 +235,11 @@
     .section.fees-charges-wrapper.three-col-table .code-wrapper .code.block>div>table>tbody>tr>th,
     .section.fees-charges-wrapper.three-col-table .code-wrapper .code.block>div>table>tbody>tr>td,
     .section.fees-charges-wrapper.four-col-table .code-wrapper .code.block>div>table>tbody>tr>th,
-    .section.fees-charges-wrapper.four-col-table .code-wrapper .code.block>div>table>tbody>tr>td {
+    .section.fees-charges-wrapper.four-col-table .code-wrapper .code.block>div>table>tbody>tr>td,
+    .section.fees-charges-wrapper.five-col-table .code-wrapper .code>div>table>tbody>tr>th,
+    .section.fees-charges-wrapper.five-col-table .code-wrapper .code>div>table>tbody>tr>td,
+    .section.fees-charges-wrapper.six-col-table .code-wrapper .code>div>table>tbody>tr>th,
+    .section.fees-charges-wrapper.six-col-table .code-wrapper .code>div>table>tbody>tr>td {
         min-width: 166px;
     }
 
@@ -412,7 +425,7 @@
 }
 
 .section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(2) {
-    word-break: break-all;
+    /* word-break: break-all; */
 }
 
 .section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(3) {

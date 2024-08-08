@@ -7,8 +7,9 @@
     color: var(--black);
     display: block;
     font-family: 'Nunito-Extrabold',sans-serif;
-    font-size: 2pc;
-    line-height: 40px;
+    font-weight: 800;
+    font-size: 2.5rem;
+    line-height: 32px;
     margin-bottom: 24px;
 }
 
@@ -22,7 +23,11 @@
 
 .section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper,
 .section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container .teaser {
-    height: 303px;
+    min-height: 303px;
+}
+
+.section.board-of-directors-wrapper.board-of-directors-tabs-wrapper .tab-container-wrapper .tab-container .panel-container .teaser {
+    min-height: 350px;
 }
 
 .section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser {
@@ -132,6 +137,14 @@
         font-size: 1rem;
         line-height: 24px;
     }
+
+    .section.board-of-directors-wrapper .default-content-wrapper>h2,
+    .section.board-directors-wrapper.tab-name-container .default-content-wrapper>h2 {
+        font-size: 1.5rem;
+        font-family: 'Nunito-Bold',sans-serif;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -158,10 +171,7 @@
         gap: 24px;
     }
 
-    .section.board-of-directors-wrapper .default-content-wrapper>h2,
-    .section.board-directors-wrapper.tab-name-container .default-content-wrapper>h2 {
-        font-size: 1.25rem;
-        line-height: 28px;
-        margin-bottom: 20px;
+    .section.board-of-directors-wrapper.board-of-directors-tabs-wrapper .tab-container-wrapper .tab-container .panel-container .teaser {
+        min-height: 315px;
     }
 }
