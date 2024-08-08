@@ -16,13 +16,15 @@
     font-weight: 400;
     line-height: 24px;
 }
-
+.section.annual-reports-wrapper.forms-pdf .default-content-wrapper ul>li>a sub span{
+    display: contents;
+}
 .section.annual-reports-wrapper.forms-pdf .default-content-wrapper ul>li>a sub span img {
     width: 32px;
     max-width: unset;
     min-width: unset;
     height: 32px;
-    margin-top: -5px;
+    display: block;
 }
 
 .section.annual-reports-wrapper.forms-pdf .default-content-wrapper ul>li>a::after {
@@ -55,4 +57,24 @@
     object-fit: contain;
     width: 124px;
     height: 139px;
+}
+
+@media screen and (max-width: 767px) {
+    .section.annual-reports-wrapper.forms-pdf .default-content-wrapper ul>li>a {
+        font-size: 0.75rem;
+        line-height: 16px;
+        padding: 24px 43px 24px 19px;
+    }
+    .section.annual-reports-wrapper.forms-pdf .default-content-wrapper ul>li>a sub{
+        font-size: 0.75rem;
+        line-height: 16px;
+        gap: 19px;
+    }
+    .section.annual-reports-wrapper.forms-pdf .default-content-wrapper ul>li>a sub span img{
+        width: 16px;
+        height: 16px;
+    }
+    .section.annual-reports-wrapper.forms-pdf .default-content-wrapper ul>li>a::after{
+        font-size: 1rem;
+    }
 }
