@@ -8,7 +8,9 @@ export default function decorate(block) {
             eachEl.classList.add(className)
             eachEl.addEventListener('click', function (e) {
                 block.querySelectorAll('.accordian,[aria-hidden="false"]').forEach(function (eachLi) {
-                    eachLi.setAttribute('aria-hidden', 'true');
+                    if (eachLi.classList[1] !== e.target.classList[0]) {
+                        eachLi.setAttribute('aria-hidden', 'true');
+                    }
                 })
                 block.querySelectorAll('.' + e.target.classList[0]).forEach(function (eachLi) {
                     if (eachEl !== eachLi) {
