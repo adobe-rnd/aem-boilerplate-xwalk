@@ -58,7 +58,7 @@
 }
 @media screen and (max-width:1024px){
     .section.breadcrumb-handle .breadcrumb-wrapper{
-        padding: 0 16px;
+        padding: 0 0 0 16px;
     }
     .section.breadcrumb-handle .breadcrumb-wrapper .breadcrumb{
         padding-top: 16px;
@@ -70,6 +70,9 @@
     .section.breadcrumb-handle > .breadcrumb-wrapper > .breadcrumb.block > nav > a:last-child{
         font-size: 0.75rem;
         line-height: 16px;
+    }
+    .section.breadcrumb-handle .breadcrumb-wrapper .breadcrumb-separator {
+        padding: 0 12px;
     }
 }
 @media screen and (max-width:767px) {
