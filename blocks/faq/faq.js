@@ -4,22 +4,20 @@ export default function decorate(block) {
     const parents = Array.from(block.querySelector('h2').parentElement.children);
     parents.forEach(function (eachEl, index) {
         if (eachEl instanceof HTMLHeadingElement) {
-            // eachEl.setAttribute('aria-hidden', 'false')
-            // toggleHidden(eachEl)
             className = 'accordian-' + count++;
             eachEl.classList.add(className)
             eachEl.addEventListener('click', function (e) {
-                // block.querySelectorAll('.' + e.target.classList[0]).forEach(function (eachLi) {
+                block.querySelectorAll('.accordian,[aria-hidden="false"]').forEach(function (eachLi) {
+                    eachLi.setAttribute('aria-hidden', 'true');
+                })
                 block.querySelectorAll('.' + e.target.classList[0]).forEach(function (eachLi) {
                     if (eachEl !== eachLi) {
-                        // eachLi.setAttribute('aria-hidden', 'false')
                         toggleHidden(eachLi);
                     }
                 })
             })
         } else {
-            eachEl.classList.add(className)
-            // eachEl.setAttribute('aria-hidden', 'true');
+            eachEl.classList.add('accordian', className)
             toggleHidden(eachEl);
             toggleList(eachEl);
         }
@@ -30,28 +28,16 @@ export default function decorate(block) {
 function toggleList(el) {
     el.querySelectorAll('li').forEach(function (eachLi) {
         eachLi.querySelectorAll('ul').forEach(function (eachUl) {
-            // eachUl.setAttribute('aria-hidden', 'true');
             toggleHidden(eachUl);
             eachLi.addEventListener('click', function (e) {
                 toggleHidden(eachUl)
-                // .setAttribute('aria-hidden', 'false');
             })
         })
     })
 }
 
 function toggleHidden(el) {
-    debugger
     const val = el.getAttribute('aria-hidden') != 'true' ? 'true' : 'false';
     el.setAttribute('aria-hidden', val);
 
 }
-// function addAccordian(ul) {
-//     ul.querySelectorAll('li').forEach(function (eachLi) {
-//         // eachLi.setAttribute('aria-hidden', 'true');
-//         eachLi.addEventListener('click', function (e) {
-//             eachLi.setAttribute('aria-hidden', 'false');
-//         })
-//     })
-
-// }
