@@ -275,7 +275,6 @@ function getWhatsappServicesApi(mobileNumber) {
 
   return new Promise(function (resolve, reject) {
     let whatsappServiceUrl = "https://apisit.piramal.com/customer-orchestrator/v1/partner/campaign/+91" + mobileNumber + "/event-based-triggered";
-    debugger;
     fetchAPI("POST", whatsappServiceUrl, requesObj).then(function (response) {
       resolve(response.responseJson);
     });
