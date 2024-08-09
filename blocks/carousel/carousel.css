@@ -637,6 +637,13 @@
   .section.banner-carousel-wrapper.business-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .short-description>ul>li {
     margin-top: 36px;
   }
+  .section.banner-carousel-wrapper.flexi-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
+    width: 200px;
+    height: 138px;
+  }
+  .section.banner-carousel-wrapper.flexi-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+    right: -10px;
+  }
 }
 
 @media screen and (max-width:767px) {
