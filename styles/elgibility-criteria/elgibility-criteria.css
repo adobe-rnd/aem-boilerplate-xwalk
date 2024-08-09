@@ -58,7 +58,8 @@
     line-height: 24px;
 }
 
-.section.eligibility-criteria-wrapper .default-content-wrapper>p>a {
+.section.eligibility-criteria-wrapper .default-content-wrapper>p>a,
+.section.eligibility-criteria-wrapper .default-content-wrapper>ul>li>ul>li>a {
     color: var(--orange);
 }
 
