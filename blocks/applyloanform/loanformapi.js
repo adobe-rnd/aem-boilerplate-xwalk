@@ -186,9 +186,9 @@ function smsAPI(accessToken) {
     });
 }
 
-function leadAPI(accessToken) {
+function leadAPI(accessToken, authUniqueId) {
     let requestObj = {
-        requestJson: getLeadFormData(loanStatus),
+        requestJson: getLeadFormData(loanStatus, authUniqueId),
         headerJson: {
             Authorization: "Bearer " + accessToken
         }
@@ -279,7 +279,7 @@ function updateFormValuve() {
     formState = document.querySelector('#form-state')?.value;
     formBranchCity = document.querySelector('#form-branch-city')?.value;
 }
-function getLeadFormData(loanStatus) {
+function getLeadFormData(loanStatus, authUniqueId) {
     updateFormValuve();
     const leadDataObj = {
         "Name": formCustomerName,
@@ -291,7 +291,8 @@ function getLeadFormData(loanStatus) {
         "DateOfBirth": formDOB,
         "State": formState,
         "Branch": formBranchCity,
-        "RejectStatus": loanStatus
+        "RejectStatus": loanStatus,
+        "AuthUniqueId" : authUniqueId
     }
 
     return { "LeadData": leadDataObj };
@@ -313,7 +314,7 @@ function verifyOtpBtnClick() {
         formInteraction(formLoanType, "verify", targetObject.pageName);
         if (otpValue) {
             verfyOtpAPI(otpValue)
-                .then(function ({ returnResponse }) {
+                .then(function ({ returnResponse, authUniqueId }) {
                     let statusCode = returnResponse.statusCode;
                     verifyOtp(e.target.innerText, targetObject.pageName, "");
                     let otpMsgElement = document.querySelector(".wrongotpmessage");
@@ -349,7 +350,7 @@ function verifyOtpBtnClick() {
                         }
                     }
 
-                    leadAPI(sessionStorage.getItem("accesstoken"))
+                    leadAPI(sessionStorage.getItem("accesstoken"), authUniqueId)
                         .catch(function (error) {
                             console.warn(error);
                             showNetworkFailedScreen(error);
