@@ -4,6 +4,10 @@
     padding-bottom: 92px;
 }
 
+.section.multi-calculator-wrapper.support-contact-us-banner .teaser-wrapper .teaser {
+    height: 260px;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px){
     .section.multi-calculator-wrapper.support-contact-us-banner .teaser-wrapper .teaser .background .foreground {
         width: 55%;
@@ -13,9 +17,13 @@
 @media screen and (max-width: 1024px) {
     .section.multi-calculator-wrapper.support-contact-us-banner .teaser-wrapper .teaser .background .foreground .text .long-description p {
         display: block;
-        font-size: 14px;
+        font-size: 0.875rem;
         line-height: 20px;
         margin-top: 8px;
+    }
+
+    .section.multi-calculator-wrapper.support-contact-us-banner .teaser-wrapper .teaser {
+        height: 168px;
     }
 
     .section.multi-calculator-wrapper.support-contact-us-banner .teaser-wrapper .teaser .background {
@@ -23,7 +31,6 @@
         padding-bottom: 12px;
     }
 }
-
 /* support contact us banner css end */
 
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container {
@@ -84,9 +91,9 @@
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p,
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p:nth-child(2),
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div:first-child div p:first-child>strong>em {
-    color: #666;
+    color: var(--gradient-gray);
     font-family: Nunito-Regular, sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
     font-style: normal;
@@ -105,15 +112,15 @@
 
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong,
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong sub {
-    color: #4d4d4d;
+    color: var(--matterhorn);
     font-family: Nunito-Bold, sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 700;
     line-height: 24px;
 }
 
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong sub {
-    color: #666;
+    color: var(--gradient-gray);
 }
 
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div:first-child div p:first-child>strong {
@@ -124,7 +131,7 @@
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p strong,
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper:first-child .teaserv2 .bg-image .rte-text-description p strong em {
     font-family: Nunito-Bold, sans-serif;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
     line-height: 28px;
     color: #333;
@@ -132,15 +139,15 @@
 }
 
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p strong em {
-    color: #000;
+    color: var(--black);
 }
 
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong>a,
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>a {
-    color: #f26841;
+    color: var(--orange);
     text-decoration: none;
     font-family: Nunito-Bold, sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 20px;
 }
@@ -152,7 +159,7 @@
     background-color: unset;
     border: unset;
     text-align: unset;
-    color: #4d4d4d;
+    color: var(--matterhorn);
 }
 
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 {
@@ -218,6 +225,13 @@
     justify-content: center;
 }
 
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:first-child p:nth-child(2),
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:last-child p:nth-child(3){
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+} 
+
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:first-child p:nth-child(8){
     display: none;
 }
@@ -234,6 +248,7 @@
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div {
         column-gap: 65px;
     }
+
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .front-image {
         max-width: 60px;
     }
@@ -259,18 +274,18 @@
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p,
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong sub,
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div:first-child div p:first-child>strong>em {
-        font-size: 12px;
+        font-size: 0.75rem;
         line-height: 16px;
         width: 85%;
     }
 
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>a u {
-        font-size: 14px;
+        font-size: 0.875rem;
     }
 
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong>a {
         display: inline-block;
-        font-size: 14px;
+        font-size: 0.875rem;
     }
 
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div:first-child div p:first-child span>img,
@@ -283,13 +298,13 @@
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper:first-child .teaserv2 .bg-image .rte-text-description p strong em,
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p strong,
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong {
-        font-size: 14px;
+        font-size: 0.875rem;
         line-height: 20px;
     }
 
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p:nth-child(2),
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:nth-child(2) p:nth-child(2) strong {
-        font-size: 12px;
+        font-size: 0.75rem;
         line-height: 16px;
     }
 
@@ -300,7 +315,7 @@
     }
 
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:first-child p:nth-child(8){
-        border: 1px solid #365069;
+        border: 1px solid var(--greyishblue);
         border-radius: 10px;
         height: 32px;
         max-width: 140px;
@@ -308,10 +323,10 @@
     }
 
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:first-child p:nth-child(8) a {
-        color: #000;
+        color: var(--black);
         display: block;
         font-family: Nunito-Bold, sans-serif;
-        font-size: 12px;
+        font-size: 0.75rem;
         font-weight: 700;
         line-height: 16px;
         padding: 8px 16px;
