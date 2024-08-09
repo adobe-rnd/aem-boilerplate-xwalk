@@ -10,7 +10,7 @@
 .section.steps-for-apply .default-content-wrapper >p,
 .section.steps-for-apply .default-content-wrapper >h5,
 .section.steps-for-apply .default-content-wrapper >h4,
-.section.steps-for-apply .default-content-wrapper >h4>strong>a{
+.section.steps-for-apply .default-content-wrapper >h4>a{
     color: #000;
     /* display: block; */
     font-family: 'Nunito-Regular', sans-serif;
@@ -41,7 +41,7 @@
 
 .section.steps-for-apply .default-content-wrapper >h4,
 .section.steps-for-apply .default-content-wrapper >h4>strong,
-.section.steps-for-apply .default-content-wrapper >h4>strong>a {
+.section.steps-for-apply .default-content-wrapper >h4>a {
     font-size: 1.125rem;
 }
 
@@ -49,10 +49,40 @@
     color: var(--black)
 }
 
-.section.steps-for-apply .default-content-wrapper >h4>strong>a {
+.section.steps-for-apply .default-content-wrapper >h4>a {
     color: var(--orange);
     text-decoration: none;
 }
+
+.section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul {
+    margin-left: 24px;
+}
+
+.section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul>li {
+    color: var(--black);
+    font-family: 'Nunito-Regular',sans-serif;
+    font-size: 1.125rem;
+    line-height: 28px;
+    list-style-type: disc;
+}
+
+.section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul>li>strong {
+    font-family: 'Nunito-Bold',sans-serif;
+    font-weight: 700;
+}
+
+.section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul:last-child {
+    margin-left: unset;
+}
+
+.section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul:last-child>li {
+    list-style-type: none;
+}
+
+.section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul:last-child>li>strong {
+    color: var(--orange);
+}
+
 
 @media screen and (max-width: 767px) {
     .section.steps-for-apply .default-content-wrapper >h2{
@@ -61,7 +91,7 @@
     }
     .section.steps-for-apply .default-content-wrapper >h4,
     .section.steps-for-apply .default-content-wrapper >h4>strong,
-    .section.steps-for-apply .default-content-wrapper >h4>strong>a {
+    .section.steps-for-apply .default-content-wrapper >h4>a {
         font-size: 0.875rem;
         line-height: 20px;
     }
@@ -71,6 +101,11 @@
     .section.steps-for-apply.steps-for-apply-black .default-content-wrapper >p >strong {
         position: unset;
         display: block
+    }
+    
+    .section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul>li {
+        font-size: 0.875rem;
+        line-height: 24px;
     }
 }
 
