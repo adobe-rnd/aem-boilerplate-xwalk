@@ -425,6 +425,15 @@
   margin-top: 48px;
 }
 
+.section.banner-carousel-wrapper.insta-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
+  width: 394px;
+  height: 391px;
+}
+
+.section.banner-carousel-wrapper.insta-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+  bottom: -4px;
+}
+
 @media (min-width:1024px) and (max-width:1366px) {
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
     width: 312px;
@@ -641,8 +650,16 @@
     width: 200px;
     height: 138px;
   }
-  .section.banner-carousel-wrapper.flexi-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+  .section.banner-carousel-wrapper.flexi-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
+  .section.banner-carousel-wrapper.insta-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
     right: -10px;
+  }
+  .section.banner-carousel-wrapper.insta-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
+    width: 200px;
+    height: 152px;
+  }
+  .section.banner-carousel-wrapper.insta-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+    bottom: 0;
   }
 }
 

@@ -424,14 +424,25 @@ ol .accordion ul {
     font-weight: bolder;
     line-height: 28px;
 }
-/* .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details>div>article>div,
-.faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details>div>article>div>article>div {
-    margin: 0;
+
+.section.faq-accordion-css-with-orange-heading.faq-accordion-table-content .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details>div>ol {
+    border: 1px solid var(--black);
+    max-width: 340px;
+    width: 100%;
 }
 
-.faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details>div>article>div>article>div>p {
-    margin: 0;
-} */
+.section.faq-accordion-css-with-orange-heading.faq-accordion-table-content .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details>div>ol>li {
+    list-style-type: none;
+    color: var(--gradient-gray);
+    font-family: 'Nunito-Regular',sans-serif;
+    font-size: 1.25rem;
+    line-height: 28px;
+}
+
+.section.faq-accordion-css-with-orange-heading.faq-accordion-table-content .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details>div>ol>li>strong {
+    font-family: 'Nunito-Bold',sans-serif;
+    font-weight: 700;
+}
 
 /* End */
 
@@ -551,5 +562,20 @@ ol .accordion ul {
     .section.inventory-financing .default-content-wrapper > h2{
         font-size: 1.125rem;
         line-height: 27px;
+    }
+
+    .section.faq-accordion-css-with-orange-heading.faq-accordion-table-content .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details>div>ol {
+        max-width: 275px;
+    }
+
+    .section.faq-accordion-css-with-orange-heading.faq-accordion-table-content .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details>div>ol>li {
+        font-size: 1rem;
+        line-height: 24px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+    .section.faq-accordion-css-with-orange-heading.faq-accordion-table-content .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details>div>ol {
+        max-width: 343px;
     }
 }
