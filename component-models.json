@@ -2341,6 +2341,44 @@
     ]
   },
   {
+    "id": "select",
+    "fields": [
+      {
+        "component": "text-input",
+        "name": "name",
+        "label": "Name",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "label",
+        "label": "Label",
+        "valueType": "string",
+        "multi": true
+      },
+      {
+        "component": "text-input",
+        "name": "value",
+        "label": "value",
+        "valueType": "string",
+        "multi": true
+      },
+      {
+        "component": "text-input",
+        "name": "disabled",
+        "label": "disabled",
+        "valueType": "string",
+        "multi": true
+      },
+      {
+        "component": "text-input",
+        "name": "selected",
+        "label": "Selected",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "whatsappservice",
     "fields": [
       {
