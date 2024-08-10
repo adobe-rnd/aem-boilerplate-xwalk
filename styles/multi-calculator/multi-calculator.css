@@ -8,8 +8,8 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
-    padding-top: 70px;
-    padding-bottom: 40px;
+    padding-top: 58px;
+    padding-bottom: 46px;
     min-height: 260px;
 }
 
@@ -77,18 +77,11 @@
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    .section.multi-calculator-wrapper .teaser-wrapper .teaser .background {
-        align-items: center;
-        padding-top: 55px;
-    }
-}
-
 /* calculator end */
 
 
 /* calculator teaser container start */
-.section.multi-calc-teaser-wrapper {
+.section.multi-calc-teaser-wrapper.teaser-container  {
     padding: 0;
 }
 
@@ -101,7 +94,7 @@
 
 .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser {
     max-width: 595px;
-    min-height: 192px;
+    min-height: 202px;
 }
 
 .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser .background {
@@ -113,7 +106,7 @@
 }
 
 .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser .background .foreground {
-    padding: 35px 40px;
+    padding: 40px 40px 40px 35px;
 }
 
 .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser .background .foreground .text .long-description p {
@@ -134,7 +127,7 @@
     font-size: 0.875rem;
     font-weight: 700;
     line-height: 21px;
-    padding: 10px 16px;
+    padding: 9px 16px;
     background-color: unset;
     margin: 0;
 }
@@ -153,7 +146,7 @@
     }
 
     .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser .background .foreground {
-        padding: 16px 10px 14px 16px;
+        padding: 20px 10px 17px 16px;
     }
 
     .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser .background .foreground .text .long-description p {
@@ -179,7 +172,7 @@
     display: flex;
     align-items: center;
     height: 100%;
-    margin-top: 48px;
+    margin-top: 75px;
     min-height: 200px;
     padding: 43px;
     width: 100%;
@@ -204,6 +197,9 @@
 }
 
 @media screen and (max-width: 767px) {
+    .section.home-loan-eligibility-calculator.breadcrumb-handle .breadcrumb-wrapper {
+        position: unset;
+    }
     .section.home-loan-eligibility-calculator .teaser-wrapper .teaser .background {
         margin-top: 32px;
         min-height: 112px;
@@ -222,3 +218,9 @@
         line-height: 16px;
     }
 }
+
+@media screen and (max-width: 768px) and (max-width: 1024px) {
+    .section.home-loan-eligibility-calculator.teaser-container {
+        padding: 0 16px;
+    }
+} 

@@ -50,6 +50,15 @@ export function validationJSFunc(){
             loanFormOtpBtn().classList.remove("loan-form-button-active");
         }
     });
+
+    let StateBranchRegx = document.querySelectorAll('.checkInputRegx input');
+
+    StateBranchRegx.forEach(input => {
+        input.addEventListener("input", function({currentTarget}) {
+            let inputValue = currentTarget.value;
+            currentTarget.value = inputValue.replace(/[^a-zA-Z ]+/g, '');
+        });
+    });
 }
 
 

@@ -37,24 +37,24 @@
     white-space: normal;
 }
 
-.section.calc-mob-carousel-wrapper .carousel-wrapper .panel-container .teaser.block .background .foreground .long-description .button-container > a{
+.section.calc-mob-carousel-wrapper .carousel-wrapper .panel-container .teaser.block .background .foreground .long-description .button-container>a {
     color: var(--white);
-    font-family: 'Nunito-Extrabold',sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.25rem;
     line-height: 30px;
     max-width: 15pc;
     text-align: left;
 }
 
-.section.calc-mob-carousel-wrapper .carousel-wrapper .panel-container .teaser.block .background .foreground .long-description .button-container > a:hover {
+.section.calc-mob-carousel-wrapper .carousel-wrapper .panel-container .teaser.block .background .foreground .long-description .button-container>a:hover {
     color: var(--orange);
 }
 
-.section.calc-mob-carousel-wrapper .carousel-wrapper .panel-container .teaser.block .background .foreground .cta > a {
+.section.calc-mob-carousel-wrapper .carousel-wrapper .panel-container .teaser.block .background .foreground .cta>a {
     border: 1px solid #e5e7eb;
     border-radius: 8px;
     color: #fff;
-    font-family: 'Nunito-Bold',sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 14px;
     min-width: 129px;
     padding: 12px;
@@ -66,29 +66,78 @@
     display: none;
 }
 
+/* calculator carousel css start */
+.section.calc-desktop-carousel-wrapper .carousel-wrapper {
+    position: relative;
+}
+
+.section.calc-desktop-carousel-wrapper .carousel-wrapper .carousel {
+    position: unset;
+}
+
+.section.calc-desktop-carousel-wrapper .carousel-wrapper .panel-container .glider-track {
+    gap: 10px;
+}
+
+.section.calc-desktop-carousel-wrapper .carousel-wrapper .panel-container .teaser.block .background .foreground .long-description p {
+    color: #fff;
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 30px;
+    max-width: 15pc;
+}
+
+.section.calc-desktop-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-prev:hover,
+.section.calc-desktop-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-next:hover,
+.section.calc-desktop-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-prev,
+.section.calc-desktop-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-next {
+    background-color: unset;
+}
+
+.section.calc-desktop-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-prev div div picture img,
+.section.calc-desktop-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-next div div picture img {
+    height: 40px;
+    width: 40px;
+}
+
+.section.calc-desktop-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-prev {
+    left: -60px;
+}
+
+.section.calc-desktop-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-next {
+    right: -60px;
+}
+
+/* calculator carousel css end */
 
 @media screen and (max-width: 767px) {
-    .section.calc-mob-carousel-wrapper .default-content-wrapper h2{
+    .section.calc-mob-carousel-wrapper .default-content-wrapper h2 {
         font-size: 1.125rem;
         line-height: 27px;
         padding-bottom: 24px;
     }
+
     .section.calc-mob-carousel-wrapper .carousel-wrapper .panel-container .glider-track {
         gap: 16px;
     }
+
     .section.calc-mob-carousel-wrapper .carousel-wrapper .panel-container .teaser.block {
         max-width: unset;
     }
+
     .section.calc-mob-carousel-wrapper .carousel-wrapper .carousel.block .button-container.glider-dots {
         display: flex;
         padding-top: 40px;
     }
+
     .section.calc-mob-carousel-wrapper .carousel-wrapper .carousel.block>.button-container button.active {
         background-color: #000;
         border-radius: 4px;
         width: 16px;
         opacity: 1;
     }
+
     .section.calc-mob-carousel-wrapper .carousel-wrapper .carousel.block>.button-container button {
         width: 4px;
         height: 4px;
@@ -97,5 +146,26 @@
         background: #000;
         opacity: .2;
         border: 1px solid #000;
+    }
+
+    /* calculator carousel css start */
+    .section.calc-desktop-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-prev,
+    .section.calc-desktop-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-next {
+        display: none;
+    }
+    /* calculator carousel css end */
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .section.calc-desktop-carousel-wrapper .carousel-wrapper .carousel {
+        margin: 0 38px;
+    }
+
+    .section.calc-desktop-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-prev {
+        left: 5px;
+    }
+    
+    .section.calc-desktop-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-next {
+        right: 5px;
     }
 }
