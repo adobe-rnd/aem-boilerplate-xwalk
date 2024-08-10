@@ -2351,6 +2351,12 @@
       },
       {
         "component": "text-input",
+        "name": "text-name",
+        "label": "Name",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
         "name": "label",
         "label": "Label",
         "valueType": "string",
