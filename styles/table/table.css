@@ -274,8 +274,15 @@
     .section.fees-charges-wrapper.four-col-table .code-wrapper .code.block {
         margin-bottom: 24px;
     }
+    .section.fees-charges-wrapper.iphone-loan-table .code-wrapper .code>div>table>tbody>tr:not(:first-child) td:nth-child(3) {
+        padding: 24px 18px;
+        text-align: center;
+    }
+
     .section.fees-charges-wrapper.iphone-loan-table .code-wrapper .code>div>table>tbody>tr:not(:first-child) td:nth-child(3)>ul>li {
-        padding: 4px 16px;
+        display: inline;
+        padding: unset;
+        border-bottom: unset;
     }
 }
 
