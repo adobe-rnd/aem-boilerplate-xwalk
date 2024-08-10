@@ -1,3 +1,7 @@
+.section.breadcrumb-handle.teaser-container {
+    padding: unset;
+}
+
 .section.breadcrumb-handle{
     position: relative;
 }
