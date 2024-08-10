@@ -2341,7 +2341,7 @@
     ]
   },
   {
-    "id": "select",
+    "id": "select-tag",
     "fields": [
       {
         "component": "text-input",
