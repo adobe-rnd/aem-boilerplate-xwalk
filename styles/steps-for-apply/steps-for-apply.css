@@ -71,15 +71,15 @@
     font-weight: 700;
 }
 
-.section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul:last-child {
+.section.steps-for-apply.steps-for-apply-last-list-text .default-content-wrapper ul:last-child {
     margin-left: unset;
 }
 
-.section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul:last-child>li {
+.section.steps-for-apply.steps-for-apply-last-list-text .default-content-wrapper ul:last-child>li {
     list-style-type: none;
 }
 
-.section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul:last-child>li>strong {
+.section.steps-for-apply.steps-for-apply-last-list-text .default-content-wrapper ul:last-child>li>strong {
     color: var(--orange);
 }
 
