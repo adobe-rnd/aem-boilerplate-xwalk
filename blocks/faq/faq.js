@@ -31,7 +31,7 @@ function toggleList(el) {
     el.querySelectorAll('li').forEach(function (eachLi) {
         eachLi.querySelectorAll('ul').forEach(function (eachUl) {
             toggleHidden(eachUl);
-            eachLi.addEventListener('click', function (e) {
+            eachLi.querySelector('ul') && eachLi.addEventListener('click', function (e) {
                 toggleHidden(eachUl)
             })
         })
