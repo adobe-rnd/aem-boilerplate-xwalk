@@ -1,10 +1,10 @@
 .section.calc-mob-carousel-wrapper .default-content-wrapper h2 {
-    color: var(--black);
+    color: var(--darkcharcoal);
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
-    font-size: 2rem;
-    line-height: 40px;
-    padding-bottom: 32px;
+    font-size: 2.5rem;
+    line-height: 48px;
+    padding-bottom: 24px;
 }
 
 .section.calc-mob-carousel-wrapper .carousel-wrapper .panel-container .glider-track {
@@ -111,11 +111,18 @@
 
 /* calculator carousel css end */
 
+@media screen and (max-width:1024px) {
+    .section.calc-mob-carousel-wrapper .default-content-wrapper h2 {
+        font-size: 2rem;
+        font-family: 'Nunito-Bold', sans-serif;
+        font-weight: 700;
+        line-height: 2rem;
+    }
+}
+
 @media screen and (max-width: 767px) {
     .section.calc-mob-carousel-wrapper .default-content-wrapper h2 {
-        font-size: 1.125rem;
-        line-height: 27px;
-        padding-bottom: 24px;
+        font-size: 1.5rem;
     }
 
     .section.calc-mob-carousel-wrapper .carousel-wrapper .panel-container .glider-track {
