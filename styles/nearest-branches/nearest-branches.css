@@ -185,4 +185,7 @@
         padding-bottom: 4px;
         margin-bottom: 20px;
     }
+    .section.nearest-branches .columns-wrapper .columns>div>div>.button-container::after {
+        top: 2px;
+    }
 }
