@@ -276,6 +276,7 @@
 
 .section.financial-report-content-wrap .financialreports-wrapper .financialreports .accordianpdf-section {
     margin-bottom: 16px;
+    z-index: 1;
 }
 
 .section.financial-report-content-wrap .financialreports-wrapper .financialreports .accordianpdf-section .container .accordianContent .accordianBox .subAccordianWrap .subAccordianBox .innersubAccordianTitle {
