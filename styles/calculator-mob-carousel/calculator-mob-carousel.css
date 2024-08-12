@@ -51,11 +51,11 @@
 }
 
 .section.calc-mob-carousel-wrapper .carousel-wrapper .panel-container .teaser.block .background .foreground .cta>a {
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--solitude);
     border-radius: 8px;
-    color: #fff;
+    color: var(--white);
     font-family: 'Nunito-Bold', sans-serif;
-    font-size: 14px;
+    font-size: 0.875rem;
     min-width: 129px;
     padding: 12px;
     text-align: center;
@@ -66,7 +66,18 @@
     display: none;
 }
 
-/* calculator carousel css start */
+/* desktop calculator carousel css start */
+.section.calc-desktop-carousel-wrapper .default-content-wrapper h2 {
+    color: var(--black);
+    display: block;
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 40px;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+}
+
 .section.calc-desktop-carousel-wrapper .carousel-wrapper {
     position: relative;
 }
@@ -79,10 +90,14 @@
     gap: 10px;
 }
 
+.section.calc-desktop-carousel-wrapper .carousel-wrapper .panel-container .teaser.block {
+    cursor: default;
+}
+
 .section.calc-desktop-carousel-wrapper .carousel-wrapper .panel-container .teaser.block .background .foreground .long-description p {
-    color: #fff;
+    color: var(--white);
     font-family: Nunito-Extrabold, sans-serif;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 800;
     line-height: 30px;
     max-width: 15pc;
@@ -109,7 +124,7 @@
     right: -60px;
 }
 
-/* calculator carousel css end */
+/* desktop calculator carousel css end */
 
 @media screen and (max-width:1024px) {
     .section.calc-mob-carousel-wrapper .default-content-wrapper h2 {
@@ -139,7 +154,7 @@
     }
 
     .section.calc-mob-carousel-wrapper .carousel-wrapper .carousel.block>.button-container button.active {
-        background-color: #000;
+        background-color: var(--black);
         border-radius: 4px;
         width: 16px;
         opacity: 1;
@@ -150,17 +165,17 @@
         height: 4px;
         margin: 0 4px;
         border-radius: 50%;
-        background: #000;
+        background: var(--black);
         opacity: .2;
-        border: 1px solid #000;
+        border: 1px solid var(--black);
     }
 
-    /* calculator carousel css start */
+    /* desktop calculator carousel css start */
     .section.calc-desktop-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-prev,
     .section.calc-desktop-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-next {
         display: none;
     }
-    /* calculator carousel css end */
+    /* desktop calculator carousel css end */
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
