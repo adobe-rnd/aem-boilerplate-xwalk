@@ -732,6 +732,7 @@ async function loadingCustomCss() {
     `${window.hlx.codeBasePath}/styles/whatsapp-service-banner/whatsapp-service-banner.css`,
     `${window.hlx.codeBasePath}/styles/support-contact-us/support-contact-popup.css`,
     `${window.hlx.codeBasePath}/styles/e-nach-registration/e-nach-registration.css`,
+    `${window.hlx.codeBasePath}/styles/support-faq/support-faq.css`,
   ];
 
   loadCssArray.forEach(async (eachCss) => {
