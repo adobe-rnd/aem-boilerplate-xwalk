@@ -155,12 +155,11 @@
         padding-bottom: 8px;
     }
 }
-
 /* calculator teaser container end */
 
 
 /* home loan eligibility calculator start */
-.section.home-loan-eligibility-calculator {
+.section.home-loan-eligibility-calculator.teaser-container {
     padding: 0;
 }
 
@@ -219,8 +218,3 @@
     }
 }
 
-@media screen and (max-width: 768px) and (max-width: 1024px) {
-    .section.home-loan-eligibility-calculator.teaser-container {
-        padding: 0 16px;
-    }
-} 
