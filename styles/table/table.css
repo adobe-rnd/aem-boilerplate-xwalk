@@ -73,7 +73,7 @@
 }
 
 .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr :nth-child(2) {
-    /* border-radius: 0 10px 0 0; */
+    border-radius: 0 10px 0 0;
 }
 
 .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>th:first-child {
@@ -469,6 +469,11 @@
 @media screen and (max-width:1024px) {
     .section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(3){
         padding: 0 0 0 5px;
+    }
+}
+@media (min-width: 1025px) and (max-width: 1300px){
+    .section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(3){
+        padding: 8px 8px 8px 44px;
     }
 }
 @media screen and (max-width: 767px) {

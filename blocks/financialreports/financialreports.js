@@ -10,10 +10,10 @@ export default async function decorate(block) {
         const years = data.result[0];
         let sortedYears;
         if (sortType === 'ascending') {
-        sortedYears = Object.keys(years).sort((a, b) => a - b)
+            sortedYears = Object.keys(years).sort((a, b) => a - b)
         }
-        else{
-        sortedYears = Object.keys(years).sort((a, b) => b - a)
+        else {
+            sortedYears = Object.keys(years).sort((a, b) => b - a)
         }
         // Object.keys(years).forEach(function (year) {
         const monthOrder = [
@@ -142,7 +142,7 @@ export function handleInnerAccordionClick(event) {
     var parent = event.target.parentNode;
     parent.closest('.grey-border').querySelectorAll('.subAccordianContent').forEach(function (el) {
 
-        console.log(event.target);
+        //console.log(event.target);
         if (event.target.closest(".subAccordianContent") === el) {
 
         } else {

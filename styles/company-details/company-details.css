@@ -413,7 +413,7 @@
 
 .section.financial-reports-carousel .tab-link-wrapper .tab-link.block>div .glider .glider-track li {
     min-width: unset;
-    width: auto !important;
+    width: fit-content !important;
 }
 
 .section.financial-reports-carousel .tab-link-wrapper .tab-link.block>div .glider .glider-track li a:hover {
