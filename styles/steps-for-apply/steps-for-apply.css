@@ -87,6 +87,14 @@
     color: var(--orange);
 }
 
+.section.steps-for-apply-black.gst-steps-content-orange .default-content-wrapper h3 {
+    color: var(--orange);
+    font-family: "Nunito-Bold";
+    font-size: 1.125rem;
+    line-height: 24px;
+    margin-bottom: 1rem;
+}
+
 
 @media screen and (max-width: 767px) {
     .section.steps-for-apply .default-content-wrapper >h2{
@@ -112,6 +120,12 @@
     .section.steps-for-apply.steps-for-apply-black.steps-gst-content-align .default-content-wrapper >p >strong {
         font-size: 0.875rem;
         line-height: 24px;
+    }
+
+    .section.steps-for-apply-black.gst-steps-content-orange .default-content-wrapper h3 {
+        font-size: 0.875rem;
+        line-height: 20px;
+        margin-bottom: .5rem;
     }
 }
 
