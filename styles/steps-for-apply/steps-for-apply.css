@@ -22,7 +22,7 @@
 .section.steps-for-apply .default-content-wrapper >p >strong{
     margin-bottom: 8px;
     display: inline-block;
-    color: #f26841;
+    color: var(--orange);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     font-weight: 700;
@@ -83,6 +83,10 @@
     color: var(--orange);
 }
 
+.section.steps-for-apply-black.steps-gst-content-align .default-content-wrapper >p >strong {
+    color: var(--orange);
+}
+
 
 @media screen and (max-width: 767px) {
     .section.steps-for-apply .default-content-wrapper >h2{
@@ -103,7 +107,9 @@
         display: block
     }
     
-    .section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul>li {
+    .section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul>li,
+    .section.steps-for-apply.steps-for-apply-black.steps-gst-content-align .default-content-wrapper >p,
+    .section.steps-for-apply.steps-for-apply-black.steps-gst-content-align .default-content-wrapper >p >strong {
         font-size: 0.875rem;
         line-height: 24px;
     }
@@ -119,5 +125,12 @@
         margin-bottom: unset;
         position: absolute;
         left: 0;
+    }
+    .section.steps-for-apply.steps-for-apply-black.steps-gst-content-align .default-content-wrapper >p {
+        padding-left: unset;
+    }
+    .section.steps-for-apply.steps-for-apply-black.steps-gst-content-align .default-content-wrapper >p >strong {
+        position: unset;
+        display: inline
     }
 }
