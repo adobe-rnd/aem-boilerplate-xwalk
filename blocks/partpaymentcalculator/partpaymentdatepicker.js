@@ -50,7 +50,7 @@ function isMonth(date1, date2) {
 
   // Convert milliseconds to days
   var difference_days = Math.floor(difference_ms / (1000 * 60 * 60 * 24));
-  console.log(difference_days);
+  //console.log(difference_days);
   if (difference_days < 30) {
     return false;
   } else {

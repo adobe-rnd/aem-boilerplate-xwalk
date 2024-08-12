@@ -265,68 +265,68 @@ export function createCarousle(block, prevButton, nextButton) {
     }
     currentSlide = Math.max(0, Math.min(index, totalSlides - visibleSlides));
     setPositionByIndex();
-    console.log("targetObject.carouselButton :: ", targetObject.carouselButton);
+    //console.log("targetObject.carouselButton :: ", targetObject.carouselButton);
     targetObject.carouselButton.disabled = false;
   }
 
   const setPositionByIndex = targetObject.isTab
     ? function () {
-        // Tab
-        currentTranslate = (currentSlide * -carouselInner.clientWidth) / (block.closest(".carousel-3pt5") ? 2 : visibleSlides);
-        console.log("currentSlide :: ", currentSlide);
-        console.log("-carouselInner.clientWidth :: ", -carouselInner.clientWidth);
-        console.log("visibleSlides :: ", visibleSlides);
-        console.log("currentTranslate :: ", currentTranslate);
-        console.log("length :: ", slides.length);
-        console.log("check length :: ", currentSlide + 4 == slides.length);
-        console.log("targetObject.isTab :: ", targetObject.isTab);
-        prevTranslate = currentTranslate;
-        carouselInner.style.transition = "transform 0.5s ease";
-        if (block.closest(".carousel-3pt5") && !targetObject.isTab && currentSlide + 4 == slides.length) {
-          // Desktop View Logic 3.5 carousel
-          // carouselInner.style.transform = `translateX(${-600}px)`
-          // carouselInner.style.transform = `translateX(${currentTranslate }px)`;
-          carouselInner.style.transform = `translateX(${currentTranslate - 200}px)`;
-        } else {
-          if (block.closest(".carousel-3pt5") && targetObject.isTab && currentSlide) {
-            // Tab View Logic 3.5 carousel
-            if (currentSlide + 4 > slides.length) {
-              // targetObject.currentTranslate = 40
-              if (currentTranslate > -2100 && targetObject.currentTranslate < 50) {
-                targetObject.currentTranslate = targetObject.currentTranslate ? (targetObject.currentTranslate += 340) : 40;
-              }
-            } else {
-              targetObject.currentTranslate = 0;
+      // Tab
+      currentTranslate = (currentSlide * -carouselInner.clientWidth) / (block.closest(".carousel-3pt5") ? 2 : visibleSlides);
+      //console.log("currentSlide :: ", currentSlide);
+      //console.log("-carouselInner.clientWidth :: ", -carouselInner.clientWidth);
+      //console.log("visibleSlides :: ", visibleSlides);
+      //console.log("currentTranslate :: ", currentTranslate);
+      //console.log("length :: ", slides.length);
+      //console.log("check length :: ", currentSlide + 4 == slides.length);
+      //console.log("targetObject.isTab :: ", targetObject.isTab);
+      prevTranslate = currentTranslate;
+      carouselInner.style.transition = "transform 0.5s ease";
+      if (block.closest(".carousel-3pt5") && !targetObject.isTab && currentSlide + 4 == slides.length) {
+        // Desktop View Logic 3.5 carousel
+        // carouselInner.style.transform = `translateX(${-600}px)`
+        // carouselInner.style.transform = `translateX(${currentTranslate }px)`;
+        carouselInner.style.transform = `translateX(${currentTranslate - 200}px)`;
+      } else {
+        if (block.closest(".carousel-3pt5") && targetObject.isTab && currentSlide) {
+          // Tab View Logic 3.5 carousel
+          if (currentSlide + 4 > slides.length) {
+            // targetObject.currentTranslate = 40
+            if (currentTranslate > -2100 && targetObject.currentTranslate < 50) {
+              targetObject.currentTranslate = targetObject.currentTranslate ? (targetObject.currentTranslate += 340) : 40;
             }
-            carouselInner.style.transform = `translateX(${currentTranslate - targetObject.currentTranslate}px)`;
           } else {
-            if (block.closest(".carousel-3pt5") && currentSlide) {
-              // Desktop View Logic 3.5 carousel
-              carouselInner.style.transform = `translateX(${currentTranslate - 200}px)`;
-            } else {
-              carouselInner.style.transform = `translateX(${currentTranslate}px)`;
-            }
+            targetObject.currentTranslate = 0;
+          }
+          carouselInner.style.transform = `translateX(${currentTranslate - targetObject.currentTranslate}px)`;
+        } else {
+          if (block.closest(".carousel-3pt5") && currentSlide) {
+            // Desktop View Logic 3.5 carousel
+            carouselInner.style.transform = `translateX(${currentTranslate - 200}px)`;
+          } else {
+            carouselInner.style.transform = `translateX(${currentTranslate}px)`;
           }
         }
       }
+    }
     : function () {
-        // Desktop
-        currentTranslate = (currentSlide * -carouselInner.clientWidth) / visibleSlides;
-        console.log("currentSlide :: ", currentSlide);
-        console.log("-carouselInner.clientWidth :: ", -carouselInner.clientWidth);
-        console.log("visibleSlides :: ", visibleSlides);
-        console.log("currentTranslate :: ", currentTranslate);
-        console.log("length :: ", slides.length);
-        console.log("check length :: ", currentSlide + 4 == slides.length);
-        prevTranslate = currentTranslate;
-        carouselInner.style.transition = "transform 0.5s ease";
-        if (block.closest(".carousel-3pt5") && currentSlide + 4 == slides.length) {
-          // carouselInner.style.transform = `translateX(${-600}px)`
-          carouselInner.style.transform = `translateX(${currentTranslate - 200}px)`;
-        } else {
-          carouselInner.style.transform = `translateX(${currentTranslate}px)`;
-        }
-      };
+      // Desktop
+      currentTranslate = (currentSlide * -carouselInner.clientWidth) / visibleSlides;
+      //console.log("currentSlide :: ", currentSlide);
+      //console.log("-carouselInner.clientWidth :: ", -carouselInner.clientWidth);
+      //console.log("visibleSlides :: ", visibleSlides);
+      //console.log("currentTranslate :: ", currentTranslate);
+      //console.log("length :: ", slides.length);
+      //console.log("check length :: ", currentSlide + 4 == slides.length);
+      prevTranslate = currentTranslate;
+      carouselInner.style.transition = "transform 0.5s ease";
+      if (block.closest(".carousel-3pt5") && currentSlide + 4 == slides.length) {
+        // carouselInner.style.transform = `translateX(${-600}px)`
+        carouselInner.style.transform = `translateX(${currentTranslate - 200}px)`;
+      } else {
+        carouselInner.style.transform = `translateX(${currentTranslate}px)`;
+      }
+    };
 
   function nextSlide(e) {
     // if (currentSlide) {
@@ -420,7 +420,7 @@ export function createButton(text, picture) {
 export async function decoratePlaceholder(block, path) {
   try {
     const resp = await fetchPlaceholders(path);
-    console.log(resp);
+    //console.log(resp);
     return renderHelper([resp], `<div class="forName">${block.innerHTML}</div>`);
   } catch (error) {
     console.warn(error);
@@ -430,34 +430,34 @@ export async function decoratePlaceholder(block, path) {
 export function decorateViewMore(block) {
   const section = block.closest(".section");
   if (!section.classList.contains("view-more-btn")) return;
-  
+
   const displayCount = parseInt(Array.from(section.classList)
     .find(cls => cls.endsWith("-item-display"))
     ?.replace("-item-display", "") || "0");
-  
-    const items = block.classList.contains("columns")
+
+  const items = block.classList.contains("columns")
     ? block.children
     : block.parentElement.parentElement.children;
-  
+
   const toggleVisibility = (showAll = false) => {
     [...items].forEach((item, index) => {
       item.classList.toggle("dp-none", !showAll && index >= displayCount);
     });
   };
-  
+
   toggleVisibility();
-  
+
   const viewBtn = section.querySelector('.default-content-wrapper .button-container');
   const viewLink = viewBtn.querySelector('a');
-  
+
   viewBtn.addEventListener("click", (e) => {
     e.preventDefault();
     const isViewMore = viewLink.textContent.trim().toLowerCase() === 'view more';
     toggleVisibility(isViewMore);
-    if(isViewMore){
+    if (isViewMore) {
       viewLink.textContent = "View less";
       viewLink.classList.add('view-less-more-column');
-    }else{
+    } else {
       viewLink.textContent = "View more";
       viewLink.classList.remove('view-less-more-column');
       scrollToComponentNearBranch(section);
@@ -510,23 +510,23 @@ export function decorateAnchorTag(main) {
 
 function scrollToComponentNearBranch(component) {
   if (window.matchMedia("(max-width: 767px)").matches) {
-      window.scroll({
-          top: component.offsetTop + 20,
-          left: 0,
-          behavior: "smooth",
-      });
+    window.scroll({
+      top: component.offsetTop + 20,
+      left: 0,
+      behavior: "smooth",
+    });
   } else if (window.matchMedia("(max-width: 1024px)").matches) {
-      window.scroll({
-          top: component.offsetTop + 20,
-          left: 0,
-          behavior: "smooth",
-      });
+    window.scroll({
+      top: component.offsetTop + 20,
+      left: 0,
+      behavior: "smooth",
+    });
   } else {
-      window.scroll({
-          top: component.offsetTop - 30,
-          left: 0,
-          behavior: "smooth",
-      });
+    window.scroll({
+      top: component.offsetTop - 30,
+      left: 0,
+      behavior: "smooth",
+    });
   }
 }
 
@@ -630,7 +630,7 @@ async function loadEager(doc) {
  */
 async function loadLazy(doc) {
   autolinkModals(doc);
-  
+
   const main = doc.querySelector("main");
   await loadBlocks(main);
 
@@ -767,7 +767,7 @@ body?.addEventListener("click", function (e) {
     });
   }
   if (!e.target.closest(".stake-pop-up")) {
-    if(document.querySelector(".partnership-tab-content.partnership-image-popup .cmp-text.active")) document.querySelector(".cmp-text.active").classList.remove("active")
+    if (document.querySelector(".partnership-tab-content.partnership-image-popup .cmp-text.active")) document.querySelector(".cmp-text.active").classList.remove("active")
     document.querySelectorAll(".stake-pop-up").forEach((ele) => {
       ele.classList.remove("dp-block");
       ele.classList.add("dp-none");
