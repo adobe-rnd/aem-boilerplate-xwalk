@@ -5,7 +5,7 @@
 .section.support-contact-us-popup .default-content-wrapper h6 {
     color: #333;
     font-family: 'Nunito-Bold', sans-serif;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 700;
     line-height: 28px;
     margin-bottom: 16px;
@@ -15,14 +15,14 @@
 
 .section.support-contact-us-popup .default-content-wrapper ul {
     padding: 24px;
-    border: 2px solid #e5e7eb;
+    border: 2px solid var(--solitude);
     border-radius: 8px;
 }
 
 .section.support-contact-us-popup .default-content-wrapper ul li{
-    color: #666;
+    color: var(--gradient-gray);
     font-family: 'Nunito-Regular', sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
     margin-top: 16px;
@@ -43,7 +43,7 @@ dialog[open]:has(.modal-content .section.support-contact-us-popup){
     padding: 16px;
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px -2px 16px;
-    border: unset;
+    border: unset;  
 }
 
 dialog[open]:has(.modal-content .section.support-contact-us-popup) .modal-content {
@@ -61,9 +61,6 @@ dialog[open]:has(.modal-content .section.support-contact-us-popup) .close-button
 }
 
 @media screen and (max-width: 767px) {
-    .section.support-contact-us-popup {
-        transition: transform 0.5s cubic-bezier(0, 0, 0.2, 1);
-    }
     .section.support-contact-us-popup .default-content-wrapper h6 {
         justify-content: center;
         margin-top: 20px;
@@ -78,7 +75,7 @@ dialog[open]:has(.modal-content .section.support-contact-us-popup) .close-button
         right: 45%;
         top: 16px;
         transform: translateX(2px) rotate(0deg);
-        width: 2pc;
+        width: 32px;
     }
 
     .section.support-contact-us-popup .default-content-wrapper ul {
@@ -103,7 +100,7 @@ dialog[open]:has(.modal-content .section.support-contact-us-popup) .close-button
         padding: 0;
         color: #000;
         font-family: 'Nunito-Bold', sans-serif;
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: 700;
         background-color: unset;
         border: unset;
@@ -113,10 +110,18 @@ dialog[open]:has(.modal-content .section.support-contact-us-popup) .close-button
     dialog[open]:has(.modal-content .section.support-contact-us-popup){
         border-top-left-radius: 8px;
         border-top-right-radius: 8px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        max-height: calc(100% - 35px);
         height: 100%;
         margin-top: 35px;
-        max-width: 360px;
         width: 100%;
+        box-sizing: border-box;
+        overflow-y: auto;
+        transform: translateY(0);
+        transition: transform 0.5s cubic-bezier(0, 0, 0.2, 1);
+        position: fixed;
+        bottom: 0;
     }
     dialog[open]:has(.modal-content .section.support-contact-us-popup)::backdrop{
         background-color: rgba(51, 51, 51, 0.9);
