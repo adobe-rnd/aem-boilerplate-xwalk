@@ -96,7 +96,7 @@ export function applyLoanFormClick() {
           firstformbtn.classList.remove("loader-initialized");
           loaninnerform.classList.remove("loan-form-sub-otp", "loan-form-success", "loan-form-request-fail", "loan-form-something-wrong");
           try {
-            console.log(e.target.innerText);
+            //console.log(e.target.innerText);
             if (e.target.innerText.trim() === "Talk to loan expert") {
               talkToExpert("calculator", "", targetObject.calculatorType, targetObject.pageName);
             } else if (e.target.innerText.trim() === "Apply loan now") {

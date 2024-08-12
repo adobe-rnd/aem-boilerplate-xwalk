@@ -130,7 +130,7 @@ export default function decorate(block) {
   // /*
   if (version === "Glider") {
     const configJson = JSON.parse(configData);
-    console.log(configJson);
+    //console.log(configJson);
     configJson.arrows = {};
     configJson.arrows.prev = slidePrev;
     configJson.arrows.next = slideNext;
@@ -197,7 +197,7 @@ export default function decorate(block) {
     if (buttonContainer.children.length) {
       block.append(buttonContainer)
       isrotate && setInterval(function () {
-        if ((body.style.overflowY != 'hidden') ) {
+        if ((body.style.overflowY != 'hidden')) {
           slideNextEventHandler();
         }
       }, 7000);

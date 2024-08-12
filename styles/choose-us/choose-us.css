@@ -87,7 +87,8 @@
   line-height: 24px;
 }
 
-.section.choose-us-css .columns-wrapper .columns div div :nth-child(3)>a {
+.section.choose-us-css .columns-wrapper .columns div div :nth-child(3)>a,
+.section.choose-us-css .default-content-wrapper p>a {
   color: var(--orange);
   text-decoration: none;
 }
