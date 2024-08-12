@@ -2392,6 +2392,12 @@
         "name": "selected",
         "label": "Selected",
         "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "api-url",
+        "label": "API Url",
+        "valueType": "string"
       }
     ]
   },
