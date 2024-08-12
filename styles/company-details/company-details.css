@@ -319,7 +319,7 @@
     .section.financial-reports-carousel .tab-link-wrapper .tab-link.block>.compony-details{
         display: flex;
         outline: 0;
-        z-index: 1200;
+        z-index: 1211;
         position: fixed;
         overflow-y: auto;
         flex-direction: column;
