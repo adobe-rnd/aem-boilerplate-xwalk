@@ -10,14 +10,14 @@
 .section.calc-mob-carousel-wrapper .carousel-wrapper .panel-container .glider-track {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
     gap: 24px;
 }
 
 .section.calc-mob-carousel-wrapper .carousel-wrapper .panel-container .teaser.block {
     border-radius: 16px;
     height: 100%;
-    min-width: 354px;
+    max-width: 354px;
     width: 100%;
 }
 
@@ -124,6 +124,14 @@
     right: -60px;
 }
 
+.section.calc-desktop-carousel-wrapper .carousel-wrapper .panel-container .glider-track {
+    justify-content: start;
+}
+
+.section.calc-desktop-carousel-wrapper .carousel-wrapper .panel-container .teaser.block {
+    min-width: 354px;
+}
+
 /* desktop calculator carousel css end */
 
 @media screen and (max-width:1024px) {
@@ -145,7 +153,7 @@
     }
 
     .section.calc-mob-carousel-wrapper .carousel-wrapper .panel-container .teaser.block {
-        min-width: unset;
+        max-width: unset;
     }
 
     .section.calc-mob-carousel-wrapper .carousel-wrapper .carousel.block .button-container.glider-dots {
@@ -175,6 +183,9 @@
     .section.calc-desktop-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-next {
         display: none;
     }
+    .section.calc-desktop-carousel-wrapper .carousel-wrapper .panel-container .teaser.block {
+        min-width: unset;
+    }
     /* desktop calculator carousel css end */
 }
 
@@ -191,7 +202,7 @@
         right: 5px;
     }
 
-    .section.calc-mob-carousel-wrapper .carousel-wrapper .panel-container .teaser.block {
+    .section.calc-desktop-carousel-wrapper .carousel-wrapper .panel-container .teaser.block {
         min-width: 320px;
     }
 }
