@@ -156,6 +156,42 @@
 .section.stakeholder-contact .columns-wrapper .columns>div >div p:nth-child(n+2) strong{
 margin-top: -16px;
 }
+.section.stakeholder-contact .columns-wrapper .columns>div:first-child >div p{
+    max-width: 69%;
+}
+.section.stakeholder-contact .columns-wrapper .columns>div>div>p{
+    max-width: 77%;
+}
+.section.stakeholder-contact .columns-wrapper .columns>div:first-child >div p strong{
+    width: 107%;
+}
+.section.stakeholder-contact .columns-wrapper .columns>div:nth-child(2)>div >p{
+    max-width: 70%;
+} 
+@media  (min-width:1025px) and (max-width:1300px){
+    .section.stakeholder-contact .columns-wrapper .columns>div:first-child >div p {
+        max-width: 85%;
+    }
+    .section.stakeholder-contact .columns-wrapper .columns>div:nth-child(2)>div >p {
+        max-width: 75%;
+    }
+    .section.stakeholder-contact .columns-wrapper .columns>div>div>p {
+        max-width: 95%;
+    }
+}
+@media screen and (max-width:767px) {
+    .section.stakeholder-contact .columns-wrapper .columns>div>div>p,
+    .section.stakeholder-contact .columns-wrapper .columns>div:first-child >div p{
+        max-width: 96%;
+    }
+    .section.stakeholder-contact .columns-wrapper .columns>div >div p strong,
+    .section.stakeholder-contact .columns-wrapper .columns>div:first-child >div p strong{
+        width: 100%;
+    }
+    .section.stakeholder-contact .columns-wrapper .columns>div:nth-child(2)>div >p{
+        max-width: 100%;
+    }
+}
 /* stakeholder contact end */
 /* Stakeholder Insurance Services Start */
 .section.stakeholder-insurance-services .columns-wrapper .columns>div>div>h2{
