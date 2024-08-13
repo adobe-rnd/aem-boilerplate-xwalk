@@ -213,6 +213,20 @@
         "name": "breadcrumb-class",
         "label": "Breadcrumb Class",
         "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "breadcrumb-text",
+        "label": "Breadcrumb Text",
+        "valueType": "string",
+        "multi": true
+      },
+      {
+        "component": "text",
+        "name": "breadcrumb-url",
+        "label": "Breadcrumb URL",
+        "valueType": "string",
+        "multi": true
       }
     ]
   },
