@@ -139,6 +139,15 @@
 .section.list-content-wrapper.list-content-desc-top-space .default-content-wrapper p:last-child {
     margin-top: 25px;
 }
+.section.list-content-wrapper.list-content-description-align .default-content-wrapper>ul {
+    margin-bottom: 25px;
+}
+.section.list-content-wrapper.list-content-description-align .default-content-wrapper p:nth-of-type(n+2) {
+    font-size: 1rem;
+    line-height: 24px;
+    font-family: 'Nunito-Regular', sans-serif;
+    color: var(--black);
+}
 @media screen and (max-width: 767px) {
 /* list content common css start  */
     .section.list-content-wrapper .default-content-wrapper h2,
@@ -180,6 +189,9 @@
         content: "\A";
         white-space: pre;
         display: block;
+    }
+    .section.list-content-wrapper.list-content-description-align .default-content-wrapper p:nth-of-type(n+2) {
+        margin-bottom: 16px;
     }
 }
 
