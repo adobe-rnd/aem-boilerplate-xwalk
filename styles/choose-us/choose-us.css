@@ -108,7 +108,8 @@
 }
 
 .section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(3),
-.section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(4) {
+.section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(4),
+.section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(5) {
   padding-top: 40px;
 }
 
@@ -184,7 +185,8 @@
   }
 
   .section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(3),
-  .section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(4) {
+  .section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(4),
+  .section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(5) {
     padding-top: 24px;
   }
 

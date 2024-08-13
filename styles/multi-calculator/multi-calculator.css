@@ -175,6 +175,7 @@
     min-height: 200px;
     padding: 43px;
     width: 100%;
+    border-radius: 16px;
 }
 
 .section.home-loan-eligibility-calculator .teaser-wrapper .teaser .background .foreground .text .title h2 {

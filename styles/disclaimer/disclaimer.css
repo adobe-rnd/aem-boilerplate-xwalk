@@ -79,3 +79,15 @@
         padding: unset;
     }
   }
+
+  @media screen and (max-width:1024px) {
+    .section.home-page-calculator-call-xf .discalimer-details .discalimer-calc {
+      padding: 0 16px;
+    }
+  }
+
+  @media screen and (min-width:1025px) and (max-width: 1300px) {
+    .section.home-page-calculator-call-xf .discalimer-details .discalimer-calc{
+      max-width: 81.25%;
+    }
+  } 

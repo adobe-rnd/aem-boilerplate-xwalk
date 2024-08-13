@@ -444,6 +444,10 @@ ol .accordion ul {
     font-weight: 700;
 }
 
+.faq-accordion-css-with-orange-heading.faq-accordion-orange-link .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details p>a {
+    color: var(--orange);
+}
+
 /* End */
 
 @media screen and (max-width:767px) {
