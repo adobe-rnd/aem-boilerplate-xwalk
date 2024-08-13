@@ -2,6 +2,7 @@ import { formOpen, overlay } from "../blocks/applyloanform/applyloanforms.js";
 import { statemasterGetStatesApi } from "../blocks/applyloanform/statemasterapi.js";
 import { validationJSFunc } from "../blocks/applyloanform/validation.js";
 import { toggleAllNavSections } from "../blocks/header/header.js";
+// import getSelectedLanguage from "../blocks/select-tag/getSelectedLanguage.js";
 import { sampleRUM, loadHeader, loadFooter, decorateButtons, decorateIcons, decorateSections, decorateBlocks, decorateTemplateAndTheme, waitForLCP, loadBlocks, loadCSS, fetchPlaceholders } from "./aem.js";
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
@@ -589,8 +590,14 @@ function buildAutoBlocks() {
  * @param {Element} main The main element
  */
 // eslint-disable-next-line import/prefer-default-export
-export function decorateMain(main) {
+export async function decorateMain(main) {
   // hopefully forward compatible button decoration
+  try {
+    // const data = await getSelectedLanguage();
+    // main.innerHTML = renderHelper(data, `<div class="forName">${main.innerHTML}</div>`)
+  } catch (error) {
+    // console.warn(error);
+  }
   decorateAnchorTag(main);
   decoratePlaceholder(main);
   decorateButtons(main);
