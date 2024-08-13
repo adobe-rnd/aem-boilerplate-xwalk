@@ -100,6 +100,11 @@
     margin-bottom: 25px;
 }
 
+.section.steps-for-apply.steps-description-add-top-space .default-content-wrapper >h4,
+.section.steps-for-apply.steps-description-add-top-space .default-content-wrapper >h5 {
+    margin-top: 25px;
+}
+
 @media screen and (max-width: 767px) {
     .section.steps-for-apply .default-content-wrapper >h2{
         font-size: 1.125rem;
