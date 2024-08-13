@@ -98,6 +98,11 @@
 .section.reduce-mb .default-content-wrapper h2{
     margin-bottom: 16px;
 }
+.section.remove-table-curve .code-wrapper .code>div>table>tbody>tr>th:first-child,
+.section.remove-table-curve  .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(3),
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>th:last-child{
+    border-radius: unset;
+}
 @media screen and (max-width: 1400px) {
     .section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper {
         min-height: 196px;

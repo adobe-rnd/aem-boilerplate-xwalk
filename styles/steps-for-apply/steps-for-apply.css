@@ -22,7 +22,7 @@
 .section.steps-for-apply .default-content-wrapper >p >strong{
     margin-bottom: 8px;
     display: inline-block;
-    color: #f26841;
+    color: var(--orange);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     font-weight: 700;
@@ -71,16 +71,28 @@
     font-weight: 700;
 }
 
-.section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul:last-child {
+.section.steps-for-apply.steps-for-apply-last-list-text .default-content-wrapper ul:last-child {
     margin-left: unset;
 }
 
-.section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul:last-child>li {
+.section.steps-for-apply.steps-for-apply-last-list-text .default-content-wrapper ul:last-child>li {
     list-style-type: none;
 }
 
-.section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul:last-child>li>strong {
+.section.steps-for-apply.steps-for-apply-last-list-text .default-content-wrapper ul:last-child>li>strong {
     color: var(--orange);
+}
+
+.section.steps-for-apply-black.steps-gst-content-align .default-content-wrapper >p >strong {
+    color: var(--orange);
+}
+
+.section.steps-for-apply-black.gst-steps-content-orange .default-content-wrapper h3 {
+    color: var(--orange);
+    font-family: "Nunito-Bold";
+    font-size: 1.125rem;
+    line-height: 24px;
+    margin-bottom: 1rem;
 }
 
 
@@ -103,9 +115,17 @@
         display: block
     }
     
-    .section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul>li {
+    .section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul>li,
+    .section.steps-for-apply.steps-for-apply-black.steps-gst-content-align .default-content-wrapper >p,
+    .section.steps-for-apply.steps-for-apply-black.steps-gst-content-align .default-content-wrapper >p >strong {
         font-size: 0.875rem;
         line-height: 24px;
+    }
+
+    .section.steps-for-apply-black.gst-steps-content-orange .default-content-wrapper h3 {
+        font-size: 0.875rem;
+        line-height: 20px;
+        margin-bottom: .5rem;
     }
 }
 
@@ -119,5 +139,12 @@
         margin-bottom: unset;
         position: absolute;
         left: 0;
+    }
+    .section.steps-for-apply.steps-for-apply-black.steps-gst-content-align .default-content-wrapper >p {
+        padding-left: unset;
+    }
+    .section.steps-for-apply.steps-for-apply-black.steps-gst-content-align .default-content-wrapper >p >strong {
+        position: unset;
+        display: inline
     }
 }

@@ -1,3 +1,7 @@
+.section.breadcrumb-handle.teaser-container {
+    padding: unset;
+}
+
 .section.breadcrumb-handle{
     position: relative;
 }
@@ -58,7 +62,7 @@
 }
 @media screen and (max-width:1024px){
     .section.breadcrumb-handle .breadcrumb-wrapper{
-        padding: 0 0 0 16px;
+        padding: 0 16px;
     }
     .section.breadcrumb-handle .breadcrumb-wrapper .breadcrumb{
         padding-top: 16px;

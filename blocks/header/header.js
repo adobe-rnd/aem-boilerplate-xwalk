@@ -45,7 +45,7 @@ function focusNavSection() {
  * @param {Boolean} expanded Whether the element should be expanded or collapsed
  */
 export function toggleAllNavSections(sections, expanded = false) {
-  sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
+  sections?.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
     section.setAttribute('aria-expanded', expanded);
   });
 }
@@ -64,9 +64,9 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   toggleAllNavSections(navSections, expanded || isDesktop.matches ? 'false' : 'true');
   // button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
   // enable nav dropdown keyboard accessibility
-  const navDrops = navSections.querySelectorAll('.nav-drop');
+  const navDrops = navSections?.querySelectorAll('.nav-drop');
   if (isDesktop.matches) {
-    navDrops.forEach((drop) => {
+    navDrops?.forEach((drop) => {
       if (!drop.hasAttribute('tabindex')) {
         // drop.setAttribute('role', 'button');
         drop.setAttribute('tabindex', 0);
@@ -74,7 +74,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
       }
     });
   } else {
-    navDrops.forEach((drop) => {
+    navDrops?.forEach((drop) => {
       drop.removeAttribute('role');
       drop.removeAttribute('tabindex');
       drop.removeEventListener('focus', focusNavSection);

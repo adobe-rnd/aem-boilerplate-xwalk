@@ -21,7 +21,7 @@ export function updatePartPayment(rateIn, principal_outstanding, LT, partPayment
   principal_outstanding = principal_outstanding.replace(/,/g, "");
   LT = LT;
   let EMIValue = calculatePMT(principal_outstanding, rate, LT);
-  console.log("Emi Value" + EMIValue);
+  //console.log("Emi Value" + EMIValue);
 
   if (partPayments.length == 0) {
     let interest = EMIValue * LT * 12 - unchangedPricipalAmoutn;
@@ -49,14 +49,14 @@ export function updatePartPayment(rateIn, principal_outstanding, LT, partPayment
   }
 
   let reductionInTenure = LT * 12 - monthCounter;
-  console.log("monthCounter: ", reductionInTenure);
+  //console.log("monthCounter: ", reductionInTenure);
 
   let totalInterest = EMIValue * 12 * LT - unchangedPricipalAmoutn;
   let totalSavings = totalInterest - interestAmtSum;
 
-  console.log("totalsavings:", totalSavings);
+  //console.log("totalsavings:", totalSavings);
   let effit = calculateEIR(LT, EMIValue, totalSavings, unchangedPricipalAmoutn);
-  console.log("net effictive roi: ", effit);
+  //console.log("net effictive roi: ", effit);
 
   let totalPayment = interestAmtSum + Number(unchangedPricipalAmoutn);
 

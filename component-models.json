@@ -2330,12 +2330,73 @@
     ]
   },
   {
+    "id": "branchlocator",
+    "fields": [
+      {
+        "component": "text-input",
+        "label": "URL of Content Fragment",
+        "name": "text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "fontawesome",
     "fields": [
       {
         "component": "text-input",
         "label": "URL of Content Fragment",
         "name": "text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "select-tag",
+    "fields": [
+      {
+        "component": "text-input",
+        "name": "name",
+        "label": "Name",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text-name",
+        "label": "Name",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "label",
+        "label": "Label",
+        "valueType": "string",
+        "multi": true
+      },
+      {
+        "component": "text-input",
+        "name": "value",
+        "label": "value",
+        "valueType": "string",
+        "multi": true
+      },
+      {
+        "component": "text-input",
+        "name": "disabled",
+        "label": "disabled",
+        "valueType": "string",
+        "multi": true
+      },
+      {
+        "component": "text-input",
+        "name": "selected",
+        "label": "Selected",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "api-url",
+        "label": "API Url",
         "valueType": "string"
       }
     ]

@@ -125,6 +125,16 @@
 .section.list-content-wrapper.company-mt-56 .default-content-wrapper h2 {
     margin-top: 56px;
 }
+
+.section.list-content-wrapper.gst-page-orange-list-wrapper .default-content-wrapper ul {
+    margin-left: unset;
+}
+.section.list-content-wrapper.gst-page-orange-list-wrapper .default-content-wrapper ul > li {
+    list-style-type: none;
+}
+.section.list-content-wrapper.gst-page-orange-list-wrapper .default-content-wrapper ul > li>strong  {
+    color: var(--orange);
+}
 @media screen and (max-width: 767px) {
 /* list content common css start  */
     .section.list-content-wrapper .default-content-wrapper h2,
