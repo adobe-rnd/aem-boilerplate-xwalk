@@ -213,6 +213,13 @@
         "name": "breadcrumb-class",
         "label": "Breadcrumb Class",
         "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "breadcrumb-text",
+        "label": "Breadcrumb Text",
+        "valueType": "string",
+        "multi": true
       }
     ]
   },
