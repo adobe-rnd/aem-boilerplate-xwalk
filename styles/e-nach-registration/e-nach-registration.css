@@ -165,7 +165,7 @@ dialog[open]:has(.modal-content .section.e-nach-reg-modal-wrapper) {
     justify-content: space-around;
     padding-top: 13px;
     min-height: 160px;
-
+    position: relative;
 }
 
 .section.e-nach-three-logo .default-content-wrapper ul {
@@ -242,7 +242,10 @@ dialog[open]:has(.modal-content .section.e-nach-reg-modal-wrapper) {
         top: unset;
         left: unset;
         bottom: 0;
-        max-height: calc(100% - 220px);
+        max-height: 431px;
+        border-radius: unset;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
     }
 
     .section.e-nach-mob-section .default-content-wrapper h2 {

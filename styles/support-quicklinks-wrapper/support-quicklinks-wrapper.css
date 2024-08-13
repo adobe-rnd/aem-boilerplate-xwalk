@@ -37,7 +37,9 @@
     padding: 24px 0;
     position: relative;
 }
-
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion:last-child details{
+    border-bottom: none;
+}
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details summary {
     margin: 0;
     padding: 0;
