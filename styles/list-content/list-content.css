@@ -46,6 +46,7 @@
 }
 
 .section.list-content-wrapper .default-content-wrapper p>a,
+.section.list-content-wrapper .default-content-wrapper p>strong>a,
 .section.list-content-wrapper .default-content-wrapper ul>li>a {
     color: var(--orange);
 }
@@ -134,6 +135,9 @@
 }
 .section.list-content-wrapper.gst-page-orange-list-wrapper .default-content-wrapper ul > li>strong  {
     color: var(--orange);
+}
+.section.list-content-wrapper.list-content-desc-top-space .default-content-wrapper p:last-child {
+    margin-top: 25px;
 }
 @media screen and (max-width: 767px) {
 /* list content common css start  */
