@@ -1150,7 +1150,7 @@
   }
   .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .outputdiv {
     width: 50%;
-    margin-top: 14px;
+    /* margin-top: 14px; */
   }
   @media screen and (max-width: 1024px) {
     .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .outputdiv {
@@ -1827,5 +1827,14 @@
     }
     .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .headingtabs .headul .active p{
       font-size: 22px;
+    }
+    .homeloancalculator .home-loan-calculator-parent .hlc-subparent .radiotab .secondtab .customecheck {
+      margin-left: 40px;
+    }
+    .homeloancalculator .home-loan-calculator-parent .hlc-subparent .radiotab .firsttab .customecheck .salary-parent {
+      width: 65%;
+    }
+    .homeloancalculator .home-loan-calculator-parent .hlc-subparent .radiotab .firsttab .customecheck {
+      margin-right: 30px;
     }
   }

@@ -1,6 +1,10 @@
+import { renderHelper } from "../../scripts/scripts.js";
+// import getSelectedLanguage from "../select-tag/getSelectedLanguage.js";
 import { loanProductsAnalytics } from "./teaserv2-analytics.js";
 
-export default function decorate(block) {
+export default async function decorate(block) {
+  // const data = await getSelectedLanguage();
+  // block.innerHTML = renderHelper(data, `<div class="forName">${block.innerHTML}</div>`)
   const props = Array.from(block.children, (row) => row.firstElementChild);
   const renderTeaserHTML = renderTeaserHTMLFactory(props, block);
   block.innerHTML = "";
@@ -31,10 +35,10 @@ export function renderTeaserHTMLFactory(props, block) {
   const bgBannerColor = bgColor?.textContent.trim()?.src || "";
   const bgImageDiv = createElement("div", "bg-image");
 
-  if(block?.closest('.section').classList.contains('corporate-financing-banner-wrapper')){
+  if (block?.closest('.section').classList.contains('corporate-financing-banner-wrapper')) {
     if (isDesktop.matches) {
       bgImageSrc = bgImageSrc.split("?")[0];
-    }else if (isMobile.matches) {
+    } else if (isMobile.matches) {
       mobileSrc = mobileSrc.split("?")[0];
     }
   }

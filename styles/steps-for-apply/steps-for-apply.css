@@ -49,7 +49,8 @@
     color: var(--black)
 }
 
-.section.steps-for-apply .default-content-wrapper >h4>a {
+.section.steps-for-apply .default-content-wrapper >h4>a,
+.section.steps-for-apply .default-content-wrapper >h5>a {
     color: var(--orange);
     text-decoration: none;
 }
@@ -95,6 +96,14 @@
     margin-bottom: 1rem;
 }
 
+.section.steps-for-apply.steps-for-apply-list-text.steps-add-bottom-space .default-content-wrapper ul>li {
+    margin-bottom: 25px;
+}
+
+.section.steps-for-apply.steps-description-add-top-space .default-content-wrapper >h4,
+.section.steps-for-apply.steps-description-add-top-space .default-content-wrapper >h5 {
+    margin-top: 25px;
+}
 
 @media screen and (max-width: 767px) {
     .section.steps-for-apply .default-content-wrapper >h2{

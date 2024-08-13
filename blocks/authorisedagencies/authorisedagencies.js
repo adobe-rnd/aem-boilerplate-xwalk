@@ -5,7 +5,6 @@ export default async function decorate(block) {
     const cfRepsonse = await fetchApiCall(cfURL);
     const repsonseData = cfRepsonse.data[0].data;
     const jsonResponseData = JSON.parse(repsonseData);
-
     let selectContainerWrapper = createAndAppend('div', "", "select-container-wrapper");
     let selectContainer = createAndAppend('div', "", "select-container");
     let cardContainer = createAndAppend('div', "", "card-container");
@@ -26,9 +25,9 @@ export default async function decorate(block) {
     legendField.textContent = "locations";
     cityDropdown.appendChild(legendField);
     citiesContainer.appendChild(cityDropdown);
-
-    let cities = Object.keys(jsonResponseData);
-    cities.forEach(city => {
+    let sortedCities = Object.keys(jsonResponseData).sort((a, b) =>a.localeCompare(b, undefined, { sensitivity: 'base' }))
+    // let cities = Object.keys(jsonResponseData);
+    sortedCities.forEach(city => {
         let label = document.createElement('label');
         let input = document.createElement('input');
         input.type = 'radio';
@@ -40,6 +39,7 @@ export default async function decorate(block) {
             inputLocation.placeholder = city;
             inputLocation.className = 'cityBlack';
             citiesContainer.style.display = 'none';
+            selectContainer.classList.toggle('open');
         })
         let span = document.createElement('span');  
         span.textContent = city;
@@ -115,6 +115,16 @@ export default async function decorate(block) {
 
     block.appendChild(selectContainerWrapper);
     displayCards();
+    block.closest("body").addEventListener("click" , function(e){
+            if(!e.target.closest(".toggleCityContainer") && !e.target.closest(".select-container")  && !e.target.closest("fieldset") && !e.target.closest("cityBlack")){
+                if(block.querySelector(".select-container.open")){
+                    if(block.querySelector(".cities-container").style.display =="block"){
+                    block.querySelector(".cities-container").style.display ="none";
+                    block.querySelector(".select-container").classList.remove("open");
+                }
+                }
+            }})
+
 }
 export async function fetchApiCall(cfurl) {
     const response = await fetchAPI("GET", cfurl);
