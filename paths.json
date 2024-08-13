@@ -25,7 +25,7 @@
     "/content/piramalfinance-eds/in/en/api/business-loan-combined-calculator:/api/business-loan-combined-calculator.json",
     "/content/piramalfinance-eds/in/en/api/personal-loan-combined-calculator:/api/personal-loan-combined-calculator.json",
     "/content/piramalfinance-eds/in/en/api/home-loan-eligibility-calculator:/api/home-loan-eligibility-calculator.json",
-    "/content/piramalfinance-eds/in/en/api/home-loan-emi-calculator:/api/home-loan-emi-calculator.json",
+    "/content/piramalfinance-eds/in/en/api/home-loan-emi-calculators:/api/home-loan-emi-calculators.json",
     "/content/piramalfinance-eds/in/en/api/business-loan-eligibility-calculator:/api/business-loan-eligibility-calculator.json",
     "/content/piramalfinance-eds/in/en/api/business-loan-emi-calculator:/api/business-loan-emi-calculator.json",
     "/content/piramalfinance-eds/in/en/api/personal-loan-eligibility-calculator:/api/personal-loan-eligibility-calculator.json",
