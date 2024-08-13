@@ -295,6 +295,7 @@
     padding: 20px 50px 20px 16px;
     position: relative;
     text-decoration: none;
+    text-transform: capitalize;
 }
 
 .section.financial-report-content-wrap .financialreports-wrapper .financialreports .accordianpdf-section .container .accordianContent .accordianBox .subAccordianWrap .subAccordianBox.active .subAccordianTitle {
