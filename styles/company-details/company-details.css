@@ -319,7 +319,7 @@
     .section.financial-reports-carousel .tab-link-wrapper .tab-link.block>.compony-details{
         display: flex;
         outline: 0;
-        z-index: 99999;
+        z-index: 100001;
         position: fixed;
         overflow-y: auto;
         flex-direction: column;
@@ -333,8 +333,6 @@
         transition: transform 0.5s cubic-bezier(0, 0, 0.2, 1);
         height: 100%;
         max-height: 80vh;
-        -webkit-transform: translate3d(0, 0, 0); /* For WebKit browsers like Safari */
-        transform: translate3d(0, 0, 0);
     }
 
     .section.company-details-wrapper .tab-link-wrapper .tab-link.block>div.model-mob-hide {
