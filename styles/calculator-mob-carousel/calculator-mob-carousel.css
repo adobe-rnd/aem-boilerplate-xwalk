@@ -206,3 +206,8 @@
         min-width: 320px;
     }
 }
+@media  (min-width: 1025px) and (max-width: 1300px){
+    .section.calc-desktop-carousel-wrapper .carousel-wrapper .panel-container .glider-track{
+        gap:16px
+    }
+}

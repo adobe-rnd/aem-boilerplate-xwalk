@@ -248,7 +248,7 @@ const eligibilitydiv = callJson.chechboxelibilityobj.chechboxemi
   
                           </div>
   
-                          <div class="customerbuttons ${callJson.button1link || "dp-none"}">
+                          <div class="customerbuttons ${callJson.button1text || "dp-none"}">
   
                               <a href="${callJson.button1link}" target="_self">
   
