@@ -96,7 +96,7 @@
     margin-bottom: 1rem;
 }
 
-.section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul>li {
+.section.steps-for-apply.steps-for-apply-list-text.steps-add-bottom-space .default-content-wrapper ul>li {
     margin-bottom: 25px;
 }
 
