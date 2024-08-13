@@ -9,7 +9,13 @@
 .section.authorised-agencies-banner .teaser-wrapper .teaser .background .front-picture {
     align-items: flex-start;
 }
-
+.section.authorised-agencies-banner .teaser-wrapper .teaser .background .foreground .text .long-description .button-container a sub{
+    color: var(--white);
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 28px;
+}
 .section.authorised-agencies-banner .teaser-wrapper .teaser .background .foreground .text .long-description .button-container a{
     background: var(--orange);
     border-radius: 8px;
@@ -18,17 +24,18 @@
     font-size: 1.125rem;
     font-weight: 700;
     line-height: 28px;
-    padding: 18px 34.56px 18px 34.65px;
+    /* padding: 18px 34.56px 18px 34.65px; */
     width: fit-content;
     margin: 0;
+    padding: 14.6px 34px;
 }
 
-.section.authorised-agencies-banner .teaser-wrapper .teaser .background .foreground .text .short-description p a u{
+.section.authorised-agencies-banner .teaser-wrapper .teaser .background .foreground .text .short-description p a >u,
+.section.authorised-agencies-banner .teaser-wrapper .teaser .background .foreground .text .short-description p a >u >sub{
     color: #f58667;
     font-family: Nunito-Extrabold, sans-serif;
     font-weight: 700;
 }
-
 .section.authorised-agencies-banner .teaser-wrapper .teaser .background .foreground .text .long-description .button-container {
     font-size: unset;
     line-height: unset;
@@ -134,9 +141,11 @@
     font-size: 1.125rem;
     font-weight: 700;
     line-height: 21px;
-    max-width: 296px;
+    max-width: 272.5px;
     padding: 7px 0;
     width: 100%;
+    padding-right: 23px;
+    overflow: auto;
 }
 
 .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .select-container input.cityBlack::placeholder{
@@ -157,6 +166,7 @@
     right: 4px;
     transform: rotate(45deg);
     bottom: 15px;
+    pointer-events: none;
 }
 
 .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .select-container.open::after{
@@ -175,7 +185,7 @@
     right: 0; 
     display: flex;
     flex-direction: column;
-    row-gap: 16px;
+    /* row-gap: 16px; */
     width: 100%;
 }
 
@@ -188,12 +198,14 @@
     padding: 16px 0 12px;
     position: absolute;
     top: 0;
+    text-transform: capitalize;
 }
 
 .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .cities-container fieldset label{
     align-items: center;
     column-gap: 8px;
     display: flex;
+    padding-bottom: 16px;
 }
 
 .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .cities-container fieldset label input{
