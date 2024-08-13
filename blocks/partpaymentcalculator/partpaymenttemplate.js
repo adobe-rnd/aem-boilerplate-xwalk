@@ -343,7 +343,7 @@ export function partPaymentCalHTML(callJson) {
       
                               </div>
       
-                              <div class="customerbuttons ${callJson.button1link || ""}">
+                              <div class="customerbuttons ${callJson.button1link || "dp-none"}">
       
                                   <a href="${callJson.button1link || ""}" target="_self">
       
