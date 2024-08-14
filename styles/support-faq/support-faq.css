@@ -39,13 +39,35 @@
 
 .section.support-faq-wrapper .faq-wrapper .faq>div>h2::after{
     content: '';
-    /* background: url('/content/dam/piramalfinance/product-page/home-loan/down-arrow.png'); */
     position: absolute;
+    background-image: url('/content/dam/piramalfinance/product-page/home-loan/down-arrow.png');
     height: 24px;
     width: 24px;
     right: 0;
-    background-image: url('/content/dam/piramalfinance/product-page/home-loan/down-arrow.png');
     object-fit: contain;
+    background-size: 100%;
+}
+
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6::after{
+    content: '';
+    position: absolute;
+    background-image: url('/content/dam/piramalfinance/product-page/home-loan/add.png');
+    height: 24px;
+    width: 24px;
+    right: 0;
+    object-fit: contain;
+    background-size: 100%;
+}
+
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6.active::after{
+    content: '';
+    position: absolute;
+    background-image: url('/content/dam/piramalfinance/product-page/home-loan/minus.png');
+    height: 24px;
+    width: 24px;
+    right: 0;
+    object-fit: contain;
+    background-size: 100%;
 }
 
 .section.support-faq-wrapper .faq-wrapper .faq>div h2 span,
@@ -72,10 +94,6 @@
     cursor: pointer;
 }
 
-/* .section.support-faq-wrapper .faq-wrapper .faq>div>ul:has(aria-hidden='true')>li>h6{
-    color: #f26841
-}     */
-
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul li h6,
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul >li > ul> li> strong em{
     color: #666;
@@ -84,6 +102,10 @@
     font-weight: 700;
     line-height: 24px;
     padding-right: 20px;
+}
+
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul li h6.active {
+    color: #f26841
 }
 
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul >li > ul> li> strong em {
@@ -194,16 +216,39 @@
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul {
         padding: 48px 0 0 54px;
     }
-    .section.support-faq-wrapper .faq-wrapper .faq>div>ul li h6, .section.support-faq-wrapper .faq-wrapper .faq>div>ul >li > ul> li> strong em {
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul li h6, 
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul >li > ul> li> strong em {
         width: 93%;
     }
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li {
         width: 85%;
     }
     .section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul {
-        padding: 0;
-    }   
+        padding-left: 54px;
+    } 
+    .section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul>li>ul {
+        padding-left: 0;
+    }  
     .section.support-faq-wrapper .faq-wrapper .faq>div>p {
         padding-left: 54px;
     }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .section.support-faq-wrapper .faq-wrapper .faq>div h2 span {
+        margin: 0 15px 0 5px;
+    }
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul {
+        padding: 48px 0 0 53px;
+    }
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li {
+        width: 97%;
+    }
+    .section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul,
+    .section.support-faq-wrapper .faq-wrapper .faq>div>p {
+        padding-left: 54px;
+    } 
+}
+
+
+

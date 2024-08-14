@@ -42,6 +42,7 @@ function toggleList(el) {
         eachLi.querySelectorAll('ul,ol').forEach(function (eachUl) {
             toggleHidden(eachUl);
             eachLi.querySelector('ul,ol') && eachLi.addEventListener('click', function (e) {
+                e.target.classList.toggle("active")
                 toggleHidden(eachUl)
             })
         })
