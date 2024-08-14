@@ -72,10 +72,6 @@
     width: unset;
 }
 
-.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr :nth-child(2) {
-    border-radius: 0 10px 0 0;
-}
-
 .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>th:first-child {
     border-radius: 10px 0 0 0;
 }
@@ -83,8 +79,6 @@
 .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>th:last-child{
     border-radius: 0 10px 0 0;
 }
-
-.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th
 
 .section.one-col-table .code-wrapper .code>div>table>tbody>tr :nth-child(2) {
     border-left: unset;

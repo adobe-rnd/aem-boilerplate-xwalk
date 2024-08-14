@@ -100,7 +100,7 @@
 }
 .section.remove-table-curve .code-wrapper .code>div>table>tbody>tr>th:first-child,
 .section.remove-table-curve  .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(3),
-.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>th:last-child{
+.section.remove-table-curve .code-wrapper .code>div>table>tbody>tr>th:last-child{
     border-radius: unset;
 }
 
