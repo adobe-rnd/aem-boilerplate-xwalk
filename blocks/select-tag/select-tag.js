@@ -1,13 +1,19 @@
 import { getProps, renderHelper } from "../../scripts/scripts.js";
 import { loader } from "../loader/loader.js";
-import getSelectedLanguage from "./getSelectedLanguage.js";
+import { getSelectedLanguage, getLanguageByLocation } from "./getSelectedLanguage.js";
 
 
 let defaultLanguageData = await getSelectedLanguage('english');
+const locationByLanguage = {
+    maharashtra: 'marathi',
+    default: 'english',
+}
 export default async function decorate(block) {
+    const location = await getLanguageByLocation()
     //console.log(block);
-    const [name, labels, values, disabled, defaultValue, apiUrl] = getProps(block);
+    const [name, labels, values, disabled, , apiUrl] = getProps(block);
 
+    const defaultValue = locationByLanguage[location] || locationByLanguage.default;
     let selectedLanguageData = await getSelectedLanguage(defaultValue, apiUrl);
     selectedLanguageData = await changeContent(defaultLanguageData, selectedLanguageData);
 
@@ -20,7 +26,7 @@ export default async function decorate(block) {
     let optionTag = '';
     labelArr.forEach(function (label, index) {
         const isDisabled = disabledArr[index] === valueArr[index] ? ' disabled ' : ''
-        const isSelected = defaultValue === valueArr[index] ? ' selected ' : ''
+        const isSelected = defaultValue.toLowerCase() === valueArr[index]?.toLowerCase() ? ' selected ' : ''
         optionTag += `  <option value="${valueArr[index]}" ${isSelected} ${isDisabled}>${label}</option>
 ` ;
     })
