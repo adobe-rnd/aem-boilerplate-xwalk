@@ -1,4 +1,13 @@
 export function homeloanCalHTML(callJson) {
+
+  let isMobile = window.matchMedia("(max-width: 768px)");
+  let buttonLink1 = callJson.button1link;
+  let buttonLink2 = callJson.button2link;
+  if (isMobile.matches && buttonLink1 && buttonLink2) {
+    buttonLink1 = callJson.button1link.replace("DWEB", "MWEB");
+    buttonLink2 = callJson.button2link.replace("DWEB", "MWEB");
+  }
+
   const salaried = callJson.salaried?.salariedcheck
     ? `
   <li id="salaryTab" class="firsttab onetab">
@@ -262,11 +271,11 @@ export function homeloanCalHTML(callJson) {
     
                             <div class="customerbuttons ${callJson.button1text ? "" : "dp-none"}">
     
-                                <a href="${callJson.button1link || ""}" target="_self">
+                                <a href="${buttonLink1 || ""}" target="_self">
     
                                     <button class="expert">${callJson.button1text || ""}</button>
                                 </a>
-                                <a href="${callJson.button2link || ""}" target="_self">
+                                <a href="${buttonLink2 || ""}" target="_self">
     
                                     <button class="expert orangeexpert">${callJson.button2text || ""}</button>
                                 </a>
