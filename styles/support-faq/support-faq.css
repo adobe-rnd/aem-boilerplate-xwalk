@@ -86,7 +86,9 @@
     padding: 48px 0 0 94px;
 }
 
-.section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul{
+.section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul,
+.section.support-faq-wrapper .faq-wrapper .faq>div:has(p) ul
+{
     padding: 24px 0 0 94px;
 }
 
@@ -101,7 +103,7 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
-    padding-right: 20px;
+    word-break: break-all;
 }
 
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul li h6.active {
@@ -206,6 +208,7 @@
     .section.support-faq-wrapper .faq-wrapper .faq>div h2 span{
         height: 24px;
         width: 24px;
+        max-width: unset;
     }
     .section.support-faq-wrapper .faq-wrapper .faq>div h2 {
         font-size: 18px;
@@ -216,14 +219,20 @@
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul {
         padding: 48px 0 0 54px;
     }
-    .section.support-faq-wrapper .faq-wrapper .faq>div>ul li h6, 
-    .section.support-faq-wrapper .faq-wrapper .faq>div>ul >li > ul> li> strong em {
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul >li > ul> li> strong em,
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul >li > ul> li
+     {
         width: 93%;
+        word-break: break-all;
     }
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li {
         width: 85%;
     }
-    .section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul {
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul li h6{
+        width: 103%;
+    }
+    .section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul,
+    .section.support-faq-wrapper .faq-wrapper .faq>div:has(p) ul {
         padding-left: 54px;
     } 
     .section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul>li>ul {
@@ -231,6 +240,7 @@
     }  
     .section.support-faq-wrapper .faq-wrapper .faq>div>p {
         padding-left: 54px;
+        word-wrap: break-word;
     }
 }
 
@@ -247,6 +257,10 @@
     .section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul,
     .section.support-faq-wrapper .faq-wrapper .faq>div>p {
         padding-left: 54px;
+        word-wrap: break-word;
+    } 
+    .section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul>li>ul {
+        padding-left: 0;
     } 
 }
 
