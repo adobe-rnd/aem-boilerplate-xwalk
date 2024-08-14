@@ -29,7 +29,7 @@ const getAllPathsExceptCurrent = async (paths, startLevel) => {
     let pathVal = '';
     // Excluding current link
     for (let i = 0; i <= pathsList.length - 2; i += 1) {
-    // for (let i = 0; i <= pathsList.length - 1; i += 1) {
+        // for (let i = 0; i <= pathsList.length - 1; i += 1) {
         pathVal = `${pathVal}/${pathsList[i]}`;
         let url = `${window.location.origin}${pathVal}`;
         if (window.location.host.includes('author')) {
@@ -61,12 +61,32 @@ const createLink = (path) => {
 };
 
 export default async function decorate(block) {
-    const [hideBreadcrumbVal, startLevelVal, hideCurrentPageVal , classNameVal] = block.children;
+    const [hideBreadcrumbVal, startLevelVal, hideCurrentPageVal, classNameVal, multiText, multiUrl] = block.children;
+
     const hideBreadcrumb = hideBreadcrumbVal?.textContent.trim() || 'false';
     const hideCurrentPage = hideCurrentPageVal?.textContent.trim() || 'false';
     let startLevel = startLevelVal?.textContent.trim() || 1;
     let className = classNameVal?.textContent.trim() || "black";
     const metaBreadcrumbLevel = getMetadata('breadcrumblevel');
+
+    const breadcrumb = createElement('nav', '', {
+        'aria-label': 'Breadcrumb',
+    });
+
+    if (multiText && multiUrl) {
+        const breadcrumbsText = []
+        const multiUrls = multiUrl.innerText.trim().replace(/~/g, '/').split(',');
+        multiText.innerText.trim().split(',').forEach(function (text, index) {
+            breadcrumbsText.push(`<a href="${multiUrls[index]}">${text}</a>`);
+        })
+
+
+        block.innerHTML = '';
+        block.classList.add(className);
+        breadcrumb.innerHTML = breadcrumbsText.join(`<span class="breadcrumb-separator">${RIGHTARROW}</span>`);
+        block.append(breadcrumb);
+        return block;
+    }
 
     if (metaBreadcrumbLevel !== '') {
         startLevel = metaBreadcrumbLevel;
@@ -78,14 +98,11 @@ export default async function decorate(block) {
     if (hideBreadcrumb === 'true') {
         return;
     }
-    const breadcrumb = createElement('nav', '', {
-        'aria-label': 'Breadcrumb',
-    });
-    
+
     let breadcrumbLinks = [];
-    if(startLevel == 'hidehome'){
+    if (startLevel == 'hidehome') {
         startLevel = '';
-    }else{
+    } else {
         const HomeLink = createLink({ path: '', name: 'HomePage', url: window.location.origin, label: 'Home' });
         breadcrumbLinks = [HomeLink.outerHTML];
     }

@@ -203,7 +203,7 @@
 .media-read-more-hide .tab-container-wrapper .tab-container .panel-container .teaser .background .foreground .text .long-description ul> li:nth-child(3) sub{
     display: none;
 }
-
+    
 @media screen and (max-width:767px) {
     .section.media-cards-wrapper .panel-container{
         gap: 16px;
