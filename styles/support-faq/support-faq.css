@@ -43,7 +43,8 @@
     background-image: url('/content/dam/piramalfinance/product-page/home-loan/down-arrow.png');
     height: 24px;
     width: 24px;
-    right: 0;
+    right: -3px;
+    top: 0;
     object-fit: contain;
     background-size: 100%;
 }
@@ -125,6 +126,7 @@
 }
 
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li,
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>strong,
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li > em >a,
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ol>li>ol>li {
     color: #666;
@@ -133,6 +135,10 @@
     font-weight: 400;
     line-height: 24px;
     cursor: default;
+}
+
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>strong{
+    font-weight: bolder;
 }
 
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li a {
@@ -206,7 +212,7 @@
         padding: 16px;
     }
     .section.support-faq-wrapper .faq-wrapper .faq>div h2 span {
-        margin: 0 16px 0 12px;
+        margin: 0 12px 0 9px;
     }
     .section.support-faq-wrapper .faq-wrapper .faq>div h2 span img,
     .section.support-faq-wrapper .faq-wrapper .faq>div h2 span{
@@ -216,6 +222,7 @@
     }
     .section.support-faq-wrapper .faq-wrapper .faq>div h2 {
         font-size: 1.125rem;
+        padding-right: 12px;
     }
     .section.support-faq-wrapper .faq-wrapper .faq>div {
         padding: 16px 0;
