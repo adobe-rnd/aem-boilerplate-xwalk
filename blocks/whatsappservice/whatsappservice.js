@@ -77,6 +77,7 @@ function otpPopupWhatsAppHTML(){
                             <div class="cmp-container">
                                 <div class="image">
                                     <img data-src="/content/dam/piramalfinance/support/whatsaap/whatsapplock.svg"
+                                        src="/content/dam/piramalfinance/support/whatsaap/whatsapplock.svg"
                                         class="cmp-image__image lozad" alt="send">
                                 </div>
                                 <div class="image crossimage">
