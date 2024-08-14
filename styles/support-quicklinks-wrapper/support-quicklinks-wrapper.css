@@ -70,6 +70,7 @@
     content: '';
     position: absolute;
     background-image: url('/content/dam/piramalfinance/quicklinks/down-arrow.png');
+    
     height: 24px;
     right: 0;
     top: 50%;
@@ -79,7 +80,8 @@
     background-size: 100%;
 }
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >summary.active::after{
-    background-image: url('/icons/downArrow.png');
+    top: 0;
+    transform: rotate(180deg);
 }
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul{
     margin: 0;
@@ -92,14 +94,15 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 21px;
-    display: flex;
-    gap: 3px;
-    flex-wrap: wrap;
+}
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li span{
+    vertical-align: middle;
 }
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li span img{
     width: 24px;
     height: 24px;
     display: block;
+    margin-left: 5px;
 }
 
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li:has(>strong):first-child{
@@ -178,6 +181,6 @@
         margin-bottom: 32px;
     }
     .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li{
-        width: 94%;
+        width: 95%;
     }
 }
