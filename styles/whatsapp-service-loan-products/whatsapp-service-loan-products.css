@@ -1,5 +1,5 @@
 .section.loan-products-wrapper.whatsapp-service-loan-products-wraaper {
-    background-color: rgba(235, 238, 240, 0.31);
+    background-color: var(--white);
     padding: 0;
 }
 
