@@ -55,7 +55,7 @@
     display: none;
 }
 
-.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details::after {
+/* .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details summary::after {
     position: absolute;
     content: '';
     background-image: url('/content/dam/piramalfinance/quicklinks/down-arrow.png');
@@ -63,6 +63,21 @@
     width: 24px;
     top: 50%;
     transform: translateY(-50%);
+} */
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details summary::after{
+    content: '';
+    position: absolute;
+    background-image: url('/content/dam/piramalfinance/quicklinks/down-arrow.png');
+    background-image: url('/content/dam/piramalfinance/product-page/home-loan/down-arrow.png');
+    height: 24px;
+    right: 0;
+    top: 2px;
+    width: 24px;
+    object-fit: contain;
+    background-size: 100%;
+}
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details summary.active::after{
+    transform: rotate(180deg);
 }
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul{
     margin: 0;
