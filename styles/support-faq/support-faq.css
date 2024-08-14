@@ -28,7 +28,7 @@
 .section.support-faq-wrapper .faq-wrapper .faq>div h2 {
     color: #333;
     font-family: Nunito-Bold, sans-serif;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
     line-height: 28px;
     display: flex;
@@ -100,7 +100,7 @@
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul >li > ul> li> strong em{
     color: #666;
     font-family: Nunito-Bold, sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 700;
     line-height: 24px;
     word-break: break-all;
@@ -125,7 +125,7 @@
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ol>li>ol>li {
     color: #666;
     font-family: Nunito-Regular, sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
     cursor: default;
@@ -145,7 +145,7 @@
 .section.support-faq-wrapper .faq-wrapper .faq>div>p {
     color: #666;
     font-family: Nunito-Regular, sans-serif;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 400;
     line-height: 28px;
     padding-left: 94px;
@@ -154,7 +154,7 @@
 .section.support-faq-wrapper .faq-wrapper .faq>div>p>strong {
     color: #000;
     font-family: Nunito-Bold, sans-serif;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 700;
     line-height: 28px;
 }
@@ -185,7 +185,7 @@
     color: #666;
     display: block;
     font-family: Nunito-Bold, sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 700;
     line-height: 24px;
     text-align: center;
@@ -211,7 +211,7 @@
         max-width: unset;
     }
     .section.support-faq-wrapper .faq-wrapper .faq>div h2 {
-        font-size: 18px;
+        font-size: 1.125rem;
     }
     .section.support-faq-wrapper .faq-wrapper .faq>div {
         padding: 16px 0;
