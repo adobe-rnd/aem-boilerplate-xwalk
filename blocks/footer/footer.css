@@ -13,6 +13,8 @@ footer .footer p {
   margin: 0;
 } */
 
+@import url('./footer-neeyat.css');
+
 footer.footer-wrapper {
   padding: 0px;
   background: #365069 !important;
