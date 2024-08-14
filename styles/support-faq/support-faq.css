@@ -51,7 +51,7 @@
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6::after{
     content: '';
     position: absolute;
-    background-image: url('/content/dam/piramalfinance/product-page/home-loan/add.png');
+    background-image: url('/content/dam/piramalfinance/product-page/support/faq/add.png');
     height: 24px;
     width: 24px;
     right: 0;
@@ -62,7 +62,7 @@
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6.active::after{
     content: '';
     position: absolute;
-    background-image: url('/content/dam/piramalfinance/product-page/home-loan/minus.png');
+    background-image: url('/content/dam/piramalfinance/product-page/home-loan/support/faq/minus.png');
     height: 24px;
     width: 24px;
     right: 0;
@@ -94,6 +94,10 @@
 
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul li {
     cursor: pointer;
+}
+
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul li h6 {
+    position: relative;
 }
 
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul li h6,
