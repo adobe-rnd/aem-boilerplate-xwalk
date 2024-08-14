@@ -1,0 +1,15 @@
+.section.neeyat-cards.loan-products-wrapper{
+    margin-bottom: 0;
+    padding-bottom: 48px;
+    background-color: #f8f8f8;
+}
+
+.section.neeyat-cards.loan-products-wrapper .default-content-wrapper h2{
+    font-size: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+    .section.neeyat-cards.loan-products-wrapper .default-content-wrapper h2{
+        font-size: 25px;
+    }
+}

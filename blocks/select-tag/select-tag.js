@@ -1,4 +1,5 @@
 import { getProps, renderHelper } from "../../scripts/scripts.js";
+import { loader } from "../loader/loader.js";
 import getSelectedLanguage from "./getSelectedLanguage.js";
 
 
@@ -30,6 +31,7 @@ export default async function decorate(block) {
         selectedLanguageData = await changeContent(selectedLanguageData, data);
     })
     block.append(selectTag);
+    loader(false)
 
 }
 function changeContent(currentLanguageData, selectedLanguageData) {
