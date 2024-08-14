@@ -166,9 +166,12 @@
     font-weight: 400;
     line-height: 20px;
     }
-    .section.carousel-articles-wrapper .default-content-wrapper .button-container{
+.section.carousel-articles-wrapper .default-content-wrapper .button-container{
         margin-top: 24px;
-    }
+}
+.section.carousel-articles-wrapper .carousel-wrapper .carousel .button-container{
+    display: none;
+}
 @media screen and (max-width: 767px) {
     .section.carousel-articles-wrapper .carousel.block .panel-container .teaser.block{
         width: 100%;
