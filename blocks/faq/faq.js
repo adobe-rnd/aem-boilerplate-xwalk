@@ -24,9 +24,9 @@ export default function decorate(block) {
                         toggleHidden(eachLi);
                     }
                 })
-                block.querySelectorAll("h6").forEach(function(ele){
+                block.querySelectorAll("h6").forEach(function (ele) {
                     ele.classList.remove("active")
-                })                                                                                                              
+                })
             })
         } else {
             wrapper.append(eachEl);
@@ -44,8 +44,17 @@ function toggleList(el) {
         eachLi.querySelectorAll('ul,ol').forEach(function (eachUl) {
             toggleHidden(eachUl);
             eachLi.querySelector('ul,ol') && eachLi.addEventListener('click', function (e) {
-                e.target.classList.toggle("active")
-                toggleHidden(eachUl)
+                if (!(e.target instanceof HTMLLIElement)) {
+                    eachLi.closest('ul').querySelectorAll('ul').forEach(function (li) {
+                        if (e.target.nextElementSibling !== li) {
+                            debugger;
+                            li.previousElementSibling.classList.remove('active');
+                            li.setAttribute('aria-hidden', 'true');
+                        }
+                    })
+                    e.target.classList.toggle("active");
+                    toggleHidden(eachUl);
+                }
             })
         })
     })
