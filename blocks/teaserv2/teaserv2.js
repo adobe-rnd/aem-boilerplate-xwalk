@@ -1,10 +1,7 @@
 import { renderHelper } from "../../scripts/scripts.js";
-// import getSelectedLanguage from "../select-tag/getSelectedLanguage.js";
 import { loanProductsAnalytics } from "./teaserv2-analytics.js";
 
 export default async function decorate(block) {
-  // const data = await getSelectedLanguage();
-  // block.innerHTML = renderHelper(data, `<div class="forName">${block.innerHTML}</div>`)
   const props = Array.from(block.children, (row) => row.firstElementChild);
   const renderTeaserHTML = renderTeaserHTMLFactory(props, block);
   block.innerHTML = "";

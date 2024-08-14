@@ -337,3 +337,12 @@ dialog[open]:has(.modal-content .section.e-nach-reg-modal-wrapper) {
             backdrop-filter: blur(2.1957px);
         }
 }
+/* modal one lakh ka loan kaise le Start */
+dialog[open]:has(.modal-content .section.one-lakh-modal) {
+    padding: 56px 0 0 0;
+    width: 80vw;
+    max-width: 700px;
+}
+.section.one-lakh-modal .embed-wrapper .block{
+    margin: 0;
+}
