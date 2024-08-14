@@ -1557,6 +1557,9 @@
   .homeloancalculator .white-tab ~ .calculator-parent {
     background: #ffffff;
   }
+  .section.calc-bg-pink .homeloancalculator .white-tab ~ .calculator-parent {
+    background-color: #fffcfb; 
+  }
   
   .tab-center--calculator .calculator-parent .calculator-parent-child .cp-child .headingtabs .headul .tab-emi-calc {
     width: 50%;
