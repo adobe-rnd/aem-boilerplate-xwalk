@@ -55,28 +55,30 @@
     display: none;
 }
 
-/* .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details summary::after {
-    position: absolute;
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details summary::after {
+    /* position: absolute;
     content: '';
     background-image: url('/content/dam/piramalfinance/quicklinks/down-arrow.png');
     right: 24px;
     width: 24px;
     top: 50%;
-    transform: translateY(-50%);
-} */
-.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details summary::after{
+    transform: translateY(-50%); */
+    display: none;
+}
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details summary >div::after{
     content: '';
     position: absolute;
     background-image: url('/content/dam/piramalfinance/quicklinks/down-arrow.png');
     background-image: url('/content/dam/piramalfinance/product-page/home-loan/down-arrow.png');
     height: 24px;
     right: 0;
-    top: 2px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 24px;
     object-fit: contain;
     background-size: 100%;
 }
-.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details summary.active::after{
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details summary.active >div::after{
     transform: rotate(180deg);
 }
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul{
@@ -90,13 +92,16 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 21px;
+    display: flex;
+    gap: 3px;
+}
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li:has(span) {
+
 }
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li span img{
     width: 24px;
     height: 24px;
     display: block;
-    margin-left: 8px;
-    margin-top: 6px;
 }
 
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li:has(>strong):first-child{
@@ -176,5 +181,10 @@
     }
     .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li{
         width: 95%;
+        display: block;
+    }
+    .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li span img{
+        margin-left: 8px;
+        margin-top: 6px;
     }
 }
