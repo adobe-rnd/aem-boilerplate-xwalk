@@ -527,6 +527,9 @@ main img {
 .section.bg-green {
   background-color: #F1FAF4;
 }
+.section.calc-bg-pink {
+  background-color: #fffcfb;
+}
 
 .section.about-us-mt-56 {
   margin-top: 56px;
