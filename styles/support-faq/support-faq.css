@@ -39,11 +39,13 @@
 
 .section.support-faq-wrapper .faq-wrapper .faq>div>h2::after{
     content: '';
-    background: url('/content/dam/piramalfinance/faq/downArrow.webp');
+    /* background: url('/content/dam/piramalfinance/product-page/home-loan/down-arrow.png'); */
     position: absolute;
     height: 24px;
     width: 24px;
     right: 0;
+    background-image: url('/content/dam/piramalfinance/product-page/home-loan/down-arrow.png');
+    object-fit: contain;
 }
 
 .section.support-faq-wrapper .faq-wrapper .faq>div h2 span,
