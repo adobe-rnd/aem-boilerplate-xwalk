@@ -204,7 +204,7 @@
     .section.home-loan-eligibility-calculator .teaser-wrapper .teaser .background {
         margin-top: 32px;
         min-height: 112px;
-        padding: 20px;
+        padding: 20px 8px 20px 20px;
     }
 
     .section.home-loan-eligibility-calculator .teaser-wrapper .teaser .background .foreground .text .title h2,
