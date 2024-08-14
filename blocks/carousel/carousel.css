@@ -876,3 +876,18 @@
     width: 80%;
   }
 }
+
+/* ek lakh loan start */
+
+@media (width >= 900px) {
+  .section.one-lakh-banner-modal .carousel-wrapper .carousel .panel-container .teaser .foreground {
+      max-width: 1240px;
+      margin: 0 auto;
+      width: 100%;
+  }
+}
+.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block>.background{
+  object-fit: contain;
+  background-position: top;
+}
+/* ek lakh loan end */
