@@ -178,7 +178,8 @@
     border-radius: 16px;
 }
 
-.section.home-loan-eligibility-calculator .teaser-wrapper .teaser .background .foreground .text .title h2 {
+.section.home-loan-eligibility-calculator .teaser-wrapper .teaser .background .foreground .text .title h2,
+.section.home-loan-eligibility-calculator .teaser-wrapper .teaser .background .foreground .text .title h1 {
     color: var(--white);
     display: block;
     font-family: Nunito-Extrabold, sans-serif;
@@ -206,7 +207,8 @@
         padding: 20px;
     }
 
-    .section.home-loan-eligibility-calculator .teaser-wrapper .teaser .background .foreground .text .title h2 {
+    .section.home-loan-eligibility-calculator .teaser-wrapper .teaser .background .foreground .text .title h2,
+    .section.home-loan-eligibility-calculator .teaser-wrapper .teaser .background .foreground .text .title h1 {
         font-size: 1rem;
         font-weight: 700;
         line-height: 24px;

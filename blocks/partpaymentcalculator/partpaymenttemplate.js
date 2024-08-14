@@ -229,7 +229,7 @@ export function partPaymentCalHTML(callJson) {
             </div>
             <div class="outputdiv">
                 <div class="output-parent">
-                    <div class="mainoutput">
+                    <div class="mainoutput partPaymentMainOutPut">
                         
                       ${partpaymentoutputDiv}
     
