@@ -1,7 +1,14 @@
 [
   {
     "id": "main",
-    "components": ["section", "title", "tab-name", "tab-container", "container"]
+    "components": [
+      "section",
+      "title",
+      "tab-name",
+      "tab-container",
+      "container",
+      "loader"
+    ]
   },
   {
     "id": "columns",
@@ -87,6 +94,7 @@
       "whatsappservice",
       "branchlocator",
       "select-tag",
+      "loader",
       "whatsappservice"
     ]
   },

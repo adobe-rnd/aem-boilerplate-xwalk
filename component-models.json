@@ -2416,6 +2416,17 @@
     ]
   },
   {
+    "id": "loader",
+    "fields": [
+      {
+        "component": "text-input",
+        "name": "loader-name",
+        "label": "Loader Name",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "whatsappservice",
     "fields": [
       {
