@@ -24,6 +24,9 @@ export default function decorate(block) {
                         toggleHidden(eachLi);
                     }
                 })
+                block.querySelectorAll("h6").forEach(function(ele){
+                    ele.classList.remove("active")
+                })                                                                                                              
             })
         } else {
             wrapper.append(eachEl);
@@ -33,7 +36,6 @@ export default function decorate(block) {
         }
     })
     wrapper && block.append(wrapper)
-
 }
 
 
