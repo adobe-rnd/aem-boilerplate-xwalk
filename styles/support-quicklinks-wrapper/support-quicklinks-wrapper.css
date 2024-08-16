@@ -103,6 +103,7 @@
     height: 24px;
     display: block;
     margin-left: 5px;
+    margin-top: 2px;
 }
 
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li:has(>strong):first-child{
@@ -134,7 +135,8 @@
     width: 8px;
 }
 
-.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a{
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a,
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a sub{
     color: #f26841;
     font-family: Nunito-Regular, sans-serif;
     font-size: 1rem;
@@ -142,6 +144,7 @@
     line-height: 21px;
     text-decoration: underline;
 }
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li strong,
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li strong a{
     color: #000;
     font-family: 'Nunito-Regular', sans-serif;
@@ -181,6 +184,14 @@
         margin-bottom: 32px;
     }
     .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li{
-        width: 95%;
+        width: 94%;
+    }
+    .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details summary >div h2 {
+        width: 96%;
+        display: block;
+    }
+    .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a, 
+    .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a sub{
+        line-height: 23px;
     }
 }
