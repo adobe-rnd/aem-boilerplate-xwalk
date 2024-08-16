@@ -1,7 +1,7 @@
 import { fetchAPI } from "../../scripts/scripts.js";
 
 let data;
-export async function getSelectedLanguage(selectedLanguage, apiUrl = '/api/neeyat-muti-lang.json') {
+export async function getSelectedLanguage(selectedLanguage = '', apiUrl = '/api/neeyat-muti-lang.json') {
     if (!data) {
         const resp = await fetchAPI('GET', apiUrl);
         data = await resp.json();
@@ -78,4 +78,15 @@ export async function getLanguageByLocation() {
             resolve(error)
         })
     })
+}
+
+export async function getLanguageByState() {
+    const langResp = await fetchAPI('GET', '/api/language-by-state.json');
+    const data = await langResp?.json();
+    const locationByLanguage = {};
+    data?.data.forEach(function (each) {
+        locationByLanguage[each.state] = each.language;
+
+    })
+    return locationByLanguage
 }
