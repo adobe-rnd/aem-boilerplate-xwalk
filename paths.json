@@ -43,6 +43,7 @@
     "/content/piramalfinance-eds/in/en/api/test:/api/test.json",
     "/content/piramalfinance-eds/in/en/api/neeyat-muti-lang:/api/neeyat-muti-lang.json",
     "/content/piramalfinance-eds/in/headers:/.helix/headers.json",
+    "/content/piramalfinance-eds/in/configuration:/.helix/config.json",
     "/content/piramalfinance-eds/in/en/api/authorisedagencies:/api/authorisedagencies.json"
   ]
 }
