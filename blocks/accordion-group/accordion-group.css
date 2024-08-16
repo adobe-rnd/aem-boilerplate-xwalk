@@ -40,7 +40,8 @@
     line-height: 24px;
     padding: 4px 0;
 }
-.section.stakeholder-policies-accordian .accordion-group-wrapper .accordion-group .accordion>details>div p a{
+.section.stakeholder-policies-accordian .accordion-group-wrapper .accordion-group .accordion>details>div p a,
+.section.stakeholder-policies-accordian .accordion-group-wrapper .accordion-group .accordion>details>div p a sub{
     color: #007bff;
     cursor: pointer;
     font-family: Nunito-Bold, sans-serif;
