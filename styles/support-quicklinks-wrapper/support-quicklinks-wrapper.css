@@ -134,7 +134,8 @@
     width: 8px;
 }
 
-.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a{
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a,
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a sub{
     color: #f26841;
     font-family: Nunito-Regular, sans-serif;
     font-size: 1rem;
