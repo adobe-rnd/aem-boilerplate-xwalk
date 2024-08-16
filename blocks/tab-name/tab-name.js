@@ -71,7 +71,7 @@ export function generateTabName(block) {
             Array.from(nestedTabName.children[0].children).forEach(function (eachTab) {
                 eachTab.classList.remove("active");
             })
-            if(classes == "glider"){
+            if(classes == "glider" || nestedTabName.classList.contains('glider-int')){
                 firsttab = nestedTabName.children[0].children[0].children[0];
             }else{
                 firsttab = nestedTabName.children[0].children[0];
