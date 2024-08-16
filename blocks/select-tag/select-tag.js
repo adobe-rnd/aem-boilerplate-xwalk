@@ -1,14 +1,15 @@
-import { getProps, renderHelper } from "../../scripts/scripts.js";
+import { fetchAPI, getProps, renderHelper } from "../../scripts/scripts.js";
 import { loader } from "../loader/loader.js";
-import { getSelectedLanguage, getLanguageByLocation } from "./getSelectedLanguage.js";
+import { getSelectedLanguage, getLanguageByLocation, getLanguageByState } from "./getSelectedLanguage.js";
 
 
 let defaultLanguageData = await getSelectedLanguage('english');
-const locationByLanguage = {
+let locationByLanguage = {
     maharashtra: 'marathi',
     default: 'english',
 }
 export default async function decorate(block) {
+    locationByLanguage = await getLanguageByState();
     const location = await getLanguageByLocation()
     //console.log(block);
     const [name, labels, values, disabled, , apiUrl] = getProps(block);
