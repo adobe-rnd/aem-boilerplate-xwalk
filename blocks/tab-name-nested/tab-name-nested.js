@@ -24,8 +24,11 @@ export default function decorate(block) {
   block.append(child2);
 
   child1Type = "glider";
-  if (child1Type == "glider" || child2Type == "glider") {
+  if (child1Type == "glider"){
     child1.classList.add("glider-int");
+    createGlidder(child1, prev, next);
+  }
+  if(child2Type == ""){
     child2.classList.add("glider-int");
     createGlidder(block, prev, next);
   }
@@ -44,28 +47,28 @@ function createBlockElement(children) {
   return block;
 }
 
-function createGlidder(block, prev, next) {
-  let gliderIntClass = block.querySelectorAll(".glider-int");
-
-  gliderIntClass.forEach(function (eachGliderInt, index) {
-    let gliderInt = eachGliderInt.querySelector(".carousel-inner");
-
+function createGlidder(childGilder, prev, next) {
+  
     const gliderPrevButton = createGliderButton("prev", prev?.outerHTML);
     const gliderNextButton = createGliderButton("next", next?.outerHTML);
 
-    eachGliderInt.append(gliderPrevButton);
-    eachGliderInt.append(gliderNextButton);
-    // let currentPrevButton = eachGliderInt.querySelector('.glider-prev');
-    // let currentNextButton = eachGliderInt.querySelector('.glider-next');
+    childGilder.append(gliderPrevButton);
+    childGilder.append(gliderNextButton);
+    let currentPrevButton = childGilder.querySelector('.glider-prev');
+    let currentNextButton = childGilder.querySelector('.glider-next');
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          new Glider(eachGliderInt.querySelector(".carousel-inner"), {
+          new Glider(childGilder.querySelector(".carousel-inner"), {
               slidesToShow: 2,
               slidesToScroll: 1,
               scrollLock: true,
               draggable: true,
+              arrows: {
+                prev: currentPrevButton,
+                next: currentNextButton
+              },
               responsive: [
                 {
                   breakpoint: 767,
@@ -93,8 +96,8 @@ function createGlidder(block, prev, next) {
         }
       });
     });
-    observer.observe(block);
-  });
+    observer.observe(childGilder);
+  
 }
 
 function createGliderButton(text, picture) {

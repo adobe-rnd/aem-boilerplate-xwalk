@@ -50,7 +50,7 @@ export function generateTabName(block) {
     // <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
     // <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
     block.append(carouselInner);
-    classes = "glider"
+    // classes = classes == "normal" ? "glider" : classes; // Line to removed
     if(classes == "glider"){
         console.log("glider");
     }else if (classes === "carousel") {
@@ -58,7 +58,10 @@ export function generateTabName(block) {
     }
 
     block.addEventListener("click", function (e) {
-        const currentEl = e.target;
+        let currentEl = e.target;
+        if(classes == "glider" && (currentEl.closest('.glider-prev') || currentEl.closest('.glider-next'))){
+            currentEl = currentEl.closest('.nested-tab-name-child').querySelector('.carousel-item.active');
+        }
         const id = currentEl.id;
         const tabContainer = id && document.querySelector('.tab-container[data-id=' + id + ']')
         const nestedTabName = id && document.querySelector('.nested-tab-name-child[data-id=' + id + ']');
