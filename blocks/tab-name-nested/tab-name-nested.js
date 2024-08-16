@@ -23,12 +23,11 @@ export default function decorate(block) {
   block.append(child1);
   block.append(child2);
 
-  child1Type = "glider";
   if (child1Type == "glider"){
     child1.classList.add("glider-int");
     createGlidder(child1, prev, next);
   }
-  if(child2Type == ""){
+  if(child2Type == "glider"){
     child2.classList.add("glider-int");
     createGlidder(block, prev, next);
   }
