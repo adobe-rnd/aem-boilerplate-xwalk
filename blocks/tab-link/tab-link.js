@@ -96,18 +96,28 @@ export default function decorate(block) {
         // } else {
         //     model.classList.remove("model-mob-hide");
         // }
-        if(model.closest('.section.financial-reports-carousel')){
-            if (model.classList.contains("model-mob-hide")) {
-                document.querySelector(".modal-overlay").classList.remove("overlay");
-                document.querySelector(".modal-overlay").classList.add("dp-none");
-                model.classList.remove("model-mob-hide");
-            } else {
-                document.querySelector(".modal-overlay").classList.add("overlay");
-                document.querySelector(".modal-overlay").classList.remove("dp-none");
-                model.classList.add("model-mob-hide");
-            }
-        }else{
-            if (model.classList.contains("model-mob-hide")) {
+        // if(model.closest('.section.financial-reports-carousel')){
+        //     if (model.classList.contains("model-mob-hide")) {
+        //         document.querySelector(".modal-overlay").classList.remove("overlay");
+        //         document.querySelector(".modal-overlay").classList.add("dp-none");
+        //         model.classList.remove("model-mob-hide");
+        //     } else {
+        //         document.querySelector(".modal-overlay").classList.add("overlay");
+        //         document.querySelector(".modal-overlay").classList.remove("dp-none");
+        //         model.classList.add("model-mob-hide");
+        //     }
+        // }else{
+        //     if (model.classList.contains("model-mob-hide")) {
+        //         model.classList.remove("model-mob-hide");
+        //         document.body.classList.remove("overlay-active");
+        //         document.body.style.overflow="auto";
+        //     } else {
+        //         model.classList.add("model-mob-hide");
+        //         document.querySelector("body").classList.add("overlay-active");
+        //         document.body.style.overflow="hidden";
+        //     }
+        // }
+        if (model.classList.contains("model-mob-hide")) {
                 model.classList.remove("model-mob-hide");
                 document.body.classList.remove("overlay-active");
                 document.body.style.overflow="auto";
@@ -115,7 +125,6 @@ export default function decorate(block) {
                 model.classList.add("model-mob-hide");
                 document.querySelector("body").classList.add("overlay-active");
                 document.body.style.overflow="hidden";
-            }
         }
     })
 
