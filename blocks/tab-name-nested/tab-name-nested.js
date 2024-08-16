@@ -29,7 +29,7 @@ export default function decorate(block) {
   }
   if(child2Type == "glider"){
     child2.classList.add("glider-int");
-    createGlidder(block, prev, next);
+    createGlidder(child2, prev, next);
   }
 }
 
