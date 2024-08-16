@@ -1,3 +1,4 @@
+import { keyFeaturesInteraction } from "../../dl.js";
 import { fetchPlaceholders } from "../../scripts/aem.js";
 import { renderHelper } from "../../scripts/scripts.js";
 
@@ -10,6 +11,7 @@ export default async function decorate(block) {
     block.append(newDivFeature);
     try {
         featureDropDownClick(block);
+        keyFeaturesAnalytics(block);
         block.closest('.home-loans-products-wrapper.view-more-less-js') ? viewLogic(block) : "";
     } catch (error) {
         console.warn(error)
@@ -276,4 +278,20 @@ function scrollToComponent(component) {
             behavior: "smooth",
         });
     }
+}
+
+function keyFeaturesAnalytics(block) {
+    let eventCallArray = [];
+    let teaserLink = block.querySelector('.cmp-teaser__link');
+    let redirectionButton = block.querySelector('.redirectionbutton');
+    eventCallArray.push(teaserLink);
+    eventCallArray.push(redirectionButton);
+    eventCallArray.forEach(function (eachEvent){
+        eachEvent.addEventListener('click', function (e) {
+            let data = {};
+            data.click_text = e.target.closest('.cmp-teaser').querySelector('.cmp-teaser__content p').textContent.trim();
+            data.cta_position = e.target.closest('.section').querySelector('.default-content-wrapper').textContent.trim();
+            keyFeaturesInteraction(data);
+        });
+    });
 }

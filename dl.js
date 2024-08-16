@@ -216,3 +216,29 @@ export function ReadMoreInteraction(data) {
         console.warn(error);
     }
 }
+
+export function applyLoanInteraction(data) {
+    try {
+        window.dataLayer.push({
+            'event': 'apply_loan_now',
+            'click_text' : data.click_text || '',
+            'loan_type' : targetObject.pageName || '',
+            'page_type': targetObject.pageName || '',
+        });
+    } catch (error) {
+        console.warn(error);
+    }
+}
+
+export function keyFeaturesInteraction(data){
+    try {
+        window.dataLayer.push({
+            'event': 'key_features',
+            'click_text' : data.click_text || '',
+            'cta_position': data.cta_position || '',
+            'page_type': targetObject.pageName || '',
+        });
+    } catch (error) {
+        console.warn(error);
+    }
+}

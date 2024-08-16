@@ -2,6 +2,7 @@ import { formOpen, overlay } from "../blocks/applyloanform/applyloanforms.js";
 import { statemasterGetStatesApi } from "../blocks/applyloanform/statemasterapi.js";
 import { validationJSFunc } from "../blocks/applyloanform/validation.js";
 import { toggleAllNavSections } from "../blocks/header/header.js";
+import { applyLoanInteraction } from "../dl.js";
 import { sampleRUM, loadHeader, loadFooter, decorateButtons, decorateIcons, decorateSections, decorateBlocks, decorateTemplateAndTheme, waitForLCP, loadBlocks, loadCSS, fetchPlaceholders } from "./aem.js";
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
@@ -375,7 +376,7 @@ export function createCarousle(block, prevButton, nextButton) {
       },
       {
         root: carousel,
-        threshold: block.closest(".carousel-3pt5") ? 1 : 0.1,
+        // threshold: block.closest(".carousel-3pt5") ? 1 : 0.1,
       }
     );
 
@@ -787,6 +788,15 @@ setTimeout(() => {
         statemasterGetStatesApi();
         validationJSFunc();
         formOpen();
+        try {
+          if (!e.target.closest(".section").classList.contains("banner-carousel-wrapper")) {
+            let data = {};
+            data.click_text = e.target.textContent.trim();
+            applyLoanInteraction(data);
+          }
+        } catch (error) {
+          console.warn(error);
+        }
         e.preventDefault();
       });
     });

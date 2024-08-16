@@ -103,6 +103,7 @@
     height: 24px;
     display: block;
     margin-left: 5px;
+    margin-top: 2px;
 }
 
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li:has(>strong):first-child{
@@ -188,5 +189,9 @@
     .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details summary >div h2 {
         width: 96%;
         display: block;
+    }
+    .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a, 
+    .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a sub{
+        line-height: 23px;
     }
 }
