@@ -886,6 +886,9 @@
       width: 100%;
   }
 }
+.section.one-lakh-banner-modal .carousel.block>.panel-container{
+  overflow: unset;
+}
 .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block>.background{
   object-fit: contain;
   background-position: top;
