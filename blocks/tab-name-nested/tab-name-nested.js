@@ -62,12 +62,33 @@ function createGlidder(block, prev, next) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           new Glider(eachGliderInt.querySelector(".carousel-inner"), {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: {
-              prev: gliderPrevButton,
-              next: gliderNextButton,
-            },
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              scrollLock: true,
+              draggable: true,
+              responsive: [
+                {
+                  breakpoint: 767,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                  }
+                },
+                {
+                  breakpoint: 1025,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                  }
+                },
+                {
+                  breakpoint: 1300,
+                  settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1
+                  }
+                }
+              ]
           });
         }
       });
