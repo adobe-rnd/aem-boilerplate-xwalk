@@ -894,6 +894,10 @@
           {
             "name": "carousel",
             "value": "carousel"
+          },
+          {
+            "name": "glider",
+            "value": "gilder"
           }
         ]
       },
@@ -911,6 +915,10 @@
           {
             "name": "carousel",
             "value": "carousel"
+          },
+          {
+            "name": "glider",
+            "value": "gilder"
           }
         ]
       }

@@ -11,7 +11,7 @@ export function generateTabName(block) {
     // const names = name.innerText.split(",");
     // const ids = id.innerText.split(",");
     // const classes = type.innerText.trim();
-    const [name, id, typename, classes, prev, next, nestedTabId, nestedTabActive, ...imageSrc] = getProps(block, {
+    let [name, id, typename, classes, prev, next, nestedTabId, nestedTabActive, ...imageSrc] = getProps(block, {
         index: [4, 5]
     });
     const names = name.split(",");
@@ -50,22 +50,32 @@ export function generateTabName(block) {
     // <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
     // <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
     block.append(carouselInner);
-
-    if (classes === "carousel") {
+    // classes = classes == "normal" ? "glider" : classes; // Line to removed
+    if(classes == "glider"){
+        console.log("glider");
+    }else if (classes === "carousel") {
         createCarousle(block, prevButton, nextButton);
     }
 
     block.addEventListener("click", function (e) {
-        const currentEl = e.target;
+        let currentEl = e.target;
+        if(classes == "glider" && (currentEl.closest('.glider-prev') || currentEl.closest('.glider-next'))){
+            currentEl = currentEl.closest('.nested-tab-name-child').querySelector('.carousel-item.active');
+        }
         const id = currentEl.id;
         const tabContainer = id && document.querySelector('.tab-container[data-id=' + id + ']')
         const nestedTabName = id && document.querySelector('.nested-tab-name-child[data-id=' + id + ']');
+        let firsttab;
         if (nestedTabName) {
             const section = nestedTabName.closest(".section");
             Array.from(nestedTabName.children[0].children).forEach(function (eachTab) {
                 eachTab.classList.remove("active");
             })
-            const firsttab = nestedTabName.children[0].children[0];
+            if(classes == "glider"){
+                firsttab = nestedTabName.children[0].children[0].children[0];
+            }else{
+                firsttab = nestedTabName.children[0].children[0];
+            }
             section.querySelectorAll('.tab-container[data-id]').forEach(function (el, index) {
                 section.querySelector(".tab-name")?.children[0].children[index].classList.remove("active");
                 section.querySelector(".nested-tab-name-child")?.children[0]?.children[index]?.classList.remove("active");
@@ -90,7 +100,11 @@ export function generateTabName(block) {
             section.querySelectorAll(".tab-container").forEach(function (el, index) {
                 // section.querySelector(".tab-name").children[0].children[index].classList.remove("active");
                 section.querySelector(".tab-name")?.children[0].children[index].classList.remove("active");
-                section.querySelector(".nested-tab-name-child.active")?.children[0]?.children[index]?.classList.remove("active");
+                if(classes == "glider"){
+                    section.querySelector(".nested-tab-name-child.active")?.children[0]?.children[0]?.children[index]?.classList.remove("active");
+                }else{
+                    section.querySelector(".nested-tab-name-child.active")?.children[0]?.children[index]?.classList.remove("active");
+                }
                 el.classList.add("dp-none");
                 el.classList.remove("active");
             })
