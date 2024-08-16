@@ -17,7 +17,8 @@
     height: 412px;
 }
 
-.section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .description>p>strong {
+.section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .description>p>strong,
+.section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .description>h1 {
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 3rem;
@@ -156,7 +157,8 @@
         height: 218px;
     }
 
-    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .description>p>strong {
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .description>p>strong,
+    .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .description>h1 {
         font-size: 1.5rem;
         line-height: 32px;
     }

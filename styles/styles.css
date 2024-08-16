@@ -527,6 +527,13 @@ main img {
 .section.bg-green {
   background-color: #F1FAF4;
 }
+.section.calc-bg-pink {
+  background-color: #fffcfb;
+}
+
+.section.about-us-mt-56 {
+  margin-top: 56px;
+}
 
 /* column classes */
 @media screen and (min-width: 768px) {
@@ -885,6 +892,10 @@ main .section.highlight {
   .section.page-container>div {
     max-width: 100% !important;
     padding: 0 16px;
+  }
+
+  .section.about-us-mt-56 {
+    margin-top: unset;
   }
 }
 

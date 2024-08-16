@@ -20,6 +20,10 @@
     padding: .5rem .25rem;
     text-align: center;
 }
+.section.table-full-row .code-wrapper .code>div>table{
+    width: 100% !important;
+    height: auto;
+}
 .section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group {
     padding: 0;
 }
@@ -251,16 +255,6 @@
     position: relative;
     border: none;
  }
-
- .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details>summary::before {
-    content: "";
-    background-image: url('/content/dam/piramalfinance/company/stakeholders/bell.png');
-    height: 20px;
-    width: 20px;
-    position: absolute;
-    left: 24px;
-}
-
 
  .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details >div>ul >li::before{
     background: var(--text-color);

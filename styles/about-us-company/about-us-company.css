@@ -17,7 +17,7 @@
 
 .section.teaser-container-about-us .teaser-wrapper .teaser {
     overflow: unset;
-    padding-top: 49px;
+    padding-top: 28px;
     min-height: 485px;
 }
 
@@ -51,7 +51,8 @@
     margin-bottom: 32px;
 }
 
-.section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .long-description>p {
+.section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .long-description>p,
+.section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .long-description>h1 {
     color: #fff;
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.5rem;
@@ -59,20 +60,25 @@
     line-height: 32px;
 }
 
-.section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .short-description p {
+.section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .short-description>p {
+    font-family: 'Nunito-Regular',sans-serif;
     font-size: 1rem;
     color: var(--white);
+    font-weight: 400;
+    line-height: 24px;
 }
+
 
 .section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .short-description {
     display: block;
 }
 
-.section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .short-description p strong {
+.section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .short-description>p>strong {
     font-size: 1.5rem;
     display: block;
-    font-family: ' Nunito-Bold', sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     margin-bottom: 10px;
+    line-height: 32px;
 }
 
 @media screen and (max-width:767px) {
@@ -118,17 +124,21 @@
         display: block;
     }
 
-    .section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .long-description>p {
+    .section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .long-description>p,
+    .section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .long-description>h1 {
         font-size: 0.875rem;
         line-height: 20px;
     }
 
-    .section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .short-description p strong {
+    .section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .short-description>p>strong {
         font-size: 1rem;
+        line-height: 24px;
+        margin-bottom: unset;
     }
 
-    .section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .short-description p {
+    .section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .short-description>p {
         font-size: 0.875rem;
+        line-height: 20px;
     }
 
     .section.teaser-container-about-us .teaser-wrapper .teaser .front-picture,

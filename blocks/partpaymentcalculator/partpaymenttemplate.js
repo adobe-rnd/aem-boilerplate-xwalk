@@ -212,7 +212,7 @@ export function partPaymentCalHTML(callJson) {
       </div>
       <div class="add-more-part-payment-btn disabled">
           <img data-src="${callJson.partpaymentlogic.moreSign}" src="${callJson.partpaymentlogic.moreSign}" alt="${callJson.partpaymentlogic.signImgAlt}" class="lozad">
-          <span class="addMorePartPayment">${callJson.partpaymentlogic.PayMorePartPayment}</span>
+          <span class="addMorePartPayment">${callJson.partpaymentlogic.payMorePartPayment}</span>
       </div>
   </div>`
       : "";
@@ -229,7 +229,7 @@ export function partPaymentCalHTML(callJson) {
             </div>
             <div class="outputdiv">
                 <div class="output-parent">
-                    <div class="mainoutput">
+                    <div class="mainoutput partPaymentMainOutPut">
                         
                       ${partpaymentoutputDiv}
     
@@ -343,7 +343,7 @@ export function partPaymentCalHTML(callJson) {
       
                               </div>
       
-                              <div class="customerbuttons ${callJson.button1link || ""}">
+                              <div class="customerbuttons ${callJson.button1text ? "" : "dp-none"}">
       
                                   <a href="${callJson.button1link || ""}" target="_self">
       

@@ -1150,7 +1150,7 @@
   }
   .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .outputdiv {
     width: 50%;
-    margin-top: 14px;
+    /* margin-top: 14px; */
   }
   @media screen and (max-width: 1024px) {
     .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .outputdiv {
@@ -1557,6 +1557,9 @@
   .homeloancalculator .white-tab ~ .calculator-parent {
     background: #ffffff;
   }
+  .section.calc-bg-pink .homeloancalculator .white-tab ~ .calculator-parent {
+    background-color: #fffcfb; 
+  }
   
   .tab-center--calculator .calculator-parent .calculator-parent-child .cp-child .headingtabs .headul .tab-emi-calc {
     width: 50%;
@@ -1809,6 +1812,33 @@
     .part-payment ~ .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .outputdiv .output-parent .mainoutput .text-and-img .amountContainer .outputdes {
       font-size: 0.875rem;
       line-height: 1.25rem;
+    }
+  }
+
+  @media screen and (min-width:1025px) and (max-width: 1300px) {
+    .homeloancalculator .home-loan-calculator-parent .hlc-subparent{
+      max-width: 81.25%;
+    }
+    .homeloancalculator .calculator-parent .calculator-parent-child .cp-child{
+      max-width: 81.25%;
+    }
+    .homeloancalculator .home-loan-calculator-parent .hlc-subparent .radiotab .firsttab{
+      padding: 12px 16px 0 0;
+    }
+    .homeloancalculator .home-loan-calculator-parent .hlc-subparent .radiotab .secondtab .customecheck{
+      margin-left: 78px;
+    }
+    /* .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .headingtabs .headul .active p{
+      font-size: 22px;
+    } */
+    .homeloancalculator .home-loan-calculator-parent .hlc-subparent .radiotab .secondtab .customecheck {
+      margin-left: 40px;
+    }
+    .homeloancalculator .home-loan-calculator-parent .hlc-subparent .radiotab .firsttab .customecheck .salary-parent {
+      width: 65%;
+    }
+    .homeloancalculator .home-loan-calculator-parent .hlc-subparent .radiotab .firsttab .customecheck {
+      margin-right: 30px;
     }
   }
   

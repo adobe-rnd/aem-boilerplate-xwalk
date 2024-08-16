@@ -57,12 +57,13 @@ export default function decorate(block) {
     block.querySelectorAll('.offer-documents.block .modal-cta >.cmp-text').forEach(function (blockCards) {
         blockCards.addEventListener("click", function (e) {
             e.stopImmediatePropagation();
+            e.target.closest('.cmp-text').classList.add("active")
             const targetModal = e.target.closest('.popup-rich-text').querySelector('.stake-pop-up');
             if (targetModal.classList.contains('dp-none')) {
                 targetModal.classList.add("dp-block");
                 document.body.style.overflow = "hidden";
                 targetModal.classList.remove("dp-none");
-                document.querySelector(".modal-overlay").classList.add("overlay")
+                document.querySelector(".modal-overlay").classList.add("overlay")   
                 document.querySelector(".modal-overlay").classList.remove("dp-none")
             } else {
                 targetModal.classList.add("dp-none");
@@ -73,12 +74,16 @@ export default function decorate(block) {
                 document.querySelector(".modal-overlay").classList.add("dp-none")
             }
             e.stopPropagation();
+            if(e.target.classList.contains("cross-container")){
+                alert
+            }
         });
     });
 
     document.querySelectorAll(".stake-pop-up .text.popupText .cmp-text .cross-container img").forEach(function (ele) {
         ele.addEventListener("click", function (currentEle) {
             currentEle.stopImmediatePropagation();
+            if(document.querySelector(".cmp-text.active")) document.querySelector(".cmp-text.active").classList.remove("active")
             currentEle.target.closest('.stake-pop-up').classList.remove('dp-block');
             currentEle.target.closest('.stake-pop-up').classList.add('dp-none');
             document.body.style.overflow = "auto";

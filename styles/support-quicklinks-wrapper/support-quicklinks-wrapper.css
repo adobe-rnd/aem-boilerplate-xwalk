@@ -37,10 +37,13 @@
     padding: 24px 0;
     position: relative;
 }
-
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion:last-child details{
+    border-bottom: none;
+}
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details summary {
     margin: 0;
     padding: 0;
+    position: relative;
 }
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details summary >div h2{
     color: #000;
@@ -53,7 +56,7 @@
     display: none;
 }
 
-.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details::after {
+/* .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details summary::after {
     position: absolute;
     content: '';
     background-image: url('/content/dam/piramalfinance/quicklinks/down-arrow.png');
@@ -61,6 +64,24 @@
     width: 24px;
     top: 50%;
     transform: translateY(-50%);
+    display: none;
+} */
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >summary::after{
+    content: '';
+    position: absolute;
+    background-image: url('/content/dam/piramalfinance/quicklinks/down-arrow.png');
+    
+    height: 24px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    object-fit: contain;
+    background-size: 100%;
+}
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >summary.active::after{
+    top: 0;
+    transform: rotate(180deg);
 }
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul{
     margin: 0;
@@ -74,7 +95,34 @@
     font-weight: 400;
     line-height: 21px;
 }
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li span{
+    vertical-align: middle;
+}
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li span img{
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin-left: 5px;
+    margin-top: 2px;
+}
 
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li:has(>strong):first-child{
+    margin: 0;
+    padding: unset;
+    padding-top: 29px;
+}
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li:has(>strong):nth-child(n+2) {
+    padding-top: 24px;
+    padding: unset;
+    margin: 0;
+}
+
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li:has(>strong):last-child {
+    padding: unset;
+    padding-bottom: 29px;
+    padding-top: 24px;
+    margin: 0;
+}
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li::before{
     background-color: #364754;
     border-radius: 50%;
@@ -87,7 +135,8 @@
     width: 8px;
 }
 
-.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a{
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a,
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a sub{
     color: #f26841;
     font-family: Nunito-Regular, sans-serif;
     font-size: 1rem;
@@ -95,7 +144,16 @@
     line-height: 21px;
     text-decoration: underline;
 }
-
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li strong,
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li strong a{
+    color: #000;
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 21px;
+    word-break: break-all;
+    text-decoration: none;
+}
 @media screen and (max-width: 1024px) {
 
     .section.support-quicklinks-wrapper .default-content-wrapper h1{
@@ -111,6 +169,10 @@
     .section.support-quicklinks-wrapper .accordion-group-wrapper{
         margin: 0 16px;
     }
+    .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li{
+        font-size: 1rem;
+        line-height: 20px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -122,6 +184,14 @@
         margin-bottom: 32px;
     }
     .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li{
-        width: 95%;
+        width: 94%;
+    }
+    .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details summary >div h2 {
+        width: 96%;
+        display: block;
+    }
+    .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a, 
+    .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a sub{
+        line-height: 23px;
     }
 }

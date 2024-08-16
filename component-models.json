@@ -213,6 +213,20 @@
         "name": "breadcrumb-class",
         "label": "Breadcrumb Class",
         "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "breadcrumb-text",
+        "label": "Breadcrumb Text",
+        "valueType": "string",
+        "multi": true
+      },
+      {
+        "component": "text",
+        "name": "breadcrumb-url",
+        "label": "Breadcrumb URL",
+        "valueType": "string",
+        "multi": true
       }
     ]
   },
@@ -399,6 +413,35 @@
             "value": "secondary"
           }
         ]
+      },
+      {
+        "component": "select",
+        "name": "sortingtype",
+        "value": "desc",
+        "label": "Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Ascending",
+            "value": "ascending"
+          },
+          {
+            "name": "Descending ",
+            "value": "descending "
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "faq",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "FAQ",
+        "value": "",
+        "label": "FAQ Content"
       }
     ]
   },
@@ -2309,12 +2352,84 @@
     ]
   },
   {
+    "id": "branchlocator",
+    "fields": [
+      {
+        "component": "text-input",
+        "label": "URL of Content Fragment",
+        "name": "text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "fontawesome",
     "fields": [
       {
         "component": "text-input",
         "label": "URL of Content Fragment",
         "name": "text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "select-tag",
+    "fields": [
+      {
+        "component": "text-input",
+        "name": "name",
+        "label": "Name",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text-name",
+        "label": "Name",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "label",
+        "label": "Label",
+        "valueType": "string",
+        "multi": true
+      },
+      {
+        "component": "text-input",
+        "name": "value",
+        "label": "value",
+        "valueType": "string",
+        "multi": true
+      },
+      {
+        "component": "text-input",
+        "name": "disabled",
+        "label": "disabled",
+        "valueType": "string",
+        "multi": true
+      },
+      {
+        "component": "text-input",
+        "name": "selected",
+        "label": "Selected",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "api-url",
+        "label": "API Url",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "loader",
+    "fields": [
+      {
+        "component": "text-input",
+        "name": "loader-name",
+        "label": "Loader Name",
         "valueType": "string"
       }
     ]

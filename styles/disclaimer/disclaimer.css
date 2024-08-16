@@ -28,6 +28,13 @@
     padding-bottom: 8px;
     padding-top: 16px;
   }
+  .section.home-page-calculator-call-xf .discalimer-calc .discalimer-first-para {
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    display: -webkit-box!important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .section.home-page-calculator-call-xf .discalimer-calc .discalimer-first-para{
     display: inline-block;
     font-family: Nunito-Regular, sans-serif;
@@ -79,3 +86,15 @@
         padding: unset;
     }
   }
+
+  @media screen and (max-width:1024px) {
+    .section.home-page-calculator-call-xf .discalimer-details .discalimer-calc {
+      padding: 0 16px;
+    }
+  }
+
+  @media screen and (min-width:1025px) and (max-width: 1300px) {
+    .section.home-page-calculator-call-xf .discalimer-details .discalimer-calc{
+      max-width: 81.25%;
+    }
+  } 

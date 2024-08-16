@@ -114,7 +114,7 @@
 }
 
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
-  height: 335px;
+  height: 334px;
   width: 394px;
   display: block;
   object-fit: contain;
@@ -425,6 +425,15 @@
   margin-top: 48px;
 }
 
+.section.banner-carousel-wrapper.insta-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
+  width: 394px;
+  height: 391px;
+}
+
+.section.banner-carousel-wrapper.insta-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+  bottom: -4px;
+}
+
 @media (min-width:1024px) and (max-width:1366px) {
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
     width: 312px;
@@ -637,6 +646,21 @@
   .section.banner-carousel-wrapper.business-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .short-description>ul>li {
     margin-top: 36px;
   }
+  .section.banner-carousel-wrapper.flexi-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
+    width: 200px;
+    height: 138px;
+  }
+  .section.banner-carousel-wrapper.flexi-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
+  .section.banner-carousel-wrapper.insta-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+    right: -10px;
+  }
+  .section.banner-carousel-wrapper.insta-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
+    width: 200px;
+    height: 152px;
+  }
+  .section.banner-carousel-wrapper.insta-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
+    bottom: 0;
+  }
 }
 
 @media screen and (max-width:767px) {
@@ -711,6 +735,15 @@
   .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser .foreground .long-description>p>br {
     display: none;
   } */
+
+  .section.breadcrumb-handle.improve-cibil-score-breadcrumb-handle .breadcrumb-wrapper {
+    position: unset;
+    background-color: var(--light-gray);
+  }
+
+  .section.banner-carousel-wrapper.breadcrumb-container.improve-cibil-score-breadcrumb-handle .carousel-wrapper .panel-container .teaser.block>.background .foreground .text {
+    padding-top: 40px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -843,3 +876,127 @@
     width: 80%;
   }
 }
+
+/* ek lakh loan start */
+
+@media (width >= 900px) {
+  .section.one-lakh-banner-modal .carousel-wrapper .carousel .panel-container .teaser .foreground {
+      max-width: 1240px;
+      margin: 0 auto;
+      width: 100%;
+  }
+}
+.section.one-lakh-banner-modal .carousel.block>.panel-container{
+  overflow: unset;
+}
+.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block>.background{
+  object-fit: contain;
+  background-position: top;
+}
+.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
+  display: none;
+}
+.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description h1,
+.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description h2{
+  color: white;
+  font-family: Nunito;
+  font-weight: 800;
+  word-wrap: break-word;
+  font-size: 3.5rem;
+  line-height: 68px;
+}
+.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description >ul{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description >ul >li a{
+  background: #f26841;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-family: Nunito-Bold, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 30px;
+  padding: 16px 24px;
+  width: 100%;
+}
+.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description >ul >li a:hover{
+  text-decoration: none;
+}
+.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description >ul >li:last-child a  {
+  background: #fff;
+  color: #365069;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description >ul >li >a span img{
+  height: 24px;
+  width: 24px;
+  display: block;
+}
+@media screen and (min-width: 1025px) and (max-width: 1300px) {
+  .section.one-lakh-banner-modal .carousel-wrapper .carousel .panel-container .teaser .foreground {
+    width: 81.25%;
+  }
+}
+@media (width <= 900px) {
+  .section.one-lakh-banner-modal .carousel-wrapper .carousel .panel-container .teaser .foreground {
+      max-width: 100% ;
+      padding: 0 16px;
+      margin: 0 auto;
+  }
+}
+@media screen and (max-width:1024px) {
+  .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li{
+    display: block;
+  }
+  .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description >ul >li a{
+    font-size: 0.875rem;
+    line-height: 22px;
+    padding: 16px 24px;
+    width: auto;
+  }
+  .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block>.background .front-picture{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: unset;
+    right: unset;
+    width: 100%;
+    min-height: 525px;
+    z-index: -1;
+  }
+  .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block>.background .front-picture img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 525px;
+    object-fit: cover;
+    background-size: 100% 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+@media screen and (max-width:768px) {
+  .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description h1,
+  .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description h2{
+    text-align: center;
+    line-height: 36px;
+    font-size: 1.75rem;
+  }
+  .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description >ul{
+    justify-content: center;
+  }
+  .section.one-lakh-banner-modal .carousel-wrapper .carousel .panel-container .teaser .foreground{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    min-height: 450px;
+  }
+}
+/* ek lakh loan end */

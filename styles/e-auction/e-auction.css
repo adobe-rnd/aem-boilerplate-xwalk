@@ -31,7 +31,15 @@
     font-family: nunito-regular;
     vertical-align: middle;
 }
-
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td a sub,
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td a{
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 0.75rem;
+    line-height: 19.5px;
+    color: black;
+}
 @media screen and (max-width: 767.99px){
     .section.e-auction-wrapper .code-wrapper .code{
         overflow-x: scroll;
@@ -58,63 +66,16 @@
 }
 /* E Auction sale Financial End */
 
-.section.e-auction-table .code-wrapper .code >div >table tbody tr:first-child th{
-    min-width: 107.11px;
-}
-.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(2){
-    min-width: 45.2px;
-}
-
-.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(3){
-
-    min-width: 96px;
-}
-.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(4){
-    min-width: 74.39px;
-}
-.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(5){
-    min-width: 328.24px;
-}
-.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(6){
-    min-width: 86.25px;
-}
-.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(7){
-    min-width: 86.25px;
-}
-.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(8){
-    min-width: 72.59px;
-}
-.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(9){
-    min-width: 79.31px;
-}
-.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(10){
-    min-width: 77.8px;
-}
-
-.section.e-auction-table.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(11){
-    min-width: 50.29px;
-}
-
-.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(12){
-    min-width: 36.35px;
-}
-
-.section.e-auction-table.sarfaesi-wholesale-wrapper  .code-wrapper .code >div >table tbody tr:first-child th:nth-child(13){
-    min-width: 58px;
-}
-
-.section.e-auction-table.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(14){
-    min-width: 78.4px;
-}
-.section.e-auction-table.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(15){
-    min-width: 74px;
-}
-.section.e-auction-table.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(16){
-    min-width: 70px;
-}
-.section.e-auction-table.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(17){
-    min-width: 61px;
-}
+.section.sarfaesi-wholesale-wrapper.e-auction-table .code-wrapper .code >div >table tbody tr:first-child th:nth-child(n+2),
+ .section.sarfaesi-wholesale-wrapper.e-auction-table .code-wrapper .code >div >table tbody tr:first-child td:nth-child(n+2) {
+    min-width: auto;
+ }
+ .section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child td:nth-child(5){
+    min-width: 344px !important;
+ }
+ .section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child td:last-child{
+    max-width: 100px !important;
+ }
 /* e auction table ends */
 
 .section.e-auction-sale-notice .default-content-wrapper >h2{
@@ -143,3 +104,10 @@
     font-weight: 400;
     line-height: 24px;
 }  
+.section.e-auction-sale-notice .default-content-wrapper >p >a >sub{
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--orange);
+}

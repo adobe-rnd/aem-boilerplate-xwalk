@@ -241,7 +241,7 @@ export function appplyLoanTemplate(properties) {
                                 <div class="text">
                                     <div class="cmp-form-text">
                                         <label for="form-text">${properties.state}<span>*</span></label>
-                                        <div class="cmp-form-text-parent stateparent laststate" id="stateparent">
+                                        <div class="cmp-form-text-parent stateparent laststate checkInputRegx" id="stateparent">
                                             <input class="cmp-form-text__text" type="text" placeholder="${properties.statePlaceholder}"  autocomplete="off"
                                                 id="form-state" name="text" >
                                             <span class="arrowimage laststate"><img class="lozad" src="/content/dam/piramalfinance/product-page/home-loan/down-arrow.png"
@@ -257,7 +257,7 @@ export function appplyLoanTemplate(properties) {
                                 <div class="text">
                                     <div class="cmp-form-text">
                                         <label for="form-text">${properties.branch}<span>*</span></label>
-                                        <div class="cmp-form-text-parent  branchparent" id="branchparent">
+                                        <div class="cmp-form-text-parent  branchparent checkInputRegx" id="branchparent">
                                             <input class="cmp-form-text__text" type="text"
                                                 placeholder="${properties.branchPlaceholder}" id="form-branch-city" name="text"  autocomplete="off">
                                             <span class="arrowimage laststate"><img class="lozad" src="/content/dam/piramalfinance/product-page/home-loan/down-arrow.png"

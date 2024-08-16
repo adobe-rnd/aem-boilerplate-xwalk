@@ -98,6 +98,12 @@
 .section.reduce-mb .default-content-wrapper h2{
     margin-bottom: 16px;
 }
+.section.remove-table-curve .code-wrapper .code>div>table>tbody>tr>th:first-child,
+.section.remove-table-curve  .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(3),
+.section.remove-table-curve .code-wrapper .code>div>table>tbody>tr>th:last-child{
+    border-radius: unset;
+}
+
 @media screen and (max-width: 1400px) {
     .section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper {
         min-height: 196px;
@@ -162,4 +168,12 @@
     .section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground {
         min-height: 198px;
     }
+    .section.committee-th-padding .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(2){
+        padding: 16px 10px;
+        vertical-align: middle;
+     }
+     .section.committee-th-padding .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(3){
+        vertical-align: middle;
+        padding: 16px 9px;
+     }
 }

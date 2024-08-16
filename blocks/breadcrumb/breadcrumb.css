@@ -1,3 +1,7 @@
+.section.breadcrumb-handle.teaser-container {
+    padding: unset;
+}
+
 .section.breadcrumb-handle{
     position: relative;
 }
@@ -70,6 +74,9 @@
     .section.breadcrumb-handle > .breadcrumb-wrapper > .breadcrumb.block > nav > a:last-child{
         font-size: 0.75rem;
         line-height: 16px;
+    }
+    .section.breadcrumb-handle .breadcrumb-wrapper .breadcrumb-separator {
+        padding: 0 12px;
     }
 }
 @media screen and (max-width:767px) {

@@ -201,7 +201,7 @@
         position: relative;
         text-align: center;
         color: #010812;
-        font-family: Nunito-Bold, sans-serif;
+        font-family: 'Nunito-Bold', sans-serif;
         font-size: 1.125rem;
         font-weight: 700;
         line-height: 27px;
@@ -258,7 +258,8 @@
         width: 15px;
     }
 
-    .section.company-details-wrapper .tab-link-wrapper .tab-link.block>div>div>ul>li>strong a::after {
+    .section.company-details-wrapper .tab-link-wrapper .tab-link.block>div>div>ul>li>strong>a::after,
+    .section.company-details-wrapper .tab-link-wrapper .tab-link.block>div>div>ul>li>strong>a:last-child::after {
         background: #000;
         border-radius: 50%;
         content: "";
@@ -268,7 +269,7 @@
         margin: 0 1pc;
         position: absolute;
         top: 8px;
-        width: 9px;
+        width: 8.5px;
         border: unset;
     }
 
@@ -318,7 +319,7 @@
     .section.financial-reports-carousel .tab-link-wrapper .tab-link.block>.compony-details{
         display: flex;
         outline: 0;
-        z-index: 1200;
+        z-index: 100001;
         position: fixed;
         overflow-y: auto;
         flex-direction: column;
@@ -386,7 +387,7 @@
         border: 1px solid var(--orange);
     }
 
-    .section.company-details-wrapper.about-us-company-details .tab-link-wrapper .tab-link.block>div>div>ul>li>strong a::after {
+    .section.company-details-wrapper.about-us-company-details .tab-link-wrapper .tab-link.block>div>div>ul>li>strong>a::after {
         background: var(--orange);
     }
 
@@ -395,7 +396,7 @@
     }
 
     .section.company-details-wrapper.about-us-company-details .tab-link-wrapper .tab-link.block {
-        margin-top: 25px;
+        margin-top: 0;
         padding: 24px 0;
     }
 }
@@ -412,7 +413,7 @@
 
 .section.financial-reports-carousel .tab-link-wrapper .tab-link.block>div .glider .glider-track li {
     min-width: unset;
-    width: auto !important;
+    width: fit-content !important;
 }
 
 .section.financial-reports-carousel .tab-link-wrapper .tab-link.block>div .glider .glider-track li a:hover {

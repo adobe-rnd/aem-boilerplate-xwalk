@@ -29,7 +29,7 @@
     top: 65px;
 }
 
-.section.piramal-group-ajay-info .teaserv2-wrapper .teaserv2 a .bg-image .description {
+.section.piramal-group-ajay-info .teaserv2-wrapper .teaserv2>a>.bg-image .description {
     color: rgba(0, 0, 0, .871);
     font-family: Nunito-Regular, sans-serif;
     font-size: 1.25rem;
@@ -70,7 +70,7 @@
         top: 70px;
     }
 
-    .section.piramal-group-ajay-info .teaserv2-wrapper .teaserv2 a .bg-image .description {
+    .section.piramal-group-ajay-info .teaserv2-wrapper .teaserv2>a>.bg-image .description {
         font-size: 0.875rem;
         left: 130px;
         line-height: 20px;
@@ -80,5 +80,8 @@
     .section.piramal-group-ajay-info .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p {
         font-size: 0.875rem;
         line-height: 20px;
+    }
+    .section.piramal-group-ajay-info.piramal-group-mob-text-align .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p {
+        margin: 50px 0 0;
     }
 }

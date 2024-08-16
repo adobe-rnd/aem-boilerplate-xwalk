@@ -9,9 +9,10 @@
 }
 .section.steps-for-apply .default-content-wrapper >p,
 .section.steps-for-apply .default-content-wrapper >h5,
-.section.steps-for-apply .default-content-wrapper >h4{
+.section.steps-for-apply .default-content-wrapper >h4,
+.section.steps-for-apply .default-content-wrapper >h4>a{
     color: #000;
-    display: block;
+    /* display: block; */
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -21,7 +22,7 @@
 .section.steps-for-apply .default-content-wrapper >p >strong{
     margin-bottom: 8px;
     display: inline-block;
-    color: #f26841;
+    color: var(--orange);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     font-weight: 700;
@@ -29,7 +30,7 @@
     min-width: 53px;
 }
 .section.steps-for-apply .default-content-wrapper >h5>strong,
-.section.steps-for-apply .default-content-wrapper >h4>strong {
+.section.steps-for-apply .default-content-wrapper >h4>strong{
     font-style: normal;
     color: #000;
     font-family: 'Nunito-Bold',sans-serif;
@@ -39,12 +40,69 @@
 }
 
 .section.steps-for-apply .default-content-wrapper >h4,
-.section.steps-for-apply .default-content-wrapper >h4>strong {
+.section.steps-for-apply .default-content-wrapper >h4>strong,
+.section.steps-for-apply .default-content-wrapper >h4>a {
     font-size: 1.125rem;
 }
 
 .section.steps-for-apply-black .default-content-wrapper >p >strong {
     color: var(--black)
+}
+
+.section.steps-for-apply .default-content-wrapper >h4>a,
+.section.steps-for-apply .default-content-wrapper >h5>a {
+    color: var(--orange);
+    text-decoration: none;
+}
+
+.section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul {
+    margin-left: 24px;
+}
+
+.section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul>li {
+    color: var(--black);
+    font-family: 'Nunito-Regular',sans-serif;
+    font-size: 1.125rem;
+    line-height: 28px;
+    list-style-type: disc;
+}
+
+.section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul>li>strong {
+    font-family: 'Nunito-Bold',sans-serif;
+    font-weight: 700;
+}
+
+.section.steps-for-apply.steps-for-apply-last-list-text .default-content-wrapper ul:last-child {
+    margin-left: unset;
+}
+
+.section.steps-for-apply.steps-for-apply-last-list-text .default-content-wrapper ul:last-child>li {
+    list-style-type: none;
+}
+
+.section.steps-for-apply.steps-for-apply-last-list-text .default-content-wrapper ul:last-child>li>strong {
+    color: var(--orange);
+}
+
+.section.steps-for-apply-black.steps-gst-content-align .default-content-wrapper >p >strong {
+    color: var(--orange);
+}
+
+.section.steps-for-apply-black.gst-steps-content-orange .default-content-wrapper h3 {
+    color: var(--orange);
+    font-family: "Nunito-Bold";
+    font-size: 1.125rem;
+    line-height: 24px;
+    margin-bottom: 1rem;
+}
+
+.section.steps-for-apply.steps-for-apply-list-text.steps-add-bottom-space .default-content-wrapper ul>li {
+    margin-bottom: 25px;
+}
+
+.section.steps-for-apply.steps-description-add-top-space .default-content-wrapper >h4,
+.section.steps-for-apply.steps-description-add-top-space .default-content-wrapper >h5 {
+    margin-top: 25px;
 }
 
 @media screen and (max-width: 767px) {
@@ -53,7 +111,8 @@
         line-height: 27px;
     }
     .section.steps-for-apply .default-content-wrapper >h4,
-    .section.steps-for-apply .default-content-wrapper >h4>strong {
+    .section.steps-for-apply .default-content-wrapper >h4>strong,
+    .section.steps-for-apply .default-content-wrapper >h4>a {
         font-size: 0.875rem;
         line-height: 20px;
     }
@@ -63,6 +122,19 @@
     .section.steps-for-apply.steps-for-apply-black .default-content-wrapper >p >strong {
         position: unset;
         display: block
+    }
+    
+    .section.steps-for-apply.steps-for-apply-list-text .default-content-wrapper ul>li,
+    .section.steps-for-apply.steps-for-apply-black.steps-gst-content-align .default-content-wrapper >p,
+    .section.steps-for-apply.steps-for-apply-black.steps-gst-content-align .default-content-wrapper >p >strong {
+        font-size: 0.875rem;
+        line-height: 24px;
+    }
+
+    .section.steps-for-apply-black.gst-steps-content-orange .default-content-wrapper h3 {
+        font-size: 0.875rem;
+        line-height: 20px;
+        margin-bottom: .5rem;
     }
 }
 
@@ -76,5 +148,12 @@
         margin-bottom: unset;
         position: absolute;
         left: 0;
+    }
+    .section.steps-for-apply.steps-for-apply-black.steps-gst-content-align .default-content-wrapper >p {
+        padding-left: unset;
+    }
+    .section.steps-for-apply.steps-for-apply-black.steps-gst-content-align .default-content-wrapper >p >strong {
+        position: unset;
+        display: inline
     }
 }

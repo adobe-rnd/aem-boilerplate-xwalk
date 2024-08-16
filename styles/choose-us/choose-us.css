@@ -87,7 +87,8 @@
   line-height: 24px;
 }
 
-.section.choose-us-css .columns-wrapper .columns div div :nth-child(3)>a {
+.section.choose-us-css .columns-wrapper .columns div div :nth-child(3)>a,
+.section.choose-us-css .default-content-wrapper p>a {
   color: var(--orange);
   text-decoration: none;
 }
@@ -107,7 +108,8 @@
 }
 
 .section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(3),
-.section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(4) {
+.section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(4),
+.section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(5) {
   padding-top: 40px;
 }
 
@@ -183,7 +185,8 @@
   }
 
   .section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(3),
-  .section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(4) {
+  .section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(4),
+  .section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(5) {
     padding-top: 24px;
   }
 
