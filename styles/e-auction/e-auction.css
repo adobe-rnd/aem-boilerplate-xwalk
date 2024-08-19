@@ -70,10 +70,10 @@
  .section.sarfaesi-wholesale-wrapper.e-auction-table .code-wrapper .code >div >table tbody tr:first-child td:nth-child(n+2) {
     min-width: auto;
  }
- .section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child td:nth-child(5){
+ .section.sarfaesi-wholesale-wrapper.e-auction-table .code-wrapper .code >div >table tbody tr:first-child td:nth-child(5){
     min-width: 344px !important;
  }
- .section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child td:last-child{
+ .section.sarfaesi-wholesale-wrapper.e-auction-table .code-wrapper .code >div >table tbody tr:first-child td:last-child{
     max-width: 100px !important;
  }
 /* e auction table ends */
