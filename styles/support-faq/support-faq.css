@@ -49,6 +49,10 @@
     background-size: 100%;
 }
 
+.section.support-faq-wrapper .faq-wrapper .faq>div>h2.accord-active::after{
+    transform: rotate(180deg);
+}
+
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6::after{
     content: '';
     position: absolute;
