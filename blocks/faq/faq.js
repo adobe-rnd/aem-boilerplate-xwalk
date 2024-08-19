@@ -14,6 +14,7 @@ export default function decorate(block) {
             className = 'accordian-' + count++;
             eachEl.classList.add(className)
             eachEl.addEventListener('click', function (e) {
+                eachEl.classList.add("accord-active");
                 block.querySelectorAll('.accordian,[aria-hidden="false"]').forEach(function (eachLi) {
                     if (eachLi.classList[1] !== e.target.classList[0]) {
                         eachLi.setAttribute('aria-hidden', 'true');
@@ -47,7 +48,7 @@ function toggleList(el) {
                 if (!(e.target instanceof HTMLLIElement)) {
                     eachLi.closest('ul').querySelectorAll('ul').forEach(function (li) {
                         if (e.target.nextElementSibling !== li) {
-                            debugger;
+                            // debugger;
                             li.previousElementSibling.classList.remove('active');
                             li.setAttribute('aria-hidden', 'true');
                         }
