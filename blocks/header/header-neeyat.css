@@ -1,5 +1,5 @@
 
-header.header-wrapper > div.block > div.nav-wrapper:is(div.neeyat-header){
+header.header-wrapper > div.block > div.nav-wrapper:has(.neeyat-header){
     height: 96px;
 }
 
@@ -68,22 +68,17 @@ header.header-wrapper > div.block > div.nav-wrapper > nav#nav > div.neeyat-heade
 }
 
 @media screen and (max-width: 1024px) {
-header.header-wrapper > div.block > div.nav-wrapper > nav#nav >  div.nav-hamburger:is(div.neeyat-header) {
-    display: none;
-}
-
 header.header-wrapper > div.block > div.nav-wrapper > nav#nav > div.neeyat-header > div.imgwithlink-wrapper .imgwithlink .image-href-desktop .anchor-event-link > picture > img{
     height: 44px;
+}
+
+header.header-wrapper > div.block > div.nav-wrapper:has(.neeyat-header) .nav-hamburger {
+    display: none;
 }
 }
 
 @media screen and (max-width: 678px){
-
-header.header-wrapper > div.block > div.nav-wrapper:is(div.neeyat-header){
+header.header-wrapper > div.block > div.nav-wrapper:has(.neeyat-header){
     height: 71px;
-}
-
-header.header-wrapper > div.block > div.nav-wrapper > nav#nav >  div.nav-hamburger:is(div.neeyat-header){
-    display: none;
 }
 }
