@@ -244,12 +244,12 @@
         padding: 16px 0;
     }
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul {
-        padding: 48px 0 0 54px;
+        padding: 48px 0 0 47px;
     }
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul >li > ul> li> strong em,
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul >li > ul> li
      {
-        width: 93%;
+        /* width: 93%; */
         word-break: break-all;
     }
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li {
@@ -260,13 +260,13 @@
     }
     .section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul,
     .section.support-faq-wrapper .faq-wrapper .faq>div:has(p) ul {
-        padding-left: 54px;
+        padding-left: 46px;
     } 
     .section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul>li>ul {
         padding-left: 0;
     }  
     .section.support-faq-wrapper .faq-wrapper .faq>div>p {
-        padding-left: 54px;
+        padding-left: 47px;
         word-wrap: break-word;
     }
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6::after,
@@ -296,7 +296,7 @@
     } 
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6::after,
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6.active::after{
-        right: -20px;
+        right: -30px;
         top: 0;
     }
     .section.support-faq-wrapper .faq-wrapper .faq>div>h2::after{
