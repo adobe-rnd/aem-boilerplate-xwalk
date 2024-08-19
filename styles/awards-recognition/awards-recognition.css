@@ -12,7 +12,7 @@
 }
 
 .section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .normal .carousel-inner .carousel-item {
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 2pc;
@@ -30,7 +30,7 @@
     position: relative;
     margin: 3pc auto;
     overflow: hidden;
-    width: 80%;
+    width: 85%;
 }
 
 .section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child .carousel-inner {
@@ -43,15 +43,16 @@
 
 .section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child .carousel-inner .carousel-item {
     border-bottom: none;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     padding: 0 20px;
     text-align: center;
-    flex: 0 0 33.33%;
     background: unset;
     box-sizing: border-box;
     margin-right: unset;
     cursor: pointer;
     font-size: 1rem;
+    line-height: 32px;
+    min-width: unset;
 }
 
 .section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child .carousel-inner .carousel-item.active {
@@ -68,21 +69,20 @@
 }
 
 .section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child button.prev {
-    left: 0px;
+    left: -3px;
+    top: 8px;
 }
 
 .section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child button.next {
-    right: 0px;
+    right: -3px;
+    top: 8px;
 }
 
-.section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child button>div img {
+.section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child button.glider-prev img,
+.section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child button.glider-next img {
     height: 16px;
     width: 16px;
     display: block;
-}
-
-.section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child button.light>div img {
-    opacity: .35;
 }
 
 .section.awards-recognition-wrapper .tab-container-wrapper .tab-container .panel-container .teaser {
@@ -152,12 +152,28 @@
         font-size: 0.875rem;
         line-height: 20px;
     }
+
+    .section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child button.prev {
+        left: 0;
+    }
+
+    .section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child button.next {
+        right: 0;
+    }
+
+    .section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child button.prev,
+    .section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child button.next {
+        top: 4px;
+    }
+
+    .section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child .carousel-inner .carousel-item {
+        line-height: 24px;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-
     .section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child {
-        width: 68%;
+        width: 72%;
     }
 }
 
@@ -165,11 +181,10 @@
     .section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child {
         margin-bottom: 30px;
         margin-top: 30px;
-        width: 76%;
+        width: 100%;
     }
-
-    .section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child .carousel-inner .carousel-item {
-        flex: 0 0 50%;
+    .section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested>.normal>.carousel-inner.glider::-webkit-scrollbar{
+        display: none;
     }
 
     .section.awards-recognition-wrapper .default-content-wrapper h3 {
@@ -178,6 +193,12 @@
         margin-bottom: unset;
     }
 }
+
+@media screen and (min-width:1025px) and (max-width: 1300px) {
+    .section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child {
+        width: 82%;
+    }
+  }
 
 
 
