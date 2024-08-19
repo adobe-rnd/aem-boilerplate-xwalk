@@ -132,6 +132,8 @@
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li,
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>strong,
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li > em >a,
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li > em >sub>a,
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li > em >a>sub,
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ol>li>ol>li {
     color: #666;
     font-family: Nunito-Regular, sans-serif;
@@ -139,16 +141,26 @@
     font-weight: 400;
     line-height: 24px;
     cursor: default;
+    font-style: normal;
 }
 
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>strong{
     font-weight: bolder;
 }
 
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li a {
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li a{
     text-decoration: none;
 }
 
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li a sub{
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li > em >sub>a,
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li > em >a>sub,
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li > em >a {
     text-decoration: none;
     color: #666;
