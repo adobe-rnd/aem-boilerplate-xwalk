@@ -1,7 +1,6 @@
 /* choose us start */
-
 .section.choose-us-css .default-content-wrapper h2 {
-  color: #000;
+  color: var(--black);
   display: block;
   font-family: 'Nunito-Extrabold', sans-serif;
   font-size: 2rem;
@@ -24,7 +23,7 @@
 }
 
 .section.choose-us-css .default-content-wrapper p > strong {
-    color: #333;
+    color: var(--darkcharcoal);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
@@ -44,10 +43,6 @@
   align-items: start;
 }
 
-.section.choose-us-css .columns-wrapper .columns>div:nth-child(2) {
-  padding-top: 40px;
-}
-
 .section.choose-us-css .columns-wrapper .columns div div>p {
   margin: 0;
 }
@@ -63,7 +58,7 @@
 }
 
 .section.choose-us-css .columns-wrapper .columns div div :nth-child(2) {
-  color: #333;
+  color: var(--darkcharcoal);
   font-family: 'Nunito-Extrabold', sans-serif;
   font-size: 1.25rem;
   font-weight: 800;
@@ -72,7 +67,7 @@
 }
 
 .section.choose-us-css .columns-wrapper .columns div div :nth-child(3) {
-  color: #666;
+  color: var(--darkgrey);
   font-family: 'Nunito-Regular', sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -80,7 +75,7 @@
 }
 
 .section.choose-us-css .columns-wrapper .columns div div :nth-child(3)>strong {
-  color: #666;
+  color: var(--darkgrey);
   font-family: 'Nunito-Regular',sans-serif;
   font-size: 1rem;
   font-weight: bolder;
@@ -102,15 +97,8 @@
 }
 
 /* home loan finance start */
-
 .section.home-loan-finance-wrapper .columns-wrapper .columns>div {
   column-gap: 176px;
-}
-
-.section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(3),
-.section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(4),
-.section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(5) {
-  padding-top: 40px;
 }
 
 .section.choose-us-css.home-loan-finance-card-fw .columns-wrapper .columns.block>div:last-child>div {
@@ -119,7 +107,6 @@
 
 .section.choose-us-css.home-loan-finance-card-fw .columns-wrapper .columns.block>div:last-child {
   column-gap: 0;
-  padding-top: 40px;
   grid-template-columns: 1fr;
 }
 
@@ -127,7 +114,47 @@
   display: none;
 }
 
-/* home loan finance end */
+.section.choose-us-css>.columns-wrapper>.columns.block>div {
+  padding-top: 40px;
+}
+
+.section.choose-us-css>.columns-wrapper>.columns.block>div:first-child {
+  padding-top: unset;
+}
+
+@media screen and (max-width:1024px) {
+  .section.choose-us-css .columns-wrapper .columns>div {
+    grid-auto-rows: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .section.choose-us-css .columns-wrapper .columns div div>p>picture>img,
+  .section.choose-us-css .columns-wrapper .columns div div :nth-child(1) {
+    height: 48px;
+    width: 40px;
+  }
+
+  .section.choose-us-css .columns-wrapper .columns div div :nth-child(2) {
+    color: var(--darkcharcoal);
+    font-family: 'Nunito-Bold', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    padding: 8px 0 12px;
+  }
+
+  .section.choose-us-css.choose-us-2-col .columns-wrapper .columns>div,
+  .section.choose-us-css.choose-us-3-col .columns-wrapper .columns>div {
+    grid-template-columns: 1fr;
+  }
+
+  .section.choose-us-css .columns-wrapper .columns div div :nth-child(3),
+  .section.choose-us-css .columns-wrapper .columns div div :nth-child(3)>strong  {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding-bottom: 4px;
+  }
+}
 
 @media screen and (max-width: 767px) {
   .section.choose-us-css .default-content-wrapper h2 {
@@ -136,9 +163,7 @@
     padding-bottom: 4px;
   }
 
-  .section.choose-us-css .default-content-wrapper p,
-  .section.choose-us-css .columns-wrapper .columns div div :nth-child(3),
-  .section.choose-us-css .columns-wrapper .columns div div :nth-child(3)>strong  {
+  .section.choose-us-css .default-content-wrapper p {
     font-size: 0.875rem;
     line-height: 1.25rem;
     padding-bottom: 4px;
@@ -150,56 +175,16 @@
 
   .section.choose-us-css .columns-wrapper .columns>div {
     row-gap: 24px;
-    grid-template-columns: 1fr;
-  }
-
-  .section.choose-us-css .columns-wrapper .columns>div:nth-child(2) {
-    padding-top: 24px;
   }
 
   .section.choose-us-css .columns-wrapper .columns>div>div {
     width: 100%;
   }
 
-  .section.choose-us-css .columns-wrapper .columns div div :nth-child(1) {
-    height: 48px;
-    width: 40px;
-  }
-
-  .section.choose-us-css .columns-wrapper .columns div div>p>picture>img {
-    height: 48px;
-    width: 40px;
-  }
-
-  .section.choose-us-css .columns-wrapper .columns div div :nth-child(2) {
-    color: #333;
-    font-family: 'Nunito-Bold', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.5rem;
-    padding: 8px 0 12px;
-  }
-
-  .section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(2) {
+  .section.choose-us-css>.columns-wrapper>.columns.block>div {
     padding-top: 24px;
   }
 
-  .section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(3),
-  .section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(4),
-  .section.home-loan-finance-wrapper .columns-wrapper .columns>div:nth-child(5) {
-    padding-top: 24px;
-  }
-
-  .section.choose-us-css .default-content-wrapper h2 {
-    font-size: 1.25rem;
-  }
-  .section.choose-us-css.home-loan-finance-card-fw .columns-wrapper .columns.block>div:last-child {
-    padding-top: 24px;
-  }
-  .section.choose-us-css.choose-us-2-col .columns-wrapper .columns>div,
-  .section.choose-us-css.choose-us-3-col .columns-wrapper .columns>div {
-    grid-template-columns: 1fr;
-  }
   .section.choose-us-css .default-content-wrapper p > strong {
     font-size: 0.875rem;
     line-height: 20px;
@@ -212,49 +197,18 @@
     column-gap: 36px;
     row-gap: 40px;
   }
-
-  .section.choose-us-css .columns-wrapper .columns>div {
-    grid-auto-rows: 1fr;
-    grid-template-columns: 1fr;
-  }
-  .section.choose-us-css .columns-wrapper .columns div div>p>picture>img,
-  .section.choose-us-css .columns-wrapper .columns div div :nth-child(1) {
-    height: 48px;
-    width: 40px;
-  }
-  .section.choose-us-css .columns-wrapper .columns div div :nth-child(2) {
-    color: #333;
-    font-family: 'Nunito-Bold',sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.5rem;
-    padding: 8px 0 9pt;
-  }
-  .section.choose-us-css .columns-wrapper .columns>div:nth-child(2) {
-    padding-top: 40px;
-  }
-  .section.choose-us-css.choose-us-2-col .columns-wrapper .columns>div,
-  .section.choose-us-css.choose-us-3-col .columns-wrapper .columns>div {
-    grid-template-columns: 1fr;
-  }
-  .section.choose-us-css.home-loan-finance-card-fw .columns-wrapper .columns.block>div:last-child {
-    padding-top: 24px;
-  }
-  .section.choose-us-css .columns-wrapper .columns div div :nth-child(3),
-  .section.choose-us-css .columns-wrapper .columns div div :nth-child(3)>strong  {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
 }
 
 @media (min-width: 900px) and (max-width: 1100px) {
   .section.choose-us-css .columns-wrapper .columns>div {
     grid-template-columns: 1fr 1fr;
   }
+
   .section.choose-us-css .columns-wrapper .columns>div:nth-child(2) {
     padding-top: unset;
   }
 }
+
 @media screen and (min-width: 1025px) and (max-width: 1300px) {
   .section.choose-us-css .default-content-wrapper p{
     font-size: 1rem;

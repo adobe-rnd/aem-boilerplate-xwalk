@@ -119,11 +119,11 @@ export default function decorate(block) {
         // }
         if (model.classList.contains("model-mob-hide")) {
                 model.classList.remove("model-mob-hide");
-                document.body.classList.remove("overlay-active");
+                // document.body.classList.remove("overlay-active");
                 document.body.style.overflow="auto";
             } else {
                 model.classList.add("model-mob-hide");
-                document.querySelector("body").classList.add("overlay-active");
+                // document.querySelector("body").classList.add("overlay-active");
                 document.body.style.overflow="hidden";
         }
     })
