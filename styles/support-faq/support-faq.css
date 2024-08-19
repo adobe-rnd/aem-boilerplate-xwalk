@@ -269,6 +269,11 @@
         padding-left: 54px;
         word-wrap: break-word;
     }
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6::after,
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6.active::after{
+        right: -33px;
+        top: 0;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -289,6 +294,14 @@
     .section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul>li>ul {
         padding-left: 0;
     } 
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6::after,
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6.active::after{
+        right: -20px;
+        top: 0;
+    }
+    .section.support-faq-wrapper .faq-wrapper .faq>div>h2::after{
+        right: -10px;
+    }
 }
 
 
