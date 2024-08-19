@@ -14,6 +14,9 @@ export default function decorate(block) {
 }
 
 export function loader(val) {
+    if(window.location.href.includes("author")){
+        loader_div.style.display = 'none';
+    }
     if (val) {
         document.body.prepend(loader_div);
     } else {
