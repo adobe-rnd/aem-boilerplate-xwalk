@@ -71,7 +71,8 @@
     background-image: url('/content/dam/piramalfinance/support/faq/minus.png');
     height: 24px;
     width: 24px;
-    right: 0;
+    right: -133px;
+    top: 0;
     object-fit: contain;
     background-size: 100%;
 }
