@@ -257,7 +257,7 @@
 
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>strong em,
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li {
-        width: 111%;
+        width: 100%;
     }
 
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li {
@@ -265,7 +265,7 @@
     }
 
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul li h6 {
-        width: 103%;
+        width: 100%;
     }
 
     .section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul,
@@ -286,6 +286,10 @@
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6.active::after {
         right: -33px;
         top: 0;
+    }
+
+    .section.support-faq-wrapper .faq-wrapper .faq>div:nth-child(6)>ul>li>ul>li:nth-child(2){
+        word-break: break-word;
     }
 }
 
