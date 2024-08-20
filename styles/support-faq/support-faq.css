@@ -40,7 +40,7 @@
 .section.support-faq-wrapper .faq-wrapper .faq>div>h2::after {
     content: '';
     position: absolute;
-    background-image: url('/content/dam/piramalfinance/product-page/home-loan/down-arrow.png');
+    background-image: url('/images/down-arrow.png');
     height: 24px;
     width: 24px;
     right: -3px;
