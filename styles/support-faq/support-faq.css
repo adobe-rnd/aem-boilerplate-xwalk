@@ -249,7 +249,7 @@
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul >li > ul> li> strong em,
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul >li > ul> li
      {
-        /* width: 93%; */
+        width: 111%;
         word-break: break-all;
     }
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li {
