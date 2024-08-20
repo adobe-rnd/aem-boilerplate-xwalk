@@ -1,4 +1,7 @@
+import { decorateAnchorTag } from "../../scripts/scripts.js";
+
 export default function decorate(block) {
+    // decorateAnchorTag(block);
     let count = 0;
     let className = '';
     block.id = 'faq';

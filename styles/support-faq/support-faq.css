@@ -283,6 +283,9 @@
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul {
         padding: 48px 0 0 53px;
     }
+    .section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul, .section.support-faq-wrapper .faq-wrapper .faq>div:has(p) ul {
+        padding: 48px 0 0 53px;
+    }
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li {
         width: 97%;
     }
