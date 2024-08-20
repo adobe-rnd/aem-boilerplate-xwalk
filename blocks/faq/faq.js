@@ -16,7 +16,13 @@ export default function decorate(block) {
             wrapper.append(eachEl);
             className = 'accordian-' + count++;
             eachEl.classList.add(className)
+            eachEl.classList.add('faq-head')
             eachEl.addEventListener('click', function (e) {
+                block.querySelectorAll('.faq-head').forEach(function (el) {
+                    if(el !== eachEl){
+                        el.classList.remove('accord-active')
+                    }
+                })
                 eachEl.classList.toggle("accord-active");
                 block.querySelectorAll('.accordian,[aria-hidden="false"]').forEach(function (eachLi) {
                     if (eachLi.classList[1] !== e.target.classList[0]) {
