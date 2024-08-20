@@ -59,7 +59,7 @@
     background-image: url('/content/dam/piramalfinance/support/faq/add.png');
     height: 24px;
     width: 24px;
-    right: -100px;
+    right: -133px;
     top: 0;
     object-fit: contain;
     background-size: 100%;
@@ -314,7 +314,7 @@
 
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6::after,
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6.active::after {
-        right: -30px;
+        right: -47px;
         top: 0;
     }
 
