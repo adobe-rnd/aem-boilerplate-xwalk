@@ -327,3 +327,13 @@
         right: -10px;
     }
 }
+
+@media screen and (min-width:1025px) and (max-width: 1300px) {
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6::after {
+        right: -107px;
+    }
+    
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6.active::after {
+        right: -107px;
+    }
+}
