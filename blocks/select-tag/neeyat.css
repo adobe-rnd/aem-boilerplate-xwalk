@@ -222,6 +222,7 @@ main .neeyat-banner-slider .carousel.block>.button-container button.glider-dot.a
     }
      .section.neeyat-banner-slider .carousel-wrapper .glider .glider-track .glider-slide .background .foreground{
         max-width: 90.25%;
+        padding: 0 14px
     }
     .header-wrapper .nav-wrapper nav:has(.section.neeyat-header ){
         margin-top: unset;
