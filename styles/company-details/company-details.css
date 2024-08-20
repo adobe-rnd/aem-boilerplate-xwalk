@@ -66,7 +66,7 @@
     border-radius: 50px;
 }
 
-.section.company-details-wrapper .tab-link-wrapper .tab-link.block>div>div>ul>li a::after,
+.section.company-details-wrapper .tab-link-wrapper .tab-link.block>div>div>ul>li a:after,
 .section.financial-reports-carousel .tab-link-wrapper .tab-link.block>div .glider .glider-track li a::after {
     border-radius: 1px;
     border-right: 2px solid #ccc;
@@ -116,7 +116,7 @@
     border: 1px solid #333333;
 }
 
-.section.company-details-wrapper.about-us-company-details .tab-link-wrapper .tab-link.block>div>div>ul>li a::after,
+.section.company-details-wrapper.about-us-company-details .tab-link-wrapper .tab-link.block>div>div>ul>li a:after,
 .section.financial-reports-carousel .tab-link-wrapper .tab-link.block>div .glider .glider-track li a::after {
     right: -24px;
 }
@@ -237,7 +237,7 @@
         background-color: transparent;
     }
 
-    .section.company-details-wrapper .tab-link-wrapper .tab-link.block>div>div>ul>li a::after {
+    .section.company-details-wrapper .tab-link-wrapper .tab-link.block>div>div>ul>li a:after {
         display: none;
     }
 
@@ -319,28 +319,25 @@
     .section.financial-reports-carousel .tab-link-wrapper .tab-link.block>.compony-details{
         display: flex;
         outline: 0;
+        z-index: 1215;
         position: fixed;
         overflow-y: auto;
         flex-direction: column;
         left: 0;
         right: 0;
         bottom: 0;
-        height: auto;
-        /* background-color: var(--white); */
-        background-color: wheat;
+        background-color: var(--white);
         border-radius: 16px 16px 0 0;
         transform: translateY(100%);
         transition: transform 0.5s cubic-bezier(0, 0, 0.2, 1);
-        height: 100%;
-        max-height: 80vh;
-        z-index: 99999;
+        max-height: 100%;
     }
-
+    
     .section.company-details-wrapper .tab-link-wrapper .tab-link.block>div.model-mob-hide {
-        transform: translateY(0);
+        transform: none;
+        height: 80vh;
         overflow: hidden;
         overflow-y: auto;
-        z-index: 9999999;
     }
 
     .body-overlay {
