@@ -136,7 +136,7 @@
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>em>a,
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>em>sub>a,
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>em>a>sub,
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ol>li>ol>li {
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>ol>li {
     color: #666;
     font-family: Nunito-Regular, sans-serif;
     font-size: 1rem;
@@ -195,19 +195,19 @@
     padding: 12px 0;
 }
 
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ol>li,
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ol>li>ol {
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li,
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>ol {
     list-style: none;
 }
 
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ol>li>ol {
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>ol {
     border: 1px solid #000;
     border-top: 0;
     list-style-position: inside;
     margin-bottom: 20px;
 }
 
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ol>li>p {
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>p {
     border: 1px solid #000;
     border-bottom: 0;
     color: #666;
