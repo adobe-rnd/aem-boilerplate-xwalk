@@ -80,7 +80,7 @@
 
 /* homepage top banner carousel css start */
 .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser {
-  position: relative;
+  /* position: relative; */
   min-height: 529px;
 }
 
@@ -100,17 +100,17 @@
 
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
   position: absolute;
-  right: 150px;
+  right: 2px;
   bottom: 0;
 }
 
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background {
-  background-position: 100%;
-  background-size: 100%;
-  background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  padding: 0 150px;
+  padding: 0;
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
@@ -209,7 +209,7 @@
 
 .section.banner-carousel-wrapper .carousel-wrapper .carousel.block .button-container {
   position: absolute;
-  left: 160px;
+  left: calc((100% - 1240px) / 2);
   bottom: 40px;
   gap: 8px;
 }
@@ -408,12 +408,12 @@
 }
 
 .section.banner-carousel-wrapper.self-employed-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
-  right: 20px;
+  right: 0;
 }
 
 .section.banner-carousel-wrapper.business-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
 .section.banner-carousel-wrapper.personal-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
-  right: 140px;
+  right: 0;
 }
 
 .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>h1,
@@ -434,6 +434,26 @@
   bottom: -4px;
 }
 
+.section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-green {
+  background-image: url("/content/dam/piramalfinance/homepage/banner-images/WhatsAppBannerDesktop.png");
+}
+
+.section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-blue {
+  background-image: url("/content/dam/piramalfinance/homepage/banner-images/banner2-background-image-desktop..svg");
+}
+
+.section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-violet {
+  background-image: url("/content/dam/piramalfinance/homepage/banner-images/banner3-background-image-desktop.png");
+}
+
+.section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-green,
+.section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-blue,
+.section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-violet {
+  background-position: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
 @media (min-width:1024px) and (max-width:1366px) {
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
     width: 312px;
@@ -445,9 +465,9 @@
     height: 325px;
   }
 
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background {
+  /* .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background {
     padding: 0 150px 0 160px;
-  }
+  } */
 
   .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.teaser-block-two .foreground {
     width: 70%;
@@ -460,8 +480,8 @@
 
 @media screen and (max-width:1024px) {
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background {
-    padding: 0;
-    background-size: 100% 100%;
+    max-width: 100%;
+    padding: 0 16px;
   }
 
   .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser .foreground,
@@ -469,7 +489,6 @@
   .banner-carousel-wrapper.personal-loan-sub-page-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
     width: 100%;
     min-height: 450px;
-    padding: 0 16px;
   }
 
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .title>h2,
@@ -547,7 +566,7 @@
   }
 
   .section.banner-carousel-wrapper .carousel-wrapper .carousel.block .button-container {
-    left: 12px;
+    left: 16px;
     gap: 8px;
   }
 
@@ -744,6 +763,14 @@
   .section.banner-carousel-wrapper.breadcrumb-container.improve-cibil-score-breadcrumb-handle .carousel-wrapper .panel-container .teaser.block>.background .foreground .text {
     padding-top: 40px;
   }
+
+  .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-green {
+    background-image: url("/content/dam/piramalfinance/homepage/banner-images/WhatsappBannerMobile.png");
+  }
+  
+  .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-blue {
+    background-image: url("/content/dam/piramalfinance/homepage/banner-images/banner2-background-image-mobile.png");
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -769,13 +796,13 @@
   }
 
   .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
-    right: 60px;
+    right: 25px;
   }
   .banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
     width: 53%;
   }
   .section.banner-carousel-wrapper.self-employed-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
-    right: 10px;
+    right: 75px;
   }
 }
 
@@ -811,7 +838,8 @@
   }
 
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background {
-    padding: 0 125px 0 120px;
+    max-width: 81.25%;
+    background-size: cover;
   }
 
   .section.banner-carousel-wrapper .carousel-wrapper .carousel.block .button-container {
@@ -834,13 +862,9 @@
     height: 212px;
   }
 
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background {
-    background-size: cover;
-  }
-
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-two>.background .front-picture {
     bottom: 55%;
-    right: 9%;
+    right: 0;
     translate: -50% 50%;
   }
 
@@ -870,10 +894,15 @@
   .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
   .section.banner-carousel-wrapper.business-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
   .section.banner-carousel-wrapper.personal-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
-    right: 120px;
+    right: 0;
   }
   .banner-carousel-wrapper.business-loan-sub-page-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
     width: 80%;
+  }
+  .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-green,
+  .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-blue,
+  .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-violet {
+    background-size: cover;
   }
 }
 

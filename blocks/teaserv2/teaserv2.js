@@ -7,6 +7,9 @@ export default async function decorate(block) {
   block.innerHTML = "";
   block.append(renderTeaserHTML);
   loanProductsAnalytics(block);
+  if(block.closest(".section.neeyat-banner")){
+    block.querySelector("a").target = "_blank";
+  }
 }
 
 export function renderTeaserHTMLFactory(props, block) {
