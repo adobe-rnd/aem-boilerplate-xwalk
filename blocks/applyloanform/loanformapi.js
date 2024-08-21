@@ -22,12 +22,13 @@ let formBranchCity;
 
 export function buttonCLick() {
 
-    try {
+    /* try {
         updateFormValuve();
         formInteraction(formLoanType, "Form Open", targetObject.pageName);
     } catch (error) {
         console.warn(error);
-    }
+    } */
+
     loanFromBtn().addEventListener("click", function ({ currentTarget }) {
         currentTarget.closest(".loan-form-button-container").classList.add("loader-initialized");
         loanOtpInput().value = "";

@@ -1,4 +1,4 @@
-import { applyLoanNow, bannerClick } from "../../dl.js";
+import { applyLoanNow, bannerClick, ctaClickInteraction, readMoreInteraction } from "../../dl.js";
 import { targetObject } from "../../scripts/scripts.js";
 
 export function decorateButtons(...buttons) {
@@ -128,7 +128,9 @@ export function generateTeaserDOM(props, classes) {
       try {
         if (index || e.target.closest(".cta")) {
           bannerClick(e.target.innerText, targetObject.pageName);
-        } else {
+        }else if(this.closest('.carousel-articles-wrapper')){
+          readMoreAnalytics(e);
+        }else {
           applyLoanNow(
             eyebrow.textContent.trim() + " " + title.textContent.trim(),
             targetObject.pageName,
@@ -145,6 +147,20 @@ export function generateTeaserDOM(props, classes) {
     const checkClass = [...classes];
     if (checkClass?.includes("click-able")) {
       teaserDOM.children[0].addEventListener("click", function (e) {
+
+        /* About Us Comapny Analytics Start */
+        try {
+          if(this.closest('.section.board-of-directors-wrapper')){
+              let data = {};
+              data.click_text = this.querySelector('.title').textContent.trim();
+              data.cta_position = this.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
+              ctaClickInteraction(data);
+          }
+        } catch (error) {
+          console.warn(error);
+        }
+        /* About Us Comapny Analytics End */
+
         location.href = firstCta.innerText;
       });
     }
@@ -160,4 +176,13 @@ export default function decorate(block) {
   const teaserDOM = generateTeaserDOM(props, block.classList);
   block.textContent = "";
   block.append(teaserDOM);
+}
+
+
+function readMoreAnalytics(e){
+  let data = {};
+  data.article_name = e?.target.getAttribute('href').split('/').pop();
+  data.cta_position =  e?.target.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
+  data.click_header = e?.target.textContent.trim();
+  readMoreInteraction(data);
 }

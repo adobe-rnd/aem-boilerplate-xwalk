@@ -1,3 +1,4 @@
+import { ctaClickInteraction } from "../../dl.js";
 import { createButton, createCarousle, getProps, targetObject } from "../../scripts/scripts.js";
 import Glider from "../carousel/glider.min.js";
 
@@ -91,39 +92,41 @@ export default function decorate(block) {
     })
     model.classList.add("compony-details");
     div.querySelector(".active-tab-name").addEventListener('click', function (e) {
-        // if (e.currentTarget.classList) {
-        //     model.classList.add("model-mob-hide");
-        // } else {
-        //     model.classList.remove("model-mob-hide");
-        // }
-        // if(model.closest('.section.financial-reports-carousel')){
-        //     if (model.classList.contains("model-mob-hide")) {
-        //         document.querySelector(".modal-overlay").classList.remove("overlay");
-        //         document.querySelector(".modal-overlay").classList.add("dp-none");
-        //         model.classList.remove("model-mob-hide");
-        //     } else {
-        //         document.querySelector(".modal-overlay").classList.add("overlay");
-        //         document.querySelector(".modal-overlay").classList.remove("dp-none");
-        //         model.classList.add("model-mob-hide");
-        //     }
-        // }else{
-        //     if (model.classList.contains("model-mob-hide")) {
-        //         model.classList.remove("model-mob-hide");
-        //         document.body.classList.remove("overlay-active");
-        //         document.body.style.overflow="auto";
-        //     } else {
-        //         model.classList.add("model-mob-hide");
-        //         document.querySelector("body").classList.add("overlay-active");
-        //         document.body.style.overflow="hidden";
-        //     }
-        // }
-        if (model.classList.contains("model-mob-hide")) {
+
+       /*  if (e.currentTarget.classList) {
+            model.classList.add("model-mob-hide");
+        } else {
+            model.classList.remove("model-mob-hide");
+        }
+        if(model.closest('.section.financial-reports-carousel')){
+            if (model.classList.contains("model-mob-hide")) {
+                document.querySelector(".modal-overlay").classList.remove("overlay");
+                document.querySelector(".modal-overlay").classList.add("dp-none");
                 model.classList.remove("model-mob-hide");
-                // document.body.classList.remove("overlay-active");
+            } else {
+                document.querySelector(".modal-overlay").classList.add("overlay");
+                document.querySelector(".modal-overlay").classList.remove("dp-none");
+                model.classList.add("model-mob-hide");
+            }
+        }else{
+            if (model.classList.contains("model-mob-hide")) {
+                model.classList.remove("model-mob-hide");
+                document.body.classList.remove("overlay-active");
                 document.body.style.overflow="auto";
             } else {
                 model.classList.add("model-mob-hide");
-                // document.querySelector("body").classList.add("overlay-active");
+                document.querySelector("body").classList.add("overlay-active");
+                document.body.style.overflow="hidden";
+            }
+        } */
+       
+        if (model.classList.contains("model-mob-hide")) {
+                model.classList.remove("model-mob-hide");
+                document.body.classList.remove("overlay-active");
+                document.body.style.overflow="auto";
+            } else {
+                model.classList.add("model-mob-hide");
+                document.querySelector("body").classList.add("overlay-active");
                 document.body.style.overflow="hidden";
         }
     })
@@ -145,4 +148,18 @@ export default function decorate(block) {
             behavior : "smooth"
         })
     }, 100);
+
+    try {
+      if (block.closest(".section.company-details-wrapper") && block.querySelector(".compony-details")) {
+        block.querySelectorAll(".compony-details li").forEach((eachLi) => {
+          eachLi.addEventListener("click", function () {
+            let data = {};
+            data.click_text = this.textContent.trim();
+            ctaClickInteraction(data);
+          });
+        });
+      }
+    } catch (error) {
+      console.warn(error);
+    }
 }

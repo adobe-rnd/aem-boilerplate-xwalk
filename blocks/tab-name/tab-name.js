@@ -1,3 +1,4 @@
+import { ctaClickInteraction } from "../../dl.js";
 import { createCarousle, getProps } from "../../scripts/scripts.js";
 
 function createButton(text, picture) {
@@ -120,6 +121,18 @@ export function generateTabName(block) {
             else {
                 document.querySelector(".section.partnerships-cards-wrapper").classList.remove("dp-none")
             }
+        }
+
+        /* Corporate Analytics */
+        try {
+            if(e.target.closest(".tab-name-wrapper")){
+                let data = {};
+                data.click_text = e.target.textContent.trim();
+                data.cta_position = e.target.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
+                ctaClickInteraction(data);
+            }
+        } catch (error) {
+            console.warn(error);
         }
     })
     return block;

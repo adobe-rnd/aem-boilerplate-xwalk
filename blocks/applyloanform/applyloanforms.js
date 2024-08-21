@@ -1,4 +1,4 @@
-import { applyLoanNow, resendOtp, talkToExpert } from "../../dl.js";
+import { applyLoanNow, formInteraction, resendOtp, talkToExpert } from "../../dl.js";
 import { targetObject } from "../../scripts/scripts.js";
 import {
   branchInput,
@@ -159,6 +159,14 @@ export function applyLoanFormClick() {
     crossIcon.forEach(function (e) {
       e.addEventListener("click", function (e) {
         e.stopImmediatePropagation();
+
+        /* Form Close Analytics */
+        try {
+          formInteraction(targetObject.pageName, "Form Close", targetObject.pageName);
+        } catch (error) {
+          console.warn(error);
+        }
+
         // formOverlay.hide()
         const checkingFormopen = document.querySelector(".home-page-calculator-call-xf");
         /* if (emiOverlay || elgOverlay) {
