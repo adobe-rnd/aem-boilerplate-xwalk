@@ -848,7 +848,7 @@
   }
 
   .section.banner-carousel-wrapper .carousel-wrapper .carousel.block .button-container {
-    left: 119px;
+    left: calc((100% - 1025px) / 2);
     bottom: 60px;
   }
 

@@ -6,11 +6,11 @@
     position: relative;
 }
 .section.breadcrumb-handle .breadcrumb-wrapper{
-    padding: 0 150px;
     background: transparent;
     position: absolute;
     top: 0;
     z-index: 1;
+    left: calc((100% - 1240px) / 2);
 }
 .section.breadcrumb-handle > .breadcrumb-wrapper > .breadcrumb.block > nav > a{
     color: #666;
@@ -55,14 +55,11 @@
     line-height: 20px;
     text-decoration: none;
 }
-@media screen and (min-width:1024px) and (max-width:1366px){
-    .section.breadcrumb-handle .breadcrumb-wrapper{
-        padding: 0 160px;
-    }
-}
+
 @media screen and (max-width:1024px){
     .section.breadcrumb-handle .breadcrumb-wrapper{
         padding: 0 16px;
+        left: 0;
     }
     .section.breadcrumb-handle .breadcrumb-wrapper .breadcrumb{
         padding-top: 16px;
@@ -79,6 +76,7 @@
         padding: 0 12px;
     }
 }
+
 @media screen and (max-width:767px) {
     .section.breadcrumb-handle.breadcrumb-handle-mob .breadcrumb-wrapper .breadcrumb nav {
         overflow-x: auto;
@@ -88,10 +86,12 @@
         white-space: nowrap;
     }
 }
+
 @media screen and (min-width: 1025px) and (max-width: 1300px){
-    .section.breadcrumb-handle .breadcrumb-wrapper{
-        padding: 0 120px;
+    .section.breadcrumb-handle .breadcrumb-wrapper {
+        left: calc((100% - 1025px) / 2);
     }
+
     .section.breadcrumb-handle .breadcrumb-wrapper .breadcrumb>nav{
         max-height: 20px;
     }
