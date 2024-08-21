@@ -1,4 +1,4 @@
-import { keyFeaturesInteraction } from "../../dl.js";
+import { ctaClickInteraction, keyFeaturesInteraction } from "../../dl.js";
 import { fetchPlaceholders } from "../../scripts/aem.js";
 import { renderHelper } from "../../scripts/scripts.js";
 
@@ -236,6 +236,16 @@ function viewLogic(block) {
 function viewMoreLogic(each) {
     const buttonContainer = each.querySelector('.wrappercreation-wrapper .button-container');
     !each.dataset.clickAdded && buttonContainer.addEventListener('click', function () {
+
+        try {
+            let data= {};
+            data.click_text = this.textContent.trim();
+            data.cta_position = this.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
+            ctaClickInteraction(data);
+        } catch (error) {
+            console.warn(error);
+        }
+
         const isViewMore = this.textContent.toLowerCase() === 'view more';
 
         each.querySelectorAll('.keyfeatures-wrapper').forEach((eachFeature, index) => {

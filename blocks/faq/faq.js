@@ -56,7 +56,6 @@ function toggleList(el) {
                 if (!(e.target instanceof HTMLLIElement)) {
                     eachLi.closest('ul').querySelectorAll('ul').forEach(function (li) {
                         if (e.target.nextElementSibling !== li) {
-                            // debugger;
                             li.previousElementSibling.classList.remove('active');
                             li.setAttribute('aria-hidden', 'true');
                         }
