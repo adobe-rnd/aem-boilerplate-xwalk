@@ -425,12 +425,4 @@
     }
 }
 
-@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 1024px) {
-    .section.company-details-wrapper .tab-link-wrapper .tab-link.block>.compony-details {
-        z-index: 9999;
-        position: fixed;
-        bottom: 0;
-    }
-}
-
 /* financial reports carousel End */
