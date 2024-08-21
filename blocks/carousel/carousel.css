@@ -450,7 +450,7 @@
 .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-blue,
 .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-violet {
   background-position: 100%;
-  background-size: 100% 100%;
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 
@@ -680,6 +680,19 @@
   .section.banner-carousel-wrapper.insta-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
     bottom: 0;
   }
+  .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-green,
+  .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-blue,
+  .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-violet {
+    background-size: 100% 100%;
+  }
+
+  .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-green {
+    background-image: url("/content/dam/piramalfinance/homepage/banner-images/WhatsappBannerMobile.png");
+  }
+  
+  .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-blue {
+    background-image: url("/content/dam/piramalfinance/homepage/banner-images/banner2-background-image-mobile.png");
+  }
 }
 
 @media screen and (max-width:767px) {
@@ -762,14 +775,6 @@
 
   .section.banner-carousel-wrapper.breadcrumb-container.improve-cibil-score-breadcrumb-handle .carousel-wrapper .panel-container .teaser.block>.background .foreground .text {
     padding-top: 40px;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-green {
-    background-image: url("/content/dam/piramalfinance/homepage/banner-images/WhatsappBannerMobile.png");
-  }
-  
-  .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-blue {
-    background-image: url("/content/dam/piramalfinance/homepage/banner-images/banner2-background-image-mobile.png");
   }
 }
 
