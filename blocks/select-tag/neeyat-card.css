@@ -1,15 +1,29 @@
-.section.neeyat-cards.loan-products-wrapper{
+.section.neeyat-cards.loan-products-wrapper {
     margin-bottom: 0;
     padding-bottom: 48px;
     background-color: #f8f8f8;
 }
 
-.section.neeyat-cards.loan-products-wrapper .default-content-wrapper h2{
+.section.neeyat-cards.loan-products-wrapper .default-content-wrapper h2 {
     font-size: 30px;
 }
 
 @media screen and (max-width: 1024px) {
-    .section.neeyat-cards.loan-products-wrapper .default-content-wrapper h2{
+    .section.neeyat-cards.loan-products-wrapper .default-content-wrapper h2 {
         font-size: 25px;
+    }
+    .section.neeyat-cards .wrappercreation-wrapper .teaserv2-wrapper .bg-image{
+        flex-direction: row;
+        justify-content: flex-start;
+        column-gap: 16px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .section.neeyat-cards.loan-products-wrapper {
+        padding: 40px 0 24px;
+    }
+    .section.neeyat-cards .wrappercreation-wrapper .teaserv2-wrapper .bg-image{
+        flex-direction: column;
     }
 }

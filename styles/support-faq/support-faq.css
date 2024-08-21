@@ -21,7 +21,7 @@
     border-bottom: 1px dashed #ccc;
 }
 
-.section.support-faq-wrapper .faq-wrapper .faq>div:last-child{
+.section.support-faq-wrapper .faq-wrapper .faq>div:last-child {
     border-bottom: none;
 }
 
@@ -37,10 +37,10 @@
     position: relative;
 }
 
-.section.support-faq-wrapper .faq-wrapper .faq>div>h2::after{
+.section.support-faq-wrapper .faq-wrapper .faq>div>h2::after {
     content: '';
     position: absolute;
-    background-image: url('/content/dam/piramalfinance/product-page/home-loan/down-arrow.png');
+    background-image: url('/content/dam/piramalfinance/faq/downArrow.webp');
     height: 24px;
     width: 24px;
     right: -3px;
@@ -49,28 +49,30 @@
     background-size: 100%;
 }
 
-.section.support-faq-wrapper .faq-wrapper .faq>div>h2.accord-active::after{
+.section.support-faq-wrapper .faq-wrapper .faq>div>h2.accord-active::after {
     transform: rotate(180deg);
 }
 
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6::after{
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6::after {
     content: '';
     position: absolute;
     background-image: url('/content/dam/piramalfinance/support/faq/add.png');
     height: 24px;
     width: 24px;
-    right: 0;
+    right: -133px;
+    top: 0;
     object-fit: contain;
     background-size: 100%;
 }
 
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6.active::after{
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6.active::after {
     content: '';
     position: absolute;
     background-image: url('/content/dam/piramalfinance/support/faq/minus.png');
     height: 24px;
     width: 24px;
-    right: 0;
+    right: -133px;
+    top: 0;
     object-fit: contain;
     background-size: 100%;
 }
@@ -92,8 +94,7 @@
 }
 
 .section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul,
-.section.support-faq-wrapper .faq-wrapper .faq>div:has(p) ul
-{
+.section.support-faq-wrapper .faq-wrapper .faq>div:has(p) ul {
     padding: 24px 0 0 94px;
 }
 
@@ -101,12 +102,8 @@
     cursor: pointer;
 }
 
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul li h6 {
-    position: relative;
-}
-
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul li h6,
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul >li > ul> li> strong em{
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>strong em {
     color: #666;
     font-family: Nunito-Bold, sans-serif;
     font-size: 1rem;
@@ -115,11 +112,17 @@
     word-break: break-all;
 }
 
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul li h6 {
+    position: relative;
+    width: 88%;
+    word-break: unset;
+}
+
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul li h6.active {
     color: #f26841
 }
 
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul >li > ul> li> strong em {
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>strong em {
     text-decoration: underline;
     font-style: normal;
 }
@@ -131,10 +134,10 @@
 
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li,
 .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>strong,
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li > em >a,
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li > em >sub>a,
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li > em >a>sub,
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ol>li>ol>li {
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>em>a,
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>em>sub>a,
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>em>a>sub,
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>ol>li {
     color: #666;
     font-family: Nunito-Regular, sans-serif;
     font-size: 1rem;
@@ -144,24 +147,24 @@
     font-style: normal;
 }
 
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>strong{
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>strong {
     font-weight: bolder;
 }
 
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li a{
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li a {
     text-decoration: none;
 }
 
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li a sub{
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li a sub {
     font-family: Nunito-Regular, sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
 }
 
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li > em >sub>a,
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li > em >a>sub,
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li > em >a {
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>em>sub>a,
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>em>a>sub,
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>em>a {
     text-decoration: none;
     color: #666;
     font-style: normal;
@@ -189,23 +192,23 @@
     padding-top: 24px;
 }
 
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ol{
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ol {
     padding: 12px 0;
 }
 
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ol>li,
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ol>li>ol{
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li,
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>ol {
     list-style: none;
 }
 
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ol>li>ol{
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>ol {
     border: 1px solid #000;
     border-top: 0;
     list-style-position: inside;
     margin-bottom: 20px;
 }
 
-.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ol>li>p{
+.section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>p {
     border: 1px solid #000;
     border-bottom: 0;
     color: #666;
@@ -227,52 +230,66 @@
     .section.support-faq-wrapper .faq-wrapper .faq {
         padding: 16px;
     }
+
     .section.support-faq-wrapper .faq-wrapper .faq>div h2 span {
         margin: 0 12px 0 9px;
     }
+
     .section.support-faq-wrapper .faq-wrapper .faq>div h2 span img,
-    .section.support-faq-wrapper .faq-wrapper .faq>div h2 span{
+    .section.support-faq-wrapper .faq-wrapper .faq>div h2 span {
         height: 24px;
         width: 24px;
         max-width: unset;
     }
+
     .section.support-faq-wrapper .faq-wrapper .faq>div h2 {
         font-size: 1.125rem;
-        padding-right: 12px;
+        padding-right: 47px;
     }
+
     .section.support-faq-wrapper .faq-wrapper .faq>div {
         padding: 16px 0;
     }
+
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul {
         padding: 48px 0 0 47px;
     }
-    .section.support-faq-wrapper .faq-wrapper .faq>div>ul >li > ul> li> strong em,
-    .section.support-faq-wrapper .faq-wrapper .faq>div>ul >li > ul> li
-     {
-        width: 111%;
-        word-break: break-all;
+
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li>strong em,
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>ul>li {
+        width: 100%;
     }
+
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li {
         width: 85%;
     }
-    .section.support-faq-wrapper .faq-wrapper .faq>div>ul li h6{
-        width: 103%;
+
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul li h6 {
+        width: 100%;
     }
+
     .section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul,
     .section.support-faq-wrapper .faq-wrapper .faq>div:has(p) ul {
         padding-left: 46px;
-    } 
+    }
+
     .section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul>li>ul {
         padding-left: 0;
-    }  
+    }
+
     .section.support-faq-wrapper .faq-wrapper .faq>div>p {
         padding-left: 47px;
         word-wrap: break-word;
     }
+
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6::after,
-    .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6.active::after{
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6.active::after {
         right: -33px;
         top: 0;
+    }
+
+    .section.support-faq-wrapper .faq-wrapper .faq>div:nth-child(6)>ul>li>ul>li:nth-child(2){
+        word-break: break-word;
     }
 }
 
@@ -280,32 +297,47 @@
     .section.support-faq-wrapper .faq-wrapper .faq>div h2 span {
         margin: 0 15px 0 5px;
     }
-    .section.support-faq-wrapper .faq-wrapper .faq>div>ul {
+
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul,
+    .section.support-faq-wrapper .faq-wrapper .faq>div:has(p) ul {
         padding: 48px 0 0 53px;
     }
-    .section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul, .section.support-faq-wrapper .faq-wrapper .faq>div:has(p) ul {
-        padding: 48px 0 0 53px;
-    }
+
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li {
         width: 97%;
     }
+
     .section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul,
     .section.support-faq-wrapper .faq-wrapper .faq>div>p {
         padding-left: 54px;
         word-wrap: break-word;
-    } 
+    }
+
     .section.support-faq-wrapper .faq-wrapper .faq>div:has(p strong) ul>li>ul {
         padding-left: 0;
-    } 
+    }
+
     .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6::after,
-    .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6.active::after{
-        right: -30px;
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6.active::after {
+        right: -47px;
         top: 0;
     }
-    .section.support-faq-wrapper .faq-wrapper .faq>div>h2::after{
+
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul li h6 {
+        width: 97%;
+    }
+
+    .section.support-faq-wrapper .faq-wrapper .faq>div>h2::after {
         right: -10px;
     }
 }
 
-
-
+@media screen and (min-width:1025px) and (max-width: 1300px) {
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6::after {
+        right: -107px;
+    }
+    
+    .section.support-faq-wrapper .faq-wrapper .faq>div>ul>li>h6.active::after {
+        right: -107px;
+    }
+}

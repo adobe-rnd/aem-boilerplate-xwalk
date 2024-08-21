@@ -40,3 +40,12 @@
         line-height: 25px;
     }
 }
+    @media screen and (max-width:767px) {
+        .section.neeyat-slogan .rte-wrapper .rte.block>div:first-child>div:first-child p:nth-child(2), 
+        .section.neeyat-slogan .rte-wrapper .rte.block>div:first-child>div:first-child h5{
+            font-size: 19px;
+        }
+        .section.neeyat-slogan .rte-wrapper .rte.block>div>div >h5{
+            font-size: 19px;
+        }   
+    } 
