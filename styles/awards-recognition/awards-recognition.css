@@ -121,6 +121,18 @@
     line-height: 28px;
 }
 
+.section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child .carousel-inner::-webkit-scrollbar {
+    display: none 
+}
+
+.section.awards-recognition-wrapper.awards-recognition-rm-glider .tab-name-nested-wrapper .tab-name-nested.block div:nth-child(3) .carousel-inner{
+    justify-content: center;
+}
+
+.section.awards-recognition-wrapper.awards-recognition-rm-glider .tab-name-nested-wrapper .tab-name-nested.block div:nth-child(3) button{
+    display: none;
+}
+
 @media screen and (max-width: 1024px) {
 
     .section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested>.normal>.carousel-inner {
@@ -191,6 +203,14 @@
         font-size: 1.5rem;
         line-height: 2pc;
         margin-bottom: unset;
+    }
+
+    .section.awards-recognition-wrapper.awards-recognition-rm-glider .tab-name-nested-wrapper .tab-name-nested.block div:nth-child(3) .carousel-inner {
+        justify-content: unset;
+    }
+
+    .section.awards-recognition-wrapper.awards-recognition-rm-glider .tab-name-nested-wrapper .tab-name-nested.block div:nth-child(3) button {
+        display: block;
     }
 }
 
