@@ -1410,6 +1410,23 @@
                 "value": "open-form-on-click"
               }
             ]
+          },
+          {
+            "name": "Background Image",
+            "children": [
+              {
+                "name": "Slide Background Light Green",
+                "value": "slide-background-light-green"
+              },
+              {
+                "name": "Slide Background Light Blue",
+                "value": "slide-background-light-blue"
+              },
+              {
+                "name": "Slide Background Violet",
+                "value": "slide-background-violet"
+              }
+            ]
           }
         ]
       },
