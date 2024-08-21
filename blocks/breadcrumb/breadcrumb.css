@@ -36,6 +36,7 @@
 }
 .section.breadcrumb-handle .breadcrumb-wrapper .breadcrumb{
     padding-top: 10px;
+    padding-left: 5px;
 }
 .section.breadcrumb-handle .breadcrumb-wrapper .breadcrumb>nav{
     display: flex;
@@ -63,6 +64,7 @@
     }
     .section.breadcrumb-handle .breadcrumb-wrapper .breadcrumb{
         padding-top: 16px;
+        padding-left: 0;
     }
     .section.breadcrumb-handle > .breadcrumb-wrapper > .breadcrumb.block > nav > a{
         font-size: 0.75rem;
