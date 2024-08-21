@@ -2524,5 +2524,9 @@
         ]
       }
     ]
+  },
+  {
+    "id": "branchlocatormoredetails",
+    "fields": []
   }
 ]
