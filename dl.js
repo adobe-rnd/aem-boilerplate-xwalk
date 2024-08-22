@@ -202,14 +202,52 @@ export function faqInteraction(data) {
     }
 }
 
-export function ReadMoreInteraction(data) {
+export function readMoreInteraction(data) {
     try {
-        const {} = data;
         window.dataLayer.push({
             'event': 'read_more',
-            'article_name' : article_name || '',
-            'cta_position' : cta_position || '',
-            'click_header' : click_header || '',
+            'article_name' : data.article_name || '',
+            'cta_position' : data.cta_position || '',
+            'click_header' : data.click_header || '',
+            'page_type': targetObject.pageName || '',
+        });
+    } catch (error) {
+        console.warn(error);
+    }
+}
+
+export function applyLoanInteraction(data) {
+    try {
+        window.dataLayer.push({
+            'event': 'apply_loan_now',
+            'click_text' : data.click_text || '',
+            'loan_type' : targetObject.pageName || '',
+            'page_type': targetObject.pageName || '',
+        });
+    } catch (error) {
+        console.warn(error);
+    }
+}
+
+export function keyFeaturesInteraction(data){
+    try {
+        window.dataLayer.push({
+            'event': 'key_features',
+            'click_text' : data.click_text || '',
+            'cta_position': data.cta_position || '',
+            'page_type': targetObject.pageName || '',
+        });
+    } catch (error) {
+        console.warn(error);
+    }
+}
+
+export function ctaClickInteraction(data){
+    try {
+        window.dataLayer.push({
+            'event': 'cta_click',
+            'click_text' : data.click_text || '',
+            'cta_position': data.cta_position || '',
             'page_type': targetObject.pageName || '',
         });
     } catch (error) {

@@ -2,6 +2,7 @@ import { formOpen, overlay } from "../blocks/applyloanform/applyloanforms.js";
 import { statemasterGetStatesApi } from "../blocks/applyloanform/statemasterapi.js";
 import { validationJSFunc } from "../blocks/applyloanform/validation.js";
 import { toggleAllNavSections } from "../blocks/header/header.js";
+import { applyLoanInteraction } from "../dl.js";
 import { sampleRUM, loadHeader, loadFooter, decorateButtons, decorateIcons, decorateSections, decorateBlocks, decorateTemplateAndTheme, waitForLCP, loadBlocks, loadCSS, fetchPlaceholders } from "./aem.js";
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
@@ -375,7 +376,7 @@ export function createCarousle(block, prevButton, nextButton) {
       },
       {
         root: carousel,
-        threshold: block.closest(".carousel-3pt5") ? 1 : 0.1,
+        // threshold: block.closest(".carousel-3pt5") ? 1 : 0.1,
       }
     );
 
@@ -754,7 +755,7 @@ body?.addEventListener("click", function (e) {
 
     const nav = document.getElementById("nav");
     const navSections = nav.querySelector(".nav-sections");
-    navSections.children[0].classList.remove("active");
+    navSections?.children[0]?.classList.remove("active");
     navSections.querySelectorAll(":scope .default-content-wrapper > ul > li").forEach((navSection) => {
       toggleAllNavSections(navSections);
       navSection.setAttribute("aria-expanded", "false");
@@ -784,13 +785,44 @@ setTimeout(() => {
   try {
     document.querySelectorAll('.open-form-on-click') && document.querySelectorAll('.open-form-on-click .button-container').forEach(function (eachApplyFormClick) {
       eachApplyFormClick.addEventListener('click', async (e) => {
-        statemasterGetStatesApi();
-        validationJSFunc();
-        formOpen();
-        e.preventDefault();
+        onCLickApplyFormOpen(e);
       });
     });
   } catch (error) {
     console.warn(error);
   }
+
+  // Neeyat Click
+  try {
+    document.querySelectorAll('.neeyat-click') && document.querySelector('.neeyat-click').querySelectorAll('.block.carousel-item').forEach(function (eachApplyFormClick) {
+        let classListNeeyatBanner = document.querySelector('.neeyat-click').classList;
+        let buttonClick;
+        classListNeeyatBanner.forEach(function (eachClass) {
+          if(eachClass.includes('neeyat-button')){
+            buttonClick = eachClass.replace('neeyat-button-', '');
+          }
+        });
+        eachApplyFormClick.querySelectorAll('.button-container')[buttonClick].addEventListener('click', function (e){
+          onCLickApplyFormOpen(e);
+        });
+    });
+  } catch (error) {
+    console.warn(error);
+  }
 }, 5000);
+
+function onCLickApplyFormOpen(e) {
+  statemasterGetStatesApi();
+  validationJSFunc();
+  formOpen();
+  try {
+    if (!e.target.closest(".section").classList.contains("banner-carousel-wrapper")) {
+      let data = {};
+      data.click_text = e.target.textContent.trim();
+      applyLoanInteraction(data);
+    }
+  } catch (error) {
+    console.warn(error);
+  }
+  e.preventDefault();
+}

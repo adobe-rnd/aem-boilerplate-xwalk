@@ -1,4 +1,4 @@
-import { faqInteraction } from "../../dl.js";
+import { ctaClickInteraction, faqInteraction } from "../../dl.js";
 import { fetchPlaceholders } from "../../scripts/aem.js";
 import { targetObject } from "../../scripts/scripts.js";
 import { documentRequired, generateAccordionDOM } from "../accordion/accordion.js";
@@ -89,6 +89,16 @@ function viewMoreLogicFAQ() {
 function viewMoreFAQ(eachs) {
   const faqButtonContainer = eachs.querySelector(".faq-section-wrapper .button-container");
   faqButtonContainer.addEventListener("click", function () {
+    
+    try {
+      let data= {};
+      data.click_text = this.textContent.trim();
+      data.cta_position = this.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
+      ctaClickInteraction(data);
+    } catch (error) {
+      console.warn(error);
+    }
+
     const isViewMoreFAQ = this.textContent.toLowerCase() === "view more";
     this.innerText = isViewMoreFAQ ? "View Less" : "View More";
 
@@ -99,5 +109,6 @@ function viewMoreFAQ(eachs) {
       }
       eachFAQ.classList.toggle("dp-none", !isViewMoreFAQ && index > 5);
     });
+
   });
 }

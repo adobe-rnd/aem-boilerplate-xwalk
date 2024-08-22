@@ -1,4 +1,4 @@
-import { ctaClick, outboundClick } from "../../dl.js";
+import { ctaClick, ctaClickInteraction, outboundClick } from "../../dl.js";
 import { targetObject } from "../../scripts/scripts.js";
 
 export default function decorate(block) {
@@ -45,6 +45,12 @@ function createImageWithLink(block) {
       const menu_category = menu_categoryel.innerText.trim();
       if (block.closest(".footer") && click_text && menu_category) outboundClick(click_text, menu_category, "footer", targetObject.pageName);
       else if (block.closest(".download-piramal-wrapper") && click_text && menu_category) ctaClick(click_text, menu_category, menu_category, targetObject.pageName);
+      else if(block.closest('.section.career-social-cards')){
+          let data = {};
+          data.click_text = "";
+          data.cta_position = e.target.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
+          ctaClickInteraction(data);
+      }
     } catch (error) {
       console.warn(error);
     }

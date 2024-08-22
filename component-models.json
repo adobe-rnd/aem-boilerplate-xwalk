@@ -894,6 +894,10 @@
           {
             "name": "carousel",
             "value": "carousel"
+          },
+          {
+            "name": "glider",
+            "value": "glider"
           }
         ]
       },
@@ -911,6 +915,10 @@
           {
             "name": "carousel",
             "value": "carousel"
+          },
+          {
+            "name": "glider",
+            "value": "glider"
           }
         ]
       }
@@ -1400,6 +1408,23 @@
               {
                 "name": "Click to open form on Single Button",
                 "value": "open-form-on-click"
+              }
+            ]
+          },
+          {
+            "name": "Background Image",
+            "children": [
+              {
+                "name": "Slide Background Light Green",
+                "value": "slide-background-light-green"
+              },
+              {
+                "name": "Slide Background Light Blue",
+                "value": "slide-background-light-blue"
+              },
+              {
+                "name": "Slide Background Violet",
+                "value": "slide-background-violet"
               }
             ]
           }
@@ -2499,5 +2524,9 @@
         ]
       }
     ]
+  },
+  {
+    "id": "branchlocatormoredetails",
+    "fields": []
   }
 ]

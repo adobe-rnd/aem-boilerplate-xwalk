@@ -1,3 +1,4 @@
+import { ctaClickInteraction } from "../../dl.js";
 import { getProps } from "../../scripts/scripts.js";
 
 export default function decorate(block) {
@@ -57,6 +58,20 @@ export default function decorate(block) {
     block.querySelectorAll('.offer-documents.block .modal-cta >.cmp-text').forEach(function (blockCards) {
         blockCards.addEventListener("click", function (e) {
             e.stopImmediatePropagation();
+
+            /* lending Partners Modal Open Analytics Start */
+
+            try {
+                let data = {};
+                data.click_text = this.querySelector("img").getAttribute('alt');
+                data.cta_position = e.target.closest(".section").querySelector(".default-content-wrapper").querySelector("h1, h2, h3, h4, h5, h6").textContent.trim();
+                ctaClickInteraction(data);
+            } catch (error) {
+                console.warn(error);
+            }
+
+            /* lending Partners Modal Open Analytics End */
+            
             e.target.closest('.cmp-text').classList.add("active")
             const targetModal = e.target.closest('.popup-rich-text').querySelector('.stake-pop-up');
             if (targetModal.classList.contains('dp-none')) {
@@ -82,6 +97,20 @@ export default function decorate(block) {
 
     document.querySelectorAll(".stake-pop-up .text.popupText .cmp-text .cross-container img").forEach(function (ele) {
         ele.addEventListener("click", function (currentEle) {
+
+            /* lending Partners Modal Open Analytics Start */
+
+            try {
+                let data = {};
+                data.click_text = this.closest('.offer-documents-wrapper').querySelector('.stake-pop-up .stake-document-popup .cpm-sub-text p').textContent.trim();
+                data.cta_position = currentEle.target.closest(".section").querySelector(".default-content-wrapper").querySelector("h1, h2, h3, h4, h5, h6").textContent.trim();
+                ctaClickInteraction(data);
+            } catch (error) {
+                console.warn(error);
+            }
+
+            /* lending Partners Modal Open Analytics End */
+
             currentEle.stopImmediatePropagation();
             if(document.querySelector(".cmp-text.active")) document.querySelector(".cmp-text.active").classList.remove("active")
             currentEle.target.closest('.stake-pop-up').classList.remove('dp-block');

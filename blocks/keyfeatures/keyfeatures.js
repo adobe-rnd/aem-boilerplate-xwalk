@@ -1,3 +1,4 @@
+import { ctaClickInteraction, keyFeaturesInteraction } from "../../dl.js";
 import { fetchPlaceholders } from "../../scripts/aem.js";
 import { renderHelper } from "../../scripts/scripts.js";
 
@@ -10,6 +11,7 @@ export default async function decorate(block) {
     block.append(newDivFeature);
     try {
         featureDropDownClick(block);
+        keyFeaturesAnalytics(block);
         block.closest('.home-loans-products-wrapper.view-more-less-js') ? viewLogic(block) : "";
     } catch (error) {
         console.warn(error)
@@ -234,6 +236,16 @@ function viewLogic(block) {
 function viewMoreLogic(each) {
     const buttonContainer = each.querySelector('.wrappercreation-wrapper .button-container');
     !each.dataset.clickAdded && buttonContainer.addEventListener('click', function () {
+
+        try {
+            let data= {};
+            data.click_text = this.textContent.trim();
+            data.cta_position = this.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
+            ctaClickInteraction(data);
+        } catch (error) {
+            console.warn(error);
+        }
+
         const isViewMore = this.textContent.toLowerCase() === 'view more';
 
         each.querySelectorAll('.keyfeatures-wrapper').forEach((eachFeature, index) => {
@@ -276,4 +288,20 @@ function scrollToComponent(component) {
             behavior: "smooth",
         });
     }
+}
+
+function keyFeaturesAnalytics(block) {
+    let eventCallArray = [];
+    let teaserLink = block.querySelector('.cmp-teaser__link');
+    let redirectionButton = block.querySelector('.redirectionbutton');
+    eventCallArray.push(teaserLink);
+    eventCallArray.push(redirectionButton);
+    eventCallArray.forEach(function (eachEvent){
+        eachEvent.addEventListener('click', function (e) {
+            let data = {};
+            data.click_text = e.target.closest('.cmp-teaser').querySelector('.cmp-teaser__content p').textContent.trim();
+            data.cta_position = e.target.closest('.section').querySelector('.default-content-wrapper').textContent.trim();
+            keyFeaturesInteraction(data);
+        });
+    });
 }

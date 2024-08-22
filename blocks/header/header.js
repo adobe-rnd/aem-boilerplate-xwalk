@@ -206,12 +206,12 @@ export default async function decorate(block) {
 
   // Last element with Image
   try {
-    block.querySelector('.nav-sections').querySelector('ul').lastElementChild.querySelector('p').innerHTML = `<img src="/content/dam/piramalfinance/header-images/language-black.svg" alt="language" class="leveloneimg">`
+    block.querySelector('.nav-sections') && (block.querySelector('.nav-sections').querySelector('ul').lastElementChild.querySelector('p').innerHTML = `<img src="/content/dam/piramalfinance/header-images/language-black.svg" alt="language" class="leveloneimg">`);
   } catch (error) {
     console.warn(error);
   }
   try {
-    block.querySelector(".nav-tools").addEventListener("click", function (e) {
+    block.querySelector(".nav-tools")?.addEventListener("click", function (e) {
       loignClick(e.target.innerText, targetObject.pageName);
       navlogin(targetObject.pageName);
     })
