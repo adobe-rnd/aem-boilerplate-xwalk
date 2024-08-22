@@ -1,3 +1,4 @@
+import { ctaClickInteraction } from "../../dl.js";
 import { fetchAPI, getProps, renderHelper } from "../../scripts/scripts.js";
 
 export default async function decorate(block) {
@@ -114,6 +115,15 @@ export default async function decorate(block) {
                     siblingContent.style.display = 'none';
                 }
             });
+
+            try {
+                let data = {};
+                data.click_text = event.target.textContent.trim()
+                data.cta_position = event.target.closest(".section").querySelector(".default-content-wrapper").querySelector("h1, h2, h3, h4, h5, h6").textContent.trim();
+                ctaClickInteraction(data); 
+            } catch (error) {
+                console.warn(error);
+            }
         }
 
 
@@ -130,6 +140,7 @@ export default async function decorate(block) {
         innerAccordionTitles.forEach(function (title) {
             title.addEventListener('click', handleInnerAccordionClick);
         });
+        
     } catch (error) {
         console.error(error);
     }
@@ -172,6 +183,15 @@ export function handleInnerAccordionClick(event) {
             siblingContent.style.display = 'none';
         }
     });
+
+    try {
+        let data = {};
+        data.click_text = event.target.textContent.trim()
+        data.cta_position = event.target.closest(".section").querySelector(".default-content-wrapper").querySelector("h1, h2, h3, h4, h5, h6").textContent.trim();
+        ctaClickInteraction(data); 
+    } catch (error) {
+        console.warn(error);
+    }
 }
 
 // Function to get siblings of an element

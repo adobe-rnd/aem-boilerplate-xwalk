@@ -4,6 +4,8 @@
  * https://www.hlx.live/developer/block-collection/embed
  */
 
+import { ctaClickInteraction } from "../../dl.js";
+
 const loadScript = (url, callback, type) => {
     const head = document.querySelector('head');
     const script = document.createElement('script');
@@ -92,6 +94,17 @@ const loadScript = (url, callback, type) => {
       block.innerHTML = getDefaultEmbed(url);
       block.classList = 'block embed';
     }
+
+    try {
+        let data = {};
+        data.click_text = "Video Play";
+        data.cta_position = block.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
+        ctaClickInteraction(data);
+        // block.querySelector('iframe').getAttribute('src').trim()
+    } catch (error) {
+      console.warn(error);
+    }
+
     block.classList.add('embed-is-loaded');
   };
   
@@ -107,7 +120,6 @@ const loadScript = (url, callback, type) => {
       wrapper.prepend(placeholder);
       wrapper.addEventListener('click', () => {
         loadEmbed(block, link, true);
-        block.querySelector("video").play();
       });
       block.append(wrapper);
     } else {

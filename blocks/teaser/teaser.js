@@ -130,6 +130,8 @@ export function generateTeaserDOM(props, classes) {
           bannerClick(e.target.innerText, targetObject.pageName);
         }else if(this.closest('.carousel-articles-wrapper')){
           readMoreAnalytics(e);
+        }else if(this.closest('.csr-committee-wrapper')){
+          csrfReportAnalytics(e);
         }else {
           applyLoanNow(
             eyebrow.textContent.trim() + " " + title.textContent.trim(),
@@ -185,4 +187,11 @@ function readMoreAnalytics(e){
   data.cta_position =  e?.target.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
   data.click_header = e?.target.textContent.trim();
   readMoreInteraction(data);
+}
+
+function csrfReportAnalytics(e){
+  let data = {};
+  data.click_text = e.target.textContent.trim()
+  data.cta_position = e.target.closest(".section").querySelector(".default-content-wrapper").querySelector("h1, h2, h3, h4, h5, h6").textContent.trim();
+  ctaClickInteraction(data); 
 }

@@ -785,22 +785,44 @@ setTimeout(() => {
   try {
     document.querySelectorAll('.open-form-on-click') && document.querySelectorAll('.open-form-on-click .button-container').forEach(function (eachApplyFormClick) {
       eachApplyFormClick.addEventListener('click', async (e) => {
-        statemasterGetStatesApi();
-        validationJSFunc();
-        formOpen();
-        try {
-          if (!e.target.closest(".section").classList.contains("banner-carousel-wrapper")) {
-            let data = {};
-            data.click_text = e.target.textContent.trim();
-            applyLoanInteraction(data);
-          }
-        } catch (error) {
-          console.warn(error);
-        }
-        e.preventDefault();
+        onCLickApplyFormOpen(e);
       });
     });
   } catch (error) {
     console.warn(error);
   }
+
+  // Neeyat Click
+  try {
+    document.querySelectorAll('.neeyat-click') && document.querySelector('.neeyat-click').querySelectorAll('.block.carousel-item').forEach(function (eachApplyFormClick) {
+        let classListNeeyatBanner = document.querySelector('.neeyat-click').classList;
+        let buttonClick;
+        classListNeeyatBanner.forEach(function (eachClass) {
+          if(eachClass.includes('neeyat-button')){
+            buttonClick = eachClass.replace('neeyat-button-', '');
+          }
+        });
+        eachApplyFormClick.querySelectorAll('.button-container')[buttonClick].addEventListener('click', function (e){
+          onCLickApplyFormOpen(e);
+        });
+    });
+  } catch (error) {
+    console.warn(error);
+  }
 }, 5000);
+
+function onCLickApplyFormOpen(e) {
+  statemasterGetStatesApi();
+  validationJSFunc();
+  formOpen();
+  try {
+    if (!e.target.closest(".section").classList.contains("banner-carousel-wrapper")) {
+      let data = {};
+      data.click_text = e.target.textContent.trim();
+      applyLoanInteraction(data);
+    }
+  } catch (error) {
+    console.warn(error);
+  }
+  e.preventDefault();
+}
