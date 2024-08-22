@@ -81,7 +81,8 @@ export default function decorate(block) {
                     <p>${heading.innerText}</p>
                     <p class="active-tab-name">${activeTab.innerText}</p>
                 </div>
-            </div>`
+            </div>`;
+    // ${heading ? `<p>${heading.innerText}</p>` : ''}
     block.insertBefore(div, block.children[0]);
     const model = block.children[1];
     model?.querySelectorAll('li')?.forEach(function (eachLi) {

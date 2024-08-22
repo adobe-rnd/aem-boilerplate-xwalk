@@ -47,8 +47,11 @@ function createImageWithLink(block) {
       else if (block.closest(".download-piramal-wrapper") && click_text && menu_category) ctaClick(click_text, menu_category, menu_category, targetObject.pageName);
       else if(block.closest('.section.career-social-cards')){
           let data = {};
-          data.click_text = "";
-          data.cta_position = e.target.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
+          let urlText = e.target.closest('a').getAttribute('href').split('/')[2];
+          const pattern = /^www\.|\.com$/g;
+          const result = urlText.replace(pattern, '');
+          data.click_text = result;
+          data.cta_position = e.target.closest('.section').querySelector('.wrapper-creation-container .default-content-wrapper p').textContent.trim();
           ctaClickInteraction(data);
       }
     } catch (error) {

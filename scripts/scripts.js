@@ -794,7 +794,7 @@ setTimeout(() => {
 
   // Neeyat Click
   try {
-    document.querySelectorAll('.neeyat-click') && document.querySelector('.neeyat-click').querySelectorAll('.block.carousel-item').forEach(function (eachApplyFormClick) {
+    document.querySelectorAll('.neeyat-click').length > 0 && document.querySelector('.neeyat-click').querySelectorAll('.block.carousel-item').forEach(function (eachApplyFormClick) {
         let classListNeeyatBanner = document.querySelector('.neeyat-click').classList;
         let buttonClick;
         classListNeeyatBanner.forEach(function (eachClass) {

@@ -141,6 +141,11 @@
     .section.financial-reports-carousel .tab-link-wrapper .tab-link.block{
         transform: unset;
     }
+
+    .section.financial-reports-carousel .tab-link-wrapper .tab-link.block.glider{
+        -webkit-overflow-scrolling: unset;
+    }
+
     .section.company-details-wrapper .tab-link-wrapper .tab-link.block div:nth-child(3),
     .section.company-details-wrapper .tab-link-wrapper .tab-link.block div:nth-child(4),
     .section.company-details-wrapper .tab-link-wrapper .tab-link.block div:nth-child(5) {
