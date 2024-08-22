@@ -1,3 +1,4 @@
+import { fetchPlaceholders } from "../../scripts/aem.js";
 import { fetchAPI } from "../../scripts/scripts.js";
 
 let data;
@@ -43,9 +44,10 @@ function returnLatLan() {
 }
 
 
-function getStateName(lat, lan) {
-    return new Promise(function (resolve, reject) {
-        fetchAPI('GET', 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lan + '&sensor=true&key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k').then(function (res) {
+async function getStateName(lat, lan) {
+    return new Promise(async function (resolve, reject) {
+        const data = await fetchPlaceholders();
+        fetchAPI('GET', 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lan + '&sensor=true&key=' + data.gk).then(function (res) {
             resolve(res)
         }).catch(function (err) {
             resolve(err);
