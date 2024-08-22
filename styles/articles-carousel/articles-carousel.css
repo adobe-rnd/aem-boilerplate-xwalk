@@ -268,18 +268,13 @@
     }
 }
 
-@media (min-width:1024px) and (max-width:1366px) {
-    .section.carousel-articles-wrapper .carousel-wrapper .carousel {
-        margin: 0 34px;
-    }
-    .section.carousel-articles-wrapper .carousel-wrapper .carousel .panel-container .teaser .background {
-        min-height: 248px;
-    }
-}
-
 @media screen and (min-width:1025px) and (max-width: 1300px) {
     .section.carousel-articles-wrapper .carousel.block .panel-container .teaser.block {
         width: 27.4%;
         padding: 4px;
+    }
+
+    .section.carousel-articles-wrapper .carousel-wrapper .carousel {
+        margin: 0 30px;
     }
   }
