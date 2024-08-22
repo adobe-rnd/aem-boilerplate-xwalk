@@ -755,7 +755,7 @@ body?.addEventListener("click", function (e) {
 
     const nav = document.getElementById("nav");
     const navSections = nav.querySelector(".nav-sections");
-    navSections.children[0].classList.remove("active");
+    navSections?.children[0]?.classList.remove("active");
     navSections.querySelectorAll(":scope .default-content-wrapper > ul > li").forEach((navSection) => {
       toggleAllNavSections(navSections);
       navSection.setAttribute("aria-expanded", "false");
