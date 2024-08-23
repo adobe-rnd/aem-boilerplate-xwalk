@@ -146,6 +146,9 @@
     width: 100%;
     padding-right: 23px;
     overflow: auto;
+    overflow: hidden !important;
+    overflow-x: auto !important;
+    height: 22px;
 }
 
 .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .select-container input.cityBlack::placeholder{
