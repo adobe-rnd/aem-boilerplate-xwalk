@@ -149,6 +149,30 @@ export function fetchAPI(method, url, data) {
   });
 }
 
+function decorateImageIcons(element, prefix = '') {
+  const anchors = element.querySelectorAll('a');
+
+  anchors.forEach((anchor) => {
+    const { href } = anchor;
+    let imageName = '';
+
+    if (href.includes('play.google.com')) {
+      imageName = 'playstore';
+    } else if (href.includes('apps.apple.com')) {
+      imageName = 'appstore';
+    }
+
+    if (imageName) {
+      anchor.textContent = '';
+      const img = document.createElement('img');
+      img.src = `${window.hlx.codeBasePath}${prefix}/images/${imageName}.webp`;
+      img.alt = anchor.title;
+      img.loading = 'lazy';
+      anchor.appendChild(img);
+    }
+  });
+}
+
 export function getProps(block, config) {
   return Array.from(block.children).map(function (el, index) {
     if (config?.picture) {
@@ -609,6 +633,7 @@ export async function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  decorateImageIcons(main);
 }
 
 /**
