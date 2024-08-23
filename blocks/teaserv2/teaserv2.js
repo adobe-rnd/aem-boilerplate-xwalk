@@ -1,3 +1,4 @@
+import { ctaClickInteraction } from "../../dl.js";
 import { renderHelper } from "../../scripts/scripts.js";
 import { loanProductsAnalytics } from "./teaserv2-analytics.js";
 
@@ -9,6 +10,21 @@ export default async function decorate(block) {
   loanProductsAnalytics(block);
   if(block.closest(".section.neeyat-banner")){
     block.querySelector("a").target = "_blank";
+  }
+
+  // Analytics 
+  try {
+    if (block.closest(".support-contact-us-wrapper")) {
+      block.querySelector("a").getAttribute("href") &&
+        block.querySelector("a").addEventListener("click", function (e) {
+          let data = {};
+          data.click_text = e.target.textContent.trim();
+          data.cta_position = "Redirection";
+          ctaClickInteraction(data);
+        });
+    }
+  } catch (error) {
+    console.warn(error);
   }
 }
 

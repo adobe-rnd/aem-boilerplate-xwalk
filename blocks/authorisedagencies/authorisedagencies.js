@@ -1,3 +1,4 @@
+import { ctaClickInteraction } from "../../dl.js";
 import { fetchAPI } from "../../scripts/scripts.js";
 
 export default async function decorate(block) {
@@ -33,7 +34,15 @@ export default async function decorate(block) {
         input.type = 'radio';
         input.value = city;
         input.name = "branchlocation";
-        input.addEventListener('change', () => {
+        input.addEventListener('change', (e) => {
+            try {
+                let data= {};
+                data.click_text = e.target.closest('label').querySelector('span').textContent.trim();
+                data.cta_position = 'Select Location';
+                ctaClickInteraction(data);
+            } catch (error) {
+                console.warn(error);
+            }
             displayCards(city);
             inputLocationValue = city;
             inputLocation.placeholder = city;
