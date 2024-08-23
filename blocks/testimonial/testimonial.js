@@ -8,6 +8,7 @@ export default async function decorate(block) {
     const props = getProps(block);
     const [url, time, ribbononeimg, ribbontwoimg, ribbonthreeimg, ribbonfourimg, classess] = props;
     block.classList.add(classess);
+    block.innerHTML = '';
     try {
         const resp = await fetchAPI("GET", url)
         const data = await resp.json();
