@@ -192,8 +192,8 @@ header .nav-wrapper #nav .section.nav-sections .default-content-wrapper>ul>li>p>
 }
 
 header nav#nav .nav-brand img {
-  width: 128px;
-  height: auto;
+  width: 108px;
+  height: 58px;
 }
 
 header nav#nav .nav-brand .default-content-wrapper>ul>li:nth-child(4)>ul>li>a>img {
@@ -780,6 +780,10 @@ header .nav-wrapper #nav .section.nav-sections .default-content-wrapper ul li:nt
 header nav#nav .default-content-wrapper .mobile-logo{
   display: none;
 }
+
+header .nav-wrapper #nav .section.nav-sections .default-content-wrapper ul li.nav-drop:nth-child(6)>ul {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+} 
 
 
 @media screen and (width <=1200px) {
