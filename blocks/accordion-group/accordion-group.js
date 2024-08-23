@@ -19,6 +19,12 @@ export default async function decorate(block) {
     // add block classes
     accordion.classList.add("accordion", "block");
     accordion.append(accordionDOM);
+
+    try {
+      mediaLiClickAnalytics(accordionDOM);
+    } catch (error) {
+      console.warn(error);
+    }
   });
 
   // use same styling as shade-box from /docs
@@ -110,5 +116,16 @@ function viewMoreFAQ(eachs) {
       eachFAQ.classList.toggle("dp-none", !isViewMoreFAQ && index > 5);
     });
 
+  });
+}
+
+function mediaLiClickAnalytics(accordionDOM){
+  accordionDOM.querySelectorAll('ul > li > a').forEach(function (eachHref) {
+    eachHref.addEventListener('click', function(){
+      let data= {};
+      data.click_text = this.textContent.trim();
+      data.cta_position = this.closest('.accordion').querySelector('summary').textContent.trim();
+      ctaClickInteraction(data);
+    });
   });
 }

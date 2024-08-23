@@ -132,6 +132,11 @@ export function generateTeaserDOM(props, classes) {
           readMoreAnalytics(e);
         }else if(this.closest('.csr-committee-wrapper')){
           csrfReportAnalytics(e);
+        }else if(e.target.closest(".media-cards-wrapper")){
+          let data = {};
+          data.click_text = e.target.closest('.long-description').querySelector('p').textContent.trim();
+          data.cta_position = e.target.closest('.section').querySelector('.tab-name-wrapper .carousel-inner .active').textContent.trim();
+          ctaClickInteraction(data);
         }else {
           applyLoanNow(
             eyebrow.textContent.trim() + " " + title.textContent.trim(),
