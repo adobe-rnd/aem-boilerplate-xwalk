@@ -46,6 +46,7 @@
     "/content/piramalfinance-eds/in/query-index:/query-index.json",
     "/content/piramalfinance-eds/in/headers:/.helix/headers.json",
     "/content/piramalfinance-eds/in/configuration:/.helix/config.json",
-    "/content/piramalfinance-eds/in/en/api/authorisedagencies:/api/authorisedagencies.json"
+    "/content/piramalfinance-eds/in/en/api/authorisedagencies:/api/authorisedagencies.json",
+    "/content/piramalfinance-eds/in/en/api/demo-retail:/api/demo-retail.json"
   ]
 }
