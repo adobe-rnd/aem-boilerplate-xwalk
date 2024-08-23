@@ -36,9 +36,9 @@
     gap: 16px;
 }
 
-.section.multi-calculator-wrapper.company-details-wrapper.legal-banner-wrapper .tab-link-wrapper .tab-link .compony-details div ul li a{
+.section.company-details-wrapper.legal-banner-wrapper .tab-link-wrapper .tab-link .compony-details div ul li a{
     color: #333;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
 }
 
 .section.company-details-wrapper.legal-banner-wrapper .tab-link-wrapper .tab-link .compony-details div ul li strong a::after,
@@ -46,7 +46,7 @@
     content: none;
 }
 
-.section.multi-calculator-wrapper.company-details-wrapper.legal-banner-wrapper .tab-link-wrapper .tab-link .compony-details div ul li strong a{
+.section.company-details-wrapper.legal-banner-wrapper .tab-link-wrapper .tab-link .compony-details div ul li strong a{
     color: var(--swansdown);
     border: 1px solid var(--greyishblue);
 }
@@ -120,6 +120,18 @@
     .section.company-details-wrapper.legal-banner-wrapper .tab-link-wrapper .tab-link .compony-details div ul li strong a::after,
     .section.company-details-wrapper.legal-banner-wrapper .tab-link-wrapper .tab-link .compony-details div ul li a::after {
         content: "";
+    }
+
+    .section.company-details-wrapper.about-us-company-details.legal-banner-wrapper .tab-link-wrapper .tab-link.block>.compony-details {
+        max-height: 256px;
+    }
+
+    .section.company-details-wrapper.about-us-company-details .tab-link-wrapper .tab-link.block>div>div>ul>li a::before {
+        border: 1px solid #a9a9a9;
+    }
+
+    .section.company-details-wrapper.about-us-company-details .tab-link-wrapper .tab-link.block>div>div>ul>li>strong>a::after {
+        background: var(--black);
     }
 }
 
