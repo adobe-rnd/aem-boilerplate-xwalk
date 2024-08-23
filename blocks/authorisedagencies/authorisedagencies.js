@@ -16,7 +16,7 @@ export default async function decorate(block) {
 
     let inputLocation = createAndAppend('input', "", "toggleCityContainer");
     inputLocation.readOnly = true;
-    inputLocation.placeholder = inputLocationValue ? inputLocationValue : 'Location ';
+    inputLocation.value = inputLocationValue ? inputLocationValue : 'Location ';
 
     let citiesContainer = createAndAppend('div', "", "cities-container");
 
@@ -36,7 +36,7 @@ export default async function decorate(block) {
         input.addEventListener('change', () => {
             displayCards(city);
             inputLocationValue = city;
-            inputLocation.placeholder = city;
+            inputLocation.value = city;
             inputLocation.className = 'cityBlack';
             citiesContainer.style.display = 'none';
             selectContainer.classList.toggle('open');
