@@ -125,6 +125,14 @@
     .section.company-details-wrapper.about-us-company-details.legal-banner-wrapper .tab-link-wrapper .tab-link.block>.compony-details {
         max-height: 256px;
     }
+
+    .section.company-details-wrapper.about-us-company-details .tab-link-wrapper .tab-link.block>div>div>ul>li a::before {
+        border: 1px solid #a9a9a9;
+    }
+
+    .section.company-details-wrapper.about-us-company-details .tab-link-wrapper .tab-link.block>div>div>ul>li>strong>a::after {
+        background: var(--black);
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px){
