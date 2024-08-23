@@ -1,6 +1,6 @@
 /* header and nav layout */
 @import url("../modal/modal.css");
-
+@import url('./header-neeyat.css');
 /* header .nav-wrapper {
   background-color: var(--background-color);
   width: 100%;
