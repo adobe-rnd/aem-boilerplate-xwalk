@@ -1,4 +1,5 @@
-.section.sarfaesi-wholesale-wrapper .code-wrapper{
+.section.sarfaesi-wholesale-wrapper .code-wrapper,
+.section.sarfaesi-retail-wrapper .sarfaesiretail-wrapper{
     border: 1px solid #000;
     margin: 0 auto !important;
     padding: 30px 10px;
@@ -6,18 +7,21 @@
     max-width: 90% !important;
    
 }
-.section.sarfaesi-wholesale-wrapper .code-wrapper .code{
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code,
+.section.sarfaesi-retail-wrapper .sarfaesiretail-wrapper .sarfaesiretail{
     overflow: hidden;
     overflow-x: auto;
     scrollbar-width: thin;
 }
-.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child{
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child,
+.section.sarfaesi-retail-wrapper .sarfaesiretail-wrapper .sarfaesiretail table tr th{
     background-color: #fa4616;
     border-bottom: 1px solid #c5c4c4;
 }
 .section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th,
 .section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child td,
-.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child td >div{
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child td >div,
+.section.sarfaesi-retail-wrapper .sarfaesiretail-wrapper .sarfaesiretail table tr th{
     text-align: center;
     vertical-align: middle;
     padding: 2px;
@@ -42,7 +46,8 @@
     font-size: 0.813rem;
 } */
 
-.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td {
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td,
+.section.sarfaesi-retail-wrapper .sarfaesiretail-wrapper .sarfaesiretail table tr td {
     border: 1px solid #c5c4c4;
     /* border-bottom: unset; */
     border-right: unset;
@@ -53,7 +58,8 @@
     font-size: 0.75rem;
     line-height: 19.5px;
 }
-.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td:last-child{
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td:last-child,
+.section.sarfaesi-retail-wrapper .sarfaesiretail-wrapper .sarfaesiretail table tr td{
     border-right: 1px solid #c5c4c4;
 }
 .section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td span{
@@ -112,3 +118,14 @@
 /* .section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th:nth-child(11){
     min-width: 97.33px;
 } */
+
+    .section.sarfaesi-retail-wrapper .sarfaesiretail-wrapper .sarfaesiretail table tr th{
+        word-break: break-word;
+        width: 60px;
+    }
+    .section.sarfaesi-retail-wrapper .sarfaesiretail-wrapper .sarfaesiretail table tr th:nth-child(n+4){
+        width: 130px;
+    }
+    .section.sarfaesi-retail-wrapper .sarfaesiretail-wrapper .sarfaesiretail table{
+        table-layout: fixed;
+    }

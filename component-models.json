@@ -2380,6 +2380,19 @@
     ]
   },
   {
+    "id": "sarfaesiretail",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "sarfaesiretail",
+        "value": "",
+        "label": "Sarfaesi Retail Path",
+        "description": "Sets the path of the Sarfaesi Retail."
+      }
+    ]
+    },
+  {
     "id": "fontawesome",
     "fields": [
       {
