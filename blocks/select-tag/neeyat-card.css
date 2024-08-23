@@ -27,6 +27,6 @@
         flex-direction: column;
     }
     .section.neeyat-cards .wrappercreation-wrapper .teaserv2-wrapper .bg-image .title{
-        word-break: break-all;
+        word-break: break-word;
     }
 }
