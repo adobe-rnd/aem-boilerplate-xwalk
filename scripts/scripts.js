@@ -779,7 +779,7 @@ body?.addEventListener("click", function (e) {
     const nav = document.getElementById("nav");
     const navSections = nav.querySelector(".nav-sections");
     navSections?.children[0]?.classList.remove("active");
-    navSections.querySelectorAll(":scope .default-content-wrapper > ul > li").forEach((navSection) => {
+    navSections?.querySelectorAll(":scope .default-content-wrapper > ul > li").forEach((navSection) => {
       toggleAllNavSections(navSections);
       navSection.setAttribute("aria-expanded", "false");
     });
@@ -802,6 +802,11 @@ body?.addEventListener("click", function (e) {
 
     e.currentTarget.querySelector(".stake-pop-up.dp-block")?.classList.remove("dp-block");
   }
+
+  if (document.querySelector('.neeyat-header') && !e.target.closest('.inner-lang-switch')) {
+      document.querySelector('.maindiv-lang-switch ul').classList.add('dp-none');
+  }
+
 });
 
 setTimeout(() => {

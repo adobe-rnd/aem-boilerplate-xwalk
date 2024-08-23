@@ -1,84 +1,116 @@
-
-header.header-wrapper > div.block > div.nav-wrapper:has(.neeyat-header){
+header.header-wrapper>div.block>div.nav-wrapper:has(.neeyat-header) {
     height: 96px;
 }
 
-header.header-wrapper > div.block > div.nav-wrapper > nav#nav > div.neeyat-header{
+header.header-wrapper>div.block>div.nav-wrapper>nav#nav>div.neeyat-header {
     display: flex;
     flex: 0 0 100%;
     align-items: center;
     justify-content: space-between;
 }
 
-header.header-wrapper > div.block > div.nav-wrapper > nav#nav > div.neeyat-header > div.imgwithlink-wrapper .imgwithlink .image-href-desktop .anchor-event-link > picture > img{
+header.header-wrapper>div.block>div.nav-wrapper>nav#nav>div.neeyat-header>div.imgwithlink-wrapper .imgwithlink .image-href-desktop .anchor-event-link>picture>img {
     width: 108px;
     height: 88px;
 }
 
-header.header-wrapper > div.block > div.nav-wrapper > nav#nav > div.neeyat-header .select-tag-wrapper .select-tag{
+.header-wrapper .header .nav-wrapper nav#nav .neeyat-header .select-tag-wrapper .select-tag .maindiv-lang-switch{
     position: relative;
 }
 
-header.header-wrapper > div.block > div.nav-wrapper > nav#nav > div.neeyat-header .select-tag-wrapper .select-tag::after{
-    top: 35%;
-    right: 8%;
-    content: '';
-    padding: 3px;
+.header-wrapper .header .nav-wrapper nav#nav .neeyat-header .select-tag-wrapper .select-tag .maindiv-lang-switch .inner-lang-switch{
     cursor: pointer;
-    position: absolute;
-    display: inline-block;
-    border: solid #000;
-    transform: rotate(45deg);
-    border-width: 0 1.7px 1.7px 0;
-}
-
-header.header-wrapper > div.block > div.nav-wrapper > nav#nav > div.neeyat-header .select-tag-wrapper .select-tag select{
-    cursor: pointer;
-    font-size: 16px;
-    appearance: none;
-    font-weight: 600;
-    padding-left: 5px;
-    line-height: 32px;
     border-radius: 5px;
+    width: fit-content;
     position: relative;
+    padding-left: 10px;
     padding-right: 32px;
-    -webkit-appearance: none;
-    border: 1px solid #afb9c3;
-    font-family: Nunito-Semibold;
+    border: 1px solid var(--zinc);
 }
 
-header.header-wrapper > div.block > div.nav-wrapper > nav#nav > div.neeyat-header .select-tag-wrapper .select-tag select::after{
+.header-wrapper .header .nav-wrapper nav#nav .neeyat-header .select-tag-wrapper .select-tag .maindiv-lang-switch .inner-lang-switch::after{
+    top: 10px;
+    right: 10px;
     content: '';
     position: absolute;
-    border: solid #000;
+    border: solid var(--black);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    border-radius: 0 0 2px 0;
 }
 
-header.header-wrapper > div.block > div.nav-wrapper > nav#nav > div.neeyat-header .select-tag-wrapper .select-tag select option{
-    color: #000;
+.header-wrapper .header .nav-wrapper nav#nav .neeyat-header .select-tag-wrapper .select-tag .maindiv-lang-switch .inner-lang-switch p{
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 32px;
+    color: var(--black);
+    font-family: "Nunito-Semibold";
+}
+
+.header-wrapper .header .nav-wrapper nav#nav .neeyat-header .select-tag-wrapper .select-tag .maindiv-lang-switch ul{
+    top: 35px;
+    left: 10px;
+    width: 162px;
+    position: absolute;
+    border-radius: 4px;
+    background-color: var(--white);
+    border: 1px solid rgba(0, 0, 0, .15);
+}
+
+.header-wrapper .header .nav-wrapper nav#nav .neeyat-header .select-tag-wrapper .select-tag .maindiv-lang-switch ul li{
+    font-size: 1rem;
+    font-weight: 500;
     padding: 5px 8px;
+    line-height: 21px;
+    color: #212529;
+    white-space: nowrap;
+    font-family: "Nunito-Medium";
 }
 
-header.header-wrapper > div.block > div.nav-wrapper > nav#nav > div.neeyat-header .select-tag-wrapper .select-tag select:focus option:first-child{
-    color: #000;
-    background: #ffcfc0;
+.header-wrapper .header .nav-wrapper nav#nav .neeyat-header .select-tag-wrapper .select-tag .maindiv-lang-switch ul li.active{
+    color: var(--black);
+    cursor: not-allowed;
+    background-color: #ffcfc0;
 }
 
-header.header-wrapper > div.block > div.nav-wrapper > nav#nav > div.neeyat-header .select-tag-wrapper .select-tag select option:not(:first-child):hover{
-    background-color: #ccc;
+.header-wrapper .header .nav-wrapper nav#nav .neeyat-header .select-tag-wrapper .select-tag .maindiv-lang-switch ul li.active:hover{
+    cursor: pointer;
+    background-color: #ffcfc0;
 }
+
+.header-wrapper .header .nav-wrapper nav#nav .neeyat-header .select-tag-wrapper .select-tag .maindiv-lang-switch ul li:hover{
+    cursor: pointer;
+    background-color: #e9ecef;
+}
+
+.header-wrapper .header .nav-wrapper nav#nav .neeyat-header .select-tag-wrapper .select-tag .maindiv-lang-switch ul li[data-disabled="true"]:hover{
+    cursor: unset;
+    background-color: unset;
+}
+
+.header-wrapper .header .nav-wrapper nav#nav .neeyat-header .select-tag-wrapper .select-tag .maindiv-lang-switch ul li[data-disabled="true"]{
+    color: #adb5bd;
+}
+
+.header-wrapper .header .nav-wrapper nav#nav .neeyat-header .select-tag-wrapper .select-tag .maindiv-lang-switch ul li:active{
+    background-color: #ffcfc0;
+}
+
 
 @media screen and (max-width: 1024px) {
-header.header-wrapper > div.block > div.nav-wrapper > nav#nav > div.neeyat-header > div.imgwithlink-wrapper .imgwithlink .image-href-desktop .anchor-event-link > picture > img{
-    height: 44px;
+    header.header-wrapper>div.block>div.nav-wrapper>nav#nav>div.neeyat-header>div.imgwithlink-wrapper .imgwithlink .image-href-desktop .anchor-event-link>picture>img {
+        height: 44px;
+    }
+
+    header.header-wrapper>div.block>div.nav-wrapper:has(.neeyat-header) .nav-hamburger {
+        display: none;
+    }
 }
 
-header.header-wrapper > div.block > div.nav-wrapper:has(.neeyat-header) .nav-hamburger {
-    display: none;
-}
-}
-
-@media screen and (max-width: 678px){
-header.header-wrapper > div.block > div.nav-wrapper:has(.neeyat-header){
-    height: 71px;
-}
+@media screen and (max-width: 678px) {
+    header.header-wrapper>div.block>div.nav-wrapper:has(.neeyat-header) {
+        height: 71px;
+    }
 }

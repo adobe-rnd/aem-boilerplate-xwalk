@@ -1,43 +1,100 @@
-import { fetchAPI, getProps, renderHelper } from "../../scripts/scripts.js";
+import { getProps } from "../../scripts/scripts.js";
 import { loader } from "../loader/loader.js";
 import { getSelectedLanguage, getLanguageByLocation, getLanguageByState } from "./getSelectedLanguage.js";
 
 
 let defaultLanguageData = await getSelectedLanguage('english');
-let locationByLanguage = {
-    maharashtra: 'marathi',
-    default: 'english',
-}
+
+let locationByLanguage = {};
+/* let locationByLanguage = {
+    "maharashtra": 'marathi',
+    "kerala": 'malayalam',
+    "gujarat": "gujurati",
+    "west bengal": "bengali",
+    "karnataka": "kannada",
+    "tamil nadu": "tamil",
+    "andhra pradesh": "telugu",
+    "default": 'hindi',
+} */
+
 export default async function decorate(block) {
     locationByLanguage = await getLanguageByState();
-    const location = await getLanguageByLocation()
+    const { location, countryName } = await getLanguageByLocation()
     //console.log(block);
     const [name, labels, values, disabled, , apiUrl] = getProps(block);
 
-    const defaultValue = locationByLanguage[location] || locationByLanguage.default;
+    let defaultValue = locationByLanguage[location] || locationByLanguage.default;
+    if (countryName && countryName.toLowerCase() != 'india') {
+        defaultValue = 'english';
+    }
     let selectedLanguageData = await getSelectedLanguage(defaultValue, apiUrl);
     selectedLanguageData = await changeContent(defaultLanguageData, selectedLanguageData);
-
-
     const labelArr = labels.split(',');
     const valueArr = values.split(',');
     const disabledArr = disabled.split(',');
-    const selectTag = document.createElement('select');
+    let mainDiv = document.createElement('div');
+    mainDiv.classList.add('maindiv-lang-switch');
+    let innerDiv = document.createElement('div');
+    innerDiv.classList.add('inner-lang-switch');
+    innerDiv.innerHTML = `<p>Change language</p>`;
+    const selectTag = document.createElement('ul');
     selectTag.name = name;
     let optionTag = '';
     labelArr.forEach(function (label, index) {
-        const isDisabled = disabledArr[index] === valueArr[index] ? ' disabled ' : ''
-        const isSelected = defaultValue.toLowerCase() === valueArr[index]?.toLowerCase() ? ' selected ' : ''
-        optionTag += `  <option value="${valueArr[index]}" ${isSelected} ${isDisabled}>${label}</option>
-` ;
+        const isDisabled = disabledArr[index] === valueArr[index] ? ' data-disabled="false" ' : '';
+        const isSelected = defaultValue.toLowerCase() === valueArr[index]?.toLowerCase() ? 'Select' : ''
+        if (isSelected) {
+            innerDiv.children[0].innerText = "Change language";
+        }
+        //valueArr[index];
+
+        optionTag += `  <li class="items ${isSelected}" ${isDisabled} data-value="${valueArr[index]}">${label}</li>`;
     })
     selectTag.innerHTML = optionTag;
-    block.innerHTML = ''
-    selectTag.addEventListener('change', async function (e) {
-        const data = await getSelectedLanguage(e.target.value)
-        selectedLanguageData = await changeContent(selectedLanguageData, data);
+    block.innerHTML = '';
+
+    Array.from(selectTag.children).forEach(function (list) {
+        list.addEventListener('click', async function (e) {
+            const val = this.dataset.value
+
+            selectTag.firstElementChild.setAttribute('data-disabled', true);
+            if (this.getAttribute('data-disabled')) {
+                selectTag.classList.add('dp-none');
+            } else {
+                Array.from(selectTag.children).forEach(function (list) {
+                    list.classList.remove('active');
+                })
+                this.classList.add('active');
+                innerDiv.children[0].innerText = val
+
+                selectTag.classList.add('dp-none');
+                const data = await getSelectedLanguage(val)
+                selectedLanguageData = await changeContent(selectedLanguageData, data);
+            }
+
+            let isMobile = window.matchMedia("(max-width: 768px)");
+
+            if (isMobile.matches) {
+                selectTag.style.left = '-80px'
+            }
+        })
     })
-    block.append(selectTag);
+
+    innerDiv.addEventListener('click', function (e) {
+        if (selectTag.classList.contains('dp-none')) {
+            selectTag.classList.remove('dp-none');
+        } else {
+            selectTag.classList.add('dp-none');
+        }
+
+    });
+
+    // selectTag.addEventListener('click', async function (e) {
+    // });
+    selectTag.classList.add(`dp-none`)
+    mainDiv.append(innerDiv, selectTag);
+    selectTag.firstElementChild.classList.add('active');
+    block.append(mainDiv);
     loader(false)
 
 }

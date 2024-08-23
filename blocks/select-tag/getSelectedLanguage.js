@@ -1,4 +1,3 @@
-import { fetchPlaceholders } from "../../scripts/aem.js";
 import { fetchAPI } from "../../scripts/scripts.js";
 
 let data;
@@ -14,7 +13,7 @@ export async function getSelectedLanguage(selectedLanguage = '', apiUrl = '/api/
     return data.data.filter(data => (data.language === 'english'))[0];
 }
 
-function returnLatLan() {
+export default function returnLatLan() {
     return new Promise(function (resolve, reject) {
 
         if ("geolocation" in navigator) {
@@ -44,10 +43,9 @@ function returnLatLan() {
 }
 
 
-async function getStateName(lat, lan) {
-    return new Promise(async function (resolve, reject) {
-        const data = await fetchPlaceholders();
-        fetchAPI('GET', 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lan + '&sensor=true&key=' + data.gk).then(function (res) {
+function getStateName(lat, lan) {
+    return new Promise(function (resolve, reject) {
+        fetchAPI('GET', 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lan + '&sensor=true&key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k').then(function (res) {
             resolve(res)
         }).catch(function (err) {
             resolve(err);
@@ -55,7 +53,7 @@ async function getStateName(lat, lan) {
     })
 }
 
-let locationInLatLan = {
+export let locationInLatLan = {
     lat: '',
     lng: ''
 }
@@ -72,7 +70,12 @@ export async function getLanguageByLocation() {
                     }
                 })
                 divisionName = (divisionName[0].long_name).toLowerCase();
-                resolve(divisionName);
+                let countryName = response.results[response.results.length - 1].formatted_address;
+                let resolveObj = {
+                    "location": divisionName,
+                    "countryName": countryName
+                }
+                resolve(resolveObj);
             }).catch(function (error) {
                 resolve(error)
             })
