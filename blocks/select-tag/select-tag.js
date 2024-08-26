@@ -76,7 +76,7 @@ export default async function decorate(block) {
                 selectedLanguageData = await changeContent(selectedLanguageData, data);
             }
 
-            let isMobile = window.matchMedia("(max-width: 768px)");
+            let isMobile = window.matchMedia("(max-width <= 1024px)");
 
             if (isMobile.matches) {
                 selectTag.style.left = '-80px'
@@ -102,6 +102,10 @@ export default async function decorate(block) {
     loader(false)
 
 }
+
+document.addEventListener('resize' , function(e){
+    
+})
 function changeContent(currentLanguageData, selectedLanguageData) {
     let isChange = false;
     document.querySelector('main').querySelectorAll('*').forEach(function (el, index) {
