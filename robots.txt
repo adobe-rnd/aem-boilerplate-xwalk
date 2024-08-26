@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /configuration/
+Disallow: /nav/
+Disallow: /footer/
+Disallow: /metadata/
+Disallow: /fragments/
+Disallow: /style-guide/
+Disallow: /spreadsheets/
+Disallow: /scripts/
+Disallow: /styles/
+Disallow: /blocks/
+Disallow: /*?*
+
+
+Sitemap: https://main--piramalfinance--wwwpiramalfinancecom.hlx.live/sitemap.xml
