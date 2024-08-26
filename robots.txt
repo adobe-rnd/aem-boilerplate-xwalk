@@ -10,6 +10,9 @@ Disallow: /scripts/
 Disallow: /styles/
 Disallow: /blocks/
 Disallow: /*?*
+Disallow: /*?*
+Disallow: /
 
 
-Sitemap: https://main--piramalfinance--wwwpiramalfinancecom.hlx.live/sitemap.xml
+
+Sitemap: https://uatmarketing.piramalfinance.com/sitemap.xml
