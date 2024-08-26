@@ -1,7 +1,3 @@
-body{
-    padding-top: 97px !important;
-}
-
 main .neeyat-banner-slider .carousel-wrapper  .background {
     height: 440px;
     background-size: 100%;
@@ -166,11 +162,6 @@ main .neeyat-banner-slider .carousel.block>.button-container button.selected {
 }
 
 @media screen and (max-width: 767px) {
-    
-    body{
-        padding-top: 72px !important;
-    }
-
     main .neeyat-banner-slider .carousel-wrapper  .background {
         height: 250px;
         object-fit: contain;

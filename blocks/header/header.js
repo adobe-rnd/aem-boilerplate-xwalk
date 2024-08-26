@@ -202,12 +202,19 @@ async function buildBreadcrumbs() {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
-    const fragment = await loadFragment(getMetadata('nav'));
+    const path = getMetadata('nav');
+    const fragment = await loadFragment(path);
 
     // decorate nav DOM
     const nav = document.createElement('nav');
     nav.id = 'nav';
     while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
+    if (path.includes('/neeyat/')) {
+        block.classList.remove('header');
+        block.classList.add('header-neeyat-nav');
+        // return block;
+    }
+
 
     const classes = ['brand', 'sections', 'tools'];
     classes.forEach((c, i) => {
