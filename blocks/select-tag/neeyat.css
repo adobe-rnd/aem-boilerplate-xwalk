@@ -24,7 +24,8 @@ main .neeyat-banner-slider .carousel-wrapper  .background .foreground .text .lon
     text-align: right;
 }
 
-main .neeyat-banner-slider .carousel-wrapper  .background .foreground .text .long-description h1 {
+main .neeyat-banner-slider .carousel-wrapper  .background .foreground .text .long-description h1,
+main .neeyat-banner-slider .carousel-wrapper .background .foreground .text .long-description h2 {
     font-size: 51px;
     font-weight: 800;
     line-height: 61px;
@@ -140,7 +141,8 @@ main .neeyat-banner-slider .carousel.block>.button-container button.selected {
         font-size: 40px;
         line-height: 48px;
     }
-    main .neeyat-banner-slider .carousel-wrapper  .background .foreground .text .long-description h1{
+    main .neeyat-banner-slider .carousel-wrapper  .background .foreground .text .long-description h1,
+    main .neeyat-banner-slider .carousel-wrapper  .background .foreground .text .long-description h2 {
         font-size: 24px;
         line-height: 1.2;
     }
@@ -207,6 +209,11 @@ main .neeyat-banner-slider .carousel.block>.button-container button.selected {
     }  
 }
 @media (min-width:1025px) and (max-width:1300px){
+    main .neeyat-banner-slider .carousel-wrapper .background {
+        height: 380px;
+        background-size: cover;
+        background-position: center top;
+    }
     .section.page-container.neeyat-pg-con>div{
         max-width: 90.25% !important;
         padding: 0 14px;
