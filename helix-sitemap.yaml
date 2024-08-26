@@ -1,0 +1,9 @@
+version: 1
+auto-generated: true
+sitemaps:
+  default:
+    origin: https://main--piramalfinance--wwwpiramalfinancecom.hlx.live
+    source: /query-index.json
+    destination: /sitemap.xml
+    lastmod: YYYY-MM-DD
+    hreflang: en
