@@ -13,5 +13,3 @@ Disallow: /*?*
 
 
 Sitemap: https://main--piramalfinance--wwwpiramalfinancecom.hlx.live/sitemap.xml
-
-Crawl-delay: 5
