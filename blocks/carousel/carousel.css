@@ -768,12 +768,14 @@
     display: none;
   } */
 
-  .section.breadcrumb-handle.improve-cibil-score-breadcrumb-handle .breadcrumb-wrapper {
+  .section.breadcrumb-handle.improve-cibil-score-breadcrumb-handle .breadcrumb-wrapper,
+  .section.breadcrumb-handle.breadcrumb-handle-scroll .breadcrumb-wrapper {
     position: unset;
     background-color: var(--light-gray);
   }
 
-  .section.banner-carousel-wrapper.breadcrumb-container.improve-cibil-score-breadcrumb-handle .carousel-wrapper .panel-container .teaser.block>.background .foreground .text {
+  .section.banner-carousel-wrapper.breadcrumb-container.improve-cibil-score-breadcrumb-handle .carousel-wrapper .panel-container .teaser.block>.background .foreground .text,
+  .section.banner-carousel-wrapper.breadcrumb-container.breadcrumb-handle-scroll .carousel-wrapper .panel-container .teaser.block>.background .foreground .text {
     padding-top: 40px;
   }
 }

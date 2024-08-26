@@ -66,6 +66,10 @@ main .neeyat-banner-slider .carousel-wrapper  .background .foreground .text .lon
     font-weight: 600;
 }
 
+.section.neeyat-banner-slider .carousel-wrapper  .background .foreground .text .long-description p.button-container a sub:hover{
+    color: var(--text-color);
+}
+
 main .neeyat-banner-slider .carousel-wrapper  .background .foreground .text .long-description p.button-container a:not(.button-container:last-child a):hover {
     color: var(--text-color);
 }
