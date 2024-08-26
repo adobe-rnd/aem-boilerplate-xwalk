@@ -57,7 +57,11 @@ export default async function decorate(block) {
         list.addEventListener('click', async function (e) {
             const val = this.dataset.value
 
-            selectTag.firstElementChild.setAttribute('data-disabled', true);
+            if(this.getAttribute('data-disabled') == null){
+                selectTag.firstElementChild.setAttribute('data-disabled', true);
+            }
+
+            // selectTag.firstElementChild.setAttribute('data-disabled', true);
             if (this.getAttribute('data-disabled')) {
                 selectTag.classList.add('dp-none');
             } else {
