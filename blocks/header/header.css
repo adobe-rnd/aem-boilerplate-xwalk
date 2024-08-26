@@ -1205,7 +1205,8 @@ body.modal-open footer {
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1300px){
-  .header .nav-wrapper #nav{
+  .header .nav-wrapper #nav,
+  .header .nav-wrapper #nav>.nav-sections .default-content-wrapper>ul>li[aria-expanded="true"]>ul {
     max-width: 81.25%;
   }
 

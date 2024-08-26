@@ -162,6 +162,6 @@ body:has(.header-wrapper .header-neeyat-nav) {
 
 @media screen and (min-width: 1025px) and (max-width: 1300px){
     .header-neeyat-nav .nav-wrapper #nav{
-      max-width: 81.25%;
+      max-width: 90.25%;
     }
 }
