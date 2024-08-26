@@ -1,6 +1,6 @@
 .section.neeyat-cards.loan-products-wrapper {
     margin-bottom: 0;
-    padding-bottom: 48px;
+    padding: 60px 0 48px 0;
     background-color: #f8f8f8;
 }
 
@@ -16,6 +16,10 @@
         flex-direction: row;
         justify-content: flex-start;
         column-gap: 16px;
+    }
+
+    .section.neeyat-cards.loan-products-wrapper {
+        padding: 40px 0 48px 0;
     }
 }
 
