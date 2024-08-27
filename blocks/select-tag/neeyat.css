@@ -66,6 +66,10 @@ main .neeyat-banner-slider .carousel-wrapper  .background .foreground .text .lon
     font-weight: 600;
 }
 
+.section.neeyat-banner-slider .carousel-wrapper  .background .foreground .text .long-description p.button-container a sub:hover{
+    color: var(--text-color);
+}
+
 main .neeyat-banner-slider .carousel-wrapper  .background .foreground .text .long-description p.button-container a:not(.button-container:last-child a):hover {
     color: var(--text-color);
 }
@@ -126,7 +130,7 @@ main .neeyat-banner-slider .carousel.block>.button-container button.selected {
 }
 @media screen and (max-width: 1024px) {
     main .neeyat-banner-slider .carousel-wrapper  .background {
-        height: 390px;
+        height: 398px;
         background-size: cover;
     }
 
@@ -163,12 +167,12 @@ main .neeyat-banner-slider .carousel.block>.button-container button.selected {
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     main .neeyat-banner-slider .carousel-wrapper  .background {
         height: 250px;
-        object-fit: contain;
+        object-fit: cover;
         display: block;
-        background-position: left;
+        background-position: top;
     }
 
     main .neeyat-banner-slider .carousel-wrapper  .background .foreground{
