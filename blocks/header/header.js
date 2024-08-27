@@ -202,7 +202,7 @@ async function buildBreadcrumbs() {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
-    const path = getMetadata('nav');
+    const path = getMetadata('nav') || '/nav';
     const fragment = await loadFragment(path);
 
     // decorate nav DOM
