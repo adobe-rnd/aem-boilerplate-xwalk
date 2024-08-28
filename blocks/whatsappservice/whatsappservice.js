@@ -81,7 +81,7 @@ function otpPopupWhatsAppHTML(){
                                         class="cmp-image__image lozad" alt="send">
                                 </div>
                                 <div class="image crossimage">
-                                    <img src="/content/dam/piramalfinance/product-page/home-loan/close-icon.svg"
+                                    <img src="/images/close-icon.svg"
                                         class="cmp-image__image lozad" alt="close-icon">
                                 </div>
                             </div>
@@ -89,7 +89,7 @@ function otpPopupWhatsAppHTML(){
                         <div class="loan-form-otp">
                             <div class="loan-form-otp-parent">
                                 <img class="leftarrow lozad"
-                                    src="/content/dam/piramalfinance/product-page/home-loan/back-arrow.png" alt="arrow">
+                                    src="/images/back-arrow.png" alt="arrow">
                                 <p class="otphead">Enter OTP</p>
                                 <div class="otpsubheadcontainer">
                                     <p class="otpsubhead">Enter the 4 digit OTP sent on <span class="otp-phone-num"
@@ -120,7 +120,7 @@ function otpPopupWhatsAppHTML(){
                         </div>
 
                         <div class="successContainer">
-                            <img src="/content/dam/piramalfinance/product-page/home-loan/close-icon.svg"
+                            <img src="/images/close-icon.svg"
                                 class="closeImg" alt="close-img">
                             <div class="imageContainer">
                                 <img src="/content/dam/piramalfinance/support/whatsaap/namaste.png" alt="Success-Image">
@@ -142,7 +142,7 @@ function otpPopupWhatsAppHTML(){
                             </div>
                         </div>
                         <div class="failedContainer">
-                            <img src="/content/dam/piramalfinance/product-page/home-loan/close-icon.svg"
+                            <img src="/images/close-icon.svg"
                                 class="closeImg" alt="close-img">
                             <div class="imageContainer">
                                 <img src="/content/dam/piramalfinance/support/whatsaap/somethingwrong.png"
