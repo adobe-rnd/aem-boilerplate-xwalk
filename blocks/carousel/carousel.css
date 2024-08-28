@@ -435,15 +435,15 @@
 }
 
 .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-green {
-  background-image: url("/content/dam/piramalfinance/homepage/banner-images/WhatsAppBannerDesktop.png");
+  background-image: url("/images/WhatsAppBannerDesktop.png");
 }
 
 .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-blue {
-  background-image: url("/content/dam/piramalfinance/homepage/banner-images/banner2-background-image-desktop..svg");
+  background-image: url("/images/banner2-background-image-desktop.png");
 }
 
 .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-violet {
-  background-image: url("/content/dam/piramalfinance/homepage/banner-images/banner3-background-image-desktop.png");
+  background-image: url("/images/banner3-background-image-desktop.png");
 }
 
 .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-green,
@@ -687,11 +687,11 @@
   }
 
   .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-green {
-    background-image: url("/content/dam/piramalfinance/homepage/banner-images/WhatsappBannerMobile.png");
+    background-image: url("/images/WhatsappBannerMobile.png");
   }
   
   .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-blue {
-    background-image: url("/content/dam/piramalfinance/homepage/banner-images/banner2-background-image-mobile.png");
+    background-image: url("/images/banner2-background-image-mobile.png");
   }
 }
 
@@ -768,12 +768,14 @@
     display: none;
   } */
 
-  .section.breadcrumb-handle.improve-cibil-score-breadcrumb-handle .breadcrumb-wrapper {
+  .section.breadcrumb-handle.improve-cibil-score-breadcrumb-handle .breadcrumb-wrapper,
+  .section.breadcrumb-handle.breadcrumb-handle-scroll .breadcrumb-wrapper {
     position: unset;
     background-color: var(--light-gray);
   }
 
-  .section.banner-carousel-wrapper.breadcrumb-container.improve-cibil-score-breadcrumb-handle .carousel-wrapper .panel-container .teaser.block>.background .foreground .text {
+  .section.banner-carousel-wrapper.breadcrumb-container.improve-cibil-score-breadcrumb-handle .carousel-wrapper .panel-container .teaser.block>.background .foreground .text,
+  .section.banner-carousel-wrapper.breadcrumb-container.breadcrumb-handle-scroll .carousel-wrapper .panel-container .teaser.block>.background .foreground .text {
     padding-top: 40px;
   }
 }

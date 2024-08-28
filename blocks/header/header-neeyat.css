@@ -152,6 +152,11 @@ body:has(.header-wrapper .header-neeyat-nav) {
     header .nav-wrapper #nav>div.section.nav-brand>a:nth-child(2) {
         display: block;
     }
+
+    .header-neeyat-nav .nav-wrapper nav#nav .neeyat-header .select-tag-wrapper .select-tag .maindiv-lang-switch ul {
+        left: unset;
+        right: 0;
+    }
 }
 
 @media screen and (max-width:991px) {
@@ -162,6 +167,11 @@ body:has(.header-wrapper .header-neeyat-nav) {
 
 @media screen and (min-width: 1025px) and (max-width: 1300px){
     .header-neeyat-nav .nav-wrapper #nav{
-      max-width: 81.25%;
+      max-width: 90.25%;
+    }
+
+    .header-neeyat-nav .nav-wrapper nav#nav .neeyat-header .select-tag-wrapper .select-tag .maindiv-lang-switch ul {
+        left: unset;
+        right: 0;
     }
 }

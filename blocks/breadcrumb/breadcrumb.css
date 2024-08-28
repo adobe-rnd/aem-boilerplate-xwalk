@@ -84,6 +84,7 @@
         overflow-x: auto;
         padding-bottom: 3px;
     }
+
     .section.breadcrumb-handle > .breadcrumb-wrapper > .breadcrumb.block > nav > a{
         white-space: nowrap;
     }

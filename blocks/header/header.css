@@ -748,7 +748,11 @@ body.modal-open footer {
   text-decoration: none;
 }
 
-.header .nav-wrapper #nav>div.section.nav-sections>div>ul>li:nth-child(6)>ul>li:nth-child(1)>ul>li:nth-child(4)>sup {
+.header .nav-wrapper #nav>div.section.nav-sections>div>ul>li:nth-child(6)>ul>li:nth-child(1)>ul>li:nth-child(4) {
+  position: relative;
+}
+
+.header .nav-wrapper #nav>div.section.nav-sections>div>ul>li:nth-child(6)>ul>li:nth-child(1)>ul>li:nth-child(4)>a:nth-child(2)>sup {
   content: "New";
   position: absolute;
   background-color: var(--green);
@@ -761,6 +765,8 @@ body.modal-open footer {
   padding: 4px 10px;
   margin-left: 8px;
   bottom: -3px;
+  left: 155px;
+  text-transform: capitalize;
 }
 
 .header .nav-wrapper #nav>div.section.nav-sections>div>ul>li:nth-child(2)>ul>li>p>span {
@@ -1205,7 +1211,8 @@ body.modal-open footer {
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1300px){
-  .header .nav-wrapper #nav{
+  .header .nav-wrapper #nav,
+  .header .nav-wrapper #nav>.nav-sections .default-content-wrapper>ul>li[aria-expanded="true"]>ul {
     max-width: 81.25%;
   }
 
