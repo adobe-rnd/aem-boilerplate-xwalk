@@ -1,43 +1,117 @@
 import { loadScript } from "../../scripts/aem.js";
-import returnLatLan, { locationInLatLan } from "../select-tag/getSelectedLanguage.js";
+import { fetchAPI } from "../../scripts/scripts.js";
+import returnLatLan from "../select-tag/getSelectedLanguage.js";
+import { onloadBranchLocator } from "./branchlocator-biz.js";
+import {branchLocatorObject} from "./jsonobject.js";
 
+
+let setLocationObj = {};
+
+function dropDownStateCity(){
+    const result = Object.groupBy(branchLocatorObject['branch-locator'], ({ State }) => {
+        const lowercaseLocation = State.toLowerCase();
+        return lowercaseLocation.charAt(0).toUpperCase() + lowercaseLocation.slice(1);
+    });
+    return result;
+}
 
 export function branchLocator_dropdown(_block){
 
-   let html =  `<div class='container dropdown-container'> 
+    let dropdown = _block.closest('.branchlocator-dropdown');
+
+    setLocationObj.getExcelData = dropDownStateCity(); // await while calling APi
+    setLocationObj.stateLi = "";
+    setLocationObj.cityLi = "";
+    setLocationObj.cityhash = {};
+    setLocationObj.lanLogInfo = [];
+    setLocationObj.geoInfo = {
+        city : "",
+        state : "",
+        country : ""
+    };
+
+
+    const { getExcelData, cityhash} = setLocationObj;
+
+    setLocationObj.cityLi = Object.values(getExcelData)
+      .flat()
+      .reduce((acc, { City }) => {
+        if (!cityhash.hasOwnProperty(City)) {
+          cityhash[City] = City;
+          acc += `<li class='city-option option' data-city-info=${City}>${City}</li>`;
+        }
+        return acc;
+      }, "");
+
+      /* setLocationObj.lanLogInfo = Object.values(getExcelData)
+      .flat().map(({ Latitude, Longitude }) => {
+        return [Latitude,Longitude];
+      }); */
+
+    setLocationObj.stateLi = Object.keys(getExcelData)
+      .map((state) => `<li class='state-option option' data-state-info="${state}">${state}</li>`)
+      .join("");
+
+
+    dropdown.innerHTML = `<div class='container'> 
                                 <div class='dropdown-wrapper'>
 
-                                    <div class='state-dropdown dropdown'>
-                                        <div class='dropdown-selectvalue'> Maharashtra </div>
-                                        <ul class='state-vlaue-option dropdown-option-wrapper'>
+                                    <div class='state-dropdown dropdown dropdown-li-logic'>
+                                        <div class='dropdown-selectvalue'>  </div>
+                                        <ul class='state-vlaue-option dropdown-option-wrapper dp-none'>
                                             <input type='text' placeholder='State' id='search'/>
-                                             <div class='option-wrapper'>
-                                                <li class='state-option option'> Maharashtra </li>
-                                             </div>
+                                             <div class='option-wrapper selected-state'>${setLocationObj.stateLi}</div>
                                         </ul>
                                     </div>
 
-                                    <div class='city-dropdown dropdown'>
-                                        <div class='dropdown-selectvalue'> Mumbai </div>
+                                    <div class='city-dropdown dropdown dropdown-li-logic'>
+                                        <div class='dropdown-selectvalue'>  </div>
                                         <ul class='city-vlaue-option dropdown-option-wrapper dp-none'>
                                             <input type='text' placeholder='City' id='search'/>
-                                            <div class='option-wrapper'>
-                                                <li class='city-option option'> Mumbai </li>
-                                                <li class='city-option option'> Mumbai </li>
-                                                <li class='city-option option'> Mumbai </li>
+                                            <div class='option-wrapper selected-city'>
+                                                ${setLocationObj.cityLi}
                                             </div>
                                         </ul>
                                     </div>
 
                                 </div>
                           </div>`;
-
-                          return html
+    
+    returnLatLan().then(function ({ lat, lng }) {
+        if(lat && lng){
+            let branchhList = sortingNearestBranch(lat, lng, getExcelData);
+            loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k").then((resolve) => {
+                myMap(lat, lng, branchhList);
+            });
+            getStateCity(lat, lng)
+        }
+    });
+    selectedStateCitytext(dropdown);
+    hideshowDd(dropdown);
+                       
 }
 
-export function branchLocator_Map(_block){
+function hideshowDd(dropdown){
+    dropdown.querySelectorAll('.dropdown-li-logic').forEach(function (eachDropdown) {
+        eachDropdown.querySelector('.dropdown-selectvalue').addEventListener('click', function (e) {
+            if(eachDropdown.querySelector('.dropdown-option-wrapper').classList.contains('dp-none')){
+                eachDropdown.querySelector('.dropdown-option-wrapper').classList.remove('dp-none');
+            }else{
+                eachDropdown.querySelector('.dropdown-option-wrapper').classList.add('dp-none');
+            }
+        });
+    });
+}
 
-    let html = `<div class='container map-container-wrapper mt-30 mob-mt-15'>
+function selectedStateCitytext(dropdown){
+    debugger;
+}
+
+export function branchLocator_Map(){
+
+    let map = document.querySelector('.branchlocator-map');
+
+    map.innerHTML = `<div class='container'>
 
                         <div class='map-branchinfo-wrapper'>
 
@@ -53,12 +127,11 @@ export function branchLocator_Map(_block){
                         </div>
                     </div>
                     `
-    return html
 }
 
 
 export function branchLocator() {
-    let branch_cards = `<div class='cards-branches cards-branches-container mt-45 mb-40 mob-mb-45'>
+    let branch_cards = `<div class='cards-branches'>
             <div class='title'>
                  <h2> Find all Mumbai Branches here </h2>
             </div>
@@ -132,10 +205,12 @@ export function branchLocator() {
         </div>`;
     return branch_cards;
 }
-export default function decorate(block) {
-    // branchLocator_dropdown();
-    // branchLocator_Map();
 
+export default function decorate(block) {
+
+    onloadBranchLocator(block);
+    // branchLocator_dropdown(block);
+    // branchLocator_Map();
     // let stateOptions = ``;
     // let cityOptions = `<div class='value'> Thane </div>`;
 
@@ -174,24 +249,7 @@ export default function decorate(block) {
         
         ${branchLocator()}
     `*/
-
-    block.innerHTML = `${branchLocator_dropdown(block)}`;
-    block.innerHTML += `${branchLocator_Map(block)}`;
-    block.innerHTML += `${branchLocator()}`;
-
-    function myMap(lat, long) {
-      var mapProp = {
-          center: new google.maps.LatLng(lat, long),
-          zoom: 15,
-      };
-      var map = new google.maps.Map(block.closest('.section').querySelector('.map-container'), mapProp);
-  }
-  
-    returnLatLan().then(function ({ lat, lng }) {
-        loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k").then((resolve) => {
-            myMap(lat, lng);
-        });
-    });
+    block.innerHTML = ` ${branchLocator()}`
 
     // block.querySelectorAll('.dropdown').forEach(function (value, index) {
     //     value.addEventListener('click', function (e) {
@@ -205,4 +263,76 @@ export default function decorate(block) {
     //     });
     // });
 }
+
+function myMap(lat, long, sortedBranch) {
+  var mapProp = {
+    center: new google.maps.LatLng(lat, long),
+    zoom: 10,
+  };
+  var map = new google.maps.Map(document.querySelector(".map-container"), mapProp);
+  addMarkers();
+
+  // adding the markers
+  function addMarkers() {
+    for (let eachLagLong of sortedBranch) {
+      if (typeof eachLagLong["Latitude"] == "string" || typeof eachLagLong["Longitude"] == "string") {
+        continue;
+      }
+
+        new google.maps.Marker({
+          position: new google.maps.LatLng(eachLagLong["Latitude"], eachLagLong["Longitude"]),
+          title: "Primal",
+          map: map,
+        });
+
+    }
+    new google.maps.Marker({
+      position: new google.maps.LatLng(lat, long),
+      title: "You are here",
+      icon: {
+        url: "./images/blue-icon.png",
+        size: new google.maps.Size(48, 48),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(24, 42),
+      },
+      map: map,
+    });
+  }
+}   
+
+
+function sortingNearestBranch(lat, lng, getExcelData) {
+  const filteredLocations = Object.values(getExcelData)
+    .flat()
+    .map((location) => {
+      return {
+        ...location,
+        distance: calculateDistance(lat, lng, location.Latitude, location.Longitude),
+      };
+    })
+    .filter((location) => location.distance <= 40)
+    .sort((a, b) => a.distance - b.distance);
+
+    console.log(filteredLocations);
+
+    return filteredLocations;
+
+  function calculateDistance(lat1, lng1, lat2, lng2) {
+    const R = 6371; // Radius of the Earth in km
+    const dLat = deg2rad(lat2 - lat1);
+    const dLng = deg2rad(lng2 - lng1);
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const distance = R * c; // Distance in km
+    return distance;
+  }
+
+  function deg2rad(deg) {
+    return deg * (Math.PI / 180);
+  }
+}
+
+
+
+
 
