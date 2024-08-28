@@ -1,5 +1,5 @@
 import { fetchAPI, getProps, renderHelper } from "../../scripts/scripts.js";
-import { customerTemplate, customerCard } from "./template.js";
+import { customerTemplateCopy, customerCardCopy } from "./template.js";
 
 export default async function decorate(block) {
     // const props = Array.from(block.children).map(function (el) {
@@ -9,6 +9,7 @@ export default async function decorate(block) {
     const [url, time, ribbononeimg, ribbontwoimg, ribbonthreeimg, ribbonfourimg, classess] = props;
     block.classList.add(classess);
     block.innerHTML = '';
+    let customerTemplate = customerTemplateCopy, customerCard = customerCardCopy;
     try {
         const resp = await fetchAPI("GET", url)
         const data = await resp.json();
@@ -79,9 +80,10 @@ export default async function decorate(block) {
             data.data
             , customerCard)
 
+        customerTemplate = customerTemplate.replace('{ribbononeimg}', ribbononeimg).replace('{ribbontwoimg}', ribbontwoimg).replace('{ribbonthreeimg}', ribbonthreeimg).replace('{ribbonfourimg}', ribbonfourimg)
         block.innerHTML = renderHelper([
             {
-                ribbononeimg, ribbontwoimg, ribbonthreeimg, ribbonfourimg, cards
+                cards
             }
         ], customerTemplate);
     } catch (error) {

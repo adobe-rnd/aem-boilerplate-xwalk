@@ -499,7 +499,7 @@ main img {
   background-color: var(--rosewhite);
 }
 .teaser.block.bg--linear-red {
-  background: url("url"), linear-gradient(320.12deg, rgb(127, 76, 168) -0.41%, rgb(242, 104, 65) 101.64%) !important;
+  background: linear-gradient(320.12deg, rgb(127, 76, 168) -0.41%, rgb(242, 104, 65) 101.64%) !important;
   background-size: 100% 100%;
 }
 .teaser.block.--skyblue {
