@@ -103,7 +103,7 @@
   line-height: 1.5rem;
   font-family: "Nunito-Semibold", sans-serif;
   text-decoration: none;
-  padding: 10px 10px 0 3px;
+  padding: 15px 10px 0 3px;
 }
 
 .header .nav-wrapper #nav .section.nav-sections[aria-expanded="true"] .default-content-wrapper>ul>li>p {
@@ -1218,5 +1218,8 @@ body.modal-open footer {
 
   .header .nav-wrapper #nav .nav-sections .default-content-wrapper ul li:last-child p a {
     font-size: 0.75rem;
+  }
+  .header .nav-wrapper #nav .section.nav-sections .default-content-wrapper ul li:nth-child(7) p{
+    padding: 14px 10px 0 3px;
   }
 }
