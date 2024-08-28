@@ -11,7 +11,6 @@ Disallow: /styles/
 Disallow: /blocks/
 Disallow: /*?*
 Disallow: /*?*
-Disallow: /
 
 
 
