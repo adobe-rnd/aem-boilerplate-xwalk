@@ -177,6 +177,12 @@ textarea:focus {
 
 }
 
+:root,
+main {
+  width: 100%;
+  height: 100%;
+}
+
 @font-face {
   font-family: roboto-fallback;
   size-adjust: 100.06%;
