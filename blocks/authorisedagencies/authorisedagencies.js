@@ -25,7 +25,7 @@ export default async function decorate(block) {
     legendField.textContent = "locations";
     cityDropdown.appendChild(legendField);
     citiesContainer.appendChild(cityDropdown);
-    let sortedCities = Object.keys(jsonResponseData).sort((a, b) =>a.localeCompare(b, undefined, { sensitivity: 'base' }))
+    let sortedCities = Object.keys(jsonResponseData).sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
     // let cities = Object.keys(jsonResponseData);
     sortedCities.forEach(city => {
         let label = document.createElement('label');
@@ -41,7 +41,7 @@ export default async function decorate(block) {
             citiesContainer.style.display = 'none';
             selectContainer.classList.toggle('open');
         })
-        let span = document.createElement('span');  
+        let span = document.createElement('span');
         span.textContent = city;
         label.appendChild(input);
         label.appendChild(span);
@@ -61,12 +61,12 @@ export default async function decorate(block) {
         return newNode;
     }
 
-    function displayCards(selectedCityName) {
+    function displayCards(selectedCityName, index) {
         cardContainer.innerHTML = "";
         let dataToDisplay = selectedCityName ? { [selectedCityName]: jsonResponseData[selectedCityName] } : jsonResponseData;
 
-        let count = 0
-        for (let city in dataToDisplay) {
+        // let count = 0
+        Object.keys(dataToDisplay).slice(0, index).forEach(function (city) {
             dataToDisplay[city].forEach(data => {
                 let card = document.createElement('div');
                 card.className = "card";
@@ -95,10 +95,10 @@ export default async function decorate(block) {
                     card.appendChild(element);
                 }
 
-                if (count > 3) {
-                    card.style.display = 'none'
-                }
-                count++;
+                // if (count > 3) {
+                //     card.style.display = 'none'
+                // }
+                // count++;
                 createSection(card, 'Agency Address', data['Agency Address']);
                 createSection(card, 'Vendor Name:', data['Vendor Name']);
                 createSection(card, 'Date of Agreement:', data['Date of Agreement']);
@@ -110,6 +110,8 @@ export default async function decorate(block) {
                 cardContainer.appendChild(card);
                 block.appendChild(cardContainer);
             })
+        })
+        for (let city in dataToDisplay) {
         }
     }
     selectContainer.appendChild(selectText);
@@ -119,26 +121,27 @@ export default async function decorate(block) {
     selectContainerWrapper.appendChild(citiesContainer);
 
     block.appendChild(selectContainerWrapper);
-    displayCards();
-    block.closest("body").addEventListener("click" , function(e){
-            if(!e.target.closest(".toggleCityContainer") && !e.target.closest(".select-container")  && !e.target.closest("fieldset") && !e.target.closest("cityBlack")){
-                if(block.querySelector(".select-container.open")){
-                    if(block.querySelector(".cities-container").style.display =="block"){
-                    block.querySelector(".cities-container").style.display ="none";
+    displayCards(undefined, 2);
+    block.closest("body").addEventListener("click", function (e) {
+        if (!e.target.closest(".toggleCityContainer") && !e.target.closest(".select-container") && !e.target.closest("fieldset") && !e.target.closest("cityBlack")) {
+            if (block.querySelector(".select-container.open")) {
+                if (block.querySelector(".cities-container").style.display == "block") {
+                    block.querySelector(".cities-container").style.display = "none";
                     block.querySelector(".select-container").classList.remove("open");
                 }
-                }
-            }})
+            }
+        }
+    })
 
+    window.onscroll = function () {
+        displayCards();
+        // Array.from(document.querySelector('.card-container').children).forEach(function (each) {
+        //     each.style.display = 'block'
+        // })
+    }
 }
 export async function fetchApiCall(cfurl) {
     const response = await fetchAPI("GET", cfurl);
     const responseJson = await response.json();
     return responseJson;
-}
-
-window.onscroll = function () {
-    Array.from(document.querySelector('.card-container').children).forEach(function (each) {
-        each.style.display = 'block'
-    })
 }
