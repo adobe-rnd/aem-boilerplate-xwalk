@@ -831,9 +831,18 @@ body?.addEventListener("click", function (e) {
     e.currentTarget.querySelector(".stake-pop-up.dp-block")?.classList.remove("dp-block");
   }
 
+  // Neeyat Lagunage DropDown Closer
   if (document.querySelector('.neeyat-header') && !e.target.closest('.inner-lang-switch')) {
     document.querySelector('.maindiv-lang-switch ul').classList.add('dp-none');
   }
+
+  // Branch Locator DropDown Closer
+  if(document.querySelector(".branch-locater-banner") && e.target.classList.contains("search-input")){
+    return;
+  }else if (document.querySelector(".branch-locater-banner") && (!e.target.closest(".deafult-state-selected") || !e.target.closest(".deafult-city-selected"))){
+    document.querySelector(".state-wrapper").classList.add("dp-none");
+    document.querySelector(".city-wrapper").classList.add("dp-none");
+  } 
 
 });
 

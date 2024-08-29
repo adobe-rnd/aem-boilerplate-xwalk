@@ -58,6 +58,7 @@ export function branchLocator_Map(_block){
 
 
 export function branchLocator() {
+
     let branch_cards = `<div class='cards-branches cards-branches-container mt-45 mb-40 mob-mb-45'>
             <div class='title'>
                  <h2 class="title-to-show"> Find all Mumbai Branches here </h2>
@@ -65,73 +66,31 @@ export function branchLocator() {
 
             <div class='cards-container'>
 
-                    <div class='cards-wrapper'>
+                    <div class='cards-wrapper branch-list-wrapper'>
 
-                            <div class='card-box'>
-                                <h3 class='card-title'> Andheri </h3>
-                                <p class='card-address'>Office No. 501 & 502, 
-                                    5th Floor, Express Chambers, 
-                                    Andheri Kurla Road, Andheri (East) 400069
-                                </p>
-                                <p class='card-gmail'> <span> <img src='/images/Vector.png' alt='gmail-icon'/> </span> customercare@piramal.com </p>
-                                <button id='more-details-btn' type='button'> More details </button>
-                            </div>
+                            
 
-                              <div class='card-box'>
-                                <h3 class='card-title'> Andheri </h3>
-                                <p class='card-address'> Office No. 501 & 502, 
-                                    5th Floor, Express Chambers, 
-                                    Andheri Kurla Road, Andheri (East) 400069
-                                </p>
-                                <p class='card-gmail'> <span> <img src='/images/Vector.png' alt='gmail-icon'/> </span> customercare@piramal.com </p>
-                                <button id='more-details-btn' type='button'> More details </button>
-                            </div>
-
-                              <div class='card-box'>
-                                <h3 class='card-title'> Andheri </h3>
-                                <p class='card-address'> Office No. 501 & 502, 
-                                    5th Floor, Express Chambers, 
-                                    Andheri Kurla Road, Andheri (East) 400069
-                                </p>
-                                <p class='card-gmail'> <span> <img src='/images/Vector.png' alt='gmail-icon'/> </span> customercare@piramal.com </p>
-                                <button id='more-details-btn' type='button'> More details </button>
-                            </div>
-
-                              <div class='card-box'>
-                                <h3 class='card-title'> Andheri </h3>
-                                <p class='card-address'> Office No. 501 & 502, 
-                                    5th Floor, Express Chambers, 
-                                    Andheri Kurla Road, Andheri (East) 400069
-                                </p>
-                                <p class='card-gmail'> <span> <img src='/images/Vector.png' alt='gmail-icon'/> </span> customercare@piramal.com </p>
-                                <button id='more-details-btn' type='button'> More details </button>
-                            </div>
-
-                              <div class='card-box'>
-                                <h3 class='card-title'> Andheri </h3>
-                                <p class='card-address'> Office No. 501 & 502, 
-                                    5th Floor, Express Chambers, 
-                                    Andheri Kurla Road, Andheri (East) 400069
-                                </p>
-                                <p class='card-gmail'> <span> <img src='/images/Vector.png' alt='gmail-icon'/> </span> customercare@piramal.com </p>
-                                <button id='more-details-btn' type='button'> More details </button>
-                            </div>
-
-                              <div class='card-box'>
-                                <h3 class='card-title'> Andheri </h3>
-                                <p class='card-address'> Office No. 501 & 502, 
-                                    5th Floor, Express Chambers, 
-                                    Andheri Kurla Road, Andheri (East) 400069
-                                </p>
-                                <p class='card-gmail'> <span> <img src='/images/Vector.png' alt='gmail-icon'/> </span> customercare@piramal.com </p>
-                                <button id='more-details-btn' type='button'> More details </button>
-                            </div>
                     </div>
 
             </div>
         </div>`;
     return branch_cards;
 }
+
+export function innerBranchFunc(branchhList){
+  let innerBranch = "";
+  branchhList.forEach(eachBranch => {
+    innerBranch +=
+                `<div class='card-box'>
+              <h3 class='card-title'> ${eachBranch['Location']} </h3>
+              <p class='card-address'>${eachBranch['Address']}</p>
+              <p class='card-gmail'> <span> <img src='/images/Vector.png' alt='gmail-icon'/> </span> customercare@piramal.com </p>
+              <button id='more-details-btn' type='button'> More details </button>
+            </div>`;
+  });
+  return innerBranch;
+}
+
 export default function decorate(block) {
     
     block.innerHTML = `${branchLocator_dropdown(block)}`;

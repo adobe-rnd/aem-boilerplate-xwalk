@@ -4,6 +4,7 @@ import returnLatLan from "../select-tag/getSelectedLanguage.js";
 import { initMap } from "./branchlocator-api.js";
 import { setLocationObj } from "./branchlocator-init.js";
 import { renderCity, renderState } from "./branchlocator-render.js";
+import { innerBranchFunc } from "./branchlocator.js";
 import { branchLocatorObject } from "./jsonobject.js";
 
 const { getExcelData } = setLocationObj;
@@ -41,7 +42,9 @@ export async function onloadBranchLocator(block) {
   defaultSelectedCityState(block);
   renderCity(block, setLocationObj);
   renderState(block, setLocationObj);
+  let multipleBranch = innerBranchFunc(branchhList);
   block.closest('.section').querySelector('.title-to-show').innerText = `Find all ${setLocationObj.geoInfo.city} Branches here`;
+  block.closest('.section').querySelector('.branch-list-wrapper').innerHTML = multipleBranch;
 }
 
 async function getStateCity(lat, lng) {
@@ -204,6 +207,8 @@ export function onClickState(block){
         loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k").then((resolve) => {
           myMap(setLocationObj.lat, setLocationObj.lng, branchhList);
         });
+        let multipleBranch = innerBranchFunc(branchhList);
+        block.closest('.section').querySelector('.branch-list-wrapper').innerHTML = multipleBranch;
         e.target.closest('ul').classList.add('dp-none');
       });
   });
@@ -223,6 +228,8 @@ export function onClickCity(block){
         loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k").then((resolve) => {
           myMap(setLocationObj.lat, setLocationObj.lng, branchhList);
         });
+        let multipleBranch = innerBranchFunc(branchhList);
+        block.closest('.section').querySelector('.branch-list-wrapper').innerHTML = multipleBranch;
         e.target.closest('ul').classList.add('dp-none');
         block.closest('.section').querySelector('.title-to-show').innerText = `Find all ${setLocationObj.geoInfo.city} Branches here`;
       });
@@ -256,7 +263,9 @@ export function locateMeClick(block){
         bizCityDD(getExcelData, block);
         defaultSelectedCityState(block);
         renderCity(block, setLocationObj);
-        renderState(block, setLocationObj);        
+        renderState(block, setLocationObj);  
+        let multipleBranch = innerBranchFunc(branchhList);
+        block.closest('.section').querySelector('.branch-list-wrapper').innerHTML = multipleBranch;      
         }else{
           block.closest('.section').querySelector('.nearest-txt').innerText = "Kindly enable your Location and Refersh the page";
           this.classList.add('dp-none');
