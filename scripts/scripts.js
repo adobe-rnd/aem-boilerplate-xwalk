@@ -810,6 +810,10 @@ body?.addEventListener("click", function (e) {
     navSections?.querySelectorAll(":scope .default-content-wrapper > ul > li").forEach((navSection) => {
       toggleAllNavSections(navSections);
       navSection.setAttribute("aria-expanded", "false");
+      navSections.setAttribute('aria-expanded', 'false');
+      if(document.querySelector("body").classList.contains("modal-open") && navSection.getAttribute('aria-expanded') === 'false'){
+        document.querySelector("body").classList.remove("modal-open")
+   }
     });
   }
   if (e.target.classList.contains("overlay")) {

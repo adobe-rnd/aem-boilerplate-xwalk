@@ -57,7 +57,7 @@ export default async function decorate(block) {
         list.addEventListener('click', async function (e) {
             const val = this.dataset.value
 
-            if(this.getAttribute('data-disabled') == null){
+            if (this.getAttribute('data-disabled') == null) {
                 selectTag.firstElementChild.setAttribute('data-disabled', true);
             }
 
@@ -103,13 +103,18 @@ export default async function decorate(block) {
 
 }
 
-document.addEventListener('resize' , function(e){
-    
-})
 function changeContent(currentLanguageData, selectedLanguageData) {
     let isChange = false;
     document.querySelector('main').querySelectorAll('*').forEach(function (el, index) {
-        if (el.firstChild instanceof Text) {
+        if (el.firstChild instanceof HTMLAnchorElement) {
+            Object.keys(currentLanguageData).forEach(function (key) {
+                if (currentLanguageData[key] && currentLanguageData[key].trim() === new URL(el.firstChild.href.trim()).pathname) {
+                    el.firstChild.href = selectedLanguageData[key];
+                    isChange = true;
+                    console.log(el);
+                }
+            })
+        } else if (el.firstChild instanceof Text) {
             // console.log(index, el.firstChild);
             // console.log(index, el.firstChild);
             Object.keys(currentLanguageData).forEach(function (key) {
