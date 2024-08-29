@@ -74,6 +74,7 @@ export default async function decorate(block) {
         cardContainer.innerHTML = "";
         let dataToDisplay = selectedCityName ? { [selectedCityName]: jsonResponseData[selectedCityName] } : jsonResponseData;
 
+        let count = 0
         for (let city in dataToDisplay) {
             dataToDisplay[city].forEach(data => {
                 let card = document.createElement('div');
@@ -103,6 +104,10 @@ export default async function decorate(block) {
                     card.appendChild(element);
                 }
 
+                if (count > 3) {
+                    card.style.display = 'none'
+                }
+                count++;
                 createSection(card, 'Agency Address', data['Agency Address']);
                 createSection(card, 'Vendor Name:', data['Vendor Name']);
                 createSection(card, 'Date of Agreement:', data['Date of Agreement']);
@@ -141,5 +146,8 @@ export async function fetchApiCall(cfurl) {
     return responseJson;
 }
 
-
-
+window.onscroll = function () {
+    Array.from(document.querySelector('.card-container').children).forEach(function (each) {
+        each.style.display = 'block'
+    })
+}
