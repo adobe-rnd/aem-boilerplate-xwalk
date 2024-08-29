@@ -29,7 +29,7 @@ export default async function decorate(block) {
           salariedtabname: "employementStatus",
           salariedtabvalue: "80",
           salariedtabtext: "I'm Salaried",
-          calculatorsalariedimg: "/content/dam/piramalfinance/product-page/home-loan/calculator-salaried.svg",
+          calculatorsalariedimg: "/images/calculator-salaried.svg",
           calculatorsalariedimgalt: "salaried",
         },
         business: {
@@ -38,7 +38,7 @@ export default async function decorate(block) {
           businesstabname: "employementStatus",
           businesstabvalue: "60",
           businesstabtext: "I'm doing Business",
-          calculatorbusinessimg: "/content/dam/piramalfinance/product-page/home-loan/calculator-business.svg",
+          calculatorbusinessimg: "/images/calculator-business.svg",
           calculatorbusinessimgalt: "business",
         },
         selectloantype: {

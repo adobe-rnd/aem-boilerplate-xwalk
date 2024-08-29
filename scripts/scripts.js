@@ -95,6 +95,9 @@ export function renderHelper(data, template, callBack) {
           var value = dataItem;
           keys.forEach(function (key) {
             if (value && value.hasOwnProperty(key)) {
+              // if (key === 'data-src') {
+              //   key = 'src';
+              // }
               value = value[key];
             } else {
               value = "";
@@ -118,14 +121,14 @@ export function fetchAPI(method, url, data) {
         const resp = await fetch(url);
         resolve(resp);
       } else if (method === "POST") {
-        
+
         data.headerJson = data.headerJson || {
           "Content-Type": "application/json",
         };
 
-        if(data.headerJson["Content-Type"] == 'remove'){
+        if (data.headerJson["Content-Type"] == 'remove') {
           data.headerJson["Content-Type"] = '';
-        }else{
+        } else {
           data.headerJson["Content-Type"] = data.headerJson["Content-Type"] ? data.headerJson["Content-Type"] : "application/json";
         }
 
@@ -768,7 +771,7 @@ async function loadingCustomCss() {
     `${window.hlx.codeBasePath}/styles/legal/legal.css`,
     `${window.hlx.codeBasePath}/styles/calculator-mob-carousel/calculator-mob-carousel.css`,
     `${window.hlx.codeBasePath}/styles/media/media-list.css`,
-    `${window.hlx.codeBasePath}/styles/authorisedagencies/authorisedagencies.css`,
+    // `${window.hlx.codeBasePath}/styles/authorisedagencies/authorisedagencies.css`,
     `${window.hlx.codeBasePath}/styles/table-whatsapp-btn/table-whatsapp-btn.css`,
     `${window.hlx.codeBasePath}/styles/financial-reports/financial-reports.css`,
     `${window.hlx.codeBasePath}/styles/support-quicklinks-wrapper/support-quicklinks-wrapper.css`,
@@ -833,7 +836,7 @@ body?.addEventListener("click", function (e) {
   }
 
   if (document.querySelector('.neeyat-header') && !e.target.closest('.inner-lang-switch')) {
-      document.querySelector('.maindiv-lang-switch ul').classList.add('dp-none');
+    document.querySelector('.maindiv-lang-switch ul').classList.add('dp-none');
   }
 
 });
@@ -852,16 +855,16 @@ setTimeout(() => {
   // Neeyat Click
   try {
     document.querySelectorAll('.neeyat-click').length > 0 && document.querySelector('.neeyat-click').querySelectorAll('.block.carousel-item').forEach(function (eachApplyFormClick) {
-        let classListNeeyatBanner = document.querySelector('.neeyat-click').classList;
-        let buttonClick;
-        classListNeeyatBanner.forEach(function (eachClass) {
-          if(eachClass.includes('neeyat-button')){
-            buttonClick = eachClass.replace('neeyat-button-', '');
-          }
-        });
-        eachApplyFormClick.querySelectorAll('.button-container')[buttonClick].addEventListener('click', function (e){
-          onCLickApplyFormOpen(e);
-        });
+      let classListNeeyatBanner = document.querySelector('.neeyat-click').classList;
+      let buttonClick;
+      classListNeeyatBanner.forEach(function (eachClass) {
+        if (eachClass.includes('neeyat-button')) {
+          buttonClick = eachClass.replace('neeyat-button-', '');
+        }
+      });
+      eachApplyFormClick.querySelectorAll('.button-container')[buttonClick].addEventListener('click', function (e) {
+        onCLickApplyFormOpen(e);
+      });
     });
   } catch (error) {
     console.warn(error);
