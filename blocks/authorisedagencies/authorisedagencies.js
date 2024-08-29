@@ -1,4 +1,4 @@
-import { fetchAPI } from "../../scripts/scripts.js";
+import { fetchAPI, targetObject } from "../../scripts/scripts.js";
 
 export default async function decorate(block) {
     let cfURL = block.textContent.trim();
@@ -121,7 +121,11 @@ export default async function decorate(block) {
     selectContainerWrapper.appendChild(citiesContainer);
 
     block.appendChild(selectContainerWrapper);
-    displayCards(undefined, 2);
+    if (targetObject.isTab || targetObject.isMobile) {
+        displayCards(undefined, 1);
+    } else {
+        displayCards(undefined, 2);
+    }
     block.closest("body").addEventListener("click", function (e) {
         if (!e.target.closest(".toggleCityContainer") && !e.target.closest(".select-container") && !e.target.closest("fieldset") && !e.target.closest("cityBlack")) {
             if (block.querySelector(".select-container.open")) {
