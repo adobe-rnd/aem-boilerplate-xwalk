@@ -1,5 +1,7 @@
 import { loadScript } from "../../scripts/aem.js";
 import { fetchAPI } from "../../scripts/scripts.js";
+import returnLatLan from "../select-tag/getSelectedLanguage.js";
+import { initMap } from "./branchlocator-api.js";
 import { setLocationObj } from "./branchlocator-init.js";
 import { renderCity, renderState } from "./branchlocator-render.js";
 import { branchLocatorObject } from "./jsonobject.js";
@@ -39,7 +41,7 @@ export async function onloadBranchLocator(block) {
   defaultSelectedCityState(block);
   renderCity(block, setLocationObj);
   renderState(block, setLocationObj);
- 
+  block.closest('.section').querySelector('.title-to-show').innerText = `Find all ${setLocationObj.geoInfo.city} Branches here`;
 }
 
 async function getStateCity(lat, lng) {
@@ -110,19 +112,20 @@ function sortingNearestBranch(lat, lng, getExcelData) {
 
     return filteredLocations;
 
-  function calculateDistance(lat1, lng1, lat2, lng2) {
-    const R = 6371; // Radius of the Earth in km
-    const dLat = deg2rad(lat2 - lat1);
-    const dLng = deg2rad(lng2 - lng1);
-    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    const distance = R * c; // Distance in km
-    return distance;
-  }
+}
 
-  function deg2rad(deg) {
-    return deg * (Math.PI / 180);
-  }
+function calculateDistance(lat1, lng1, lat2, lng2) {
+  const R = 6371; // Radius of the Earth in km
+  const dLat = deg2rad(lat2 - lat1);
+  const dLng = deg2rad(lng2 - lng1);
+  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  const distance = R * c; // Distance in km
+  return distance;
+}
+
+function deg2rad(deg) {
+  return deg * (Math.PI / 180);
 }
 
 function myMap(lat, long, sortedBranch) {
@@ -168,9 +171,10 @@ export function bizStateDD(getExcelData, block){
 }
 
 export function bizCityDD(getExcelData, block){
+    setLocationObj.cityhash = {};
     setLocationObj.cityLi = Object.values(getExcelData[setLocationObj.geoInfo.state])
       .reduce((acc, { City }) => {
-        if (!setLocationObj.cityhash .hasOwnProperty(City)) {
+        if (!setLocationObj.cityhash.hasOwnProperty(City)) {
           setLocationObj.cityhash[City] = City;
           acc += `<li class='city-option option' data-info=${City}>${City}</li>`;
         }
@@ -220,9 +224,44 @@ export function onClickCity(block){
           myMap(setLocationObj.lat, setLocationObj.lng, branchhList);
         });
         e.target.closest('ul').classList.add('dp-none');
+        block.closest('.section').querySelector('.title-to-show').innerText = `Find all ${setLocationObj.geoInfo.city} Branches here`;
       });
   });
 }  
 
+
+export function locateMeClick(block){
+    let locateMeEvent = block.closest('.section').querySelector('.btn-locate');
+    locateMeEvent.addEventListener('click', async function (e){
+        let {lat, lng} = await returnLatLan();
+        setLocationObj.lat = lat;
+        setLocationObj.lng = lng;
+        if(setLocationObj.lat && setLocationObj.lng){
+        await getStateCity(setLocationObj.lat, setLocationObj.lng);
+        let branchhList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, getExcelData);
+        loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k").then((resolve) => {
+          myMap(setLocationObj.lat, setLocationObj.lng, branchhList);
+          let gettingStortedBranchlat = branchhList[0]["Latitude"];
+          let gettingStortedBranchlag = branchhList[0]["Longitude"];
+          initMap(gettingStortedBranchlat, gettingStortedBranchlag);
+          let currentDistance = calculateDistance(setLocationObj.lat, setLocationObj.lng, gettingStortedBranchlat, gettingStortedBranchlag);
+          block.closest('.section').querySelector('.branch-addr').innerText = `Branch - ${branchhList[0]['Location']}`;
+          block.closest('.section').querySelector('.branch-distance').innerText = `Distance - ${Math.round(currentDistance)} km `;
+          block.closest('.section').querySelector('.title-to-show').innerText = `Find all ${setLocationObj.geoInfo.city} Branches here`;
+          block.closest('.section').querySelector('.btn-locate').classList.add('dp-none');
+          block.closest('.section').querySelector('.btn-locate-details').classList.remove('dp-none');
+          block.closest('.section').querySelector('.branch-deatils').classList.remove('dp-none');
+        });
+        bizStateDD(getExcelData, block);
+        bizCityDD(getExcelData, block);
+        defaultSelectedCityState(block);
+        renderCity(block, setLocationObj);
+        renderState(block, setLocationObj);        
+        }else{
+          block.closest('.section').querySelector('.nearest-txt').innerText = "Kindly enable your Location and Refersh the page";
+          this.classList.add('dp-none');
+        }
+    });
+}
 
 

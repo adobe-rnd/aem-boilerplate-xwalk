@@ -1,6 +1,6 @@
 import { loadScript } from "../../scripts/aem.js";
 import returnLatLan, { locationInLatLan } from "../select-tag/getSelectedLanguage.js";
-import { onloadBranchLocator } from "./branchlocator-biz.js";
+import { locateMeClick, onloadBranchLocator } from "./branchlocator-biz.js";
 
 
 export function branchLocator_dropdown(_block){
@@ -39,10 +39,13 @@ export function branchLocator_Map(_block){
                         <div class='map-branchinfo-wrapper'>
 
                             <div class='branch-info-container'>
-                                 <p>Find The Nearest Branch From Your Place</p>
-                                 <p>Branch - Borivali east</p>
-                                 <p> Distance - 1.4km </p>
-                                 <button class="btn-locate">Branch details</button>
+                                 <p class="nearest-txt">Find The Nearest Branch From Your Place</p>
+                                 <div class="branch-deatils dp-none">
+                                    <p class="branch-addr">Branch - Borivali east</p>
+                                    <p class="branch-distance">Distance - 1.4km </p>
+                                 </div>
+                                 <button class="btn-locate">Locate Me</button>
+                                 <button class="btn-locate-details dp-none">Branch Details</button>
                             </div>
 
                             <div class='map-container'><div>
@@ -57,7 +60,7 @@ export function branchLocator_Map(_block){
 export function branchLocator() {
     let branch_cards = `<div class='cards-branches cards-branches-container mt-45 mb-40 mob-mb-45'>
             <div class='title'>
-                 <h2> Find all Mumbai Branches here </h2>
+                 <h2 class="title-to-show"> Find all Mumbai Branches here </h2>
             </div>
 
             <div class='cards-container'>
@@ -136,6 +139,7 @@ export default function decorate(block) {
     block.innerHTML += `${branchLocator()}`;
 
     onloadBranchLocator(block);
+    locateMeClick(block);
 
     /* function myMap(lat, long) {
       var mapProp = {
