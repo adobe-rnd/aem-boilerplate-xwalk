@@ -88,6 +88,13 @@ async function applyChanges(event) {
   return false;
 }
 
+function handleReloadPage(event) {
+  const a = document.createElement('a');
+  a.setAttribute('href', event.detail);
+  event.target.append(a);
+  a.click();
+}
+
 function attachEventListners(main) {
   [
     'aue:content-patch',
@@ -100,6 +107,8 @@ function attachEventListners(main) {
     const applied = await applyChanges(event);
     if (!applied) window.location.reload();
   }));
+
+  main.addEventListener('extension:reloadPage', handleReloadPage);
 }
 
 attachEventListners(document.querySelector('main'));
