@@ -92,14 +92,14 @@
     row-gap: 24px;
 }
 
-.section.multi-calc-teaser-wrapper .teaser-wrapper .teaser {
+.section.multi-calc-teaser-wrapper .teaser-wrapper .teaser,
+.section.multi-calc-teaser-wrapper .teaser-wrapper .teaser .background {
     max-width: 595px;
-    min-height: 202px;
+    width: 100%;
+    min-height: 192px;
 }
 
 .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser .background {
-    max-width: 595px;
-    min-height: 192px;
     background-repeat: no-repeat;
     background-size: contain;
     background-size: 100% 100%;
@@ -133,12 +133,10 @@
 }
 
 @media screen and (max-width: 767px) {
-    .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser .background {
-        min-height: 105px;
-    }
-
+    .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser .background,
     .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser {
-        min-height: 105px;
+        max-width: unset;
+        min-height: 112px;
     }
 
     .section.multi-calc-teaser-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container {

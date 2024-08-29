@@ -1,4 +1,5 @@
 import { fetchAPI, targetObject } from "../../scripts/scripts.js";
+import { ctaClickInteraction } from "../../dl.js";
 
 export default async function decorate(block) {
     let cfURL = block.textContent.trim();
@@ -16,7 +17,7 @@ export default async function decorate(block) {
 
     let inputLocation = createAndAppend('input', "", "toggleCityContainer");
     inputLocation.readOnly = true;
-    inputLocation.placeholder = inputLocationValue ? inputLocationValue : 'Location ';
+    inputLocation.value = inputLocationValue ? inputLocationValue : 'Location ';
 
     let citiesContainer = createAndAppend('div', "", "cities-container");
 
@@ -33,10 +34,18 @@ export default async function decorate(block) {
         input.type = 'radio';
         input.value = city;
         input.name = "branchlocation";
-        input.addEventListener('change', () => {
+        input.addEventListener('change', (e) => {
+            try {
+                let data= {};
+                data.click_text = e.target.closest('label').querySelector('span').textContent.trim();
+                data.cta_position = 'Select Location';
+                ctaClickInteraction(data);
+            } catch (error) {
+                console.warn(error);
+            }
             displayCards(city);
             inputLocationValue = city;
-            inputLocation.placeholder = city;
+            inputLocation.value = city;
             inputLocation.className = 'cityBlack';
             citiesContainer.style.display = 'none';
             selectContainer.classList.toggle('open');

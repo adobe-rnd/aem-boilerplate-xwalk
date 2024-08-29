@@ -39,6 +39,7 @@
     flex-wrap: nowrap;
     position: relative;
     gap: unset;
+    padding: 0 18px;
 }
 
 .section.awards-recognition-wrapper .tab-name-nested-wrapper .tab-name-nested .nested-tab-name-child .carousel-inner .carousel-item {

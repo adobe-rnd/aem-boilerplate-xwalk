@@ -61,47 +61,44 @@ export function generateTeaserDOM(props, classes) {
   ctaImageAnchor.innerHTML = ctaImage.innerHTML;
   ctaImageAnchor2.innerHTML = ctaImage2.innerHTML;
   ctaImageAnchor3.innerHTML = ctaImage3.innerHTML;
-  const bgPictureStyle = bgPicture?.querySelector("img")?.src || "";
-  const mobileImageStyle = mobileImage?.querySelector("img")?.src || "";
+  // const bgPictureStyle = bgPicture?.querySelector("img")?.src || '';
+  const bgPictureStyle = bgPicture?.querySelector("img")?.src ? ` style='background-image:url(${bgPicture?.querySelector("img")?.src})' ` : ``;
+  const mobileImageStyle = mobileImage?.querySelector("img")?.src ? ` style='background-image:url(${mobileImage?.querySelector("img")?.src})' ` : ``;
   let bgImageAllow = bgPictureStyle;
   if (targetObject.isTab) {
     bgImageAllow = mobileImageStyle;
   }
 
   const teaserDOM = document.createRange().createContextualFragment(
+    // <div class='background' style='background-image:url(${bgImageAllow})'>
     `
-    <div class='background' style='background-image:url(${bgImageAllow})'>
+    <div class='background' ${bgImageAllow}'>
       <div class="front-picture">${picture ? picture.outerHTML : ""}</div>
       <div class='foreground'>
         <div class='text'>
-          ${
-            eyebrow.textContent.trim() !== ""
-              ? `<div class='eyebrow'>${eyebrow.textContent.trim()}</div>`
-              : ``
-          }
+          ${eyebrow.textContent.trim() !== ""
+      ? `<div class='eyebrow'>${eyebrow.textContent.trim()}</div>`
+      : ``
+    }
           <div class='title'>${title.innerHTML}</div>
           <div class='long-description'>${longDescr.innerHTML}</div>
-          <!-- <div class='short-description'>${
-            hasShortDescr ? shortDescr.innerHTML : longDescr.innerHTML
-          }</div>-->
+          <!-- <div class='short-description'>${hasShortDescr ? shortDescr.innerHTML : longDescr.innerHTML
+    }</div>-->
           <div class='short-description'>${shortDescr.innerHTML}</div>
           <div class='cta-image-wrapper'>
             <div class="img-with-text-wrap">
-              <div class="cta-image">${
-                ctaImageAnchor ? ctaImageAnchor.outerHTML : ""
-              }</div>
+              <div class="cta-image">${ctaImageAnchor ? ctaImageAnchor.outerHTML : ""
+    }</div>
               <p class="cta-text">${imageText.innerText}</p>
             </div>
             <div class="img-with-text-wrap">
-              <div class="cta-image">${
-                ctaImageAnchor2 ? ctaImageAnchor2.outerHTML : ""
-              }</div>
+              <div class="cta-image">${ctaImageAnchor2 ? ctaImageAnchor2.outerHTML : ""
+    }</div>
               <p class="cta-text">${imageText2.innerText}</p>
             </div>
             <div class="img-with-text-wrap">
-              <div class="cta-image">${
-                ctaImageAnchor3 ? ctaImageAnchor3.outerHTML : ""
-              }</div>
+              <div class="cta-image">${ctaImageAnchor3 ? ctaImageAnchor3.outerHTML : ""
+    }</div>
               <p class="cta-text">${imageText3.innerText}</p>
             </div>
           </div>
@@ -128,11 +125,16 @@ export function generateTeaserDOM(props, classes) {
       try {
         if (index || e.target.closest(".cta")) {
           bannerClick(e.target.innerText, targetObject.pageName);
-        }else if(this.closest('.carousel-articles-wrapper')){
+        } else if (this.closest('.carousel-articles-wrapper')) {
           readMoreAnalytics(e);
-        }else if(this.closest('.csr-committee-wrapper')){
+        } else if (this.closest('.csr-committee-wrapper')) {
           csrfReportAnalytics(e);
-        }else {
+        } else if (e.target.closest(".media-cards-wrapper")) {
+          let data = {};
+          data.click_text = e.target.closest('.long-description').querySelector('p').textContent.trim();
+          data.cta_position = e.target.closest('.section').querySelector('.tab-name-wrapper .carousel-inner .active').textContent.trim();
+          ctaClickInteraction(data);
+        } else {
           applyLoanNow(
             eyebrow.textContent.trim() + " " + title.textContent.trim(),
             targetObject.pageName,
@@ -152,11 +154,11 @@ export function generateTeaserDOM(props, classes) {
 
         /* About Us Comapny Analytics Start */
         try {
-          if(this.closest('.section.board-of-directors-wrapper')){
-              let data = {};
-              data.click_text = this.querySelector('.title').textContent.trim();
-              data.cta_position = this.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
-              ctaClickInteraction(data);
+          if (this.closest('.section.board-of-directors-wrapper')) {
+            let data = {};
+            data.click_text = this.querySelector('.title').textContent.trim();
+            data.cta_position = this.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
+            ctaClickInteraction(data);
           }
         } catch (error) {
           console.warn(error);
@@ -166,7 +168,7 @@ export function generateTeaserDOM(props, classes) {
         location.href = firstCta.innerText;
       });
     }
-  } catch (error) {   
+  } catch (error) {
   }
   // add final teaser DOM and classes if used as child component
   return teaserDOM;
@@ -181,17 +183,17 @@ export default function decorate(block) {
 }
 
 
-function readMoreAnalytics(e){
+function readMoreAnalytics(e) {
   let data = {};
   data.article_name = e?.target.getAttribute('href').split('/').pop();
-  data.cta_position =  e?.target.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
+  data.cta_position = e?.target.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
   data.click_header = e?.target.textContent.trim();
   readMoreInteraction(data);
 }
 
-function csrfReportAnalytics(e){
+function csrfReportAnalytics(e) {
   let data = {};
   data.click_text = e.target.textContent.trim()
   data.cta_position = e.target.closest(".section").querySelector(".default-content-wrapper").querySelector("h1, h2, h3, h4, h5, h6").textContent.trim();
-  ctaClickInteraction(data); 
+  ctaClickInteraction(data);
 }

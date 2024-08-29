@@ -95,6 +95,9 @@ export function renderHelper(data, template, callBack) {
           var value = dataItem;
           keys.forEach(function (key) {
             if (value && value.hasOwnProperty(key)) {
+              // if (key === 'data-src') {
+              //   key = 'src';
+              // }
               value = value[key];
             } else {
               value = "";
@@ -118,10 +121,21 @@ export function fetchAPI(method, url, data) {
         const resp = await fetch(url);
         resolve(resp);
       } else if (method === "POST") {
+
         data.headerJson = data.headerJson || {
           "Content-Type": "application/json",
         };
-        data.headerJson["Content-Type"] = data.headerJson["Content-Type"] ? data.headerJson["Content-Type"] : "application/json";
+
+        if (data.headerJson["Content-Type"] == 'remove') {
+          data.headerJson["Content-Type"] = '';
+        } else {
+          data.headerJson["Content-Type"] = data.headerJson["Content-Type"] ? data.headerJson["Content-Type"] : "application/json";
+        }
+
+        /* Optimzie Code */
+        /* data.headerJson = data.headerJson || {};
+        data.headerJson["Content-Type"] = data.headerJson["Content-Type"] === 'remove' ? '' : data.headerJson["Content-Type"] || "application/json"; */
+
         const request = new Request(url, {
           method: "POST",
           body: JSON.stringify(data.requestJson),
@@ -134,6 +148,30 @@ export function fetchAPI(method, url, data) {
     } catch (error) {
       console.warn(error);
       reject(error);
+    }
+  });
+}
+
+function decorateImageIcons(element, prefix = '') {
+  const anchors = element.querySelectorAll('a');
+
+  anchors.forEach((anchor) => {
+    const { href } = anchor;
+    let imageName = '';
+
+    if (href.includes('play.google.com')) {
+      imageName = 'playstore';
+    } else if (href.includes('apps.apple.com')) {
+      imageName = 'appstore';
+    }
+
+    if (imageName) {
+      anchor.textContent = '';
+      const img = document.createElement('img');
+      img.src = `${window.hlx.codeBasePath}${prefix}/images/${imageName}.webp`;
+      img.alt = anchor.title;
+      img.loading = 'lazy';
+      anchor.appendChild(img);
     }
   });
 }
@@ -598,6 +636,7 @@ export async function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  decorateImageIcons(main);
 }
 
 /**
@@ -647,6 +686,18 @@ async function loadLazy(doc) {
   sampleRUM("lazy");
   sampleRUM.observe(main.querySelectorAll("div[data-block-name]"));
   sampleRUM.observe(main.querySelectorAll("picture > img"));
+
+
+  // Loading Body Analytics
+  // let noScript = document.createElement("noscript");
+  // let iframe = document.createElement("iframe");
+  // iframe.src = "https://www.googletagmanager.com/ns.html?id=GTM-T5MTVQ9";
+  // iframe.height = "0";
+  // iframe.width = "0";
+  // iframe.style.display = "none";
+  // iframe.style.visibility = "hidden";
+  // noScript.appendChild(iframe);
+  // document.querySelector(":scope > body").appendChild(noScript);
 }
 
 /**
@@ -720,7 +771,7 @@ async function loadingCustomCss() {
     `${window.hlx.codeBasePath}/styles/legal/legal.css`,
     `${window.hlx.codeBasePath}/styles/calculator-mob-carousel/calculator-mob-carousel.css`,
     `${window.hlx.codeBasePath}/styles/media/media-list.css`,
-    `${window.hlx.codeBasePath}/styles/authorisedagencies/authorisedagencies.css`,
+    // `${window.hlx.codeBasePath}/styles/authorisedagencies/authorisedagencies.css`,
     `${window.hlx.codeBasePath}/styles/table-whatsapp-btn/table-whatsapp-btn.css`,
     `${window.hlx.codeBasePath}/styles/financial-reports/financial-reports.css`,
     `${window.hlx.codeBasePath}/styles/support-quicklinks-wrapper/support-quicklinks-wrapper.css`,
@@ -756,9 +807,13 @@ body?.addEventListener("click", function (e) {
     const nav = document.getElementById("nav");
     const navSections = nav.querySelector(".nav-sections");
     navSections?.children[0]?.classList.remove("active");
-    navSections.querySelectorAll(":scope .default-content-wrapper > ul > li").forEach((navSection) => {
+    navSections?.querySelectorAll(":scope .default-content-wrapper > ul > li").forEach((navSection) => {
       toggleAllNavSections(navSections);
       navSection.setAttribute("aria-expanded", "false");
+      navSections.setAttribute('aria-expanded', 'false');
+      if(document.querySelector("body").classList.contains("modal-open") && navSection.getAttribute('aria-expanded') === 'false'){
+        document.querySelector("body").classList.remove("modal-open")
+   }
     });
   }
   if (e.target.classList.contains("overlay")) {
@@ -779,6 +834,11 @@ body?.addEventListener("click", function (e) {
 
     e.currentTarget.querySelector(".stake-pop-up.dp-block")?.classList.remove("dp-block");
   }
+
+  if (document.querySelector('.neeyat-header') && !e.target.closest('.inner-lang-switch')) {
+    document.querySelector('.maindiv-lang-switch ul').classList.add('dp-none');
+  }
+
 });
 
 setTimeout(() => {
@@ -795,16 +855,16 @@ setTimeout(() => {
   // Neeyat Click
   try {
     document.querySelectorAll('.neeyat-click').length > 0 && document.querySelector('.neeyat-click').querySelectorAll('.block.carousel-item').forEach(function (eachApplyFormClick) {
-        let classListNeeyatBanner = document.querySelector('.neeyat-click').classList;
-        let buttonClick;
-        classListNeeyatBanner.forEach(function (eachClass) {
-          if(eachClass.includes('neeyat-button')){
-            buttonClick = eachClass.replace('neeyat-button-', '');
-          }
-        });
-        eachApplyFormClick.querySelectorAll('.button-container')[buttonClick].addEventListener('click', function (e){
-          onCLickApplyFormOpen(e);
-        });
+      let classListNeeyatBanner = document.querySelector('.neeyat-click').classList;
+      let buttonClick;
+      classListNeeyatBanner.forEach(function (eachClass) {
+        if (eachClass.includes('neeyat-button')) {
+          buttonClick = eachClass.replace('neeyat-button-', '');
+        }
+      });
+      eachApplyFormClick.querySelectorAll('.button-container')[buttonClick].addEventListener('click', function (e) {
+        onCLickApplyFormOpen(e);
+      });
     });
   } catch (error) {
     console.warn(error);

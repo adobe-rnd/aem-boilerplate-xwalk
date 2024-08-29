@@ -270,6 +270,7 @@ function getWhatsappServicesApi(mobileNumber) {
   let requesObj = {
     headerJson: {
       "x-apikey": "7uPoKD0zsO527QGZ6oLI9SktlpEDwhsI",
+      "Content-Type" : 'remove'
     },
   };
 

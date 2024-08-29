@@ -1,3 +1,4 @@
+import { faqInteraction } from "../../dl.js";
 import { decorateAnchorTag } from "../../scripts/scripts.js";
 
 export default function decorate(block) {
@@ -36,7 +37,15 @@ export default function decorate(block) {
                 })
                 block.querySelectorAll("h6").forEach(function (ele) {
                     ele.classList.remove("active")
-                })
+                });
+
+                try {
+                    const dataAnalytics = {};
+                    dataAnalytics.click_text = e.target.textContent.trim();
+                    faqInteraction(dataAnalytics);
+                } catch (error) {
+                    console.warn(error);
+                }
             })
         } else {
             wrapper.append(eachEl);
@@ -62,6 +71,15 @@ function toggleList(el) {
                     })
                     e.target.classList.toggle("active");
                     toggleHidden(eachUl);
+
+                    try {
+                        const dataAnalytics = {};
+                        dataAnalytics.click_text = e.target.textContent.trim();
+                        faqInteraction(dataAnalytics);
+                    } catch (error) {
+                        console.warn(error);
+                    }
+                    
                 }
             })
         })
