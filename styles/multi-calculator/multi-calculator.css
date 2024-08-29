@@ -94,12 +94,14 @@
 
 .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser {
     max-width: 595px;
-    min-height: 202px;
+    width: 100%;
+    height: 192px;
 }
 
 .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser .background {
     max-width: 595px;
-    min-height: 192px;
+    width: 100%;
+    height: 192px;
     background-repeat: no-repeat;
     background-size: contain;
     background-size: 100% 100%;
@@ -133,12 +135,10 @@
 }
 
 @media screen and (max-width: 767px) {
-    .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser .background {
-        min-height: 105px;
-    }
-
+    .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser .background,
     .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser {
-        min-height: 105px;
+        max-width: unset;
+        height: 100%;
     }
 
     .section.multi-calc-teaser-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container {
