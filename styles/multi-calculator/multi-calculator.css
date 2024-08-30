@@ -92,16 +92,14 @@
     row-gap: 24px;
 }
 
-.section.multi-calc-teaser-wrapper .teaser-wrapper .teaser {
-    max-width: 595px;
-    width: 100%;
-    height: 192px;
-}
-
+.section.multi-calc-teaser-wrapper .teaser-wrapper .teaser,
 .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser .background {
     max-width: 595px;
     width: 100%;
-    height: 192px;
+    min-height: 192px;
+}
+
+.section.multi-calc-teaser-wrapper .teaser-wrapper .teaser .background {
     background-repeat: no-repeat;
     background-size: contain;
     background-size: 100% 100%;
@@ -138,7 +136,7 @@
     .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser .background,
     .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser {
         max-width: unset;
-        height: 112px;
+        min-height: 112px;
     }
 
     .section.multi-calc-teaser-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container {

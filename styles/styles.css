@@ -177,6 +177,12 @@ textarea:focus {
 
 }
 
+:root,
+main {
+  width: 100%;
+  height: 100%;
+}
+
 @font-face {
   font-family: roboto-fallback;
   size-adjust: 100.06%;
@@ -990,4 +996,14 @@ body.overlay-active {
 }
 .blue-bg{
   background: #EEF3FF !important;
+}
+
+.header .nav-wrapper {
+  height: 112px;
+}
+
+@media screen and (width <= 1200px) {
+  .header .nav-wrapper {
+    height: 71px;
+  }
 }
