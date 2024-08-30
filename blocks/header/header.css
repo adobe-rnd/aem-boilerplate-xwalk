@@ -1007,7 +1007,7 @@ body.modal-open footer {
     padding: unset;
     margin: unset;
     overflow: hidden;
-    max-height: 240px;
+    /* max-height: 240px; */
     padding-left: 24px;
     transition: max-height .6s ease;
   }
