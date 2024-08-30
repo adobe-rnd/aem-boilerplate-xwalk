@@ -46,7 +46,7 @@
     "/content/piramalfinance-eds/in/headers:/.helix/headers.json",
     "/content/piramalfinance-eds/in/configuration:/.helix/config.json",
     "/content/piramalfinance-eds/in/en/api/authorisedagencies:/api/authorisedagencies.json",
-    "/content/piramalfinance-eds/in/en/api/demo-retail:/api/demo-retail.json",
+    "/content/piramalfinance-eds/in/en/api/sarfaesi:/api/sarfaesi.json",
     "/content/piramalfinance-eds/in/en/api/branch-locator:/api/branch-locator.json",
     "/content/piramalfinance-eds/in/en/query-index.json:/query-index.json"
   ]
