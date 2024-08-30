@@ -287,14 +287,14 @@ export default async function decorate(block) {
                     ele.setAttribute('aria-expanded', 'false');
                     ele.parentElement.querySelector('p').addEventListener('click', () => {
                         const expanded = ele.getAttribute('aria-expanded') === 'true';
-                        ele.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-                        ele.parentElement.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-                        ele.parentElement.querySelector('p').classList.toggle('navlist-dropdown');
                         if (!expanded) {
                             ele.style.maxHeight = ele.scrollHeight + "px";
                         } else {
                             ele.style.maxHeight = "0px";
                         }
+                        ele.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+                        ele.parentElement.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+                        ele.parentElement.querySelector('p').classList.toggle('navlist-dropdown');
                     });
                 });
             });
