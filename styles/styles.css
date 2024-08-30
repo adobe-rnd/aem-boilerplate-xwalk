@@ -998,6 +998,7 @@ body.overlay-active {
   background: #EEF3FF !important;
 }
 
+/* header css */
 .header .nav-wrapper {
   height: 112px;
 }
@@ -1006,4 +1007,14 @@ body.overlay-active {
   .header .nav-wrapper {
     height: 71px;
   }
+}
+
+.header-neeyat-nav .nav-wrapper {
+  height: 96px;
+}
+
+@media screen and (max-width:991px) {
+  .header-neeyat-nav .nav-wrapper {
+      height: 71px;
+  } 
 }
