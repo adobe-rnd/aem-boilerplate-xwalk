@@ -290,6 +290,11 @@ export default async function decorate(block) {
                         ele.setAttribute('aria-expanded', expanded ? 'false' : 'true');
                         ele.parentElement.setAttribute('aria-expanded', expanded ? 'false' : 'true');
                         ele.parentElement.querySelector('p').classList.toggle('navlist-dropdown');
+                        if (!expanded) {
+                            ele.style.maxHeight = ele.scrollHeight + "px";
+                        } else {
+                            ele.style.maxHeight = "0px";
+                        }
                     });
                 });
             });
