@@ -24,8 +24,8 @@ export function initMap(sortedLat, sortedLng) {
 }
 
 export async function searchBranchByURL() {
-  // let searchBranchURL = location.href;
-  let searchBranchURL = "http://localhost:3000/branch-locator/delhi";
+  let searchBranchURL = location.href;
+  // let searchBranchURL = "http://localhost:3000/branch-locator/delhi";
   let splitSearch = searchBranchURL.split("/");
   splitSearch.forEach(function (each) {
     if (each.includes("branch-locator")) {
