@@ -569,6 +569,7 @@ body.modal-open footer {
   margin: 0 auto;
   gap: 0;
   padding: 0;
+  height: 112px;
 }
 
 .header .nav-wrapper #nav .section.nav-sections {
@@ -1067,6 +1068,10 @@ body.modal-open footer {
   .header .nav-wrapper {
     height: unset;
     display: unset;
+    height: 71px;
+  }
+
+  .header .nav-wrapper #nav {
     height: 71px;
   }
 

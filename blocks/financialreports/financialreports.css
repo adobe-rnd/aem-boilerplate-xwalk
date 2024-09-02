@@ -232,6 +232,7 @@
 .section.financial-reports-carousel{
     padding-bottom: 35px;
     background-color: var(--rosewhite);
+    min-height: 281px;
 }
 .section.financial-reports-carousel .default-content-wrapper >h2{
     margin: 0;
@@ -263,6 +264,14 @@
     }
     .section.financial-reports-carousel .tab-link-wrapper .tab-link.block{
         margin-top: unset;
+    }
+    .section.financial-reports-carousel{
+        min-height: 213px;
+    }
+}
+@media screen and (max-width:767px) {
+    .section.financial-reports-carousel{
+        min-height: 245px;
     }
 }
 .section.financial-report-content-wrap .default-content-wrapper h2 {
