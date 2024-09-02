@@ -999,23 +999,14 @@ body.overlay-active {
 }
 
 /* header css */
-.header .nav-wrapper,
-.header .nav-wrapper #nav,
 header {
   height: 112px;
 }
 
 @media screen and (width <= 1200px) {
-  .header .nav-wrapper,
-  .header .nav-wrapper #nav,
   header {
     height: 71px;
   }
-}
-
-.header-neeyat-nav .nav-wrapper,
-.header-neeyat-nav .nav-wrapper #nav {
-  height: 96px;
 }
 
 header:has(.header-neeyat-nav) {
@@ -1023,11 +1014,6 @@ header:has(.header-neeyat-nav) {
 }
 
 @media screen and (max-width:991px) {
-  .header-neeyat-nav .nav-wrapper,
-  .header-neeyat-nav .nav-wrapper #nav {
-      height: 71px;
-  } 
-
   header:has(.header-neeyat-nav) {
     height: 71px;
   }
