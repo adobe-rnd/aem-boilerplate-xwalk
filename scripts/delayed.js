@@ -20,11 +20,15 @@ function loadHeadGTM() {
 
 function loadBodyGTM() {
   const noScriptTag = document.createElement("noscript");
-  
-  noScriptTag.innerHTML = `// Google Tag Manager (noscript)
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T5MTVQ9"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
 
+  let iframe = document.createElement("iframe");
+  iframe.src = "https://www.googletagmanager.com/ns.html?id=GTM-T5MTVQ9";
+  iframe.height = "0";
+  iframe.width = "0";
+  iframe.style.display = "none";
+  iframe.style.visibility = "hidden";
+  noScriptTag.appendChild(iframe);
+  
   document.body.prepend(noScriptTag);
 }
 
