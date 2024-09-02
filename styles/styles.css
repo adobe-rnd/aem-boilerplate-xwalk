@@ -999,22 +999,26 @@ body.overlay-active {
 }
 
 /* header css */
-.header .nav-wrapper {
+.header .nav-wrapper,
+.header .nav-wrapper #nav {
   height: 112px;
 }
 
 @media screen and (width <= 1200px) {
-  .header .nav-wrapper {
+  .header .nav-wrapper,
+  .header .nav-wrapper #nav {
     height: 71px;
   }
 }
 
-.header-neeyat-nav .nav-wrapper {
+.header-neeyat-nav .nav-wrapper,
+.header-neeyat-nav .nav-wrapper #nav {
   height: 96px;
 }
 
 @media screen and (max-width:991px) {
-  .header-neeyat-nav .nav-wrapper {
+  .header-neeyat-nav .nav-wrapper,
+  .header-neeyat-nav .nav-wrapper #nav {
       height: 71px;
   } 
 }
