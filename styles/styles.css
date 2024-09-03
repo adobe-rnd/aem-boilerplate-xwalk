@@ -1018,33 +1018,3 @@ header:has(.header-neeyat-nav) {
     height: 71px;
   }
 }
-
-/* calculators  */
-.section.multi-calc-teaser-wrapper .teaser-wrapper .teaser, 
-.section.multi-calc-teaser-wrapper .teaser-wrapper .teaser .background {
-  max-width: 595px;
-  width: 100%;
-  min-height: 192px;
-}
-
-@media screen and (max-width: 767px) {
-  .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser .background, 
-  .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser {
-    max-width: unset;
-    min-height: 112px;
-  }
-}
-
-
-/* real estate finance */
-.section.corporate-financing-banner-wrapper, 
-.section.corporate-financing-banner-wrapper .teaserv2-wrapper .teaserv2>a .bg-image {
-  min-height: 529px;
-}
-
-@media screen and (max-width: 767px) {
-  .section.corporate-financing-banner-wrapper, 
-  .section.corporate-financing-banner-wrapper .teaserv2-wrapper .teaserv2>a .bg-image {
-      min-height: 440px;
-  }
-}
