@@ -18,6 +18,7 @@ export function dropDownStateCity(){
 }
 
 export async function onloadBranchLocator(block) {
+  let branchhList = "";
   if(await searchBranchByURL()){
     console.log('Search By URL');
   }else if (setLocationObj.lat && setLocationObj.lng) {
@@ -35,7 +36,11 @@ export async function onloadBranchLocator(block) {
     setLocationObj.lng = defaultLatLng['Longitude'];
   }  
 
-  let branchhList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, getExcelData);
+  if (setLocationObj.geoInfo.state && !setLocationObj.geoInfo.city) {
+    branchhList = sortByState(getExcelData);
+  }else{
+    branchhList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, getExcelData);
+  }
   loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k").then((resolve) => {
     myMap(setLocationObj.lat, setLocationObj.lng, branchhList);
   });
@@ -47,6 +52,10 @@ export async function onloadBranchLocator(block) {
   let multipleBranch = innerBranchFunc(branchhList);
   block.closest('.section').querySelector('.title-to-show').innerText = `Find all ${setLocationObj.geoInfo.city} Branches here`;
   block.closest('.section').querySelector('.branch-list-wrapper').innerHTML = multipleBranch;
+  if (setLocationObj.geoInfo.state && !setLocationObj.geoInfo.city) {
+    block.closest('.section').querySelector('.city-wrapper').classList.remove('dp-none');
+    block.closest('.section').querySelector('.city-wrapper input').focus();
+  }
 }
 
 async function getStateCity(lat, lng) {
@@ -58,7 +67,7 @@ async function getStateCity(lat, lng) {
         if (results[1]) {
           let city, region, country;
           for (var j = 0; j < results.length; j++) {
-            if (results[j].types[0] === "locality") {
+            // if (results[j].types[0] === "locality") {
               for (var i = 0; i < results[j].address_components.length; i++) {
                 if (results[j].address_components[i].types[0] === "locality") {
                   city = results[j].address_components[i];
@@ -71,7 +80,7 @@ async function getStateCity(lat, lng) {
                 }
               }
               break;
-            }
+            // }
           }
 
           setLocationObj.geoInfo.city = city.long_name;
@@ -134,9 +143,22 @@ function deg2rad(deg) {
 }
 
 function myMap(lat, long, sortedBranch) {
+
+  let center = "";
+  let zoom = "";
+  if(lat && long){
+    center = new google.maps.LatLng(lat, long );
+    zoom = 10;
+  }else{
+    let latToshowIndia =  22.0000;
+    let longToShowIndia = 75.0000;
+    center = new google.maps.LatLng(latToshowIndia, longToShowIndia);
+    zoom = 5;
+  }
+
   var mapProp = {
-    center: new google.maps.LatLng(lat, long),
-    zoom: 10,
+    center: center,
+    zoom: zoom,
   };
   var map = new google.maps.Map(document.querySelector(".map-container"), mapProp);
   addMarkers();
@@ -155,17 +177,20 @@ function myMap(lat, long, sortedBranch) {
         });
 
     }
-    new google.maps.Marker({
-      position: new google.maps.LatLng(lat, long),
-      title: "You are here",
-      icon: {
-        url: "./images/blue-icon.png",
-        size: new google.maps.Size(48, 48),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(24, 42),
-      },
-      map: map,
-    });
+
+    if(lat && long){
+      new google.maps.Marker({
+        position: new google.maps.LatLng(lat, long),
+        title: "You are here",
+        icon: {
+          url: "./images/blue-icon.png",
+          size: new google.maps.Size(48, 48),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(24, 42),
+        },
+        map: map,
+      });
+    }
   }
 }  
 
@@ -277,6 +302,10 @@ export function locateMeClick(block){
           this.classList.add('dp-none');
         }
     });
+}
+
+function sortByState(getExcelData){
+  return Object.values(getExcelData[setLocationObj.geoInfo.state]);
 }
 
 
