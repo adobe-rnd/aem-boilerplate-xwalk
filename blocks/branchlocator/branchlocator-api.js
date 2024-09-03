@@ -24,8 +24,8 @@ export function initMap(sortedLat, sortedLng) {
 }
 
 export async function searchBranchByURL() {
-  // let searchBranchURL = location.href;
-  let searchBranchURL = "https://www.piramalfinance.com/branch-locator/andhra-pradesh/adoni/loans-in-anakapalle-andhra-pradesh-6391";
+  let searchBranchURL = location.href;
+  // let searchBranchURL = "https://www.piramalfinance.com/branch-locator/andhra-pradesh/adoni/loans-in-anakapalle-andhra-pradesh-6391";
   let splitSearch = searchBranchURL.split("/");
   // splitSearch.forEach(function (each) {
     if (searchBranchURL.includes("/branch-locator/")) {
