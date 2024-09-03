@@ -9,6 +9,14 @@ export function renderState(block, setLocationObj){
     onClickState(block);
 }
 
+export function renderCity(block){
+    let renderCityLi = block.closest('.section').querySelector('.city-wrapper > .option-wrapper');
+    renderCityLi.innerHTML = setLocationObj.cityLi;
+    hideshowCity(block);
+    searchStateCity(block);
+    onClickCity(block);
+}
+
 function hideshowState(block){
         block.closest('.section').querySelector('.deafult-state-selected').addEventListener('click', function (e) {
             e.stopImmediatePropagation();
@@ -47,12 +55,5 @@ function searchStateCity(block){
     });
 }
 
-export function renderCity(block){
-    let renderCityLi = block.closest('.section').querySelector('.city-wrapper > .option-wrapper');
-    renderCityLi.innerHTML = setLocationObj.cityLi;
-    hideshowCity(block);
-    searchStateCity(block);
-    onClickCity(block);
-}
 
   
