@@ -1028,3 +1028,26 @@ footer {
     min-height: 1386px;
   }
 }
+
+footer:has(.neeyat-footer) {
+  min-height: 228px;
+}
+
+@media screen and (max-width:767px) {
+  footer:has(.neeyat-footer) {
+    min-height: 261px;
+  }
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+  footer:has(.neeyat-footer) {
+    min-height: 206px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .section.neeyat-slogan .rte-wrapper .rte.block>div:first-child>div:first-child p:first-child {
+    font-size: 19px;
+    line-height: 25px;
+  }
+}
