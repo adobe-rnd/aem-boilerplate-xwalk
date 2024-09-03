@@ -84,7 +84,7 @@
     top: 48px;
     left: 4px;
     z-index: 10;
-    width: 95%;
+    width: 97%;
     overflow: auto;
     cursor: pointer;
     max-height: 335px;
@@ -100,10 +100,9 @@
     font-weight: 400;
     line-height: 16px;
     font-size: 0.75rem;
-    padding-left: 21px;
     font-family: "Nunito-Regular";
     border-bottom: 1px solid var(--zinc);
-    width: 90%;
+    width: 100%;
 }
 
 .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper input#search::placeholder{
@@ -112,6 +111,7 @@
     font-size: 0.75rem;
     color: var(--zinc);
     font-family: "Nunito-Regular";
+    padding-left: 21px;
 }
 
 .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper .option-wrapper{
@@ -362,7 +362,8 @@
 
     .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper{
         left: 0;
-        width: inherit;
+        width: 100%;
+        max-height: 280px;
     }
 
     .section.branchlocator-map .container .map-branchinfo-wrapper{
@@ -413,5 +414,15 @@
 
     .section.branchlocator-cards .cards-branches .cards-container .cards-wrapper .card-box .card-gmail {
         margin-top: 25px;
+    }
+
+    .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper .option-wrapper>a>li {
+        font-size: 0.875rem;
+        line-height: 22px;
+        padding: 3px 0;
+    }
+
+    .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper input#search::placeholder{
+        padding-left: 15px;
     }
 }
