@@ -1034,3 +1034,17 @@ header:has(.header-neeyat-nav) {
     min-height: 112px;
   }
 }
+
+
+/* real estate finance */
+.section.corporate-financing-banner-wrapper, 
+.section.corporate-financing-banner-wrapper .teaserv2-wrapper .teaserv2>a .bg-image {
+  min-height: 529px;
+}
+
+@media screen and (max-width: 767px) {
+  .section.corporate-financing-banner-wrapper, 
+  .section.corporate-financing-banner-wrapper .teaserv2-wrapper .teaserv2>a .bg-image {
+      min-height: 440px;
+  }
+}
