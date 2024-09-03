@@ -84,7 +84,7 @@
     top: 48px;
     left: 4px;
     z-index: 10;
-    width: 220px;
+    width: 95%;
     overflow: auto;
     cursor: pointer;
     max-height: 335px;
@@ -103,6 +103,7 @@
     padding-left: 21px;
     font-family: "Nunito-Regular";
     border-bottom: 1px solid var(--zinc);
+    width: 90%;
 }
 
 .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper input#search::placeholder{
@@ -117,12 +118,17 @@
     margin-top: 10px;
 }
 
-.section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper .option-wrapper .option{
+.section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper .option-wrapper>a {
+    text-decoration: none;
+}
+
+.section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper .option-wrapper>a>li{
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
     color: var(--darkcharcoal);
     font-family: "Nunito-Regular";
+    padding: 5px 0;
 }
 
 .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper .option-wrapper .option:not(:nth-child(1)){
