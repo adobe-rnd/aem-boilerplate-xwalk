@@ -1,5 +1,5 @@
 main .neeyat-banner-slider .carousel-wrapper  .background {
-    /* height: 440px; */
+    height: 440px;
     background-size: 100%;
     background-position: top;
     background-repeat: no-repeat;
@@ -130,7 +130,7 @@ main .neeyat-banner-slider .carousel.block>.button-container button.selected {
 }
 @media screen and (max-width: 1024px) {
     main .neeyat-banner-slider .carousel-wrapper  .background {
-        /* height: 398px; */
+        height: 398px;
         background-size: cover;
     }
 
@@ -167,7 +167,7 @@ main .neeyat-banner-slider .carousel.block>.button-container button.selected {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     main .neeyat-banner-slider .carousel-wrapper  .background {
         height: 250px;
         object-fit: cover;

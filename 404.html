@@ -20,8 +20,8 @@
           const backBtn = document.createElement('a');
           backBtn.classList.add('button', 'error-button-back');
           backBtn.href = pathname;
-          backBtn.textContent = 'Go back';
-          backBtn.title = 'Go back';
+          backBtn.textContent = 'Go Back Home';
+          backBtn.title = 'Go Back Home';
           const btnContainer = document.querySelector('.button-container');
           btnContainer.append(backBtn);
         }
@@ -35,6 +35,8 @@
       min-height: calc(100vh - var(--nav-height));
       display: flex;
       align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
     main.error .error-number {
@@ -44,6 +46,55 @@
     main.error .error-number text {
       font-family: var(--fixed-font-family);
     }
+
+    main.error .section .error-number {
+      width: 444px;
+      height: 241px;
+    }
+
+    main.error .section .error-message {
+      font-size: 1.5rem;
+      line-height: 4.125rem;
+      font-family: "Nunito-Bold";
+      font-weight: 700;
+      color: var(--piramal-neutral-60);
+      margin: 32px 0 12px;
+    }
+
+    main.error .section .button-container>.button {
+      background: var(--orange);
+      color: var(--white);
+      border-radius: 8px;
+      padding: 15px;
+      margin: unset;
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      font-family: "Nunito-Bold";
+      min-width: 202px;
+      border: unset;
+    }
+
+    @media screen and (max-width:1024px){
+      main.error .section .error-number {
+        width: 200px;
+        height: 110px;
+      }
+
+      main.error .section .error-message {
+        font-size: .875rem;
+        line-height: 1.25rem;
+        font-family: "Nunito-Regular";
+        font-weight: 400;
+        margin: 40px 0 16px;
+      }
+
+      main.error .section .button-container>.button {
+        font-size: .875rem;
+        line-height: 1.25rem;
+        min-width: 135px;
+        padding: 14px;
+      }
+    }
   </style>
   <link rel="stylesheet" href="/styles/lazy-styles.css">
 </head>
@@ -52,12 +103,13 @@
   <header></header>
   <main class="error">
     <div class="section">
-      <svg viewBox="1 0 38 18" class="error-number">
+      <!-- <svg viewBox="1 0 38 18" class="error-number">
         <text x="0" y="17">404</text>
-      </svg>
-      <h2 class="error-message">Page Not Found</h2>
+      </svg> -->
+      <img class="error-number" src="/images/page_404_desktop.webp" alt="error number">
+      <h2 class="error-message">Oops, you're lost, unable to find page</h2>
       <p class="button-container">
-        <a href="/" class="button secondary error-button-home">Go home</a>
+        <!-- <a href="/" class="button secondary error-button-home">Go Back Home</a> -->
       </p>
     </div>
   </main>
