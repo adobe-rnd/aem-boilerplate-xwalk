@@ -1018,3 +1018,13 @@ header:has(.header-neeyat-nav) {
     height: 71px;
   }
 }
+
+footer {
+  min-height: 1225px;
+}
+
+@media screen and (max-width:767px) {
+  footer {
+    min-height: 1386px;
+  }
+}
