@@ -1,7 +1,7 @@
 import { loadScript } from "../../scripts/aem.js";
 import { fetchAPI } from "../../scripts/scripts.js";
 import returnLatLan from "../select-tag/getSelectedLanguage.js";
-import { initMap } from "./branchlocator-api.js";
+import { initMap, searchBranchByURL } from "./branchlocator-api.js";
 import { setLocationObj } from "./branchlocator-init.js";
 import { renderCity, renderState } from "./branchlocator-render.js";
 import { innerBranchFunc } from "./branchlocator.js";
@@ -18,7 +18,9 @@ export function dropDownStateCity(){
 }
 
 export async function onloadBranchLocator(block) {
-  if (setLocationObj.lat && setLocationObj.lng) {
+  if(await searchBranchByURL()){
+    console.log('Search By URL');
+  }else if (setLocationObj.lat && setLocationObj.lng) {
     await getStateCity(setLocationObj.lat, setLocationObj.lng);
   } else {
     // Deafult Option
@@ -169,17 +171,21 @@ function myMap(lat, long, sortedBranch) {
 
 export function bizStateDD(getExcelData, block){
     setLocationObj.stateLi = Object.keys(getExcelData)
-      .map((state) => `<li class='state-option option' data-info="${state}">${state}</li>`)
-      .join("");
+      .map((state) => {
+        let newState = state.replace(' ', '-');
+        return `<a href="/${newState.toLowerCase()}"><li class='state-option option' data-info="${state}">${state}</li></a>`;
+      }).join("");
 }
 
 export function bizCityDD(getExcelData, block){
     setLocationObj.cityhash = {};
     setLocationObj.cityLi = Object.values(getExcelData[setLocationObj.geoInfo.state])
-      .reduce((acc, { City }) => {
+      .reduce((acc, { City, "Location Code": locationCode }) => {
         if (!setLocationObj.cityhash.hasOwnProperty(City)) {
           setLocationObj.cityhash[City] = City;
-          acc += `<li class='city-option option' data-info=${City}>${City}</li>`;
+          let newState = setLocationObj.geoInfo.state.replace(' ', '-');
+          let newCity = City.replace(' ', '-');
+          acc += `<a href='/${newState.toLowerCase()}/${newCity.toLowerCase()}/loans-in-${newCity.toLowerCase()}-${newState.toLowerCase()}-${locationCode}'><li class='city-option option' data-info='${City}'>${City}</li></a>`;
         }
         return acc;
       }, "");
