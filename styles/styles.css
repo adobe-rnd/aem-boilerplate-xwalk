@@ -1018,3 +1018,29 @@ header:has(.header-neeyat-nav) {
     height: 71px;
   }
 }
+
+footer {
+  min-height: 1225px;
+}
+
+@media screen and (max-width:767px) {
+  footer {
+    min-height: 1386px;
+  }
+}
+
+footer:has(.neeyat-footer) {
+  min-height: 228px;
+}
+
+@media screen and (max-width:767px) {
+  footer:has(.neeyat-footer) {
+    min-height: 261px;
+  }
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+  footer:has(.neeyat-footer) {
+    min-height: 100%;
+  }
+}

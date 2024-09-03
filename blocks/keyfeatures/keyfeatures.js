@@ -1,8 +1,10 @@
 import { ctaClickInteraction, keyFeaturesInteraction } from "../../dl.js";
 import { fetchPlaceholders } from "../../scripts/aem.js";
-import { renderHelper } from "../../scripts/scripts.js";
+import { decoratePlaceholder, renderHelper } from "../../scripts/scripts.js";
 
 export default async function decorate(block) {
+    block.innerHTML = await decoratePlaceholder(block);
+
     const props = [...block.children].map(row => row);
     const getHTML = generateFeatureHTML(props);
     const newDivFeature = document.createElement('div');

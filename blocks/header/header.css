@@ -1144,7 +1144,7 @@ body.modal-open footer {
   }
 
   .header .nav-wrapper #nav .section.nav-sections {
-    height: 100%;
+    height: 71px;
   }
 
   .header nav#nav[aria-expanded="true"] {
