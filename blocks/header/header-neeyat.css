@@ -1,6 +1,6 @@
-body:has(.header-wrapper .header-neeyat-nav) {
+/* body:has(.header-wrapper .header-neeyat-nav) {
     padding-top: 97px !important;
-}
+} */
 
 .nav-wrapper>nav .nav-hamburger {
     display: none;
@@ -131,9 +131,9 @@ body:has(.header-wrapper .header-neeyat-nav) {
 
 
 @media screen and (max-width:1024px) {
-    body:has(.header-wrapper .header-neeyat-nav) {
+    /* body:has(.header-wrapper .header-neeyat-nav) {
         padding-top: 71px !important;
-    }
+    } */
 
     .header-neeyat-nav>div.nav-wrapper>nav#nav>div.neeyat-header {
         padding: 0 16px;

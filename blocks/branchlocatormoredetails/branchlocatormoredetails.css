@@ -1,0 +1,472 @@
+/* Banner More Details */
+.branch-more-detail .default-content-wrapper{
+    padding-top: 76px;
+    position: relative;
+    padding-bottom: 34px;
+}
+
+
+.branch-more-detail .default-content-wrapper h1{
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 40px;
+    color: var(--darkcharcoal);
+    font-family: "Nunito-Extrabold";
+}
+
+.branch-more-detail .default-content-wrapper p:nth-child(2){
+    width: 35%;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 16px;
+    line-height: 24px;
+    color: var( --darkgrey);
+    font-family: "Nunito-Regular";
+}
+
+.branch-more-detail .default-content-wrapper p:nth-child(3){
+    font-weight: 400;
+    margin-top: 13px;
+    line-height: 20px;
+    font-size: 0.875rem;
+    color: var( --darkgrey);
+    font-family: "Nunito-Regular";
+}
+
+.branch-more-detail .default-content-wrapper ul:nth-child(4){
+    display: flex;
+    margin-top: 27px;
+    width: fit-content;
+}
+
+.branch-more-detail .default-content-wrapper ul:nth-child(4) li{
+    gap: 8px;
+    height: 18px;
+    display: flex;
+    padding: 0 22px;
+    font-weight: 400;
+    line-height: 20px;
+    font-size: 0.875rem;
+    color: var( --darkgrey);
+    font-family: "Nunito-Regular";
+    border-right: 1px solid var(--dustygrey);
+}
+
+.branch-more-detail .default-content-wrapper ul:nth-child(4) li:first-child{
+    padding-left: 0;
+}
+
+.branch-more-detail .default-content-wrapper ul:nth-child(4) li:last-child{
+    border: none;
+}
+
+.branch-more-detail .default-content-wrapper ul:nth-child(4) li .icon{
+    width: 12px;
+    height: 12px;
+}
+
+.branch-more-detail .default-content-wrapper ul:nth-child(4) li .icon img{
+    width: 12px;
+    height: 12px;
+    vertical-align: middle;
+}
+
+.branch-more-detail .default-content-wrapper ul:nth-child(4) li:last-child .icon img{
+    width: 18px;
+    height: 18px;
+}
+
+.branch-more-detail .default-content-wrapper ul:nth-child(4) li:last-child .icon{
+    width: 18px;
+    height: 18px;
+}
+
+.branch-more-detail .default-content-wrapper p:nth-child(5){
+    right: 0;
+    bottom: 60px;
+    position: absolute;
+}
+/* Banner More Details */
+
+/*Map Location*/
+.branchlocator-moredetail-map .branchlocatormoredetails-wrapper .branchlocatormoredetails .map-title h1{
+    font-size: 1.5rem;
+    line-height: 32px;
+    color: var(--darkcharcoal);
+}
+
+.branchlocator-moredetail-map .branchlocatormoredetails-wrapper .branchlocatormoredetails .map-container{
+    margin-top: 16px;
+    min-height: 568px;
+    border-radius: 16px;
+}
+
+.branchlocator-moredetail-map .branchlocatormoredetails-wrapper .branchlocatormoredetails .map-container .map-wrapper{
+    border-radius: 16px;   
+}
+/*Map Location*/
+
+/* Cards Customer Review*/
+.branchcustomer-review-cards{
+    margin-top: 108px;
+}
+
+.branchcustomer-review-cards .default-content-wrapper h2{
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 40px;
+    margin-bottom: 32px;
+    color: var( --darkcharcoal);
+    font-family: "Nunito-Extrabold";
+}
+
+.section.branchcustomer-review-cards div.carousel-wrapper{
+    position: relative;
+}
+
+.branchcustomer-review-cards .carousel-wrapper .carousel.block{
+    position: static;
+}
+
+.branchcustomer-review-cards .carousel-wrapper .carousel.block  #carouselInner > div.glider-track{
+    gap: 23px;
+    padding: 15px;
+}
+
+.branchcustomer-review-cards .carousel-wrapper .carousel.block  #carouselInner > div.glider-track > div.teaser.block{
+    border-radius: 16px;
+    padding: 18px 24px 54px;
+    background-color: var(--piramal-white-100);
+    box-shadow: 0 0 12px 0 rgba(51 51 51 / 8%) , 0 4px 4px 0 rgb(0 0 0 / 25%)  ;
+}
+
+.branchcustomer-review-cards .carousel-wrapper .carousel.block  #carouselInner > div.glider-track > div.teaser.block .background .foreground .text .title h3{
+    font-weight: 700;
+    line-height: 28px;
+    font-size: 1.25rem;
+    font-family: "Nunito-Bold";
+    color: var(--darkcharcoal);
+}
+
+.branchcustomer-review-cards .carousel-wrapper .carousel.block  #carouselInner > div.glider-track > div.teaser.block .background .foreground .text .long-description p:nth-child(1){
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--grey);
+    font-family: "Nunito-Regular";
+}
+
+.branchcustomer-review-cards .carousel-wrapper .carousel.block  #carouselInner > div.glider-track > div.teaser.block .background .foreground .text .long-description p:nth-child(2){
+    margin-top: 8px;
+}
+
+.branchcustomer-review-cards .carousel-wrapper .carousel.block  #carouselInner > div.glider-track > div.teaser.block .background .foreground .text .long-description p:nth-child(2) .icon{
+    width: 32px;
+    height: 32px;
+}
+
+.branchcustomer-review-cards .carousel-wrapper .carousel.block  #carouselInner > div.glider-track > div.teaser.block .background .foreground .text .short-description{
+    width: 88%;
+    margin-top: 24px;
+}
+
+.branchcustomer-review-cards .carousel-wrapper .carousel.block  #carouselInner > div.glider-track > div.teaser.block .background .foreground .text .short-description p:first-child{
+    font-weight: 400;
+    line-height: 26px;
+    font-size: 1.125rem;
+    color: var(--darkcharcoal);
+    font-family: "Nunito-Regular";
+}
+
+/* Glider Button*/
+.branchcustomer-review-cards .carousel-navigation-buttons .slide-prev,
+.branchcustomer-review-cards .carousel-navigation-buttons .slide-next{
+    margin: 0; 
+    width: 40px;
+    height: 40px;
+}
+
+.branchcustomer-review-cards .carousel-navigation-buttons .slide-prev{
+    top: 36%;
+    left: -45px;
+}
+
+.branchcustomer-review-cards .carousel-navigation-buttons .slide-next{
+    top: 36%;
+    right: -45px;
+}
+/* Glider Button*/
+
+/* Cards Customer Review*/
+
+/* About Branch*/
+.branchlocator-about .default-content-wrapper h2{
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 40px;
+    color: var(--darkcharcoal);
+    font-family: "Nunito-Extrabold";
+}
+
+.branchlocator-about .default-content-wrapper p{
+    font-size: 1rem;
+    margin-top: 23px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var( --darkgrey);
+    font-family: "Nunito-Regular";
+}
+
+.branchlocator-about .default-content-wrapper p strong{
+    font-weight: 700;
+    font-family: "Nunito-Bold";
+    color: var(--darkcharcoal);
+}
+
+.branchlocator-about .default-content-wrapper p em{
+    cursor: pointer;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--orange);
+    font-family: "Nunito-Bold";
+    text-decoration: underline;
+}
+/* About Branch*/
+
+/* Media Query */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+/* Banner More Details */
+.branch-more-detail div.default-content-wrapper{
+    padding-top: 26px;
+    padding-bottom: 38px;
+}
+
+.branch-more-detail .default-content-wrapper h1{
+    margin-top: 24px;
+    line-height: 34px;
+    font-size: 1.875rem;
+} 
+
+.branch-more-detail .default-content-wrapper p:nth-child(2){
+    margin-top: 12px;
+}
+
+.branch-more-detail .default-content-wrapper p:nth-child(5) {
+    top: 60px;
+    right: 8px;
+    width: 125px;
+    height: 125px;
+}
+
+.branch-more-detail .default-content-wrapper p:nth-child(5) picture img{
+    width: 125px;
+    height: 125px;
+}
+/* Banner More Details */
+
+/* Locator Map */
+.branchlocator-moredetail-map .branchlocatormoredetails-wrapper .branchlocatormoredetails .map-title h1{
+    line-height: 36px;
+    font-size: 1.75rem;
+}
+
+.branchlocator-moredetail-map .branchlocatormoredetails-wrapper .branchlocatormoredetails .map-container{
+    margin-top: 10px;
+    min-height: 450px;
+}
+/* Locator Map */
+
+/* Cards Customer Review*/
+.branchcustomer-review-cards{
+    margin-top: 48px;
+}
+
+.branchcustomer-review-cards .default-content-wrapper h2{
+    font-weight: 700;
+    line-height: 32px;
+    font-size: 1.75rem;
+    margin-bottom: 14px;
+    font-family: "Nunito-Bold";
+}
+
+.branchcustomer-review-cards .carousel-wrapper .carousel.block #carouselInner > div.glider-track > div.teaser.block .background .foreground .text .short-description {
+    width: 100%;
+}
+
+/* Glider Button*/
+.branchcustomer-review-cards .carousel-navigation-buttons{
+    display: none;
+}
+/* Glider Button*/
+
+/* Glider Dots */
+.branchcustomer-review-cards div.button-container.glider-dots{
+    display: flex;
+    padding-top: 10px;
+}
+
+.branchcustomer-review-cards .carousel.block>.button-container button{
+    background-color: transparent;
+}
+
+.branchcustomer-review-cards .carousel.block>.button-container button.glider-dot.active{
+    background: var(--dark-color);
+}
+/* Glider Dots */
+/* Cards Customer Review*/
+
+/* About Branch*/
+.branchlocator-about .default-content-wrapper h2{
+    line-height: 36px;
+    font-size: 1.75rem;
+}
+
+.branchlocator-about .default-content-wrapper p{
+    margin-top: 18px;
+}
+/* About Branch*/
+
+}
+
+@media screen and (max-width: 767px) {
+/* Banner More Details */
+.branch-more-detail .breadcrumb-wrapper{
+    display: none;
+}
+
+.branch-more-detail div.default-content-wrapper{
+    padding-top: 22px;
+    padding-bottom: 29px;
+}
+
+.branch-more-detail .default-content-wrapper h1{
+    font-weight: 700;
+    line-height: 36px;
+    font-size: 1.75rem;
+    font-family: "Nunito-Bold";
+}
+
+.branch-more-detail .default-content-wrapper p:nth-child(2){
+    width: 75%;
+    margin-top: 4px;
+    line-height: 20px;
+    font-size: 0.875rem;
+}
+
+.branch-more-detail .default-content-wrapper p:nth-child(3){
+    margin-top: 16px;
+    line-height: 20px;
+    font-size: 0.875rem;
+}
+
+.branch-more-detail .default-content-wrapper ul:nth-child(4){
+    gap: 9px 8px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.branch-more-detail .default-content-wrapper ul:nth-child(4) li{
+    border: unset;
+    padding: unset;
+    font-size: 0.75rem;
+}
+
+.branch-more-detail .default-content-wrapper ul:nth-child(4) li:first-child{
+    position: relative;
+}
+
+.branch-more-detail .default-content-wrapper ul:nth-child(4) li:first-child::after{
+    right: 0;
+    bottom: 0;
+    width: 80%;
+    content: '';
+    position: absolute;
+    border-bottom: 1px solid var(--dustygrey);
+}
+
+.branch-more-detail .default-content-wrapper ul:nth-child(4) li:last-child .icon img{
+    width: 16px;
+    height: 16px;
+}
+
+.branch-more-detail .default-content-wrapper ul:nth-child(4) li:last-child .icon{
+    width: 16px;
+    height: 16px;
+}
+
+.branch-more-detail .default-content-wrapper p:nth-child(5) {
+    top: 22px;
+    right: 10px;
+}
+
+.branch-more-detail .default-content-wrapper p:nth-child(5) picture img{
+    width: 47px;
+    height: 47px;
+}
+/* Banner More Details */
+
+/* Locator Map */
+.branchlocator-moredetail-map .branchlocatormoredetails-wrapper .branchlocatormoredetails .map-title h1{
+    font-size: 1.5rem;
+    line-height: 32px;
+}
+
+.branchlocator-moredetail-map .branchlocatormoredetails-wrapper .branchlocatormoredetails .map-container{
+    margin-top: 6px;
+    min-height: 286px;
+}
+/* Locator Map */
+
+/* Cards Customer Review*/
+.branchcustomer-review-cards{
+    margin-top: 42px;
+}
+
+.branchcustomer-review-cards .default-content-wrapper h2{
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 32px;
+    margin-bottom: 14px;
+    font-family: "Nunito-Bold";
+}
+
+.branchcustomer-review-cards .carousel-wrapper .carousel.block #carouselInner > div.glider-track > div.teaser.block .background .foreground .text .short-description {
+    width: 100%;
+}
+
+/* Glider Button*/
+.branchcustomer-review-cards .carousel-navigation-buttons{
+    display: none;
+}
+/* Glider Button*/
+
+/* Glider Dots */
+.branchcustomer-review-cards div.button-container.glider-dots{
+    display: flex;
+    padding-top: 10px;
+}
+
+.branchcustomer-review-cards .carousel.block>.button-container button{
+    background-color: transparent;
+}
+
+.branchcustomer-review-cards .carousel.block>.button-container button.glider-dot.active{
+    background: var(--dark-color);
+}
+/* Glider Dots */
+
+/* Cards Customer Review*/
+
+/* About Branch*/
+.branchlocator-about .default-content-wrapper h2{
+    font-size: 1.5rem;
+    line-height: 32px;
+}
+
+.branchlocator-about .default-content-wrapper p{
+    margin-top: 14px;
+}
+/* About Branch*/
+
+}
+/* Media Query */

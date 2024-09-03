@@ -83,10 +83,11 @@
 .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper{
     top: 48px;
     left: 4px;
-    width: 220px;
+    z-index: 10;
+    width: 97%;
     overflow: auto;
     cursor: pointer;
-    max-height: 335px;
+    max-height: 330px;
     position: absolute;
     padding: 20px 12px 0;
     border-radius: 0 0 12px 12px;
@@ -99,9 +100,9 @@
     font-weight: 400;
     line-height: 16px;
     font-size: 0.75rem;
-    padding-left: 21px;
     font-family: "Nunito-Regular";
     border-bottom: 1px solid var(--zinc);
+    width: 100%;
 }
 
 .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper input#search::placeholder{
@@ -110,18 +111,24 @@
     font-size: 0.75rem;
     color: var(--zinc);
     font-family: "Nunito-Regular";
+    padding-left: 21px;
 }
 
 .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper .option-wrapper{
     margin-top: 10px;
 }
 
-.section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper .option-wrapper .option{
+.section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper .option-wrapper>a {
+    text-decoration: none;
+}
+
+.section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper .option-wrapper>a>li{
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
     color: var(--darkcharcoal);
     font-family: "Nunito-Regular";
+    padding: 5px 0;
 }
 
 .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper .option-wrapper .option:not(:nth-child(1)){
@@ -161,7 +168,7 @@
     max-width: 290px;
 }
 
-.section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container p:nth-child(1){
+.section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container > p:nth-child(1){
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 32px;
@@ -170,8 +177,8 @@
     font-family: "Nunito-Bold";
 }
 
-.section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container p:nth-child(2),
-.section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container p:nth-child(3){
+.section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container .branch-deatils p:nth-child(1),
+.section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container .branch-deatils p:nth-child(2){
     font-weight: 400;
     line-height: 26px;
     font-size: 1.125rem;
@@ -179,11 +186,12 @@
     color: var(--darkcharcoal);
 }
 
-.section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container p:nth-child(3){
+.section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container .branch-deatils p:nth-child(2){
     color: var(--black);
 }
 
-.section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container button.btn-locate{
+.section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container button.btn-locate,
+.section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container .btn-locate-details{
     margin: 0;
     width: 100%;
     border: none;
@@ -208,168 +216,6 @@
 
 /* Map */
 
-/*.section.support-branch-locator .branchlocator-wrapper .branchlocator .dropdowns {
-    display: flex;
-    gap: 29px;
-    margin-bottom: 24px;
-    position: relative;
-}
-
-.section.support-branch-locator .state-options.options.dp-blocks {
-    display: block;
-}
-
-.section.support-branch-locator .branchlocator-wrapper .branchlocator .dropdowns .dropdown {
-    width: 256px;
-    height: 40px;
-    cursor: pointer;
-    border-radius: 8px;
-    color: #365069;
-    font-size: 1rem;
-    border: 1px solid;
-    display: flex;
-    padding: 8px 16px;
-    position: relative;
-    align-items: center;
-}
-
-.section.support-branch-locator .branchlocator-wrapper .branchlocator .dropdowns .dropdown::after {
-    right: 17px;
-    content: '';
-    position: absolute;
-    border: solid black;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 3px;
-    transform: rotate(45deg);
-    border-radius: 0 0 2px 0;
-}
-
-.section.support-branch-locator .branchlocator-wrapper .branchlocator .dropdowns .dropdown .option.active {
-    color: #365069;
-    font-weight: 700;
-    line-height: 20px;
-    font-size: 0.875rem;
-    font-family: "Nunito-Bold";
-}
-
-.section.support-branch-locator .branchlocator-wrapper .branchlocator .dropdowns .dropdown .options {
-    position: absolute;
-    top: 48px;
-    width: 220px;
-    height: 353.3px; 
-    overflow: auto;
-    background-color: #fff;
-    padding: 20px 12px;
-    border-radius: 10px;
-    z-index: 2; 
-    box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 25%);
-}
-
-.section.support-branch-locator .branchlocator-wrapper .branchlocator .dropdowns .dropdown .options::-webkit-scrollbar {
-    width: 2px;
-    height: 2px;
-    scroll-behavior: smooth;
-}
-
-.section.support-branch-locator .branchlocator-wrapper .branchlocator .dropdowns .dropdown .options::-webkit-scrollbar-thumb {
-    margin-right: 12px;
-    border-radius: 40px;
-    background-color: #D9D9D9;
-    background-clip: padding-box;
-}
-
-.section.support-branch-locator .branchlocator-wrapper .branchlocator .dropdowns .dropdown .options::-webkit-scrollbar-button {
-    display: none;
-}
-
-.section.support-branch-locator .branchlocator-wrapper .branchlocator .dropdowns .dropdown .options input {
-    border: none;
-    line-height: 16px;
-    padding-left: 21px;
-    padding-bottom: 4px;
-    border-bottom: 1px solid var(--zinc);
-}
-
-.section.support-branch-locator .branchlocator-wrapper .branchlocator .dropdowns .dropdown .options input::placeholder {
-    font-weight: 400;
-    line-height: 16px;
-    color: var(--zinc);
-    font-size: 0.75rem;
-    text-transform: capitalize;
-    font-family: "Nunito-Regular";
-}
-
-.section.support-branch-locator .branchlocator-wrapper .branchlocator .dropdowns .dropdown .options div {
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 400;
-    margin-top: 16px;
-    line-height: 24px;
-    font-family: "Nunito-Regular";
-    color: var(--darkcharcoal);
-}*/
-
-/*.section.support-branch-locator .branchlocator-wrapper .branchlocator .map-btn-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 108px;
-}
-
-.section.support-branch-locator .branchlocator-wrapper .branchlocator .map-btn-wrapper .branch-info {
-    display: flex;
-    flex-direction: column;
-    max-width: 290px;
-}
-
-.section.support-branch-locator .branchlocator-wrapper .branchlocator .map-btn-wrapper .branch-info p:first-child {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 700;
-    color: var(--darkcharcoal);
-    font-family: "Nunito-Bold";
-}
-
-.section.support-branch-locator .branchlocator-wrapper .branchlocator .map-btn-wrapper .branch-info p:nth-child(2) {
-    font-size: 1.125rem;
-    line-height: 26px;
-    font-weight: 400;
-    margin-top: 16px;
-    color: var(--darkcharcoal);
-    font-family: "Nunito-Regular";
-}
-
-.section.support-branch-locator .branchlocator-wrapper .branchlocator .map-btn-wrapper .branch-info p:nth-child(3) {
-    font-weight: 400;
-    line-height: 26px;
-    color: var(--black);
-    font-size: 1.125rem;
-    margin-top: 5px;
-    font-family: "Nunito-Regular";
-}
-
-.section.support-branch-locator .branchlocator-wrapper .branchlocator .map-btn-wrapper .branch-info>button {
-    background-color: #F26841;
-    padding: 8px 16px;
-    border-radius: 6px;
-    margin: 0;
-    line-height: 20px;
-    font-size: 14px;
-    letter-spacing: 0;
-    font-weight: 700;
-    margin-top: 16px;
-    color: var(--white);
-    font-family: "Nunito-Bold";
-}
-
-.section.support-branch-locator .branchlocator-wrapper .branchlocator .map-btn-wrapper .map-container {
-    width: 625px;
-    height: 538px;
-    background-color: var(--zinc);
-}*/
-
-
 /* cards Branchs */
 .section.branchlocator-cards .cards-branches .title h2 {
     font-weight: 700;
@@ -390,10 +236,14 @@
 }
 
 .section.branchlocator-cards .cards-branches .cards-container .cards-wrapper .card-box {
+    height: 100%;
     border-radius: 16px;
     padding: 18px 24px 24px;
     background-color: var(--white);
     box-shadow: 0 4px 12px 0px rgb(0  0% 20%/ 8%) ,  0 4px 12px 0px rgb(0  0% 20%/ 12%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .section.branchlocator-cards .cards-branches .cards-container .cards-wrapper .card-box .card-title {
@@ -405,6 +255,8 @@
 }
 
 .section.branchlocator-cards .cards-branches .cards-container .cards-wrapper .card-box .card-address {
+    width: 90%;
+    min-height: 96px;
     font-size: 1rem;
     margin-top: 12px;
     font-weight: 400;
@@ -510,8 +362,8 @@
 
     .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper{
         left: 0;
-        z-index: 10;
-        width: inherit;
+        width: 100%;
+        max-height: 280px;
     }
 
     .section.branchlocator-map .container .map-branchinfo-wrapper{
@@ -542,63 +394,6 @@
         border-radius: 8px;
     }
 
-    /*.section.support-branch-locator .branchlocator-wrapper .branchlocator .dropdowns {
-        gap: 24px;
-    }
-
-    .section.support-branch-locator .branchlocator-wrapper .branchlocator .dropdowns .dropdown {
-        width: 100%;
-    }
-
-    .section.support-branch-locator .branchlocator-wrapper .branchlocator .dropdowns .dropdown .option.active {
-        line-height: 20px;
-        font-size: 0.875rem;
-    }
-
-    .section.support-branch-locator .branchlocator-wrapper .branchlocator .dropdowns .dropdown .options {
-        left: 0;
-        width: inherit;
-    }
-
-    .section.support-branch-locator .branchlocator-wrapper .branchlocator .dropdowns .dropdown .options input {
-        width: inherit;
-        box-sizing: border-box;
-    }*/
-
-   /* .section.support-branch-locator .branchlocator-wrapper .branchlocator .map-btn-wrapper {
-        gap: 18px;
-        flex-direction: column-reverse;
-    }
-
-    .section.support-branch-locator .branchlocator-wrapper .branchlocator .map-btn-wrapper .branch-info {
-        width: 100%;
-        max-width: unset;
-    }
-
-    .section.support-branch-locator .branchlocator-wrapper .branchlocator .map-btn-wrapper .branch-info p:first-child {
-        line-height: 28px;
-        font-size: 1.25rem;
-    }
-
-    .section.support-branch-locator .branchlocator-wrapper .branchlocator .map-btn-wrapper .branch-info p:nth-child(2) {
-        font-size: 1rem;
-        line-height: 24px;
-    }
-
-    .section.support-branch-locator .branchlocator-wrapper .branchlocator .map-btn-wrapper .branch-info p:nth-child(3) {
-        font-size: 1rem;
-        line-height: 24px;
-    }
-
-    .section.support-branch-locator .branchlocator-wrapper .branchlocator .map-btn-wrapper .branch-info>button {
-        width: 100%;
-    }
-
-    .section.support-branch-locator .branchlocator-wrapper .branchlocator .map-btn-wrapper .map-container {
-        width: 100%;
-        max-height: 284px;
-    }*/
-
     .section.branchlocator-cards .cards-branches .title h2 {
         line-height: 28px;
         font-size: 1.25rem;
@@ -619,5 +414,15 @@
 
     .section.branchlocator-cards .cards-branches .cards-container .cards-wrapper .card-box .card-gmail {
         margin-top: 25px;
+    }
+
+    .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper .option-wrapper>a>li {
+        font-size: 0.875rem;
+        line-height: 22px;
+        padding: 3px 0;
+    }
+
+    .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper input#search::placeholder{
+        padding-left: 15px;
     }
 }

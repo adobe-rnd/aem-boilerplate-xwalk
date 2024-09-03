@@ -84,7 +84,7 @@ export function innerBranchFunc(branchhList){
                 `<div class='card-box'>
               <h3 class='card-title'> ${eachBranch['Location']} </h3>
               <p class='card-address'>${eachBranch['Address']}</p>
-              <p class='card-gmail'> <span> <img src='/images/Vector.png' alt='gmail-icon'/> </span> customercare@piramal.com </p>
+              <p class='card-gmail'> <span> <img src='/images/gmail.svg' alt='gmail-icon'/> </span> customercare@piramal.com </p>
               <button id='more-details-btn' type='button'> More details </button>
             </div>`;
   });

@@ -121,11 +121,13 @@
 
     .section.sarfaesi-retail-wrapper .sarfaesiretail-wrapper .sarfaesiretail table tr th{
         word-break: break-word;
-        width: 60px;
+        /* width: 60px; */
+        word-break: auto-phrase;
+
     }
-    .section.sarfaesi-retail-wrapper .sarfaesiretail-wrapper .sarfaesiretail table tr th:nth-child(n+4){
+    /* .section.sarfaesi-retail-wrapper .sarfaesiretail-wrapper .sarfaesiretail table tr th:nth-child(n+4){
         width: 130px;
-    }
+    } */
     .section.sarfaesi-retail-wrapper .sarfaesiretail-wrapper .sarfaesiretail table{
-        table-layout: fixed;
+        table-layout: auto;
     }

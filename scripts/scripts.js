@@ -687,17 +687,6 @@ async function loadLazy(doc) {
   sampleRUM.observe(main.querySelectorAll("div[data-block-name]"));
   sampleRUM.observe(main.querySelectorAll("picture > img"));
 
-
-  // Loading Body Analytics
-  // let noScript = document.createElement("noscript");
-  // let iframe = document.createElement("iframe");
-  // iframe.src = "https://www.googletagmanager.com/ns.html?id=GTM-T5MTVQ9";
-  // iframe.height = "0";
-  // iframe.width = "0";
-  // iframe.style.display = "none";
-  // iframe.style.visibility = "hidden";
-  // noScript.appendChild(iframe);
-  // document.querySelector(":scope > body").appendChild(noScript);
 }
 
 /**
