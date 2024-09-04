@@ -2584,9 +2584,9 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "ImageAlt",
+        "name": "alt",
         "value": "Default alt",
-        "label": "Alt Text"
+        "label": "ImageAlt"
       }
     ]
   }
