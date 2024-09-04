@@ -3,3 +3,4 @@ sitemaps:
     source: /query-index.json
     destination: /sitemap.xml
     lastmod: YYYY-MM-DD
+    title: title
