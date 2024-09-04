@@ -44,10 +44,9 @@ export function branchLocator_Map(_block){
                                     <p class="branch-addr">Branch - Borivali east</p>
                                     <p class="branch-distance">Distance - 1.4km </p>
                                  </div>
-                                 <div class='locate-me-wrapper'>
-                                    <img src='../images/location-pointer.svg' class="locate-me-img" alt="locate-me-img">
-                                    <button class="btn-locate">Locate Me</button>
-                                 </div>
+                                    <button class="btn-locate"><img src='../images/location-pointer.svg' class="locate-me-img" alt="locate-me-img">
+                                    <span>Locate Me</span>
+                                    </button>
                                  <a class="btn-locate-details dp-none">Branch Details</a>
                             </div>
 
