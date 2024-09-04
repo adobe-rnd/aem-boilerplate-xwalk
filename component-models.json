@@ -2541,5 +2541,53 @@
   {
     "id": "branchlocatormoredetails",
     "fields": []
+  },
+  {
+    "id": "moredetailsaddress",
+    "fields": [
+      {
+        "component": "richtext",
+        "label": "Title",
+        "name": "text1",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "label": "Address Desktop",
+        "name": "text2",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "label": "Address Mobile",
+        "name": "text3",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "label": "Holiday",
+        "name": "text4",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "label": "Info",
+        "name": "text5",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "label": "Image",
+        "name": "reference",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt",
+        "value": "Default alt",
+        "label": "ImageAlt"
+      }
+    ]
   }
 ]
