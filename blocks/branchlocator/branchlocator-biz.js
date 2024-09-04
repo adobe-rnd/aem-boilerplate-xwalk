@@ -183,7 +183,7 @@ function myMap(lat, long, sortedBranch) {
         position: new google.maps.LatLng(lat, long),
         title: "You are here",
         icon: {
-          url: "./images/blue-icon.png",
+          url: "../image/location-pin.svg",
           size: new google.maps.Size(48, 48),
           origin: new google.maps.Point(0, 0),
           anchor: new google.maps.Point(24, 42),
@@ -210,7 +210,7 @@ export function bizCityDD(getExcelData, block){
           setLocationObj.cityhash[City] = City;
           let newState = setLocationObj.geoInfo.state.replace(' ', '-');
           let newCity = City.replace(' ', '-');
-          acc += `<a href='/${newState.toLowerCase()}/${newCity.toLowerCase()}/loans-in-${newCity.toLowerCase()}-${newState.toLowerCase()}-${locationCode}'><li class='city-option option' data-info='${City}'>${City}</li></a>`;
+          acc += `<a href='/${newState.toLowerCase()}/${newCity.toLowerCase()}'><li class='city-option option' data-info='${City}'>${City}</li></a>`;
         }
         return acc;
       }, "");
@@ -284,10 +284,15 @@ export function locateMeClick(block){
           initMap(gettingStortedBranchlat, gettingStortedBranchlag);
           let currentDistance = calculateDistance(setLocationObj.lat, setLocationObj.lng, gettingStortedBranchlat, gettingStortedBranchlag);
           block.closest('.section').querySelector('.branch-addr').innerText = `Branch - ${branchhList[0]['Location']}`;
-          block.closest('.section').querySelector('.branch-distance').innerText = `Distance - ${Math.round(currentDistance)} km `;
+          block.closest('.section').querySelector('.branch-distance').innerText = `Distance - ${currentDistance.toFixed(1)} km `;
           block.closest('.section').querySelector('.title-to-show').innerText = `Find all ${setLocationObj.geoInfo.city} Branches here`;
           block.closest('.section').querySelector('.btn-locate').classList.add('dp-none');
           block.closest('.section').querySelector('.btn-locate-details').classList.remove('dp-none');
+          setLocationObj.seturl.state = setLocationObj.geoInfo.state.charAt(0).toLowerCase() + setLocationObj.geoInfo.state.slice(1).replace(' ', '-');
+          setLocationObj.seturl.city = setLocationObj.geoInfo.city.charAt(0).toLowerCase() + setLocationObj.geoInfo.city.slice(1).replace(' ', '-');
+          setLocationObj.seturl.location= branchhList[0]['Location Code'];
+          let settingBranchURl = `/${setLocationObj.seturl.state}/${setLocationObj.seturl.city}/loans-in-${setLocationObj.seturl.city}-${setLocationObj.seturl.state}-${setLocationObj.seturl.location}`;
+          block.closest('.section').querySelector('.btn-locate-details').setAttribute('href', settingBranchURl);
           block.closest('.section').querySelector('.branch-deatils').classList.remove('dp-none');
         });
         bizStateDD(getExcelData, block);
