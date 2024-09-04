@@ -2580,6 +2580,13 @@
         "label": "Image",
         "name": "reference",
         "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt",
+        "value": "Default alt",
+        "label": "Alt Text"
       }
     ]
   }
