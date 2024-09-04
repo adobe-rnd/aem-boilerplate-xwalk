@@ -3,12 +3,10 @@
 }
 
 .section.branch-locater-banner .default-content-wrapper {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
+    position: relative;
 }
 
-.section.branch-locater-banner .default-content-wrapper p:nth-child(1) {
+.section.branch-locater-banner .default-content-wrapper p {
     font-weight: 400;
     font-size: 1.5rem;
     line-height: 32px;
@@ -16,7 +14,7 @@
     font-family: "Nunito-Regular";
 }
 
-.section.branch-locater-banner .default-content-wrapper p:nth-child(1) strong {
+.section.branch-locater-banner .default-content-wrapper h1 {
     font-size: 3rem;
     font-weight: 800;
     line-height: 60px;
@@ -27,9 +25,15 @@
 }
 
 
-.section.branch-locater-banner .default-content-wrapper p:nth-child(2) picture img {
+.section.branch-locater-banner .default-content-wrapper p:nth-child(3)>picture>img {
     width: 124px;
     height: 120px;
+}
+
+.section.branch-locater-banner .default-content-wrapper p:nth-child(3) {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 /* DropDown CSS */
@@ -78,6 +82,12 @@
     padding: 3px;
     transform: rotate(45deg);
     border-radius: 0 0 2px 0;
+    transition: transform .3s linear;
+}
+
+.dropdown.dropdown-li-logic:has(.dropdown-option-wrapper:not(.dp-none)) .dropdown-selectvalue::after {
+    transform: rotate(-135deg) !important;
+    top: 17px !important;
 }
 
 .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper{
@@ -111,7 +121,6 @@
     font-size: 0.75rem;
     color: var(--zinc);
     font-family: "Nunito-Regular";
-    padding-left: 21px;
 }
 
 .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper .option-wrapper{
@@ -190,23 +199,43 @@
     color: var(--black);
 }
 
+.section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container button.btn-locate img {
+    width: 24px;
+    height: 24px;
+}
+
+.section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container button.btn-locate>span,
+.section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container button.btn-locate,
+.section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container .btn-locate-details {
+    font-size: 0.875rem;
+    line-height: 20px;
+    color: var(--white);
+    font-family: "Nunito-Bold";
+}
+
 .section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container button.btn-locate,
 .section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container .btn-locate-details{
     margin: 0;
-    width: 100%;
     border: none;
-    height: 40px;
     font-weight: 700;
     margin-top: 16px;
-    line-height: 20px;
-    padding: 8px 16px;
+    padding: 10px 16px;
     border-radius: 8px;
-    font-size: 0.875rem;
-    color: var(--white);
-    font-family: "Nunito-Bold";
     background-color: var(--orange);
+    text-decoration: none;
+    max-width: 290px;
+    width: 100%;
+    display: block;
+    text-align: center;
 }
 
+.section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container button.btn-locate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px 16px;
+}
 
 .section.branchlocator-map .container .map-branchinfo-wrapper .map-container{
     width: 625px;
@@ -280,9 +309,7 @@
     margin-right: 8px;
 }
 
-.section.branchlocator-cards .cards-branches .cards-container .cards-wrapper .card-box #more-details-btn {
-    margin: 0;
-    width: 100%;
+.section.branchlocator-cards .cards-branches .cards-container .cards-wrapper .card-box a:last-child {
     margin-top: 29px;
     font-weight: 700;
     padding: 8px 16px;
@@ -294,6 +321,10 @@
     display: inline-block;
     font-family: "Nunito-Bold";
     background-color: var(--orange);
+}
+
+.section.branchlocator-cards .cards-branches .cards-container .cards-wrapper .card-box a:last-child:hover {
+    text-decoration: none;
 }
 
 @media screen and (min-width:768px) and (max-width: 1024px) {
@@ -310,42 +341,51 @@
         gap: 25px 15px;
         grid-template-columns: 1fr 1fr;
     }
+
+    .section.branch-locater-banner .default-content-wrapper p:nth-child(2) {
+        width: 80%;
+    }
+
+    .section.branch-locater-banner .default-content-wrapper p:nth-child(3) {
+        right: 16px;
+    }
+
+    .section.branch-locater-banner {
+        padding: 50px 0 40px;
+    }
 }
 
 @media screen and (max-width: 767px) {
     .section.branch-locater-banner {
-        padding: 21px 0 45px;
+        padding: 50px 0 40px;
     }
 
-    .section.branch-locater-banner .breadcrumb-wrapper{
-        display: none;
-    }
-
-    .section.branch-locater-banner .default-content-wrapper {
-        gap: 28px;
-        justify-content: unset;
-        align-items: flex-start;
-        flex-direction: column-reverse;
-    }
-
-    .section.branch-locater-banner .default-content-wrapper p:nth-child(1) {
-        width: 83%;
+    .section.branch-locater-banner .default-content-wrapper p {
         font-size: 1rem;
         line-height: 24px;
     }
 
-    .section.branch-locater-banner .default-content-wrapper p:nth-child(1) strong {
+    .section.branch-locater-banner .default-content-wrapper h1 {
         line-height: 36px;
         font-size: 1.75rem;
     }
 
-    .section.branch-locater-banner .default-content-wrapper p:nth-child(2) {
-        align-self: flex-end;
+    .section.branch-locater-banner .default-content-wrapper p:nth-child(3)>picture>img {
+        width: 72px;
+        height: auto;
     }
 
-    .section.branch-locater-banner .default-content-wrapper p:nth-child(2) picture img {
-        width: 72px;
-        height: fit-content;
+    .section.branch-locater-banner .default-content-wrapper p:nth-child(3) {
+        right: 28px;
+    }
+
+    .section.branch-locater-banner .default-content-wrapper p:nth-child(2) {
+        width: 75%;
+    }
+
+    .section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container button.btn-locate, 
+    .section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container .btn-locate-details {
+        max-width: unset;
     }
     
     .section.branchlocator-dropdown .container .dropdown-wrapper {
@@ -420,9 +460,5 @@
         font-size: 0.875rem;
         line-height: 22px;
         padding: 3px 0;
-    }
-
-    .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper input#search::placeholder{
-        padding-left: 15px;
     }
 }
