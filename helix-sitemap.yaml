@@ -3,4 +3,5 @@ sitemaps:
     source: /query-index.json
     destination: /sitemap-english.xml
     lastmod: YYYY-MM-DD
+    title: { title }
     priority: 1
