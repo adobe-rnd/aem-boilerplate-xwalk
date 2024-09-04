@@ -82,6 +82,12 @@
     padding: 3px;
     transform: rotate(45deg);
     border-radius: 0 0 2px 0;
+    transition: transform .3s linear;
+}
+
+.dropdown.dropdown-li-logic:has(.dropdown-option-wrapper:not(.dp-none)) .dropdown-selectvalue::after {
+    transform: rotate(-135deg) !important;
+    top: 17px !important;
 }
 
 .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-option-wrapper{
