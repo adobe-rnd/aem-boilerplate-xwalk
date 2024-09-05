@@ -1,0 +1,55 @@
+.section.sheet-update-content-wrap .update-sheet.block .update-content-wrapper {
+    min-height: calc(100vh - var(--nav-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.section.sheet-update-content-wrap .update-sheet.block .update-content-wrapper h1 {
+    margin: 0;
+    color: #000;
+    display: block;
+    font-family: 'Nunito-Extrabold', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 2.5rem;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.section.sheet-update-content-wrap .update-sheet.block .update-content-wrapper .select-container select {
+    min-width: 300px;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-family: 'Nunito-Semibold';
+    font-size: 1rem;
+}
+
+.section.sheet-update-content-wrap .update-sheet.block .update-content-wrapper .input-field input {
+    min-width: 280px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid var(--darkgrey);
+    margin-bottom: 25px;
+    font-family: "Nunito-Bold";
+}
+
+.section.sheet-update-content-wrap .update-sheet.block .update-content-wrapper button {
+    background: var(--orange);
+    color: var(--white);
+    border-radius: 8px;
+    padding: 8px;
+    margin: unset;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-family: "Nunito-Bold";
+    min-width: 202px;
+    border: unset;
+}
+
+.section.sheet-update-content-wrap .update-sheet.block .update-content-wrapper .input-field input::placeholder {
+    font-family: "Nunito-Semibold";
+    font-size: 1rem;
+}

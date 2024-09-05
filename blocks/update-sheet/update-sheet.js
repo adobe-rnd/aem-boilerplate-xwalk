@@ -1,16 +1,17 @@
 export function update_sheet(_block) {
-    let update_form = `<div class='container'>
+    let update_form = `<div class='update-content-wrapper'>
+                            <h1>Update Sheet</h1>
                             <div class='select-container'>
-                                <select name="" id="">
+                                <select>
                                     <option value="">one</option>
                                     <option value="">two</option>
                                     <option value="">three</option>
                                 </select>
                             </div>
                             <div class='input-field'>
-                                <input type="text">
+                                <input type="text" placeholder="Enter">
                             </div>
-                            <button class='submit-btn'>submit</button>    
+                            <button class='submit-btn'>Submit</button>    
                         </div>`
     return update_form;
 }
