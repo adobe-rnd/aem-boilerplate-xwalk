@@ -2543,6 +2543,17 @@
     "fields": []
   },
   {
+    "id": "updatesheet",
+    "fields": [
+      {
+        "component": "text",
+        "label": "text",
+        "name": "text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "moredetailsaddress",
     "fields": [
       {
@@ -2589,5 +2600,36 @@
         "label": "ImageAlt"
       }
     ]
-  }
+  },
+  {
+    "id": "branchdetaildescription",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Branch Detail Description",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "form",
+    "fields": [
+      {
+        "component": "text",
+        "name": "form-data-json",
+        "value": "",
+        "label": "Form Data JSON",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "api-url",
+        "value": "",
+        "label": "API Url",
+        "valueType": "string"
+      }
+    ]
+  },
 ]

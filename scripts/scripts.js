@@ -1,6 +1,7 @@
 import { formOpen, overlay } from "../blocks/applyloanform/applyloanforms.js";
 import { statemasterGetStatesApi } from "../blocks/applyloanform/statemasterapi.js";
 import { validationJSFunc } from "../blocks/applyloanform/validation.js";
+import { showingStateCity } from "../blocks/branchlocator/branchlocator-render.js";
 import { toggleAllNavSections } from "../blocks/header/header.js";
 import { applyLoanInteraction } from "../dl.js";
 import { sampleRUM, loadHeader, loadFooter, decorateButtons, decorateIcons, decorateSections, decorateBlocks, decorateTemplateAndTheme, waitForLCP, loadBlocks, loadCSS, fetchPlaceholders } from "./aem.js";
@@ -833,8 +834,12 @@ body?.addEventListener("click", function (e) {
   if (document.querySelector(".branch-locater-banner") && e.target.classList.contains("search-input")) {
     return;
   } else if (document.querySelector(".branch-locater-banner") && (!e.target.closest(".deafult-state-selected") || !e.target.closest(".deafult-city-selected"))) {
+    let searchInput = document.querySelectorAll('.search-input')
+    showingStateCity(searchInput);
     document.querySelector(".state-wrapper").classList.add("dp-none");
     document.querySelector(".city-wrapper").classList.add("dp-none");
+    document.querySelector(".state-wrapper > input").value = "";
+    document.querySelector(".city-wrapper > input").value = "";
   }
 
 });
