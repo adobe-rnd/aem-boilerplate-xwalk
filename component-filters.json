@@ -179,9 +179,5 @@
   {
     "id": "container",
     "components": []
-  },
-  {
-    "id": "branchdetaildescription",
-    "components": ["title", "button"]
   }
 ]

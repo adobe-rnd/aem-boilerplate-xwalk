@@ -2,8 +2,8 @@
     min-height: calc(100vh - var(--nav-height));
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
+    margin-top: 30px;
 }
 
 .section.sheet-update-content-wrap .update-sheet.block .update-content-wrapper h1 {
