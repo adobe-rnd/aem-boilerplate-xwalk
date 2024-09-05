@@ -914,5 +914,6 @@ function renderSchema() {
   }
   const script = document.createElement('script')
   script.innerHTML = JSON.stringify(schema)
+  document.head.append(script)
 }
 renderSchema()
