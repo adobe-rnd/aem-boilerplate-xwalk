@@ -800,9 +800,9 @@ body?.addEventListener("click", function (e) {
       toggleAllNavSections(navSections);
       navSection.setAttribute("aria-expanded", "false");
       navSections.setAttribute('aria-expanded', 'false');
-      if(document.querySelector("body").classList.contains("modal-open") && navSection.getAttribute('aria-expanded') === 'false'){
+      if (document.querySelector("body").classList.contains("modal-open") && navSection.getAttribute('aria-expanded') === 'false') {
         document.querySelector("body").classList.remove("modal-open")
-   }
+      }
     });
   }
   if (e.target.classList.contains("overlay")) {
@@ -830,12 +830,12 @@ body?.addEventListener("click", function (e) {
   }
 
   // Branch Locator DropDown Closer
-  if(document.querySelector(".branch-locater-banner") && e.target.classList.contains("search-input")){
+  if (document.querySelector(".branch-locater-banner") && e.target.classList.contains("search-input")) {
     return;
-  }else if (document.querySelector(".branch-locater-banner") && (!e.target.closest(".deafult-state-selected") || !e.target.closest(".deafult-city-selected"))){
+  } else if (document.querySelector(".branch-locater-banner") && (!e.target.closest(".deafult-state-selected") || !e.target.closest(".deafult-city-selected"))) {
     document.querySelector(".state-wrapper").classList.add("dp-none");
     document.querySelector(".city-wrapper").classList.add("dp-none");
-  } 
+  }
 
 });
 
@@ -884,3 +884,30 @@ function onCLickApplyFormOpen(e) {
   }
   e.preventDefault();
 }
+
+function renderSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Apply for a Home loan online with Piramal Finance ",
+    "url": "https://www.piramalfinance.com/",
+    "logo": "/",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "1800-266-9777",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": "en"
+    },
+    "sameAs": [
+      "https://www.facebook.com/pf",
+      "https://twitter.com/pf",
+      "https://www.instagram.com/pf/",
+      "https://www.youtube.com/pfInsurance",
+      "https://www.linkedin.com/company/pf"
+    ]
+  }
+  const script = document.createElement('script')
+  script.innerHTML = JSON.stringify(schema)
+}
+renderSchema()
