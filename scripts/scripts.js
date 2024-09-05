@@ -913,6 +913,7 @@ function renderSchema() {
     ]
   }
   const script = document.createElement('script')
+  script.type = "application/ld+json";
   script.innerHTML = JSON.stringify(schema)
   document.head.append(script)
 }
