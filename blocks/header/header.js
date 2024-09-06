@@ -1,6 +1,6 @@
+import { headerInteraction, navlogin } from '../../dl.js';
 import { fetchPlaceholders, getMetadata } from '../../scripts/aem.js';
-import { body } from '../../scripts/scripts.js';
-// import { targetObject } from '../../scripts/scripts.js';
+import { body, targetObject } from '../../scripts/scripts.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 // media query match that indicates mobile/tablet width
@@ -233,31 +233,51 @@ export default async function decorate(block) {
 
     const navSections = nav.querySelector('.nav-sections');
     if (navSections) {
+        let loginNav = navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').length - 1;
+        let loginNavLi = navSections.querySelectorAll(':scope .default-content-wrapper > ul > li')[loginNav];
+        loginNavLi.addEventListener('click', () => {
+            navlogin(targetObject.pageName);
+        });
         navSections
             .querySelectorAll(':scope .default-content-wrapper > ul > li')
-            .forEach((navSection) => {
-                wrapListUE(navSection);
-
-                if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-                navSection.addEventListener('click', () => {
-                    if (isDesktop.matches) {
-                        const expanded = navSection.getAttribute('aria-expanded') === 'true';
-                        toggleAllNavSections(navSections);
-                        if (navSection.classList.contains('nav-drop')) {
-                            navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-                            navSections.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-                            if (expanded) {
-                                body.classList.remove('modal-open');
-                            } else {
-                                body.classList.add('modal-open');
+            .forEach((navSection, index) => {
+                if (index + 1 === loginNav) {
+                    wrapListUE(navSection);
+    
+                    if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
+                    navSection.addEventListener('click', (e) => {
+                            if (isDesktop.matches) {
+                                try {
+                                    let click_text = "";
+                                    if(e.target.tagName == 'IMG' ||  e.target.querySelector('icon-language')){
+                                    click_text = e.target.getAttribute('data-icon-name');
+                                    }else{
+                                    click_text = e.target.innerText;
+                                    }
+                                    const menu_category = e.target.closest("ul").closest("li")?.querySelector("p")?.innerText || "";
+                                    targetObject.ctaPosition = "Top Menu Bar";
+                                    headerInteraction(click_text, menu_category, targetObject.ctaPosition, targetObject.pageName);
+                                  } catch (error) {
+                                    console.warn(error);
+                                  }
+                                const expanded = navSection.getAttribute('aria-expanded') === 'true';
+                                toggleAllNavSections(navSections);
+                                if (navSection.classList.contains('nav-drop')) {
+                                    navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+                                    navSections.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+                                    if (expanded) {
+                                        body.classList.remove('modal-open');
+                                    } else {
+                                        body.classList.add('modal-open');
+                                    }
+                                } else {
+                                    body.classList.remove('modal-open');
+                                    navSection.setAttribute('aria-expanded', 'false');
+                                    navSections.setAttribute('aria-expanded', 'false');
+                                }
                             }
-                        } else {
-                            body.classList.remove('modal-open');
-                            navSection.setAttribute('aria-expanded', 'false');
-                            navSections.setAttribute('aria-expanded', 'false');
-                        }
-                    }
-                });
+                    });
+                }
             });
         navSections.querySelectorAll('.button-container').forEach((buttonContainer) => {
             buttonContainer.classList.remove('button-container');
@@ -272,7 +292,7 @@ export default async function decorate(block) {
       <span class="nav-hamburger-icon"></span>
     </button>`;
     let mobFragment = null;
-    hamburger.addEventListener('click', async () => {
+    hamburger.addEventListener('click', async (e) => {
         if (!mobFragment) {
             mobFragment = await loadFragment(getMetadata('mobilenav'));
             const mobNav = mobFragment.querySelector('.default-content-wrapper');
@@ -283,9 +303,22 @@ export default async function decorate(block) {
                 wrapListUE(navSection);
             });
             mobNav.querySelectorAll('ul ul').forEach((el) => {
+                el.querySelectorAll('ul p').forEach(function (elem){
+                        elem.addEventListener('click', function(e){
+                            try {
+                                let click_text = e.target.textContent.trim();
+                                let menu_category = e.target.closest('li ul').parentNode.querySelector('p').textContent.trim();
+                                targetObject.ctaPosition = "Hamburger";
+                                headerInteraction(click_text, menu_category, targetObject.ctaPosition, targetObject.pageName);
+                            } catch (error) {
+                                console.warn(error);
+                            }
+                    });
+                });
                 el.querySelectorAll('ul').forEach((ele) => {
                     ele.setAttribute('aria-expanded', 'false');
-                    ele.parentElement.querySelector('p').addEventListener('click', () => {
+                    ele.parentElement.querySelector('p').addEventListener('click', (e) => {
+                        
                         const expanded = ele.getAttribute('aria-expanded') === 'true';
                         if (!expanded) {
                             ele.style.maxHeight = ele.scrollHeight + "px";
@@ -295,6 +328,18 @@ export default async function decorate(block) {
                         ele.setAttribute('aria-expanded', expanded ? 'false' : 'true');
                         ele.parentElement.setAttribute('aria-expanded', expanded ? 'false' : 'true');
                         ele.parentElement.querySelector('p').classList.toggle('navlist-dropdown');
+                        ele.querySelectorAll('ul > li > a').forEach(function (eachHref) {
+                            eachHref.addEventListener('click', function (e) {
+                                try {
+                                    let click_text = e.target.textContent.trim();
+                                    let menu_category = e.target?.closest('ul')?.parentNode?.querySelector('.navlist-dropdown')?.textContent.trim() || "";
+                                    targetObject.ctaPosition = "Hamburger";
+                                    headerInteraction(click_text, menu_category, targetObject.ctaPosition, targetObject.pageName);
+                                } catch (error) {
+                                    console.warn(error);
+                                }
+                            })
+                        });
                     });
                 });
             });
