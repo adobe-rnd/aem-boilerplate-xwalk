@@ -1,7 +1,5 @@
 {
   "mappings": [
-    "/content/piramalfinance/in/en/:/",
-    "/content/piramalfinance/content/in/en/:/",
     "/content/piramalfinance-eds/:/",
     "/content/piramalfinance-eds/in/en/:/",
     "/content/piramalfinance-eds/in/en/api/redirects:/api/redirects.json",
@@ -49,6 +47,8 @@
     "/content/piramalfinance-eds/in/hi/:/hi/",
     "/content/piramalfinance-eds/in/mr/:/mr/",
     "/content/piramalfinance-eds/in/headers:/.helix/headers.json",
-    "/content/piramalfinance-eds/in/configuration:/.helix/config.json"
+    "/content/piramalfinance-eds/in/configuration:/.helix/config.json",
+    "/content/piramalfinance/in/en/:/",
+    "/content/piramalfinance/content/in/en/:/"
   ]
 }
