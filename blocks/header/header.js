@@ -230,13 +230,14 @@ export default async function decorate(block) {
     a.setAttribute('href', '/');
     navBrand.append(a);
     navBrand.replaceChild(a, navBrand.firstElementChild);
-
+    var loginFlag = true;
     const navSections = nav.querySelector('.nav-sections');
     if (navSections) {
         let loginNav = navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').length - 1;
         loginNav = navSections.querySelectorAll(':scope .default-content-wrapper > ul > li')[loginNav];
         loginNav.addEventListener('click', (e) => {
             navlogin(targetObject.pageName);
+            loginFlag = false;
         });
         navSections
             .querySelectorAll(':scope .default-content-wrapper > ul > li')
@@ -245,19 +246,22 @@ export default async function decorate(block) {
                 if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
                 navSection.addEventListener('click', (e) => {
                         if (isDesktop.matches) {
-                            try {
-                                let click_text = "";
-                                if(e.target.tagName == 'IMG' ||  e.target.querySelector('icon-language')){
-                                click_text = e.target.getAttribute('data-icon-name');
-                                }else{
-                                click_text = e.target.innerText;
-                                }
-                                const menu_category = e.target.closest("ul").closest("li")?.querySelector("p")?.innerText || "";
-                                targetObject.ctaPosition = "Top Menu Bar";
-                                headerInteraction(click_text, menu_category, targetObject.ctaPosition, targetObject.pageName);
-                              } catch (error) {
-                                console.warn(error);
-                              }
+                            if(loginFlag){
+                                try {
+                                    let click_text = "";
+                                    if(e.target.tagName == 'IMG' ||  e.target.querySelector('icon-language')){
+                                    click_text = e.target.getAttribute('data-icon-name');
+                                    }else{
+                                    click_text = e.target.innerText;
+                                    }
+                                    const menu_category = e.target.closest("ul").closest("li")?.querySelector("p")?.innerText || "";
+                                    targetObject.ctaPosition = "Top Menu Bar";
+                                    headerInteraction(click_text, menu_category, targetObject.ctaPosition, targetObject.pageName);
+                                  } catch (error) {
+                                    console.warn(error);
+                                  }
+                            }
+                            loginFlag = true;
                             const expanded = navSection.getAttribute('aria-expanded') === 'true';
                             toggleAllNavSections(navSections);
                             if (navSection.classList.contains('nav-drop')) {
