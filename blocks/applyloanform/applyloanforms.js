@@ -97,10 +97,12 @@ export function applyLoanFormClick() {
           loaninnerform.classList.remove("loan-form-sub-otp", "loan-form-success", "loan-form-request-fail", "loan-form-something-wrong");
           try {
             //console.log(e.target.innerText);
+              let emiName = e.target?.closest(".section")?.querySelector(".tab-common.active p")?.textContent.trim();
+              let ctaPos = e.target?.closest(".section")?.querySelector(".calculator-parent p")?.textContent.trim();
             if (e.target.innerText.trim() === "Talk to loan expert") {
-              talkToExpert("calculator", "", targetObject.calculatorType, targetObject.pageName);
+              talkToExpert("calculator", emiName, ctaPos, targetObject.pageName);
             } else if (e.target.innerText.trim() === "Apply loan now") {
-              applyLoanNow("calculator", "", targetObject.calculatorType, targetObject.pageName);
+              applyLoanNow("calculator", emiName, ctaPos, targetObject.pageName);
             }
             //console.log("calculator type :  ", targetObject.calculatorType);
           } catch (error) {
