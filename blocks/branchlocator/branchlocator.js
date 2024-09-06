@@ -44,8 +44,10 @@ export function branchLocator_Map(_block){
                                     <p class="branch-addr">Branch - Borivali east</p>
                                     <p class="branch-distance">Distance - 1.4km </p>
                                  </div>
-                                 <button class="btn-locate">Locate Me</button>
-                                 <button class="btn-locate-details dp-none">Branch Details</button>
+                                    <button class="btn-locate"><img src='../images/location-pointer.svg' class="locate-me-img" alt="locate-me-img">
+                                    <span>Locate Me</span>
+                                    </button>
+                                 <a class="btn-locate-details dp-none">Branch Details</a>
                             </div>
 
                             <div class='map-container'><div>
@@ -80,12 +82,15 @@ export function branchLocator() {
 export function innerBranchFunc(branchhList){
   let innerBranch = "";
   branchhList.forEach(eachBranch => {
+    let eachState = eachBranch['State'].charAt(0).toLowerCase() + eachBranch['State'].slice(1).replace(' ', '-');
+    let eachCity = eachBranch['City'].charAt(0).toLowerCase() + eachBranch['City'].slice(1).replace(' ', '-');
+    let eachLocationCode = eachBranch['Location Code'];
     innerBranch +=
                 `<div class='card-box'>
               <h3 class='card-title'> ${eachBranch['Location']} </h3>
               <p class='card-address'>${eachBranch['Address']}</p>
               <p class='card-gmail'> <span> <img src='/images/gmail.svg' alt='gmail-icon'/> </span> customercare@piramal.com </p>
-              <button id='more-details-btn' type='button'> More details </button>
+              <a href="/${eachState}/${eachCity}/loans-in-${eachCity}-${eachState}-${eachLocationCode}" id='more-details-btn'> More details </a>
             </div>`;
   });
   return innerBranch;

@@ -1,4 +1,4 @@
-export let branchLocatorObject = {
+export var branchLocatorObject = {
   "branch-locator": [
     {
       "Location Code": 2241,

@@ -1,7 +1,7 @@
 import { loadScript } from "../../scripts/aem.js";
 import { fetchAPI } from "../../scripts/scripts.js";
 import returnLatLan from "../select-tag/getSelectedLanguage.js";
-import { initMap } from "./branchlocator-api.js";
+import { initMap, searchBranchByURL } from "./branchlocator-api.js";
 import { setLocationObj } from "./branchlocator-init.js";
 import { renderCity, renderState } from "./branchlocator-render.js";
 import { innerBranchFunc } from "./branchlocator.js";
@@ -18,7 +18,10 @@ export function dropDownStateCity(){
 }
 
 export async function onloadBranchLocator(block) {
-  if (setLocationObj.lat && setLocationObj.lng) {
+  let branchhList = "";
+  if(await searchBranchByURL()){
+    console.log('Search By URL');
+  }else if (setLocationObj.lat && setLocationObj.lng) {
     await getStateCity(setLocationObj.lat, setLocationObj.lng);
   } else {
     // Deafult Option
@@ -33,7 +36,11 @@ export async function onloadBranchLocator(block) {
     setLocationObj.lng = defaultLatLng['Longitude'];
   }  
 
-  let branchhList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, getExcelData);
+  if (setLocationObj.geoInfo.state && !setLocationObj.geoInfo.city) {
+    branchhList = sortByState(getExcelData);
+  }else{
+    branchhList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, getExcelData);
+  }
   loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k").then((resolve) => {
     myMap(setLocationObj.lat, setLocationObj.lng, branchhList);
   });
@@ -45,6 +52,10 @@ export async function onloadBranchLocator(block) {
   let multipleBranch = innerBranchFunc(branchhList);
   block.closest('.section').querySelector('.title-to-show').innerText = `Find all ${setLocationObj.geoInfo.city} Branches here`;
   block.closest('.section').querySelector('.branch-list-wrapper').innerHTML = multipleBranch;
+  if (setLocationObj.geoInfo.state && !setLocationObj.geoInfo.city) {
+    block.closest('.section').querySelector('.city-wrapper').classList.remove('dp-none');
+    block.closest('.section').querySelector('.city-wrapper input').focus();
+  }
 }
 
 async function getStateCity(lat, lng) {
@@ -56,7 +67,7 @@ async function getStateCity(lat, lng) {
         if (results[1]) {
           let city, region, country;
           for (var j = 0; j < results.length; j++) {
-            if (results[j].types[0] === "locality") {
+            // if (results[j].types[0] === "locality") {
               for (var i = 0; i < results[j].address_components.length; i++) {
                 if (results[j].address_components[i].types[0] === "locality") {
                   city = results[j].address_components[i];
@@ -69,7 +80,7 @@ async function getStateCity(lat, lng) {
                 }
               }
               break;
-            }
+            // }
           }
 
           setLocationObj.geoInfo.city = city.long_name;
@@ -132,9 +143,22 @@ function deg2rad(deg) {
 }
 
 function myMap(lat, long, sortedBranch) {
+
+  let center = "";
+  let zoom = "";
+  if(lat && long){
+    center = new google.maps.LatLng(lat, long );
+    zoom = 10;
+  }else{
+    let latToshowIndia =  22.0000;
+    let longToShowIndia = 75.0000;
+    center = new google.maps.LatLng(latToshowIndia, longToShowIndia);
+    zoom = 5;
+  }
+
   var mapProp = {
-    center: new google.maps.LatLng(lat, long),
-    zoom: 10,
+    center: center,
+    zoom: zoom,
   };
   var map = new google.maps.Map(document.querySelector(".map-container"), mapProp);
   addMarkers();
@@ -153,33 +177,40 @@ function myMap(lat, long, sortedBranch) {
         });
 
     }
-    new google.maps.Marker({
-      position: new google.maps.LatLng(lat, long),
-      title: "You are here",
-      icon: {
-        url: "./images/blue-icon.png",
-        size: new google.maps.Size(48, 48),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(24, 42),
-      },
-      map: map,
-    });
+
+    if(lat && long){
+      new google.maps.Marker({
+        position: new google.maps.LatLng(lat, long),
+        title: "You are here",
+        icon: {
+          url: "../image/location-pin.svg",
+          size: new google.maps.Size(48, 48),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(24, 42),
+        },
+        map: map,
+      });
+    }
   }
 }  
 
 export function bizStateDD(getExcelData, block){
     setLocationObj.stateLi = Object.keys(getExcelData)
-      .map((state) => `<li class='state-option option' data-info="${state}">${state}</li>`)
-      .join("");
+      .map((state) => {
+        let newState = state.replace(' ', '-');
+        return `<a href="/${newState.toLowerCase()}"><li class='state-option option' data-info="${state}">${state}</li></a>`;
+      }).join("");
 }
 
 export function bizCityDD(getExcelData, block){
     setLocationObj.cityhash = {};
     setLocationObj.cityLi = Object.values(getExcelData[setLocationObj.geoInfo.state])
-      .reduce((acc, { City }) => {
+      .reduce((acc, { City, "Location Code": locationCode }) => {
         if (!setLocationObj.cityhash.hasOwnProperty(City)) {
           setLocationObj.cityhash[City] = City;
-          acc += `<li class='city-option option' data-info=${City}>${City}</li>`;
+          let newState = setLocationObj.geoInfo.state.replace(' ', '-');
+          let newCity = City.replace(' ', '-');
+          acc += `<a href='/${newState.toLowerCase()}/${newCity.toLowerCase()}'><li class='city-option option' data-info='${City}'>${City}</li></a>`;
         }
         return acc;
       }, "");
@@ -253,10 +284,15 @@ export function locateMeClick(block){
           initMap(gettingStortedBranchlat, gettingStortedBranchlag);
           let currentDistance = calculateDistance(setLocationObj.lat, setLocationObj.lng, gettingStortedBranchlat, gettingStortedBranchlag);
           block.closest('.section').querySelector('.branch-addr').innerText = `Branch - ${branchhList[0]['Location']}`;
-          block.closest('.section').querySelector('.branch-distance').innerText = `Distance - ${Math.round(currentDistance)} km `;
+          block.closest('.section').querySelector('.branch-distance').innerText = `Distance - ${currentDistance.toFixed(1)} km `;
           block.closest('.section').querySelector('.title-to-show').innerText = `Find all ${setLocationObj.geoInfo.city} Branches here`;
           block.closest('.section').querySelector('.btn-locate').classList.add('dp-none');
           block.closest('.section').querySelector('.btn-locate-details').classList.remove('dp-none');
+          setLocationObj.seturl.state = setLocationObj.geoInfo.state.charAt(0).toLowerCase() + setLocationObj.geoInfo.state.slice(1).replace(' ', '-');
+          setLocationObj.seturl.city = setLocationObj.geoInfo.city.charAt(0).toLowerCase() + setLocationObj.geoInfo.city.slice(1).replace(' ', '-');
+          setLocationObj.seturl.location= branchhList[0]['Location Code'];
+          let settingBranchURl = `/${setLocationObj.seturl.state}/${setLocationObj.seturl.city}/loans-in-${setLocationObj.seturl.city}-${setLocationObj.seturl.state}-${setLocationObj.seturl.location}`;
+          block.closest('.section').querySelector('.btn-locate-details').setAttribute('href', settingBranchURl);
           block.closest('.section').querySelector('.branch-deatils').classList.remove('dp-none');
         });
         bizStateDD(getExcelData, block);
@@ -271,6 +307,10 @@ export function locateMeClick(block){
           this.classList.add('dp-none');
         }
     });
+}
+
+function sortByState(getExcelData){
+  return Object.values(getExcelData[setLocationObj.geoInfo.state]);
 }
 
 

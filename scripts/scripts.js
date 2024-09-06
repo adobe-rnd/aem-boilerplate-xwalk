@@ -687,17 +687,6 @@ async function loadLazy(doc) {
   sampleRUM.observe(main.querySelectorAll("div[data-block-name]"));
   sampleRUM.observe(main.querySelectorAll("picture > img"));
 
-
-  // Loading Body Analytics
-  // let noScript = document.createElement("noscript");
-  // let iframe = document.createElement("iframe");
-  // iframe.src = "https://www.googletagmanager.com/ns.html?id=GTM-T5MTVQ9";
-  // iframe.height = "0";
-  // iframe.width = "0";
-  // iframe.style.display = "none";
-  // iframe.style.visibility = "hidden";
-  // noScript.appendChild(iframe);
-  // document.querySelector(":scope > body").appendChild(noScript);
 }
 
 /**
@@ -811,9 +800,9 @@ body?.addEventListener("click", function (e) {
       toggleAllNavSections(navSections);
       navSection.setAttribute("aria-expanded", "false");
       navSections.setAttribute('aria-expanded', 'false');
-      if(document.querySelector("body").classList.contains("modal-open") && navSection.getAttribute('aria-expanded') === 'false'){
+      if (document.querySelector("body").classList.contains("modal-open") && navSection.getAttribute('aria-expanded') === 'false') {
         document.querySelector("body").classList.remove("modal-open")
-   }
+      }
     });
   }
   if (e.target.classList.contains("overlay")) {
@@ -841,14 +830,26 @@ body?.addEventListener("click", function (e) {
   }
 
   // Branch Locator DropDown Closer
-  if(document.querySelector(".branch-locater-banner") && e.target.classList.contains("search-input")){
+  if (document.querySelector(".branch-locater-banner") && e.target.classList.contains("search-input")) {
     return;
-  }else if (document.querySelector(".branch-locater-banner") && (!e.target.closest(".deafult-state-selected") || !e.target.closest(".deafult-city-selected"))){
+  } else if (document.querySelector(".branch-locater-banner") && (!e.target.closest(".deafult-state-selected") || !e.target.closest(".deafult-city-selected"))) {
+    let searchInput = document.querySelectorAll('.search-input')
+    showingStateCity(searchInput);
     document.querySelector(".state-wrapper").classList.add("dp-none");
     document.querySelector(".city-wrapper").classList.add("dp-none");
-  } 
+    document.querySelector(".state-wrapper > input").value = "";
+    document.querySelector(".city-wrapper > input").value = "";
+  }
 
 });
+
+export function showingStateCity(searchInputAll) {
+  searchInputAll.forEach(function (eachinput) {
+    eachinput.parentElement.querySelectorAll("[data-info]").forEach(function (eachLi) {
+      eachLi.classList.remove("dp-none");
+    });
+  });
+}   
 
 setTimeout(() => {
   try {
@@ -895,3 +896,32 @@ function onCLickApplyFormOpen(e) {
   }
   e.preventDefault();
 }
+
+function renderSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Apply for a Home loan online with Piramal Finance ",
+    "url": "https://www.piramalfinance.com/",
+    "logo": "/",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "1800-266-9777",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": "en"
+    },
+    "sameAs": [
+      "https://www.facebook.com/pf",
+      "https://twitter.com/pf",
+      "https://www.instagram.com/pf/",
+      "https://www.youtube.com/pfInsurance",
+      "https://www.linkedin.com/company/pf"
+    ]
+  }
+  const script = document.createElement('script')
+  script.type = "application/ld+json";
+  script.innerHTML = JSON.stringify(schema)
+  document.head.append(script)
+}
+renderSchema()

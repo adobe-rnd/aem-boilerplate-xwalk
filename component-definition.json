@@ -869,6 +869,66 @@
               }
             }
           }
+        },
+        {
+          "title": "Update Sheet",
+          "id": "updatesheet",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Update Sheet",
+                  "model": "updatesheet"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Address Details",
+          "id": "moredetailsaddress",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "moredetailsaddress",
+                  "model": "moredetailsaddress"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Branch Detail Description",
+          "id": "branchdetaildescription",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Branch Detail Description",
+                  "model": "branchdetaildescription"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Form",
+          "id": "form",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Form",
+                  "model": "form"
+                }
+              }
+            }
+          }
         }
       ]
     }

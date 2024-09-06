@@ -1,9 +1,5 @@
-version: 1
-auto-generated: true
 sitemaps:
   default:
-    origin: https://uatmarketing.piramalfinance.com
     source: /query-index.json
-    destination: /sitemap.xml
+    destination: /sitemap-english.xml
     lastmod: YYYY-MM-DD
-    hreflang: en
