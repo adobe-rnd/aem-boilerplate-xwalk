@@ -2391,7 +2391,7 @@
         "description": "Sets the path of the Sarfaesi Retail."
       }
     ]
-    },
+  },
   {
     "id": "fontawesome",
     "fields": [
@@ -2598,6 +2598,37 @@
         "name": "alt",
         "value": "Default alt",
         "label": "ImageAlt"
+      }
+    ]
+  },
+  {
+    "id": "branchdetaildescription",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Branch Detail Description",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "form",
+    "fields": [
+      {
+        "component": "text",
+        "name": "form-data-json",
+        "value": "",
+        "label": "Form Data JSON",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "api-url",
+        "value": "",
+        "label": "API Url",
+        "valueType": "string"
       }
     ]
   }

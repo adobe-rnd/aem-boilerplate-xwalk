@@ -1,6 +1,7 @@
 .moredetailsaddress.block .address-wrapper{
     position: relative;
     padding: 76px 0 34px;
+    min-height: 292px;
 }
 
 .moredetailsaddress.block .address-wrapper .address-title h1{
@@ -64,7 +65,7 @@
 
 .moredetailsaddress.block .address-wrapper .address-img {
     position: absolute;
-    top: 30%;
+    top: 19%;
     right: 0;
     z-index: 1;
 }
@@ -77,6 +78,7 @@
 @media screen and (max-width:767px) {
     .moredetailsaddress.block .address-wrapper {
         padding: 55px 0 25px;
+        min-height: 300px;
     }
 
     .moredetailsaddress.block .address-wrapper .address-title h1 {
@@ -114,13 +116,14 @@
     }
 
     .moredetailsaddress.block .address-wrapper .address-img {
-        top: 18%;
+        top: 16%;
     }
 }
 
 @media screen and (min-width:768px) and (max-width:1024px) {
     .moredetailsaddress.block .address-wrapper {
         padding: 60px 0 34px;
+        min-height: 280px;
     }
 
     .moredetailsaddress.block .address-wrapper .address-img img {
@@ -129,6 +132,6 @@
     }
 
     .moredetailsaddress.block .address-wrapper .address-img {
-        top: 15%;
+        top: 16%;
     }
 }
