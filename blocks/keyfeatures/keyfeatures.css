@@ -103,7 +103,7 @@
     border-radius: 0 0 8px 8px;
     height: 100%;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 .section.home-loans-products-wrapper .homeloanteaser .cmp-teaser .keyfeature-container{
     border-top: 1px solid #eeebeb;

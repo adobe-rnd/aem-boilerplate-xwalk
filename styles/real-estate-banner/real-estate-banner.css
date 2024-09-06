@@ -122,4 +122,8 @@
     .section.corporate-financing-banner-wrapper .rte-text-description > p{
         width: 69.28%;
     }
+
+    .section.corporate-financing-banner-wrapper .teaserv2-wrapper .teaserv2>a .bg-image {
+        background-size: 100% 100%;
+    }
 }
