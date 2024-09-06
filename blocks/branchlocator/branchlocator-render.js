@@ -1,3 +1,4 @@
+import { showingStateCity } from "../../scripts/scripts.js";
 import { onClickCity, onClickState } from "./branchlocator-biz.js";
 import { setLocationObj } from "./branchlocator-init.js";
 
@@ -64,13 +65,7 @@ function searchStateCity(block){
     });
 }
 
-export function showingStateCity(searchInputAll) {
-  searchInputAll.forEach(function (eachinput) {
-    eachinput.parentElement.querySelectorAll("[data-info]").forEach(function (eachLi) {
-      eachLi.classList.remove("dp-none");
-    });
-  });
-}   
+
 
 
   
