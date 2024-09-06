@@ -101,6 +101,7 @@
     line-height: 24px;
     text-align: start;
     text-decoration: none;
+    min-height: 72px;
 }
 .section.carousel-articles-wrapper .default-content-wrapper .button-container{
     text-align: center;
@@ -276,5 +277,9 @@
 
     .section.carousel-articles-wrapper .carousel-wrapper .carousel {
         margin: 0 30px;
+    }
+
+    .section.carousel-articles-wrapper .long-description ul li a {
+        min-height: 96px;
     }
   }

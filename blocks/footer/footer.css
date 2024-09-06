@@ -224,7 +224,7 @@ footer.footer-wrapper .footer {
 .footer-section-second{
   display: grid;
   gap: 2px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
   padding-bottom: 40px;
 }
 .footer-section-second .columns-wrapper:first-child{
@@ -432,6 +432,7 @@ footer.footer-wrapper .footer {
   .footer-section-second{
     padding-top: unset;
     padding-bottom: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .footer-section-first .columns > div > .columns-img-col{
     margin-bottom: unset;
