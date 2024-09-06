@@ -2391,7 +2391,7 @@
         "description": "Sets the path of the Sarfaesi Retail."
       }
     ]
-    },
+  },
   {
     "id": "fontawesome",
     "fields": [
@@ -2631,5 +2631,5 @@
         "valueType": "string"
       }
     ]
-  },
+  }
 ]
