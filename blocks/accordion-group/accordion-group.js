@@ -1,4 +1,4 @@
-import { ctaClickInteraction, faqInteraction } from "../../dl.js";
+import { ctaClickInteraction, documentRequiredInteraction, faqInteraction } from "../../dl.js";
 import { fetchPlaceholders } from "../../scripts/aem.js";
 import { targetObject } from "../../scripts/scripts.js";
 import { documentRequired, generateAccordionDOM } from "../accordion/accordion.js";
@@ -59,8 +59,14 @@ function openFunctionFAQ(block) {
          /*  FAQ Analytics Start */
           try {
             const dataAnalytics = {};
+            if(title.closest(".documents-required-brown")){
+              dataAnalytics.click_text = title.querySelector("h3").textContent.trim();
+              documentRequiredInteraction(dataAnalytics)
+            }
+            else{
             dataAnalytics.click_text = title.textContent.trim();
             faqInteraction(dataAnalytics);
+            }
           } catch (error) {
             console.warn(error);
           }
