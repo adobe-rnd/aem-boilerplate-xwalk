@@ -35,7 +35,7 @@ export async function onloadBranchLocator(block) {
     setLocationObj.lat = defaultLatLng['Latitude'];
     setLocationObj.lng = defaultLatLng['Longitude'];
     let locationCode = defaultLatLng['Location Code']
-    if(!location.href.includes(setLocationObj.geoInfo.city) || !location.href.includes('author')){
+    if(!location.href.includes('author') && !location.href.includes(setLocationObj.geoInfo.city)){
       location.href = `/${setLocationObj.geoInfo.state.toLowerCase()}/${setLocationObj.geoInfo.city.toLowerCase()}/loans-in-${setLocationObj.geoInfo.state.toLowerCase()}-${setLocationObj.geoInfo.city.toLowerCase()}-${locationCode}`;
     }
   }  
