@@ -1,6 +1,6 @@
-import { loadScript } from "../../scripts/aem.js";
-import returnLatLan, { locationInLatLan } from "../select-tag/getSelectedLanguage.js";
-import { locateMeClick, onloadBranchLocator } from "./branchlocator-biz.js";
+import { fetchAPI } from "../../scripts/scripts.js";
+import { dropDownStateCity, locateMeClick, onloadBranchLocator } from "./branchlocator-biz.js";
+import { setLocationObj } from "./branchlocator-init.js";
 
 
 export function branchLocator_dropdown(_block){
@@ -96,12 +96,19 @@ export function innerBranchFunc(branchhList){
   return innerBranch;
 }
 
-export default function decorate(block) {
+export default async function decorate(block) {
 
-    const props = Array.from(block.children).map(child => child.textContent);
+    const props = Array.from(block.children, (row) => row.firstElementChild);
 
-    let { linkURL } = props;
-    
+    let [ linkURL ] = props;
+    debugger;
+
+    let url = linkURL.textContent.trim();
+    let urlRepoonse = await CFApiCall(url);
+    const jsonResponseData = JSON.parse(urlRepoonse?.data[0]?.branchlocatorobj);
+
+    setLocationObj.getExcelData = dropDownStateCity(jsonResponseData); 
+
     block.innerHTML = `${branchLocator_dropdown(block)}`;
     block.innerHTML += `${branchLocator_Map(block)}`;
     block.innerHTML += `${branchLocator()}`;
@@ -124,4 +131,10 @@ export default function decorate(block) {
     }); */
 
 }
+
+export async function CFApiCall(cfurl) {
+    const response = await fetchAPI("GET", cfurl);
+    const responseJson = await response.json();
+    return responseJson;
+  }
 

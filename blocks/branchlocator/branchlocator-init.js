@@ -6,7 +6,7 @@ let {lat, lng} = await returnLatLan();
 
 setLocationObj.lat = lat;
 setLocationObj.lng = lng;
-setLocationObj.getExcelData = dropDownStateCity(); // await while calling API
+// setLocationObj.getExcelData = dropDownStateCity(); // await while calling API
 setLocationObj.stateLi = "";
 setLocationObj.cityLi = "";
 setLocationObj.cityhash = {};
