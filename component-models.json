@@ -2631,5 +2631,17 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "nearestlocation",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "nearestlocation",
+        "value": "Nearest Location",
+        "label": "locationData"
+      }
+    ]
   }
 ]
