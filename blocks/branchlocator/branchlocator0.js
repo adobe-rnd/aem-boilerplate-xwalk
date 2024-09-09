@@ -31,7 +31,7 @@ export function branchLocator_dropdown(_block){
     };
 
 
-    const { setLocationObj.getExcelData, cityhash} = setLocationObj;
+    const { getExcelData, cityhash} = setLocationObj;
 
     setLocationObj.cityLi = Object.values(setLocationObj.getExcelData)
       .flat()
@@ -301,7 +301,7 @@ function myMap(lat, long, sortedBranch) {
 }   
 
 
-function sortingNearestBranch(lat, lng, setLocationObj.getExcelData) {
+function sortingNearestBranch(lat, lng, data) {
   const filteredLocations = Object.values(setLocationObj.getExcelData)
     .flat()
     .map((location) => {
