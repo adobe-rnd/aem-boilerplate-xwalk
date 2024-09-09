@@ -1,5 +1,5 @@
-import { ctaClickInteraction } from "../../dl.js";
-import { renderHelper } from "../../scripts/scripts.js";
+import { ctaClick, ctaClickInteraction } from "../../dl.js";
+import { renderHelper, targetObject } from "../../scripts/scripts.js";
 import { loanProductsAnalytics } from "./teaserv2-analytics.js";
 
 export default async function decorate(block) {
@@ -8,7 +8,7 @@ export default async function decorate(block) {
   block.innerHTML = "";
   block.append(renderTeaserHTML);
   loanProductsAnalytics(block);
-  if(block.closest(".section.neeyat-banner")){
+  if (block.closest(".section.neeyat-banner")) {
     block.querySelector("a").target = "_blank";
   }
 
@@ -25,6 +25,27 @@ export default async function decorate(block) {
     }
   } catch (error) {
     console.warn(error);
+  }
+  if (block.closest(".calculator-section-wrapper")) {
+    let bgImg = block.querySelector("a")
+    let tryBTN = bgImg.querySelector(".button-container-text")
+    let isCurrentTarget;
+    tryBTN.addEventListener("click", function (e) {
+      isCurrentTarget = e.currentTarget.textContent.trim().toLowerCase()
+      const title = e.target.closest(".calculator-section-wrapper").querySelector(".default-content-wrapper h2")?.innerText;
+      const blockTitle = e.target.closest(".calculator-section-wrapper .block").querySelector(".title")?.innerText;
+      let clicktext = e.target.closest(".calculator-section-wrapper ").querySelector("a .button-container-text")?.textContent.trim();
+      ctaClick(clicktext, blockTitle, title, targetObject.pageName);
+
+    })
+    bgImg.addEventListener("click", function (e) {
+      if (!(isCurrentTarget == "try now")) {
+        const title = e.target.closest(".calculator-section-wrapper").querySelector(".default-content-wrapper h2")?.innerText;
+        const blockTitle = e.target.closest(".calculator-section-wrapper .block").querySelector(".title")?.innerText;
+        let clicktext = e.target.closest(".calculator-section-wrapper ").querySelector("a .button-container-text")?.textContent.trim();
+        ctaClick(clicktext, blockTitle, title, targetObject.pageName);
+      }
+    })
   }
 }
 
@@ -104,6 +125,8 @@ export function renderTeaserHTMLFactory(props, block) {
   } */
 
   return container;
+
+
 }
 
 
