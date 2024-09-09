@@ -24,7 +24,7 @@ export async function onloadBranchLocator(block) {
   }else if (setLocationObj.lat && setLocationObj.lng) {
     await getStateCity(setLocationObj.lat, setLocationObj.lng);
   } else {
-    // Deafult Option
+    // default Option
     setLocationObj.geoInfo.city = "Mumbai";
     setLocationObj.geoInfo.state = "Maharashtra";
     setLocationObj.geoInfo.country = "India";
@@ -34,6 +34,10 @@ export async function onloadBranchLocator(block) {
     );
     setLocationObj.lat = defaultLatLng['Latitude'];
     setLocationObj.lng = defaultLatLng['Longitude'];
+    let locationCode = defaultLatLng['Location Code']
+    if(!location.href.includes('author') && !location.href.includes(setLocationObj.geoInfo.city)){
+      location.href = `/${setLocationObj.geoInfo.state.toLowerCase()}/${setLocationObj.geoInfo.city.toLowerCase()}/loans-in-${setLocationObj.geoInfo.state.toLowerCase()}-${setLocationObj.geoInfo.city.toLowerCase()}-${locationCode}`;
+    }
   }  
 
   if (setLocationObj.geoInfo.state && !setLocationObj.geoInfo.city) {
@@ -217,8 +221,8 @@ export function bizCityDD(getExcelData, block){
 }
 
 function defaultSelectedCityState(block){
-    let selectState = block.closest('.section').querySelector('.deafult-state-selected');
-    let selectCity = block.closest('.section').querySelector('.deafult-city-selected');
+    let selectState = block.closest('.section').querySelector('.default-state-selected');
+    let selectCity = block.closest('.section').querySelector('.default-city-selected');
     selectState.innerText = setLocationObj.geoInfo.state;
     selectCity.innerText = setLocationObj.geoInfo.city;
 }

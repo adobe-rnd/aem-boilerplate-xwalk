@@ -9,7 +9,7 @@ export function branchLocator_dropdown(_block){
                                 <div class='dropdown-wrapper'>
 
                                     <div class='state-dropdown dropdown dropdown-li-logic'>
-                                        <div class='dropdown-selectvalue deafult-state-selected'> Maharashtra </div>
+                                        <div class='dropdown-selectvalue default-state-selected'> Maharashtra </div>
                                         <ul class='state-vlaue-option dropdown-option-wrapper state-wrapper dp-none'>
                                             <input type='text' placeholder='State' id='search' class="search-input"/>
                                              <div class='option-wrapper'>
@@ -18,7 +18,7 @@ export function branchLocator_dropdown(_block){
                                     </div>
 
                                     <div class='city-dropdown dropdown dropdown-li-logic'>
-                                        <div class='dropdown-selectvalue deafult-city-selected'> Mumbai </div>
+                                        <div class='dropdown-selectvalue default-city-selected'> Mumbai </div>
                                         <ul class='city-vlaue-option dropdown-option-wrapper city-wrapper dp-none'>
                                             <input type='text' placeholder='City' id='search' class="search-input"/>
                                             <div class='option-wrapper'>
@@ -97,6 +97,10 @@ export function innerBranchFunc(branchhList){
 }
 
 export default function decorate(block) {
+
+    const props = Array.from(block.children).map(child => child.textContent);
+
+    let { linkURL } = props;
     
     block.innerHTML = `${branchLocator_dropdown(block)}`;
     block.innerHTML += `${branchLocator_Map(block)}`;

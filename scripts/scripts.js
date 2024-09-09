@@ -832,7 +832,7 @@ body?.addEventListener("click", function (e) {
   // Branch Locator DropDown Closer
   if (document.querySelector(".branch-locater-banner") && e.target.classList.contains("search-input")) {
     return;
-  } else if (document.querySelector(".branch-locater-banner") && (!e.target.closest(".deafult-state-selected") || !e.target.closest(".deafult-city-selected"))) {
+  } else if (document.querySelector(".branch-locater-banner") && (!e.target.closest(".default-state-selected") || !e.target.closest(".default-city-selected"))) {
     let searchInput = document.querySelectorAll('.search-input')
     showingStateCity(searchInput);
     document.querySelector(".state-wrapper").classList.add("dp-none");
