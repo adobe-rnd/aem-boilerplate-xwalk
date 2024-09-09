@@ -31,9 +31,9 @@ export function branchLocator_dropdown(_block){
     };
 
 
-    const { getExcelData, cityhash} = setLocationObj;
+    const { setLocationObj.getExcelData, cityhash} = setLocationObj;
 
-    setLocationObj.cityLi = Object.values(getExcelData)
+    setLocationObj.cityLi = Object.values(setLocationObj.getExcelData)
       .flat()
       .reduce((acc, { City }) => {
         if (!cityhash.hasOwnProperty(City)) {
@@ -43,12 +43,12 @@ export function branchLocator_dropdown(_block){
         return acc;
       }, "");
 
-      /* setLocationObj.lanLogInfo = Object.values(getExcelData)
+      /* setLocationObj.lanLogInfo = Object.values(setLocationObj.getExcelData)
       .flat().map(({ Latitude, Longitude }) => {
         return [Latitude,Longitude];
       }); */
 
-    setLocationObj.stateLi = Object.keys(getExcelData)
+    setLocationObj.stateLi = Object.keys(setLocationObj.getExcelData)
       .map((state) => `<li class='state-option option' data-state-info="${state}">${state}</li>`)
       .join("");
 
@@ -79,7 +79,7 @@ export function branchLocator_dropdown(_block){
     
     returnLatLan().then(function ({ lat, lng }) {
         if(lat && lng){
-            let branchhList = sortingNearestBranch(lat, lng, getExcelData);
+            let branchhList = sortingNearestBranch(lat, lng, setLocationObj.getExcelData);
             loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k").then((resolve) => {
                 myMap(lat, lng, branchhList);
             });
@@ -301,8 +301,8 @@ function myMap(lat, long, sortedBranch) {
 }   
 
 
-function sortingNearestBranch(lat, lng, getExcelData) {
-  const filteredLocations = Object.values(getExcelData)
+function sortingNearestBranch(lat, lng, setLocationObj.getExcelData) {
+  const filteredLocations = Object.values(setLocationObj.getExcelData)
     .flat()
     .map((location) => {
       return {

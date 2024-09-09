@@ -5,12 +5,9 @@ import { initMap, searchBranchByURL } from "./branchlocator-api.js";
 import { setLocationObj } from "./branchlocator-init.js";
 import { renderCity, renderState } from "./branchlocator-render.js";
 import { innerBranchFunc } from "./branchlocator.js";
-import { branchLocatorObject } from "./jsonobject.js";
 
-const { getExcelData } = setLocationObj;
-
-export function dropDownStateCity(){
-  const result = Object.groupBy(branchLocatorObject['branch-locator'], ({ State }) => {
+export function dropDownStateCity(response){
+  const result = Object.groupBy(response, ({ State }) => {
       const lowercaseLocation = State.toLowerCase();
       return lowercaseLocation.charAt(0).toUpperCase() + lowercaseLocation.slice(1);
   });
@@ -29,7 +26,7 @@ export async function onloadBranchLocator(block) {
     setLocationObj.geoInfo.state = "Maharashtra";
     setLocationObj.geoInfo.country = "India";
     
-    let defaultLatLng = getExcelData[setLocationObj.geoInfo.state]?.find(eachCityCheck =>
+    let defaultLatLng = setLocationObj.getExcelData[setLocationObj.geoInfo.state]?.find(eachCityCheck =>
       eachCityCheck.City === setLocationObj.geoInfo.city
     );
     setLocationObj.lat = defaultLatLng['Latitude'];
@@ -41,15 +38,15 @@ export async function onloadBranchLocator(block) {
   }  
 
   if (setLocationObj.geoInfo.state && !setLocationObj.geoInfo.city) {
-    branchhList = sortByState(getExcelData);
+    branchhList = sortByState(setLocationObj.getExcelData);
   }else{
-    branchhList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, getExcelData);
+    branchhList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
   }
   loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k").then((resolve) => {
     myMap(setLocationObj.lat, setLocationObj.lng, branchhList);
   });
-  bizStateDD(getExcelData, block);
-  bizCityDD(getExcelData, block);
+  bizStateDD(setLocationObj.getExcelData, block);
+  bizCityDD(setLocationObj.getExcelData, block);
   defaultSelectedCityState(block);
   renderCity(block, setLocationObj);
   renderState(block, setLocationObj);
@@ -114,8 +111,8 @@ function getStateName(lat, lan) {
   });
 }
 
-function sortingNearestBranch(lat, lng, getExcelData) {
-  const filteredLocations = Object.values(getExcelData)
+function sortingNearestBranch(lat, lng, data) {
+  const filteredLocations = Object.values(data)
     .flat()
     .map((location) => {
       return {
@@ -198,17 +195,17 @@ function myMap(lat, long, sortedBranch) {
   }
 }  
 
-export function bizStateDD(getExcelData, block){
-    setLocationObj.stateLi = Object.keys(getExcelData)
+export function bizStateDD(data, block){
+    setLocationObj.stateLi = Object.keys(data)
       .map((state) => {
         let newState = state.replace(' ', '-');
         return `<a href="/${newState.toLowerCase()}"><li class='state-option option' data-info="${state}">${state}</li></a>`;
       }).join("");
 }
 
-export function bizCityDD(getExcelData, block){
+export function bizCityDD(data, block){
     setLocationObj.cityhash = {};
-    setLocationObj.cityLi = Object.values(getExcelData[setLocationObj.geoInfo.state])
+    setLocationObj.cityLi = Object.values(data[setLocationObj.geoInfo.state])
       .reduce((acc, { City, "Location Code": locationCode }) => {
         if (!setLocationObj.cityhash.hasOwnProperty(City)) {
           setLocationObj.cityhash[City] = City;
@@ -231,14 +228,14 @@ export function onClickState(block){
   block.closest('.section').querySelectorAll('.state-option').forEach(function (eachState){
       eachState.addEventListener('click', function (e) {
         setLocationObj.geoInfo.state = e.target.dataset.info;
-        let excelValueObj = Object.values(getExcelData[setLocationObj.geoInfo.state]);
+        let excelValueObj = Object.values(setLocationObj.getExcelData[setLocationObj.geoInfo.state]);
         setLocationObj.geoInfo.city = excelValueObj[0]['City'];
         setLocationObj.lat = excelValueObj[0]['Latitude'];
         setLocationObj.lng = excelValueObj[0]['Longitude'];
-        bizCityDD(getExcelData);
+        bizCityDD(setLocationObj.getExcelData);
         defaultSelectedCityState(block);  
         renderCity(block);
-        let branchhList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, getExcelData);
+        let branchhList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
         loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k").then((resolve) => {
           myMap(setLocationObj.lat, setLocationObj.lng, branchhList);
         });
@@ -253,13 +250,13 @@ export function onClickCity(block){
   block.closest('.section').querySelectorAll('.city-option').forEach(function (eachCity){
       eachCity.addEventListener('click', function (e) {
         setLocationObj.geoInfo.city = e.target.dataset.info;
-        let excelValueObj = Object.values(getExcelData[setLocationObj.geoInfo.state]).filter(eachCityCheck => 
+        let excelValueObj = Object.values(setLocationObj.getExcelData[setLocationObj.geoInfo.state]).filter(eachCityCheck => 
           eachCityCheck.City === setLocationObj.geoInfo.city
         );
         setLocationObj.lat = excelValueObj[0]['Latitude'];
         setLocationObj.lng = excelValueObj[0]['Longitude'];
         defaultSelectedCityState(block);
-        let branchhList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, getExcelData);
+        let branchhList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
         loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k").then((resolve) => {
           myMap(setLocationObj.lat, setLocationObj.lng, branchhList);
         });
@@ -280,7 +277,7 @@ export function locateMeClick(block){
         setLocationObj.lng = lng;
         if(setLocationObj.lat && setLocationObj.lng){
         await getStateCity(setLocationObj.lat, setLocationObj.lng);
-        let branchhList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, getExcelData);
+        let branchhList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
         loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k").then((resolve) => {
           myMap(setLocationObj.lat, setLocationObj.lng, branchhList);
           let gettingStortedBranchlat = branchhList[0]["Latitude"];
@@ -299,8 +296,8 @@ export function locateMeClick(block){
           block.closest('.section').querySelector('.btn-locate-details').setAttribute('href', settingBranchURl);
           block.closest('.section').querySelector('.branch-deatils').classList.remove('dp-none');
         });
-        bizStateDD(getExcelData, block);
-        bizCityDD(getExcelData, block);
+        bizStateDD(setLocationObj.getExcelData, block);
+        bizCityDD(setLocationObj.getExcelData, block);
         defaultSelectedCityState(block);
         renderCity(block, setLocationObj);
         renderState(block, setLocationObj);  
@@ -313,8 +310,8 @@ export function locateMeClick(block){
     });
 }
 
-function sortByState(getExcelData){
-  return Object.values(getExcelData[setLocationObj.geoInfo.state]);
+function sortByState(data){
+  return Object.values(data[setLocationObj.geoInfo.state]);
 }
 
 

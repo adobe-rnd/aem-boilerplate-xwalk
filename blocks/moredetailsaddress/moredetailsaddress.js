@@ -41,13 +41,11 @@ export default async function decorate(block) {
     `;
 
     block.innerHTML = html;
-    debugger;
 
     let locationCodeURL = location.href.split('/').pop().split('-').pop();
 
     if(locationCodeURL){
-        const { getExcelData } = setLocationObj;
-
+        
         let splitURL = location.href.split('/');
 
         if (splitURL[4]) {
@@ -66,7 +64,7 @@ export default async function decorate(block) {
             setLocationObj.geoInfo.locationcode = splitURL[6].split("-").pop();
         }
 
-        let defaultLatLng = getExcelData[setLocationObj.geoInfo.state]?.find(eachLocationCode =>
+        let defaultLatLng = setLocationObj.getExcelData[setLocationObj.geoInfo.state]?.find(eachLocationCode =>
             eachLocationCode['Location Code'] == locationCodeURL
         );
 
