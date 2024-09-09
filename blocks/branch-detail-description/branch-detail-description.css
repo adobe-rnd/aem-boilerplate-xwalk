@@ -1,50 +1,60 @@
-.branch-description-wrapper .branch-detail-description.block>div>div>h2 {
+.branch-description-wrapper .branch-detail-description.block .branch-description-wrapper .branch-heading {
     font-family: "Nunito-Extrabold";
     font-size: 2rem;
     line-height: 40px;
     color: var(--darkcharcoal);
 }
 
-.branch-description-wrapper .branch-detail-description.block>div>div>p {
+.branch-description-wrapper .branch-detail-description.block .branch-description-wrapper>p {
+    margin-top: 23px;
+}
+
+.branch-description-wrapper .branch-detail-description.block .branch-description-wrapper .branch-description-content {
     font-family: "Nunito-Regular";
     font-size: 1rem;
-    margin-top: 23px;
     line-height: 24px;
     color: var(--darkgrey);
 }
 
-.branch-description-wrapper .branch-detail-description.block>div>div>p>em {
+.branch-description-wrapper .branch-detail-description.block .branch-description-wrapper .branch-description-content>strong {
     font-family: "Nunito-Bold";
     color: var(--darkcharcoal);
     font-style: normal;
 }
 
-.branch-description-wrapper .branch-detail-description.block>div>div>p>strong {
+.branch-description-wrapper .branch-detail-description.block .branch-description-wrapper .button-container {
     cursor: pointer;
     font-style: normal;
     color: var(--orange);
+    font-size: 1rem;
     font-family: "Nunito-Bold";
+    font-weight: 700;
     text-decoration: underline;
+    margin: unset;
+    background: transparent;
+    padding: unset;
+    border: unset;
+    border-radius: 0;
 }
 
 @media screen and (max-width: 767px) {
-    .branch-description-wrapper .branch-detail-description.block>div>div>h2 {
+    .branch-description-wrapper .branch-detail-description.block .branch-description-wrapper .branch-heading {
         font-size: 1.5rem;
         line-height: 32px;
     }
 
-    .branch-description-wrapper .branch-detail-description.block>div>div>p {
+    .branch-description-wrapper .branch-detail-description.block .branch-description-wrapper>p {
         margin-top: 14px;
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .branch-description-wrapper .branch-detail-description.block>div>div>h2 {
+    .branch-description-wrapper .branch-detail-description.block .branch-description-wrapper .branch-heading {
         line-height: 36px;
         font-size: 1.75rem;
     }
 
-    .branch-description-wrapper .branch-detail-description.block>div>div>p {
+    .branch-description-wrapper .branch-detail-description.block .branch-description-wrapper>p {
         margin-top: 18px;
     }
 }

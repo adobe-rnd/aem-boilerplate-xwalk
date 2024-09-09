@@ -4,12 +4,15 @@
 .section.knowledge-card-carousel .carousel .panel-container .teaser{
     height: 100%;
     position: relative;
-    max-width: 340px;
+    max-width: 345px;
     width: 100%;
-    margin-right: 20px;
+    /* margin-right: 20px; */
     flex-shrink: 0;
     scroll-snap-align: start;
     height: auto;
+}
+.section.knowledge-card-carousel .carousel .panel-container .glider-track {
+    column-gap: 20px;
 }
 .section.knowledge-card-carousel .carousel-wrapper .carousel .panel-container .teaser .background .front-picture picture img{
     height: 72px;
@@ -170,3 +173,9 @@
         right: 2px;
     }
 }
+
+@media screen and (min-width:1025px) and (max-width: 1300px) {
+    .section.knowledge-card-carousel .carousel .panel-container .teaser {
+        max-width: 328px;
+    }
+  }

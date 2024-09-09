@@ -120,7 +120,7 @@ async function getStateCity(lat, lng) {
         .then(async function (response) {
           response = await response.json();
           let results = response.results;
-          debugger;
+          // debugger;
           if (results[0]) {
             let getPlaceID = results[0].place_id;
 
