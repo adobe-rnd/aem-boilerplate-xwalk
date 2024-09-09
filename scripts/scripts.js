@@ -924,4 +924,11 @@ function renderSchema() {
   script.innerHTML = JSON.stringify(schema)
   document.head.append(script)
 }
-renderSchema()
+renderSchema();
+
+function getDay(){
+  const date = new Date();
+  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const currentDayOfWeek = daysOfWeek[date.getDay()];
+  return currentDayOfWeek;
+}
