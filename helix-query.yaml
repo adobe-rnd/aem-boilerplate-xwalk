@@ -34,6 +34,9 @@ indices:
       category:
         select: head > meta[name="category"]
         value: attribute(el, "content")
+      hreflang:
+        select: head > meta[name="hreflang"]
+        value: attribute(el, "content")
       lastModified:
         select: none
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")

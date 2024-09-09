@@ -1,5 +1,5 @@
 import { loadScript } from "../../scripts/aem.js";
-import returnLatLan, { locationInLatLan } from "../select-tag/getSelectedLanguage.js";
+import returnLatLan from "../select-tag/getSelectedLanguage.js";
 
 export default function decorate(block){
     block.innerHTML = `

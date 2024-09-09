@@ -2598,6 +2598,13 @@
         "name": "alt",
         "value": "Default alt",
         "label": "ImageAlt"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "url",
+        "value": "API URL",
+        "label": "Excel URL"
       }
     ]
   },

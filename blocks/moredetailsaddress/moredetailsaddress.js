@@ -123,6 +123,7 @@ async function getStateCity(lat, lng) {
           // debugger;
           if (results[0]) {
             let getPlaceID = results[0].place_id;
+            let getDetails = results[0];
 
             /* let city, region, country;
             for (var j = 0; j < results.length; j++) {
@@ -146,6 +147,7 @@ async function getStateCity(lat, lng) {
             setLocationObj.geoInfo.state = region.long_name;
             setLocationObj.geoInfo.country = country.long_name; */
             setLocationObj.placeid = getPlaceID;
+            setLocationObj.placedetails = getDetails;
             resolve();
           } else {
             reject("No results found");
@@ -188,4 +190,10 @@ async function getReviewRating(){
       resolve(err);
     })
   })
+}
+
+export async function CFApiCall(cfurl) {
+  const response = await fetchAPI("GET", cfurl);
+  const responseJson = await response.json();
+  return responseJson;
 }
