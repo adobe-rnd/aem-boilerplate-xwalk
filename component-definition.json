@@ -929,6 +929,21 @@
               }
             }
           }
+        },
+        {
+          "title": "Nearest Location",
+          "id": "nearestlocation",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Nearest Location",
+                  "model": "nearestlocation"
+                }
+              }
+            }
+          }
         }
       ]
     }
