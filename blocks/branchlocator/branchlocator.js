@@ -101,7 +101,6 @@ export default async function decorate(block) {
     const props = Array.from(block.children, (row) => row.firstElementChild);
 
     let [ linkURL ] = props;
-    debugger;
 
     let url = linkURL.textContent.trim();
     let urlRepoonse = await CFApiCall(url);
