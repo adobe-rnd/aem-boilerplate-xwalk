@@ -2598,6 +2598,13 @@
         "name": "alt",
         "value": "Default alt",
         "label": "ImageAlt"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "url",
+        "value": "API URL",
+        "label": "Excel URL"
       }
     ]
   },
@@ -2629,6 +2636,18 @@
         "value": "",
         "label": "API Url",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "nearestlocation",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "nearestlocation",
+        "value": "Nearest Location",
+        "label": "locationData"
       }
     ]
   }

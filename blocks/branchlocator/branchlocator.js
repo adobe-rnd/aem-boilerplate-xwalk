@@ -1,6 +1,6 @@
-import { loadScript } from "../../scripts/aem.js";
-import returnLatLan, { locationInLatLan } from "../select-tag/getSelectedLanguage.js";
-import { locateMeClick, onloadBranchLocator } from "./branchlocator-biz.js";
+import { fetchAPI } from "../../scripts/scripts.js";
+import { dropDownStateCity, locateMeClick, onloadBranchLocator } from "./branchlocator-biz.js";
+import { setLocationObj } from "./branchlocator-init.js";
 
 
 export function branchLocator_dropdown(_block){
@@ -9,7 +9,7 @@ export function branchLocator_dropdown(_block){
                                 <div class='dropdown-wrapper'>
 
                                     <div class='state-dropdown dropdown dropdown-li-logic'>
-                                        <div class='dropdown-selectvalue deafult-state-selected'> Maharashtra </div>
+                                        <div class='dropdown-selectvalue default-state-selected'> Maharashtra </div>
                                         <ul class='state-vlaue-option dropdown-option-wrapper state-wrapper dp-none'>
                                             <input type='text' placeholder='State' id='search' class="search-input"/>
                                              <div class='option-wrapper'>
@@ -18,7 +18,7 @@ export function branchLocator_dropdown(_block){
                                     </div>
 
                                     <div class='city-dropdown dropdown dropdown-li-logic'>
-                                        <div class='dropdown-selectvalue deafult-city-selected'> Mumbai </div>
+                                        <div class='dropdown-selectvalue default-city-selected'> Mumbai </div>
                                         <ul class='city-vlaue-option dropdown-option-wrapper city-wrapper dp-none'>
                                             <input type='text' placeholder='City' id='search' class="search-input"/>
                                             <div class='option-wrapper'>
@@ -96,8 +96,18 @@ export function innerBranchFunc(branchhList){
   return innerBranch;
 }
 
-export default function decorate(block) {
-    
+export default async function decorate(block) {
+
+    const props = Array.from(block.children, (row) => row.firstElementChild);
+
+    let [ linkURL ] = props;
+
+    let url = linkURL.textContent.trim();
+    let urlRepoonse = await CFApiCall(url);
+    const jsonResponseData = JSON.parse(urlRepoonse?.data[0]?.branchlocatorobj);
+
+    setLocationObj.getExcelData = dropDownStateCity(jsonResponseData); 
+
     block.innerHTML = `${branchLocator_dropdown(block)}`;
     block.innerHTML += `${branchLocator_Map(block)}`;
     block.innerHTML += `${branchLocator()}`;
@@ -120,4 +130,10 @@ export default function decorate(block) {
     }); */
 
 }
+
+export async function CFApiCall(cfurl) {
+    const response = await fetchAPI("GET", cfurl);
+    const responseJson = await response.json();
+    return responseJson;
+  }
 

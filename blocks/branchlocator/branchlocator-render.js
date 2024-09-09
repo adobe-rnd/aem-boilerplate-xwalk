@@ -19,7 +19,7 @@ export function renderCity(block){
 }
 
 function hideshowState(block){
-        block.closest('.section').querySelector('.deafult-state-selected').addEventListener('click', function (e) {
+        block.closest('.section').querySelector('.default-state-selected').addEventListener('click', function (e) {
             e.stopImmediatePropagation();
             let searchInput = block.closest('.section').querySelectorAll('.search-input');
             showingStateCity(searchInput);
@@ -34,7 +34,7 @@ function hideshowState(block){
 }
 
 function hideshowCity(block){
-        block.closest('.section').querySelector('.deafult-city-selected').addEventListener('click', function (e) {
+        block.closest('.section').querySelector('.default-city-selected').addEventListener('click', function (e) {
             e.stopImmediatePropagation();
             let searchInput = block.closest('.section').querySelectorAll('.search-input');
             showingStateCity(searchInput);
