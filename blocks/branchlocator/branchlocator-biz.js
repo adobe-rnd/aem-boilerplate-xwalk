@@ -304,7 +304,7 @@ export function locateMeClick(block){
         let multipleBranch = innerBranchFunc(branchhList);
         block.closest('.section').querySelector('.branch-list-wrapper').innerHTML = multipleBranch;      
         }else{
-          block.closest('.section').querySelector('.nearest-txt').innerText = "Kindly enable your Location and Refersh the page";
+          block.closest('.section').querySelector('.nearest-txt').innerText = "Kindly enable your Location and Refresh the page";
           this.classList.add('dp-none');
         }
     });
