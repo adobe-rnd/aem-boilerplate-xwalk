@@ -96,6 +96,13 @@ export function innerBranchFunc(branchhList){
   return innerBranch;
 }
 
+export async function CFApiCall(cfurl) {
+    const response = await fetchAPI("GET", cfurl);
+    const responseJson = await response.json();
+    return responseJson;
+  }
+
+
 export default async function decorate(block) {
 
     const props = Array.from(block.children, (row) => row.firstElementChild);
@@ -131,9 +138,4 @@ export default async function decorate(block) {
 
 }
 
-export async function CFApiCall(cfurl) {
-    const response = await fetchAPI("GET", cfurl);
-    const responseJson = await response.json();
-    return responseJson;
-  }
 

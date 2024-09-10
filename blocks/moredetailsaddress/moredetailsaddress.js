@@ -199,9 +199,8 @@ async function onbranchDetails(block) {
         setLocationObj.distance = calculateDistance(setLocationObj.lat,setLocationObj.lng, locationInLatLan.lat,locationInLatLan.lng);
         if(setLocationObj.distance.toFixed() <= 40){
           document.querySelectorAll('.address-info ul li')[2].innerText = `${setLocationObj.distance.toFixed()} Km away from your location`;
-          document.querySelectorAll('.address-info ul li')[2].classList.remove('dp-none');
         }else{
-          document.querySelectorAll('.address-info ul li')[2].classList.add('dp-none');
+          document.querySelectorAll('.address-info ul li')[2].remove();
         }
       }
     });
@@ -209,6 +208,9 @@ async function onbranchDetails(block) {
     let sortedBranch = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
     
     renderData(sortedBranch);
+    setTimeout(() => {
+      reviewRender();
+    }, 3000);
 
   }
 }
@@ -260,6 +262,78 @@ function renderData(storeData){
   });
 
 }
+
+function reviewRender(){
+  let ratingSpan = renderRatingDiv();
+  document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").innerHTML = ratingSpan;
+  let reviewCards = document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").querySelectorAll(".carousel-item");
+  debugger;
+  if(reviewCards.length > 3){
+    new Glider(document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner"), {
+        "slidesToShow": 1,
+        "slidesToScroll": 1,
+        "scrollLock": true,
+        "draggable": true,
+        "responsive": [
+          { "breakpoint": 767, "settings": { "slidesToShow": 2, "slidesToScroll": 1 } },
+          { "breakpoint": 1025, "settings": { "slidesToShow": 3, "slidesToScroll": 1, "scrollLock": true, "draggable": true, "settings": { "slidesToShow": 2, "slidesToScroll": 1, "duration": 0.25 } } }
+        ]
+      });
+  }else{
+    document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").querySelector(".carousel-navigation-buttons").classList.add("dp-none");
+  }
+}
+
+function renderRatingDiv () {
+  debugger;
+  let html = '';
+  setLocationObj.review.forEach(function (eachEle) {
+
+    let starDiv = '';
+    let starToShow = eachEle['rating'];
+    if( (5 - eachEle['rating'] == 0)){
+      for (let index = 0; index < starToShow; index++) {
+        starDiv += `<span class="icon icon-star_Color"><img data-icon-name="star_Color" src="/icons/star_Color.svg" alt="" loading="lazy" /></span>`;
+      }
+    }else if(5 - eachEle['rating'] != 0){
+      let subelem = 5 - eachEle['rating'];
+      for (let index = 0; index < starToShow; index++) {
+        starDiv += `<span class="icon icon-star_Color"><img data-icon-name="star_Color" src="/icons/star_Color.svg" alt="" loading="lazy" /></span>`;
+      }
+      for (let index = 0; index < subelem; index++) {
+        starDiv += `<span class="icon icon-star_outline"><img data-icon-name="star_outline" src="/icons/star_outline.svg" alt="" loading="lazy" /></span>`;
+      }
+    }
+    
+
+
+    html += 
+    `<div class="teaser block carousel-item light">
+    <div class="background">
+      <div class="front-picture"></div>
+      <div class="foreground">
+        <div class="text">
+          <div class="title">
+            <h3 id="rushikesh-nasare">${eachEle['author_name']}</h3>
+          </div>
+          <div class="long-description">
+            <p>Posted on: ${eachEle['relative_time_description']}</p>
+            <p>
+              ${starDiv}
+            </p>
+          </div>
+          <div class="short-description"><p>${eachEle['text']}</p></div>
+          <div class="cta"></div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+  });
+
+  return html;
+}
+
+
 
 /* function nearBybranch(){
   debugger;
