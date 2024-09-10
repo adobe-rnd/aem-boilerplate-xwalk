@@ -926,9 +926,9 @@ function renderSchema() {
 }
 renderSchema();
 
-function getDay(){
+export function getDay(){
   const date = new Date();
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const currentDayOfWeek = daysOfWeek[date.getDay()];
-  return currentDayOfWeek;
+  return currentDayOfWeek
 }

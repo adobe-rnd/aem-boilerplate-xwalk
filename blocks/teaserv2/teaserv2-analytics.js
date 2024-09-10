@@ -14,9 +14,9 @@ export function loanProductsAnalytics(block) {
     calculatorTryNowBtn && calculatorTryNowBtn.addEventListener("click", function (e) {
       // e.stopImmediatePropagation();
       //console.log(e.target.innerText);
-      const title = calculatorSectionWrapper.querySelector(".default-content-wrapper h2")?.innerText;
-      const blockTitle = block.querySelector(".title")?.innerText;
-      ctaClick(e.target.innerText, blockTitle, title, targetObject.pageName);
+      // const title = calculatorSectionWrapper.querySelector(".default-content-wrapper h2")?.innerText;
+      // const blockTitle = block.querySelector(".title")?.innerText;
+      // ctaClick(e.target.innerText, blockTitle, title, targetObject.pageName);
     })
   } catch (error) {
     console.warn(error);
