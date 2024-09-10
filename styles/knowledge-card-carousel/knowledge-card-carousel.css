@@ -131,7 +131,7 @@
         background: #000;
         opacity: .2;
     }
-    .section.knowledge-card-carousel .carousel.block>.button-container button.active{
+    .section.knowledge-card-carousel .carousel.block>.button-container button.glider-active{
         background-color: #000;
         border-radius: 4px;
         height: 4px;
