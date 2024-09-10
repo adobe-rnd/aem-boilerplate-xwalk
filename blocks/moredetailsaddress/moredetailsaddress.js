@@ -274,7 +274,7 @@ function renderData(storeData){
   let currentDay = getDay();
   setLocationObj.working?.forEach(element => {
     if(element.includes(currentDay)){
-      document.querySelector('.address-timing p').innerText = `Open: ${element}`;
+      document.querySelector('.address-timing p').innerText = `${element}`;
     }
   });
 
