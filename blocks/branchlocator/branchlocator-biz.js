@@ -6,13 +6,22 @@ import { setLocationObj } from "./branchlocator-init.js";
 import { renderCity, renderState } from "./branchlocator-render.js";
 import { innerBranchFunc } from "./branchlocator.js";
 
-export function dropDownStateCity(response){
-  const result = Object.groupBy(response, ({ State }) => {
-      const lowercaseLocation = State.toLowerCase();
-      return lowercaseLocation.charAt(0).toUpperCase() + lowercaseLocation.slice(1);
-  });
+export function dropDownStateCity(response) {
+  const result = response.reduce((acc, { State }) => {
+    const lowercaseLocation = State.toLowerCase();
+    const formattedState = lowercaseLocation.charAt(0).toUpperCase() + lowercaseLocation.slice(1);
+
+    if (!acc[formattedState]) {
+      acc[formattedState] = [];
+    }
+    acc[formattedState].push(State);
+    
+    return acc;
+  }, {});
+
   return result;
 }
+
 
 export async function onloadBranchLocator(block) {
   let branchhList = "";

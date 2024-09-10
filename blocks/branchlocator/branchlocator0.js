@@ -7,13 +7,22 @@ import {branchLocatorObject} from "./jsonobject.js";
 
 let setLocationObj = {};
 
-function dropDownStateCity(){
-    const result = Object.groupBy(branchLocatorObject['branch-locator'], ({ State }) => {
-        const lowercaseLocation = State.toLowerCase();
-        return lowercaseLocation.charAt(0).toUpperCase() + lowercaseLocation.slice(1);
-    });
-    return result;
+export function dropDownStateCity(response) {
+  const result = response.reduce((acc, { State }) => {
+    const lowercaseLocation = State.toLowerCase();
+    const formattedState = lowercaseLocation.charAt(0).toUpperCase() + lowercaseLocation.slice(1);
+
+    if (!acc[formattedState]) {
+      acc[formattedState] = [];
+    }
+    acc[formattedState].push(State);
+    
+    return acc;
+  }, {});
+
+  return result;
 }
+
 
 export function branchLocator_dropdown(_block){
 
