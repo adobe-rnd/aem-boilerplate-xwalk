@@ -115,9 +115,9 @@ export default async function decorate(block) {
 
     setLocationObj.getExcelData = dropDownStateCity(jsonResponseData); 
 
-    block.innerHTML = `${branchLocator_dropdown(block)}`;
-    block.innerHTML += `${branchLocator_Map(block)}`;
-    block.innerHTML += `${branchLocator()}`;
+    block.innerHTML = branchLocator_dropdown(block);    ;
+    block.innerHTML += branchLocator_Map(block);
+    block.innerHTML += branchLocator();
 
     onloadBranchLocator(block);
     locateMeClick(block);
