@@ -8,19 +8,17 @@ import {branchLocatorObject} from "./jsonobject.js";
 let setLocationObj = {};
 
 export function dropDownStateCity(response) {
-  const result = response.reduce((acc, { State }) => {
-    const lowercaseLocation = State.toLowerCase();
-    const formattedState = lowercaseLocation.charAt(0).toUpperCase() + lowercaseLocation.slice(1);
+  const groupedByState = {};
 
-    if (!acc[formattedState]) {
-      acc[formattedState] = [];
+  response.forEach((location) => {
+    const state = location.State;
+    if (!groupedByState[state]) {
+      groupedByState[state] = [];
     }
-    acc[formattedState].push(State);
-    
-    return acc;
-  }, {});
+    groupedByState[state].push(location);
+  });
 
-  return result;
+  return groupedByState;
 }
 
 
