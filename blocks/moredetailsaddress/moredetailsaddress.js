@@ -1,7 +1,7 @@
 import { fetchAPI, getDay } from "../../scripts/scripts.js";
-import { branchLocatorObject } from "../branchlocator/jsonobject.js";
 
-let setLocationObj = {};
+
+export let setLocationObj = {};
 let locationInLatLan = {};
 // setLocationObj.getExcelData = dropDownStateCity(); // await while calling API
 setLocationObj.stateLi = "";
@@ -126,30 +126,21 @@ async function getStateCity(lat, lng) {
     });
   }
 
-  export function dropDownStateCity(){
-    const result = Object.groupBy(branchLocatorObject['branch-locator'], ({ State }) => {
-        const lowercaseLocation = State.toLowerCase();
-        return lowercaseLocation.charAt(0).toUpperCase() + lowercaseLocation.slice(1);
-    });
-    return result;
-  }
-
-  /* export function dropDownStateCity(response) {
-    const result = response.reduce((acc, { State }) => {
-      const lowercaseLocation = State.toLowerCase();
-      const formattedState = lowercaseLocation.charAt(0).toUpperCase() + lowercaseLocation.slice(1);
+  export function dropDownStateCity(response) {
+    const groupedByState = {};
   
-      if (!acc[formattedState]) {
-        acc[formattedState] = [];
+    response.forEach((location) => {
+      // const state = location.State;
+      let lowercaseLocation = location.State.toLowerCase();
+      lowercaseLocation = lowercaseLocation.charAt(0).toUpperCase() + lowercaseLocation.slice(1);
+      if (!groupedByState[lowercaseLocation]) {
+        groupedByState[lowercaseLocation] = [];
       }
-      acc[formattedState].push(State);
-      
-      return acc;
-    }, {});
+      groupedByState[lowercaseLocation].push(location);
+    });
   
-    return result;
-  } */
-  
+    return groupedByState;
+  }
 
 
 async function getReviewRating(placeID){
@@ -223,10 +214,12 @@ async function onbranchDetails(block) {
     });
 
     let sortedBranch = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
+    setLocationObj.storedata =  sortedBranch;
     
-    renderData(sortedBranch);
+    renderData();
     setTimeout(() => {
       reviewRender();
+      // settingCurrentLoct(setLocationObj);
     }, 3000);
 
   }
@@ -267,7 +260,7 @@ function sortingNearestBranch(lat, lng, data) {
 }
 
 
-function renderData(storeData){
+function renderData(){
   document.querySelector('.address-title h1').innerText = setLocationObj.geoInfo.city;
   document.querySelector('.address-desktop p').innerText = setLocationObj.address;
   document.querySelector('.address-mobile p').innerText = setLocationObj.address;
@@ -284,25 +277,28 @@ function reviewRender(){
   let ratingSpan = renderRatingDiv();
   document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").innerHTML = ratingSpan;
   let reviewCards = document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").querySelectorAll(".carousel-item");
-  debugger;
-  if(reviewCards.length > 3){
-    new Glider(document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner"), {
-        "slidesToShow": 1,
-        "slidesToScroll": 1,
-        "scrollLock": true,
-        "draggable": true,
-        "responsive": [
-          { "breakpoint": 767, "settings": { "slidesToShow": 2, "slidesToScroll": 1 } },
-          { "breakpoint": 1025, "settings": { "slidesToShow": 3, "slidesToScroll": 1, "scrollLock": true, "draggable": true, "settings": { "slidesToShow": 2, "slidesToScroll": 1, "duration": 0.25 } } }
-        ]
-      });
-  }else{
+  let currentNextButton = document.querySelector(".branchcustomer-review-cards").querySelector(".glider-next");
+  let currentPrevButton = document.querySelector(".branchcustomer-review-cards").querySelector(".glider-prev");
+  new Glider(document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner"), {
+      "slidesToShow": 1,
+      "slidesToScroll": 1,
+      "scrollLock": true,
+      "draggable": true,
+      "arrows": {
+        prev: currentPrevButton,
+        next: currentNextButton
+      },
+      "responsive": [
+        { "breakpoint": 767, "settings": { "slidesToShow": 2, "slidesToScroll": 1 } },
+        { "breakpoint": 1025, "settings": { "slidesToShow": 3, "slidesToScroll": 1, "scrollLock": true, "draggable": true, "settings": { "slidesToShow": 2, "slidesToScroll": 1, "duration": 0.25 } } }
+      ]
+    });
+  if(reviewCards.length <= 3){
     document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").querySelector(".carousel-navigation-buttons").classList.add("dp-none");
   }
 }
 
 function renderRatingDiv () {
-  debugger;
   let html = '';
   setLocationObj.review.forEach(function (eachEle) {
 

@@ -1,8 +1,6 @@
 import { loadScript } from "../../scripts/aem.js";
-import { fetchAPI } from "../../scripts/scripts.js";
 import returnLatLan from "../select-tag/getSelectedLanguage.js";
 import { onloadBranchLocator } from "./branchlocator-biz.js";
-import {branchLocatorObject} from "./jsonobject.js";
 
 
 let setLocationObj = {};
@@ -11,11 +9,13 @@ export function dropDownStateCity(response) {
   const groupedByState = {};
 
   response.forEach((location) => {
-    const state = location.State;
-    if (!groupedByState[state]) {
-      groupedByState[state] = [];
+    // const state = location.State;
+    let lowercaseLocation = location.State.toLowerCase();
+    lowercaseLocation = lowercaseLocation.charAt(0).toUpperCase() + lowercaseLocation.slice(1);
+    if (!groupedByState[lowercaseLocation]) {
+      groupedByState[lowercaseLocation] = [];
     }
-    groupedByState[state].push(location);
+    groupedByState[lowercaseLocation].push(location);
   });
 
   return groupedByState;

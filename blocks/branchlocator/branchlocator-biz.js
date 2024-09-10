@@ -10,11 +10,13 @@ export function dropDownStateCity(response) {
   const groupedByState = {};
 
   response.forEach((location) => {
-    const state = location.State;
-    if (!groupedByState[state]) {
-      groupedByState[state] = [];
+    // const state = location.State;
+    let lowercaseLocation = location.State.toLowerCase();
+    lowercaseLocation = lowercaseLocation.charAt(0).toUpperCase() + lowercaseLocation.slice(1);
+    if (!groupedByState[lowercaseLocation]) {
+      groupedByState[lowercaseLocation] = [];
     }
-    groupedByState[state].push(location);
+    groupedByState[lowercaseLocation].push(location);
   });
 
   return groupedByState;
@@ -41,7 +43,7 @@ export async function onloadBranchLocator(block) {
     setLocationObj.lng = defaultLatLng['Longitude'];
     let locationCode = defaultLatLng['Location Code']
     if(!location.href.includes('author') && !location.href.includes(setLocationObj.geoInfo.city)){
-      location.href = '/'+setLocationObj.geoInfo.state.toLowerCase()+'/'+setLocationObj.geoInfo.city.toLowerCase();
+      location.href = '/branch-locator/'+setLocationObj.geoInfo.state.toLowerCase()+'/'+setLocationObj.geoInfo.city.toLowerCase();
     }
   }  
 
@@ -207,7 +209,7 @@ export function bizStateDD(data, block){
     setLocationObj.stateLi = Object.keys(data)
       .map((state) => {
         let newState = state.replace(' ', '-');
-        return '<a href="/' + newState.toLowerCase() + '"><li class="state-option option" data-info="' + state + '">' + state + '</li></a>';
+        return '<a href="/branch-locator/' + newState.toLowerCase() + '"><li class="state-option option" data-info="' + state + '">' + state + '</li></a>';
       }).join("");
 }
 
@@ -219,7 +221,7 @@ export function bizCityDD(data, block){
           setLocationObj.cityhash[City] = City;
           let newState = setLocationObj.geoInfo.state.replace(' ', '-');
           let newCity = City.replace(' ', '-');
-          acc += "<a href='/" + newState.toLowerCase() + "/" + newCity.toLowerCase() + "'><li class='city-option option' data-info='" + City + "'>" + City + "</li></a>";
+          acc += "<a href='/branch-locator/" + newState.toLowerCase() + "/" + newCity.toLowerCase() + "'><li class='city-option option' data-info='" + City + "'>" + City + "</li></a>";
         }
         return acc;
       }, "");
@@ -300,7 +302,7 @@ export function locateMeClick(block){
           setLocationObj.seturl.state = setLocationObj.geoInfo.state.charAt(0).toLowerCase() + setLocationObj.geoInfo.state.slice(1).replace(' ', '-');
           setLocationObj.seturl.city = setLocationObj.geoInfo.city.charAt(0).toLowerCase() + setLocationObj.geoInfo.city.slice(1).replace(' ', '-');
           setLocationObj.seturl.location= branchhList[0]['Location Code'];
-          let settingBranchURl = '/' + setLocationObj.seturl.state + '/' + setLocationObj.seturl.city + '/loans-in-' + setLocationObj.seturl.city + '-' + setLocationObj.seturl.state + '-' + setLocationObj.seturl.location;
+          let settingBranchURl = '/branch-locator/' + setLocationObj.seturl.state + '/' + setLocationObj.seturl.city + '/loans-in-' + setLocationObj.seturl.city + '-' + setLocationObj.seturl.state + '-' + setLocationObj.seturl.location;
           block.closest('.section').querySelector('.btn-locate-details').setAttribute('href', settingBranchURl);
           block.closest('.section').querySelector('.branch-deatils').classList.remove('dp-none');
         });
