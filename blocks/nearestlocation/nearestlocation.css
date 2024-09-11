@@ -1,5 +1,5 @@
 /* cards Branchs */
-.section.nearest-branchlocator-cards .nearest-location.block .cards-branches .title h2 {
+.section.nearest-branchlocator-cards .nearestlocation.block .cards-branches .title h2 {
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 32px;
@@ -7,17 +7,17 @@
     color: var(--darkcharcoal);
 }
 
-.section.nearest-branchlocator-cards .nearest-location.block .cards-branches .cards-container {
+.section.nearest-branchlocator-cards .nearestlocation.block .cards-branches .cards-container {
     margin-top: 28px;
 }
 
-.section.nearest-branchlocator-cards .nearest-location.block .cards-branches .cards-container .cards-wrapper {
+.section.nearest-branchlocator-cards .nearestlocation.block .cards-branches .cards-container .cards-wrapper {
     display: grid;
     gap: 32px 23px;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.section.nearest-branchlocator-cards .nearest-location.block .cards-branches .cards-container .cards-wrapper .card-box {
+.section.nearest-branchlocator-cards .nearestlocation.block .cards-branches .cards-container .cards-wrapper .card-box {
     height: 100%;
     border-radius: 16px;
     padding: 18px 24px 24px;
@@ -28,7 +28,7 @@
     justify-content: space-between;
 }
 
-.section.nearest-branchlocator-cards .nearest-location.block .cards-branches .cards-container .cards-wrapper .card-box .card-title {
+.section.nearest-branchlocator-cards .nearestlocation.block .cards-branches .cards-container .cards-wrapper .card-box .card-title {
     font-weight: 700;
     line-height: 28px;
     font-size: 1.25rem;
@@ -36,7 +36,7 @@
     color: var(--darkcharcoal);
 }
 
-.section.nearest-branchlocator-cards .nearest-location.block .cards-branches .cards-container .cards-wrapper .card-box .card-address {
+.section.nearest-branchlocator-cards .nearestlocation.block .cards-branches .cards-container .cards-wrapper .card-box .card-address {
     width: 90%;
     min-height: 96px;
     font-size: 1rem;
@@ -47,7 +47,7 @@
     color: var(--gradient-gray);
 }
 
-.section.nearest-branchlocator-cards .nearest-location.block .cards-branches .cards-container .cards-wrapper .card-box .card-gmail {
+.section.nearest-branchlocator-cards .nearestlocation.block .cards-branches .cards-container .cards-wrapper .card-box .card-gmail {
     display: flex;
     font-size: 1rem;
     font-weight: 400;
@@ -58,11 +58,11 @@
     font-family: "Nunito-Regular";
 }
 
-.section.nearest-branchlocator-cards .nearest-location.block .cards-branches .cards-container .cards-wrapper .card-box .card-gmail span {
+.section.nearest-branchlocator-cards .nearestlocation.block .cards-branches .cards-container .cards-wrapper .card-box .card-gmail span {
     margin-right: 8px;
 }
 
-.section.nearest-branchlocator-cards .nearest-location.block .cards-branches .cards-container .cards-wrapper .card-box a:last-child {
+.section.nearest-branchlocator-cards .nearestlocation.block .cards-branches .cards-container .cards-wrapper .card-box a:last-child {
     margin-top: 29px;
     font-weight: 700;
     padding: 8px 16px;
@@ -76,37 +76,37 @@
     background-color: var(--orange);
 }
 
-.section.nearest-branchlocator-cards .nearest-location.block .cards-branches .cards-container .cards-wrapper .card-box a:last-child:hover {
+.section.nearest-branchlocator-cards .nearestlocation.block .cards-branches .cards-container .cards-wrapper .card-box a:last-child:hover {
     text-decoration: none;
 }
 
 @media screen and (min-width:768px) and (max-width: 1024px) {  
-    .section.nearest-branchlocator-cards .nearest-location.block .cards-branches .cards-container .cards-wrapper {
+    .section.nearest-branchlocator-cards .nearestlocation.block .cards-branches .cards-container .cards-wrapper {
         gap: 25px 15px;
         grid-template-columns: 1fr 1fr;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .section.nearest-branchlocator-cards .nearest-location.block .cards-branches .title h2 {
+    .section.nearest-branchlocator-cards .nearestlocation.block .cards-branches .title h2 {
         line-height: 28px;
         font-size: 1.25rem;
     } 
 
-    .section.nearest-branchlocator-cards .nearest-location.block .cards-branches .cards-container {
+    .section.nearest-branchlocator-cards .nearestlocation.block .cards-branches .cards-container {
         margin-top: 18px;
     }
 
-    .section.nearest-branchlocator-cards .nearest-location.block .cards-branches .cards-container .cards-wrapper {
+    .section.nearest-branchlocator-cards .nearestlocation.block .cards-branches .cards-container .cards-wrapper {
         gap: 10px;
         grid-template-columns: auto;
     }
 
-    .section.nearest-branchlocator-cards .nearest-location.block .cards-branches .cards-container .cards-wrapper .card-box .card-address {
+    .section.nearest-branchlocator-cards .nearestlocation.block .cards-branches .cards-container .cards-wrapper .card-box .card-address {
         margin-top: 8px;
     }
 
-    .section.nearest-branchlocator-cards .nearest-location.block .cards-branches .cards-container .cards-wrapper .card-box .card-gmail {
+    .section.nearest-branchlocator-cards .nearestlocation.block .cards-branches .cards-container .cards-wrapper .card-box .card-gmail {
         margin-top: 25px;
     }
 }
