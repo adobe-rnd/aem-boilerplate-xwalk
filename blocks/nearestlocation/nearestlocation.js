@@ -2,14 +2,14 @@ import { setLocationObj } from "../moredetailsaddress/moredetailsaddress.js";
 
 export function nearestLoction() {
 
-    if(!setLocationObj.storedata.length > 1){
+    if(setLocationObj.storedata.length == 0){
         return false;
     }
 
 
     let branch_cards = "";
+    let cityName = setLocationObj.storedata[0]['City'];
     setLocationObj.storedata.forEach(eachLocation => {
-        debugger;
         let eachState = eachLocation['State'].charAt(0).toLowerCase() + eachLocation['State'].slice(1).replace(' ', '-');
         let eachCity = eachLocation['City'].charAt(0).toLowerCase() + eachLocation['City'].slice(1).replace(' ', '-');
         let eachLocationCode = eachLocation['Location Code'];
@@ -25,7 +25,7 @@ export function nearestLoction() {
     let mainWrapperNearest = 
     `<div class='cards-branches cards-branches-container mt-45 mb-40 mob-mb-45'>
             <div class='title'>
-                 <h2 class="title-to-show"> Find all Mumbai Branches here </h2>
+                 <h2 class="title-to-show"> Find all ${cityName} Branches here </h2>
             </div>
             <div class='cards-container'>
                 <div class='cards-wrapper branch-list-wrapper'>
@@ -38,5 +38,8 @@ export function nearestLoction() {
 }
 
 export default function decorate(block) {
-    block.innerHTML= nearestLoction(block);
+    let DOMnearestBranch = nearestLoction(block);
+    if(DOMnearestBranch){
+        block.innerHTML = DOMnearestBranch;
+    }
 }
