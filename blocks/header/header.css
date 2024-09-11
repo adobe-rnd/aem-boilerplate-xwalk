@@ -289,13 +289,15 @@ body.modal-open footer {
   display: none;
 }
 
-@media (width >=600px) {
+/* @media (width >=600px) { */
+  @media (min-width: 600px) {
   .header nav#nav {
     padding: 0 2rem;
   }
 }
 
-@media (width >=900px) {
+/* @media (width >=900px) { */
+  @media (min-width: 900px) {
   .header nav#nav {
     display: flex;
     justify-content: space-between;
@@ -381,7 +383,8 @@ body.modal-open footer {
   transform: rotate(-45deg);
 }
 
-@media (width >=900px) {
+/* @media (width >=900px) { */
+  @media (min-width: 900px) {
   .header nav#nav .nav-hamburger {
     display: none;
     visibility: hidden;
@@ -424,7 +427,8 @@ body.modal-open footer {
   margin-top: 0;
 }
 
-@media (width >=900px) {
+/* @media (width >=900px) { */
+  @media (min-width: 900px) {
   .header nav#nav .nav-sections {
     display: block;
     visibility: visible;
@@ -538,7 +542,8 @@ body.modal-open footer {
   opacity: 1;
 }
 
-@media screen and (width >=900px) {
+/* @media screen and (width >=900px) { */
+  @media screen and (min-width: 900px) {
   .header .breadcrumbs {
     display: block;
   }
@@ -796,13 +801,15 @@ body.modal-open footer {
   display: none;
 }
 
-@media screen and (width <=1200px) {
+/* @media screen and (width <=1200px) { */
+  @media screen and (max-width: 1200px) {
   .header nav#nav .default-content-wrapper .mobile-logo{
     display: unset;
   }
 
   .header nav#nav .default-content-wrapper .mobile-logo img{
-    width: 96px;
+    width: 84px;
+    height: 44px;
   }
 
   .header nav#nav .nav-brand {
@@ -1217,10 +1224,11 @@ body.modal-open footer {
 
 }
 
-@media screen and (width <=360px) {
-  .header .nav-brand {
+/* @media screen and (width <=360px) { */
+  @media screen and (max-width: 360px) {
+  /* .header .nav-brand {
     height: 116vh;
-  }
+  } */
 
   .header nav#nav .nav-hamburger button {
     margin-right: 10px;
