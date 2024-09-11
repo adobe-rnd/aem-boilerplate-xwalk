@@ -2,12 +2,12 @@ import { setLocationObj } from "../moredetailsaddress/moredetailsaddress";
 
 export function nearestLoction() {
 
-    if(!setLocationObj.storedata.length > 1){
+   /*  if(!setLocationObj.storedata.length > 1){
         return false;
-    }
+    } */
     
     let branch_cards = "";
-    setLocationObj.storedata.forEach(element => {
+    // setLocationObj.storedata.forEach(element => {
         debugger;
         branch_cards += `<div class='cards-branches cards-branches-container mt-45 mb-40 mob-mb-45'>
                 <div class='title'>
@@ -24,7 +24,11 @@ export function nearestLoction() {
                     </div>
                 </div>
             </div>`;
-    });
+    // });
        
     return branch_cards;
+}
+
+export default function decorate(block) {
+    block.innerHTML= nearestLoction(block);
 }
