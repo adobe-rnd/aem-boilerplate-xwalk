@@ -17,6 +17,7 @@
     line-height: 24px;
     font-family: "Nunito-Regular";
     color: var(--darkgrey);
+    width: 32%;
 }
 
 .moredetailsaddress.block .address-wrapper .address-mobile p {
@@ -92,6 +93,7 @@
 
     .moredetailsaddress.block .address-wrapper .address-mobile p {
         display: block;
+        width: 70%;
     }
 
     .moredetailsaddress.block .address-wrapper .address-info ul {
@@ -133,5 +135,9 @@
 
     .moredetailsaddress.block .address-wrapper .address-img {
         top: 16%;
+    }
+
+    .moredetailsaddress.block .address-wrapper .address-desktop p {
+        width: 52%;
     }
 }
