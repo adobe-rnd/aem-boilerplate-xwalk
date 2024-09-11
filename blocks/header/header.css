@@ -1096,7 +1096,6 @@ body.modal-open footer {
     width: 100%;
     align-items: center;
     padding: 0 16px;
-    column-gap: 20px;
   }
 
   .header .nav-wrapper #nav .section.nav-sections .default-content-wrapper ul li.nav-drop {
@@ -1199,6 +1198,7 @@ body.modal-open footer {
   .header nav#nav .nav-hamburger {
     display: block;
     visibility: visible;
+    margin-left: 20px;
   }
 
   .header .nav-wrapper #nav>div.section.nav-brand>div:nth-child(1) {
