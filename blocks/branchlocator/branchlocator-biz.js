@@ -61,7 +61,7 @@ export async function onloadBranchLocator(block) {
   renderCity(block, setLocationObj);
   renderState(block, setLocationObj);
   let multipleBranch = innerBranchFunc(branchhList);
-  block.closest('.section').querySelector('.title-to-show').innerText = 'Find all' + setLocationObj.geoInfo.city+ 'Branches here';
+  block.closest('.section').querySelector('.title-to-show').innerText = 'Find all ' + setLocationObj.geoInfo.city+ ' Branches here';
   block.closest('.section').querySelector('.branch-list-wrapper').innerHTML = multipleBranch;
   if (setLocationObj.geoInfo.state && !setLocationObj.geoInfo.city) {
     block.closest('.section').querySelector('.city-wrapper').classList.remove('dp-none');
