@@ -2647,7 +2647,7 @@
         "valueType": "string",
         "name": "nearestlocation",
         "value": "Nearest Location",
-        "label": "locationData"
+        "label": "Nearest Location"
       }
     ]
   },
