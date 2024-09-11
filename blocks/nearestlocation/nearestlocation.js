@@ -8,6 +8,7 @@ export function nearestLoction() {
     
     let branch_cards = "";
     setLocationObj.storedata.forEach(element => {
+        debugger;
         branch_cards += `<div class='cards-branches cards-branches-container mt-45 mb-40 mob-mb-45'>
                 <div class='title'>
                      <h2 class="title-to-show"> Find all Mumbai Branches here </h2>
@@ -26,8 +27,4 @@ export function nearestLoction() {
     });
        
     return branch_cards;
-}
-
-export default function decorate(block) {
-    block.innerHTML = `${nearestLoction(block)}`
 }

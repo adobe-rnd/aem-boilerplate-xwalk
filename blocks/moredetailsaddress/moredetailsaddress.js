@@ -275,6 +275,9 @@ function renderData(){
 
 function reviewRender(){
   let ratingSpan = renderRatingDiv();
+  if(!ratingSpan){
+    return false;
+  }
   document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").innerHTML = ratingSpan;
   let reviewCards = document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").querySelectorAll(".carousel-item");
   let currentNextButton = document.querySelector(".branchcustomer-review-cards").querySelector(".glider-next");
@@ -300,50 +303,54 @@ function reviewRender(){
 
 function renderRatingDiv () {
   let html = '';
-  setLocationObj.review.forEach(function (eachEle) {
-
-    let starDiv = '';
-    let starToShow = eachEle['rating'];
-    if( (5 - eachEle['rating'] == 0)){
-      for (let index = 0; index < starToShow; index++) {
-        starDiv += `<span class="icon icon-star_Color"><img data-icon-name="star_Color" src="/icons/star_Color.svg" alt="" loading="lazy" /></span>`;
+  if(setLocationObj.review){
+    setLocationObj.review.forEach(function (eachEle) {
+  
+      let starDiv = '';
+      let starToShow = eachEle['rating'];
+      if( (5 - eachEle['rating'] == 0)){
+        for (let index = 0; index < starToShow; index++) {
+          starDiv += `<span class="icon icon-star_Color"><img data-icon-name="star_Color" src="/icons/star_Color.svg" alt="" loading="lazy" /></span>`;
+        }
+      }else if(5 - eachEle['rating'] != 0){
+        let subelem = 5 - eachEle['rating'];
+        for (let index = 0; index < starToShow; index++) {
+          starDiv += `<span class="icon icon-star_Color"><img data-icon-name="star_Color" src="/icons/star_Color.svg" alt="" loading="lazy" /></span>`;
+        }
+        for (let index = 0; index < subelem; index++) {
+          starDiv += `<span class="icon icon-star_outline"><img data-icon-name="star_outline" src="/icons/star_outline.svg" alt="" loading="lazy" /></span>`;
+        }
       }
-    }else if(5 - eachEle['rating'] != 0){
-      let subelem = 5 - eachEle['rating'];
-      for (let index = 0; index < starToShow; index++) {
-        starDiv += `<span class="icon icon-star_Color"><img data-icon-name="star_Color" src="/icons/star_Color.svg" alt="" loading="lazy" /></span>`;
-      }
-      for (let index = 0; index < subelem; index++) {
-        starDiv += `<span class="icon icon-star_outline"><img data-icon-name="star_outline" src="/icons/star_outline.svg" alt="" loading="lazy" /></span>`;
-      }
-    }
-    
-
-
-    html += 
-    `<div class="teaser block carousel-item light">
-    <div class="background">
-      <div class="front-picture"></div>
-      <div class="foreground">
-        <div class="text">
-          <div class="title">
-            <h3 id="rushikesh-nasare">${eachEle['author_name']}</h3>
+      
+  
+  
+      html += 
+      `<div class="teaser block carousel-item light">
+      <div class="background">
+        <div class="front-picture"></div>
+        <div class="foreground">
+          <div class="text">
+            <div class="title">
+              <h3 id="rushikesh-nasare">${eachEle['author_name']}</h3>
+            </div>
+            <div class="long-description">
+              <p>Posted on: ${eachEle['relative_time_description']}</p>
+              <p>
+                ${starDiv}
+              </p>
+            </div>
+            <div class="short-description"><p>${eachEle['text']}</p></div>
+            <div class="cta"></div>
           </div>
-          <div class="long-description">
-            <p>Posted on: ${eachEle['relative_time_description']}</p>
-            <p>
-              ${starDiv}
-            </p>
-          </div>
-          <div class="short-description"><p>${eachEle['text']}</p></div>
-          <div class="cta"></div>
         </div>
       </div>
-    </div>
-  </div>`;
-  });
+    </div>`;
+    });
+    return html;
+  }else{
+    document.querySelector(".branchcustomer-review-cards").classList.add("dp-none");
+  }
 
-  return html;
 }
 
 
