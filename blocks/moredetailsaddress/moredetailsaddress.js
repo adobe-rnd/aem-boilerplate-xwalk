@@ -243,12 +243,12 @@ function sortingNearestBranch(lat, lng, data) {
   const filteredLocations = Object.values(data)
     .flat()
     .map((location) => {
-      // if(location['Latitude'] != setLocationObj.lat  && location['Longitude'] != setLocationObj.lng){
+      if(location['Latitude'] != setLocationObj.lat  && location['Longitude'] != setLocationObj.lng){
         return {
           ...location,
           distance: calculateDistance(lat, lng, location.Latitude, location.Longitude),
         };
-      // }
+      }
     })
     .filter((location) => location?.distance <= 40)
     .sort((a, b) => a.distance - b.distance);
