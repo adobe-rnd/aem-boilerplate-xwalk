@@ -2662,5 +2662,17 @@
         "label": "URL Text"
       }
     ]
+  },
+  {
+    "id": "formformatpdf",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
   }
 ]
