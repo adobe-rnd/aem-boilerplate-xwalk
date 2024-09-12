@@ -193,7 +193,12 @@ function featureDropDownClick(block) {
             e.stopImmediatePropagation();
             var wrapperContainer = this.closest('.wrapper-creation-container');
             var keyfeaturesList = wrapperContainer.querySelectorAll('.keyfeatures-info .keyfeatures');
+            const dataAnalytics = {};
+            dataAnalytics.click_text = e.target.closest(".keyfeatures-wrapper")?.querySelector('.cmp-teaser__content p')?.textContent.trim();
+            dataAnalytics.cta_position = e.target.closest(".section")?.querySelector('.default-content-wrapper')?.textContent.trim();
+            keyFeaturesInteraction(dataAnalytics);
             keyfeaturesList.forEach(function (keyfeatures) {
+
                 if (keyfeatures.style.display === 'none') {
                     keyfeatures.style.display = 'block';
                     wrapperContainer.querySelectorAll('.plusicon').forEach(function (icon) {
@@ -240,7 +245,7 @@ function viewMoreLogic(each) {
     !each.dataset.clickAdded && buttonContainer.addEventListener('click', function () {
 
         try {
-            let data= {};
+            let data = {};
             data.click_text = this.textContent.trim();
             data.cta_position = this.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
             ctaClickInteraction(data);
@@ -298,7 +303,7 @@ function keyFeaturesAnalytics(block) {
     let redirectionButton = block.querySelector('.redirectionbutton');
     eventCallArray.push(teaserLink);
     eventCallArray.push(redirectionButton);
-    eventCallArray.forEach(function (eachEvent){
+    eventCallArray.forEach(function (eachEvent) {
         eachEvent.addEventListener('click', function (e) {
             let data = {};
             data.click_text = e.target.closest('.cmp-teaser').querySelector('.cmp-teaser__content p').textContent.trim();

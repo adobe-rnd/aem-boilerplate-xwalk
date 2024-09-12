@@ -206,7 +206,7 @@ export function documentRequiredInteraction(data) {
     try {
         const { click_text } = data;
         window.dataLayer.push({
-            'event': 'download_document',
+            'event': 'document_required',
             'click_text': click_text || "",
             'page_type':targetObject.pageName || "",
         });
@@ -262,6 +262,19 @@ export function ctaClickInteraction(data) {
             'click_text': data.click_text || '',
             'cta_position': data.cta_position || '',
             'page_type': targetObject.pageName || '',
+        });
+    } catch (error) {
+        console.warn(error);
+    }
+}
+
+export function documentDownloadInteraction(data) {
+    try {
+        const { click_text } = data;
+        window.dataLayer.push({
+            'event': 'download_document',
+            'click_text': click_text || "",
+            'page_type':targetObject.pageName || "",
         });
     } catch (error) {
         console.warn(error);

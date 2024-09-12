@@ -7,19 +7,21 @@
     line-height: 42px;
     margin: 24px 0;
 }
-.section.forms-pdf{
-
-}
 .section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div ul {
     margin-top: 16px;
 }
 
 .section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div ul>li {
-    margin-bottom: 16px;
+    margin-bottom: 13px;
 }
 .section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div ul>li>a sub{
     font-size: 1rem;
     font-family: 'Nunito-Regular', sans-serif;
+    display: flex;
+    gap: 36px;
+    align-items: center;
+    font-weight: 400;
+    line-height: 24px;
 }
 .section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div ul>li>a {
     background: var(--whitesmoke);
@@ -29,7 +31,7 @@
     font-family: Nunito-Regular, sans-serif;
     font-size: 1rem;
     line-height: 24px;
-    padding: 20px 50px 20px 16px;
+    padding: 20px 61px 20px 36px;
     position: relative;
 }
 
@@ -39,18 +41,44 @@
     text-decoration: none;
 }
 .section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div ul>li>a::after {
-    content: "\eadf";
-    font-family: 'icomoon' !important;
+    content: "\e900";
+    font-family: 'icomoon-download';
     position: absolute;
     right: 24px;
-    top: 35%;
+    top: 50%;
+    line-height: 1px;
     height: 20px;
     width: 20px;
-    color: #333;
+    font-size: 2rem;
+    color: gray;
 }
 
 .section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div ul>li>a:hover::after {
-   color: var(--white);
+    color: gray;
+}
+.section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div ul>li>a sub span img {
+    width: 32px;
+    max-width: unset;
+    min-width: unset;
+    height: 32px;
+    display: block;
+}
+.section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div ul>li>a:hover {
+    color: #000;
+}
+
+.section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div ul>li a sub span{
+    display: contents;
+}
+
+.section.multi-calculator-wrapper.forms-format-banner {
+    background-color: #E4EAFA;
+}
+
+.section.multi-calculator-wrapper.forms-format-banner .teaser-wrapper .teaser .background .front-picture picture>img {
+    object-fit: contain;
+    width: 124px;
+    height: 139px;
 }
 
 @media screen and (max-width: 767px) {
@@ -66,5 +94,22 @@
 
     .section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div ul>li {
         margin-bottom: 12px;
+    }
+    .section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div ul>li>a {
+        font-size: 0.75rem;
+        line-height: 16px;
+        padding: 24px 43px 24px 19px;
+    }
+    .section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div ul>li>a sub{
+        font-size: 0.75rem;
+        line-height: 16px;
+        gap: 19px;
+    }
+    .section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div ul>li>a sub span img{
+        width: 16px;
+        height: 16px;
+    }
+    .section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div ul>li>a::after{
+        font-size: 1rem;
     }
 }
