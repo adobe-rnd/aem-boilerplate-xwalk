@@ -22,7 +22,7 @@ function createImageWithLink(block) {
   const pictureIndex = isMobile ? 3 : 0;
   const textIndex = isMobile ? 5 : 2;
   const blockPic = blockDiv.children[pictureIndex]?.querySelector("picture") || blockDiv.children[0]?.querySelector("picture");
-  const hrefElem = blockDiv.children[textIndex]?.innerText.trim() || blockDiv.children[2]?.innerText.trim() || "";
+  const hrefElem = blockDiv.children[textIndex]?.innerText.trim() || blockDiv.children[2]?.innerText.trim() || blockDiv.children[textIndex]?.querySelector('a').getAttribute('href') || "";
 
   if (!blockPic) {
     console.warn("Required elements not found in the block.");

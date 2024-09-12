@@ -70,4 +70,23 @@ export async function searchBranchByURL() {
       return true;
     }
   // });
-}
+} 
+
+/* export async function searchBranchByURL() {
+  let searchBranchURL = location.href;
+  // let searchBranchURL = "https://www.piramalfinance.com/branch-locator/loans-in-anakapalle-andhra-pradesh-6391";
+
+  let splitSearch = searchBranchURL.split("/").pop();
+  if(splitSearch.includes('loans-in')){
+    let currentLocation = searchBranchURL.split("/").pop().split("-").pop();
+    const flatLocationData = Object.values(setLocationObj.getExcelData).flat(); // Flattening the nested arrays
+    const foundLocation = flatLocationData.find(location => location["Location Code"] == currentLocation); 
+    setLocationObj.geoInfo.state = foundLocation["State"]
+    setLocationObj.geoInfo.city = foundLocation["City"]
+    setLocationObj.geoInfo.locationcode = foundLocation["Location Code"]
+    setLocationObj.lat = foundLocation["Latitude"]
+    setLocationObj.lng = foundLocation["Longitude"]
+    setLocationObj.geoInfo.country = "India"; // Country
+  }
+  return true;
+}  */
