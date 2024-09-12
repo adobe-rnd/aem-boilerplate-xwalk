@@ -118,10 +118,12 @@
 
 .section.calc-desktop-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-prev {
     left: -60px;
+    z-index: 1;
 }
 
 .section.calc-desktop-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-next {
     right: -60px;
+    z-index: 1;
 }
 
 .section.calc-desktop-carousel-wrapper .carousel-wrapper .panel-container .glider-track {

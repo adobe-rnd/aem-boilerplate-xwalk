@@ -72,6 +72,7 @@
     position: absolute;
     left: -5%;
     top: 40%;
+    z-index: 1;
     display: inline-block;
 }
 .section.carousel-articles-wrapper .carousel-wrapper .slide-next{
@@ -80,6 +81,7 @@
     position: absolute;
     right: -5%;
     top: 40%;
+    z-index: 1;
     display: inline-block;
 }
 .section.carousel-articles-wrapper .button-container a{
