@@ -35,6 +35,7 @@ export default async function decorate(block) {
         input.value = city;
         input.name = "branchlocation";
         input.addEventListener('change', (e) => {
+            window.onscroll = null;
             try {
                 let data= {};
                 data.click_text = e.target.closest('label').querySelector('span').textContent.trim();
