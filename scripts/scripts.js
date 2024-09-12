@@ -156,10 +156,14 @@ function decorateImageIcons(element, prefix = '') {
   const anchors = element.querySelectorAll('a');
 
   anchors.forEach((anchor) => {
-    const { href } = anchor;
+    let { href } = anchor;
     let imageName = '';
 
-    if (href.includes('play.google.com')) {
+    if(href.includes('/play.google.com-s/')){
+      anchor.href = href.replace('play.google.com-s', "play.google.com");
+    }else if(href.includes('/apps.apple.com-s/')){
+      anchor.href = href.replace('apps.apple.com-s', "apps.apple.com");
+    }else if (href.includes('play.google.com')) {
       imageName = 'playstore';
     } else if (href.includes('apps.apple.com')) {
       imageName = 'appstore';
@@ -789,7 +793,7 @@ body?.addEventListener("click", function (e) {
     document.body.style.overflow = "scroll";
     document.querySelector(".modal-overlay").classList.remove("overlay");
     document.querySelector(".modal-overlay").classList.add("dp-none");
-    // document.querySelector(".modal-overlay").style.zIndex = 0;
+    document.querySelector(".modal-overlay").style.zIndex = 'revert-layer';
   } else if (!e.target.closest(".nav-drop")) {
     //console.log("don't close nav");
 

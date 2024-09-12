@@ -10,8 +10,8 @@ export function nearestLoction() {
     let branch_cards = "";
     let cityName = setLocationObj.storedata[0]['City'];
     setLocationObj.storedata.forEach(eachLocation => {
-        let eachState = eachLocation['State'].charAt(0).toLowerCase() + eachLocation['State'].slice(1).replace(' ', '-');
-        let eachCity = eachLocation['City'].charAt(0).toLowerCase() + eachLocation['City'].slice(1).replace(' ', '-');
+        let eachState = eachLocation['State'].charAt(0).toLowerCase() + eachLocation['State'].slice(1).replace(' ', '-').toLowerCase();
+        let eachCity = eachLocation['City'].charAt(0).toLowerCase() + eachLocation['City'].slice(1).replace(' ', '-').toLowerCase();
         let eachLocationCode = eachLocation['Location Code'];
         branch_cards += `
         <div class='card-box'>

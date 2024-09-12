@@ -82,8 +82,8 @@ export function branchLocator() {
 export function innerBranchFunc(branchhList){
   let innerBranch = "";
   branchhList.forEach(eachBranch => {
-    let eachState = eachBranch['State'].charAt(0).toLowerCase() + eachBranch['State'].slice(1).replace(' ', '-');
-    let eachCity = eachBranch['City'].charAt(0).toLowerCase() + eachBranch['City'].slice(1).replace(' ', '-');
+    let eachState = eachBranch['State'].charAt(0).toLowerCase() + eachBranch['State'].slice(1).replace(' ', '-').toLowerCase();
+    let eachCity = eachBranch['City'].charAt(0).toLowerCase() + eachBranch['City'].slice(1).replace(' ', '-').toLowerCase();
     let eachLocationCode = eachBranch['Location Code'];
     innerBranch +=
                 `<div class='card-box'>

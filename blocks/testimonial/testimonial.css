@@ -278,7 +278,7 @@
     content: " ";
     position: absolute;
     left: 48%;
-    z-index: 9;
+    z-index: 1;
     margin-top: -46px;
 }
 

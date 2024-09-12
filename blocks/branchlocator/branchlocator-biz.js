@@ -47,8 +47,8 @@ export async function onloadBranchLocator(block) {
     }
   }  
 
-  let URLstate = setLocationObj.geoInfo.state.charAt(0).toLowerCase() + setLocationObj.geoInfo.state.slice(1).replace(' ', '-');
-  let URLcity = setLocationObj.geoInfo.city.charAt(0).toLowerCase() + setLocationObj.geoInfo.city.slice(1).replace(' ', '-');
+  let URLstate = setLocationObj.geoInfo.state.charAt(0).toLowerCase() + setLocationObj.geoInfo.state.slice(1).replace(' ', '-').toLowerCase();
+  let URLcity = setLocationObj.geoInfo.city.charAt(0).toLowerCase() + setLocationObj.geoInfo.city.slice(1).replace(' ', '-').toLowerCase();
   if(!location.href.includes('author') && !location.href.includes(URLstate)){
     if(setLocationObj.geoInfo.state && setLocationObj.geoInfo.city){
       location.href = '/branch-locator/'+URLstate+'/'+URLcity.toLowerCase();
@@ -309,8 +309,8 @@ export function locateMeClick(block){
           block.closest('.section').querySelector('.title-to-show').innerText = 'Find all ' + setLocationObj.geoInfo.city + ' Branches here';
           block.closest('.section').querySelector('.btn-locate').classList.add('dp-none');
           block.closest('.section').querySelector('.btn-locate-details').classList.remove('dp-none');
-          setLocationObj.seturl.state = setLocationObj.geoInfo.state.charAt(0).toLowerCase() + setLocationObj.geoInfo.state.slice(1).replace(' ', '-');
-          setLocationObj.seturl.city = setLocationObj.geoInfo.city.charAt(0).toLowerCase() + setLocationObj.geoInfo.city.slice(1).replace(' ', '-');
+          setLocationObj.seturl.state = setLocationObj.geoInfo.state.charAt(0).toLowerCase() + setLocationObj.geoInfo.state.slice(1).replace(' ', '-').toLowerCase();
+          setLocationObj.seturl.city = setLocationObj.geoInfo.city.charAt(0).toLowerCase() + setLocationObj.geoInfo.city.slice(1).replace(' ', '-').toLowerCase();
           setLocationObj.seturl.location= branchhList[0]['Location Code'];
           let settingBranchURl = '/branch-locator/loans-in-' + setLocationObj.seturl.city + '-' + setLocationObj.seturl.state + '-' + setLocationObj.seturl.location;
           // let settingBranchURl = '/branch-locator/' + setLocationObj.seturl.state + '/' + setLocationObj.seturl.city + '/loans-in-' + setLocationObj.seturl.city + '-' + setLocationObj.seturl.state + '-' + setLocationObj.seturl.location;
