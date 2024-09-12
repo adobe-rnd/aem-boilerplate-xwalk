@@ -90,8 +90,10 @@ export function innerBranchFunc(branchhList){
               <h3 class='card-title'> ${eachBranch['Location']} </h3>
               <p class='card-address'>${eachBranch['Address']}</p>
               <p class='card-gmail'> <span> <img src='/images/gmail.svg' alt='gmail-icon'/> </span> customercare@piramal.com </p>
-              <a href="/branch-locator/${eachState}/${eachCity}/loans-in-${eachCity}-${eachState}-${eachLocationCode}" id='more-details-btn'> More details </a>
+              <a href="/branch-locator/loans-in-${eachCity}-${eachState}-${eachLocationCode}" id='more-details-btn'> More details </a>
             </div>`;
+            // <a href="/branch-locator/${eachState}/${eachCity}/loans-in-${eachCity}-${eachState}-${eachLocationCode}" id='more-details-btn'> More details </a>
+
   });
   return innerBranch;
 }

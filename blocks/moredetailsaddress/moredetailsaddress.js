@@ -165,7 +165,7 @@ export async function CFApiCall(cfurl) {
   return responseJson;
 }
 
-async function onbranchDetails(block) {
+/* async function onbranchDetails(block) {
   let locationCodeURL = location.href.split("/").pop().split("-").pop();
 
   if (locationCodeURL && location.href.includes("/branch-locator/")) {
@@ -223,6 +223,51 @@ async function onbranchDetails(block) {
     }, 3000);
 
   }
+} */
+
+async function onbranchDetails(block) {
+
+  let searchBranchURL = location.href;
+  // let searchBranchURL = "https://www.piramalfinance.com/branch-locator/loans-in-anakapalle-andhra-pradesh-6391";
+
+  let splitSearch = searchBranchURL.split("/").pop();
+  if(splitSearch.includes('loans-in')){
+    let currentLocation = searchBranchURL.split("/").pop().split("-").pop();
+    const flatLocationData = Object.values(setLocationObj.getExcelData).flat(); // Flattening the nested arrays
+    const foundLocation = flatLocationData.find(location => location["Location Code"] == currentLocation); 
+    setLocationObj.geoInfo.state = foundLocation["State"]
+    setLocationObj.geoInfo.city = foundLocation["City"]
+    setLocationObj.geoInfo.locationcode = foundLocation["Location Code"]
+    setLocationObj.lat = foundLocation["Latitude"]
+    setLocationObj.lng = foundLocation["Longitude"]
+    setLocationObj.geoInfo.country = "India"; // Country
+    setLocationObj.address = foundLocation["Address"]; 
+    setLocationObj.pincode = foundLocation["Pincode"];
+  }
+
+    await getStateCity(setLocationObj.lat, setLocationObj.lng);
+
+    // review rating address no free-parking distance
+
+    returnLatLan().then((res) => {
+      if(locationInLatLan.lat && locationInLatLan.lng){
+        setLocationObj.distance = calculateDistance(setLocationObj.lat,setLocationObj.lng, locationInLatLan.lat,locationInLatLan.lng);
+        if(setLocationObj.distance.toFixed() <= 40){
+          document.querySelectorAll('.address-info ul li')[2].innerText = `${setLocationObj.distance.toFixed()} Km away from your location`;
+        }else{
+          document.querySelectorAll('.address-info ul li')[2].remove();
+        }
+      }
+    });
+
+    let sortedBranch = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
+    setLocationObj.storedata =  sortedBranch;
+    
+    renderData();
+    setTimeout(() => {
+      reviewRender();
+    }, 3000);
+
 }
 
 function calculateDistance(lat1, lng1, lat2, lng2) {
