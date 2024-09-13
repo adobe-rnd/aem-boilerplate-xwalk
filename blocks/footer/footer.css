@@ -304,6 +304,30 @@ footer.footer-wrapper .footer {
 }
 /* footer third section onwords css end  */
 
+/*footer piramal logo css*/
+.footer-section-first .columns-wrapper .columns>div>div>p.button-container:nth-child(1) {
+  text-align: left;
+}
+
+.footer-section-first .columns-wrapper .columns>div>div>p.button-container:nth-child(1) a {
+  border: unset;
+  padding: unset;
+  margin: unset;
+  background-color: unset;
+}
+
+.footer-section-first .columns-wrapper .columns>div>div>p.button-container:nth-child(1) a .icon {
+  width: 147px;
+  height: 67px;
+}
+
+.footer-section-first .columns-wrapper .columns>div>div>p.button-container:nth-child(1) a .icon img {
+  width: 100%;
+  height: 100%;
+}
+
+/*footer piramal logo css*/
+
 @media screen and (max-width:1366px) {
   .footer-section-first .columns-wrapper p sup {
     right: 102px;
@@ -581,7 +605,19 @@ footer.footer-wrapper .footer {
   .section.footer-last-wrapper.padding-bottom-footer .default-content-wrapper{
     padding-bottom: 95px;
   }
+
+  .footer-section-first .columns-wrapper .columns>div>div>p.button-container:nth-child(1) a .icon {
+    width: 100px;
+    height: 39px;
+  }
+  
+  .footer-section-first .columns-wrapper .columns>div>div>p.button-container:nth-child(1) {
+    padding: unset;
+  }
+  
 /* footer third section onwords css end  */
+
+
 }
 
 @media screen and (max-width: 1400px) {
