@@ -2698,5 +2698,17 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "branchcarousel",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "branchcarousel",
+        "value": "Url text",
+        "label": "URL Text"
+      }
+    ]
   }
 ]
