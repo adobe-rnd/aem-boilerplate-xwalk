@@ -55,6 +55,7 @@ footer.footer-wrapper .footer {
 .footer-section-first .columns-img-col img {
   width: 9.5rem;
   height: 4.25rem;
+  cursor: pointer;
 }
 
 .footer-section-first .columns-wrapper p {

@@ -2,14 +2,15 @@ import { setLocationObj } from "../moredetailsaddress/moredetailsaddress.js";
 
 export function nearestLoction() {
 
-    if(setLocationObj.storedata.length == 0){
+    let {storedata} = setLocationObj;
+    if(storedata.length == 0){
         return false;
     }
 
 
     let branch_cards = "";
-    let cityName = setLocationObj.storedata[0]['City'];
-    setLocationObj.storedata.forEach(eachLocation => {
+    let cityName = storedata[0]['City'];
+    storedata.forEach(eachLocation => {
         let eachState = eachLocation['State'].charAt(0).toLowerCase() + eachLocation['State'].slice(1).replace(' ', '-').toLowerCase();
         let eachCity = eachLocation['City'].charAt(0).toLowerCase() + eachLocation['City'].slice(1).replace(' ', '-').toLowerCase();
         let eachLocationCode = eachLocation['Location Code'];

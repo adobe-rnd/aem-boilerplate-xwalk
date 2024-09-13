@@ -243,6 +243,7 @@ async function onbranchDetails(block) {
     setLocationObj.geoInfo.country = "India"; // Country
     setLocationObj.address = foundLocation["Address"]; 
     setLocationObj.pincode = foundLocation["Pincode"];
+    setLocationObj.pagecontent = foundLocation['On Page Content']
   }
 
     await getStateCity(setLocationObj.lat, setLocationObj.lng);

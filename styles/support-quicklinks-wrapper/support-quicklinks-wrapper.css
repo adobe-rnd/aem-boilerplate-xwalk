@@ -145,7 +145,8 @@
     text-decoration: underline;
 }
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li strong,
-.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li strong a{
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li strong a,
+.section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li strong a sub{
     color: #000;
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
