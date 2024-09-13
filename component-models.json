@@ -1252,6 +1252,30 @@
               {
                 "name": "Teaser 10",
                 "value": "teaser-whatsapp-banner"
+              },
+              {
+                "name": "common-branch-carousel",
+                "value": "common-branch-carousel"
+              },
+              {
+                "name": "home-loan-branch-carousel",
+                "value": "home-loan-branch-carousel"
+              },
+              {
+                "name": "business-loan-branch-carousel",
+                "value": "business-loan-branch-carousel"
+              },
+              {
+                "name": "unsecured-business-loan-branch-carousel",
+                "value": "unsecured-business-loan-branch-carousel"
+              },
+              {
+                "name": "personal-loan-branch-carousel",
+                "value": "personal-loan-branch-carousel"
+              },
+              {
+                "name": "used-car-loan-branch-carousel",
+                "value": "used-car-loan-branch-carousel"
               }
             ]
           },
@@ -2672,6 +2696,18 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "branchcarousel",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "branchcarousel",
+        "value": "Url text",
+        "label": "URL Text"
       }
     ]
   }
