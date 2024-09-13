@@ -306,8 +306,8 @@ function keyFeaturesAnalytics(block) {
     eventCallArray.forEach(function (eachEvent) {
         eachEvent.addEventListener('click', function (e) {
             let data = {};
-            data.click_text = e.target.closest('.cmp-teaser').querySelector('.cmp-teaser__content p').textContent.trim();
-            data.cta_position = e.target.closest('.section').querySelector('.default-content-wrapper').textContent.trim();
+            data.click_text = e.target.closest('.cmp-teaser')?.querySelector('.cmp-teaser__content p')?.textContent.trim();
+            data.cta_position = e.target.closest('.section')?.querySelector('.default-content-wrapper strong')?.textContent.trim() || e.target.closest('.section')?.querySelector('.default-content-wrapper')?.textContent.trim() ;
             keyFeaturesInteraction(data);
         });
     });

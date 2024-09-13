@@ -82,6 +82,19 @@ export function applyLoanFormClick() {
         e.preventDefault();
         let anchor = button.closest("a");
         if (anchor && anchor.getAttribute("href")) {
+          try {
+            //console.log(e.target.innerText);
+              let emiName = e.target?.closest(".section")?.querySelector(".tab-common.active p")?.textContent.trim();
+              let ctaPos = e.target?.closest(".section")?.querySelector(".calculator-parent p")?.textContent.trim();
+            if (e.target.innerText.trim() === "Talk to loan expert") {
+              talkToExpert("calculator", emiName, ctaPos, targetObject.pageName);
+            } else if (e.target.innerText.trim() === "Apply loan now") {
+              applyLoanNow("calculator", emiName, ctaPos, targetObject.pageName);
+            }
+            //console.log("calculator type :  ", targetObject.calculatorType);
+          } catch (error) {
+            console.warn(error);
+          }
           let link = anchor.getAttribute("href");
           let target = anchor.getAttribute("target");
           if (target === "_blank") {
