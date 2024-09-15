@@ -2,7 +2,7 @@ import { readBlockConfig } from '../../scripts/aem.js';
 
 export default function decorate(block) {
     const config = readBlockConfig(block);
-    console.info(JSON.stringify(config));
+    const image = config.image;
 
     const content = document.createRange().createContextualFragment(`
         <div id="ad">
@@ -12,7 +12,7 @@ export default function decorate(block) {
             <div id="f1" class="frame-visual absolute">
                 <div class="month absolute">EN JUILLET</div>
                 <div class="img centerX">
-                    <img src="/content/dam/xwalk-automation/banners/img1.jpg" alt="" class="centerX">
+                    <img src="${image}" alt="" class="centerX">
                 </div>
                 <div class="bottom absolute">
                     <img src="logo-bottom.svg" alt="" class="logo-bottom absolute">
