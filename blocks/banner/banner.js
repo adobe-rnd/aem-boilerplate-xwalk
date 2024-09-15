@@ -2,7 +2,7 @@ import { readBlockConfig } from '../../scripts/aem.js';
 
 
 
-export default function decorate(block) {
+export default async function decorate(block) {
     const config = readBlockConfig(block);
     const imageUrl = config.image;
 
@@ -61,6 +61,16 @@ export default function decorate(block) {
 
     block.textContent = '';
     block.append(content);
+
+    let initialized = false;
+    while (!initialized) {
+        await new Promise(resolve => setTimeout(resolve, 10));
+        try {
+            initialized = TweenMax ? true : false;
+        } catch (error) {
+        }
+    }
+    loadScript();
 }
 
 function loadScript() {
@@ -103,6 +113,3 @@ function loadScript() {
     .fromTo('#packshot .cta .shadow', 1.5, {left: '-100%'}, {left: '100%', ease: Power1.easeOut})
 }
 
-setTimeout(function() {
-    loadScript()
-}, 50);
