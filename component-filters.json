@@ -13,6 +13,7 @@
       "button",
       "title",
       "hero",
+      "banner",
       "cards",
       "columns",
       "fragment"
@@ -36,7 +37,8 @@
       "text",
       "image",
       "button",
-      "title"
+      "title",
+      "banner"
     ]
   }
 ]
