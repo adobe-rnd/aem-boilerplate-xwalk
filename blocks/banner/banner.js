@@ -18,7 +18,7 @@ export default function decorate(block) {
             <div id="f1" class="frame-visual absolute">
                 <div class="month absolute">EN JUILLET</div>
                 <div class="img centerX">
-                    <img src="${image}" alt="" class="centerX">
+                    <img src="${imagePath}" alt="" class="centerX">
                 </div>
                 <div class="bottom absolute">
                     <img src="logo-bottom.svg" alt="" class="logo-bottom absolute">
