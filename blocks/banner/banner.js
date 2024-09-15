@@ -105,4 +105,4 @@ function loadScript() {
 
 setTimeout(function() {
     loadScript()
-}, 30);
+}, 50);
