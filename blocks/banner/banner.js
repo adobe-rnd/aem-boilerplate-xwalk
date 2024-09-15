@@ -1,5 +1,7 @@
 import { readBlockConfig } from '../../scripts/aem.js';
 
+
+
 export default function decorate(block) {
     const config = readBlockConfig(block);
     const imageUrl = config.image;
@@ -8,17 +10,14 @@ export default function decorate(block) {
     parser.href = imageUrl;
 
     const imagePath = parser.pathname;
-    console.info(imagePath);
 
     const content = document.createRange().createContextualFragment(`
         <div id="ad">
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+             <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
             <div id="f1" class="frame-visual absolute">
                 <div class="month absolute">EN JUILLET</div>
                 <div class="img centerX">
-                    <img src="${imagePath}" alt="" class="centerX">
+                    <img id="toto" src="${imagePath}" alt="" class="centerX">
                 </div>
                 <div class="bottom absolute">
                     <img src="logo-bottom.svg" alt="" class="logo-bottom absolute">
@@ -57,7 +56,6 @@ export default function decorate(block) {
                 <div class="cta centerY"><div class="shadow"></div>J'en profite*</div>
                 <div class="ml absolute">*Offre soumise à conditions valable jusqu’au 09/08/2023. Voir modalités sur boutique.canalplus.com</div>
             </div>
-
         </div>
     `);
 
@@ -65,13 +63,12 @@ export default function decorate(block) {
     block.append(content);
 }
 
-window.onload = function() {
-
+function loadScript() {
     TweenMax.set('.centerX', {position:'absolute', xPercent:-50, left:'50%'});
     TweenMax.set('.centerY', {position:'absolute', yPercent:-50, top:'50%'});
     TweenMax.set('.centerXY', {position:'absolute', xPercent:-50, yPercent:-50, left:'50%', top:'50%'});
 
-    var tl = new TimelineMax({repeat:1, repeatDelay: 3})
+    var tl = new TimelineMax()
     .set('#ad', {visibility : 'visible'})
 
     .addLabel('start', '+=.2')
@@ -106,4 +103,6 @@ window.onload = function() {
     .fromTo('#packshot .cta .shadow', 1.5, {left: '-100%'}, {left: '100%', ease: Power1.easeOut})
 }
 
-
+setTimeout(function(test) {
+    loadScript()
+}, 30);
