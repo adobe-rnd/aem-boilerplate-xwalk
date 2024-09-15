@@ -2,7 +2,7 @@ import { readBlockConfig } from '../../scripts/aem.js';
 
 export default function decorate(block) {
     const config = readBlockConfig(block);
-    console.info(config);
+    console.info(JSON.stringify(config));
 
     const content = document.createRange().createContextualFragment(`
         <div id="ad">
