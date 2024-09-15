@@ -12,7 +12,7 @@ export default function decorate(block) {
             <div id="f1" class="frame-visual absolute">
                 <div class="month absolute">EN JUILLET</div>
                 <div class="img centerX">
-                    <img src="img1.jpg" alt="" class="centerX">
+                    <img src="/content/dam/xwalk-automation/banners/img1.jpg" alt="" class="centerX">
                 </div>
                 <div class="bottom absolute">
                     <img src="logo-bottom.svg" alt="" class="logo-bottom absolute">
