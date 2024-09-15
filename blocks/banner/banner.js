@@ -103,6 +103,6 @@ function loadScript() {
     .fromTo('#packshot .cta .shadow', 1.5, {left: '-100%'}, {left: '100%', ease: Power1.easeOut})
 }
 
-setTimeout(function(test) {
+setTimeout(function() {
     loadScript()
 }, 30);
