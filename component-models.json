@@ -188,13 +188,6 @@
   {
     "id": "banner",
     "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      }
     ]
   }
 ]
