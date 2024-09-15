@@ -71,7 +71,7 @@ window.onload = function() {
     TweenMax.set('.centerY', {position:'absolute', yPercent:-50, top:'50%'});
     TweenMax.set('.centerXY', {position:'absolute', xPercent:-50, yPercent:-50, left:'50%', top:'50%'});
 
-    var tl = new TimelineMax(/*{repeat:1, repeatDelay: 3}*/)
+    var tl = new TimelineMax({repeat:1, repeatDelay: 3})
     .set('#ad', {visibility : 'visible'})
 
     .addLabel('start', '+=.2')

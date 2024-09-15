@@ -167,7 +167,8 @@
                 "template": {
                   "name": "Banner",
                   "model": "banner",
-                  "key-value": true
+                  "key-value": true,
+                  "image": "/content/dam/xwalk-automation/banners/img2.jpg"
                 }
               }
             }
