@@ -14,9 +14,9 @@
       "title",
       "hero",
       "banners",
-      "banner-160x600",
-      "banner-300x250",
-      "banner-728x90",
+      "banner-160px-600px",
+      "banner-300px-250px",
+      "banner-728px-90px",
       "cards",
       "columns",
       "fragment"
