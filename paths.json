@@ -1,6 +1,6 @@
 {
   "mappings": [
     "/content/xwalk-automation/:/",
-    "/content/xwalk-automation/configuration:/.helix/config.json"
+    "/content/xwalk-automation/:/.helix/config.json"
   ]
 }
