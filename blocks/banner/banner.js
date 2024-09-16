@@ -10,11 +10,11 @@ function getImagePath(imageUrl) {
 export default async function decorate(block) {
     const config = readBlockConfig(block);
 
-    const imagePath1 = getImagePath(config.image1);
-    const imagePath2 = getImagePath(config.image2);
-    const imagePath3 = getImagePath(config.image3);
-    const imagePath4 = getImagePath(config.image4);
-    const imagePath5 = getImagePath(config.image5);
+    const image1Path = getImagePath(config.image1);
+    const image2Path = getImagePath(config.image2);
+    const image3Path = getImagePath(config.image3);
+    const image4Path = getImagePath(config.image4);
+    const image5Path = getImagePath(config.image5);
 
     const text1 = config.text1;
     const text2 = config.text2;

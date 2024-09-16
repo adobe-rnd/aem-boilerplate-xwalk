@@ -222,7 +222,7 @@
         "name": "image5",
         "label": "Image 5",
         "multi": false
-      }
+      },
       {
         "component": "text",
         "name": "text1",
