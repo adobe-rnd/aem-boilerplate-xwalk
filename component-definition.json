@@ -173,22 +173,22 @@
           }
         },
         {
-          "title": "Banner-728",
-          "id": "banner-728",
+          "title": "Banner 1",
+          "id": "banner1",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "Banner-728",
+                  "name": "Banner 1",
                   "model": "banner",  
                   "key-value": true,
-                  "image1": "/content/dam/xwalk-automation/banners/banner-728/img1.jpg",
-                  "image2": "/content/dam/xwalk-automation/banners/banner-728/img2.jpg",
-                  "image3": "/content/dam/xwalk-automation/banners/banner-728/img3.jpg",
-                  "image4": "/content/dam/xwalk-automation/banners/banner-728/logo-top.svg",
-                  "image5": "/content/dam/xwalk-automation/banners/banner-728/packshot-offer.svg",
-                  "image6": "/content/dam/xwalk-automation/banners/banner-728/logo-bottom.svg",
+                  "image1": "/content/dam/xwalk-automation/banners/banner1/img1.jpg",
+                  "image2": "/content/dam/xwalk-automation/banners/banner1/img2.jpg",
+                  "image3": "/content/dam/xwalk-automation/banners/banner1/img3.jpg",
+                  "image4": "/content/dam/xwalk-automation/banners/banner1/logo-top.svg",
+                  "image5": "/content/dam/xwalk-automation/banners/banner1/packshot-offer.svg",
+                  "image6": "/content/dam/xwalk-automation/banners/banner1/logo-bottom.svg",
                   "text1": "EN JUILLET",
                   "text2": "J'en profite*",
                   "text3": "*Offre soumise à conditions valable jusqu’au 09/08/2023. Voir modalités sur boutique.canalplus.com"
@@ -198,22 +198,22 @@
           }
         },
         {
-          "title": "Banner-160",
-          "id": "banner-160",
+          "title": "Banner 2",
+          "id": "banner2",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "Banner-160",
+                  "name": "Banner 2",
                   "model": "banner",  
                   "key-value": true,
-                  "image1": "/content/dam/xwalk-automation/banners/banner-160/img1.jpg",
-                  "image2": "/content/dam/xwalk-automation/banners/banner-160/img2.jpg",
-                  "image3": "/content/dam/xwalk-automation/banners/banner-160/img3.jpg",
-                  "image4": "/content/dam/xwalk-automation/banners/banner-160/logo-top.svg",
-                  "image5": "/content/dam/xwalk-automation/banners/banner-160/packshot-offer.svg",
-                  "image6": "/content/dam/xwalk-automation/banners/banner-160/logo-bottom.svg",
+                  "image1": "/content/dam/xwalk-automation/banners/banner2/img1.jpg",
+                  "image2": "/content/dam/xwalk-automation/banners/banner2/img2.jpg",
+                  "image3": "/content/dam/xwalk-automation/banners/banner2/img3.jpg",
+                  "image4": "/content/dam/xwalk-automation/banners/banner2/logo-top.svg",
+                  "image5": "/content/dam/xwalk-automation/banners/banner2/packshot-offer.svg",
+                  "image6": "/content/dam/xwalk-automation/banners/banner2/logo-bottom.svg",
                   "text1": "EN JUILLET",
                   "text2": "J'en profite*",
                   "text3": "*Offre soumise à conditions valable jusqu’au 09/08/2023. Voir modalités sur boutique.canalplus.com"
@@ -223,22 +223,22 @@
           }
         },
         {
-          "title": "Banner-300",
-          "id": "banner-300",
+          "title": "Banner 3",
+          "id": "banner3",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "Banner-300",
+                  "name": "Banner 3",
                   "model": "banner",  
                   "key-value": true,
-                  "image1": "/content/dam/xwalk-automation/banners/banner-300/img1.jpg",
-                  "image2": "/content/dam/xwalk-automation/banners/banner-300/img2.jpg",
-                  "image3": "/content/dam/xwalk-automation/banners/banner-300/img3.jpg",
-                  "image4": "/content/dam/xwalk-automation/banners/banner-300/logo-top.svg",
-                  "image5": "/content/dam/xwalk-automation/banners/banner-300/packshot-offer.svg",
-                  "image6": "/content/dam/xwalk-automation/banners/banner-300/logo-bottom.svg",
+                  "image1": "/content/dam/xwalk-automation/banners/banner3/img1.jpg",
+                  "image2": "/content/dam/xwalk-automation/banners/banner3/img2.jpg",
+                  "image3": "/content/dam/xwalk-automation/banners/banner3/img3.jpg",
+                  "image4": "/content/dam/xwalk-automation/banners/banner3/logo-top.svg",
+                  "image5": "/content/dam/xwalk-automation/banners/banner3/packshot-offer.svg",
+                  "image6": "/content/dam/xwalk-automation/banners/banner3/logo-bottom.svg",
                   "text1": "EN JUILLET",
                   "text2": "J'en profite*",
                   "text3": "*Offre soumise à conditions valable jusqu’au 09/08/2023. Voir modalités sur boutique.canalplus.com"
