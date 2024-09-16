@@ -45,13 +45,13 @@
     margin-bottom: 32px;
 }
 
-.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper:first-child .teaserv2::after {
+/* .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper:first-child .teaserv2::after {
     content: none;
-}
+} */
 
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns {
     padding-bottom: 24px;
-    padding-left: 75pt;
+    /* padding-left: 75pt; */
     position: relative;
 }
 
@@ -227,7 +227,7 @@
 
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:first-child p:nth-child(2),
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:last-child p:nth-child(3){
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     gap: 8px;
 } 
@@ -238,7 +238,7 @@
 
 @media screen and (max-width: 1024px) {
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns {
-        padding-left: 60px;
+        /* padding-left: 60px; */
     }
 
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div {
@@ -260,7 +260,7 @@
     }
 
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns {
-        padding-left: 51px;
+        /* padding-left: 51px; */
     }
 
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div {
@@ -294,7 +294,7 @@
         height: 24px;
         width: 24px;
     }
-
+    
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper:first-child .teaserv2 .bg-image .rte-text-description p strong em,
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p strong,
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong {
