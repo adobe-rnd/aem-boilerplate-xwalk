@@ -232,6 +232,11 @@
         "component": "text",
         "name": "text2",
         "label": "Text 2"
+      },
+      {
+        "component": "text",
+        "name": "text3",
+        "label": "Text 3"
       }
     ]
   }
