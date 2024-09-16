@@ -1,3 +1,4 @@
+import { branchURLStr } from "../../scripts/scripts.js";
 import { setLocationObj } from "../moredetailsaddress/moredetailsaddress.js";
 
 export function nearestLoction() {
@@ -11,15 +12,16 @@ export function nearestLoction() {
     let branch_cards = "";
     let cityName = storedata[0]['City'];
     storedata.forEach(eachLocation => {
-        let eachState = eachLocation['State'].charAt(0).toLowerCase() + eachLocation['State'].slice(1).replace(' ', '-').toLowerCase();
-        let eachCity = eachLocation['City'].charAt(0).toLowerCase() + eachLocation['City'].slice(1).replace(' ', '-').toLowerCase();
+        let eachState = eachLocation['State']
+        let eachCity = eachLocation['City']
         let eachLocationCode = eachLocation['Location Code'];
+        let eachLocationAdd = eachLocation['Location'];
         branch_cards += `
         <div class='card-box'>
         <h3 class='card-title'>${eachLocation['Location']}</h3>
         <p class='card-address'>${eachLocation['Address']}</p>
         <p class='card-gmail'> <span> <img src='/images/gmail.svg' alt='gmail-icon'/> </span> customercare@piramal.com</p>
-        <a href="/branch-locator/loans-in-${eachCity}-${eachState}-${eachLocationCode}" id='more-details-btn'> More details </a>
+        <a href="${branchURLStr(eachLocationAdd ,eachCity, eachState, "loans", eachLocationCode)}" id='more-details-btn'> More details </a>
         </div>`;
         // <a href="/branch-locator/${eachState}/${eachCity}/loans-in-${eachCity}-${eachState}-${eachLocationCode}" id='more-details-btn'> More details </a>
     });

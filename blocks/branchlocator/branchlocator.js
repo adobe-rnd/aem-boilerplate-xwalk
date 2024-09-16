@@ -1,4 +1,4 @@
-import { fetchAPI } from "../../scripts/scripts.js";
+import { branchURLStr, fetchAPI } from "../../scripts/scripts.js";
 import { dropDownStateCity, locateMeClick, onloadBranchLocator } from "./branchlocator-biz.js";
 import { setLocationObj } from "./branchlocator-init.js";
 
@@ -82,15 +82,16 @@ export function branchLocator() {
 export function innerBranchFunc(branchhList){
   let innerBranch = "";
   branchhList.forEach(eachBranch => {
-    let eachState = eachBranch['State'].charAt(0).toLowerCase() + eachBranch['State'].slice(1).replace(' ', '-').toLowerCase();
-    let eachCity = eachBranch['City'].charAt(0).toLowerCase() + eachBranch['City'].slice(1).replace(' ', '-').toLowerCase();
+    let eachState = eachBranch['State'];
+    let eachCity = eachBranch['City'];
     let eachLocationCode = eachBranch['Location Code'];
+    let eachLocation = eachBranch['Location'];
     innerBranch +=
                 `<div class='card-box'>
               <h3 class='card-title'> ${eachBranch['Location']} </h3>
               <p class='card-address'>${eachBranch['Address']}</p>
               <p class='card-gmail'> <span> <img src='/images/gmail.svg' alt='gmail-icon'/> </span> customercare@piramal.com </p>
-              <a href="/branch-locator/loans-in-${eachCity}-${eachState}-${eachLocationCode}" id='more-details-btn'> More details </a>
+              <a href="${branchURLStr(eachLocation ,eachCity, eachState, "loans", eachLocationCode)}" id='more-details-btn'> More details </a>
             </div>`;
             // <a href="/branch-locator/${eachState}/${eachCity}/loans-in-${eachCity}-${eachState}-${eachLocationCode}" id='more-details-btn'> More details </a>
 

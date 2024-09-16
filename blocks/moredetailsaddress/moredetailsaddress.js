@@ -258,6 +258,8 @@ async function onbranchDetails(block) {
         }else{
           document.querySelectorAll('.address-info ul li')[2].remove();
         }
+      }else{
+        document.querySelectorAll('.address-info ul li')[2].remove();
       }
     });
 
