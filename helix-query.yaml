@@ -3,7 +3,7 @@ indices:
   banners:
     target: /banners.json
     include:
-      - '/banners/**'
+      - '/banners/*
     properties:
       title:
         select: head > meta[property="og:title"]
