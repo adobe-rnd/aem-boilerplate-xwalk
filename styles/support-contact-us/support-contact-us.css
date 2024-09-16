@@ -97,6 +97,7 @@
     font-weight: 400;
     line-height: 24px;
     font-style: normal;
+    max-width: 790px;
 }
 
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p:nth-child(2),
@@ -252,6 +253,11 @@
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .front-image {
         max-width: 60px;
     }
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p,
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p:nth-child(2),
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div:first-child div p:first-child>strong>em {
+    max-width: 100%;
+}
 }
 
 @media screen and (max-width: 767px) {
