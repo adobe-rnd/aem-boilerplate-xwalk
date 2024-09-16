@@ -1,9 +1,9 @@
 version: 1
 indices:
   banners:
-    target: /banners.json
+    target: /banners/banners.json
     include:
-      - '/banners/**'
+      - '**/banners/**'
     properties:
       title:
         select: head > meta[property="og:title"]
