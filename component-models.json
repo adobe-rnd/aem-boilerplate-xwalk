@@ -229,6 +229,13 @@
         "multi": false
       },
       {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image6",
+        "label": "Image 6",
+        "multi": false
+      },
+      {
         "component": "text",
         "name": "text1",
         "label": "Text 1"
