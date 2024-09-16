@@ -19,19 +19,19 @@ export default async function decorate(block) {
                     <div class="iframe-wrapper iframe-wrapper-728">
                         <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/728x90"></iframe>
                     </div>
-                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/728x90" target="_blank">Open banner in new tab</a>
+                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/728x90" target="_blank">Open banner</a>
                 </div>
                 <div class="iframe-container">
                     <div class="iframe-wrapper iframe-wrapper-300">
                         <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/300x250"></iframe>
                     </div>
-                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/300x250" target="_blank">Open banner in new tab</a>
+                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/300x250" target="_blank">Open banner</a>
                 </div>
                 <div class="iframe-container">
                     <div class="iframe-wrapper iframe-wrapper-160">
                         <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/160x600"></iframe>
                     </div>
-                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/160x600" target="_blank">Open banner in new tab</a>
+                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/160x600" target="_blank">Open banner</a>
                 </div>
             </div>
         `;
