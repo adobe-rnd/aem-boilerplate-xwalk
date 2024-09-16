@@ -32,9 +32,7 @@ h2 {
 }
 .iframe-wrapper {
     background-color: white;
-    border-radius: 8px 8px 0 0;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .iframe-wrapper-728 {
     width: 728px;
