@@ -1,9 +1,9 @@
 version: 1
 indices:
-  banners:
-    target: /banners-index.json
+  variations:
+    target: /variations-index.json
     include:
-      - /banners/**
+      - /banners/variation-*
     properties:
       title:
         select: head > meta[property="og:title"]
