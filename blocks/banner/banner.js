@@ -115,7 +115,7 @@ function loadScript() {
 
     .addLabel('packshot', '+=1.2')
     .to('#f3', .5, {opacity:0, ease:Power0.easeOut}, 'packshot-=.5')
-    .from('#packshot #logo-top', .6, {y:-35, ease:Power2.easeOut}, 'packshot')
+    .from('#packshot #logo-top', .6, {y:-50, opacity:0, ease:Power2.easeOut}, 'packshot')
     .from('#packshot #offer', .5, {opacity:0, ease:Power0.easeOut}, '-=.1')
     .from('#packshot .cta', .5, {opacity:0, ease:Power0.easeOut}, '-=.1')
     .from('#packshot .ml', .5, {opacity:0, ease:Power0.easeOut}, '-=.3')
