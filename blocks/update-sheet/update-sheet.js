@@ -9,7 +9,7 @@ export function update_sheet(_block) {
                                 </select>
                             </div>
                             <div class='input-field'>
-                                <input type="text" placeholder="Enter">
+                                <input type="file" placeholder="Enter">
                             </div>
                             <button class='submit-btn'>Submit</button>    
                         </div>`
