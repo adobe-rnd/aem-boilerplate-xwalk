@@ -168,7 +168,13 @@
                   "name": "Banner",
                   "model": "banner",
                   "key-value": true,
-                  "image": "/content/dam/xwalk-automation/banners/img2.jpg"
+                  "image1": "/content/dam/xwalk-automation/banners/img1.jpg",
+                  "image2": "/content/dam/xwalk-automation/banners/img2.jpg",
+                  "image3": "/content/dam/xwalk-automation/banners/img3.jpg",
+                  "image4": "/content/dam/xwalk-automation/banners/logo-top.svg",
+                  "image5": "/content/dam/xwalk-automation/banners/packshot-offer.svg",
+                  "text1": "J'en profite*",
+                  "text2": "*Offre soumise à conditions valable jusqu’au 09/08/2023. Voir modalités sur boutique.canalplus.com"
                 }
               }
             }

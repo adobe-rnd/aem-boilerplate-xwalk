@@ -1,15 +1,23 @@
 import { readBlockConfig } from '../../scripts/aem.js';
 
-
-
-export default async function decorate(block) {
-    const config = readBlockConfig(block);
-    const imageUrl = config.image;
-
+function getImagePath(imageUrl) {
     var parser = document.createElement('a');
     parser.href = imageUrl;
 
-    const imagePath = parser.pathname;
+    return parser.pathname;
+}
+
+export default async function decorate(block) {
+    const config = readBlockConfig(block);
+
+    const imagePath1 = getImagePath(config.image1);
+    const imagePath2 = getImagePath(config.image2);
+    const imagePath3 = getImagePath(config.image3);
+    const imagePath4 = getImagePath(config.image4);
+    const imagePath5 = getImagePath(config.image5);
+
+    const text1 = config.text1;
+    const text2 = config.text2;
 
     const content = document.createRange().createContextualFragment(`
         <div id="ad">
@@ -17,44 +25,44 @@ export default async function decorate(block) {
             <div id="f1" class="frame-visual absolute">
                 <div class="month absolute">EN JUILLET</div>
                 <div class="img centerX">
-                    <img id="toto" src="${imagePath}" alt="" class="centerX">
+                    <img id="toto" src="${image1Path}" alt="" class="centerX">
                 </div>
                 <div class="bottom absolute">
                     <img src="logo-bottom.svg" alt="" class="logo-bottom absolute">
-                    <div class="cta absolute"><div class="shadow"></div>J'en profite*</div>
-                    <div class="ml absolute">*Offre soumise à conditions valable jusqu’au 09/08/2023. Voir modalités sur boutique.canalplus.com</div>
+                    <div class="cta absolute"><div class="shadow"></div>${text1}</div>
+                    <div class="ml absolute">${text2}</div>
                 </div>
             </div>
 
             <div id="f2" class="frame-visual absolute">
                 <div class="month absolute">EN JUILLET</div>
                 <div class="img centerX">
-                    <img src="img2.jpg" alt="" class="centerX">
+                    <img src="${image2Path}" alt="" class="centerX">
                 </div>
                 <div class="bottom absolute">
                     <img src="logo-bottom.svg" alt="" class="logo-bottom absolute">
-                    <div class="cta absolute"><div class="shadow"></div>J'en profite*</div>
-                    <div class="ml absolute">*Offre soumise à conditions valable jusqu’au 09/08/2023. Voir modalités sur boutique.canalplus.com</div>
+                    <div class="cta absolute"><div class="shadow"></div>${text1}</div>
+                    <div class="ml absolute">${text2}</div>
                 </div>
             </div>
 
             <div id="f3" class="frame-visual absolute">
                 <div class="month absolute">EN JUILLET</div>
                 <div class="img centerX">
-                    <img src="img3.jpg" alt="" class="centerX">
+                    <img src="${image3Path}" alt="" class="centerX">
                 </div>
                 <div class="bottom absolute">
                     <img src="logo-bottom.svg" alt="" class="logo-bottom absolute">
-                    <div class="cta absolute"><div class="shadow"></div>J'en profite*</div>
-                    <div class="ml absolute">*Offre soumise à conditions valable jusqu’au 09/08/2023. Voir modalités sur boutique.canalplus.com</div>
+                    <div class="cta absolute"><div class="shadow"></div>${text1}</div>
+                    <div class="ml absolute">${text2}</div>
                 </div>
             </div>
 
             <div id="packshot" class="absolute">
-                <img src="logo-top.svg" alt="" id="logo-top" class="centerY">
-                <img src="packshot-offer.svg" alt="" id="offer" class="centerXY">
-                <div class="cta centerY"><div class="shadow"></div>J'en profite*</div>
-                <div class="ml absolute">*Offre soumise à conditions valable jusqu’au 09/08/2023. Voir modalités sur boutique.canalplus.com</div>
+                <img src="${image4Path}" alt="" id="logo-top" class="centerY">
+                <img src="${image5Path}" alt="" id="offer" class="centerXY">
+                <div class="cta absolute"><div class="shadow"></div>${text1}</div>
+                <div class="ml absolute">${text2}</div>
             </div>
         </div>
     `);

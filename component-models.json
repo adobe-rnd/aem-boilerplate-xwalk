@@ -191,9 +191,47 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image",
-        "label": "Image",
+        "name": "image1",
+        "label": "Image 1",
         "multi": false
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image2",
+        "label": "Image 2",
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image3",
+        "label": "Image 3",
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image4",
+        "label": "Image 4",
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image5",
+        "label": "Image 5",
+        "multi": false
+      }
+      {
+        "component": "text",
+        "name": "text1",
+        "label": "Text 1"
+      },
+      {
+        "component": "text",
+        "name": "text2",
+        "label": "Text 2"
       }
     ]
   }
