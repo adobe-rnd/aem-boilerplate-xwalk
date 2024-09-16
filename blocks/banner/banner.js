@@ -18,51 +18,52 @@ export default async function decorate(block) {
 
     const text1 = config.text1;
     const text2 = config.text2;
+    const text3 = config.text3;
 
     const content = document.createRange().createContextualFragment(`
         <div id="ad">
              <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
             <div id="f1" class="frame-visual absolute">
-                <div class="month absolute">EN JUILLET</div>
+                <div class="month absolute">${text1}</div>
                 <div class="img centerX">
                     <img id="toto" src="${image1Path}" alt="" class="centerX">
                 </div>
                 <div class="bottom absolute">
                     <img src="logo-bottom.svg" alt="" class="logo-bottom absolute">
-                    <div class="cta absolute"><div class="shadow"></div>${text1}</div>
-                    <div class="ml absolute">${text2}</div>
+                    <div class="cta absolute"><div class="shadow"></div>${text2}</div>
+                    <div class="ml absolute">${text3}</div>
                 </div>
             </div>
 
             <div id="f2" class="frame-visual absolute">
-                <div class="month absolute">EN JUILLET</div>
+                <div class="month absolute">${text1}</div>
                 <div class="img centerX">
                     <img src="${image2Path}" alt="" class="centerX">
                 </div>
                 <div class="bottom absolute">
                     <img src="logo-bottom.svg" alt="" class="logo-bottom absolute">
-                    <div class="cta absolute"><div class="shadow"></div>${text1}</div>
-                    <div class="ml absolute">${text2}</div>
+                    <div class="cta absolute"><div class="shadow"></div>${text2}</div>
+                    <div class="ml absolute">${text3}</div>
                 </div>
             </div>
 
             <div id="f3" class="frame-visual absolute">
-                <div class="month absolute">EN JUILLET</div>
+                <div class="month absolute">${text1}</div>
                 <div class="img centerX">
                     <img src="${image3Path}" alt="" class="centerX">
                 </div>
                 <div class="bottom absolute">
                     <img src="logo-bottom.svg" alt="" class="logo-bottom absolute">
-                    <div class="cta absolute"><div class="shadow"></div>${text1}</div>
-                    <div class="ml absolute">${text2}</div>
+                    <div class="cta absolute"><div class="shadow"></div>${text2}</div>
+                    <div class="ml absolute">${text3}</div>
                 </div>
             </div>
 
             <div id="packshot" class="absolute">
                 <img src="${image4Path}" alt="" id="logo-top" class="centerY">
                 <img src="${image5Path}" alt="" id="offer" class="centerXY">
-                <div class="cta absolute"><div class="shadow"></div>${text1}</div>
-                <div class="ml absolute">${text2}</div>
+                <div class="cta centerY"><div class="shadow"></div>${text2}</div>
+                <div class="ml absolute">${text3}</div>
             </div>
         </div>
     `);
