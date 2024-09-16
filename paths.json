@@ -1,7 +1,6 @@
 {
   "mappings": [
     "/content/xwalk-automation/:/",
-    "/content/xwalk-automation/configuration:/.helix/config.json",
-    "/content/xwalk-automation/headers:/.helix/headers.json"
+    "/content/xwalk-automation/headers.json:/.helix/headers.json"
   ]
 }
