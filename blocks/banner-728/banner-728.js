@@ -1,6 +1,6 @@
 
 
-export default async function decorate(block) {
+export default function decorate(block) {
     
 
     const content = document.createRange().createContextualFragment(`qdsqsd
