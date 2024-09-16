@@ -936,3 +936,21 @@ export function getDay(){
   const currentDayOfWeek = daysOfWeek[date.getDay()];
   return currentDayOfWeek
 }
+
+
+export function branchURLStr(location = "", city = "", state = "", urlstrhand, locationcode = ""){
+  let locationAdd = location?.replace(/\s+/g, "-").replace(/[()/]/g, "").trim().toLowerCase();
+  let cityStr = city?.replace(/\s+/g, "-").replace(/[()/]/g, "").trim().toLowerCase();
+  let stateStr = state?.replace(/\s+/g, "-").replace(/[()/]/g, "").trim().toLowerCase();
+  if(urlstrhand == "shorthand"){
+    return `/branch-locator/${stateStr}/${cityStr}`;
+  }else if(urlstrhand == "shorthandstate"){
+    return `/branch-locator/${stateStr}`;
+  }else if(urlstrhand == "loans"){
+    if(locationAdd == cityStr){
+      return `/branch-locator/loans-in-${cityStr}-${stateStr}-${locationcode}`;
+    }else{
+      return `/branch-locator/loans-in-${locationAdd}-${cityStr}-${stateStr}-${locationcode}`;
+    }
+  }
+}

@@ -57,6 +57,7 @@ export async function searchBranchByURL() {
         let stateCityLatLng = setLocationObj.getExcelData[setLocationObj.geoInfo.state]?.find((eachCityCheck) => eachCityCheck.City === setLocationObj.geoInfo.city);
         setLocationObj.lat = stateCityLatLng["Latitude"];
         setLocationObj.lng = stateCityLatLng["Longitude"]; 
+        setLocationObj.geoInfo.location = stateCityLatLng["Location"]; 
       } 
 
       // Country

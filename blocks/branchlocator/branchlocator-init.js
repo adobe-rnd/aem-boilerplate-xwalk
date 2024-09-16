@@ -14,6 +14,8 @@ setLocationObj.geoInfo = {
   city: "",
   state: "",
   country: "",
+  location: "",
+  locationcode: "",
 };
 setLocationObj.seturl = {
   city: "",

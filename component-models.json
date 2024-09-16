@@ -2710,5 +2710,17 @@
         "label": "URL Text"
       }
     ]
+  },
+  {
+    "id": "branchkeyfeatures",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "branchkeyfeatures",
+        "value": "Url text",
+        "label": "URL Text"
+      }
+    ]
   }
 ]
