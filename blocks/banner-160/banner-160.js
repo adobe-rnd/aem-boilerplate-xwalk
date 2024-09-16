@@ -15,6 +15,7 @@ export default async function decorate(block) {
     const image3Path = getImagePath(config.image3);
     const image4Path = getImagePath(config.image4);
     const image5Path = getImagePath(config.image5);
+    const image6Path = getImagePath(config.image6);
 
     const text1 = config.text1;
     const text2 = config.text2;
@@ -29,7 +30,7 @@ export default async function decorate(block) {
                     <img src="${image1Path}" alt="" class="centerY">
                 </div>
                 <div class="bottom absolute">
-                    <img src="logo-bottom.svg" alt="" class="logo-bottom absolute">
+                    <img src="${image6Path}" alt="" class="logo-bottom absolute">
                     <div class="cta absolute"><div class="shadow"></div>${text2}</div>
                     <div class="ml absolute">${text3}</div>
                 </div>
@@ -41,7 +42,7 @@ export default async function decorate(block) {
                     <img src="${image2Path}" alt="" class="centerY">
                 </div>
                 <div class="bottom absolute">
-                    <img src="logo-bottom.svg" alt="" class="logo-bottom absolute">
+                    <img src="${image6Path}" alt="" class="logo-bottom absolute">
                     <div class="cta absolute"><div class="shadow"></div>${text2}</div>
                     <div class="ml absolute">${text3}</div>
                 </div>
@@ -53,7 +54,7 @@ export default async function decorate(block) {
                     <img src="${image3Path}" alt="" class="centerY">
                 </div>
                 <div class="bottom absolute">
-                    <img src="logo-bottom.svg" alt="" class="logo-bottom absolute">
+                    <img src="${image6Path}" alt="" class="logo-bottom absolute">
                     <div class="cta absolute"><div class="shadow"></div>${text2}</div>
                     <div class="ml absolute">${text3}</div>
                 </div>
