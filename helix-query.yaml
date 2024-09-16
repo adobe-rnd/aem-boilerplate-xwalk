@@ -1,0 +1,11 @@
+version: 1
+indices:
+  banners:
+    target: /banners.json
+    include:
+      - '/banners/**'
+    properties:
+      url:
+        select: head > meta[property="og:url"]
+        value: |
+          attribute(el, 'content')
