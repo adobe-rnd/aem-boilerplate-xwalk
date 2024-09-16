@@ -63,7 +63,7 @@ export default async function decorate(block) {
             <div id="packshot" class="absolute">
                 <img src="${image4Path}" alt="" id="logo-top" class="centerX">
                 <img src="${image5Path}" alt="" id="offer" class="centerXY">
-                <div class="cta centerY"><div class="shadow"></div>${text2}</div>
+                <div class="cta centerX"><div class="shadow"></div>${text2}</div>
                 <div class="ml absolute">${text3}</div>
             </div>
         </div>
