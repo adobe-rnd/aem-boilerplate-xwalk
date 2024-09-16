@@ -22,7 +22,8 @@ export default async function decorate(block) {
 
     const content = document.createRange().createContextualFragment(`
         <div id="ad">
-             <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+            <link rel="stylesheet" href="banner.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
             <div id="f1" class="frame-visual absolute">
                 <div class="month absolute">${text1}</div>
                 <div class="img centerX">
