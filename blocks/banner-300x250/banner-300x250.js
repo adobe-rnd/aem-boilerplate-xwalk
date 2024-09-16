@@ -15,6 +15,7 @@ export default async function decorate(block) {
     const image3Path = getImagePath(config.image3);
     const image4Path = getImagePath(config.image4);
     const image5Path = getImagePath(config.image5);
+    const image6Path = getImagePath(config.image6);
 
     const text1 = config.text1;
     const text2 = config.text2;
@@ -25,11 +26,11 @@ export default async function decorate(block) {
             <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
             <div id="f1" class="frame-visual absolute">
                 <div class="month absolute">${text1}</div>
-                <div class="img centerX">
-                    <img id="toto" src="${image1Path}" alt="" class="centerX">
+                <div class="img centerY">
+                    <img src="${image1Path}" alt="" class="centerY">
                 </div>
                 <div class="bottom absolute">
-                    <img src="logo-bottom.svg" alt="" class="logo-bottom absolute">
+                    <img src="${image6Path}" alt="" class="logo-bottom absolute">
                     <div class="cta absolute"><div class="shadow"></div>${text2}</div>
                     <div class="ml absolute">${text3}</div>
                 </div>
@@ -37,11 +38,11 @@ export default async function decorate(block) {
 
             <div id="f2" class="frame-visual absolute">
                 <div class="month absolute">${text1}</div>
-                <div class="img centerX">
-                    <img src="${image2Path}" alt="" class="centerX">
+                <div class="img centerY">
+                    <img src="${image2Path}" alt="" class="centerY">
                 </div>
                 <div class="bottom absolute">
-                    <img src="logo-bottom.svg" alt="" class="logo-bottom absolute">
+                    <img src="${image6Path}" alt="" class="logo-bottom absolute">
                     <div class="cta absolute"><div class="shadow"></div>${text2}</div>
                     <div class="ml absolute">${text3}</div>
                 </div>
@@ -49,18 +50,18 @@ export default async function decorate(block) {
 
             <div id="f3" class="frame-visual absolute">
                 <div class="month absolute">${text1}</div>
-                <div class="img centerX">
-                    <img src="${image3Path}" alt="" class="centerX">
+                <div class="img centerY">
+                    <img src="${image3Path}" alt="" class="centerY">
                 </div>
                 <div class="bottom absolute">
-                    <img src="logo-bottom.svg" alt="" class="logo-bottom absolute">
+                    <img src="${image6Path}" alt="" class="logo-bottom absolute">
                     <div class="cta absolute"><div class="shadow"></div>${text2}</div>
                     <div class="ml absolute">${text3}</div>
                 </div>
             </div>
 
             <div id="packshot" class="absolute">
-                <img src="${image4Path}" alt="" id="logo-top" class="centerY">
+                <img src="${image4Path}" alt="" id="logo-top" class="centerX">
                 <img src="${image5Path}" alt="" id="offer" class="centerXY">
                 <div class="cta centerY"><div class="shadow"></div>${text2}</div>
                 <div class="ml absolute">${text3}</div>
@@ -87,7 +88,7 @@ function loadScript() {
     TweenMax.set('.centerY', {position:'absolute', yPercent:-50, top:'50%'});
     TweenMax.set('.centerXY', {position:'absolute', xPercent:-50, yPercent:-50, left:'50%', top:'50%'});
 
-    var tl = new TimelineMax()
+    var tl = new TimelineMax(/*{repeat:1, repeatDelay: 3}*/)
     .set('#ad', {visibility : 'visible'})
 
     .addLabel('start', '+=.2')
@@ -115,7 +116,7 @@ function loadScript() {
 
     .addLabel('packshot', '+=1.2')
     .to('#f3', .5, {opacity:0, ease:Power0.easeOut}, 'packshot-=.5')
-    .from('#packshot #logo-top', .6, {y:-50, opacity:0, ease:Power2.easeOut}, 'packshot')
+    .from('#packshot #logo-top', .6, {y:-35, ease:Power2.easeOut}, 'packshot')
     .from('#packshot #offer', .5, {opacity:0, ease:Power0.easeOut}, '-=.1')
     .from('#packshot .cta', .5, {opacity:0, ease:Power0.easeOut}, '-=.1')
     .from('#packshot .ml', .5, {opacity:0, ease:Power0.easeOut}, '-=.3')

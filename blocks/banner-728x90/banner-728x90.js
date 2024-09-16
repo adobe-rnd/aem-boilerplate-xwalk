@@ -27,7 +27,7 @@ export default async function decorate(block) {
             <div id="f1" class="frame-visual absolute">
                 <div class="month absolute">${text1}</div>
                 <div class="img centerX">
-                    <img id="toto" src="${image1Path}" alt="" class="centerX">
+                    <img src="${image1Path}" alt="" class="centerX">
                 </div>
                 <div class="bottom absolute">
                     <img src="${image6Path}" alt="" class="logo-bottom absolute">
