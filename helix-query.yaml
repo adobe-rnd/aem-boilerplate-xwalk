@@ -1,7 +1,7 @@
 version: 1
 indices:
   banners:
-    target: /banners.json
+    target: /banners-index.json
     include:
       - /banners/*
     properties:
