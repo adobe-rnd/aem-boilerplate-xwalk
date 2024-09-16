@@ -17,21 +17,21 @@ export default async function decorate(block) {
             <div class="iframe-row">
                 <div class="iframe-container">
                     <div class="iframe-wrapper iframe-wrapper-728">
-                        <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-728"></iframe>
+                        <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner1"></iframe>
                     </div>
-                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-728" target="_blank">Open banner</a>
+                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner1" target="_blank">Open banner</a>
                 </div>
                 <div class="iframe-container">
                     <div class="iframe-wrapper iframe-wrapper-300">
-                        <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-300"></iframe>
+                        <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner3"></iframe>
                     </div>
-                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-300" target="_blank">Open banner</a>
+                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner3" target="_blank">Open banner</a>
                 </div>
                 <div class="iframe-container">
                     <div class="iframe-wrapper iframe-wrapper-160">
-                        <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-160"></iframe>
+                        <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner2"></iframe>
                     </div>
-                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-160" target="_blank">Open banner</a>
+                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner2" target="_blank">Open banner</a>
                 </div>
             </div>
         `;
