@@ -5,6 +5,10 @@ indices:
     include:
       - '/banners/**'
     properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: |
+          attribute(el, 'content')
       url:
         select: head > meta[property="og:url"]
         value: |
