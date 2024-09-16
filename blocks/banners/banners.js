@@ -1,7 +1,7 @@
 
 export default async function decorate(block) {
-    const reponse = await fetch("http://example.com/films.json");
-    const films = await reponse.json();
+    const reponse = await fetch("https://main--xwalk-automation--fornacif.hlx.page/banners.json");
+    const banners = await reponse.json();
 
     const content = document.createRange().createContextualFragment(`
         <div>
