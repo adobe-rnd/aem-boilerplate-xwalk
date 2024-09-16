@@ -186,6 +186,11 @@
     ]
   },
   {
+    "id": "banners",
+    "fields": [
+    ]
+  },
+  {
     "id": "banner",
     "fields": [
       {
