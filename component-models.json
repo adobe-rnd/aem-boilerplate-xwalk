@@ -2649,9 +2649,9 @@
     "fields": [
       {
         "component": "text",
-        "name": "form-data-json",
+        "name": "form-url",
         "value": "",
-        "label": "Form Data JSON",
+        "label": "Form Url",
         "valueType": "string"
       },
       {
