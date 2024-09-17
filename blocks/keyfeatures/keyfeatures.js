@@ -186,7 +186,7 @@ function generateFeatureHTML(props) {
 }
 
 
-function featureDropDownClick(block) {
+export function featureDropDownClick(block) {
     var featureClick = block.querySelectorAll('.keyfeatures-info .heading')
     featureClick.forEach(function (btn) {
         btn.addEventListener('click', function (e) {

@@ -310,12 +310,9 @@ export function locateMeClick(block){
           block.closest('.section').querySelector('.title-to-show').innerText = 'Find all ' + setLocationObj.geoInfo.city + ' Branches here';
           block.closest('.section').querySelector('.btn-locate').classList.add('dp-none');
           block.closest('.section').querySelector('.btn-locate-details').classList.remove('dp-none');
-          // setLocationObj.seturl.state = setLocationObj.geoInfo.state.charAt(0).toLowerCase() + setLocationObj.geoInfo.state.slice(1).replace(' ', '-').toLowerCase();
-          // setLocationObj.seturl.city = setLocationObj.geoInfo.city.charAt(0).toLowerCase() + setLocationObj.geoInfo.city.slice(1).replace(' ', '-').toLowerCase();
           setLocationObj.geoInfo.locationcode= branchhList[0]['Location Code'];
           setLocationObj.geoInfo.location= branchhList[0]['Location'];
           let settingBranchURl = branchURLStr(setLocationObj.geoInfo.location ,setLocationObj.geoInfo.city, setLocationObj.geoInfo.state, "loans", setLocationObj.geoInfo.locationcode);
-          // let settingBranchURl = '/branch-locator/' + setLocationObj.seturl.state + '/' + setLocationObj.seturl.city + '/loans-in-' + setLocationObj.seturl.city + '-' + setLocationObj.seturl.state + '-' + setLocationObj.seturl.location;
           block.closest('.section').querySelector('.btn-locate-details').setAttribute('href', settingBranchURl);
           block.closest('.section').querySelector('.branch-deatils').classList.remove('dp-none');
         });

@@ -3,7 +3,6 @@ import { fetchAPI, getDay } from "../../scripts/scripts.js";
 
 export let setLocationObj = {};
 let locationInLatLan = {};
-// setLocationObj.getExcelData = dropDownStateCity(); // await while calling API
 setLocationObj.stateLi = "";
 setLocationObj.cityLi = "";
 setLocationObj.lat = "";
@@ -14,11 +13,8 @@ setLocationObj.geoInfo = {
   city: "",
   state: "",
   country: "",
-};
-setLocationObj.seturl = {
-  city: "",
-  state: "",
   location: "",
+  locationcode: "",
 };
 
 export default async function decorate(block) {
@@ -31,7 +27,12 @@ export default async function decorate(block) {
     let urlRepoonse = await CFApiCall(url);
     const jsonResponseData = JSON.parse(urlRepoonse?.data[0]?.branchlocatorobj);
 
-    setLocationObj.getExcelData = dropDownStateCity(jsonResponseData); 
+    if(sessionStorage.getItem('data')){
+      setLocationObj.getExcelData = JSON.parse(sessionStorage.getItem('data'));
+    }else{
+        setLocationObj.getExcelData = dropDownStateCity(jsonResponseData);
+        sessionStorage.setItem('data', JSON.stringify(setLocationObj.getExcelData));
+    }
 
     image?.querySelector("picture > img")?.setAttribute("alt", imagealt?.textContent?.trim() || "");
 
@@ -50,6 +51,7 @@ export default async function decorate(block) {
 
     
     await onbranchDetails();
+    nearBLBreadCrumb();
     
 }
 
@@ -231,19 +233,21 @@ async function onbranchDetails(block) {
   // let searchBranchURL = "https://www.piramalfinance.com/branch-locator/loans-in-anakapalle-andhra-pradesh-6391";
 
   let splitSearch = searchBranchURL.split("/").pop();
-  if(splitSearch.includes('loans-in')){
+  if (splitSearch.includes("loans-in")) {
     let currentLocation = searchBranchURL.split("/").pop().split("-").pop();
     const flatLocationData = Object.values(setLocationObj.getExcelData).flat(); // Flattening the nested arrays
-    const foundLocation = flatLocationData.find(location => location["Location Code"] == currentLocation); 
-    setLocationObj.geoInfo.state = foundLocation["State"]
-    setLocationObj.geoInfo.city = foundLocation["City"]
-    setLocationObj.geoInfo.locationcode = foundLocation["Location Code"]
-    setLocationObj.lat = foundLocation["Latitude"]
-    setLocationObj.lng = foundLocation["Longitude"]
+    const foundLocation = flatLocationData.find((location) => location["Location Code"] == currentLocation);
+    const { State, City, "Location Code": locationCode, Location, Latitude, Longitude, Address, Pincode, "On Page Content": pageContent } = foundLocation;
+    setLocationObj.geoInfo.state = State;
+    setLocationObj.geoInfo.city = City;
+    setLocationObj.geoInfo.locationcode = locationCode;
+    setLocationObj.geoInfo.location = Location;
+    setLocationObj.lat = Latitude;
+    setLocationObj.lng = Longitude;
     setLocationObj.geoInfo.country = "India"; // Country
-    setLocationObj.address = foundLocation["Address"]; 
-    setLocationObj.pincode = foundLocation["Pincode"];
-    setLocationObj.pagecontent = foundLocation['On Page Content']
+    setLocationObj.address = Address;
+    setLocationObj.pincode = Pincode;
+    setLocationObj.pagecontent = pageContent;
   }
 
     await getStateCity(setLocationObj.lat, setLocationObj.lng);
@@ -399,6 +403,37 @@ function renderRatingDiv () {
     document.querySelector(".branchcustomer-review-cards").classList.add("dp-none");
   }
 
+}
+
+function nearBLBreadCrumb() {
+  const { city, location, locationcode, state } = setLocationObj.geoInfo;
+
+  let breadCrumb = "";
+
+  let newState = state.charAt(0).toLowerCase() + state.slice(1).replace(" ", "-").toLowerCase();
+  let newCity = city.charAt(0).toLowerCase() + city.slice(1).replace(" ", "-").toLowerCase();
+  let newLoaction = location.replace(/\s+/g, "-").replace(/[()/]/g, "").trim().toLowerCase();
+
+  let newSetState = state.charAt(0).toUpperCase() + state.slice(1).replace(" ", "-").toLowerCase();
+  let newSetCity = city.charAt(0).toUpperCase() + city.slice(1).replace(" ", "-").toLowerCase();
+  let newSetLocation = newLoaction.charAt(0).toUpperCase() + city.slice(1).replace(" ", "-").toLowerCase();
+
+  if (newCity == newLoaction) {
+    breadCrumb = `<span class="breadcrumb-separator"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.00195L4.29293 5.70902C4.68182 5.32013 4.68182 4.68377 4.29293 4.29488L1 1.00195" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <a href="/branch-locator/${newState}">${newSetState}</a>
+        <span class="breadcrumb-separator"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.00195L4.29293 5.70902C4.68182 5.32013 4.68182 4.68377 4.29293 4.29488L1 1.00195" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <a href="/branch-locator/loans-in-${newCity}-${newState}-${locationcode}">${newSetLocation}</a>
+        `;
+  } else {
+    breadCrumb = `<span class="breadcrumb-separator"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.00195L4.29293 5.70902C4.68182 5.32013 4.68182 4.68377 4.29293 4.29488L1 1.00195" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <a href="/branch-locator/${newState}">${newSetState}</a>
+        <span class="breadcrumb-separator"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.00195L4.29293 5.70902C4.68182 5.32013 4.68182 4.68377 4.29293 4.29488L1 1.00195" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <a href="/branch-locator/${newState}/${newCity}">${newSetCity}</a>
+        <span class="breadcrumb-separator"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.00195L4.29293 5.70902C4.68182 5.32013 4.68182 4.68377 4.29293 4.29488L1 1.00195" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <a href="/branch-locator/loans-in-${newLoaction}-${newCity}-${newState}-${locationcode}">${newSetLocation}</a>
+      `;
+  }
+  document.querySelector("body").querySelector(".breadcrumb nav").insertAdjacentHTML("beforeend", breadCrumb);
 }
 
 

@@ -116,7 +116,12 @@ export default async function decorate(block) {
     let urlRepoonse = await CFApiCall(url);
     const jsonResponseData = JSON.parse(urlRepoonse?.data[0]?.branchlocatorobj);
 
-    setLocationObj.getExcelData = dropDownStateCity(jsonResponseData); 
+    if(sessionStorage.getItem('data')){
+        setLocationObj.getExcelData = JSON.parse(sessionStorage.getItem('data'));
+    }else{
+        setLocationObj.getExcelData = dropDownStateCity(jsonResponseData);
+        sessionStorage.setItem('data', JSON.stringify(setLocationObj.getExcelData));
+    }
 
     block.innerHTML = branchLocator_dropdown(block);    ;
     block.innerHTML += branchLocator_Map(block);
@@ -124,6 +129,7 @@ export default async function decorate(block) {
 
     onloadBranchLocator(block);
     locateMeClick(block);
+    BLNavUpdate(block);
 
     /* function myMap(lat, long) {
       var mapProp = {
@@ -141,4 +147,24 @@ export default async function decorate(block) {
 
 }
 
+
+function BLNavUpdate(block){
+    let breadCrumb = '';
+    let newState = setLocationObj.geoInfo.state.charAt(0).toLowerCase() + setLocationObj.geoInfo.state.slice(1).replace(' ', '-').toLowerCase();
+    let newSetState = setLocationObj.geoInfo.state.charAt(0).toUpperCase() + setLocationObj.geoInfo.state.slice(1).replace(' ', '-').toLowerCase();
+    let newCity = setLocationObj.geoInfo.city.charAt(0).toLowerCase() + setLocationObj.geoInfo.city.slice(1).replace(' ', '-').toLowerCase();
+    let newSetCity = setLocationObj.geoInfo.city.charAt(0).toUpperCase() + setLocationObj.geoInfo.city.slice(1).replace(' ', '-').toLowerCase();
+    if(setLocationObj.geoInfo.state && setLocationObj.geoInfo.city){
+        breadCrumb = `<span class="breadcrumb-separator"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.00195L4.29293 5.70902C4.68182 5.32013 4.68182 4.68377 4.29293 4.29488L1 1.00195" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <a href="/branch-locator/${newState}">${newSetState}</a>
+        <span class="breadcrumb-separator"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.00195L4.29293 5.70902C4.68182 5.32013 4.68182 4.68377 4.29293 4.29488L1 1.00195" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <a href="/branch-locator/${newState}/${newCity}">${newSetCity}</a>
+        `
+    }else if(setLocationObj.geoInfo.state){
+        breadCrumb = `<span class="breadcrumb-separator"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.00195L4.29293 5.70902C4.68182 5.32013 4.68182 4.68377 4.29293 4.29488L1 1.00195" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <a href="/branch-locator/${newState}">${newSetState}</a>
+        `
+    } 
+    block.closest('body').querySelector('.breadcrumb nav').insertAdjacentHTML("beforeend",breadCrumb);
+}
 

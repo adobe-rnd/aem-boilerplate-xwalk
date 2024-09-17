@@ -2,9 +2,8 @@ import { branchURLStr } from "../../scripts/scripts.js";
 import { setLocationObj } from "../moredetailsaddress/moredetailsaddress.js";
 
 export function nearestLoction() {
-
     let {storedata} = setLocationObj;
-    if(storedata.length == 0){
+    if(!storedata || storedata.length == 0){
         return false;
     }
 
