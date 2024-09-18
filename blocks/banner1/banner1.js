@@ -21,6 +21,8 @@ export default async function decorate(block) {
     const text2 = config.text2;
     const text3 = config.text3;
 
+    console.info(image1Path)
+
     const content = document.createRange().createContextualFragment(`
         <div id="ad">
             <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
