@@ -20,7 +20,7 @@ export default async function decorate(block) {
             <div id="f1" class="frame-visual absolute">
                 <div class="month absolute">${text1}</div>
                 <div class="img centerX">
-                    <img src="https://s7e4a.scene7.com${image1Path}" alt="" class="centerX">
+                    <img src="${image1Path}" alt="" class="centerX">
                 </div>
                 <div class="bottom absolute">
                     <img src="${image6Path}" alt="" class="logo-bottom absolute">
@@ -32,7 +32,7 @@ export default async function decorate(block) {
             <div id="f2" class="frame-visual absolute">
                 <div class="month absolute">${text1}</div>
                 <div class="img centerX">
-                    <img src="https://s7e4a.scene7.com${image2Path}" alt="" class="centerX">
+                    <img src="${image2Path}" alt="" class="centerX">
                 </div>
                 <div class="bottom absolute">
                     <img src="${image6Path}" alt="" class="logo-bottom absolute">
@@ -44,7 +44,7 @@ export default async function decorate(block) {
             <div id="f3" class="frame-visual absolute">
                 <div class="month absolute">${text1}</div>
                 <div class="img centerX">
-                    <img src="https://s7e4a.scene7.com${image3Path}" alt="" class="centerX">
+                    <img src="${image3Path}" alt="" class="centerX">
                 </div>
                 <div class="bottom absolute">
                     <img src="${image6Path}" alt="" class="logo-bottom absolute">
