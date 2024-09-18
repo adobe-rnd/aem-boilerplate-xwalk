@@ -194,22 +194,17 @@
     "id": "banner",
     "fields": [
       {
-        "component": "reference",
-        "valueType": "string",
+        "component": "text",
         "name": "image1",
-        "label": "Image 1",
-        "multi": false
+        "label": "Image 1"
       },
       {
-        "component": "reference",
-        "valueType": "string",
+        "component": "text",
         "name": "image2",
-        "label": "Image 2",
-        "multi": false
+        "label": "Image 2"
       },
       {
-        "component": "reference",
-        "valueType": "string",
+        "component": "text",
         "name": "image3",
         "label": "Image 3",
         "multi": false
