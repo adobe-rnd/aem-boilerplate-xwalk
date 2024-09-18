@@ -1,5 +1,6 @@
 import { fetchAPI } from "../../scripts/scripts.js";
 import { generateOTPAPI, getAccessToken, resendOtpAPI, showNetworkFailedScreen, verfyOtpAPI } from "../applyloanform/loanformapi.js";
+import { getWhatAPIAuthURL, getWhatAPIURL } from "../applyloanform/loanformapiurls.js";
 
 let time_limit = 30;
 let time_out;
@@ -285,6 +286,53 @@ function getWhatsappServicesApi(mobileNumber) {
   });
 }
 
+
+export function getWhatAPIAuth() {
+  let requestObj = {
+    requestJson: {
+      username: "test.kumar@getcogno.ai",
+      password: "Success@123$",
+      bot_id: "1",
+    },
+  };
+
+  return new Promise(function (resolve, reject) {
+    fetchAPI("POST", getWhatAPIAuthURL, requestObj)
+      .then(function (response) {
+        resolve(response.responseJson);
+      })
+      .catch(function (err) {
+        showNetworkFailedScreen(err);
+      });
+  });
+}
+
+export function getWhatAPI(authToken, mobileNumber) {
+  let requestObj = {
+    requestJson: {
+      authorization: authToken,
+      campaign_id: "87",
+      whatsapp_bsp: "6",
+      client_data: {
+        phone_number: "+91" + mobileNumber,
+        name: "Name",
+      },
+    },
+  };
+
+  return new Promise(function (resolve, reject) {
+    fetchAPI("POST", getWhatAPIURL, requestObj)
+      .then(function (response) {
+        resolve(response.responseJson);
+      })
+      .catch(function (err) {
+        showNetworkFailedScreen(err);
+      });
+  });
+}
+
+
+
 export function sucessPopupCloe() {
   document.querySelector(".successContainer").style.display = "none";
   close();
@@ -297,15 +345,21 @@ function verfiyOtp(otpValue) {
         if (response.returnResponse.statusCode == 100) {
           document.querySelector(".wrongotpmessage").style.display = "none";
           document.querySelector(".wrongotpmessage").textContent = "";
-          getWhatsappServicesApi(mobileNumber).then(function (res) {
-            document.querySelector(".successContainer").style.display = "block";
-            document.querySelector(".loan-form-heading-parent").style.display = "none";
-            document.querySelector(".loan-form-otp").style.display = "none";
-            document.querySelector(".loan-form-button-container").style.display = "none";
-            document.querySelector(".mobileNumber").innerText = mobileNumber;
-
-            removeLoader();
-          });
+          getWhatAPIAuth().then(function ({status, auth_token}){
+            if(status == 200){
+              getWhatAPI(auth_token, mobileNumber).then(function (res) {
+                document.querySelector(".successContainer").style.display = "block";
+                document.querySelector(".loan-form-heading-parent").style.display = "none";
+                document.querySelector(".loan-form-otp").style.display = "none";
+                document.querySelector(".loan-form-button-container").style.display = "none";
+                document.querySelector(".mobileNumber").innerText = mobileNumber;
+                removeLoader();
+              });
+            }
+          }).catch((error)=> {
+            console.log(error);
+          })
+          // getWhatsappServicesApi(mobileNumber);
         } else {
           document.querySelector(".wrongotpmessage").textContent = response.returnResponse.message;
           document.querySelector(".wrongotpmessage").style.display = "block";

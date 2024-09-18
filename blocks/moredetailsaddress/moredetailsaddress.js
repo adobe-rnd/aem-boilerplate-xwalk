@@ -334,20 +334,31 @@ function reviewRender(){
   let reviewCards = document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").querySelectorAll(".carousel-item");
   let currentNextButton = document.querySelector(".branchcustomer-review-cards").querySelector(".glider-next");
   let currentPrevButton = document.querySelector(".branchcustomer-review-cards").querySelector(".glider-prev");
-  new Glider(document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner"), {
-      "slidesToShow": 1,
-      "slidesToScroll": 1,
-      "scrollLock": true,
-      "draggable": true,
-      "arrows": {
-        prev: currentPrevButton,
-        next: currentNextButton
-      },
-      "responsive": [
-        { "breakpoint": 767, "settings": { "slidesToShow": 2, "slidesToScroll": 1 } },
-        { "breakpoint": 1025, "settings": { "slidesToShow": 3, "slidesToScroll": 1, "scrollLock": true, "draggable": true, "settings": { "slidesToShow": 2, "slidesToScroll": 1, "duration": 0.25 } } }
-      ]
-    });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const intersecting = entry.isIntersecting
+      if(intersecting){
+        new Glider(entry.target, {
+            "slidesToShow": 1,
+            "slidesToScroll": 1,
+            "scrollLock": true,
+            "draggable": true,
+            "arrows": {
+              prev: currentPrevButton,
+              next: currentNextButton
+            },
+            "responsive": [
+              { "breakpoint": 767, "settings": { "slidesToShow": 2, "slidesToScroll": 1 } },
+              { "breakpoint": 1025, "settings": { "slidesToShow": 3, "slidesToScroll": 1, "scrollLock": true, "draggable": true, "settings": { "slidesToShow": 2, "slidesToScroll": 1, "duration": 0.25 } } }
+            ]
+          });
+          // observer.unobserve(entry.target);
+      }
+    }, { rootMargin: "50px" });
+  });
+  observer.observe(document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner"));
+
   if(reviewCards.length <= 3){
     document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").querySelector(".carousel-navigation-buttons").classList.add("dp-none");
   }
@@ -374,7 +385,7 @@ function renderRatingDiv () {
         }
       }
       
-  
+     let subStringText = eachEle['text'].length > 125 ? eachEle['text']?.substring(0, 125) + '...' : eachEle['text'];
   
       html += 
       `<div class="teaser block carousel-item light">
@@ -391,7 +402,7 @@ function renderRatingDiv () {
                 ${starDiv}
               </p>
             </div>
-            <div class="short-description"><p>${eachEle['text']}</p></div>
+            <div class="short-description"><p>${subStringText}</p></div>
             <div class="cta"></div>
           </div>
         </div>
@@ -416,7 +427,7 @@ function nearBLBreadCrumb() {
 
   let newSetState = state.charAt(0).toUpperCase() + state.slice(1).replace(" ", "-").toLowerCase();
   let newSetCity = city.charAt(0).toUpperCase() + city.slice(1).replace(" ", "-").toLowerCase();
-  let newSetLocation = newLoaction.charAt(0).toUpperCase() + city.slice(1).replace(" ", "-").toLowerCase();
+  let newSetLocation = location.charAt(0).toUpperCase() + location.slice(1);
 
   if (newCity == newLoaction) {
     breadCrumb = `<span class="breadcrumb-separator"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.00195L4.29293 5.70902C4.68182 5.32013 4.68182 4.68377 4.29293 4.29488L1 1.00195" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
