@@ -4,7 +4,7 @@ function getImagePath(imageUrl) {
     var parser = document.createElement('a');
     parser.href = imageUrl;
 
-    return parser.pathname;
+    return `https://s7e4a.scene7.com${parser.pathname}`;
 }
 
 export default async function decorate(block) {
@@ -21,15 +21,13 @@ export default async function decorate(block) {
     const text2 = config.text2;
     const text3 = config.text3;
 
-    console.log(image1Path)
-
     const content = document.createRange().createContextualFragment(`
         <div id="ad">
             <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
             <div id="f1" class="frame-visual absolute">
                 <div class="month absolute">${text1}</div>
                 <div class="img centerX">
-                    <img src="https://s7e4a.scene7.com${image1Path}" alt="" class="centerX">
+                    <img src="${image1Path}" alt="" class="centerX">
                 </div>
                 <div class="bottom absolute">
                     <img src="${image6Path}" alt="" class="logo-bottom absolute">
@@ -41,7 +39,7 @@ export default async function decorate(block) {
             <div id="f2" class="frame-visual absolute">
                 <div class="month absolute">${text1}</div>
                 <div class="img centerX">
-                    <img src="https://s7e4a.scene7.com${image2Path}" alt="" class="centerX">
+                    <img src="${image2Path}" alt="" class="centerX">
                 </div>
                 <div class="bottom absolute">
                     <img src="${image6Path}" alt="" class="logo-bottom absolute">
@@ -53,7 +51,7 @@ export default async function decorate(block) {
             <div id="f3" class="frame-visual absolute">
                 <div class="month absolute">${text1}</div>
                 <div class="img centerX">
-                    <img src="https://s7e4a.scene7.com${image3Path}" alt="" class="centerX">
+                    <img src="${image3Path}" alt="" class="centerX">
                 </div>
                 <div class="bottom absolute">
                     <img src="${image6Path}" alt="" class="logo-bottom absolute">
