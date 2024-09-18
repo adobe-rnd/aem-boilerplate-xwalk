@@ -8,6 +8,8 @@ export default async function decorate(block) {
         <h1>HTML Banners Automation - Canal+</h1>
     `;
 
+    const timestamp = Date.now();
+
     for (const variationPage of variationPages) {
         const variationPath = variationPage.path;
         const variationTitle = variationPage.title;
@@ -17,19 +19,19 @@ export default async function decorate(block) {
             <div class="iframe-row">
                 <div class="iframe-container">
                     <div class="iframe-wrapper iframe-wrapper-728">
-                        <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-1"></iframe>
+                        <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-1?${timestamp}"></iframe>
                     </div>
                     <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-1" target="_blank">Open Banner 1</a>
                 </div>
                 <div class="iframe-container">
                     <div class="iframe-wrapper iframe-wrapper-300">
-                        <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-3"></iframe>
+                        <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-3?${timestamp}"></iframe>
                     </div>
                     <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-3" target="_blank">Open Banner 3</a>
                 </div>
                 <div class="iframe-container">
                     <div class="iframe-wrapper iframe-wrapper-160">
-                        <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-2"></iframe>
+                        <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-2?${timestamp}"></iframe>
                     </div>
                     <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-2" target="_blank">Open Banner 2</a>
                 </div>
