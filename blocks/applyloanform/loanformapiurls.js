@@ -5,4 +5,5 @@ const smsURL = "https://apisit.piramal.com/communication/v2/karix/sms-query?ver=
 const leadAPIURL = "https://mobileapi.pchf.in/api/website/insert-lead-data";
 const verifyOTPURL = "https://mobileapi.pchf.in/api/website/verify-otp";
 const resendOTPUrl = "https://mobileapi.pchf.in/api/website/resend-otp";
-export { accessTokenURL, generateOTPURL, otpTokenURL, smsURL, leadAPIURL, verifyOTPURL, resendOTPUrl };
+const getWhatAPIAuthURL = "https://piramal.allincall.in/campaign/external/get-auth-token/";
+export { accessTokenURL, generateOTPURL, otpTokenURL, smsURL, leadAPIURL, verifyOTPURL, resendOTPUrl, getWhatAPIAuthURL };

@@ -1,5 +1,6 @@
 import { fetchAPI } from "../../scripts/scripts.js";
 import { generateOTPAPI, getAccessToken, resendOtpAPI, showNetworkFailedScreen, verfyOtpAPI } from "../applyloanform/loanformapi.js";
+import { getWhatAPIAuthURL } from "../applyloanform/loanformapiurls.js";
 
 let time_limit = 30;
 let time_out;
@@ -283,6 +284,27 @@ function getWhatsappServicesApi(mobileNumber) {
       resolve(response.responseJson);
     }); */
   });
+}
+
+debugger;
+function getWhatAPIAuth(){
+  let requestObj = {
+    requestJson: {
+      "username": "test.kumar@getcogno.ai", 
+      "password": "Success@123$", 
+      "bot_id": "1"
+    }
+  }
+
+  return new Promise(function (resolve, reject) {
+    fetchAPI("POST",
+      getWhatAPIAuthURL, requestObj)
+        .then(function (response) {
+            resolve(response.responseJson);
+        }).catch(function (err) {
+            showNetworkFailedScreen(err);
+        })
+});
 }
 
 export function sucessPopupCloe() {
