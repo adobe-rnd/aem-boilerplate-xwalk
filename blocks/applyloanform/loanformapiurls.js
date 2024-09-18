@@ -6,4 +6,5 @@ const leadAPIURL = "https://mobileapi.pchf.in/api/website/insert-lead-data";
 const verifyOTPURL = "https://mobileapi.pchf.in/api/website/verify-otp";
 const resendOTPUrl = "https://mobileapi.pchf.in/api/website/resend-otp";
 const getWhatAPIAuthURL = "https://piramal.allincall.in/campaign/external/get-auth-token/";
-export { accessTokenURL, generateOTPURL, otpTokenURL, smsURL, leadAPIURL, verifyOTPURL, resendOTPUrl, getWhatAPIAuthURL };
+const getWhatAPIURL = "https://piramal.allincall.in/campaign/external/send-event-based-triggered-whatsapp-campaign/";
+export { accessTokenURL, generateOTPURL, otpTokenURL, smsURL, leadAPIURL, verifyOTPURL, resendOTPUrl, getWhatAPIAuthURL, getWhatAPIURL };
