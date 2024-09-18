@@ -1,0 +1,133 @@
+.update-sheet-form{
+    padding: 60px 0;
+}
+
+.update-sheet-form .form-wrapper .form{
+    display: flex;
+    justify-content: center;
+}
+
+.update-sheet-form .form-wrapper .form form{
+    width: 50%;
+    padding: 16px 20px;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+    border: 1px solid var(--dark-color);
+}
+
+.update-sheet-form .form-wrapper .form form > div:nth-child(1){
+    text-align: center;
+}
+
+.update-sheet-form .form-wrapper .form form > div:nth-child(1) h2{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--orange);
+    font-family: "Nunito-Bold";
+}
+
+.update-sheet-form .form-wrapper .form form > div label{
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+    color: var(--orange);
+    font-family: "Nunito-Medium";
+}
+
+.section.update-sheet-form .form-wrapper .form form > div:nth-child(2) input,
+.section.update-sheet-form .form-wrapper .form form > div:nth-child(3) select{
+    width: 100%;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: "Nunito-Medium";
+}
+
+.update-sheet-form .form-wrapper .form form > div:nth-child(3) select option{
+    width: inherit;
+    font-weight: 500;
+    padding-top: 10px;
+    font-family: "Nunito-Medium";
+}
+
+.update-sheet-form .form-wrapper .form form > div:last-child{
+    display: flex;
+    justify-content: center;
+}
+
+.update-sheet-form .form-wrapper .form form > div:last-child button{
+    margin: 0;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    max-width: unset;
+    padding: 12px 10px;
+    border-radius: 10px;
+    font-family: "Nunito-Semibold";
+    background-color: var(--orange);
+}
+
+.update-sheet-form .form-wrapper .form form > div:last-child button:hover{
+    opacity: 0.8;
+    transition: all 0.1s ease-in;
+}
+
+.update-sheet-form .form-wrapper .form form > div:last-child button:focus{
+    color: var( --black);
+    transition: all 0.1s ease;
+    background-color: var(--white);
+}
+
+@media screen and (min-width: 900px) {
+
+.section.update-sheet-form .form-wrapper .form form > div input,
+.section.update-sheet-form .form-wrapper .form form > div select{
+    max-width: unset;
+}
+
+}
+
+@media screen and (min-width: 600px) {
+
+.section.update-sheet-form .form-wrapper .form form > div input,
+.section.update-sheet-form .form-wrapper .form form > div select{
+    max-width: unset;
+}
+
+}
+
+@media screen and (max-width: 1024px) {
+.update-sheet-form{
+    padding: 40px 0;
+} 
+
+.update-sheet-form .form-wrapper .form form{
+    width: 100%;
+    padding: 10px 12px;
+}
+
+.update-sheet-form .form-wrapper .form form > div:nth-child(1) h2{
+    font-size: 1.5rem;
+}
+
+.update-sheet-form .form-wrapper .form form > div{
+    margin-top: 18px;
+} 
+
+.update-sheet-form .form-wrapper .form form > div label{
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.section.update-sheet-form .form-wrapper .form form > div:nth-child(2) input, 
+.section.update-sheet-form .form-wrapper .form form > div:nth-child(3) select{
+    padding: 8px 10px;
+    font-size: 0.875rem;
+}
+
+.update-sheet-form .form-wrapper .form form > div:last-child button{
+    font-size: 1rem;
+    padding: 8px 10px;
+}
+
+}
