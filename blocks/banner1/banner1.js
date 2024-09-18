@@ -10,8 +10,8 @@ export default async function decorate(block) {
     const smartCropName = '190x90';
 
     const image1Path = insertSmartCrop(config.image1, smartCropName);
-    const image2Path = insertSmartCrop(config.image1, smartCropName);
-    const image3Path = insertSmartCrop(config.image1, smartCropName);
+    const image2Path = insertSmartCrop(config.image2, smartCropName);
+    const image3Path = insertSmartCrop(config.image3, smartCropName);
     const image4Path = config.image4;
     const image5Path = config.image5;
     const image6Path = config.image6;
