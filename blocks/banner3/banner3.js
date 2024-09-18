@@ -1,7 +1,7 @@
 import { readBlockConfig } from '../../scripts/aem.js';
 
 function insertSmartCrop(url, smartCropName) {
-    return url.replace('?', `${smartCropName}:?`)
+    return url.replace('?', `:${smartCropName}?`);
 }
 
 export default async function decorate(block) {
