@@ -1,11 +1,17 @@
 import { readBlockConfig } from '../../scripts/aem.js';
 
+function insertSmartCrop(url, smartCropName) {
+    return url.replace('?', `${smartCropName}:?`)
+}
+
 export default async function decorate(block) {
     const config = readBlockConfig(block);
 
-    const image1Path = config.image1;
-    const image2Path = config.image2;
-    const image3Path = config.image3;
+    const smartCropName = '160x311';
+
+    const image1Path = insertSmartCrop(config.image1, smartCropName);
+    const image2Path = insertSmartCrop(config.image1, smartCropName);
+    const image3Path = insertSmartCrop(config.image1, smartCropName);
     const image4Path = config.image4;
     const image5Path = config.image5;
     const image6Path = config.image6;
