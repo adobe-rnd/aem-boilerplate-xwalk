@@ -4,15 +4,15 @@ function getImagePath(imageUrl) {
     var parser = document.createElement('a');
     parser.href = imageUrl;
 
-    return `https://s7e4a.scene7.com${parser.pathname}`;
+    return parser.pathname;
 }
 
 export default async function decorate(block) {
     const config = readBlockConfig(block);
 
-    const image1Path = getImagePath(config.image1);
-    const image2Path = getImagePath(config.image2);
-    const image3Path = getImagePath(config.image3);
+    const image1Path = config.image1;
+    const image2Path = config.image2;
+    const image3Path = config.image3;
     const image4Path = getImagePath(config.image4);
     const image5Path = getImagePath(config.image5);
     const image6Path = getImagePath(config.image6);
