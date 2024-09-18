@@ -6,6 +6,13 @@ export default function decorate(block) {
   if (newDiv) {
     block.innerHTML = "";
     block.appendChild(newDiv);
+    if (document.querySelectorAll('.download-piramal-wrapper')) {
+      var desktopLinks = document.querySelectorAll('.download-piramal-wrapper .image-href-desktop a');
+      var mobileLinks = document.querySelectorAll('.download-piramal-wrapper .image-href-mobile a');
+      var anchor_class = desktopLinks.length > 0 ? desktopLinks : mobileLinks;
+      anchor_class[0].removeAttribute('href');
+      // document.querySelectorAll('.download-piramal-wrapper .image-href-desktop a')[0].removeAttribute('href');
+    }
     aTagPreventDefault();
   }
 }
