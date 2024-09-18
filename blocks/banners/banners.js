@@ -21,19 +21,19 @@ export default async function decorate(block) {
                     <div class="iframe-wrapper iframe-wrapper-728">
                         <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-1?${timestamp}"></iframe>
                     </div>
-                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-1${timestamp}" target="_blank">Open Banner 1</a>
+                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-1?${timestamp}" target="_blank">Open Banner 1</a>
                 </div>
                 <div class="iframe-container">
                     <div class="iframe-wrapper iframe-wrapper-300">
                         <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-3?${timestamp}"></iframe>
                     </div>
-                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-3${timestamp}" target="_blank">Open Banner 3</a>
+                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-3?${timestamp}" target="_blank">Open Banner 3</a>
                 </div>
                 <div class="iframe-container">
                     <div class="iframe-wrapper iframe-wrapper-160">
                         <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-2?${timestamp}"></iframe>
                     </div>
-                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-2${timestamp}" target="_blank">Open Banner 2</a>
+                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-2?${timestamp}" target="_blank">Open Banner 2</a>
                 </div>
             </div>
         `;
