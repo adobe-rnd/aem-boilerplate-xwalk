@@ -1,21 +1,14 @@
 import { readBlockConfig } from '../../scripts/aem.js';
 
-function getImagePath(imageUrl) {
-    var parser = document.createElement('a');
-    parser.href = imageUrl;
-
-    return parser.pathname;
-}
-
 export default async function decorate(block) {
     const config = readBlockConfig(block);
 
     const image1Path = config.image1;
     const image2Path = config.image2;
     const image3Path = config.image3;
-    const image4Path = getImagePath(config.image4);
-    const image5Path = getImagePath(config.image5);
-    const image6Path = getImagePath(config.image6);
+    const image4Path = config.image4;
+    const image5Path = config.image5;
+    const image6Path = config.image6;
 
     const text1 = config.text1;
     const text2 = config.text2;
