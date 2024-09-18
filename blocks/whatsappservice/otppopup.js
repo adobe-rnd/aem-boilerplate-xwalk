@@ -286,7 +286,7 @@ function getWhatsappServicesApi(mobileNumber) {
   });
 }
 
-debugger;
+
 function getWhatAPIAuth(){
   let requestObj = {
     requestJson: {
@@ -306,6 +306,8 @@ function getWhatAPIAuth(){
         })
 });
 }
+debugger
+getWhatAPIAuth();
 
 export function sucessPopupCloe() {
   document.querySelector(".successContainer").style.display = "none";
