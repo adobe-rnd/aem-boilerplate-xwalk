@@ -334,20 +334,31 @@ function reviewRender(){
   let reviewCards = document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").querySelectorAll(".carousel-item");
   let currentNextButton = document.querySelector(".branchcustomer-review-cards").querySelector(".glider-next");
   let currentPrevButton = document.querySelector(".branchcustomer-review-cards").querySelector(".glider-prev");
-  new Glider(document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner"), {
-      "slidesToShow": 1,
-      "slidesToScroll": 1,
-      "scrollLock": true,
-      "draggable": true,
-      "arrows": {
-        prev: currentPrevButton,
-        next: currentNextButton
-      },
-      "responsive": [
-        { "breakpoint": 767, "settings": { "slidesToShow": 2, "slidesToScroll": 1 } },
-        { "breakpoint": 1025, "settings": { "slidesToShow": 3, "slidesToScroll": 1, "scrollLock": true, "draggable": true, "settings": { "slidesToShow": 2, "slidesToScroll": 1, "duration": 0.25 } } }
-      ]
-    });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const intersecting = entry.isIntersecting
+      if(intersecting){
+        new Glider(entry.target, {
+            "slidesToShow": 1,
+            "slidesToScroll": 1,
+            "scrollLock": true,
+            "draggable": true,
+            "arrows": {
+              prev: currentPrevButton,
+              next: currentNextButton
+            },
+            "responsive": [
+              { "breakpoint": 767, "settings": { "slidesToShow": 2, "slidesToScroll": 1 } },
+              { "breakpoint": 1025, "settings": { "slidesToShow": 3, "slidesToScroll": 1, "scrollLock": true, "draggable": true, "settings": { "slidesToShow": 2, "slidesToScroll": 1, "duration": 0.25 } } }
+            ]
+          });
+          // observer.unobserve(entry.target);
+      }
+    }, { rootMargin: "50px" });
+  });
+  observer.observe(document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner"));
+
   if(reviewCards.length <= 3){
     document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").querySelector(".carousel-navigation-buttons").classList.add("dp-none");
   }
@@ -374,7 +385,7 @@ function renderRatingDiv () {
         }
       }
       
-  
+     let subStringText = eachEle['text'].length > 125 ? eachEle['text']?.substring(0, 125) + '...' : eachEle['text'];
   
       html += 
       `<div class="teaser block carousel-item light">
@@ -391,7 +402,7 @@ function renderRatingDiv () {
                 ${starDiv}
               </p>
             </div>
-            <div class="short-description"><p>${eachEle['text']}</p></div>
+            <div class="short-description"><p>${subStringText}</p></div>
             <div class="cta"></div>
           </div>
         </div>
