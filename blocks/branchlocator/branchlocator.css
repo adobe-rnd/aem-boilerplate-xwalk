@@ -1,5 +1,6 @@
 .section.branch-locater-banner {
     padding: 59px 0 37px;
+    min-height: 248px;
 }
 
 .section.branch-locater-banner .default-content-wrapper {
@@ -351,6 +352,7 @@
 
     .section.branch-locater-banner {
         padding: 50px 0 28px;
+        min-height: 242px
     }
 
     .section.branch-locater-banner .default-content-wrapper {
@@ -360,15 +362,12 @@
     .section.branch-locater-banner .default-content-wrapper p:nth-child(2) {
         width: 80%;
     }
-
-    .section.branch-locater-banner {
-        padding: 50px 0 40px;
-    }
 }
 
 @media screen and (max-width: 767px) {
     .section.branch-locater-banner {
         padding: 50px 0 36px;
+        min-height: 190px;
     }
 
     .section.branch-locater-banner .default-content-wrapper {
