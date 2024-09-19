@@ -1,3 +1,4 @@
+import { intertextLinkingInteraction } from "../../dl.js";
 import { setLocationObj } from "../moredetailsaddress/moredetailsaddress.js";
 
 
@@ -27,7 +28,14 @@ export default function decorate(block) {
 
     let button = block.querySelector(".button-container");
     let description = block.querySelector(".branch-description-content");
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (e) => {
+        try {
+            const dataAnalytics = {}
+            dataAnalytics.click_text = e.target.textContent.trim().toLowerCase()
+            intertextLinkingInteraction(dataAnalytics)
+        } catch (error) {
+            console.warn(error);
+        }
         description.querySelector('.dp-none').classList.remove('dp-none');
         button.classList = 'dp-none';
     });

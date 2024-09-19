@@ -1,4 +1,4 @@
-import { branchURLStr } from "../../scripts/scripts.js";
+import { branchURLStr, selectBranchDetails } from "../../scripts/scripts.js";
 import { setLocationObj } from "../moredetailsaddress/moredetailsaddress.js";
 
 export function nearestLoction() {
@@ -45,4 +45,5 @@ export default function decorate(block) {
     if(DOMnearestBranch){
         block.innerHTML = DOMnearestBranch;
     }
+    selectBranchDetails(block);
 }

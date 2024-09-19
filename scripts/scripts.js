@@ -2,7 +2,7 @@ import { formOpen, overlay } from "../blocks/applyloanform/applyloanforms.js";
 import { statemasterGetStatesApi } from "../blocks/applyloanform/statemasterapi.js";
 import { validationJSFunc } from "../blocks/applyloanform/validation.js";
 import { toggleAllNavSections } from "../blocks/header/header.js";
-import { applyLoanInteraction } from "../dl.js";
+import { applyLoanInteraction, selectBranchInteraction } from "../dl.js";
 import { sampleRUM, loadHeader, loadFooter, decorateButtons, decorateIcons, decorateSections, decorateBlocks, decorateTemplateAndTheme, waitForLCP, loadBlocks, loadCSS, fetchPlaceholders } from "./aem.js";
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
@@ -954,4 +954,21 @@ export function branchURLStr(location = "", city = "", state = "", urlstrhand, l
       return `/branch-locator/loans-in-${locationAdd}-${cityStr}-${stateStr}-${locationcode}`;
     }
   }
+}
+
+
+export function selectBranchDetails(block) {
+  let cards = block.closest('.section').querySelectorAll('.branch-list-wrapper a')
+  cards.forEach(function (card) {
+    try {
+      card.addEventListener("click", function (e) {
+        const dataAnalytics = {}
+        dataAnalytics.cta_position = e.target.closest(".cards-branches-container ")?.querySelector(".title h2")?.textContent.trim();
+        dataAnalytics.branch_name = e.target.closest(".card-box")?.querySelector(".card-title")?.textContent.trim().replace(/\s+/g, ' ');
+        selectBranchInteraction(dataAnalytics);
+      })
+    } catch (error) {
+      console.warn(error)
+    }
+  })
 }
