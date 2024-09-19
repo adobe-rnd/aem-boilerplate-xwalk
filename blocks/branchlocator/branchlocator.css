@@ -1,9 +1,11 @@
 .section.branch-locater-banner {
-    padding: 59px 0 81px;
+    padding: 59px 0 37px;
 }
 
 .section.branch-locater-banner .default-content-wrapper {
-    position: relative;
+    display: grid;
+    grid-template-columns: 9fr 1.3fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 .section.branch-locater-banner .default-content-wrapper p {
@@ -12,6 +14,8 @@
     line-height: 32px;
     color: var(--gradient-gray);
     font-family: "Nunito-Regular";
+    grid-column: 1 / -1;
+    grid-row: 2 / 2;
 }
 
 .section.branch-locater-banner .default-content-wrapper h1 {
@@ -22,6 +26,8 @@
     display: inline-block;
     color: var(--darkcharcoal);
     font-family: "Nunito-Extrabold";
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
 }
 
 
@@ -31,9 +37,9 @@
 }
 
 .section.branch-locater-banner .default-content-wrapper p:nth-child(3) {
-    position: absolute;
-    top: 0;
-    right: 0;
+    grid-row: 1 / 3;
+    grid-column: 2;
+    justify-self: end;
 }
 
 /* DropDown CSS */
@@ -343,12 +349,16 @@
         grid-template-columns: 1fr 1fr;
     }
 
-    .section.branch-locater-banner .default-content-wrapper p:nth-child(2) {
-        width: 80%;
+    .section.branch-locater-banner {
+        padding: 50px 0 28px;
     }
 
-    .section.branch-locater-banner .default-content-wrapper p:nth-child(3) {
-        right: 16px;
+    .section.branch-locater-banner .default-content-wrapper {
+        grid-template-columns: 4fr 1fr;
+    }
+
+    .section.branch-locater-banner .default-content-wrapper p:nth-child(2) {
+        width: 80%;
     }
 
     .section.branch-locater-banner {
@@ -358,7 +368,11 @@
 
 @media screen and (max-width: 767px) {
     .section.branch-locater-banner {
-        padding: 50px 0 40px;
+        padding: 50px 0 36px;
+    }
+
+    .section.branch-locater-banner .default-content-wrapper {
+        grid-template-columns: 2.5fr 1fr;
     }
 
     .section.branch-locater-banner .default-content-wrapper p {
@@ -377,7 +391,7 @@
     }
 
     .section.branch-locater-banner .default-content-wrapper p:nth-child(3) {
-        right: 28px;
+        justify-self: center;
     }
 
     .section.branch-locater-banner .default-content-wrapper p:nth-child(2) {
