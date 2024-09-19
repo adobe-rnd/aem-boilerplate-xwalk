@@ -6,7 +6,7 @@ export default function decorate(block) {
   if (newDiv) {
     block.innerHTML = "";
     block.appendChild(newDiv);
-    if (document.querySelectorAll('.download-piramal-wrapper')) {
+    if (document.querySelectorAll('.download-piramal-wrapper').length > 0) {
       var desktopLinks = document.querySelectorAll('.download-piramal-wrapper .image-href-desktop a');
       var mobileLinks = document.querySelectorAll('.download-piramal-wrapper .image-href-mobile a');
       var anchor_class = desktopLinks.length > 0 ? desktopLinks : mobileLinks;

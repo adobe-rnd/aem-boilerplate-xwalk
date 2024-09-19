@@ -1,5 +1,6 @@
+import { locateMeInteraction, selectBranchInteraction } from "../../dl.js";
 import { loadScript } from "../../scripts/aem.js";
-import { branchURLStr, fetchAPI } from "../../scripts/scripts.js";
+import { branchURLStr, fetchAPI, selectBranchDetails } from "../../scripts/scripts.js";
 import returnLatLan from "../select-tag/getSelectedLanguage.js";
 import { initMap, searchBranchByURL } from "./branchlocator-api.js";
 import { setLocationObj } from "./branchlocator-init.js";
@@ -74,6 +75,7 @@ export async function onloadBranchLocator(block) {
   let multipleBranch = innerBranchFunc(branchhList);
   block.closest('.section').querySelector('.title-to-show').innerText = 'Find all ' + setLocationObj.geoInfo.city+ ' Branches here';
   block.closest('.section').querySelector('.branch-list-wrapper').innerHTML = multipleBranch;
+  selectBranchDetails(block);
   if (setLocationObj.geoInfo.state && !setLocationObj.geoInfo.city) {
     block.closest('.section').querySelector('.city-wrapper').classList.remove('dp-none');
     block.closest('.section').querySelector('.city-wrapper input').focus();
@@ -293,6 +295,11 @@ export function onClickCity(block){
 export function locateMeClick(block){
     let locateMeEvent = block.closest('.section').querySelector('.btn-locate');
     locateMeEvent.addEventListener('click', async function (e){
+    try {
+      locateMeInteraction();
+    } catch (error) {
+      console.warn(error)
+    }
         let {lat, lng} = await returnLatLan();
         setLocationObj.lat = lat;
         setLocationObj.lng = lng;
@@ -322,16 +329,30 @@ export function locateMeClick(block){
         renderCity(block, setLocationObj);
         renderState(block, setLocationObj);  
         let multipleBranch = innerBranchFunc(branchhList);
-        block.closest('.section').querySelector('.branch-list-wrapper').innerHTML = multipleBranch;      
+        block.closest('.section').querySelector('.branch-list-wrapper').innerHTML = multipleBranch;  
+        selectBranchDetails(block);   
         }else{
           block.closest('.section').querySelector('.nearest-txt').innerText = "Kindly enable your Location and Refresh the page";
           this.classList.add('dp-none');
         }
     });
+
+    try {
+    let branchDetailBtn = block.closest('.section').querySelector('.btn-locate-details');
+    branchDetailBtn.addEventListener('click' ,function(e){
+           const dataAnalytics = {}
+           dataAnalytics.cta_position = e.target.closest(".branch-info-container")?.querySelector(".nearest-txt")?.textContent.trim();
+           dataAnalytics.branch_name = e.target.closest(".branch-info-container")?.querySelector(".branch-deatils .branch-addr")?.textContent.trim().split('-')[1].trim();
+           selectBranchInteraction(dataAnalytics);
+        })
+      } catch (error) {
+          console.warn(error)
+      }
 }
 
 function sortByState(data){
   return Object.values(data[setLocationObj.geoInfo.state]);
 }
+
 
 

@@ -280,3 +280,43 @@ export function documentDownloadInteraction(data) {
         console.warn(error);
     }
 }
+
+export function locateMeInteraction(){
+    try {
+        window.dataLayer.push({
+            'event': 'locate_me',
+            'page_type':targetObject.pageName || "",
+            });
+    } catch (error) {
+        console.warn(error)
+    }
+}
+
+export function selectBranchInteraction(data){
+    try {
+        const {branch_name, cta_position} = data;
+        window.dataLayer.push({
+            'event': 'select_branch',
+            'branch_name': branch_name || "",
+            'cta_position': cta_position || "",
+            'page_type': targetObject.pageName || ""
+            });
+            
+    } catch (error) {
+        console.warn(error);
+    }
+}
+
+export function intertextLinkingInteraction(data){
+    try {
+        const {click_text} =data;
+        window.dataLayer.push({
+            'event': 'intertext_linking',
+            'click_text': click_text || "",
+            'page_type': targetObject.pageName || ""
+            });
+            
+    } catch (error) {
+        console.warn(error);
+    }
+}
