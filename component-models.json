@@ -1276,6 +1276,10 @@
               {
                 "name": "used-car-loan-branch-carousel",
                 "value": "used-car-loan-branch-carousel"
+              },
+              {
+                "name": "video-component-carousel",
+                "value": "video-component-carousel"
               }
             ]
           },
