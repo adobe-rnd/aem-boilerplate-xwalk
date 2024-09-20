@@ -7,9 +7,10 @@
     display: grid;
     grid-template-columns: 9fr 1.3fr;
     grid-template-rows: 1fr 1fr;
+    min-height: 152px;
 }
 
-.section.branch-locater-banner .default-content-wrapper p {
+.section.branch-locater-banner .default-content-wrapper p:nth-child(2) {
     font-weight: 400;
     font-size: 1.5rem;
     line-height: 32px;
@@ -17,6 +18,7 @@
     font-family: "Nunito-Regular";
     grid-column: 1 / -1;
     grid-row: 2 / 2;
+    width: 60%;
 }
 
 .section.branch-locater-banner .default-content-wrapper h1 {
@@ -29,6 +31,7 @@
     font-family: "Nunito-Extrabold";
     grid-column: 1 / -1;
     grid-row: 1 / 2;
+    width: 60%;
 }
 
 
@@ -359,7 +362,8 @@
         grid-template-columns: 4fr 1fr;
     }
 
-    .section.branch-locater-banner .default-content-wrapper p:nth-child(2) {
+    .section.branch-locater-banner .default-content-wrapper p:nth-child(2),
+    .section.branch-locater-banner .default-content-wrapper h1 {
         width: 80%;
     }
 }
@@ -372,11 +376,13 @@
 
     .section.branch-locater-banner .default-content-wrapper {
         grid-template-columns: 2.5fr 1fr;
+        min-height: 104px;
     }
 
-    .section.branch-locater-banner .default-content-wrapper p {
+    .section.branch-locater-banner .default-content-wrapper p:nth-child(2) {
         font-size: 1rem;
         line-height: 24px;
+        width: 75%;
     }
 
     .section.branch-locater-banner .default-content-wrapper h1 {
@@ -391,10 +397,6 @@
 
     .section.branch-locater-banner .default-content-wrapper p:nth-child(3) {
         justify-self: center;
-    }
-
-    .section.branch-locater-banner .default-content-wrapper p:nth-child(2) {
-        width: 75%;
     }
 
     .section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container button.btn-locate, 
