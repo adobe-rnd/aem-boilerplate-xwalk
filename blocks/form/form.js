@@ -1,3 +1,4 @@
+import { toBase64 } from './base-64.js';
 import createField from './form-fields.js';
 
 async function createForm(formHref, submitHref) {
@@ -33,6 +34,8 @@ function generatePayload(form) {
     if (field.name && field.type !== 'submit' && !field.disabled) {
       if (field.type === 'radio') {
         if (field.checked) payload[field.name] = field.value;
+      } else if (field.type === 'file') {
+        payload[field.name] = field.dataset.fileData;
       } else if (field.type === 'checkbox') {
         if (field.checked) payload[field.name] = payload[field.name] ? `${payload[field.name]},${field.value}` : field.value;
       } else {

@@ -1,5 +1,6 @@
 
 import { toClassName } from '../../scripts/aem.js';
+import { toBase64 } from './base-64.js';
 
 function createFieldWrapper(fd) {
   const fieldWrapper = document.createElement('div');
@@ -157,6 +158,10 @@ const createInput = (fd) => {
     fieldWrapper.prepend(label);
   }
 
+  field.addEventListener('change', async function (e) {
+    const base64 = await toBase64(this.files[0])
+    this.dataset.fileData = base64;
+  })
   return { field, fieldWrapper };
 };
 
