@@ -944,7 +944,7 @@ body.modal-open footer {
     text-transform: uppercase;
   }
 
-  .header #nav>div.section.nav-brand>div>ul>li:nth-child(3)>ul>li:nth-child(1)>ul>li:nth-child(4)>a>em {
+  .header #nav>div.section.nav-brand>div>ul>li:nth-child(3)>ul>li:nth-child(1)>ul>li:nth-child(4)>a:nth-child(2)>sup {
     background-color: var(--green);
     border-radius: 4px;
     color: var(--piramal-white-100);
