@@ -51,6 +51,8 @@
     padding: 30px 50px;
     width: 100%;
     box-shadow: 0 4px 9pt rgba(51, 51, 51, .078);
+    position: relative;
+    min-height: 148px;
 }
 .section.partnership-image-popup.retail-fin-border-bottom .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text>.cmp-text.active{
     border-bottom: 8px solid #f26841;
@@ -60,14 +62,17 @@
     box-shadow: 0 25px 50px -9pt rgba(0,0,0,.25);
 }
 
-.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text>.cmp-text div picture>img {
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text>.cmp-text>div>div {
+    position: absolute;
     width: 206px;
-    height: 86px;
-    object-fit: contain;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper:nth-child(5) .offer-documents.block .richtext.text>.cmp-text div picture>img,
-.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper:nth-child(14) .offer-documents.block .richtext.text>.cmp-text div picture>img {
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text>.cmp-text div picture>img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -249,6 +254,10 @@
 
     .section.partnership-image-popup .wrappercreation-wrapper .wrapper-creation-container {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text>.cmp-text>div>div {
+        width: 140px;
     }
 }
 
