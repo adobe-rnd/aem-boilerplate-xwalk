@@ -1023,10 +1023,6 @@ footer {
   min-height: 1225px;
 }
 
-.section.branch-locater-banner .default-content-wrapper {
-  min-height: 152px;
-}
-
 .section.branch-locater-banner .default-content-wrapper p:nth-child(3)>picture>img {
   width: 124px;
   height: 120px;
@@ -1041,10 +1037,6 @@ footer {
     width: 72px;
     height: 72px;
   }
-
-  .section.branch-locater-banner .default-content-wrapper {
-    min-height: 104px;
-  } 
 }
 
 footer:has(.neeyat-footer) {
