@@ -383,11 +383,13 @@
         font-size: 1rem;
         line-height: 24px;
         width: 75%;
+        min-height: 52px;
     }
 
     .section.branch-locater-banner .default-content-wrapper h1 {
         line-height: 36px;
         font-size: 1.75rem;
+        min-height: 36px;
     }
 
     .section.branch-locater-banner .default-content-wrapper p:nth-child(3)>picture>img {
