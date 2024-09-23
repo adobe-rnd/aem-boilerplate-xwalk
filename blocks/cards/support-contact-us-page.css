@@ -50,6 +50,7 @@
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li,
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li p,
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li strong,
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h5 {
     margin: 0;
@@ -58,25 +59,37 @@
     line-height: 24px;
     font-weight: 400;
     color: #666666;
-    font-family: Nunito-regular, sans-serif;
+    font-family: Nunito-Regular, sans-serif;
+}
+
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h3{
+    color: #000000;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: Nunito-Bold, sans-serif;
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li strong {
     color: #4D4D4D;
     font-weight: 700;
-    font-family: Nunito-bold, sans-serif;
+    font-family: Nunito-Bold, sans-serif;
 
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li a {
     color: #4D4D4D;
     font-weight: 700;
-    font-family: Nunito-bold, sans-serif;
+    font-family: Nunito-Bold, sans-serif;
     text-decoration: underline;
 }
 
-.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li:has(em) em,
-.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li:has(a em) a em {
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h5{
+    color: #27272A;
+    font-family: Nunito-Regular, sans-serif;
+    font-weight: 400;
+}
+
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li:has(em) em {
     position: absolute;
     top: 0;
     right: 0;
@@ -86,16 +99,25 @@
     font-weight: 700;
     border-bottom: 1px dashed;
     font-style: normal;
-    font-family: Nunito-bold, sans-serif;
+    font-family: Nunito-Bold, sans-serif;
 }
-
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li:has(em a) em a{
+    color: #F26841;
+    font-size: .85rem;
+    line-height: 20px;
+    font-weight: 700;
+    border-bottom: 1px dashed;
+    font-style: normal;
+    text-decoration: none;
+    font-family: Nunito-Bold, sans-serif;
+}
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body>p span {
     display: contents;
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body>p span img {
-    width: 64px;
-    height: 64px;
+    width: 54px;
+    height: 54px;
     display: block;
     background-size: contain;
     object-fit: fill;
