@@ -447,7 +447,7 @@
 
     .section.branchlocator-map .container .map-branchinfo-wrapper .map-container{
         width: 100%;
-        max-height: 284px;
+        height: 284px;
         border-radius: 8px;
     }
 
