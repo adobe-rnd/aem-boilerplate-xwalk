@@ -1027,6 +1027,10 @@ footer {
   min-height: 152px;
 }
 
+.section.branch-locater-banner {
+  min-height: 248px;
+}
+
 .section.branch-locater-banner .default-content-wrapper p:nth-child(3)>picture>img {
   width: 124px;
   height: 120px;
@@ -1039,6 +1043,10 @@ footer {
 
   .section.branch-locater-banner .default-content-wrapper {
     min-height: 104px;
+  }
+
+  .section.branch-locater-banner {
+    min-height: 190px;
   }
 
   .section.branch-locater-banner .default-content-wrapper p:nth-child(3)>picture>img {
@@ -1060,5 +1068,9 @@ footer:has(.neeyat-footer) {
 @media screen and (min-width:768px) and (max-width:1024px) {
   footer:has(.neeyat-footer) {
     min-height: 100%;
+  }
+
+  .section.branch-locater-banner {
+    min-height: 242px;
   }
 }
