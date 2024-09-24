@@ -97,7 +97,6 @@
     font-size: .85rem;
     line-height: 20px;
     font-weight: 700;
-    border-bottom: 1px dashed;
     font-style: normal;
     font-family: Nunito-Bold, sans-serif;
 }
@@ -204,7 +203,7 @@
 
 .section.contact-us-download-wrapper div:nth-child(2) ul li {
     max-width: 110px;
-    font: 400 12px 'nunito-regular', 'sans-serif';
+    font: 700 12px 'Nunito-Bold', 'sans-serif';
     line-height: 16px;
 }
 
@@ -241,6 +240,9 @@
         left: calc((100% - 820px) / 2);
     }
 }
+/* @media (min-width: 1025px) and (max-width: 1300px) {
+    
+} */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .section.contact-us-download-wrapper div:nth-child(2) {
         /* top: 146px; */
