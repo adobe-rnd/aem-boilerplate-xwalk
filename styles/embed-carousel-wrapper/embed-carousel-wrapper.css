@@ -10,6 +10,10 @@
     display: block;
 }
 
+.section.embed-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons>button:focus {
+    background-color: unset;
+}
+
 .section.embed-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-prev {
     padding: unset;
     margin: unset;
@@ -49,8 +53,11 @@
     display: none;
 }
 
+.section.embed-carousel-wrapper .carousel-wrapper .carousel .panel-container .glider-track {
+    column-gap: 30px;
+}
+
 .section.embed-carousel-wrapper .carousel-wrapper .carousel .panel-container .glider-track .teaser {
-    margin-right: 30px;
     position: relative;
 }
 
@@ -155,6 +162,10 @@ dialog[open] .modal-content .section.embed-carousel-youtube-video .embed-wrapper
         margin: 0 5px;
         position: relative;
     }
+
+    .section.embed-carousel-wrapper .carousel-wrapper .carousel .panel-container .glider-track {
+        column-gap: unset
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -182,8 +193,12 @@ dialog[open] .modal-content .section.embed-carousel-youtube-video .embed-wrapper
         padding: 0 56px;
     }
 
+    .section.embed-carousel-wrapper .carousel-wrapper .carousel .panel-container .glider-track {
+        column-gap: 16px;
+        padding: 0 8px;
+    }
+
     .section.embed-carousel-wrapper .carousel-wrapper .carousel .panel-container .glider-track .teaser {
-        margin: 0 8px;
         position: relative;
         min-width: 310px;
     }
