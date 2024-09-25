@@ -87,15 +87,31 @@
     color: #4D4D4D;
     font-weight: 700;
     font-family: Nunito-Bold, sans-serif;
-    background: unset;
-    text-decoration: none;
 }
-
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li a {
     color: #4D4D4D;
     font-weight: 700;
     font-family: Nunito-Bold, sans-serif;
     text-decoration: underline;
+}
+
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li a:has(sup),
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong>a:has(sup){
+    background-color: unset;
+    padding: unset;
+    margin: unset;
+    border: unset;
+    overflow: unset;
+    text-decoration: none;
+}
+
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li a:has(sup) sup,
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong>a:has(sup) sup{
+    color: #4d4d4d;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    font-family: Nunito-Bold, sans-serif;
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h5{
@@ -120,9 +136,9 @@
     font-size: .85rem;
     line-height: 20px;
     font-weight: 700;
-    border-bottom: 1px dashed;
+    /* border-bottom: 1px dashed; */
     font-style: normal;
-    text-decoration: none;
+    text-decoration: underline dashed;
     font-family: Nunito-Bold, sans-serif;
 }
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body>p span {
@@ -195,10 +211,16 @@
     }
 
     .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li,
+    .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li p,
     .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li strong,
     .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h5 {
         font-size: 12px;
     }
+    .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li a:has(sup) sup,
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong>a:has(sup) sup{
+    font-size: 14px;
+}
+
 }
 
 /* Download Piramal App Start */
