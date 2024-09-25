@@ -315,6 +315,8 @@
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong {
         font-size: 0.875rem;
         line-height: 20px;
+        color: var(--matterhorn);
+        font-family: Nunito-Bold, sans-serif;
     }
 
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p:nth-child(2),
