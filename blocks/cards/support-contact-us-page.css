@@ -88,14 +88,14 @@
     font-weight: 700;
     font-family: Nunito-Bold, sans-serif;
     background: unset;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li a {
     color: #4D4D4D;
     font-weight: 700;
     font-family: Nunito-Bold, sans-serif;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h5{
