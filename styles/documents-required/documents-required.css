@@ -144,7 +144,7 @@
 }
 .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(1) details::before{
     position: absolute;
-    background-image: url('/images/kyc.svg');
+    background-image: url('/images/kycdoc.svg');
     left: 0;
     top: 40px;
     object-fit: contain;

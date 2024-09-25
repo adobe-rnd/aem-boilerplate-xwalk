@@ -52,7 +52,8 @@
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li,
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li p,
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li strong,
-.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h5 {
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h5,
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h6 {
     margin: 0;
     padding: 0;
     font-size: 1rem;
@@ -69,11 +70,25 @@
     font-family: Nunito-Bold, sans-serif;
 }
 
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h6,
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h4{
+    color: #7a7a83;
+    font-size: 12px;
+    padding-top: 2px;
+    font-weight: 400;
+    font-family: Nunito-Regular, sans-serif;
+}
+
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h4{
+    color: #000;
+}
+
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li strong {
     color: #4D4D4D;
     font-weight: 700;
     font-family: Nunito-Bold, sans-serif;
-
+    background: unset;
+    text-decoration: none;
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li a {
@@ -97,7 +112,6 @@
     font-size: .85rem;
     line-height: 20px;
     font-weight: 700;
-    border-bottom: 1px dashed;
     font-style: normal;
     font-family: Nunito-Bold, sans-serif;
 }
@@ -204,7 +218,7 @@
 
 .section.contact-us-download-wrapper div:nth-child(2) ul li {
     max-width: 110px;
-    font: 400 12px 'nunito-regular', 'sans-serif';
+    font: 700 12px 'Nunito-Bold', 'sans-serif';
     line-height: 16px;
 }
 
@@ -236,11 +250,14 @@
     left: 25px;
 
 }
-@media (min-width: 1025px) and (max-width: 1400px) {
+@media (min-width: 1025px) and (max-width: 1300px) {
     .section.contact-us-download-wrapper div:nth-child(2) {
-        left: calc((100% - 820px) / 2);
+        left: calc((100% - 891px) / 2);
     }
 }
+/* @media (min-width: 1025px) and (max-width: 1300px) {
+    
+} */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .section.contact-us-download-wrapper div:nth-child(2) {
         /* top: 146px; */

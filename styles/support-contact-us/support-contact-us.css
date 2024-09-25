@@ -63,7 +63,7 @@
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div {
     display: flex;
     flex-direction: column;
-    row-gap: 24px;
+    row-gap: 16px;
 }
 
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:nth-child(2) {
@@ -97,7 +97,11 @@
     font-weight: 400;
     line-height: 24px;
     font-style: normal;
-    max-width: 790px;
+    max-width: 700px;
+}
+
+.section.support-contact-us-wrapper.registered-add .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p:first-child strong{
+    margin-top: 8px;
 }
 
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p:nth-child(2),
@@ -144,7 +148,7 @@
 }
 
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong>a,
-.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>a {
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>a{
     color: var(--orange);
     text-decoration: none;
     font-family: Nunito-Bold, sans-serif;
@@ -161,6 +165,7 @@
     border: unset;
     text-align: unset;
     color: var(--matterhorn);
+    text-decoration: underline;
 }
 
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 {
@@ -234,7 +239,11 @@
 } 
 
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:first-child p:nth-child(8){
-    display: none;
+    /* display: none; */
+}
+
+.section.support-contact-us-wrapper.registered-add .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div{
+    row-gap: 12px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -306,6 +315,8 @@
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong {
         font-size: 0.875rem;
         line-height: 20px;
+        color: var(--matterhorn);
+        font-family: Nunito-Bold, sans-serif;
     }
 
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p:nth-child(2),
@@ -338,5 +349,8 @@
         padding: 8px 16px;
         text-align: center;
         max-width: 140px;
+    }
+    .section.support-contact-us-wrapper.registered-add .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p:first-child strong{
+        margin-top: 4px;
     }
 }
