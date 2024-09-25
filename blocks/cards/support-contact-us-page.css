@@ -88,7 +88,7 @@
     font-weight: 700;
     font-family: Nunito-Bold, sans-serif;
     background: unset;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li a {
