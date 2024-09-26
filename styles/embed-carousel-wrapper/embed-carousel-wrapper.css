@@ -59,6 +59,13 @@
 
 .section.embed-carousel-wrapper .carousel-wrapper .carousel .panel-container .glider-track .teaser {
     position: relative;
+    min-height: 220px;
+}
+
+.section.embed-carousel-wrapper .carousel-wrapper .carousel .panel-container .glider-track .teaser .background .front-picture img {
+    width: 100%;
+    min-height: 220px;
+    object-fit: fill;
 }
 
 .section.embed-carousel-wrapper .carousel-wrapper .carousel .panel-container .glider-track .teaser .background .foreground .text .cta-image-wrapper .img-with-text-wrap:first-child .cta-image>a {
@@ -143,8 +150,8 @@ dialog[open] .modal-content .section.embed-carousel-youtube-video .embed-wrapper
     }
 
     .section.embed-carousel-wrapper .carousel-wrapper .carousel .button-container.glider-dots .glider-dot {
-        height: 4px;
-        width: 4px;
+        height: 6px;
+        width: 6px;
         margin: 0 4px;
         background: #000;
         opacity: .2;
@@ -153,14 +160,19 @@ dialog[open] .modal-content .section.embed-carousel-youtube-video .embed-wrapper
     .section.embed-carousel-wrapper .carousel-wrapper .carousel .button-container.glider-dots .glider-dot.glider-active {
         background-color: #000;
         border-radius: 4px;
-        height: 4px;
+        height: 5px;
         width: 16px;
         opacity: 1;
+    }
+
+    .section.embed-carousel-wrapper .carousel-wrapper .carousel .panel-container .glider-track .teaser .background .front-picture img {
+        min-height: 180px;
     }
 
     .section.embed-carousel-wrapper .carousel-wrapper .carousel .panel-container .glider-track .teaser {
         margin: 0 5px;
         position: relative;
+        min-height: 180px;
     }
 
     .section.embed-carousel-wrapper .carousel-wrapper .carousel .panel-container .glider-track {
@@ -198,9 +210,14 @@ dialog[open] .modal-content .section.embed-carousel-youtube-video .embed-wrapper
         padding: 0 8px;
     }
 
+    .section.embed-carousel-wrapper .carousel-wrapper .carousel .panel-container .glider-track .teaser .background .front-picture img {
+        min-height: 175px;
+    }
+
     .section.embed-carousel-wrapper .carousel-wrapper .carousel .panel-container .glider-track .teaser {
         position: relative;
         min-width: 310px;
+        min-height: 175px;
     }
 
     .section.embed-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-prev {
