@@ -291,8 +291,11 @@
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div:first-child div p:first-child>strong>em {
         font-size: 0.75rem;
         line-height: 16px;
-        width: 85%;
+        /* width: 85%; */
     }
+    /* .section.support-contact-us-wrapper.contact-us-download-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p{
+        width: 100%;
+    } */
 
     .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>a u {
         font-size: 0.875rem;
