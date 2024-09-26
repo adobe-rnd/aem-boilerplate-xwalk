@@ -228,3 +228,13 @@ dialog[open] .modal-content .section.embed-carousel-youtube-video .embed-wrapper
         right: 2%;
     } 
 }
+
+@media screen and (min-width:1025px) and (max-width: 1300px) {
+    .section.embed-carousel-wrapper .carousel-wrapper .carousel .panel-container .glider-track .teaser .background .front-picture img {
+        min-height: 190px;
+    }
+
+    .section.embed-carousel-wrapper .carousel-wrapper .carousel .panel-container .glider-track .teaser {
+        min-height: 190px;
+    }
+  }
