@@ -212,7 +212,7 @@
         display: none;
     }
 
-    .section.contact-us-card-wrapper .cards-wrapper .cards ul li:last-child .cards-card-body ul {
+    .section.contact-us-card-wrapper .cards-wrapper .cards ul li:last-child >.cards-card-body >ul {
         margin-bottom: 25px;
     }
 
