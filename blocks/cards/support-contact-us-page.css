@@ -53,7 +53,8 @@
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li p,
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li strong,
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h5,
-.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h6 {
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h6,
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li ul li {
     margin: 0;
     padding: 0;
     font-size: 1rem;
@@ -61,6 +62,11 @@
     font-weight: 400;
     color: #666666;
     font-family: Nunito-Regular, sans-serif;
+}
+
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li ul{
+    display: block;
+    margin-bottom: 6px;
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h3{
@@ -83,7 +89,8 @@
     color: #000;
 }
 
-.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li strong {
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li strong,
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li ul li strong {
     color: #4D4D4D;
     font-weight: 700;
     font-family: Nunito-Bold, sans-serif;
@@ -120,8 +127,14 @@
     font-weight: 400;
 }
 
-.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li:has(em) em {
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li ul li:has(em){
     position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li:has(em) em {
+    /* position: absolute; */
     top: 0;
     right: 0;
     color: #F26841;
@@ -203,8 +216,7 @@
         margin-bottom: 25px;
     }
 
-    .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li:has(em) em,
-    .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li:has(a em) a em {
+    .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li ul li:has(em) {
         bottom: 0;
         top: unset;
         right: unset;
@@ -272,6 +284,10 @@
     left: 25px;
 
 }
+.section.contact-us-download-wrapper.contact-us-download-wrapper .imgwithlink-wrapper>.imgwithlink>.image-href-desktop>a>picture>img{
+    min-height: 260px;
+    height: 260px;
+}
 @media (min-width: 1025px) and (max-width: 1300px) {
     .section.contact-us-download-wrapper div:nth-child(2) {
         left: calc((100% - 891px) / 2);
@@ -280,13 +296,16 @@
 /* @media (min-width: 1025px) and (max-width: 1300px) {
     
 } */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 767px) and (max-width: 1024px) {
     .section.contact-us-download-wrapper div:nth-child(2) {
         /* top: 146px; */
         left: 64px;
     }
+        .section.download-piramal-wrapper .default-content-wrapper>*:nth-child(n+1) {
+            display: flex;
+        }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .section.download-piramal-wrapper div:nth-child(2) {
         display: block;
         left: unset;
