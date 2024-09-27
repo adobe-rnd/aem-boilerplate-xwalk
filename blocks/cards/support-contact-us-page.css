@@ -52,7 +52,9 @@
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li,
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li p,
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li strong,
-.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h5 {
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h5,
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h6,
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li ul li {
     margin: 0;
     padding: 0;
     font-size: 1rem;
@@ -62,6 +64,11 @@
     font-family: Nunito-Regular, sans-serif;
 }
 
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li ul{
+    display: block;
+    margin-bottom: 6px;
+}
+
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h3{
     color: #000000;
     font-size: 12px;
@@ -69,18 +76,49 @@
     font-family: Nunito-Bold, sans-serif;
 }
 
-.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li strong {
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h6,
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h4{
+    color: #7a7a83;
+    font-size: 12px;
+    padding-top: 2px;
+    font-weight: 400;
+    font-family: Nunito-Regular, sans-serif;
+}
+
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h4{
+    color: #000;
+}
+
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li strong,
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li ul li strong {
     color: #4D4D4D;
     font-weight: 700;
     font-family: Nunito-Bold, sans-serif;
-
 }
-
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li a {
     color: #4D4D4D;
     font-weight: 700;
     font-family: Nunito-Bold, sans-serif;
     text-decoration: underline;
+}
+
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li a:has(sup),
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong>a:has(sup){
+    background-color: unset;
+    padding: unset;
+    margin: unset;
+    border: unset;
+    overflow: unset;
+    text-decoration: none;
+}
+
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li a:has(sup) sup,
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong>a:has(sup) sup{
+    color: #4d4d4d;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    font-family: Nunito-Bold, sans-serif;
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h5{
@@ -89,15 +127,20 @@
     font-weight: 400;
 }
 
-.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li:has(em) em {
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li ul li:has(em){
     position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li:has(em) em {
+    /* position: absolute; */
     top: 0;
     right: 0;
     color: #F26841;
     font-size: .85rem;
     line-height: 20px;
     font-weight: 700;
-    border-bottom: 1px dashed;
     font-style: normal;
     font-family: Nunito-Bold, sans-serif;
 }
@@ -106,9 +149,9 @@
     font-size: .85rem;
     line-height: 20px;
     font-weight: 700;
-    border-bottom: 1px dashed;
+    /* border-bottom: 1px dashed; */
     font-style: normal;
-    text-decoration: none;
+    text-decoration: underline dashed;
     font-family: Nunito-Bold, sans-serif;
 }
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body>p span {
@@ -169,22 +212,29 @@
         display: none;
     }
 
-    .section.contact-us-card-wrapper .cards-wrapper .cards ul li:last-child .cards-card-body ul {
+    .section.contact-us-card-wrapper .cards-wrapper .cards ul li:last-child >.cards-card-body >ul {
         margin-bottom: 25px;
     }
 
-    .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li:has(em) em,
-    .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li:has(a em) a em {
+    .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li ul li:has(em) {
         bottom: 0;
         top: unset;
         right: unset;
     }
 
     .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li,
+    .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li p,
     .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li strong,
     .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h5 {
         font-size: 12px;
     }
+    .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li a:has(sup) sup,
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong>a:has(sup) sup{
+    font-size: 14px;
+}
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li ul {
+    margin-bottom: 6px;
+}
 }
 
 /* Download Piramal App Start */
@@ -204,7 +254,7 @@
 
 .section.contact-us-download-wrapper div:nth-child(2) ul li {
     max-width: 110px;
-    font: 400 12px 'nunito-regular', 'sans-serif';
+    font: 700 12px 'Nunito-Bold', 'sans-serif';
     line-height: 16px;
 }
 
@@ -236,18 +286,28 @@
     left: 25px;
 
 }
-@media (min-width: 1025px) and (max-width: 1400px) {
+.section.contact-us-download-wrapper.contact-us-download-wrapper .imgwithlink-wrapper>.imgwithlink>.image-href-desktop>a>picture>img{
+    min-height: 260px;
+    height: 260px;
+}
+@media (min-width: 1025px) and (max-width: 1300px) {
     .section.contact-us-download-wrapper div:nth-child(2) {
-        left: calc((100% - 820px) / 2);
+        left: calc((100% - 891px) / 2);
     }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+/* @media (min-width: 1025px) and (max-width: 1300px) {
+    
+} */
+@media screen and (min-width: 767px) and (max-width: 1024px) {
     .section.contact-us-download-wrapper div:nth-child(2) {
         /* top: 146px; */
-        left: 64px;
+        left: 58px;
     }
+        .section.download-piramal-wrapper .default-content-wrapper>*:nth-child(n+1) {
+            display: flex;
+        }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .section.download-piramal-wrapper div:nth-child(2) {
         display: block;
         left: unset;

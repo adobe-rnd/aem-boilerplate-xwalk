@@ -42,7 +42,7 @@
 .section.documents-required-brown .default-content-wrapper .button-container ::after{
     content: '';
     position: absolute;
-    background-image: url('/images/whatsapp.svg');
+    background-image: url('/images/whatsappdoc.svg');
     top: 13px;
     height: 20px;
     width: 20px;
@@ -144,7 +144,7 @@
 }
 .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(1) details::before{
     position: absolute;
-    background-image: url('/images/kyc.svg');
+    background-image: url('/images/kycdoc.svg');
     left: 0;
     top: 40px;
     object-fit: contain;
@@ -195,7 +195,7 @@
 }
 .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(4) details::before{
     position: absolute;
-    background-image: url('/images/co-applicants.svg');
+    background-image: url('/images/coapplicants.svg');
     left: 0;
     top: 30px;
     object-fit: contain;
@@ -212,7 +212,7 @@
 }
 .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(5) details::before{
     position: absolute;
-    background-image: url('/images/photo.svg');
+    background-image: url('/images/photodocm.svg');
     left: 0;
     top: 30px;
     object-fit: contain;
@@ -416,11 +416,11 @@ table {
 }
 
 .section.documents-required-brown.document-required-accordion-img-swap .accordion-group-wrapper .accordion-group .accordion:nth-last-child(2) details::before{
-    background-image: url('/images/co-applicants.svg');
+    background-image: url('/images/coapplicants.svg');
 }
 
 .section.documents-required-brown.document-required-accordion-img-swap .accordion-group-wrapper .accordion-group .accordion:last-child details::before{
-    background-image: url('/images/photo.svg');
+    background-image: url('/images/photodocm.svg');
 }
 
 .section.documents-required-brown.document-required-accordion-img table:nth-child(2) > tbody > tr> th:nth-child(3), 
