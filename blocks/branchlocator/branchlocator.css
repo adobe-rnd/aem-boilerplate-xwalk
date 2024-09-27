@@ -229,7 +229,7 @@
     border: none;
     font-weight: 700;
     margin-top: 16px;
-    padding: 10px 16px;
+    padding: 10px 0;
     border-radius: 8px;
     background-color: var(--orange);
     text-decoration: none;
@@ -392,7 +392,7 @@
 
     .section.branch-locater-banner .default-content-wrapper p:nth-child(3)>picture>img {
         width: 72px;
-        height: auto;
+        height: 72px;
     }
 
     .section.branch-locater-banner .default-content-wrapper p:nth-child(3) {
@@ -426,6 +426,7 @@
         gap: 18px;
         justify-content: unset;
         flex-direction: column-reverse;
+        min-height: 328px;
     }
 
     .section.branchlocator-map .container .map-branchinfo-wrapper .branch-info-container{
@@ -446,7 +447,7 @@
 
     .section.branchlocator-map .container .map-branchinfo-wrapper .map-container{
         width: 100%;
-        max-height: 284px;
+        height: 284px;
         border-radius: 8px;
     }
 

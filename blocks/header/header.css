@@ -8,6 +8,10 @@
   position: fixed;
 } */
 
+header {
+  display: block;
+}
+
 .header nav#nav {
   box-sizing: border-box;
   display: grid;
@@ -944,7 +948,7 @@ body.modal-open footer {
     text-transform: uppercase;
   }
 
-  .header #nav>div.section.nav-brand>div>ul>li:nth-child(3)>ul>li:nth-child(1)>ul>li:nth-child(4)>a>sup {
+  .header #nav>div.section.nav-brand>div>ul>li:nth-child(3)>ul>li:nth-child(1)>ul>li:nth-child(4)>a>em {
     background-color: var(--green);
     border-radius: 4px;
     color: var(--piramal-white-100);
@@ -957,6 +961,7 @@ body.modal-open footer {
     position: absolute;
     bottom: -2px;
     text-transform: capitalize;
+    font-style: normal;
   }
 
   .header .block .nav-wrapper #nav .section.nav-sections .default-content-wrapper>p:nth-child(1) a span.icon-piramal-logo-02 img {
@@ -1049,6 +1054,7 @@ body.modal-open footer {
     font-weight: 400;
     line-height: 20px;
     text-decoration: none;
+    position: relative;
   }
 
   .header .section.nav-brand .default-content-wrapper>ul>li>ul>li>p::after {
