@@ -999,8 +999,11 @@ body.overlay-active {
 }
 
 /* header css */
+
+
 header {
   height: 112px;
+  display: none;
 }
 
 @media screen and (width <= 1200px) {

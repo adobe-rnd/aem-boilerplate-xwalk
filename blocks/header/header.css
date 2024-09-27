@@ -8,6 +8,10 @@
   position: fixed;
 } */
 
+header {
+  display: block;
+}
+
 .header nav#nav {
   box-sizing: border-box;
   display: grid;

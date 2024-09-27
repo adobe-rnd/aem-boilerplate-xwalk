@@ -212,7 +212,7 @@
         display: none;
     }
 
-    .section.contact-us-card-wrapper .cards-wrapper .cards ul li:last-child .cards-card-body ul {
+    .section.contact-us-card-wrapper .cards-wrapper .cards ul li:last-child >.cards-card-body >ul {
         margin-bottom: 25px;
     }
 
@@ -232,7 +232,9 @@
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong>a:has(sup) sup{
     font-size: 14px;
 }
-
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li ul {
+    margin-bottom: 6px;
+}
 }
 
 /* Download Piramal App Start */
@@ -299,7 +301,7 @@
 @media screen and (min-width: 767px) and (max-width: 1024px) {
     .section.contact-us-download-wrapper div:nth-child(2) {
         /* top: 146px; */
-        left: 64px;
+        left: 58px;
     }
         .section.download-piramal-wrapper .default-content-wrapper>*:nth-child(n+1) {
             display: flex;

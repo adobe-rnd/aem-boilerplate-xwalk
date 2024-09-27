@@ -22,7 +22,6 @@ export default async function decorate(block) {
   try {
     block.querySelectorAll("li,p").forEach(function (el) {
       el.addEventListener("click", function (e) {
-        e.stopPropagation();
         if (e.target.closest(".footer-section-first") || e.target.closest(".footer-section-second")) {
           //console.log("click_text :: ", e.target.innerText);
           //console.log("menu_category :: ", e.target.closest("ul")?.closest("li")?.querySelector("p")?.innerText);
@@ -34,6 +33,10 @@ export default async function decorate(block) {
             console.warn(error);
           }
         }
+        if(e.target.href.includes('/modals/')){
+          return false;
+        }
+        e.stopPropagation();
       })
     });
     
