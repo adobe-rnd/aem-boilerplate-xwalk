@@ -61,6 +61,7 @@ dialog[open]:has(.modal-content .section.support-contact-us-popup.risk-gradation
         font-size: 1.125rem;
         line-height: 1.5rem;
         margin-bottom: .5rem;
+        margin-top: 5px;
     }
 
     .section.support-contact-us-popup.risk-gradation-popup .default-content-wrapper > p {
@@ -103,4 +104,10 @@ dialog[open]:has(.modal-content .section.support-contact-us-popup.risk-gradation
         height: 6px;
         background-color: rgb(196, 196, 196);
     }
+}
+
+@media screen and (min-width:768px) and  (max-width:1024px) {
+.section.support-contact-us-popup.risk-gradation-popup .default-content-wrapper h3 {
+    margin-top: 25px;
+}
 }
