@@ -14,4 +14,4 @@ Disallow: /*?*
 
 
 
-Sitemap: https://uatmarketing.piramalfinance.com/sitemap-english.xml
+Sitemap: https://devmarketing.piramalfinance.com/sitemap-english.xml
