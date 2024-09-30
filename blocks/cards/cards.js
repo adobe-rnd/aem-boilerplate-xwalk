@@ -1,8 +1,10 @@
+import { ctaClickInteraction } from '../../dl.js';
 import { createOptimizedPicture } from '../../scripts/aem.js';
-import { moveInstrumentation } from '../../scripts/scripts.js';
+import { decoratePlaceholder, moveInstrumentation } from '../../scripts/scripts.js';
 
-export default function decorate(block) {
+export default async function decorate(block) {
   /* change to ul, li */
+  block.innerHTML = await decoratePlaceholder(block);
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
@@ -21,4 +23,20 @@ export default function decorate(block) {
   });
   block.textContent = '';
   block.append(ul);
+
+
+  try {
+    if(block.closest('.section.ratings-card-wrapper')){
+      block.closest('.section.ratings-card-wrapper').querySelectorAll('a').forEach(eachAnchor => {
+        eachAnchor.addEventListener('click', function (e) {
+            let data = {};
+            data.click_text = e.target.textContent.trim();
+            data.cta_position = e.target.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
+            ctaClickInteraction(data);
+        });
+      });
+    }
+  } catch (error) {
+    console.warn(error);
+  }
 }

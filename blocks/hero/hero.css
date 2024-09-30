@@ -1,11 +1,14 @@
-.hero-container .hero-wrapper {
+main .hero-container > div {
   max-width: unset;
+}
+
+main .hero-container {
   padding: 0;
 }
 
 .hero {
   position: relative;
-  padding: 40px 24px;
+  padding: 32px;
   min-height: 300px;
 }
 
@@ -13,7 +16,7 @@
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  color: var(--background-color);
+  color: white;
 }
 
 .hero picture {
@@ -28,10 +31,4 @@
   object-fit: cover;
   width: 100%;
   height: 100%;
-}
-
-@media (width >= 900px) {
-  .hero {
-    padding: 40px 32px;
-  }
 }

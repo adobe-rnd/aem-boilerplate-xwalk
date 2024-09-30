@@ -1,0 +1,364 @@
+.section.partnership-tab-content .default-content-wrapper>h2 {
+    color: var(--black);
+    display: block;
+    font-family: 'Nunito-Extrabold', sans-serif;
+    font-size: 2.5rem;
+    line-height: 40px;
+}
+
+.section.partnership-tab-content .rte-wrapper .rte.block ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    list-style: none;
+    column-gap: 40px;
+    margin-top: 40px;
+}
+
+.section.partnership-tab-content .rte-wrapper .rte.block ul>li a {
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1.5rem;
+    line-height: 32px;
+    padding: unset;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.section.partnership-tab-content .rte-wrapper .rte.block ul>li>strong>a {
+    color: var(--orange);
+    font-family: 'Nunito-Extrabold', sans-serif;
+    font-weight: 800;
+}
+
+.section.partnership-tab-content .rte-wrapper .rte.block ul>li:has(> strong) {
+    border-bottom: 2px solid var(--orange);
+}
+
+.section.partnership-image-popup .wrappercreation-wrapper .wrapper-creation-container {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 24px 0;
+}
+
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text>.cmp-text {
+    align-items: center;
+    border-radius: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    padding: 30px 50px;
+    width: 100%;
+    box-shadow: 0 4px 9pt rgba(51, 51, 51, .078);
+    position: relative;
+    min-height: 148px;
+}
+.section.partnership-image-popup.retail-fin-border-bottom .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text>.cmp-text.active{
+    border-bottom: 8px solid #f26841;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text>.cmp-text:hover {
+    -webkit-box-shadow: 0 25px 50px -9pt rgba(0,0,0,.25);
+    box-shadow: 0 25px 50px -9pt rgba(0,0,0,.25);
+}
+
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text>.cmp-text>div>div {
+    position: absolute;
+    width: 206px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text>.cmp-text div picture>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text {
+    display: block;
+    /* margin: 0 2pc; */
+    padding: 40px 24px 16px;
+}
+.section.partnership-image-popup.retail-fin-border-bottom .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .popup-parent-cont{
+    overflow-y: auto;
+    padding: 8px 24px;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text >.cpm-sub-text>p {
+    /* padding: 8px 24px; */
+    text-align: center;
+}
+
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text>p>.title {
+    color: #f26841;
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: .12px;
+    line-height: 32px;
+}
+
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text {
+    position: relative;
+    background-color: #fff;
+    border-radius: 1pc;
+    box-shadow: 0 11px 15px -7px rgba(0, 0, 0, .2), 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12);
+    color: rgba(0, 0, 0, .87);
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    max-height: calc(100% - 4pc);
+    max-width: 60pc;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1) 0ms;
+    width: calc(100% - 4pc);
+    z-index: 9999;
+    max-width: 600px;
+}
+
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text {
+    /* overflow-y: scroll; */
+    padding: 2pc;
+}
+
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text>p>span {
+    color: var(--orange);
+    font-family: 'Nunito-Extrabold', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: .12px;
+    line-height: 32px;
+}
+
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text>p {
+    text-align: center;
+}
+
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .cross-container>img {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    width: 20px;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p,
+ .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p em{
+    display: block;
+    color: rgba(0, 0, 0, .871);
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    text-decoration: none;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p,
+ .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p em sub {
+    color: rgba(0, 0, 0, .871);
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    text-decoration: none;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p,
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p a {
+    color: rgba(0, 0, 0, .871);
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    text-decoration: none;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p a sub{
+    color: rgba(0, 0, 0, .871);
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    text-decoration: none;
+    font-style: normal;
+}
+
+/* .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p a {
+    display: block;
+} */
+
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div h2{
+    color: rgba(0, 0, 0, .871);
+    display: block;
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 24px;
+    margin-bottom: 8px;
+    margin-top: 1pc;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div h2 strong{
+    color: rgba(0, 0, 0, .871);
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 24px;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div h2 a sub{
+    color: rgba(0, 0, 0, .871);
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    text-decoration: none;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div h2 a:hover{
+  text-decoration: none;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div >p >strong >em{
+    color: rgba(0, 0, 0, .871);
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 24px;
+    font-style: normal;
+    display: contents;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div  >h3{
+    color: rgba(0, 0, 0, .871);
+    display: block;
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 24px;
+    padding-top: 16px;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div ul {
+    list-style: unset;
+    margin-left: 16px;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div ul >li{
+    color: rgba(0, 0, 0, .871);
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    padding-bottom: 8px;
+}
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p>strong {
+    color: rgba(0, 0, 0, .871);
+    font-family: 'Nunito-Extrabold', sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    display: contents;
+
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+    .section.partnership-tab-content .rte-wrapper .rte.block ul>li a {
+        font-size: 1rem;
+        line-height: 24px;
+    }
+
+    .section.partnership-image-popup .wrappercreation-wrapper .wrapper-creation-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text>.cmp-text>div>div {
+        width: 140px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .section.partnership-tab-content .rte-wrapper .rte.block ul>li a {
+        font-size: 1pc;
+        line-height: 24px;
+    }
+
+    .section.partnership-tab-content .rte-wrapper .rte.block ul {
+        flex-wrap: nowrap;
+    }
+
+    .section.partnership-tab-content .rte-wrapper .rte.block ul>li>strong>a {
+        color: var(--orange);
+    }
+
+    .section.partnership-image-popup .wrappercreation-wrapper .wrapper-creation-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .section.partnership-tab-content .rte-wrapper .rte.block ul {
+        column-gap: 16px;
+        margin-top: 16px;
+    }
+
+    .section.partnership-tab-content .default-content-wrapper>h2 {
+        font-size: 1.5rem;
+        line-height: 28px;
+    }
+}
+
+
+/* partnership text css start */
+.section.partnership-text .default-content-wrapper p {
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    margin-bottom: 8px;
+    margin-top: 24px;
+}
+/* partnership text css end */
+
+
+/* co-lending partnership tab css start */
+
+.section.co-lending-partnership-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container {
+    display: grid;
+    gap: 1pc;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 24px 0;
+}
+
+.section.co-lending-partnership-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image{
+    align-items: center;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(51, 51, 51, .078);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    padding: 30px 50px;
+    width: 100%;
+}
+
+.section.co-lending-partnership-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image:hover{
+    box-shadow: 0 25px 50px -9pt rgba(0, 0, 0, .25);
+}
+
+.section.co-lending-partnership-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .front-image{
+    height: 83px;
+    width: 206px;
+    display: flex;
+    align-items: center;
+}
+
+.section.co-lending-partnership-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .front-image > picture > img{
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width:767px) {
+    .section.co-lending-partnership-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container {
+        grid-template-columns: 1fr;
+    }
+    .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text{
+        padding: 46px 24px 1pc;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .section.co-lending-partnership-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+   
+}
+/* co-lending partnership tab css start */

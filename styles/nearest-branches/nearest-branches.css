@@ -1,0 +1,191 @@
+.section.nearest-branches .default-content-wrapper>h2 {
+    margin-bottom: 24px;
+    color: var(--text-color);
+    display: block;
+    font-family: 'Nunito-Extrabold', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 40px;
+    padding-bottom: 8px;
+    text-align: left;
+}
+
+.section.nearest-branches .columns-wrapper .columns {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.section.nearest-branches .columns-wrapper .columns>div {
+    border: 2px solid var(--solitude);
+    border-radius: 16px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -4px rgba(0, 0, 0, .1);
+    transition-duration: .2s;
+    translate: 0;
+    padding: 32px;
+    position: relative;
+}
+
+.section.nearest-branches .columns-wrapper .columns>div:hover {
+    translate: 0 -4px;
+}
+
+.section.nearest-branches .columns-wrapper .columns>div>div>h2 {
+    align-items: center;
+    color: var(--greyishblue);
+    display: grid;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    gap: 8px;
+    grid-template-columns: 3% auto;
+    line-height: 28px;
+    position: relative;
+    margin: 6px 0;
+}
+
+.section.nearest-branches .columns-wrapper .columns>div>div {
+    position: relative;
+}
+
+.section.nearest-branches .columns-wrapper .columns>div:hover>div>.button-container {
+    display: block;
+}
+
+.section.nearest-branches .columns-wrapper .columns>div>div>p>a {
+    color: var(--orange);
+    background-color: unset;
+    padding: 0;
+    margin: 0;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 21px;
+    border: unset;
+    border-radius: unset;
+}
+
+.section.nearest-branches .columns-wrapper .columns>div>div>.button-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: var(--orange);
+    font-family: Nunito-Bold, sans-serif;
+    margin-right: 20px;
+    display: none;
+    margin-top: 8px;
+}
+
+.section.nearest-branches .columns-wrapper .columns>div>div>.button-container:hover {
+    display: block;
+}
+
+.section.nearest-branches .columns-wrapper .columns>div>div>.button-container::after {
+    background-image: url("/content/dam/piramalfinance/product-page/cities/ahmedabad/arrow-right-orange.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    display: inline-block;
+    height: 21px;
+    width: 20px;
+    position: absolute;
+}
+
+.section.nearest-branches .columns-wrapper .columns>div>div>h2::before {
+    background-image: url("/content/dam/piramalfinance/product-page/cities/ahmedabad/location.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    display: inline-block;
+    height: 28px;
+    width: 24px;
+}
+
+.section.nearest-branches .columns-wrapper .columns>div:hover>div>h2 {
+    color: var(--orange);
+}
+
+.section.nearest-branches .columns-wrapper .columns>div:hover>div>h2::before {
+    background-image: url("/content/dam/piramalfinance/product-page/cities/ahmedabad/location-orange.svg");
+}
+
+.section.nearest-branches .columns-wrapper .columns>div>div>p {
+    color: var(--text-color);
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .section.nearest-branches .columns-wrapper .columns>div:hover {
+        translate: 0;
+    }
+
+    .section.nearest-branches .columns-wrapper .columns>div>div>h2::before {
+        background-image: url("/content/dam/piramalfinance/product-page/cities/ahmedabad/location-orange.svg");
+    }
+
+    .section.nearest-branches .columns-wrapper .columns>div>div>h2 {
+        color: var(--orange);
+    }
+
+    .section.nearest-branches .columns-wrapper .columns>div>div>h4{
+        display: block;
+    }
+
+    .section.nearest-branches .columns-wrapper .columns>div>div>h4::after {
+        top: 0;
+        right: -20px;
+        display: block;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .section.nearest-branches .columns-wrapper .columns>div>div>h2{
+        grid-template-columns: 4% auto;
+    }
+    .section.nearest-branches .columns-wrapper .columns>div>div>.button-container {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .section.nearest-branches .columns-wrapper .columns>div{
+        padding: 16px;
+    }
+    .section.nearest-branches .columns-wrapper .columns>div>div>h2{
+        margin: 8px 0;
+        font-size: 1rem;
+        gap: 4px;
+        grid-template-columns: 7% 56%;
+        line-height: 24px;
+        width: unset;
+    }
+    .section.nearest-branches .columns-wrapper .columns>div>div>h2::before{
+        width: 18px;
+        height: 19px;
+        margin-top: 2px;
+    }
+    .section.nearest-branches .columns-wrapper .columns>div>div>.button-container {
+        display: block;
+    }
+    .section.nearest-branches .columns-wrapper .columns>div>div>p>a{
+        font-size: 1rem;
+        line-height: 24px;
+    }
+    .section.nearest-branches .columns-wrapper .columns>div>div>p{
+        font-size: 1rem;
+        line-height: 24px;
+    }
+    .section.nearest-branches .default-content-wrapper>h2 {
+        font-size: 1.25rem;
+        line-height: 28px;
+        padding-bottom: 4px;
+        margin-bottom: 20px;
+    }
+    .section.nearest-branches .columns-wrapper .columns>div>div>.button-container::after {
+        top: 2px;
+    }
+}

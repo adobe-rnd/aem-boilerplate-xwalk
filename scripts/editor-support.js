@@ -5,7 +5,7 @@ import {
   decorateIcons,
   decorateSections,
   loadBlock,
-  loadSections,
+  loadBlocks,
 } from './aem.js';
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
@@ -33,7 +33,7 @@ async function applyChanges(event) {
       element.insertAdjacentElement('afterend', newMain);
       decorateMain(newMain);
       decorateRichtext(newMain);
-      await loadSections(newMain);
+      await loadBlocks(newMain);
       element.remove();
       newMain.style.display = null;
       // eslint-disable-next-line no-use-before-define
@@ -71,7 +71,7 @@ async function applyChanges(event) {
           decorateRichtext(newSection);
           decorateSections(parentElement);
           decorateBlocks(parentElement);
-          await loadSections(parentElement);
+          await loadBlocks(parentElement);
           element.remove();
           newSection.style.display = null;
         } else {

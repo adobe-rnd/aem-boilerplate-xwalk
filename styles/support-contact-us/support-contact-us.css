@@ -1,0 +1,359 @@
+/* support contact us banner css start */
+.section.multi-calculator-wrapper.support-contact-us-banner .teaser-wrapper .teaser .background {
+    padding-top: 44px;
+    padding-bottom: 92px;
+}
+
+.section.multi-calculator-wrapper.support-contact-us-banner .teaser-wrapper .teaser {
+    height: 260px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .section.multi-calculator-wrapper.support-contact-us-banner .teaser-wrapper .teaser .background .foreground {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .section.multi-calculator-wrapper.support-contact-us-banner .teaser-wrapper .teaser .background .foreground .text .long-description p {
+        display: block;
+        font-size: 0.875rem;
+        line-height: 20px;
+        margin-top: 8px;
+    }
+
+    .section.multi-calculator-wrapper.support-contact-us-banner .teaser-wrapper .teaser {
+        height: 168px;
+    }
+
+    .section.multi-calculator-wrapper.support-contact-us-banner .teaser-wrapper .teaser .background {
+        padding-top: 60px;
+        padding-bottom: 12px;
+    }
+}
+/* support contact us banner css end */
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container {
+    border-radius: 12px;
+    box-shadow: 0 8px 24px -6px rgba(0, 0, 0, .08), 0 0 1px rgba(0, 0, 0, .4);
+    padding: 24px 24px 0;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper:first-child .teaserv2 {
+    padding: 0;
+    border: unset;
+    margin-bottom: 32px;
+}
+
+/* .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper:first-child .teaserv2::after {
+    content: none;
+} */
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns {
+    padding-bottom: 24px;
+    /* padding-left: 75pt; */
+    position: relative;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div {
+    align-items: flex-start;
+    column-gap: 83px;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:nth-child(2) {
+    row-gap: 16px;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:nth-child(2) p:nth-child(4) {
+    margin-top: 8px;
+}
+
+/* .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:first-child p:nth-child(5) {
+    display: flex;
+    align-items: center;
+} */
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p:nth-child(6) span {
+    margin-left: 8px;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p span img {
+    width: 24px;
+    height: 24px;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p,
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p:nth-child(2),
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div:first-child div p:first-child>strong>em {
+    color: var(--gradient-gray);
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    font-style: normal;
+    max-width: 700px;
+}
+
+.section.support-contact-us-wrapper.registered-add .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p:first-child strong{
+    margin-top: 8px;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p:nth-child(2),
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p strong {
+    color: #333;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .default-content-wrapper p>strong {
+    height: 50px;
+    display: flex;
+    align-items: end;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong,
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong sub {
+    color: var(--matterhorn);
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong sub {
+    color: var(--gradient-gray);
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div:first-child div p:first-child>strong {
+    display: flex;
+    flex-direction: column;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p strong,
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper:first-child .teaserv2 .bg-image .rte-text-description p strong em {
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 28px;
+    color: #333;
+    font-style: normal;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p strong em {
+    color: var(--black);
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong>a,
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>a{
+    color: var(--orange);
+    text-decoration: none;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>a {
+    margin: 0;
+    padding: 0;
+    border-radius: unset;
+    background-color: unset;
+    border: unset;
+    text-align: unset;
+    color: var(--matterhorn);
+    text-decoration: underline;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 {
+    border-style: dotted;
+    border-top: 1px dashed #e6e6e6;
+    padding: 24px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image {
+    display: flex;
+    align-items: center;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a {
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2::after {
+    content: "";
+    border: solid #58595b;
+    border-radius: 2px;
+    border-width: 0 2px 2px 0;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 5px;
+    position: absolute;
+    right: 4px;
+    transform: rotate(-45deg);
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .front-image,
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .front-image img{
+    height: 32px;
+    width: 32px;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:first-child p:nth-child(5) a u span img,
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:first-child p:nth-child(5) a u span{
+    height: 24px;
+    width: 24px;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:first-child p:nth-child(5) a u span{
+    margin-left: 8px;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .front-image {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    max-width: 75pt;
+    width: 100%;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:first-child p:nth-child(5) a u{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:first-child p:nth-child(2),
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:last-child p:nth-child(3){
+    /* display: flex; */
+    flex-direction: column;
+    gap: 8px;
+} 
+
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:first-child p:nth-child(8){
+    /* display: none; */
+}
+
+.section.support-contact-us-wrapper.registered-add .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div{
+    row-gap: 12px;
+}
+
+@media screen and (max-width: 1024px) {
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns {
+        /* padding-left: 60px; */
+    }
+
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div {
+        flex-direction: row;
+    }
+
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div {
+        column-gap: 65px;
+    }
+
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .front-image {
+        max-width: 60px;
+    }
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p,
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p:nth-child(2),
+.section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div:first-child div p:first-child>strong>em {
+    max-width: 100%;
+}
+}
+
+@media screen and (max-width: 767px) {
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container {
+        padding: 24px 16px 0;
+    }
+
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns {
+        /* padding-left: 51px; */
+    }
+
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div {
+        flex-direction: column;
+    }
+
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper:first-child .teaserv2 {
+        margin-bottom: 16px;
+    }
+
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p,
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong sub,
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div:first-child div p:first-child>strong>em {
+        font-size: 0.75rem;
+        line-height: 16px;
+        /* width: 85%; */
+    }
+    /* .section.support-contact-us-wrapper.contact-us-download-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p{
+        width: 100%;
+    } */
+
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>a u {
+        font-size: 0.875rem;
+    }
+
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong>a {
+        display: inline-block;
+        font-size: 0.875rem;
+    }
+
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div:first-child div p:first-child span>img,
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .front-image,
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .front-image img{
+        height: 24px;
+        width: 24px;
+    }
+    
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper:first-child .teaserv2 .bg-image .rte-text-description p strong em,
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p strong,
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong {
+        font-size: 0.875rem;
+        line-height: 20px;
+        color: var(--matterhorn);
+        font-family: Nunito-Bold, sans-serif;
+    }
+
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p:nth-child(2),
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:nth-child(2) p:nth-child(2) strong {
+        font-size: 0.75rem;
+        line-height: 16px;
+    }
+
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .front-image {
+        min-width: 50px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:first-child p:nth-child(8){
+        border: 1px solid var(--greyishblue);
+        border-radius: 10px;
+        height: 32px;
+        max-width: 140px;
+        display: block;
+    }
+
+    .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div:first-child p:nth-child(8) a {
+        color: var(--black);
+        display: block;
+        font-family: Nunito-Bold, sans-serif;
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 16px;
+        padding: 8px 16px;
+        text-align: center;
+        max-width: 140px;
+    }
+    .section.support-contact-us-wrapper.registered-add .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p:first-child strong{
+        margin-top: 4px;
+    }
+}

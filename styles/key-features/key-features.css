@@ -1,0 +1,180 @@
+/* key feature start */
+
+.section.key-feature-wrapper {
+    background-color: #365069;
+    padding: 40px 0;
+}
+
+.section.key-feature-wrapper .default-content-wrapper p {
+    color: #d7dce1;
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    padding-bottom: 8px;
+}
+
+.section.key-feature-wrapper .default-content-wrapper h2 {
+    color: #fff;
+    display: block;
+    font-family: 'Nunito-Bold', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 40px;
+}
+
+.section.key-feature-wrapper .cards-wrapper .cards {
+    margin-top: 24px;
+}
+
+.section.key-feature-wrapper .cards-wrapper .cards ul {
+    display: flex;
+    gap: 13px;
+    justify-content: space-between;
+    margin-bottom: 48px;
+}
+
+.section.key-feature-wrapper .cards-wrapper .cards ul>li {
+    background-color: unset;
+    border: unset;
+    width: 32.3%;
+}
+
+.section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-image {
+    height: 48px;
+    width: 48px;
+}
+
+.section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-image > picture > img{
+    height: 48px;
+    width: 48px;
+}
+
+.section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-body {
+    margin: 0;
+}
+
+.section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-body>p {
+    color: #d7dce1;
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: unset;
+    padding: 12px 0 4px;
+}
+
+.section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-body :nth-child(2) {
+    color: #fff;
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 32px;
+    padding: 0;
+}
+
+.section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-body :nth-child(2) > strong {
+    color: #fff;
+    font-family: 'Nunito-Bold', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.section.key-feature-wrapper :nth-child(3)>p {
+    color: #d7dce1;
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 0;
+}
+
+.section.key-feature-wrapper :nth-child(3)>p a {
+    color: #f58667;
+    text-decoration: underline;
+}
+
+.section.key-feature-wrapper :nth-child(3)>p a>sub {
+    cursor: pointer;
+    font-family: 'Nunito-Bold', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+@media screen and (max-width: 767px) {
+    .section.key-feature-wrapper {
+        padding: 16px 0 !important;
+    }
+
+    .section.key-feature-wrapper .default-content-wrapper h2 {
+        font-size: 1rem;
+        line-height: 24px;
+        padding-bottom: 24px;
+    }
+
+    .section.key-feature-wrapper .cards-wrapper .cards {
+        margin-top: 0;
+    }
+
+    .section.key-feature-wrapper .cards-wrapper .cards ul {
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 32px;
+    }
+
+    .section.key-feature-wrapper .cards-wrapper .cards ul>li {
+        display: flex;
+        align-items: center;
+        column-gap: 16px;
+    }
+
+    .section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-body>p {
+        font-size: 0.75rem;
+        font-weight: 400;
+        line-height: 16px;
+        padding: 0 0 4px;
+    }
+
+    .section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-body :nth-child(2) > strong {
+        font-size: 1rem;
+        line-height: 24px;
+    }
+
+    .section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-body :nth-child(2) {
+        font-size: 0.75rem;
+        line-height: 24px
+    }
+
+    .section.key-feature-wrapper .cards-wrapper .cards ul>li {
+        width: 100%;
+    }
+
+    .section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-image {
+        height: 32px;
+        width: 32px;
+    }
+
+    .section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-image > picture > img{
+        height: 32px;
+        width: 32px;
+    }
+
+    .section.key-feature-wrapper :nth-child(3)>p {
+        font-size: 0.75rem;
+        padding: 0;
+    }
+    .section.key-feature-wrapper :nth-child(3)>p a>sub {
+        font-size: 0.75rem;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .section.key-feature-wrapper {
+        padding: 40px 0;
+    }
+} 
+
+/* key feature end */

@@ -1,0 +1,768 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/src/index.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./node_modules/glob-import-loader/index.js??ruleSet[1].rules[1].use[4]!./src/main/webpack/clientlibs/homepage/happycustomer/css/happycustomer.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.cmp-container--happycustomer {
+    padding: 64px 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .cmp-container--happycustomer {
+        padding: 40px 16px;
+    }
+}
+
+.happy-customer .title {
+    font-family: "Nunito-Extrabold", sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    color: #333333;
+    text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .happy-customer .title {
+        font-size: 1.25rem;
+        line-height: 2.5rem;
+    }
+}
+
+.happy-customer .info-card {
+    max-width: 743px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 100px;
+    position: relative;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+    .happy-customer .info-card {
+        max-width: 624px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .happy-customer .info-card {
+        width: 100%;
+        margin-top: 41px;
+    }
+}
+
+.happy-customer .info-card .left-top {
+    width: 15px;
+    height: 19px;
+    position: absolute;
+    left: 255px;
+    top: -20px;
+}
+
+@media screen and (max-width: 1024px) {
+    .happy-customer .info-card .left-top {
+        left: 35px;
+        top: 15px;
+    }
+}
+
+.happy-customer .info-card .right-top {
+    width: 58px;
+    height: 58px;
+    position: absolute;
+    right: 200px;
+    top: -20px;
+}
+
+@media screen and (max-width: 1024px) {
+    .happy-customer .info-card .right-top {
+        right: 10px;
+        top: 15px;
+    }
+}
+
+.happy-customer .info-card .left-bottom {
+    width: 37px;
+    height: 31px;
+    position: absolute;
+    left: 185px;
+    top: 140px;
+}
+
+@media screen and (max-width: 1024px) {
+    .happy-customer .info-card .left-bottom {
+        left: 15px;
+        top: 155px;
+    }
+}
+
+.happy-customer .info-card .right-bottom {
+    width: 62px;
+    height: 67px;
+    position: absolute;
+    right: 190px;
+    top: 130px;
+}
+
+@media screen and (max-width: 1024px) {
+    .happy-customer .info-card .right-bottom {
+        right: 15px;
+        top: 150px;
+    }
+}
+
+.happy-customer .info-card .customer-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.happy-customer .info-card .customer-info .card-images {
+    width: 205px;
+    height: 205px;
+    z-index: 1;
+}
+
+.happy-customer .info-card .customer-info .card-images .personimg {
+    width: 205px;
+    height: 205px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+.happy-customer .info-card .customer-info .zoom-circleone {
+    border-radius: 50%;
+    background: #F26841;
+    width: 204px;
+    height: 204px;
+    position: absolute;
+    opacity: 0;
+    -webkit-animation: scaleIn 6s infinite cubic-bezier(0.36, 0.11, 0.89, 0.32);
+    animation: scaleIn 6s infinite cubic-bezier(0.36, 0.11, 0.89, 0.32);
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+@media screen and (max-width: 767px) {
+    .happy-customer .info-card .customer-info .zoom-circleone {
+        width: 175px;
+        height: 175px;
+        top: 18px;
+    }
+}
+
+@-webkit-keyframes scaleIn {
+    0% {
+        -webkit-transform: scale(0.8, 0.8);
+        transform: scale(0.8, 0.8);
+        opacity: 0.1;
+    }
+
+    100% {
+        -webkit-transform: scale(2, 2);
+        transform: scale(2, 2);
+        opacity: 0;
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        -webkit-transform: scale(0.8, 0.8);
+        transform: scale(0.8, 0.8);
+        opacity: 0.1;
+    }
+
+    100% {
+        -webkit-transform: scale(2, 2);
+        transform: scale(2, 2);
+        opacity: 0;
+    }
+}
+
+.happy-customer .info-card .customer-info .zoom-circletwo {
+    border-radius: 50%;
+    background: #F26841;
+    width: 204px;
+    height: 204px;
+    position: absolute;
+    opacity: 0;
+    -webkit-animation: scaleIn 6s infinite cubic-bezier(0.36, 0.11, 0.89, 0.32);
+    animation: scaleIn 6s infinite cubic-bezier(0.36, 0.11, 0.89, 0.32);
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+@media screen and (max-width: 767px) {
+    .happy-customer .info-card .customer-info .zoom-circletwo {
+        width: 175px;
+        height: 175px;
+        top: 18px;
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        -webkit-transform: scale(0.8, 0.8);
+        transform: scale(0.8, 0.8);
+        opacity: 0.1;
+    }
+
+    100% {
+        -webkit-transform: scale(2, 2);
+        transform: scale(2, 2);
+        opacity: 0;
+    }
+}
+
+.happy-customer .info-card .customer-info .zoom-circlethree {
+    border-radius: 50%;
+    background: #F26841;
+    width: 204px;
+    height: 204px;
+    position: absolute;
+    opacity: 0;
+    -webkit-animation: scaleIn 6s infinite cubic-bezier(0.36, 0.11, 0.89, 0.32);
+    animation: scaleIn 6s infinite cubic-bezier(0.36, 0.11, 0.89, 0.32);
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+
+@media screen and (max-width: 767px) {
+    .happy-customer .info-card .customer-info .zoom-circlethree {
+        width: 175px;
+        height: 175px;
+        top: 18px;
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        -webkit-transform: scale(0.8, 0.8);
+        transform: scale(0.8, 0.8);
+        opacity: 0.1;
+    }
+
+    100% {
+        -webkit-transform: scale(2, 2);
+        transform: scale(2, 2);
+        opacity: 0;
+    }
+}
+
+.happy-customer .info-card .customer-info .customer-comments {
+    -webkit-box-shadow: 0px 4px 12px rgba(51, 51, 51, 0.2);
+    box-shadow: 0px 4px 12px rgba(51, 51, 51, 0.2);
+    padding: 32px 64px;
+    border-radius: 24px;
+    position: relative;
+    background-color: #ffffff;
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 1024px) {
+    .happy-customer .info-card .customer-info .customer-comments {
+        padding: 16px;
+    }
+}
+
+.happy-customer .info-card .customer-info .customer-comments .arrowup {
+    width: 28px;
+    height: 14px;
+    border-left: 13px solid transparent;
+    border-right: 16px solid transparent;
+    border-bottom: 13px solid #ffffff;
+    content: " ";
+    position: absolute;
+    left: 48%;
+    z-index: 1;
+    margin-top: -46px;
+}
+
+@media screen and (max-width: 1024px) {
+    .happy-customer .info-card .customer-info .customer-comments .arrowup {
+        border-left: 18px solid transparent;
+        border-right: 21px solid transparent;
+        border-bottom: 15px solid #ffffff;
+        left: 48%;
+        margin-top: -30px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .happy-customer .info-card .customer-info .customer-comments .arrowup {
+        left: 45%;
+    }
+}
+
+.happy-customer .info-card .customer-info .customer-comments .comments {
+    text-align: center;
+}
+
+.happy-customer .info-card .customer-info .customer-comments .comments p .custinfo {
+    font-family: "Nunito-Regular", sans-serif;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: #333333;
+    margin-bottom: 20px;
+    display: block;
+}
+
+@media screen and (max-width: 1024px) {
+    .happy-customer .info-card .customer-info .customer-comments .comments p .custinfo {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
+
+.happy-customer .info-card .customer-info .customer-comments .comments p .custname {
+    font-family: "Nunito-Bold", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: #333333;
+    margin-bottom: 4px;
+    display: block;
+}
+
+@media screen and (max-width: 1024px) {
+    .happy-customer .info-card .customer-info .customer-comments .comments p .custname {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }
+}
+
+.happy-customer .info-card .customer-info .customer-comments .comments p .custprofession {
+    font-family: "Nunito-Regular", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #808080;
+}
+
+@media screen and (max-width: 1024px) {
+    .happy-customer .info-card .customer-info .customer-comments .comments p .custprofession {
+        font-size: 0.75rem;
+        line-height: 1rem;
+    }
+}
+
+.happy-customer .info-card .customerclasstwo {
+    position: absolute;
+    top: 125px;
+    right: -115px;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-name: floating-two;
+    animation-name: floating-two;
+    -webkit-animation-delay: 6s;
+    animation-delay: 6s;
+}
+
+@media screen and (max-width: 1024px) {
+    .happy-customer .info-card .customerclasstwo {
+        display: none;
+    }
+}
+
+.happy-customer .info-card .customerclasstwo .card-images {
+    width: 60px;
+    height: 60px;
+}
+
+.happy-customer .info-card .customerclasstwo .card-images .personimg {
+    width: 60px;
+    height: 60px;
+}
+
+.happy-customer .info-card .customerclasstwo .zoom-circleone {
+    display: none;
+}
+
+.happy-customer .info-card .customerclasstwo .zoom-circletwo {
+    display: none;
+}
+
+.happy-customer .info-card .customerclasstwo .zoom-circlethree {
+    display: none;
+}
+
+.happy-customer .info-card .customerclasstwo .customer-comments {
+    display: none;
+}
+
+@-webkit-keyframes floating-two {
+    0% {
+        -webkit-transform: translatey(0px);
+        transform: translatey(0px);
+        border-radius: 50%;
+    }
+
+    50% {
+        -webkit-transform: translatey(-20px);
+        transform: translatey(-20px);
+        border-radius: 50%;
+    }
+
+    100% {
+        -webkit-transform: translatey(0px);
+        transform: translatey(0px);
+        border-radius: 50%;
+    }
+}
+
+@keyframes floating-two {
+    0% {
+        -webkit-transform: translatey(0px);
+        transform: translatey(0px);
+        border-radius: 50%;
+    }
+
+    50% {
+        -webkit-transform: translatey(-20px);
+        transform: translatey(-20px);
+        border-radius: 50%;
+    }
+
+    100% {
+        -webkit-transform: translatey(0px);
+        transform: translatey(0px);
+        border-radius: 50%;
+    }
+}
+
+.happy-customer .info-card .customerclassthree {
+    position: absolute;
+    top: -40px;
+    right: 20px;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-name: floating-three;
+    animation-name: floating-three;
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
+}
+
+@media screen and (max-width: 1024px) {
+    .happy-customer .info-card .customerclassthree {
+        display: none;
+    }
+}
+
+.happy-customer .info-card .customerclassthree .card-images {
+    width: 87px;
+    height: 87px;
+}
+
+.happy-customer .info-card .customerclassthree .card-images .personimg {
+    width: 87px;
+    height: 87px;
+}
+
+.happy-customer .info-card .customerclassthree .zoom-circleone {
+    display: none;
+}
+
+.happy-customer .info-card .customerclassthree .zoom-circletwo {
+    display: none;
+}
+
+.happy-customer .info-card .customerclassthree .zoom-circlethree {
+    display: none;
+}
+
+.happy-customer .info-card .customerclassthree .customer-comments {
+    display: none;
+}
+
+@-webkit-keyframes floating-three {
+    0% {
+        -webkit-transform: translatey(0px);
+        transform: translatey(0px);
+        border-radius: 50%;
+    }
+
+    50% {
+        -webkit-transform: translatey(-20px);
+        transform: translatey(-20px);
+        border-radius: 50%;
+    }
+
+    100% {
+        -webkit-transform: translatey(0px);
+        transform: translatey(0px);
+        border-radius: 50%;
+    }
+}
+
+@keyframes floating-three {
+    0% {
+        -webkit-transform: translatey(0px);
+        transform: translatey(0px);
+        border-radius: 50%;
+    }
+
+    50% {
+        -webkit-transform: translatey(-20px);
+        transform: translatey(-20px);
+        border-radius: 50%;
+    }
+
+    100% {
+        -webkit-transform: translatey(0px);
+        transform: translatey(0px);
+        border-radius: 50%;
+    }
+}
+
+.happy-customer .info-card .customerclassfour {
+    position: absolute;
+    top: -40px;
+    left: 0px;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-name: floating-four;
+    animation-name: floating-four;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+
+@media screen and (max-width: 1024px) {
+    .happy-customer .info-card .customerclassfour {
+        display: none;
+    }
+}
+
+.happy-customer .info-card .customerclassfour .card-images {
+    width: 60px;
+    height: 60px;
+}
+
+.happy-customer .info-card .customerclassfour .card-images .personimg {
+    width: 60px;
+    height: 60px;
+}
+
+.happy-customer .info-card .customerclassfour .zoom-circleone {
+    display: none;
+}
+
+.happy-customer .info-card .customerclassfour .zoom-circletwo {
+    display: none;
+}
+
+.happy-customer .info-card .customerclassfour .zoom-circlethree {
+    display: none;
+}
+
+.happy-customer .info-card .customerclassfour .customer-comments {
+    display: none;
+}
+
+@-webkit-keyframes floating-four {
+    0% {
+        -webkit-transform: translatey(0px);
+        transform: translatey(0px);
+        border-radius: 50%;
+    }
+
+    50% {
+        -webkit-transform: translatey(-20px);
+        transform: translatey(-20px);
+        border-radius: 50%;
+    }
+
+    100% {
+        -webkit-transform: translatey(0px);
+        transform: translatey(0px);
+        border-radius: 50%;
+    }
+}
+
+@keyframes floating-four {
+    0% {
+        -webkit-transform: translatey(0px);
+        transform: translatey(0px);
+        border-radius: 50%;
+    }
+
+    50% {
+        -webkit-transform: translatey(-20px);
+        transform: translatey(-20px);
+        border-radius: 50%;
+    }
+
+    100% {
+        -webkit-transform: translatey(0px);
+        transform: translatey(0px);
+        border-radius: 50%;
+    }
+}
+
+.happy-customer .info-card .customerclassfive {
+    position: absolute;
+    top: 125px;
+    left: -130px;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-name: floating-five;
+    animation-name: floating-five;
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+@media screen and (max-width: 1024px) {
+    .happy-customer .info-card .customerclassfive {
+        display: none;
+    }
+}
+
+.happy-customer .info-card .customerclassfive .card-images {
+    width: 87px;
+    height: 87px;
+}
+
+.happy-customer .info-card .customerclassfive .card-images .personimg {
+    width: 87px;
+    height: 87px;
+}
+
+.happy-customer .info-card .customerclassfive .zoom-circleone {
+    display: none;
+}
+
+.happy-customer .info-card .customerclassfive .zoom-circletwo {
+    display: none;
+}
+
+.happy-customer .info-card .customerclassfive .zoom-circlethree {
+    display: none;
+}
+
+.happy-customer .info-card .customerclassfive .customer-comments {
+    display: none;
+}
+
+@-webkit-keyframes floating-five {
+    0% {
+        -webkit-transform: translatey(0px);
+        transform: translatey(0px);
+        border-radius: 50%;
+    }
+
+    50% {
+        -webkit-transform: translatey(-20px);
+        transform: translatey(-20px);
+        border-radius: 50%;
+    }
+
+    100% {
+        -webkit-transform: translatey(0px);
+        transform: translatey(0px);
+        border-radius: 50%;
+    }
+}
+
+@keyframes floating-five {
+    0% {
+        -webkit-transform: translatey(0px);
+        transform: translatey(0px);
+        border-radius: 50%;
+    }
+
+    50% {
+        -webkit-transform: translatey(-20px);
+        transform: translatey(-20px);
+        border-radius: 50%;
+    }
+
+    100% {
+        -webkit-transform: translatey(0px);
+        transform: translatey(0px);
+        border-radius: 50%;
+    }
+}
+
+/* .happy-customer .info-card .customerclasstwo .card-images,
+.happy-customer .info-card .customerclassthree .card-images,
+.happy-customer .info-card .customerclassfour .card-images,
+.happy-customer .info-card .customerclassfive .card-images {
+    display: none;
+}
+
+.happy-customer .info-card .customerclasstwo .card-images,
+.happy-customer .info-card .customerclassthree .card-images,
+.happy-customer .info-card .customerclassfour .card-images,
+.happy-customer .info-card .customerclassfive .card-images {
+    display: none;
+} */
+
+.testimonial.block.secondary .happy-customer .info-card .customerclasstwo .card-images,
+.testimonial.block.secondary .happy-customer .info-card .customerclassthree .card-images,
+.testimonial.block.secondary .happy-customer .info-card .customerclassfour .card-images,
+.testimonial.block.secondary .happy-customer .info-card .customerclassfive .card-images {
+    display: none;
+} 
+
+.section.testimonial-content-wrapper {
+    padding: 64px 0;
+    background-color: rgba(235,238,240,0.3);
+    min-height: 780px;
+}
+
+.section.testimonial-content-wrapper .default-content-wrapper h2 {
+    color: #000;
+    display: block;
+    font-family: 'Nunito-Extrabold',sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 2.5rem;
+    padding-bottom: 8px;
+    text-align: center;
+}
+
+@media screen and (max-width:767px) {
+    .section.testimonial-content-wrapper {
+        padding: 40px 16px;
+        min-height: 685px;
+    }
+
+    .section.testimonial-content-wrapper .default-content-wrapper h2 {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        padding-bottom: 4px;
+    }
+}
+
+@media (min-width:768px) and (max-width:1024px) {
+    .section.testimonial-content-wrapper {
+        padding: 40px 16px;
+        min-height: 640px;
+    }
+}
+
+@media screen and (min-width:1025px) and (max-width: 1300px) {
+    .section.testimonial-content-wrapper {
+        min-height: 810px;
+    }
+  }

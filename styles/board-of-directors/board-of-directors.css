@@ -1,0 +1,185 @@
+.section.board-of-directors-wrapper.teaser-container {
+    padding: 0;
+}
+
+.section.board-of-directors-wrapper .default-content-wrapper>h2,
+.section.board-directors-wrapper.tab-name-container .default-content-wrapper>h2 {
+    color: var(--black);
+    display: block;
+    font-family: 'Nunito-Extrabold',sans-serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    line-height: 32px;
+    margin-bottom: 24px;
+}
+
+.section.board-of-directors-wrapper .wrapper-creation-container,
+.section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+}
+
+.section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper,
+.section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container .teaser {
+    min-height: 303px;
+}
+
+.section.board-of-directors-wrapper.board-of-directors-tabs-wrapper .tab-container-wrapper .tab-container .panel-container .teaser {
+    min-height: 350px;
+}
+
+.section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser {
+    position: relative;
+    display: block;
+}
+
+.section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background,
+.section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background {
+    background-repeat: no-repeat;
+    display: block;
+    height: 227px;
+    width: 227px;
+    background-size: 100%;
+    background-position: 100% 100%;
+    position: relative;
+}
+
+.section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .front-picture,
+.section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background .front-picture {
+    display: none;
+}
+
+.section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground,
+.section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background .foreground {
+    position: absolute;
+    top: 228px;
+    cursor: pointer;
+}
+
+.section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background:hover .front-picture,
+.section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background:hover .front-picture {
+    display: block;
+    cursor: pointer;
+}
+
+.section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background:hover::after,
+.section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background:hover::after {
+    content: '';
+    position: absolute;
+    /* display: none; */
+    width: 35px;
+    height: 35px;
+    background-size: contain;
+    background-position: center;
+    right: 3px;
+    bottom: 0;
+    /* background-image: url('../../images/MoreButton.png'); */
+    background-image: url('/images/MoreButton.png');
+}
+
+.section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground .text .title h3,
+.section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background .text .title h3 {
+    color: #000;
+    font-family: 'Nunito-Bold', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground .text .long-description>p,
+.section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background .text .long-description>p {
+    text-decoration: none;
+    color: #000;
+    font-family: 'Nunito-regular', sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+}
+
+.section.board-of-directors-wrapper.tab-container-container .tab-name-wrapper .tab-name .carousel-inner {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+.section.board-of-directors-wrapper.tab-container-container .tab-name-wrapper .tab-name .carousel-inner .carousel-item {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    cursor: pointer;
+    color: #000;
+    font-family: 'Nunito-Regular',sans-serif;
+    line-height: 2pc;
+}
+
+.section.board-of-directors-wrapper.tab-container-container .tab-name-wrapper .tab-name .carousel-inner .carousel-item.active {
+    border-bottom: 2px solid;
+    color: var(--orange);
+    font-family: 'Nunito-Extrabold',sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 2pc;
+}
+
+
+@media screen and (max-width:1024px) {
+
+    .section.board-of-directors-wrapper .wrapper-creation-container,
+    .section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container {
+        grid-template-columns: auto auto;
+        justify-content: space-around;
+    }
+
+    .section.board-of-directors-wrapper.tab-container-container .tab-name-wrapper .tab-name .carousel-inner .carousel-item.active,
+    .section.board-of-directors-wrapper.tab-container-container .tab-name-wrapper .tab-name .carousel-inner .carousel-item {
+        font-size: 1rem;
+        line-height: 24px;
+    }
+
+    .section.board-of-directors-wrapper .default-content-wrapper>h2,
+    .section.board-directors-wrapper.tab-name-container .default-content-wrapper>h2 {
+        font-size: 1.5rem;
+        font-family: 'Nunito-Bold',sans-serif;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground .text .title h3,
+    .section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background .text .title h3 {
+        font-size: 0.875rem;
+        line-height: 20px;
+    }
+
+    .section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground .text .long-description>p,
+    .section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background .text .long-description>p {
+        font-size: 0.75rem;
+        line-height: 1pc;
+    }
+
+    .section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background,
+    .section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background {
+        height: 152px;
+        width: 152px;
+    }
+
+    .section.board-of-directors-wrapper.tab-container-container .tab-name-wrapper .tab-name .carousel-inner {
+        gap: 24px;
+    }
+
+    .section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground,
+    .section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background .foreground {
+        top: 160px;
+    }
+    .section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper, 
+    .section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container .teaser {
+        min-height: 220px;
+    }
+    .section.board-of-directors-wrapper.board-of-directors-tabs-wrapper .tab-container-wrapper .tab-container .panel-container .teaser {
+        min-height: 250px;
+    }
+}

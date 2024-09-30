@@ -1,0 +1,80 @@
+.section.annual-reports-wrapper.forms-pdf .default-content-wrapper ul>li {
+    margin-bottom: 13px;
+}
+
+.section.annual-reports-wrapper.forms-pdf .default-content-wrapper ul>li>a {
+    padding: 20px 61px 20px 36px;
+    border-radius: 4px;
+}
+
+.section.annual-reports-wrapper.forms-pdf .default-content-wrapper ul>li>a sub {
+    display: flex;
+    gap: 36px;
+    align-items: center;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+}
+.section.annual-reports-wrapper.forms-pdf .default-content-wrapper ul>li>a sub span{
+    display: contents;
+}
+.section.annual-reports-wrapper.forms-pdf .default-content-wrapper ul>li>a sub span img {
+    width: 32px;
+    max-width: unset;
+    min-width: unset;
+    height: 32px;
+    display: block;
+}
+
+.section.annual-reports-wrapper.forms-pdf .default-content-wrapper ul>li>a::after {
+    content: "\e900";
+    font-family: 'icomoon-download' !important;
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    line-height: 1px;
+    height: 20px;
+    width: 20px;
+    font-size: 2rem;
+    color: gray;
+}
+
+.section.annual-reports-wrapper.forms-pdf .default-content-wrapper ul>li>a:hover::after {
+    color: gray;
+}
+
+.section.annual-reports-wrapper.forms-pdf .default-content-wrapper ul>li>a:hover {
+    color: #000;
+
+}
+
+.section.multi-calculator-wrapper.forms-format-banner {
+    background-color: #E4EAFA;
+}
+
+.section.multi-calculator-wrapper.forms-format-banner .teaser-wrapper .teaser .background .front-picture picture>img {
+    object-fit: contain;
+    width: 124px;
+    height: 139px;
+}
+
+@media screen and (max-width: 767px) {
+    .section.annual-reports-wrapper.forms-pdf .default-content-wrapper ul>li>a {
+        font-size: 0.75rem;
+        line-height: 16px;
+        padding: 24px 43px 24px 19px;
+    }
+    .section.annual-reports-wrapper.forms-pdf .default-content-wrapper ul>li>a sub{
+        font-size: 0.75rem;
+        line-height: 16px;
+        gap: 19px;
+    }
+    .section.annual-reports-wrapper.forms-pdf .default-content-wrapper ul>li>a sub span img{
+        width: 16px;
+        height: 16px;
+    }
+    .section.annual-reports-wrapper.forms-pdf .default-content-wrapper ul>li>a::after{
+        font-size: 1rem;
+    }
+}

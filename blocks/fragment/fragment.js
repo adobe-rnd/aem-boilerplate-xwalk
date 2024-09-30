@@ -9,7 +9,7 @@ import {
 } from '../../scripts/scripts.js';
 
 import {
-  loadSections,
+  loadBlocks,
 } from '../../scripts/aem.js';
 
 /**
@@ -19,8 +19,6 @@ import {
  */
 export async function loadFragment(path) {
   if (path && path.startsWith('/')) {
-    // eslint-disable-next-line no-param-reassign
-    path = path.replace(/(\.plain)?\.html/, '');
     const resp = await fetch(`${path}.plain.html`);
     if (resp.ok) {
       const main = document.createElement('main');
@@ -36,7 +34,7 @@ export async function loadFragment(path) {
       resetAttributeBase('source', 'srcset');
 
       decorateMain(main);
-      await loadSections(main);
+      await loadBlocks(main);
       return main;
     }
   }
@@ -50,9 +48,8 @@ export default async function decorate(block) {
   if (fragment) {
     const fragmentSection = fragment.querySelector(':scope .section');
     if (fragmentSection) {
-      block.classList.add(...fragmentSection.classList);
-      block.classList.remove('section');
-      block.replaceChildren(...fragmentSection.childNodes);
+      block.closest('.section').classList.add(...fragmentSection.classList);
+      block.closest('.fragment').replaceWith(...fragment.childNodes);
     }
   }
 }

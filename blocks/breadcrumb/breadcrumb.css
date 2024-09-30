@@ -1,0 +1,102 @@
+.section.breadcrumb-handle.teaser-container {
+    padding: unset;
+}
+
+.section.breadcrumb-handle{
+    position: relative;
+}
+.section.breadcrumb-handle .breadcrumb-wrapper{
+    background: transparent;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    left: calc((100% - 1240px) / 2);
+}
+.section.breadcrumb-handle > .breadcrumb-wrapper > .breadcrumb.block > nav > a{
+    color: #666;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 20px;
+    text-decoration: none;
+}
+.section.breadcrumb-handle > .breadcrumb-wrapper > .breadcrumb.block > nav > a:hover{
+    color: #f26841;
+}
+.section.breadcrumb-handle > .breadcrumb-wrapper > .breadcrumb.block > nav > a:last-child{
+    color: #f26841;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 20px;
+    text-decoration: none;
+}
+.section.breadcrumb-handle .breadcrumb-wrapper .breadcrumb-separator{
+    padding: 0 16px;
+}
+.section.breadcrumb-handle .breadcrumb-wrapper .breadcrumb{
+    padding-top: 10px;
+    padding-left: 5px;
+}
+.section.breadcrumb-handle .breadcrumb-wrapper .breadcrumb>nav{
+    display: flex;
+    align-items: center;
+}
+.section.breadcrumb-handle .breadcrumb-wrapper > .breadcrumb > nav > span svg {
+    stroke: #747272;
+}
+.section.breadcrumb-handle .breadcrumb-wrapper > .breadcrumb.white > nav > span svg {
+    stroke: #fff;
+}
+.section.breadcrumb-handle .breadcrumb-wrapper > .breadcrumb.white > nav > a{
+    color: #fff;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+@media screen and (max-width:1024px){
+    .section.breadcrumb-handle .breadcrumb-wrapper{
+        padding: 0 16px;
+        left: 0;
+    }
+    .section.breadcrumb-handle .breadcrumb-wrapper .breadcrumb{
+        padding-top: 16px;
+        padding-left: 0;
+    }
+    .section.breadcrumb-handle > .breadcrumb-wrapper > .breadcrumb.block > nav > a{
+        font-size: 0.75rem;
+        line-height: 16px;
+    }
+    .section.breadcrumb-handle > .breadcrumb-wrapper > .breadcrumb.block > nav > a:last-child{
+        font-size: 0.75rem;
+        line-height: 16px;
+    }
+    .section.breadcrumb-handle .breadcrumb-wrapper .breadcrumb-separator {
+        padding: 0 12px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .section.breadcrumb-handle.breadcrumb-handle-mob .breadcrumb-wrapper .breadcrumb nav {
+        overflow-x: auto;
+        padding-bottom: 3px;
+    }
+
+    .section.breadcrumb-handle > .breadcrumb-wrapper > .breadcrumb.block > nav > a{
+        white-space: nowrap;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1300px){
+    .section.breadcrumb-handle .breadcrumb-wrapper {
+        left: calc((100% - 1025px) / 2);
+    }
+
+    .section.breadcrumb-handle .breadcrumb-wrapper .breadcrumb>nav{
+        max-height: 20px;
+    }
+}
+

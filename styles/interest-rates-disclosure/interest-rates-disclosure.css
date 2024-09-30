@@ -1,0 +1,288 @@
+/* interest rate accordian start */
+.section.interest-rates-accordian-wrapper .default-content-wrapper h2 {
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 30px;
+    margin-top: 40px;
+    color: #333;
+    margin-bottom: 40px;
+}
+.section.table-full-row .default-content-wrapper >p{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #000;
+    display: block;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    padding: .5rem .25rem;
+    text-align: center;
+}
+.section.table-full-row .code-wrapper .code>div>table{
+    width: 100% !important;
+    height: auto;
+}
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group {
+    padding: 0;
+}
+
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group.shade-box {
+    margin: 0;
+}
+
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details {
+    padding: 0;
+}
+
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion {
+    margin-bottom: 16px;
+}
+
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>summary {
+    background: var(--whitesmoke);
+    border-radius: 4px;
+    color: #333;
+    display: flex;
+    padding: 20px 50px 20px 16px;
+    position: relative;
+}
+
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>summary>div>h3,
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>summary>div>p{
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    margin: 0;
+}
+
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>summary::before {
+    content: none;
+}
+
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>summary::after {
+    color: var(--text-color);
+    content: "+";
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 1.75rem;
+    font-weight: 800;
+    height: 2px;
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    line-height: 1px;
+    width: 12px;
+}
+
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>summary.active {
+    background: var(--orange);
+    color: var(--background-color);
+    border-radius: unset;
+}
+
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>summary.active::after {
+    color: var(--background-color);
+    content: "-";
+}
+
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details div {
+    margin: 0;
+}
+
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul {
+    border: solid var(--dark-color);
+    border-width: 1px 1px 0;
+    list-style: none;
+    margin: 0;
+}
+
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li {
+    background: var(--background-color);
+    border-bottom: 1px solid var(--dark-color);
+    position: relative;
+    margin: 0;
+    padding: 12px 40px;
+    cursor: pointer;
+}
+
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li>a {
+    color: var(--text-color);
+    position: relative;
+    text-decoration: none;
+    display: block;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 0.75rem;
+    line-height: 24px;
+    margin-bottom: 4px;
+}
+
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li:hover a {
+    color: var(--orange);
+}
+
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li>ul {
+    margin: 0;
+}
+
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li>ul>li>a {
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    color: var(--text-color);
+    display: block;
+}
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li>ul>li>a sub{
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem; 
+}
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li>ul>li>a sub:first-child{
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem; 
+}
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li>ul>li>a:hover{
+    text-decoration: none;
+}
+
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li::after {
+    content: "\eadf";
+    font-family: 'icomoon' !important;
+    position: absolute;
+    right: 24px;
+    top: 35%;
+    height: 20px;
+    width: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #333;
+}
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li:hover::after{
+    color: var(--orange);
+}
+.section.stakeholder-disclosures .default-content-wrapper h2{
+    margin-top: 16px;
+    color: #000;
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 800;
+    line-height: 24px;
+}
+
+.section.stakeholder-disclosures .default-content-wrapper h3{
+    color: #666;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 22px;
+    margin-bottom: 12px;
+}
+.section.stakeholder-disclosures .default-content-wrapper p{
+    color: #000;
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    line-height: 22px;
+    margin-top: 16px;
+}
+@media screen and (max-width: 767px) {
+    .section.interest-rates-accordian-wrapper .default-content-wrapper h2 {
+        font-size: 1rem;
+        line-height: 24px;
+    }
+
+    .section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li {
+        padding: 12px 50px 12px 18px;
+    }
+
+    .section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li> a{
+        font-size: 0.75rem;
+        line-height: 18px;
+    }
+
+    .section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li>ul>li>a {
+        font-size: 0.75rem;
+        line-height: 18px;
+    }
+
+    .section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li::after {
+        height: 15px;
+        width: 15px;
+    }
+}
+/* interest rate accordian end */
+
+
+
+/* media accordian start */
+
+.section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details>summary {
+    border-radius: 0;
+    padding: 16px 5pc 16px 40px;
+    color: #20374e;
+} 
+
+.section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details >div {
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details >div>p {
+    margin: 0;
+    color: #333;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details >div>ul {
+   list-style: disc;
+   border: none;
+}
+
+.section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details >div>ul >li{
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    align-items: center;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    min-height: 40px;
+    padding: 8px 0 0 22px;
+    position: relative;
+    border: none;
+ }
+
+ .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details >div>ul >li::before{
+    background: var(--text-color);
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 9px;
+    left: 0;
+    position: absolute;
+    width: 9px;
+ }
+
+ .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details >div>ul >li::after{
+    content: none;
+ }
+
+ .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details >div>ul >li>a{
+    color: var(--text-color);
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0;
+ }
+
+ .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details >div>ul >li:hover a{
+    color: #356ca3;
+    text-decoration-line: underline;
+ }
+
+/* media accordian end */

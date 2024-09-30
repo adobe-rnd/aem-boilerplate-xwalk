@@ -1,0 +1,287 @@
+/* annual reports start */
+.section.annual-reports-wrapper .default-content-wrapper h2,
+.section.annual-reports-wrapper .default-content-wrapper h1 {
+    color: var(--orange);
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 42px;
+    margin: 24px 0;
+}
+
+.section.annual-reports-wrapper .default-content-wrapper ul {
+    margin-top: 16px;
+}
+
+.section.annual-reports-wrapper .default-content-wrapper ul>li {
+    margin-bottom: 16px;
+}
+.section.annual-reports-wrapper .default-content-wrapper ul>li>a sub{
+    font-size: 1rem;
+    font-family: 'Nunito-Regular', sans-serif;
+}
+.section.annual-reports-wrapper .default-content-wrapper ul>li>a {
+    background: var(--whitesmoke);
+    border-radius: 4px;
+    color: #333;
+    display: block;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    padding: 20px 50px 20px 16px;
+    position: relative;
+}
+
+.section.annual-reports-wrapper .default-content-wrapper ul>li>a:hover {
+    background: var(--orange);
+    color: var(--white);
+    text-decoration: none;
+}
+.section.annual-reports-wrapper .default-content-wrapper ul>li>a::after {
+    content: "\eadf";
+    font-family: 'icomoon' !important;
+    position: absolute;
+    right: 24px;
+    top: 35%;
+    height: 20px;
+    width: 20px;
+    color: #333;
+}
+
+.section.annual-reports-wrapper .default-content-wrapper ul>li>a:hover::after {
+   color: var(--white);
+}
+
+@media screen and (max-width: 767px) {
+    .section.annual-reports-wrapper .default-content-wrapper h2 {
+        font-size: 1.125rem;
+        line-height: 27px;
+        margin: 40px 0 14px;
+    }
+
+    .section.annual-reports-wrapper .default-content-wrapper ul {
+        margin-top: 12px;
+    }
+
+    .section.annual-reports-wrapper .default-content-wrapper ul>li {
+        margin-bottom: 12px;
+    }
+}
+
+/* annual reports end */
+
+
+/* offer documents start */
+
+.section.offer-documents-wrapper .default-content-wrapper ul>li>p ,
+.section.offer-documents-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .offer-documents-wrapper .offer-documents .richtext .cmp-text >p{
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    color: #333;
+    cursor: pointer;
+    display: block;
+    display: flex;
+    align-items: center;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 12px;
+    padding: 20px 61px 20px 24px;
+    position: relative;
+    width: 100%;
+}
+
+.section.offer-documents-wrapper .default-content-wrapper ul>li:first-child > p {
+    padding: 0;
+}
+
+.section.offer-documents-wrapper .default-content-wrapper ul>li>p>a{
+    color: #333;
+    margin: 0;
+    border: unset;
+    font-weight: 400;
+    background-color: unset;
+    border-radius: unset;
+    font-family: Nunito-Regular, sans-serif;
+    padding: 20px 61px 20px 24px;
+    text-align: unset;
+    width: 100%;
+}
+
+.section.offer-documents-wrapper .default-content-wrapper ul>li>p:hover,
+.section.offer-documents-wrapper .default-content-wrapper ul>li>p:hover > a,
+.section.offer-documents-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .offer-documents-wrapper .offer-documents .richtext .cmp-text:hover >p {
+    background: var(--orange);
+    color: var(--white);
+    text-decoration: none;
+}
+
+.section.offer-documents-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container {
+    display: unset;
+    margin: 0;
+}
+
+.section.offer-documents-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .offer-documents-wrapper .offer-documents .richtext .cmp-text{
+   padding: 0;
+   box-shadow: unset;
+   /* background-color: unset; */
+}
+.section.offer-documents-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .offer-documents-wrapper .offer-documents .richtext .cmp-text:hover{
+   background-color: unset;
+   box-shadow: unset;
+ }
+
+.section.offer-documents-wrapper .default-content-wrapper ul>li>a::after,
+.section.offer-documents-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .offer-documents-wrapper .offer-documents .richtext .cmp-text >p::after {
+    content: "\e900";
+    font-family: 'icomoon-download' !important;
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    line-height: 1px;
+    height: 20px;
+    width: 20px;
+    color: #333;
+}
+
+.section.offer-documents-wrapper .default-content-wrapper ul>li>a:hover::after,
+.section.offer-documents-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .offer-documents-wrapper .offer-documents .richtext .cmp-text:hover >p::after {
+    color: var(--white);
+}
+
+/* offer documents end */
+
+/* Modal start */
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText {
+    max-width: 60pc;
+    position: relative;
+    background-color: #fff;
+    border-radius: 1pc;
+    box-shadow: 0 11px 15px -7px rgba(0, 0, 0, .2), 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12);
+    color: rgba(0, 0, 0, .87);
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    max-height: calc(100% - 4pc);
+    max-width: 60pc;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1) 0ms;
+    width: calc(100% - 4pc);
+    z-index: 9999;
+}
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text>p{
+    text-align: start;
+}
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text {
+    position: unset;
+    max-width: unset;
+    height: unset;
+    max-height: unset;
+    transform: unset;
+    background-color: unset;
+    box-shadow: unset;
+    transition: unset;
+    width: unset;
+    padding: unset;
+    overflow-y: auto;
+    border-radius: unset;
+    overflow-y: auto;
+    padding: 24px 77px 0 93px;
+    margin-top: 24px;
+}
+
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .popup-parent-cont {
+    overflow: unset;
+}
+
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text {
+    margin: 0;
+    padding: 0;
+}
+
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text>p>.title {
+    margin: 24px 0;
+    display: block;
+    font-size: 1.75rem;
+}
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div ul li::before{
+    background-color: #333;
+    border-radius: 50%;
+    content: "";
+    display: inline-table;
+    height: 8px;
+    margin-right: 10px;
+    margin-top: 7px;
+    vertical-align: top;
+    width: 8px;
+}
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text>p:nth-child(2),
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text>p:nth-child(2) span {
+    color: #333;
+    display: flex;
+    font-family: 'Nunito-Bold', sans-serif;
+    font-size: 1rem;
+    /* font-weight: 800; */
+    line-height: 24px;
+    margin-bottom: 24px;
+    display: block;
+}
+
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .cross-container>img {
+    cursor: pointer;
+    height: 20px;
+    margin: 4px 8px;
+    width: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer >p .popupbutton {
+    text-align: center;
+    margin: 24px auto 3pc;
+    display: block;
+}
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer >p .popupbutton a:hover {
+    text-decoration: none;
+}
+
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer >p .popupbutton a {
+    background-color: #f26841;
+    border-radius: 4px;
+    color: #fff;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1pc;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 8px 33px;
+    width: fit-content;
+    margin: 0;
+}
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div ul{
+    margin-left: 0;
+    list-style-type: none;
+    color: rgba(0, 0, 0, .871);
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1pc;
+    font-weight: 400;
+    line-height: 24px;
+}
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div ul li{
+    padding: 5px 0;
+}
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div ul li::marker{
+    font-size: 1rem;
+}
+
+
+@media screen and (max-width:1024px) {
+    .section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text {
+        padding: 24px 1pc 0;
+    }
+}
+
+/* Modal End */

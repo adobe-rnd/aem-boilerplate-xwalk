@@ -1,0 +1,86 @@
+.section.partnerships-cards-wrapper {
+    background-color: rgba(255, 244, 231, 0.3);
+    padding: 48px 0;
+}
+
+.section.partnerships-cards-wrapper .default-content-wrapper h2 {
+    margin-bottom: 24px;
+    color: #000;
+    display: block;
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 40px;
+    padding-bottom: 8px;
+}
+
+.section.partnerships-cards-wrapper .cards-wrapper .cards ul {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 32px;
+}
+
+.section.partnerships-cards-wrapper .cards-wrapper .cards ul li {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 9pt rgba(51, 51, 51, .078);
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.section.partnerships-cards-wrapper .cards-wrapper .cards ul li .cards-card-image {
+    margin: 0 auto;
+    vertical-align: middle;
+    padding: 38px;
+}
+
+.section.partnerships-cards-wrapper .cards-wrapper .cards ul li .cards-card-image picture img {
+    display: block;
+    height: 59px;
+    width: 237px;
+}
+
+.section.partnerships-cards-wrapper .cards-wrapper .cards ul li .cards-card-body {
+    border-top: 1px solid #ebeef0;
+    height: 100%;
+    padding: 16px;
+    margin: 0;
+}
+
+.section.partnerships-cards-wrapper .cards-wrapper .cards ul li .cards-card-body p {
+    color: #000;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+    .section.partnerships-cards-wrapper .cards-wrapper .cards ul {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .section.partnerships-cards-wrapper .cards-wrapper .cards ul {
+        gap: 16px;
+        grid-template-columns: 1fr;
+        margin-top: 16px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .section.partnerships-cards-wrapper {
+        padding: 24px 0;
+    }
+
+    .section.partnerships-cards-wrapper .default-content-wrapper h2 {
+        margin-bottom: 20px;
+        font-size: 1.25rem;
+        line-height: 28px;
+        padding-bottom: 4px;
+    }
+}

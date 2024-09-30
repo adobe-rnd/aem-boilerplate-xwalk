@@ -2,7 +2,45 @@
   {
     "id": "main",
     "components": [
-      "section"
+      "section",
+      "title",
+      "tab-name",
+      "tab-container",
+      "container",
+      "loader"
+    ]
+  },
+  {
+    "id": "columns",
+    "components": []
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "hero",
+      "cards",
+      "columns",
+      "rte",
+      "imgwithlink",
+      "carousel",
+      "teaser",
+      "tab-container",
+      "tabs",
+      "detailed-teaser",
+      "accordion-group",
+      "teaserv2",
+      "code",
+      "contentfragment",
+      "experiencefragment",
+      "wrappercreation",
+      "container",
+      "mycontainer",
+      "keyfeatures",
+      "embed"
     ]
   },
   {
@@ -15,28 +53,137 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "breadcrumb",
+      "rte",
+      "city-list",
+      "imgwithlink",
+      "testimonial",
+      "financialreports",
+      "faq",
+      "offer-documents",
+      "carousel",
+      "teaser",
+      "tab-link",
+      "tab-name",
+      "tab-name-nested",
+      "tab-container",
+      "tabs",
+      "detailed-teaser",
+      "accordion-group",
+      "teaserv2",
+      "code",
+      "contentfragment",
+      "experiencefragment",
+      "wrappercreation",
+      "container",
+      "mycontainer",
+      "keyfeatures",
+      "embed",
+      "homeloancalculator",
+      "emiandeligiblitycalc",
+      "eligibilitycalculator",
+      "applyloanform",
+      "datepickerlib",
+      "homeloancalculatorv2",
+      "calculatorsection",
+      "aprcalculator",
+      "gstcalculator",
+      "partpaymentcalculator",
+      "authorisedagencies",
+      "fontawesome",
+      "whatsappservice",
+      "branchlocator",
+      "select-tag",
+      "loader",
+      "whatsappservice",
+      "branchlocatormoredetails",
+      "sarfaesiretail",
+      "updatesheet",
+      "moredetailsaddress",
+      "branchdetaildescription",
+      "form",
+      "nearestlocation",
+      "fragment",
+      "formformatpdf",
+      "branchcarousel",
+      "branchkeyfeatures"
     ]
   },
   {
     "id": "cards",
-    "components": [
-      "card"
-    ]
+    "components": ["card"]
   },
   {
-    "id": "columns",
-    "components": [
-      "column"
-    ]
-  },
-  {
-    "id": "column",
+    "id": "carousel",
     "components": [
       "text",
       "image",
       "button",
-      "title"
+      "title",
+      "hero",
+      "teaser",
+      "detailed-teaser"
     ]
+  },
+  {
+    "id": "tab-container",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "hero",
+      "teaser",
+      "detailed-teaser"
+    ]
+  },
+  {
+    "id": "tab-name",
+    "components": ["tab-container"]
+  },
+  {
+    "id": "tab",
+    "components": [
+      "tab",
+      "tabs",
+      "text",
+      "image",
+      "button",
+      "title",
+      "hero",
+      "teaser",
+      "columns",
+      "container"
+    ]
+  },
+  {
+    "id": "tabs",
+    "components": ["tabs", "tab", "container"]
+  },
+  {
+    "id": "accordion",
+    "components": ["accordion"]
+  },
+  {
+    "id": "text",
+    "rte": {
+      "format": ["bold", "italic", "underline", "strikethrough"],
+      "alignment": ["left", "center", "right"],
+      "indentation": ["indent", "outdent"],
+      "sr_script": ["superscript", "subscript"],
+      "list": ["bullist", "numlist"],
+      "insert": ["link", "image", "table"],
+      "advanced": [],
+      "extensions": [],
+      "editor": ["removeformat"]
+    }
+  },
+  {
+    "id": "div",
+    "components": null
+  },
+  {
+    "id": "container",
+    "components": []
   }
 ]

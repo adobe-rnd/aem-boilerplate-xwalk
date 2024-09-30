@@ -1,0 +1,89 @@
+/* rte bg blue Start */
+
+.section.rte-wrapper.rte-bg-blue{
+    background-color: var(--greyishblue);
+    padding: 40px 0;
+}
+.section.rte-wrapper.rte-bg-blue .default-content-wrapper p{
+    color: var(--pattensblue);
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+ }
+
+ @media screen and (max-width: 767px) {
+    .section.rte-wrapper.rte-bg-blue{
+        padding: 24px 0;
+    }
+    .section.rte-wrapper.rte-bg-blue .default-content-wrapper p{
+        font-size: 0.875rem;
+        line-height: 20px;
+    }
+}
+/* rte bg blue End */
+
+/* rte bg light yellow Start */
+.section.rte-wrapper.rte-bg-light-yellow{
+    background-color: rgba(255, 244, 231, 0.3);
+    padding: 42px 0;
+}
+.section.rte-wrapper.rte-bg-light-yellow .default-content-wrapper p{
+    color: var(--black);
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 24px;
+}
+@media screen and (max-width: 1024px) {
+    .section.rte-wrapper.rte-bg-light-yellow .default-content-wrapper p{
+        font-size: 0.875rem;
+        line-height: 20px;
+    }
+}
+/* rte bg light yellow End */
+
+
+/* rte bg white start */
+.section.rte-wrapper.rte-bg-white {
+    background-color: unset;
+    padding: 0;
+}
+
+.section.rte-wrapper.rte-bg-white .default-content-wrapper p {
+    color: var(--black);
+    text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+    .section.rte-wrapper.rte-bg-white .default-content-wrapper p {
+        font-size: 1rem;
+        line-height: 24px;
+    }
+    .section.startup-business-text .default-content-wrapper > p {
+        font-size: 0.875rem;
+        line-height: 20px;
+    }
+}
+/* rte bg white end */
+
+
+/* startup business loan text start */
+
+.section.startup-business-text .default-content-wrapper > p {
+    color: #000;
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.section.startup-business-text .default-content-wrapper > p > strong{
+    color: #000;
+    font-family: 'Nunito-Bold', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+/* startup business loan text end */

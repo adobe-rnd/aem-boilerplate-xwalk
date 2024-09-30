@@ -1,0 +1,179 @@
+.section.csr-committee-wrapper {
+    padding: 0 !important;
+}
+
+.section.csr-committee-wrapper .default-content-wrapper h2 {
+    color: var(--orange);
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 42px;
+    margin: 24px 0;
+}
+
+.section.csr-committee-wrapper .default-content-wrapper p {
+    color: #333;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container {
+    display: flex;
+    gap: 24px;
+    margin-top: 40px;
+    align-items: stretch;
+}
+
+.section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    min-height: 238px;
+    width: 100%;
+    flex-basis: 50%;
+}
+
+.section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background {
+    position: unset;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+    border-radius: 28px;
+    height: 100%;
+    min-height: 238px;
+    width: 100%;
+}
+
+.section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground {
+    display: flex;
+    align-items: center;
+    min-height: 238px;
+}
+
+.section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground .text {
+    padding-left: 56px;
+    padding-right: 16px;
+}
+
+.section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground .text .title h2 {
+    color: var(--white);
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 36px;
+    margin-bottom: unset;
+}
+.section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground .text .long-description >p a {
+    background-color: unset;
+    background-color: unset;
+    padding: 0;
+    text-decoration: underline;
+    border: none;
+    overflow: unset;
+}
+.section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground .text .long-description{
+    margin: auto;
+}
+.section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground .text .cta a,
+.section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground .text .long-description >p a {
+    color: var(--white);
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 24px;
+    text-decoration: underline;
+    padding: 0;
+    margin: 0;
+    background-color: unset;
+}
+.section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground .text .long-description >p a sub{
+    font-family: 'Nunito-Bold', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 24px;
+}
+.section.reduce-mb .default-content-wrapper h2{
+    margin-bottom: 16px;
+}
+.section.remove-table-curve .code-wrapper .code>div>table>tbody>tr>th:first-child,
+.section.remove-table-curve  .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(3),
+.section.remove-table-curve .code-wrapper .code>div>table>tbody>tr>th:last-child{
+    border-radius: unset;
+}
+
+@media screen and (max-width: 1400px) {
+    .section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper {
+        min-height: 196px;
+    }
+
+    .section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background {
+        min-height: 196px;
+    }
+
+    .section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground {
+        min-height: 196px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper {
+        min-height: 137px;
+    }
+
+    .section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background {
+        min-height: 137px;
+    }
+
+    .section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground {
+        min-height: 137px;
+    }
+
+    .section.csr-committee-wrapper {
+        margin-bottom: 70px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground .text {
+        padding-left: 36px;
+    }
+
+    .section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background {
+        border-radius: 17px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .section.csr-committee-wrapper .default-content-wrapper h2 {
+        font-size: 1.125rem;
+        line-height: 27px;
+        margin: 40px 0 14px;
+    }
+
+    .section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container {
+        flex-direction: column;
+    }
+
+    .section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper {
+        min-height: 198px;
+    }
+
+    .section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background {
+        min-height: 198px;
+    }
+
+    .section.csr-committee-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground {
+        min-height: 198px;
+    }
+    .section.committee-th-padding .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(2){
+        padding: 16px 10px;
+        vertical-align: middle;
+     }
+     .section.committee-th-padding .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(3){
+        vertical-align: middle;
+        padding: 16px 9px;
+     }
+}

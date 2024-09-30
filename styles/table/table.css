@@ -1,0 +1,512 @@
+/* fees and charges start */
+.section.fees-charges-wrapper .default-content-wrapper h2 {
+    color: var(--black);
+    display: block;
+    font-family: 'Nunito-Extrabold', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 40px;
+    padding-bottom: 8px;
+}
+
+.section.fees-charges-wrapper .default-content-wrapper p,
+.section.fees-charges-wrapper .default-content-wrapper p>em {
+    color: var(--black);
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 28px;
+    padding-bottom: 8px;
+}
+
+.section.fees-charges-wrapper .default-content-wrapper p>em {
+    line-height: 24px;
+}
+
+.section.fees-charges-wrapper .default-content-wrapper p>strong {
+    color: #000;
+    font-family: 'Nunito-Bold', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.section.fees-charges-wrapper .default-content-wrapper p>a {
+    color: var(--orange);
+    text-decoration: none;
+}
+
+.section.fees-charges-wrapper .code-wrapper .code>div>table {
+    border: 1px solid var(--pattensblue);
+    border-collapse: unset;
+    border-radius: 10px;
+    margin-top: 24px;
+    width: 100%;
+}
+
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>th {
+    background-color: var(--rosewhite);
+    border-bottom: 1px solid var(--pattensblue);
+    border-left: 1px solid var(--pattensblue);
+    color: #4d4d4d;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 24px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr :first-child {
+    border-left: unset;
+    /* width: 100%;
+    height: 100%; */
+    vertical-align: middle;
+    border-radius: 9px 0px 0 0;
+    max-width: unset;
+}
+
+.section.fees-charges-wrapper .code-wrapper .code.block>div>table>tbody>tr>td>p {
+    height: unset;
+    width: unset;
+}
+
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>th:first-child {
+    border-radius: 10px 0 0 0;
+}
+
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>th:last-child{
+    border-radius: 0 10px 0 0;
+}
+
+.section.one-col-table .code-wrapper .code>div>table>tbody>tr :nth-child(2) {
+    border-left: unset;
+    text-align: center;
+    width: 15.2%;
+}
+
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr:last-child td {
+    border-bottom: unset;
+}
+
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td {
+    border-bottom: 1px solid var(--pattensblue);
+    border-left: 1px solid var(--pattensblue);
+    color: var(--midnight);
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 24px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td>p,
+.section.fees-charges-wrapper.three-col-table>.code-wrapper>.code.block>div>table>tbody>tr>td>p>strong>span,
+.section.fees-charges-wrapper.iphone-loan-table .code-wrapper .code>div>table>tbody>tr>td>ul>li {
+    color: var(--midnight);
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td>p>strong>span {
+    font-family: 'Nunito-Bold', sans-serif;
+}
+
+/* table with image  */
+.section.fees-charges-wrapper.two-col-table .code-wrapper .code>div>table>tbody>tr>th,
+.section.fees-charges-wrapper.two-col-table .code-wrapper .code>div>table>tbody>tr>td {
+    width: 50%;
+}
+
+.section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>th,
+.section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>td {
+    width: 33.33%;
+    text-align: center;
+}
+
+.section.fees-charges-wrapper.four-col-table .code-wrapper .code>div>table>tbody>tr>th,
+.section.fees-charges-wrapper.four-col-table .code-wrapper .code>div>table>tbody>tr>td {
+    width: 25%;
+    text-align: center;
+}
+
+.section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>td>p {
+    position: relative;
+    display: inline-block;
+    margin-top: 18px;
+}
+
+.section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>td>p>img {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: -17px;
+    left: 20%;
+}
+
+.section.fees-charges-wrapper.five-col-table .code-wrapper .code>div>table>tbody>tr>th,
+.section.fees-charges-wrapper.five-col-table .code-wrapper .code>div>table>tbody>tr>td {
+    width: 20%;
+    text-align: center;
+}
+
+.section.fees-charges-wrapper.six-col-table .code-wrapper .code>div>table>tbody>tr>th,
+.section.fees-charges-wrapper.six-col-table .code-wrapper .code>div>table>tbody>tr>td {
+    width: 16%;
+    text-align: center;
+}
+
+.section.fees-charges-wrapper.table-text-center-align .code-wrapper .code>div>table>tbody>tr>th,
+.section.fees-charges-wrapper.table-text-center-align .code-wrapper .code>div>table>tbody>tr>td {
+    text-align: center;
+}
+
+.section.fees-charges-wrapper.four-col-table .code-wrapper .code.block {
+    margin-bottom: 40px;
+}
+
+.section.fees-charges-wrapper.iphone-loan-table .code-wrapper .code>div>table>tbody>tr>td>ul>li>strong {
+    font-family: 'Nunito-Bold', sans-serif;
+    font-weight: 700;
+}
+
+.section.fees-charges-wrapper.iphone-loan-table .code-wrapper .code>div>table>tbody>tr:not(:first-child) td:nth-child(3) {
+    padding: 24px 0;
+    text-align: left;
+}
+
+.section.fees-charges-wrapper.iphone-loan-table .code-wrapper .code>div>table>tbody>tr:not(:first-child) td:nth-child(3)>ul>li {
+    padding: 8px 16px;
+    border-bottom: 1px solid var(--pattensblue);
+}
+
+.section.fees-charges-wrapper.iphone-loan-table .code-wrapper .code>div>table>tbody>tr:not(:first-child) td:nth-child(3)>ul>li:last-child {
+    border-bottom: unset
+}
+
+
+@media screen and (max-width: 767px) {
+    .section.fees-charges-wrapper .default-content-wrapper h2 {
+        font-size: 1.25rem;
+        line-height: 28px;
+        padding-bottom: 4px;
+    }
+
+    .section.fees-charges-wrapper .code-wrapper .code>div>table {
+        margin-top: 8px;
+    }
+
+    .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>th {
+        padding: 24px 12px 24px 16px;
+    }
+
+    .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td {
+        font-size: 0.75rem;
+        line-height: 16px;
+        padding: 24px 16px;
+    }
+
+    .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td>p,
+    .section.fees-charges-wrapper.iphone-loan-table .code-wrapper .code>div>table>tbody>tr>td>ul>li {
+        font-size: 0.75rem;
+        line-height: 16px;
+    }
+
+    .section.fees-charges-wrapper .default-content-wrapper p,
+    .section.fees-charges-wrapper .default-content-wrapper p>em,
+    .section.fees-charges-wrapper .default-content-wrapper p>strong {
+        font-size: 0.875rem;
+        line-height: 20px;
+        padding-bottom: 4px;
+    }
+
+    .section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>td>p>img {
+        width: 20px;
+        height: 12px;
+        top: 2px;
+        left: -13px;
+    }
+
+    .section.fees-charges-wrapper.three-col-table .code-wrapper .code.block>div,
+    .section.fees-charges-wrapper.four-col-table .code-wrapper .code.block>div,
+    .section.fees-charges-wrapper.five-col-table .code-wrapper .code.block>div,
+    .section.fees-charges-wrapper.six-col-table .code-wrapper .code.block>div {
+        overflow-x: scroll;
+        scrollbar-width: none;
+    }
+
+    .section.fees-charges-wrapper.three-col-table .code-wrapper .code.block>div>table>tbody>tr>th,
+    .section.fees-charges-wrapper.three-col-table .code-wrapper .code.block>div>table>tbody>tr>td,
+    .section.fees-charges-wrapper.four-col-table .code-wrapper .code.block>div>table>tbody>tr>th,
+    .section.fees-charges-wrapper.four-col-table .code-wrapper .code.block>div>table>tbody>tr>td,
+    .section.fees-charges-wrapper.five-col-table .code-wrapper .code>div>table>tbody>tr>th,
+    .section.fees-charges-wrapper.five-col-table .code-wrapper .code>div>table>tbody>tr>td,
+    .section.fees-charges-wrapper.six-col-table .code-wrapper .code>div>table>tbody>tr>th,
+    .section.fees-charges-wrapper.six-col-table .code-wrapper .code>div>table>tbody>tr>td {
+        min-width: 166px;
+    }
+
+    .section.fees-charges-wrapper.three-col-table>.code-wrapper>.code.block>div>table>tbody>tr>td>p>strong>span {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>td>p {
+        margin-top: unset;
+    }
+
+    /* .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr :first-child {
+        width: 100%;
+        height: 12px;
+    } */
+    .section.fees-charges-wrapper.four-col-table .code-wrapper .code.block {
+        margin-bottom: 24px;
+    }
+    .section.fees-charges-wrapper.iphone-loan-table .code-wrapper .code>div>table>tbody>tr:not(:first-child) td:nth-child(3) {
+        padding: 24px 18px;
+        text-align: center;
+    }
+
+    .section.fees-charges-wrapper.iphone-loan-table .code-wrapper .code>div>table>tbody>tr:not(:first-child) td:nth-child(3)>ul>li {
+        display: inline;
+        padding: unset;
+        border-bottom: unset;
+    }
+}
+
+/* fees and charges end */
+
+
+/* microfinance loans table start */
+.section.microfinance-loan-wrapper .default-content-wrapper h2 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    padding: 0;
+}
+
+.section.microfinance-loan-wrapper .code-wrapper .code>div>table {
+    border-radius: unset;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0;
+}
+
+.section.microfinance-loan-wrapper .code-wrapper .code>div>table>tbody>tr :nth-child(2) {
+    border-radius: unset;
+}
+
+.section.microfinance-loan-wrapper .code-wrapper .code>div>table>tbody>tr:first-child td {
+    background-color: var(--greyishblue);
+    color: var(--white);
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 20px 5px;
+    text-align: center;
+    border-radius: unset;
+    width: 25%;
+    border: 1px solid var(--dark-color)
+}
+
+.section.microfinance-loan-wrapper .code-wrapper .code>div>table>tbody>tr>td {
+    border: 1px solid var(--dark-color);
+    color: var(--text-color);
+    font-size: 0.875rem;
+    line-height: 20px;
+    padding: 20px 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.section.microfinance-loan-wrapper .code-wrapper .code>div>table>tbody>tr :first-child {
+    border-radius: unset;
+}
+
+@media screen and (max-width: 767px) {
+    .section.microfinance-loan-wrapper .default-content-wrapper h2 {
+        font-size: 1rem;
+        line-height: 24px;
+    }
+
+    .section.microfinance-loan-wrapper .code-wrapper .code>div>table>tbody>tr:first-child td {
+        padding: 20px 0;
+    }
+}
+
+/* microfinance loans table end */
+
+
+/* csr committee table start */
+.section.csr-commitee-wrapper .default-content-wrapper h2 {
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 30px;
+    margin-top: 40px;
+    color: var(--gradient-gray);
+    margin-bottom: 16px;
+}
+
+.section.csr-commitee-wrapper .code-wrapper .code>div>table>tbody>tr th {
+    background-color: var(--greyishblue);
+    border: 1px solid var(--dark-color);
+    color: var(--background-color);
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 21px;
+    padding: 16px 4px;
+    text-align: center;
+}
+
+.section.csr-commitee-wrapper .code-wrapper .code>div>table>tbody>tr>td {
+    line-height: 21px;
+    padding: 8px;
+}
+
+.section.tr-odd-greycolor .code-wrapper .code>div>table>tbody>tr:nth-child(odd) {
+    background-color: var(--lightgrey);
+}
+.section.tr-even-greycolor .code-wrapper .code>div>table>tbody>tr:nth-child(even){
+    background-color: var(--lightgrey);
+}
+/* csr committee table end */
+
+
+/* offer document table start */
+.section.offer-document-table-wrapper .default-content-wrapper h2 {
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr>td>u {
+    text-decoration: none;
+}
+
+.section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr>td>u>a{
+    color: var(--orange);
+    text-decoration: underline;
+    text-decoration-color: var(--orange);
+    word-break: break-all;
+}
+
+.section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr>td>ul>li>a {
+    word-break: break-all;
+}
+
+.section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(3)>td:nth-child(3) {
+    text-decoration: none;
+}
+
+.section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr>td>ul>li>a {
+    color: var(--orange);
+    text-decoration: underline;
+    text-decoration-color: var(--orange);
+}
+
+.section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(2),
+.section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(1)>th:nth-child(3) {
+    border-radius: unset;
+}
+.section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr :first-child{
+    width: auto !important;
+    height: auto !important;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr th:first-child,
+    .section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr td:first-child,
+    .section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr td ul{
+        width: auto;
+        height: auto;
+    }
+}
+/* offer document table end */
+
+
+/* statutory committees table start */
+.section.statutory-committees-wrapper .default-content-wrapper h2 {
+    color: var(--orange);
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 42px;
+    margin: 24px 0;
+}
+
+.section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>th {
+    vertical-align: baseline;
+}
+
+.section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(2) {
+    /* word-break: break-all; */
+}
+
+.section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(3) {
+    padding: 8px 8px 8px 2in;
+    text-align: start;
+    word-break: break-all;
+}
+
+.section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(3)>p {
+    color: var(--black);
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 21px;
+}
+@media screen and (max-width:1024px) {
+    .section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(3){
+        padding: 0 0 0 5px;
+    }
+}
+@media (min-width: 1025px) and (max-width: 1300px){
+    .section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(3){
+        padding: 8px 8px 8px 44px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .section.statutory-committees-wrapper .default-content-wrapper h2 {
+        font-size: 1.125rem;
+        line-height: 27px;
+        margin: 40px 0 14px;
+    }
+
+    .section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(3) {
+        padding: 8px;
+    }
+
+    .section.offer-document-table-wrapper .default-content-wrapper h2 {
+        font-size: 1rem;
+        line-height: 24px;
+    }
+
+    .section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>td>p>img {
+        width: 12px;
+        height: 12px;
+        left: -12px;
+        top: 2px;
+        border-radius: unset;
+    }
+}
+
+/* statutory committees table end */
+@media screen and (min-width:768px) and (max-width:1024px) {
+    .section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>td>p>img {
+        width: 12px;
+        height: 12px;
+        left: 39%;
+        top: -12px;
+        border-radius: unset;
+    }
+
+    /* .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr :first-child {
+        width: 100%;
+        height: 12px;
+    } */
+}

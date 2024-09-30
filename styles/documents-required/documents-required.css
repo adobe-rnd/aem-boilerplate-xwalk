@@ -1,0 +1,720 @@
+.section.documents-required-brown{
+    background-color: rgb(255, 247, 244);
+}
+.section.documents-required-purple {
+    background-color: #EEF3FF;
+}
+.section.documents-required-brown .accordion-group{
+    background-color: #fff;
+    border-radius: 24px;
+    box-shadow: 0 4px 12px rgba(51, 51, 51, .08);
+    padding: 0 32px;
+    margin-bottom: 0;
+}
+.section.documents-required-brown .default-content-wrapper>h2{
+    color: #333;
+    display: block;
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 28px;
+    padding-bottom: 8px;
+    width: 70%;
+}
+.section.documents-required-brown .default-content-wrapper{
+    position: relative;
+    padding-top: 21px;
+}
+.section.documents-required-brown .default-content-wrapper p{
+    color: #666;
+    display: block;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1.125rem;
+    line-height: 28px;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+.section.documents-required-brown .default-content-wrapper p>a {
+    color: var(--orange);
+    text-decoration: none;
+}
+.section.documents-required-brown .default-content-wrapper .button-container ::after{
+    content: '';
+    position: absolute;
+    background-image: url('/images/whatsappdoc.svg');
+    top: 13px;
+    height: 20px;
+    width: 20px;
+    left: 23px;
+}
+.section.documents-required-brown .default-content-wrapper .button-container{
+    color: #365069;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    border: 1px solid #365069;
+    max-width: 322px;
+    position: absolute;
+    right: 0.19%;
+    top: 10px;
+    width: 100%;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row-reverse;
+    min-height: 48px;
+    padding: 0 24px;
+    text-decoration: none;
+    margin: unset;
+}
+.section.documents-required-brown .default-content-wrapper .button-container a{
+    background-color: unset;
+    color: #365069;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 24px;
+    padding-left: 10px;
+    padding: unset;
+    margin: unset;
+} 
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary div h3{
+    color: #333;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1.25rem;
+    line-height: 28px;
+    padding-bottom: 4px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion.block details summary div p{
+    color: #666;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    margin-top: unset;
+    padding-top: 0;
+    width: 80%;
+}
+.section.documents-required-brown.last-child-hide .accordion-group-wrapper .accordion-group .accordion.block:last-child{
+    pointer-events: none;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary div {
+    position: relative;
+    padding-left: 55px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary div::before{
+    content:'';
+    position: absolute;
+    background-image: url('/images/down-arrow.png');
+    height: 24px;
+    right: 0;
+    top: 13px;
+    width: 24px;
+    object-fit: contain;
+    background-size: 100%;
+}
+
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(4) details summary div{
+    position: relative;
+    padding-left: 55px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(4) details summary div::before{
+    content:'';
+    position: absolute;
+    background-image: url('/images/down-arrow.png');
+    height: 24px;
+    right: 0;
+    top: 2px;
+    width: 24px;
+    object-fit: contain;
+    background-size: 100%;
+}
+.section.documents-required-brown.last-child-hide .accordion-group-wrapper .accordion-group .accordion:last-child details summary div::before{
+    content: none;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary::before{
+    content: none;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(1) details{
+    position: relative;
+    padding-left: unset;
+    padding-right: 0;
+    padding-bottom: unset;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(1) details::before{
+    position: absolute;
+    background-image: url('/images/kycdoc.svg');
+    left: 0;
+    top: 40px;
+    object-fit: contain;
+    content:'';
+    height: 32px;
+    margin-right: 24px;
+    width: 32px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(2) details{
+    position: relative;
+    padding-left: unset;
+    padding-right: 0;
+    padding-bottom: unset;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(2) details::before{
+    position: absolute;
+    background-image: url('/images/income.svg');
+    left: 0;
+    top: 40px;
+    object-fit: contain;
+    content:'';
+    height: 32px;
+    margin-right: 24px;
+    width: 32px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(3) details{
+    position: relative;
+    padding-left: unset;
+    padding-right: 0;
+    padding-bottom: unset;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(3) details::before{
+    position: absolute;
+    background-image: url('/images/property.svg');
+    left: 0;
+    top: 40px;
+    object-fit: contain;
+    content:'';
+    height: 32px;
+    margin-right: 24px;
+    width: 32px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(4) details{
+    position: relative;
+    padding-left: unset;
+    padding-right: 0;
+    padding-bottom: unset;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(4) details::before{
+    position: absolute;
+    background-image: url('/images/coapplicants.svg');
+    left: 0;
+    top: 30px;
+    object-fit: contain;
+    content:'';
+    height: 32px;
+    margin-right: 24px;
+    width: 32px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(5) details{
+    position: relative;
+    padding-left: unset;
+    padding-right: 0;
+    padding-bottom: unset;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(5) details::before{
+    position: absolute;
+    background-image: url('/images/photodocm.svg');
+    left: 0;
+    top: 30px;
+    object-fit: contain;
+    content:'';
+    height: 32px;
+    margin-right: 24px;
+    width: 32px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion.block{
+    border-bottom: 1px dashed #ccc;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion.block:last-child{
+    border-bottom:unset
+}
+.section.documents-required-brown .accordion-group>.accordion details summary{
+    padding: 32px 0 32px 0px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion.block details[open]
+summary div::before{
+    transform: rotate(180deg);
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details .active div p{
+    color: #000;
+    display: block;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    margin-top: unset;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details div p:first-child{
+   padding-top: unset;
+   margin-top: unset;
+}
+
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details div p{
+    color: #000;
+    display: block;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    margin-top: unset;
+    padding-top: 24px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details>div{
+    padding-bottom: 44px;
+    padding-left: 20px;
+}
+.section.documents-required-brown  > div.accordion-group-wrapper > div > div > details > div > p:nth-child(1) > strong{
+    color: #f26841;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 24px;
+    padding-bottom: 24px;
+}
+table {
+    width: 100%;
+}
+.accordion.block >details> div> table:nth-child(1)> tbody> tr> th:nth-child(1){
+    color: #f26841;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    padding-top: unset;
+}
+.accordion.block >details> div> table:nth-child(1)> tbody> tr> th:nth-child(3){
+    color: #000;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    padding-top: unset;
+}
+
+.section.documents-required-brown table:nth-child(2) > tbody > tr > th:nth-child(1) > span{
+    color: #666;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 24px;
+    margin-left: 10px;
+}
+.section.documents-required-brown table:nth-child(2) > tbody > tr> th:nth-child(3),
+.section.documents-required-brown table:nth-child(2) > tbody > tr> th:nth-child(2),
+.section.documents-required-brown table:nth-child(2) > tbody > tr> th:nth-child(1){
+    color: #f26841;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 24px;
+    padding-top: 32px;
+}
+.section.documents-required-brown th,.section.documents-required-brown td{
+    padding-top: 32px;
+    color: #000;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    padding-top: 24px;
+}
+.section.documents-required-brown table:nth-child(4) tbody tr th:nth-child(1),
+.section.documents-required-brown table:nth-child(5) tbody tr th:nth-child(1),
+.section.documents-required-brown table:nth-child(6) tbody tr th:nth-child(1),
+.section.documents-required-brown table:nth-child(7) tbody tr th:nth-child(1),
+.section.documents-required-brown table:nth-child(8) tbody tr th:nth-child(1),
+.section.documents-required-brown table:nth-child(9) tbody tr th:nth-child(1){
+    width: 63.3%;
+}
+.section.documents-required-brown table:nth-child(3) > tbody > tr > td:last-child > img,
+.section.documents-required-brown table:nth-child(4) > tbody > tr > td:last-child > img,
+.section.documents-required-brown table:nth-child(5) > tbody > tr > td:last-child > img,
+.section.documents-required-brown table:nth-child(6) > tbody > tr > td:last-child > img,
+.section.documents-required-brown table:nth-child(7) > tbody > tr > td:last-child > img,
+.section.documents-required-brown table:nth-child(8) > tbody > tr > td:last-child > img,
+.section.documents-required-brown table:nth-child(9) > tbody > tr > td:last-child > img{
+    margin-right: 20px;
+    height: 18px;
+    width: 18px;
+}
+.section.documents-required-brown table:nth-child(3) > tbody > tr > td:last-child,
+.section.documents-required-brown table:nth-child(4) > tbody > tr > td:last-child,
+.section.documents-required-brown table:nth-child(5) > tbody > tr > td:last-child,
+.section.documents-required-brown table:nth-child(6) > tbody > tr > td:last-child,
+.section.documents-required-brown table:nth-child(7) > tbody > tr > td:last-child,
+.section.documents-required-brown table:nth-child(8) > tbody > tr > td:last-child,
+.section.documents-required-brown table:nth-child(9) > tbody > tr > td:last-child{
+   width: 19%;
+}
+.section.documents-required-brown .default-content-wrapper:last-child .button-container{
+    display: none;
+}
+.section.documents-required-brown .accordion-group-wrapper{
+    padding-bottom: 72px;
+}
+.section.documents-required-brown.document-required-whatsapp-btn-align .accordion-group-wrapper {
+    padding-top: 90px;
+}
+.section.documents-required-brown.document-required-whatsapp-btn-align .default-content-wrapper .button-container {
+    top: 15px;
+}
+.section.documents-required-brown .accordion.block > details > div > ul > li > p strong{
+    color: #f26841;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 24px;
+}
+.section.documents-required-brown .accordion.block > details > div > ul > li > ul{
+    margin: unset;
+}
+.section.documents-required-brown .accordion.block > details > div > ul > li:first-child{
+    padding-top: unset;
+}
+.section.documents-required-brown .accordion.block > details > div > ul > li{
+    color: #000;
+    display: block;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    padding-top: 24px;
+    margin-bottom: unset;
+}
+.section.documents-required-brown .accordion.block > details > div > ul > li > ul > li {
+    color: #000;
+    display: block;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    padding-top: 24px;
+    margin-bottom: unset;
+}
+.section.documents-required-brown .accordion.block details > div > ul:nth-child(2){
+    display: none;
+}
+.section.documents-required-brown .accordion.block details > div > ul:nth-child(1){
+    margin-top: unset;
+ }
+ .section.documents-required-brown .default-content-wrapper:last-child{
+    display: none
+ }
+ 
+ .documents-required-brown .accordion-group .accordion recommeded {
+    background-color: #e3f6e9;
+    border-radius: 4px;
+    color: #277742;
+    font-size: 9pt;
+    margin-left: 14px;
+    padding: 4px 10px;
+    font-family: 'Nunito-Regular', sans-serif;
+ }
+ 
+.section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion details:not(:has(p))::before {
+   top: 30px;
+}
+
+.section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion details:not(:has(p)) summary>div::before {
+    top: 0;
+}
+
+.section.documents-required-brown.document-required-accordion-img-swap .accordion-group-wrapper .accordion-group .accordion:nth-last-child(2) details::before{
+    background-image: url('/images/coapplicants.svg');
+}
+
+.section.documents-required-brown.document-required-accordion-img-swap .accordion-group-wrapper .accordion-group .accordion:last-child details::before{
+    background-image: url('/images/photodocm.svg');
+}
+
+.section.documents-required-brown.document-required-accordion-img table:nth-child(2) > tbody > tr> th:nth-child(3), 
+.section.documents-required-brown.document-required-accordion-img table:nth-child(2) > tbody > tr> th:nth-child(2),
+.section.documents-required-brown.document-required-accordion-img table:nth-child(3) > tbody > tr > td:last-child,
+.section.documents-required-brown.document-required-accordion-img table:nth-child(4) > tbody > tr > td:last-child,
+.section.documents-required-brown.document-required-accordion-img table:nth-child(5) > tbody > tr > td:last-child,
+.section.documents-required-brown.document-required-accordion-img table:nth-child(6) > tbody > tr > td:last-child,
+.section.documents-required-brown.document-required-accordion-img table:nth-child(7) > tbody > tr > td:last-child,
+.section.documents-required-brown.document-required-accordion-img table:nth-child(8) > tbody > tr > td:last-child,
+.section.documents-required-brown.document-required-accordion-img table:nth-child(9) > tbody > tr > td:last-child,
+.section.documents-required-brown.document-required-accordion-img table:nth-child(3) > tbody > tr > td:nth-last-child(2),
+.section.documents-required-brown.document-required-accordion-img table:nth-child(4) > tbody > tr > td:nth-last-child(2),
+.section.documents-required-brown.document-required-accordion-img table:nth-child(5) > tbody > tr > td:nth-last-child(2),
+.section.documents-required-brown.document-required-accordion-img table:nth-child(6) > tbody > tr > td:nth-last-child(2),
+.section.documents-required-brown.document-required-accordion-img table:nth-child(7) > tbody > tr > td:nth-last-child(2),
+.section.documents-required-brown.document-required-accordion-img table:nth-child(8) > tbody > tr > td:nth-last-child(2),
+.section.documents-required-brown.document-required-accordion-img table:nth-child(9) > tbody > tr > td:nth-last-child(2){
+   width: 17%;
+}
+
+.section.documents-required-brown.document-required-accordion-img table:nth-child(3) > tbody > tr > td:nth-last-child(2) > img, 
+.section.documents-required-brown.document-required-accordion-img table:nth-child(4) > tbody > tr > td:nth-last-child(2) > img, 
+.section.documents-required-brown.document-required-accordion-img table:nth-child(5) > tbody > tr > td:nth-last-child(2) > img, 
+.section.documents-required-brown.document-required-accordion-img table:nth-child(6) > tbody > tr > td:nth-last-child(2) > img, 
+.section.documents-required-brown.document-required-accordion-img table:nth-child(7) > tbody > tr > td:nth-last-child(2) > img, 
+.section.documents-required-brown.document-required-accordion-img table:nth-child(8) > tbody > tr > td:nth-last-child(2) > img, 
+.section.documents-required-brown.document-required-accordion-img table:nth-child(9) > tbody > tr > td:nth-last-child(2) > img {
+    margin-right: 20px;
+    height: 18px;
+    width: 18px;
+}
+
+@media screen and (max-width:1400px) {
+    .section.documents-required-brown{
+        /* padding-bottom: 72px; */
+    }
+}
+@media screen and (max-width:1024px) {
+    .section.documents-required-brown .default-content-wrapper ul li a{
+        right: 17px;
+    }
+    .section.documents-required-brown .default-content-wrapper:last-child ul li a{
+        display: none;
+    }
+    .section.documents-required-brown .accordion-group-wrapper{
+        margin-bottom: 72px;
+    }
+    .section.documents-required-brown{
+        padding-bottom: 72px;
+    }
+    .section.documents-required-brown table:nth-child(3) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(4) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(5) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(6) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(7) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(8) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(9) > tbody > tr > td:nth-child(4) > img{
+        margin-right: 8px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper{
+        padding-bottom: unset;
+    }
+}
+@media screen and (max-width:767px) {
+    .section.documents-required-brown .default-content-wrapper:first-child .button-container{
+        display: none;
+    }
+    .section.documents-required-brown .default-content-wrapper:last-child{
+        position: relative;
+    }
+    .section.documents-required-brown{
+        /* padding-bottom: 92px; */
+    }
+    .section.documents-required-brown .accordion-group-wrapper{
+        margin-bottom: unset;
+    }
+    .section.documents-required-brown .default-content-wrapper:last-child .button-container{
+        right: 16px;
+        left: 16px;
+        display: inline-flex;
+        position: absolute;
+        top: 20px;
+        padding: 0 25px 0 25px;
+        /* min-width: -webkit-fill-available; */
+        width: 100%;
+        justify-content: space-between;
+        /*  */
+        bottom: 24px;
+        /* left: 0; */
+        margin: 0 auto;
+        /* max-width: 328px; */
+        /* right: 0; */
+        /* top: unset; */
+        width: 100%;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(1) details::before,
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(2) details::before,
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(3) details::before,
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(4) details::before,
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(5) details::before{
+        height: 24px;
+        width: 24px;
+        margin-right: 16px;
+        background-size: 100%;
+        top: 26px;
+        margin-left: 12px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary div h3{
+        font-size: 0.875rem;
+        line-height: 20px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion.block details summary div p{
+        font-size: 0.75rem;
+        line-height: 16px;
+    }
+    .section.documents-required-brown .accordion-group>.accordion details summary{
+        padding: 16px 0;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary div{
+        padding-left: 51px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(4) details summary div{
+        padding-left: 51px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(4) details::before,
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(5) details::before{
+        top: 15px;
+        margin-left: 12px;
+    }
+    .section.documents-required-brown .accordion-group{
+        border-radius: 12px;
+        padding: 12px 16px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary div::before{
+        top: 10px;
+    }
+    .section.documents-required-brown .default-content-wrapper p{
+        font-size: 0.875rem;
+        line-height: 20px;
+        padding-bottom: 4px;
+        margin-bottom: 20px;
+        margin-top: 12px;
+    }
+    .section.documents-required-brown .default-content-wrapper>h2{
+        font-size: 1.125rem;
+        line-height: 26px;
+        padding-bottom: 4px;
+    }
+    .accordion.block >details> div> table:nth-child(1)> tbody> tr> th:nth-child(1){
+        font-size: 0.75rem;
+        line-height: 16px;
+    }
+    .accordion.block >details> div> table:nth-child(1)> tbody> tr> th:nth-child(3){
+        font-size: 0.75rem;
+        line-height: 16px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details>div{
+        padding-left: 0;
+    }
+    .section.documents-required-brown table:nth-child(2) > tbody > tr> th:nth-child(3), .section.documents-required-brown table:nth-child(2) > tbody > tr> th:nth-child(2), .section.documents-required-brown table:nth-child(2) > tbody > tr> th:nth-child(1){
+        font-size: 0.75rem;
+        line-height: 16px;
+        padding-top: 24px;
+    }
+    .section.documents-required-brown table:nth-child(2) > tbody > tr> th:nth-child(1){
+        width: 36%;
+    }
+    .section.documents-required-brown table:nth-child(2) > tbody > tr > th:nth-child(1) > span{
+        font-size: 0.625rem;
+        line-height: 14px;
+        margin-left: unset;
+    }
+    .section.documents-required-brown th, .section.documents-required-brown td{
+        font-size: 0.75rem;
+        line-height: 16px;
+    }
+    .section.documents-required-brown table:nth-child(4) tbody tr th:nth-child(1), .section.documents-required-brown table:nth-child(5) tbody tr th:nth-child(1), .section.documents-required-brown table:nth-child(6) tbody tr th:nth-child(1), .section.documents-required-brown table:nth-child(7) tbody tr th:nth-child(1), .section.documents-required-brown table:nth-child(8) tbody tr th:nth-child(1), .section.documents-required-brown table:nth-child(9) tbody tr th:nth-child(1){
+        width: 60.3%;
+    }
+    .section.documents-required-brown table:nth-child(2) > tbody > tr> th:nth-child(2),
+    .section.documents-required-brown table:nth-child(2) > tbody > tr> th:nth-child(1){
+        width: 39.9%;
+    }
+    .section.documents-required-brown table:nth-child(3) > tbody > tr > td:last-child > img, .section.documents-required-brown table:nth-child(4) > tbody > tr > td:last-child > img, .section.documents-required-brown table:nth-child(5) > tbody > tr > td:last-child > img, .section.documents-required-brown table:nth-child(6) > tbody > tr > td:last-child > img, .section.documents-required-brown table:nth-child(7) > tbody > tr > td:last-child > img, .section.documents-required-brown table:nth-child(8) > tbody > tr > td:last-child > img, .section.documents-required-brown table:nth-child(9) > tbody > tr > td:last-child > img{
+        height: 12px;
+        width: 12px;
+    }
+    .section.documents-required-brown table:nth-child(3) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(4) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(5) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(6) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(7) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(8) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(9) > tbody > tr > td:nth-child(4) > img{
+        margin-right: 19px;
+        height: 12px;
+        width: 12px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details>div{
+        padding-bottom: 32px;
+    }
+    .section.documents-required-brown .default-content-wrapper ul li a::before{
+        left: 18px;
+    }
+    .section.documents-required-brown > div.accordion-group-wrapper > div > div > details > div > p:nth-child(1) > strong{
+        font-size: 0.75rem;
+        line-height: 16px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details div p{
+        font-size: 0.75rem;
+        line-height: 16px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper{
+        margin-bottom: unset;
+    }
+    .section.documents-required-brown .accordion.block > details > div > ul > li > ul > li{
+        font-size: 0.75rem;
+        line-height: 16px;
+    }
+    .section.documents-required-brown .accordion.block > details > div > ul > li > p strong{
+        font-size: 0.75rem;
+        line-height: 16px;
+    }
+    .section.documents-required-brown .default-content-wrapper:last-child{
+        display: block
+     }
+     .section.documents-required-brown .accordion.block > details > div > ul > li{
+        font-size: 0.75rem;
+        line-height: 16px;
+     }
+
+     .documents-required-brown .accordion-group .accordion recommeded {
+        font-size: 10px;
+        font-weight: 400;
+        margin-left: 8px;
+        padding: 1.5px 4.5px;
+     }
+
+     .section.documents-required-brown.document-required-whatsapp-btn-align .accordion-group-wrapper {
+        padding-top: 0;
+    }
+    .section.documents-required-brown.document-required-whatsapp-btn-align .default-content-wrapper .button-container {
+        top: 20px;
+    }
+
+    .section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion details:not(:has(p))::before {
+        top: 13px;
+     }
+     .section.documents-required-brown.document-required-accordion-img table:nth-child(3) > tbody > tr > td:nth-last-child(2) > img, 
+     .section.documents-required-brown.document-required-accordion-img table:nth-child(4) > tbody > tr > td:nth-last-child(2) > img, 
+     .section.documents-required-brown.document-required-accordion-img table:nth-child(5) > tbody > tr > td:nth-last-child(2) > img, 
+     .section.documents-required-brown.document-required-accordion-img table:nth-child(6) > tbody > tr > td:nth-last-child(2) > img, 
+     .section.documents-required-brown.document-required-accordion-img table:nth-child(7) > tbody > tr > td:nth-last-child(2) > img, 
+     .section.documents-required-brown.document-required-accordion-img table:nth-child(8) > tbody > tr > td:nth-last-child(2) > img, 
+     .section.documents-required-brown.document-required-accordion-img table:nth-child(9) > tbody > tr > td:nth-last-child(2) > img {
+        margin-right: 19px;
+        height: 12px;
+        width: 12px;
+    }
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(3) > tbody > tr > td:last-child,
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(4) > tbody > tr > td:last-child,
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(5) > tbody > tr > td:last-child,
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(6) > tbody > tr > td:last-child,
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(7) > tbody > tr > td:last-child,
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(8) > tbody > tr > td:last-child,
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(9) > tbody > tr > td:last-child,
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(3) > tbody > tr > td:nth-last-child(2),
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(4) > tbody > tr > td:nth-last-child(2),
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(5) > tbody > tr > td:nth-last-child(2),
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(6) > tbody > tr > td:nth-last-child(2),
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(7) > tbody > tr > td:nth-last-child(2),
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(8) > tbody > tr > td:nth-last-child(2),
+    .section.documents-required-brown.document-required-accordion-img table:nth-child(9) > tbody > tr > td:nth-last-child(2) {
+        width: 20%;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1024px) {
+    .section.documents-required-brown .default-content-wrapper .button-container{     
+          right: 1.5%;
+        }
+        .section.documents-required-brown .default-content-wrapper .button-container{
+            right: 2.2%;
+        }
+        /* .section.documents-required-brown .default-content-wrapper{
+            display: none;
+        } */
+        .section.documents-required-brown .accordion-group-wrapper {
+            margin-bottom: unset;
+        }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1300px){
+    .section.documents-required-brown .default-content-wrapper>h2{
+        width: 67%;
+    }
+}

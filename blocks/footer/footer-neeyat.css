@@ -1,0 +1,39 @@
+
+footer.footer-wrapper div.footer div div.neeyat-footer{
+    padding: 12px 0px;
+}
+
+footer.footer-wrapper div.footer div div.neeyat-footer div.default-content-wrapper p{
+    color: var(--zinc);
+    text-align: center;
+}
+
+footer.footer-wrapper div.footer div div.neeyat-footer div.default-content-wrapper p:nth-child(1),
+footer.footer-wrapper div.footer div div.neeyat-footer div.default-content-wrapper p:nth-child(2){
+    font-size: 16px;   
+    font-weight: 700;
+    line-height: 21px; 
+    font-family: Nunito-Bold;
+}
+
+footer.footer-wrapper div.footer div div.neeyat-footer div.default-content-wrapper p:nth-child(2){
+    margin-top: .25rem;
+    margin-bottom: 1.5rem;
+}
+
+footer.footer-wrapper div.footer div div.neeyat-footer div.default-content-wrapper p:nth-child(3),
+footer.footer-wrapper div.footer div div.neeyat-footer div.default-content-wrapper p:nth-child(4){
+    font-size: 14px;
+    line-height: 17px;
+    font-family: Nunito-Regular;
+}
+
+footer.footer-wrapper div.footer div div.neeyat-footer div.default-content-wrapper p:nth-child(4){
+    margin-top: .25rem;
+}
+
+@media screen and (max-width: 1024px) {
+    footer.footer-wrapper div.footer div div.neeyat-footer{
+        padding: 40px 0px 20px;
+    }
+}

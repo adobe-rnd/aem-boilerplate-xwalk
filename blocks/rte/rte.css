@@ -1,0 +1,43 @@
+/* privacy policy content css start */
+.section.content-wrapper .rte.block > div >div>p{
+    font-family: "Nunito-Regular";
+    font-size: 1rem;
+    line-height: 24px;
+    margin: 7px 0 0;
+    color: #333;
+}
+
+.section.content-wrapper .rte.block > div >div>h4 {
+    margin-top: 16px;
+    text-decoration: underline;
+    font-family: "Nunito-Regular";
+    font-size: 1rem;
+    line-height: 24px;
+    font-weight: 400;
+    color: #333;
+}
+
+.section.content-wrapper .rte.block > div >div>ul>li {
+    font-family: "Nunito-Regular";
+    font-size: 1rem;
+    line-height: 24px;
+    font-weight: 400;
+    color: #333;
+    padding: 5px 0;
+}
+
+.section.content-wrapper .rte.block > div >div>ul {
+    list-style: disc;
+    padding-left: 25px;
+}
+
+.section.content-wrapper .rte.block > div >div>ul>li::marker {
+    font-size: 1.563rem;
+}
+
+.section.content-wrapper .rte.block > div >div>p>a {
+    text-decoration: none;
+    color: #000;
+}
+/* privacy policy content css end */
+

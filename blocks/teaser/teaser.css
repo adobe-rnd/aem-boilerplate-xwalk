@@ -1,0 +1,494 @@
+/* ----- MOBILE / Default ----- */
+
+/* teaser wrapper stretches over complete width */
+.section div.teaser-wrapper {
+    max-width: unset;
+  
+    /* stretches to window edge in mobile view */
+    margin-left: calc(-1 * var(--space-token-xs));
+    margin-right: calc(-1 * var(--space-token-xs));
+  }
+  
+  .teaser.block {
+    width: 100%;
+    height:100%;
+  }
+  
+  /* the foreground contains text and spacer */
+  .teaser.block > .foreground {
+    max-width: var(--non-spectrum-max-width);
+    margin: auto;
+  }
+  
+  /* the text block (eyebrow, title , descr , ctr) */
+  .teaser.block > .foreground > .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--spectrum-spacing-400) var(--space-token-xs);
+  }
+  
+  /* the eybrow title, hidden in mobile */
+  .teaser.block > .foreground > .text > .eyebrow {
+    display:none;
+    font-family: var(--body-font-family);
+    font-size: var(--spectrum-font-size-75);
+    font-weight: var(--font-weight-700);
+    color: var(--spectrum-gray-700);
+    margin-bottom: var(--space-token-xs);
+  }
+  
+  /* the main title, hidden in mobile */
+  .teaser.block > .foreground > .text > .title {
+    display: none;
+    font-family: var(--body-font-family);
+    font-size: var(--spectrum-heading-size-l);
+    font-weight: var(--font-weight-700);
+    line-height: var(--spectrum-line-height-xxl);
+    margin-bottom: var(--space-token-xxs);
+  }
+  
+  .teaser.block.dark > .foreground > .text > .title {
+    color: var(--background-color);
+  }
+  
+  /* the short description */
+  .teaser.block > .foreground > .text > .short-description,
+  .teaser.block > .foreground > .text > .short-description * {
+    font-family: var(--body-font-family);
+    font-size: var(--spectrum-font-size-300);
+    font-weight: var(--font-weight-700);
+    line-height: var(--spectrum-line-height-l);
+    color: var(--background-color);
+    margin: 0;
+  }
+  
+  /* long description , hidden in mobile */
+  .teaser.block > .foreground > .text > .long-description {
+    display: none;
+  }
+  
+  .teaser.block > .foreground > .text > .long-description,
+  .teaser.block > .foreground > .text > .long-description * {
+    font-family: var(--body-font-family);
+    font-size: var(--spectrum-body-size-l);
+    line-height: var(--spectrum-line-height-l);
+    margin: 0;
+  }
+  
+  .teaser.block.dark > .foreground > .text > .long-description,
+  .teaser.block.dark > .foreground > .text > .long-description * {
+    color: var(--background-color);
+  }
+  
+  /* the list of CTA's */
+  .teaser.block > .foreground > .text > .cta {
+    display: flex;
+    gap: var(--spectrum-spacing-400);
+    margin-top: var(--spectrum-spacing-400);
+    padding: 0;
+    width:min-content;
+  }
+  
+  .teaser.block > .foreground > .text > .cta:empty {
+    display: none;
+  }
+  
+  /* the cta buttons in mobile view */
+  .teaser.block > .foreground > .text > .cta > a.button {
+    background-color: var(--background-color);
+    border: 2px solid transparent;
+    color:var(--teaser-background-color);
+    margin: 0;
+    font-family: var(--body-font-family);
+    font-size: 0.938rem;
+    font-weight: var(--font-weight-700);
+    line-height: 15px;
+    padding: 5px 14px 6px;
+  }
+  
+  .teaser.block > .foreground > .text > .cta > a.button.secondary {
+    background-color: unset;
+    border: 2px solid var(--background-color);
+    color:var(--background-color);
+  }
+  
+  /* spacer div */
+  .teaser.block > .foreground > .spacer {
+    display:none;
+  }
+  
+  /* The background color for mobile view */
+  .teaser.block > .foreground , 
+  .teaser.block.dark > .foreground {
+    --teaser-background-color :  var(--spectrum-red-700); 
+  
+    background-color: var(--teaser-background-color);
+  }
+  
+  /* the background image , hidden in mobile */
+  .teaser.block > .background img {
+    /* display:none; */
+    width: auto;
+    height: max-content;
+    object-fit: cover;
+  }
+  
+  /* ----- TABLET ----- */
+  @media (min-width: 600px) {
+    .section.teaser-container {
+      padding: 0 56px;
+    }
+  
+    .section div.teaser-wrapper {
+      /* stretches to window edge, cover section padding */
+      margin-left: calc(-1 * var(--space-token-xl));
+      margin-right: calc(-1 * var(--space-token-xl));
+    }
+  
+    /* remove background color , add border */
+    .teaser.block,
+    .teaser.block.dark {
+      position: relative;
+      padding: 0;
+      overflow: hidden;
+    }
+  
+    /* foreground container, flex (text + spacer), always on top */
+    .teaser.block > .foreground {
+      position: relative;
+      display: flex;
+      padding: 0 var(--space-token-xl);
+      background-color: unset;
+      min-height:420px;
+    }
+  
+    .teaser.block.dark > .foreground {
+      background-color: unset;
+    }
+  
+    /* limit width of text part and set order */
+    .teaser.block > .foreground > .text {
+      width:40%;
+      order: 0;
+      padding: var(--spectrum-spacing-500) 0;
+    }
+  
+    /* change the order if text should be on the right */
+    .teaser.block.right > .foreground > .text {
+      order: 1;
+    }
+  
+    /* turn on the eybrow */
+    .teaser.block > .foreground > .text > .eyebrow {
+      display: block;
+    }
+  
+    /* turn on the title */
+    .teaser.block > .foreground > .text > .title {
+      display: block;
+    }
+  
+    .teaser.block > .foreground > .text > .title :where(h1,h2,h3,h4,h5,h6) {
+      margin: 0;
+      color: inherit;
+      font: inherit;
+    }
+  
+    .teaser.block.dark > .foreground > .text > .eyebrow {
+      color: var(--background-color);
+    }
+    
+    /* turn of short description */
+    .teaser.block > .foreground > .text > .short-description {
+      display: none;
+    }
+  
+    /* turn on long description */
+    .teaser.block > .foreground > .text > .long-description {
+      /* display: block; */
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  
+    /* revert to normal button behavior for primary and secondary */
+    .teaser.block > .foreground > .text > .cta > a.button {
+      background-color: var(--link-color);
+      border: 2px solid transparent;
+      color: var(--background-color);
+    }
+  
+    .teaser.block > .foreground > .text > .cta > a.button.secondary {
+      background-color: unset;
+      border: 2px solid currentcolor;
+      color: currentcolor;
+    }
+  
+    .teaser.block.dark > .foreground > .text > .cta > a.button {
+      background-color: var(--background-color);
+      border: 2px solid transparent;
+      color: currentcolor;
+    }
+  
+    .teaser.block.dark > .foreground > .text > .cta > a.button.secondary {
+      background-color: unset;
+      border: 2px solid currentcolor;
+      color: var(--background-color);
+    }
+  
+    /* spacer */
+    .teaser.block > .foreground > .spacer {
+      display:block;
+      order: 1;
+      flex-grow:2;
+    }
+  
+    /* change the order if text should be on the right */
+    .teaser.block.right > .foreground > .spacer {
+      order: 0;
+    }
+  
+    /* the background image container */
+    .teaser.block > .background {
+      display:block;
+      /* position: absolute; */
+      width:100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+  
+    
+    /* reomve background color to avoid flicker on load */
+    .teaser.block > .background , 
+    .teaser.block.dark > .background {
+      background-color: unset;
+    }
+  
+    /* the image, shifted left or right so background subject 
+       does not overlap with text */
+    .teaser.block > .background img {
+      display:block;
+      height:100%;
+      width: 100%;
+      object-position: 60%;
+    }
+  
+    .teaser.block.right > .background img {
+      display:block;
+      height:100%;
+      width: 100%;
+      object-position: 40%;
+    }
+  
+    /* teaser on browse pages has different width for text */
+    body[class ^= 'browse-'] .teaser.block > .foreground > .text,
+    body[class ^= 'article-'] .teaser.block > .foreground > .text {
+      width:55%;
+    }
+  
+    /* teaser on browse has smaller height no background shift required */
+    body[class ^= 'browse-'] .teaser.block > .background img,
+    body[class ^= 'article-'] .teaser.block > .background img {
+      object-position: right;
+    }
+  
+    body[class ^= 'browse-'] .teaser.block.right > .background img,
+    body[class ^= 'article-'] .teaser.block.right > .background img {
+      object-position: left;
+    }
+  
+    /* it gets a border */
+    body[class ^= 'browse-'] .section div.teaser-wrapper,
+    body[class ^= 'article-'] .section div.teaser-wrapper {
+      border: 1px solid var(--spectrum-gray-200);
+      border-radius: 4px;
+    }
+  
+    body[class ^= 'browse-'] .section div.teaser-wrapper .background img,
+    body[class ^= 'article-'] .section div.teaser-wrapper .background img {
+      border-radius: 4px;
+    }
+  
+    body[class ^= 'browse-'] .section div.teaser-wrapper .foreground,
+    body[class ^= 'article-'] .section div.teaser-wrapper .foreground {    
+      min-height:240px;
+      padding: 0 var(--space-token-xl);
+    }
+  
+    /* the main title, hidden in mobile */
+    body[class ^= 'browse-'] .teaser.block > .foreground > .text > .title,
+    body[class ^= 'article-'] .teaser.block > .foreground > .text > .title {
+      font-size: var(--spectrum-font-size-600);
+      line-height: 37.5px;
+    }
+  
+    body[class ^= 'browse-'] .teaser.block > .foreground > .text > .long-description,
+    body[class ^= 'article-'] .teaser.block > .foreground > .text > .long-description,
+    body[class ^= 'browse-'] .teaser.block > .foreground > .text > .long-description *,
+    body[class ^= 'article-'] .teaser.block > .foreground > .text > .long-description * {
+      font-size: var(--spectrum-body-size-s);
+      line-height: 18.2px;
+  }
+  
+    body[class ^= 'browse-'] .teaser.block > .foreground > .text > .cta > a.button,
+    body[class ^= 'article-'] .teaser.block > .foreground > .text > .cta > a.button {
+      font-size: 0.813rem;
+      line-height: 16px;
+      padding: 4px 14px 6px;
+    }
+  }
+  
+  @media (min-width: 786px) {
+    /* teaser on browse pages has different width for text */
+    body[class ^= 'browse-'] .teaser.block > .foreground > .text,
+    body[class ^= 'article-'] .teaser.block > .foreground > .text {
+      width:60%;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    /* the background image, start align right */
+    .teaser.block > .background img {
+      object-position: right;
+    }
+  
+    /* the background image, start align left */
+    .teaser.block.right > .background img {
+      object-position: left;
+    }
+    
+    /* teaser on browse pages has different width for text */
+    body[class ^= 'browse-'] .teaser.block > .foreground > .text,
+    body[class ^= 'article-'] .teaser.block > .foreground > .text {
+      width:50%;
+    }
+  
+    /* when shown on a page with a rail 
+     no longer goes from end to end */
+    body[class ^= 'browse-'] .section div.teaser-wrapper,
+    body[class ^= 'article-'] .section div.teaser-wrapper {
+      margin-left: unset;
+      margin-right: unset;
+    }
+  
+    body[class ^= 'browse-'] .section div.teaser-wrapper .foreground,
+    body[class ^= 'article-'] .section div.teaser-wrapper .foreground {
+      padding: 0 var(--space-token-l);
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    /* when shown on a page with a rail he eybrow title */
+    body:not([class ^= 'browse-']) .teaser.block > .foreground > .text > .eyebrow,
+    body:not([class ^= 'article-']) .teaser.block > .foreground > .text > .eyebrow {
+      font-size: var(--spectrum-font-size-100);
+    }
+  
+    body[class ^= 'browse-'] .section div.teaser-wrapper .foreground,
+    body[class ^= 'article-'] .section div.teaser-wrapper .foreground {
+      padding: 0 var(--spectrum-spacing-600);
+    }
+  
+    /* teaser on browse pages has different width for text */
+    body[class ^= 'browse-'] .teaser.block > .foreground > .text,
+    body[class ^= 'article-'] .teaser.block > .foreground > .text {
+      width:60%;
+    }
+  
+    /* the main title */
+    body:not([class ^= 'browse-']) .teaser.block > .foreground > .text > .title,
+    body:not([class ^= 'article-']) .teaser.block > .foreground > .text > .title {
+      font-size: var(--spectrum-heading-size-xl);
+      line-height: 46.8px;
+    }
+  }
+  
+  @media (min-width: 1440px) {
+      /* teaser on browse pages has different width for text */
+      body[class ^= 'browse-'] .teaser.block > .foreground > .text, 
+      body[class ^= 'article-'] .teaser.block > .foreground > .text {
+        width:70%;
+      }
+    }
+@media  screen and (min-width: 1025px) and (max-width: 1300px){
+  .section.teaser-scale{
+    padding: unset;
+  }
+}
+/* about us cards carousel start */
+/* .section.carousel-container .default-content-wrapper>p>strong{
+  margin: 20px 0 24px;
+  color: var(--black);
+  display: block;
+  font-family: 'Nunito-Extrabold',sans-serif;
+  font-size: 2rem;
+  line-height: 40px;
+}
+
+.section.carousel-container .carousel-wrapper .panel-container .teaser.block {
+  position: relative;
+  padding: 82px 16px 10px 40px;
+}
+
+.section.carousel-container .carousel-wrapper .panel-container .teaser.block .background img {
+  object-fit: fill;
+  background-position: 100%;
+  background-repeat: no-repeat;
+}
+
+.section.carousel-container .carousel-wrapper .panel-container .teaser.block .front-picture {
+  position: absolute;
+}
+
+.section.carousel-container .carousel-wrapper .panel-container .teaser.block .front-picture img{
+  height: 72px;
+  width: 72px;
+}
+
+.section.carousel-container .carousel-wrapper .panel-container .teaser.block .foreground .text .long-description>p,
+.section.carousel-container .carousel-wrapper .panel-container .teaser.block .foreground .text .short-description>p {
+  color: var(--darkcharcoal);
+  display: block;
+  font-family: 'Nunito-Regular',sans-serif;
+  font-size: 1pc;
+  line-height: 24px;
+  margin-bottom: 2pc;
+}
+
+.section.carousel-container .carousel-wrapper .panel-container .teaser.block .foreground .text .long-description>p>strong,
+.section.carousel-container .carousel-wrapper .panel-container .teaser.block .foreground .text .short-description>p>strong{
+  color: var(--black);
+  font-family: 'Nunito-Bold',sans-serif;
+  font-size: 1pc;
+  line-height: 24px;
+}
+
+.section.carousel-container .carousel-wrapper .panel-container .teaser.block .foreground .text .cta {
+  position: absolute;
+  top: 10px;
+  left: 7%;
+}
+
+.section.carousel-container .carousel-wrapper .panel-container .teaser.block .foreground .text .cta>a {
+  background-color: var(--greyishblue);
+  border-radius: 67px;
+  padding: 10px 20px;
+  width: 10pc;
+  color: #fff;
+  font-family: 'Nunito-Bold',sans-serif;
+  font-size: 1.25rem;
+  line-height: 28px;
+}
+
+@media screen and (max-width:768px) {
+  .section.carousel-container .default-content-wrapper>p>strong {
+    font-size: 1.25rem;
+    line-height: 28px;
+    margin: 20px 0;
+  }
+} */
+/* about us cards carousel end */

@@ -1,0 +1,41 @@
+.section.mobile-sticky-button {
+    display: none;
+}
+
+@media screen and (max-width:1024px) {
+    .section.mobile-sticky-button {
+        display: block;
+        background: #fff;
+        bottom: 0;
+        box-shadow: 0 -4px 8px rgba(0, 0, 0, .08);
+        margin: auto;
+        padding: 12px 16px;
+        position: fixed;
+        text-align: center;
+        width: 100%;
+        z-index: 900;
+    }
+    .section.mobile-sticky-button .default-content-wrapper>p {
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        display: inline-block;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .section.mobile-sticky-button .default-content-wrapper>p>a {
+        background-color: #f26841;
+        border-radius: 8px;
+        color: #fff;
+        display: inline-block;
+        font-family: Nunito-Bold, sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 24px;
+        padding: 10.5px 24px;
+        width: 100%;
+        margin: unset;
+    }
+}

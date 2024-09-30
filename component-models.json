@@ -1,32 +1,20 @@
 [
   {
-    "id": "image",
-    "fields": [
-      {
-        "component": "reference",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "name": "imageAlt",
-        "label": "Alt Text"
-      }
-    ]
-  },
-  {
     "id": "title",
     "fields": [
       {
         "component": "text",
-        "name": "title",
-        "label": "Title"
+        "valueType": "string",
+        "name": "jcr:title",
+        "value": "",
+        "label": "Text"
       },
       {
         "component": "select",
-        "name": "titleType",
-        "label": "Title Type",
+        "name": "type",
+        "value": "h1",
+        "label": "Type",
+        "valueType": "string",
         "options": [
           {
             "name": "h1",
@@ -57,27 +45,54 @@
     ]
   },
   {
+    "id": "image",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference",
+        "label": "Image",
+        "multi": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt",
+        "value": "Default alt",
+        "label": "Alt Text"
+      }
+    ]
+  },
+  {
     "id": "button",
     "fields": [
       {
-        "component": "aem-content",
-        "name": "link",
+        "component": "text",
+        "valueType": "string",
+        "name": "href",
+        "value": "",
         "label": "Link"
       },
       {
         "component": "text",
-        "name": "linkText",
+        "valueType": "string",
+        "name": "text",
+        "value": "",
         "label": "Text"
       },
       {
         "component": "text",
-        "name": "linkTitle",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
         "label": "Title"
       },
       {
         "component": "select",
-        "name": "linkType",
+        "name": "type",
+        "value": "",
         "label": "Type",
+        "valueType": "string",
         "options": [
           {
             "name": "default",
@@ -92,41 +107,6 @@
             "value": "secondary"
           }
         ]
-      }
-    ]
-  },
-  {
-    "id": "section",
-    "fields": [
-      {
-        "component": "multiselect",
-        "name": "style",
-        "label": "Style",
-        "options": [
-          {
-            "name": "Highlight",
-            "value": "highlight"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "card",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
       }
     ]
   },
@@ -150,12 +130,33 @@
     ]
   },
   {
-    "id": "fragment",
+    "id": "card",
     "fields": [
       {
-        "component": "aem-content",
-        "name": "reference",
-        "label": "Reference"
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "section",
+    "fields": [
+      {
+        "component": "text",
+        "name": "style",
+        "value": "",
+        "label": "Style",
+        "valueType": "string"
       }
     ]
   },
@@ -182,6 +183,2547 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "breadcrumb",
+    "fields": [
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "label": "Hide Breadcrumb",
+        "name": "hideBreadcrumb"
+      },
+      {
+        "component": "text-input",
+        "valueType": "number",
+        "label": "Navigation Start Level",
+        "name": "navigationStartLevel",
+        "value": ""
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "label": "Hide Current Page",
+        "name": "hideCurrentPage"
+      },
+      {
+        "component": "text",
+        "name": "breadcrumb-class",
+        "label": "Breadcrumb Class",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "breadcrumb-text",
+        "label": "Breadcrumb Text",
+        "valueType": "string",
+        "multi": true
+      },
+      {
+        "component": "text",
+        "name": "breadcrumb-url",
+        "label": "Breadcrumb URL",
+        "valueType": "string",
+        "multi": true
+      }
+    ]
+  },
+  {
+    "id": "rte",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "rte",
+        "label": "Rich-Text Field",
+        "valueType": "string",
+        "raw": true
+      }
+    ]
+  },
+  {
+    "id": "city-list",
+    "fields": [
+      {
+        "component": "text",
+        "name": "city-list",
+        "label": "City List Path",
+        "description": "Set city list api path",
+        "valueType": "string",
+        "raw": false
+      }
+    ]
+  },
+  {
+    "id": "imgwithlink",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference1",
+        "label": "Image Desktop",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt1",
+        "value": "Default alt Desktop",
+        "label": "Alt Text Desktop"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "href1",
+        "value": "#",
+        "label": "Link Desktop"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference2",
+        "label": "Image Mobile",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt2",
+        "value": "Default alt Mobile",
+        "label": "Alt Text Mobile"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "href2",
+        "value": "#",
+        "label": "Link Mobile"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "click_text",
+        "value": "",
+        "label": "click_text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "menu_category",
+        "value": "",
+        "label": "menu_category"
+      }
+    ]
+  },
+  {
+    "id": "testimonial",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "testimonial",
+        "value": "",
+        "label": "Testimonial Path",
+        "description": "Sets the path of the testimonial."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "rotation-time",
+        "value": "",
+        "label": "Rotation Time",
+        "description": "Sets the rotation time of the testimonial."
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference1",
+        "label": "Ribbon Image 1",
+        "description": "Sets the ribbon image of the testimonial.",
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference2",
+        "label": "Ribbon Image 2",
+        "description": "Sets the ribbon image of the testimonial.",
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference3",
+        "label": "Ribbon Image 3",
+        "description": "Sets the ribbon image of the testimonial.",
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference4",
+        "label": "Ribbon Image 4",
+        "description": "Sets the ribbon image of the testimonial.",
+        "multi": false
+      },
+      {
+        "component": "select",
+        "name": "carouselshowtype",
+        "value": "primary",
+        "label": "Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "primary",
+            "value": "primary"
+          },
+          {
+            "name": "secondary",
+            "value": "secondary"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "financialreports",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "financialreports",
+        "value": "",
+        "label": "Financial Reports Path",
+        "description": "Sets the path of the financial reports."
+      },
+      {
+        "component": "select",
+        "name": "financialreportsshowtype",
+        "value": "primary",
+        "label": "Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "primary",
+            "value": "primary"
+          },
+          {
+            "name": "secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "sortingtype",
+        "value": "desc",
+        "label": "Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Ascending",
+            "value": "ascending"
+          },
+          {
+            "name": "Descending ",
+            "value": "descending "
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "faq",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "FAQ",
+        "value": "",
+        "label": "FAQ Content"
+      }
+    ]
+  },
+  {
+    "id": "offer-documents",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "offer-documents-title",
+        "value": "",
+        "label": "Offer documents title",
+        "description": "Sets the title of the documents."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "documents-disclaimer-title",
+        "value": "",
+        "label": "Documents disclaimer title",
+        "description": "Sets the disclaimer title of the documents."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "documents-disclaimer-subtitle",
+        "value": "",
+        "label": "Documents disclaimer sub title",
+        "description": "Sets the disclaimer sub title of the documents."
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "documents-disclaimer-content",
+        "value": "",
+        "label": "Documents disclaimer content",
+        "raw": true,
+        "description": "Sets the disclaimer content of the documents."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "documents-btn-text",
+        "value": "I Agree",
+        "label": "Documents Button Text",
+        "description": "Sets the text of the button."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "documents-url",
+        "value": "",
+        "label": "Documents URL",
+        "description": "Sets the url of the documents."
+      },
+      {
+        "component": "select",
+        "name": "disclaimershowtype",
+        "value": "primary",
+        "label": "Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "primary",
+            "value": "primary"
+          },
+          {
+            "name": "secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "offer-documents-image",
+        "value": "",
+        "label": "Offer documents image",
+        "description": "Sets the image of the documents."
+      }
+    ]
+  },
+  {
+    "id": "carousel",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "previcon",
+        "value": "",
+        "label": "Previous Icon"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "nexticon",
+        "value": "",
+        "label": "Next Icon"
+      },
+      {
+        "component": "select",
+        "name": "carouselshowtype",
+        "value": "primary",
+        "label": "Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "primary",
+            "value": "primary"
+          },
+          {
+            "name": "secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "autorotate",
+        "value": "rotate-off",
+        "label": "Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "rotate-on",
+            "value": "rotate-on"
+          },
+          {
+            "name": "rotate-off",
+            "value": "rotate-off"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "carouselversion",
+        "value": "1",
+        "label": "Version",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "One",
+            "value": "One"
+          },
+          {
+            "name": "Two",
+            "value": "Two"
+          },
+          {
+            "name": "Glider",
+            "value": "Glider"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "config",
+        "value": "",
+        "label": "Config"
+      }
+    ]
+  },
+  {
+    "id": "tab-container",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "tab-container",
+        "value": "",
+        "label": "Tab Container",
+        "description": "Sets the id of the tab."
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "isactive",
+        "value": "dp-none",
+        "label": "Is Active",
+        "options": [
+          {
+            "name": "Hide",
+            "value": "dp-none"
+          },
+          {
+            "name": "Active",
+            "value": "active"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tab-link",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "tab-link-2",
+        "label": "Rich-Text Field",
+        "valueType": "string",
+        "raw": true
+      },
+      {
+        "component": "select",
+        "name": "tabshowtype",
+        "value": "normal",
+        "label": "Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "normal",
+            "value": "normal"
+          },
+          {
+            "name": "Glider",
+            "value": "glider"
+          },
+          {
+            "name": "carousel",
+            "value": "carousel"
+          }
+        ]
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "tabpictureprev",
+        "value": "",
+        "label": "Set previous icon on tab carousel"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "tabpicturenext",
+        "value": "",
+        "label": "Set next icon on tab carousel"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "config",
+        "value": "",
+        "label": "Config"
+      }
+    ]
+  },
+  {
+    "id": "tab-name",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "tab-name",
+        "value": "",
+        "label": "Tab Name",
+        "description": "Sets the name of the tab.",
+        "multi": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "tab-id",
+        "value": "",
+        "label": "Tab Id",
+        "description": "Sets the id of the tab.",
+        "multi": true
+      },
+      {
+        "component": "select",
+        "name": "rendertype",
+        "value": "",
+        "label": "Render Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "normal",
+            "value": "normal"
+          },
+          {
+            "name": "tab-name",
+            "value": "tab-name"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "tabshowtype",
+        "value": "normal",
+        "label": "Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "normal",
+            "value": "normal"
+          },
+          {
+            "name": "carousel",
+            "value": "carousel"
+          }
+        ]
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "tabpictureprev",
+        "value": "",
+        "label": "Set previous icon on tab carousel"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "tabpicturenext",
+        "value": "",
+        "label": "Set next icon on tab carousel"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "nested-tab-id",
+        "value": "",
+        "label": "Nested Tab Id",
+        "description": "Sets the id of the nested tab."
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "nested-tab-isactive",
+        "value": "dp-none",
+        "label": "Is Active",
+        "options": [
+          {
+            "name": "Hide",
+            "value": "dp-none"
+          },
+          {
+            "name": "Active",
+            "value": "active"
+          }
+        ]
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "tab-image-1",
+        "value": "",
+        "label": "Tab Image 1",
+        "description": "Sets the path of the image on the tab."
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "tab-image-2",
+        "value": "",
+        "label": "Tab Image 2",
+        "description": "Sets the path of the image on the tab."
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "tab-image-3",
+        "value": "",
+        "label": "Tab Image 3",
+        "description": "Sets the path of the image on the tab."
+      }
+    ]
+  },
+  {
+    "id": "tab-name-nested",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "tab-name",
+        "value": "",
+        "label": "Tab Name",
+        "description": "Sets the name of the tab.",
+        "multi": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "tab-id",
+        "value": "",
+        "label": "Tab Id",
+        "description": "Sets the id of the tab.",
+        "multi": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "tab-name-child-1",
+        "value": "",
+        "label": "Tab Name Child 1",
+        "description": "Sets the name of the tab child 1.",
+        "multi": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "tab-name-child-1-id",
+        "value": "",
+        "label": "Tab Name Child 1 Id",
+        "description": "Sets the id of the tab child 1.",
+        "multi": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "tab-name-child-2",
+        "value": "",
+        "label": "Tab Name Child 2",
+        "description": "Sets the name of the tab child 2.",
+        "multi": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "tab-name-child-2-id",
+        "value": "",
+        "label": "Tab Name Child 2 Id",
+        "description": "Sets the id of the tab child 2.",
+        "multi": true
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "previcon",
+        "value": "",
+        "label": "Previous Icon"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "nexticon",
+        "value": "",
+        "label": "Next Icon"
+      },
+      {
+        "component": "select",
+        "name": "child1carouselshowtype",
+        "value": "normal",
+        "label": "Child 1 Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "normal",
+            "value": "normal"
+          },
+          {
+            "name": "carousel",
+            "value": "carousel"
+          },
+          {
+            "name": "glider",
+            "value": "glider"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "child2carouselshowtype",
+        "value": "normal",
+        "label": "Child 2 Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "normal",
+            "value": "normal"
+          },
+          {
+            "name": "carousel",
+            "value": "carousel"
+          },
+          {
+            "name": "glider",
+            "value": "glider"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tabs",
+    "fields": []
+  },
+  {
+    "id": "teaser",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference",
+        "label": "Background Image",
+        "description": "The teaser image, Background",
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference1",
+        "label": "The Multi teaser image",
+        "description": "The Multi teaser image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "fileReferenceAlt",
+        "value": "",
+        "label": "Image Description",
+        "description": "A descriptive text of the image will be shown as tooltip."
+      },
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Style",
+        "valueType": "string",
+        "required": true,
+        "options": [
+          {
+            "name": "Type",
+            "children": [
+              {
+                "name": "Click Able",
+                "value": "click-able"
+              }
+            ]
+          },
+          {
+            "name": "Theme",
+            "children": [
+              {
+                "name": "Light",
+                "value": "light"
+              },
+              {
+                "name": "Light",
+                "value": "light"
+              },
+              {
+                "name": "Dark",
+                "value": "dark"
+              }
+            ]
+          },
+          {
+            "name": "Alignment",
+            "children": [
+              {
+                "name": "Left",
+                "value": "left"
+              },
+              {
+                "name": "Right",
+                "value": "right"
+              }
+            ]
+          },
+          {
+            "name": "Background Color",
+            "children": [
+              {
+                "name": "Background Image",
+                "value": "bg-image"
+              },
+              {
+                "name": "Yellow Light",
+                "value": "bg-yellow-light"
+              },
+              {
+                "name": "Blue Light",
+                "value": "bg-blue-light"
+              },
+              {
+                "name": "Purple",
+                "value": "bg-purple"
+              },
+              {
+                "name": "Orange",
+                "value": "bg-orange"
+              },
+              {
+                "name": "Seafoam",
+                "value": "bg-spectrum-seafoam-700"
+              },
+              {
+                "name": "Yellow",
+                "value": "bg-spectrum-yellow-700"
+              },
+              {
+                "name": "darkcharcoal",
+                "value": "--darkcharcoal"
+              },
+              {
+                "name": "darkgrey",
+                "value": "--darkgrey"
+              },
+              {
+                "name": "white",
+                "value": "--white"
+              },
+              {
+                "name": "orange",
+                "value": "--orange"
+              },
+              {
+                "name": "black",
+                "value": "--black"
+              },
+              {
+                "name": "grey",
+                "value": "--grey"
+              },
+              {
+                "name": "darkblack",
+                "value": "--darkblack"
+              },
+              {
+                "name": "green",
+                "value": "--green"
+              },
+              {
+                "name": "greyishblue",
+                "value": "--greyishblue"
+              },
+              {
+                "name": "floralwhite",
+                "value": "--floralwhite"
+              },
+              {
+                "name": "lilen",
+                "value": "--lilen"
+              },
+              {
+                "name": "dustygrey",
+                "value": "--dustygrey"
+              },
+              {
+                "name": "matterhorn",
+                "value": "--matterhorn"
+              },
+              {
+                "name": "chinesesilver",
+                "value": "--chinesesilver"
+              },
+              {
+                "name": "midnight",
+                "value": "--midnight"
+              },
+              {
+                "name": "pattensblue",
+                "value": "--pattensblue"
+              },
+              {
+                "name": "rosewhite",
+                "value": "--rosewhite"
+              },
+              {
+                "name": "solitude",
+                "value": "--solitude"
+              },
+              {
+                "name": "swansdown",
+                "value": "--swansdown"
+              },
+              {
+                "name": "camarone",
+                "value": "--camarone"
+              },
+              {
+                "name": "zinc",
+                "value": "--zinc"
+              },
+              {
+                "name": "cloud",
+                "value": "--cloud"
+              },
+              {
+                "name": "silver",
+                "value": "--silver"
+              },
+              {
+                "name": "arsenic",
+                "value": "--arsenic"
+              },
+              {
+                "name": "whisper",
+                "value": "--whisper"
+              },
+              {
+                "name": "fossil",
+                "value": "--fossil"
+              },
+              {
+                "name": "blackpearl",
+                "value": "--blackpearl"
+              },
+              {
+                "name": "lightgrey",
+                "value": "--lightgrey"
+              },
+              {
+                "name": "blue",
+                "value": "--blue"
+              },
+              {
+                "name": "whitesmoke",
+                "value": "--whitesmoke"
+              },
+              {
+                "name": "coral",
+                "value": "--coral"
+              },
+              {
+                "name": "salmon",
+                "value": "--salmon"
+              },
+              {
+                "name": "seashell",
+                "value": "--seashell"
+              },
+              {
+                "name": "pale",
+                "value": "--pale"
+              },
+              {
+                "name": "cinnabar",
+                "value": "--cinnabar"
+              },
+              {
+                "name": "coralred",
+                "value": "--coralred"
+              },
+              {
+                "name": "flamingo",
+                "value": "--flamingo"
+              },
+              {
+                "name": "mischka",
+                "value": "--mischka"
+              },
+              {
+                "name": "midorange",
+                "value": "--midorange"
+              },
+              {
+                "name": "pearl",
+                "value": "--pearl"
+              },
+              {
+                "name": "submidorange",
+                "value": "--submidorange"
+              },
+              {
+                "name": "Skyblue",
+                "value": "--skyblue"
+              },
+              {
+                "name": "redgradient",
+                "value": "bg--linear-red"
+              },
+              {
+                "name": "lightshadegray",
+                "value": "--light-gray"
+              }
+            ]
+          },
+          {
+            "name": "Style To Add",
+            "children": [
+              {
+                "name": "Teaser 1",
+                "value": "teaser-block-one"
+              },
+              {
+                "name": "Teaser 2",
+                "value": "teaser-block-two"
+              },
+              {
+                "name": "Teaser 3",
+                "value": "teaser-block-three"
+              },
+              {
+                "name": "Teaser 4",
+                "value": "teaser-block-four"
+              },
+              {
+                "name": "Teaser 5",
+                "value": "teaser-block-five"
+              },
+              {
+                "name": "Teaser 6",
+                "value": "teaser-block-six"
+              },
+              {
+                "name": "Teaser 7",
+                "value": "teaser-block-seven"
+              },
+              {
+                "name": "Teaser 8",
+                "value": "teaser-block-eight"
+              },
+              {
+                "name": "Teaser 9",
+                "value": "teaser-block-nine"
+              },
+              {
+                "name": "Teaser 10",
+                "value": "teaser-whatsapp-banner"
+              },
+              {
+                "name": "common-branch-carousel",
+                "value": "common-branch-carousel"
+              },
+              {
+                "name": "home-loan-branch-carousel",
+                "value": "home-loan-branch-carousel"
+              },
+              {
+                "name": "business-loan-branch-carousel",
+                "value": "business-loan-branch-carousel"
+              },
+              {
+                "name": "unsecured-business-loan-branch-carousel",
+                "value": "unsecured-business-loan-branch-carousel"
+              },
+              {
+                "name": "personal-loan-branch-carousel",
+                "value": "personal-loan-branch-carousel"
+              },
+              {
+                "name": "used-car-loan-branch-carousel",
+                "value": "used-car-loan-branch-carousel"
+              },
+              {
+                "name": "video-component-carousel",
+                "value": "video-component-carousel"
+              }
+            ]
+          },
+          {
+            "name": "Col To Add",
+            "children": [
+              {
+                "name": "col-1",
+                "value": "col-1"
+              },
+              {
+                "name": "col-2",
+                "value": "col-2"
+              },
+              {
+                "name": "col-3",
+                "value": "col-3"
+              },
+              {
+                "name": "col-4",
+                "value": "col-4"
+              },
+              {
+                "name": "col-5",
+                "value": "col-5"
+              },
+              {
+                "name": "col-6",
+                "value": "col-6"
+              },
+              {
+                "name": "col-7",
+                "value": "col-7"
+              },
+              {
+                "name": "col-8",
+                "value": "col-8"
+              },
+              {
+                "name": "col-9",
+                "value": "col-9"
+              },
+              {
+                "name": "col-10",
+                "value": "col-10"
+              },
+              {
+                "name": "col-11",
+                "value": "col-11"
+              },
+              {
+                "name": "col-12",
+                "value": "col-12"
+              },
+              {
+                "name": "mob-col-1",
+                "value": "mob-col-1"
+              },
+              {
+                "name": "mob-col-2",
+                "value": "mob-col-2"
+              },
+              {
+                "name": "mob-col-3",
+                "value": "mob-col-3"
+              },
+              {
+                "name": "mob-col-4",
+                "value": "mob-col-4"
+              },
+              {
+                "name": "mob-col-5",
+                "value": "mob-col-5"
+              },
+              {
+                "name": "mob-col-6",
+                "value": "mob-col-6"
+              },
+              {
+                "name": "mob-col-7",
+                "value": "mob-col-7"
+              },
+              {
+                "name": "mob-col-8",
+                "value": "mob-col-8"
+              },
+              {
+                "name": "mob-col-9",
+                "value": "mob-col-9"
+              },
+              {
+                "name": "mob-col-10",
+                "value": "mob-col-10"
+              },
+              {
+                "name": "mob-col-11",
+                "value": "mob-col-11"
+              },
+              {
+                "name": "mob-col-12",
+                "value": "mob-col-12"
+              }
+            ]
+          },
+          {
+            "name": "block classes",
+            "children": [
+              {
+                "name": "gridcolumnfw",
+                "value": "card-full-width"
+              },
+              {
+                "name": "center",
+                "value": "center"
+              }
+            ]
+          },
+          {
+            "name": "liner-gradient",
+            "children": [
+              {
+                "name": "gradient-blue-gray",
+                "value": "gradient-blue-gray"
+              },
+              {
+                "name": "gradient-blue",
+                "value": "gradient-blue"
+              },
+              {
+                "name": "gradient-brown",
+                "value": "gradient-brown"
+              },
+              {
+                "name": "gradient-dark-blue",
+                "value": "gradient-dark-blue"
+              },
+              {
+                "name": "gradient-gray",
+                "value": "gradient-gray"
+              },
+              {
+                "name": "gradient-teal",
+                "value": "gradient-teal"
+              },
+              {
+                "name": "gradient-blue-green",
+                "value": "gradient-blue-green"
+              }
+            ]
+          },
+          {
+            "name": "on Click Form Class",
+            "children": [
+              {
+                "name": "Click to open form on Single Button",
+                "value": "open-form-on-click"
+              }
+            ]
+          },
+          {
+            "name": "Background Image",
+            "children": [
+              {
+                "name": "Slide Background Light Green",
+                "value": "slide-background-light-green"
+              },
+              {
+                "name": "Slide Background Light Blue",
+                "value": "slide-background-light-blue"
+              },
+              {
+                "name": "Slide Background Violet",
+                "value": "slide-background-violet"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrow",
+        "value": "",
+        "label": "Eyebrow",
+        "description": "Sets the small pre-title above the title."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Heading",
+        "description": "Sets the main title of the teaser.",
+        "multi": true
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "titleType",
+        "value": "h3",
+        "label": "Heading Type",
+        "options": [
+          {
+            "name": "H1",
+            "value": "h1"
+          },
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          },
+          {
+            "name": "H5",
+            "value": "h5"
+          },
+          {
+            "name": "H6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "longDescr",
+        "value": "",
+        "label": "Long Description",
+        "description": "The description shown in Desktop and Tablet view."
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "shortDescr",
+        "value": "",
+        "label": "Short Description",
+        "description": "The description shown in Mobile view. If not set long text is used."
+      },
+      {
+        "component": "select",
+        "name": "cta1Type",
+        "value": "primary",
+        "label": "First CTA Type",
+        "description": "'Primary' will render button filled, 'Secondary' with an outline.",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta1Text",
+        "value": "",
+        "label": "First CTA Text",
+        "description": "Text to be shown inside button."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta1",
+        "value": "",
+        "label": "First CTA Link",
+        "description": "What link to open when clicking the button."
+      },
+      {
+        "component": "select",
+        "name": "cta2Type",
+        "value": "primary",
+        "label": "Second CTA Type",
+        "description": "'Primary' will render button filled, 'Secondary' with an outline.",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta2Text",
+        "value": "",
+        "label": "Second CTA Text",
+        "description": "Text to be shown inside button."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta2",
+        "value": "",
+        "label": "Second CTA Link",
+        "description": "What link to open when clicking the button."
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "ctaImageOne",
+        "label": "CTA Image 1",
+        "description": "Select CTA Image 1"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaImageAltOne",
+        "value": "",
+        "label": "CTA Image Alt 1",
+        "description": "Enter CTA Alt 1"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaImageURLOne",
+        "value": "",
+        "label": "CTA Image URL 1",
+        "description": "Enter CTA Image URL 1"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageTextOne",
+        "value": "",
+        "label": "Image Text 1",
+        "description": "Enter Image Text 1"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "ctaImageTwo",
+        "label": "CTA Image 2",
+        "description": "Select CTA Image 2"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaImageAltTwo",
+        "value": "",
+        "label": "CTA Image Alt 2",
+        "description": "Enter CTA Alt 2"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaImageURLTwo",
+        "value": "",
+        "label": "CTA Image URL 2",
+        "description": "Enter CTA Image URL 2"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageTextTwo",
+        "value": "",
+        "label": "Image Text 2",
+        "description": "Enter Image Text 2"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "ctaImageThree",
+        "label": "CTA Image 3",
+        "description": "Select CTA Image 3"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaImageAltThree",
+        "value": "",
+        "label": "CTA Image Alt 3",
+        "description": "Enter CTA Alt 3"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaImageURLThree",
+        "value": "",
+        "label": "CTA Image URL 3",
+        "description": "Enter CTA Image URL 3"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageTextThree",
+        "value": "",
+        "label": "Image Text 3",
+        "description": "Enter Image Text 3"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "mobile-bg-image",
+        "label": "Mobile Background Image",
+        "description": "Mobile Background Image"
+      }
+    ]
+  },
+  {
+    "id": "tab",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Heading"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "content",
+        "value": "",
+        "label": "Body"
+      }
+    ]
+  },
+  {
+    "id": "detailed-teaser",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Style",
+        "valueType": "string",
+        "required": true,
+        "maxSize": 2,
+        "options": [
+          {
+            "name": "Theme",
+            "children": [
+              {
+                "name": "Light",
+                "value": "light"
+              },
+              {
+                "name": "Dark",
+                "value": "dark"
+              }
+            ]
+          },
+          {
+            "name": "Alignment",
+            "children": [
+              {
+                "name": "Left",
+                "value": "left"
+              },
+              {
+                "name": "Right",
+                "value": "right"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference",
+        "label": "Background Image",
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "eyebrow_logo",
+        "label": "Logo Image",
+        "description": "Optional Logo above eyebrow.",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrow_logoAlt",
+        "value": "",
+        "label": "Logo Image alt text",
+        "description": "A descriptive text of the logo image."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrow_title",
+        "value": "",
+        "label": "Eyebrow Main Title",
+        "description": "Sets the small Eyebrow above the title."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrow_subtitle",
+        "value": "",
+        "label": "Eybrow Sub Title",
+        "description": "Second, smaller eyebrow line."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Heading",
+        "description": "Sets the main title of the teaser."
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "titleType",
+        "value": "h3",
+        "label": "Heading Type",
+        "options": [
+          {
+            "name": "H1",
+            "value": "h1"
+          },
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          },
+          {
+            "name": "H5",
+            "value": "h5"
+          },
+          {
+            "name": "H6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "value": "",
+        "label": "Teaser Text"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "subject",
+        "label": "Subject Image",
+        "description": "Optional Subject Image.",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "subjectAlt",
+        "value": "",
+        "label": "Subject Alt Text",
+        "description": "A descriptive text of the subject image."
+      },
+      {
+        "component": "select",
+        "name": "cta1Type",
+        "value": "primary",
+        "label": "First CTA Type",
+        "description": "'Primary' will render button filled, 'Secondary' with an outline.",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta1Text",
+        "value": "",
+        "label": "First CTA Text",
+        "description": "Text to be shown inside button."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta1",
+        "value": "",
+        "label": "First CTA Link",
+        "description": "What link to open when clicking the button."
+      },
+      {
+        "component": "select",
+        "name": "cta2Type",
+        "value": "primary",
+        "label": "Second CTA Type",
+        "description": "'Primary' will render button filled, 'Secondary' with an outline.",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta2Text",
+        "value": "",
+        "label": "Second CTA Text",
+        "description": "Text to be shown inside button."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta2",
+        "value": "",
+        "label": "Second CTA Link",
+        "description": "What link to open when clicking the button."
+      }
+    ]
+  },
+  {
+    "id": "accordion-group",
+    "fields": []
+  },
+  {
+    "id": "accordion",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "heading",
+        "value": "",
+        "label": "Heading"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "headingType",
+        "value": "h3",
+        "label": "Heading Type",
+        "options": [
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          },
+          {
+            "name": "H5",
+            "value": "h5"
+          },
+          {
+            "name": "H6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "body",
+        "value": "",
+        "label": "Body"
+      }
+    ]
+  },
+  {
+    "id": "teaserv2",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "href",
+        "value": "",
+        "label": "Link",
+        "description": "Main Anchor Tag"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference",
+        "label": "Background Image",
+        "description": "Background Image"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference1",
+        "label": "Image",
+        "description": "Front Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "fileReferenceAlt",
+        "value": "",
+        "label": "Alt Text Front Image",
+        "description": "Alt text for front image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Heading",
+        "description": "Sets the main title of the teaser."
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "longDescr",
+        "value": "",
+        "label": "Long Description",
+        "description": "The description shown in Desktop and Tablet view."
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "shortDescr",
+        "value": "",
+        "label": "Short Description",
+        "description": "The description shown in Mobile view. If not set long text is used."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta1Text",
+        "value": "",
+        "label": "First CTA Text",
+        "description": "Text to be shown inside button."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaTexthref",
+        "value": "",
+        "label": "First CTA Link",
+        "description": "What link to open when clicking the button."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "bgcolor",
+        "value": "",
+        "label": "Background Color Code",
+        "description": "Background Color Code"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "teaserv2Attribute",
+        "value": "",
+        "label": "teaserv2 Attribute",
+        "description": "Set TeaserV2 Attribute"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "textwithinnerhtml",
+        "value": "",
+        "label": "Text With RTE"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference3",
+        "label": "Mobile Image",
+        "description": "Mobile Image"
+      }
+    ]
+  },
+  {
+    "id": "code",
+    "fields": [
+      {
+        "component": "text-area",
+        "valueType": "string",
+        "name": "htmlCode",
+        "value": "",
+        "label": "Author HTML Code"
+      }
+    ]
+  },
+  {
+    "id": "contentfragment",
+    "fields": [
+      {
+        "component": "aem-content-fragment",
+        "name": "picker",
+        "label": "Content Fragment Picker",
+        "valueType": "string",
+        "variationName": "contentFragmentVariation"
+      }
+    ]
+  },
+  {
+    "id": "experiencefragment",
+    "fields": [
+      {
+        "component": "aem-experience-fragment",
+        "name": "picker",
+        "label": "Experience Fragment Picker",
+        "valueType": "string",
+        "variationName": "experienceFragmentVariation"
+      },
+      {
+        "component": "text",
+        "name": "Domain Name",
+        "label": "Domain Name",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "wrappercreation",
+    "fields": []
+  },
+  {
+    "id": "container",
+    "fields": [
+      {
+        "component": "container",
+        "label": "Container",
+        "name": "container",
+        "valueType": "string",
+        "collapsible": true,
+        "fields": [
+          {
+            "component": "text-input",
+            "label": "Simple Text 1",
+            "name": "text",
+            "valueType": "string"
+          },
+          {
+            "component": "text-input",
+            "label": "Simple Text 2",
+            "name": "text2",
+            "valueType": "string"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mycontainer",
+    "fields": [
+      {
+        "name": "content",
+        "label": "Content",
+        "component": "myContainer"
+      }
+    ]
+  },
+  {
+    "id": "keyfeatures",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Main Href",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "innerhref",
+        "label": "Inner text",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "leftsideimage",
+        "label": "Left-Side Image"
+      },
+      {
+        "component": "richtext",
+        "name": "leftsideimagealt",
+        "label": "Left-Side Image Alt",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "rightsideimage",
+        "label": "Right-Side Image"
+      },
+      {
+        "component": "richtext",
+        "name": "rightsideimagealt",
+        "label": "Right-Side Image Alt",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "rightsideimagelink",
+        "label": "Right-Side Image Link",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "keyfeaturetitle",
+        "label": "Key Feature Title",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "keyfeatureimageplus",
+        "label": "Key Feature Image Plus"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "keyfeatureimageminus",
+        "label": "Key Feature Image Minus"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "keyfeatureimageinnerimage1",
+        "label": "Key Feature Inner Image"
+      },
+      {
+        "component": "richtext",
+        "name": "keyfeatureinnertext1",
+        "label": "Key Feature Inner Text",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "keyfeatureimageinnerimage2",
+        "label": "Key Feature Inner Image"
+      },
+      {
+        "component": "richtext",
+        "name": "keyfeatureinnertext2",
+        "label": "Key Feature Inner Text",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "keyfeatureimageinnerimage3",
+        "label": "Key Feature Inner Image"
+      },
+      {
+        "component": "richtext",
+        "name": "keyfeatureinnertext3",
+        "label": "Key Feature Inner Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "embed",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "videourl",
+        "label": "videourl"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "thumbnail",
+        "label": "thumbnail"
+      }
+    ]
+  },
+  {
+    "id": "homeloancalculator",
+    "fields": [
+      {
+        "component": "text-input",
+        "label": "URL of Content Fragment",
+        "name": "text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "eligibilitycalculator",
+    "fields": [
+      {
+        "component": "text-input",
+        "label": "URL of Content Fragment",
+        "name": "text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "emiandeligiblitycalc",
+    "fields": []
+  },
+  {
+    "id": "applyloanform",
+    "fields": [
+      {
+        "component": "text-input",
+        "label": "URL of Content Fragment",
+        "name": "text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "datepickerlib",
+    "fields": [
+      {
+        "component": "text-input",
+        "label": "URL of Content Fragment",
+        "name": "text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "homeloancalculatorv2",
+    "fields": [
+      {
+        "component": "text-input",
+        "label": "URL of Content Fragment",
+        "name": "text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "calculatorsection",
+    "fields": [
+      {
+        "component": "text-input",
+        "label": "URL of Content Fragment",
+        "name": "text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "aprcalculator",
+    "fields": [
+      {
+        "component": "text-input",
+        "label": "URL of Content Fragment",
+        "name": "text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "gstcalculator",
+    "fields": [
+      {
+        "component": "text-input",
+        "label": "URL of Content Fragment",
+        "name": "text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "partpaymentcalculator",
+    "fields": [
+      {
+        "component": "text-input",
+        "label": "URL of Content Fragment",
+        "name": "text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "authorisedagencies",
+    "fields": [
+      {
+        "component": "text-input",
+        "label": "URL of Content Fragment",
+        "name": "text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "branchlocator",
+    "fields": [
+      {
+        "component": "text-input",
+        "label": "URL of Content Fragment",
+        "name": "text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "sarfaesiretail",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "sarfaesiretail",
+        "value": "",
+        "label": "Sarfaesi Retail Path",
+        "description": "Sets the path of the Sarfaesi Retail."
+      }
+    ]
+  },
+  {
+    "id": "fontawesome",
+    "fields": [
+      {
+        "component": "text-input",
+        "label": "URL of Content Fragment",
+        "name": "text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "select-tag",
+    "fields": [
+      {
+        "component": "text-input",
+        "name": "name",
+        "label": "Name",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text-name",
+        "label": "Name",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "label",
+        "label": "Label",
+        "valueType": "string",
+        "multi": true
+      },
+      {
+        "component": "text-input",
+        "name": "value",
+        "label": "value",
+        "valueType": "string",
+        "multi": true
+      },
+      {
+        "component": "text-input",
+        "name": "disabled",
+        "label": "disabled",
+        "valueType": "string",
+        "multi": true
+      },
+      {
+        "component": "text-input",
+        "name": "selected",
+        "label": "Selected",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "api-url",
+        "label": "API Url",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "loader",
+    "fields": [
+      {
+        "component": "text-input",
+        "name": "loader-name",
+        "label": "Loader Name",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "whatsappservice",
+    "fields": [
+      {
+        "component": "reference",
+        "label": "Front Image",
+        "name": "reference2",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "text1",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text2",
+        "label": "Mobile Button Text",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text3",
+        "label": "Mobile Button Href",
+        "valueType": "string"
+      },
+      {
+        "component": "container",
+        "label": "Single Input Field on Banner",
+        "name": "container",
+        "valueType": "string",
+        "collapsible": true,
+        "fields": [
+          {
+            "component": "text",
+            "label": "Placholder",
+            "name": "text4",
+            "valueType": "string"
+          },
+          {
+            "component": "text",
+            "label": "Span Text",
+            "name": "text5",
+            "valueType": "string"
+          },
+          {
+            "component": "text",
+            "label": "Upper Text",
+            "name": "text6",
+            "valueType": "string"
+          },
+          {
+            "component": "text",
+            "label": "Submit Button Text",
+            "name": "text7",
+            "valueType": "string"
+          },
+          {
+            "component": "richtext",
+            "label": "T & C",
+            "name": "text8",
+            "valueType": "string"
+          },
+          {
+            "component": "boolean",
+            "label": "Checbox",
+            "name": "boolean",
+            "valueType": "boolean"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "branchlocatormoredetails",
+    "fields": []
+  },
+  {
+    "id": "updatesheet",
+    "fields": [
+      {
+        "component": "text",
+        "label": "text",
+        "name": "text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "moredetailsaddress",
+    "fields": [
+      {
+        "component": "richtext",
+        "label": "Title",
+        "name": "text1",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "label": "Address Desktop",
+        "name": "text2",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "label": "Address Mobile",
+        "name": "text3",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "label": "Holiday",
+        "name": "text4",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "label": "Info",
+        "name": "text5",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "label": "Image",
+        "name": "reference",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt",
+        "value": "Default alt",
+        "label": "ImageAlt"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "url",
+        "value": "API URL",
+        "label": "Excel URL"
+      }
+    ]
+  },
+  {
+    "id": "branchdetaildescription",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Branch Detail Description",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "form",
+    "fields": [
+      {
+        "component": "text",
+        "name": "form-url",
+        "value": "",
+        "label": "Form Url",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "api-url",
+        "value": "",
+        "label": "API Url",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "nearestlocation",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "nearestlocation",
+        "value": "Nearest Location",
+        "label": "Nearest Location"
+      }
+    ]
+  },
+  {
+    "id": "fragment",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "fragment",
+        "value": "Url text",
+        "label": "URL Text"
+      }
+    ]
+  },
+  {
+    "id": "formformatpdf",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "branchcarousel",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "branchcarousel",
+        "value": "Url text",
+        "label": "URL Text"
+      }
+    ]
+  },
+  {
+    "id": "branchkeyfeatures",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "branchkeyfeatures",
+        "value": "Url text",
+        "label": "URL Text"
       }
     ]
   }

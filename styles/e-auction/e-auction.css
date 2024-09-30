@@ -1,0 +1,113 @@
+.section.e-auction-wrapper{
+    display: flex;
+    justify-content: center;
+    margin: 0 8px;
+    overflow: hidden;
+}
+.section.e-auction-wrapper .code-wrapper{
+    padding: 10px;
+    border: 1px solid #333;
+    width: 90%;
+}
+.section.e-auction-wrapper .code-wrapper .code.block > div table tbody tr{
+    border: 1px solid #c5c4c4;
+}
+.section.e-auction-wrapper .code-wrapper .code.block > div table tbody tr :nth-child(5){
+    width: 200px;
+}
+.section.e-auction-wrapper .code-wrapper .code.block > div table tbody tr:first-child td{
+    background-color: #fa4616;
+    color: #fff;
+    padding: 2px;
+    font-size: 0.813rem;
+    text-align: center;
+    font-family: nunito-bold;
+    border-style: none;
+}
+.section.e-auction-wrapper .code-wrapper .code.block > div table tbody tr td{
+    border: 1px solid #c5c4c4;
+    padding: 2px;
+    font-size: 0.75rem;
+    font-family: nunito-regular;
+    vertical-align: middle;
+}
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td a sub,
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td a{
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 0.75rem;
+    line-height: 19.5px;
+    color: black;
+}
+@media screen and (max-width: 767.99px){
+    .section.e-auction-wrapper .code-wrapper .code{
+        overflow-x: scroll;
+    }
+    .section.e-auction-wrapper .code-wrapper {
+        padding: 20px;
+        width: 100%;
+    }
+}
+
+/* E Auction sale Financial Start */
+
+.section.e-auction-fin-assets .accordion-group-wrapper .accordion-group .accordion details div{
+    padding: 0 !important;
+    border: unset !important ;
+}
+
+.section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li>a sub{
+    cursor: pointer;
+    display: block;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+}
+/* E Auction sale Financial End */
+
+.section.sarfaesi-wholesale-wrapper.e-auction-table .code-wrapper .code >div >table tbody tr:first-child th:nth-child(n+2),
+ .section.sarfaesi-wholesale-wrapper.e-auction-table .code-wrapper .code >div >table tbody tr:first-child td:nth-child(n+2) {
+    min-width: auto;
+ }
+ .section.sarfaesi-wholesale-wrapper.e-auction-table .code-wrapper .code >div >table tbody tr:first-child td:nth-child(5){
+    min-width: 344px !important;
+ }
+ .section.sarfaesi-wholesale-wrapper.e-auction-table .code-wrapper .code >div >table tbody tr:first-child td:last-child{
+    max-width: 100px !important;
+ }
+/* e auction table ends */
+
+.section.e-auction-sale-notice .default-content-wrapper >h2{
+    color: #000;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 24px;
+    margin-bottom: 24px;
+}
+.section.e-auction-sale-notice .default-content-wrapper p{
+    color: #000;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 24px;
+} 
+.section.e-auction-sale-notice .default-content-wrapper p a{
+    color: var(--orange);
+    margin: 0;
+    padding: 0;
+    background: unset;
+    border: unset;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 24px;
+}  
+.section.e-auction-sale-notice .default-content-wrapper >p >a >sub{
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--orange);
+}

@@ -1,0 +1,210 @@
+.section.rupee-cards-wrapper{
+    background-color: #FFF7F4;
+    padding: 64px 0 80px;
+}
+
+.section.rupee-cards-wrapper .default-content-wrapper h2{
+    color: #333;
+    display: block;
+    font-family: 'Nunito-Bold', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 48px;
+    margin-bottom: 12px;
+}
+.section.rupee-cards-wrapper .default-content-wrapper p{
+    color: #666;
+    display: block;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    margin-bottom: 40px;
+}
+.section.rupee-cards-wrapper .bg-image{
+    width: 100%;
+    display: block;
+}
+.section.rupee-cards-wrapper .bg-image .front-image picture img{
+    position: absolute;
+    bottom: 30px;
+    height: 36px;
+    width: 40px;
+}
+.section.rupee-cards-wrapper .wrapper-creation-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.section.rupee-cards-wrapper .bg-image .title{
+    color: #333;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    text-decoration: none;
+}
+.section.rupee-cards-wrapper .bg-image .description{
+    color: #000;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 2rem;
+    line-height: 48px;
+    text-decoration: none;
+    padding-left: 40px;
+}
+.section.rupee-cards-wrapper .wrapper-creation-container .teaserv2-wrapper .teaser{
+    min-height: 120px;
+}
+.section.rupee-cards-wrapper .teaserv2-wrapper .teaserv2 a{
+    text-decoration: none;
+    display: block;
+    padding: 24px;
+}
+.section.rupee-cards-wrapper .teaser.block .background{
+    padding: 24px;
+}
+.teaserv2-wrapper .teaserv2 a .bg-image .front-picture picture img {
+    height: 36px;
+    width: 40px;
+    position: absolute;
+    left: 24px;
+    bottom: 30px;
+}
+.section.rupee-cards-wrapper .long-description p strong{
+    color: #000;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 2rem;
+    line-height: 48px;
+}
+.section.rupee-cards-wrapper .foreground .text .title #loan-for-{
+    color: #333;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+}
+.section.rupee-cards-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper{
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, .1), 0 8px 10px -6px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 12px;
+    position: relative;
+    min-height: 120px;
+}
+.section.rupee-cards-wrapper p strong{
+    padding-left: 40px;
+}
+.section.rupee-cards-wrapper .long-description p:nth-child(1){
+    color: #333;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+}
+.section.rupee-cards-wrapper .teaserv2.block::before{
+    content: '';
+    height: 12px;
+    width: 16px;
+    background-image: url('/content/dam/piramalfinance/product-page/personal-loan/right-arrow.svg');
+    bottom: 26px;
+    display: block;
+    position: absolute;
+    right: 26px;
+    pointer-events: none;
+}
+
+@media screen and (max-width:1024px) {
+    .section.rupee-cards-wrapper .wrapper-creation-container{
+        grid-template-columns: 1fr;
+    }
+    .section.rupee-cards-wrapper .teaserv2-wrapper .teaser{
+        min-height: 100px;
+    }
+    .section.rupee-cards-wrapper .teaserv2-wrapper .teaserv2 a .bg-image .front-picture picture img{
+        bottom: 21px;
+        left: 16px;
+        height: 32px;
+        width: 36px;
+    }
+    .section.rupee-cards-wrapper .teaser.block .background{
+        padding: 16px;
+    }
+    .section.rupee-cards-wrapper .long-description p strong{
+        font-size: 1.75rem;
+        margin-top: 8px;
+        padding-left: 44px;
+    }
+    .section.rupee-cards-wrapper .teaserv2-wrapper .teaserv2 a{
+        padding: 16px;
+    }
+    .section.rupee-cards-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper{
+        min-height: unset;
+    }
+    .section.rupee-cards-wrapper .bg-image .description{
+        padding-left: 44px;
+        margin-top: 8px;
+        font-size: 1.75rem;
+        line-height: 36px;
+        width: 88%;
+    }
+    .section.rupee-cards-wrapper .bg-image .front-image picture img{
+        bottom: 17px;
+    }
+}
+@media screen and (max-width:767px) {
+    .section.rupee-cards-wrapper{
+        padding: 32px 0 40px;
+    }
+    .section.rupee-cards-wrapper .wrapper-creation-container{
+        grid-template-columns: 1fr;
+    }
+    .section.rupee-cards-wrapper .long-description p strong{
+        font-size: 1.75rem;
+        line-height: 36px;
+        width: 88%;
+        display: inline-block   ;
+        margin-top: 8px;
+        padding-left: 44px;
+    }
+    .section.rupee-cards-wrapper .teaserv2-wrapper .teaserv2 a .bg-image .front-picture picture img{
+        display: block;
+        height: 32px;
+        width: 36px;
+        left: 15px;
+        bottom: 20px;
+    }
+    .section.rupee-cards-wrapper .teaserv2-wrapper .teaser{
+        padding: 16px;
+        min-height: 100px;
+    }
+    .section.rupee-cards-wrapper .default-content-wrapper p{
+        color: #666;
+        font-family: Nunito-Regular, sans-serif;
+        font-size: 0.875rem;
+        line-height: 20px;
+        margin-bottom: 32px;
+    }
+    .section.rupee-cards-wrapper .default-content-wrapper h2{
+        font-size: 1.125rem;
+        line-height: 27px;
+        margin-bottom: 8px;
+    }
+    .section.rupee-cards-wrapper .teaserv2.block .background{
+        padding: unset;
+    }
+    .section.rupee-cards-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper{
+        min-height: unset;
+    }
+    .section.rupee-cards-wrapper .teaserv2-wrapper .teaserv2 a{
+        padding: 16px;
+    }
+    .section.rupee-cards-wrapper .bg-image .front-image picture img{
+        bottom: 20px;
+        height: 32px;
+        width: 36px;
+    }
+    .section.rupee-cards-wrapper .bg-image .description{
+        padding-left: 44px;
+        margin-top: 8px;
+    }
+}
+

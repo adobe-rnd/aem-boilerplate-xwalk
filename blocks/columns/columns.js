@@ -1,4 +1,11 @@
+import { decorateViewMore } from "../../scripts/scripts.js";
+import { statemasterGetStatesApi } from '../applyloanform/statemasterapi.js';
+import { validationJSFunc } from '../applyloanform/validation.js';
+import { formOpen } from '../applyloanform/applyloanforms.js';
+
+
 export default function decorate(block) {
+  decorateViewMore(block);
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
 
@@ -15,4 +22,25 @@ export default function decorate(block) {
       }
     });
   });
+
+  try {
+    openFormColumn(block);
+  } catch (error) {
+    console.warn(error);
+  }
+}
+
+
+function openFormColumn(block){
+    var sectionBlock = block.closest(".section");
+    if(sectionBlock.classList.contains('open-form-on-click-column')){
+      sectionBlock.querySelector('.open-form-on-click-column .columns-wrapper').querySelectorAll('.button-container').forEach(function (eachApplyFormClick) {
+        eachApplyFormClick.addEventListener('click', async (e) => {
+          statemasterGetStatesApi();
+          validationJSFunc();
+          formOpen();
+          e.preventDefault();
+        });
+      });
+    }
 }
