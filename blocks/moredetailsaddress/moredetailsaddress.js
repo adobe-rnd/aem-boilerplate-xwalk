@@ -313,7 +313,7 @@ function sortingNearestBranch(lat, lng, data) {
 
 
 function renderData(){
-  document.querySelector('.address-title h1').innerText = setLocationObj.geoInfo.city;
+  document.querySelector('.address-title h1').innerText = setLocationObj.geoInfo.location;
   document.querySelector('.address-desktop p').innerText = setLocationObj.address;
   document.querySelector('.address-mobile p').innerText = setLocationObj.address;
   let currentDay = getDay();
