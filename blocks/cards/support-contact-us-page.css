@@ -352,7 +352,8 @@ section.contact-us-download-wrapper .imgwithlink-wrapper .imgwithlink{
         left: 25px;
     }
     .section.contact-us-download-wrapper .imgwithlink-wrapper>.imgwithlink>.image-href-desktop>a>picture>img{
-        display: none;
+        height: 176px;
+        min-height: 176px;
     }
     .section.contact-us-download-wrapper .imgwithlink-wrapper .imgwithlink{
         display: block;
