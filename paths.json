@@ -1,6 +1,6 @@
 {
   "mappings": [
-    "/content/aem-boilerplate/:/",
-    "/content/aem-boilerplate/configuration:/.helix/config.json"
+    "/content/piramalfinance-eds/:/",
+    "/content/piramalfinance-eds/configuration:/.helix/config.json"
   ]
 }
