@@ -1,6 +1,6 @@
 {
   "mappings": [
-    "/content/piramalfinance-eds/:/",
-    "/content/piramalfinance-eds/configuration:/.helix/config.json"
+    "/content/piramalfinance-ueds/:/",
+    "/content/piramalfinance-ueds/configuration:/.helix/config.json"
   ]
 }
