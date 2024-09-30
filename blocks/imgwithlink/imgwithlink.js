@@ -6,10 +6,10 @@ export default function decorate(block) {
   if (newDiv) {
     block.innerHTML = "";
     block.appendChild(newDiv);
-    if (document.querySelectorAll('.download-piramal-wrapper').length > 0) {
-      var desktopLinks = document.querySelectorAll('.download-piramal-wrapper .image-href-desktop a');
-      var mobileLinks = document.querySelectorAll('.download-piramal-wrapper .image-href-mobile a');
-      var anchor_class = desktopLinks.length > 0 ? desktopLinks : mobileLinks;
+    if (document.querySelectorAll('.download-piramal-wrapper,.contact-us-download-wrapper').length > 0) {
+      let desktopLinks = document.querySelectorAll('.download-piramal-wrapper .image-href-desktop a, .contact-us-download-wrapper .image-href-desktop a');
+      let mobileLinks = document.querySelectorAll('.download-piramal-wrapper .image-href-desktop a, .contact-us-download-wrapper .image-href-desktop a');
+      let anchor_class = desktopLinks.length > 0 ? desktopLinks : mobileLinks;
       anchor_class[0].removeAttribute('href');
       // document.querySelectorAll('.download-piramal-wrapper .image-href-desktop a')[0].removeAttribute('href');
     }
@@ -52,14 +52,14 @@ function createImageWithLink(block) {
       const menu_category = menu_categoryel.innerText.trim();
       if (block.closest(".footer") && click_text && menu_category) outboundClick(click_text, menu_category, "footer", targetObject.pageName);
       else if (block.closest(".download-piramal-wrapper") && click_text && menu_category) ctaClick(click_text, menu_category, menu_category, targetObject.pageName);
-      else if(block.closest('.section.career-social-cards')){
-          let data = {};
-          let urlText = e.target.closest('a').getAttribute('href').split('/')[2];
-          const pattern = /^www\.|\.com$/g;
-          const result = urlText.replace(pattern, '');
-          data.click_text = result;
-          data.cta_position = e.target.closest('.section').querySelector('.wrapper-creation-container .default-content-wrapper p').textContent.trim();
-          ctaClickInteraction(data);
+      else if (block.closest('.section.career-social-cards')) {
+        let data = {};
+        let urlText = e.target.closest('a').getAttribute('href').split('/')[2];
+        const pattern = /^www\.|\.com$/g;
+        const result = urlText.replace(pattern, '');
+        data.click_text = result;
+        data.cta_position = e.target.closest('.section').querySelector('.wrapper-creation-container .default-content-wrapper p').textContent.trim();
+        ctaClickInteraction(data);
       }
     } catch (error) {
       console.warn(error);

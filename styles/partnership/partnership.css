@@ -174,11 +174,12 @@
     font-size: 1rem;
     line-height: 24px;
     text-decoration: none;
+    font-style: normal;
 }
 
-.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p a {
+/* .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p a {
     display: block;
-}
+} */
 
 .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div h2{
     color: rgba(0, 0, 0, .871);

@@ -238,13 +238,35 @@
 }
 
 /* Download Piramal App Start */
-
-.section.contact-us-download-wrapper div:nth-child(2) {
+.section.contact-us-download-wrapper{
+    position: relative;
+}
+.section.contact-us-download-wrapper >.default-content-wrapper {
+    display: block;
+    position: absolute;
     left: calc((100% - 1120px) / 2);
-    margin-top: 20px;
+    top: 50px;
+}
+.section.contact-us-download-wrapper>.default-content-wrapper>h4 {
+    margin: 0;
+    color: #fff;
+    font-family: "Nunito-Bold", sans-serif;
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 36px;
+    margin-bottom: 8px;
+}
+.section.contact-us-download-wrapper>.default-content-wrapper>p {
+    margin: 0px;
+    color: #fff;
+    font-family: "Nunito-Regular", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 32px;
 }
 
-.section.contact-us-download-wrapper div:nth-child(2) ul {
+
+.section.contact-us-download-wrapper .default-content-wrapper ul {
     display: flex;
     align-items: center;
     justify-content: start;
@@ -252,17 +274,18 @@
     margin-top: 25px;
 }
 
-.section.contact-us-download-wrapper div:nth-child(2) ul li {
+.section.contact-us-download-wrapper .default-content-wrapper ul li {
     max-width: 110px;
     font: 700 12px 'Nunito-Bold', 'sans-serif';
     line-height: 16px;
+    color: #fff;
 }
 
-.section.contact-us-download-wrapper div:nth-child(2) ul li span {
+.section.contact-us-download-wrapper .default-content-wrapper ul li span {
     display: contents;
 }
 
-.section.contact-us-download-wrapper div:nth-child(2) ul li span img {
+.section.contact-us-download-wrapper .default-content-wrapper ul li span img {
     display: block;
     height: 81px;
     width: 81px;
@@ -273,7 +296,7 @@
 }
 
 .section.contact-us-download-wrapper .default-content-wrapper>p:last-child>a {
-    position: absolute;
+    /* position: absolute; */
     background: #f26841;
     border-radius: 8px;
     color: #fff;
@@ -282,51 +305,97 @@
     font-weight: 700;
     line-height: 16px;
     padding: 8px 15px;
-    bottom: 96px;
-    left: 25px;
+    /* bottom: 96px;
+    left: 25px; */
 
 }
-.section.contact-us-download-wrapper.contact-us-download-wrapper .imgwithlink-wrapper>.imgwithlink>.image-href-desktop>a>picture>img{
+.section.contact-us-download-wrapper .imgwithlink-wrapper>.imgwithlink>.image-href-desktop>a>picture>img{
     min-height: 260px;
     height: 260px;
+    border-radius: 20px;
+    display: block;
+    width: 100%;
+}
+section.contact-us-download-wrapper .imgwithlink-wrapper .imgwithlink{
+    display: none;
+}
+.section.contact-us-download-wrapper .default-content-wrapper>*:nth-child(-n+3) {
+    display: flex;
+}
+.section.contact-us-download-wrapper .default-content-wrapper>*:nth-child(n+4) {
+    display: none;
 }
 @media (min-width: 1025px) and (max-width: 1300px) {
-    .section.contact-us-download-wrapper div:nth-child(2) {
+    .section.contact-us-download-wrapper .default-content-wrapper {
         left: calc((100% - 891px) / 2);
     }
 }
 /* @media (min-width: 1025px) and (max-width: 1300px) {
     
 } */
-@media screen and (min-width: 767px) and (max-width: 1024px) {
-    .section.contact-us-download-wrapper div:nth-child(2) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .section.contact-us-download-wrapper .default-content-wrapper {
         /* top: 146px; */
         left: 58px;
     }
-        .section.download-piramal-wrapper .default-content-wrapper>*:nth-child(n+1) {
+        /* .section.contact-us-download-wrapper .default-content-wrapper>*:nth-child(n+1) {
             display: flex;
-        }
+        } */
 }
-@media screen and (max-width: 767px) {
-    .section.download-piramal-wrapper div:nth-child(2) {
+@media screen and (max-width: 768px) {
+    .section.contact-us-download-wrapper .default-content-wrapper {
         display: block;
         left: unset;
-        top: unset;
+        top: 0;
+        position: absolute;
+        top: 25px;
+        left: 25px;
     }
-
-    .section.download-piramal-wrapper .default-content-wrapper>*:nth-child(n+1) {
+    .section.contact-us-download-wrapper .imgwithlink-wrapper>.imgwithlink>.image-href-desktop>a>picture>img{
+        height: 176px;
+        min-height: 176px;
+    }
+    .section.contact-us-download-wrapper .imgwithlink-wrapper .imgwithlink{
+        display: block;
+        height: 176px;
+        background-image: linear-gradient(266deg, #365069 .16%, #5e7387 101.15%);
+        border-radius: 16px;
+        position: relative;
+    
+    }
+    .section.contact-us-download-wrapper .imgwithlink-wrapper .imgwithlink .image-href-mobile a img{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    .section.contact-us-download-wrapper>.default-content-wrapper>h4{
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        line-height: unset;
+    }
+    .section.contact-us-download-wrapper>.default-content-wrapper>p{
+        font-size: 14px;
+        color: #fff;
+        padding-top: 2px;
+        position: unset;
+        margin-bottom: 0;
+        line-height: unset;
+        margin-bottom: 4px;
+    }
+    .section.contact-us-download-wrapper .default-content-wrapper>*:nth-child(-n+3) {
         display: none;
     }
-
+    .section.contact-us-download-wrapper .default-content-wrapper>*:nth-child(n+4) {
+        display: block;
+    }
     .section.contact-us-download-wrapper .default-content-wrapper p:last-child {
         display: block;
         position: relative;
-        left: unset;
-        top: unset;
-        bottom: unset;
+        margin-top: 8px;
     }
 
-    .section.download-piramal-wrapper .default-content-wrapper>*:nth-child(n+1):has(p>a) {
+    .section.contact-us-download-wrapper .default-content-wrapper>*:nth-child(n+1):has(p>a) {
         display: block;
     }
 }

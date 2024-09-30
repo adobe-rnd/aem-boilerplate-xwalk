@@ -14,7 +14,7 @@
     justify-content: space-between;
     row-gap: 40px;
     column-gap: 11pc;
-    
+    align-items: flex-start;
 }
 .section.available-facilities .columns-wrapper .columns >div >div >h2{
     color: #333;
