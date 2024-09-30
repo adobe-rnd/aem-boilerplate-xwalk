@@ -234,6 +234,18 @@
 .home-loans-products-wrapper.home-loans-single-products-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper .keyfeatures div .homeloanteaser .cmp-teaser .cmp-teaser__link .cmp-teaser__image .cmp-image .cmp-image__image{
     height: auto;
 }
+
+.section.personal-loan-key-feature .default-content-wrapper h2 {
+    color: var(--black);
+    display: block;
+    font-family: 'Nunito-Extrabold', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 2.5rem;
+    padding-bottom: 8px;
+    margin: 0;
+}
+
 @media screen and (max-width: 767px) {
     .section.home-loans-products-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container{
         grid-template-columns: 1fr;
@@ -300,6 +312,12 @@
     .section.home-loans-products-wrapper .keyfeature-container .keyfeatures-info .keyfeatures{
         min-height: 220px;
     }   
+
+    .section.personal-loan-key-feature .default-content-wrapper h2 {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        padding-bottom: 4px;
+    }
 }
 
 @media (min-width:768px) and (max-width: 1024px) {
