@@ -323,3 +323,9 @@
         min-height: 100%;
     }
 }
+
+@media screen and (min-width:1025px) and (max-width: 1300px) {
+    .section.home-loans-products-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper .keyfeatures .homeloanteaser .cmp-teaser .cmp-teaser__link{
+        height: 235px;
+    }
+  }
