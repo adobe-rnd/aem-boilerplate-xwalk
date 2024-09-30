@@ -45,7 +45,7 @@ export default function returnLatLan() {
 
 function getStateName(lat, lan) {
     return new Promise(function (resolve, reject) {
-        fetchAPI('GET', 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lan + '&sensor=true&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ').then(function (res) {
+        fetchAPI('GET', 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lan + '&sensor=true&key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k').then(function (res) {
             resolve(res)
         }).catch(function (err) {
             resolve(err);

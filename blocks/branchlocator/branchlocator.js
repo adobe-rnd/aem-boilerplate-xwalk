@@ -140,7 +140,7 @@ export default async function decorate(block) {
   }
   
     returnLatLan().then(function ({ lat, lng }) {
-        loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ").then((resolve) => {
+        loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k").then((resolve) => {
             myMap(lat, lng);
         });
     }); */
