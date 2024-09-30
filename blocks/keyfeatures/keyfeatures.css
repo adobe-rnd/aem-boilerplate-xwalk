@@ -74,7 +74,7 @@
 .section.home-loans-products-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper .keyfeatures .homeloanteaser .cmp-teaser .cmp-teaser__link .cmp-teaser__content p:nth-child(2){
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
-    display: -webkit-box;
+    display: -webkit-box !important;
     overflow: hidden;
 
 }
