@@ -114,7 +114,8 @@ export default async function decorate(block) {
 
     let url = linkURL.textContent.trim();
     let urlRepoonse = await CFApiCall(url);
-    const jsonResponseData = JSON.parse(urlRepoonse?.data[0]?.branchlocatorobj);
+    // const jsonResponseData = JSON.parse(urlRepoonse?.data[0]?.branchlocatorobj);
+    const jsonResponseData = urlRepoonse?.data;
 
     if(sessionStorage.getItem('data')){
         setLocationObj.getExcelData = JSON.parse(sessionStorage.getItem('data'));
