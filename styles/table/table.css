@@ -89,7 +89,14 @@
 .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr:last-child td {
     border-bottom: unset;
 }
-
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td span{
+    color: var(--midnight);
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
 .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td {
     border-bottom: 1px solid var(--pattensblue);
     border-left: 1px solid var(--pattensblue);
