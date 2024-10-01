@@ -342,8 +342,8 @@ function reviewRender(){
         new Glider(entry.target, {
             "slidesToShow": 1,
             "slidesToScroll": 1,
-            "scrollLock": true,
             "draggable": true,
+            "scrollLock": true,
             "arrows": {
               prev: currentPrevButton,
               next: currentNextButton

@@ -127,12 +127,13 @@
 }
 
 .branchcustomer-review-cards .carousel-wrapper .carousel.block{
-    position: static;
+    position: unset;
 }
-
+ 
 .branchcustomer-review-cards .carousel-wrapper .carousel.block  #carouselInner > div.glider-track{
-    gap: 23px;
+    column-gap: 23px;
     padding: 15px;
+    transform: unset;
 }
 
 .branchcustomer-review-cards .carousel-wrapper .carousel.block  #carouselInner > div.glider-track > div.teaser.block{
@@ -289,6 +290,18 @@
     font-size: 1.75rem;
     margin-bottom: 14px;
     font-family: "Nunito-Bold";
+}
+
+.branchcustomer-review-cards .carousel-wrapper .carousel.block .panel-container {
+    margin: 0 30px;
+}
+
+.branchcustomer-review-cards .carousel-wrapper .carousel.block #carouselInner > div.glider-track > div.teaser.block {
+    max-width: 320px;
+}
+
+.branchcustomer-review-cards .carousel-wrapper .carousel.block  #carouselInner > div.glider-track {
+    padding: 15px 10px;
 }
 
 .branchcustomer-review-cards .carousel-wrapper .carousel.block #carouselInner > div.glider-track > div.teaser.block .background .foreground .text .short-description {
