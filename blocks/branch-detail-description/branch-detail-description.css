@@ -9,7 +9,8 @@
     margin-top: 23px;
 }
 
-.branch-description-wrapper .branch-detail-description.block .branch-description-wrapper .branch-description-content {
+.branch-description-wrapper .branch-detail-description.block .branch-description-wrapper .branch-description-content,
+.branch-description-wrapper .branch-detail-description.block .branch-description-wrapper .branch-description-content>span {
     font-family: "Nunito-Regular";
     font-size: 1rem;
     line-height: 24px;
