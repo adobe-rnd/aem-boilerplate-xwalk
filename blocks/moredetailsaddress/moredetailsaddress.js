@@ -350,7 +350,7 @@ function reviewRender(){
             },
             "responsive": [
               { "breakpoint": 767, "settings": { "slidesToShow": 2, "slidesToScroll": 1 } },
-              { "breakpoint": 1025, "settings": { "slidesToShow": 3, "slidesToScroll": 1, "scrollLock": true, "draggable": true, "settings": { "slidesToShow": 2, "slidesToScroll": 1, "duration": 0.25 } } }
+              { "breakpoint": 1025, "settings": { "slidesToShow": 3, "slidesToScroll": 1, "scrollLock": true, "draggable": true } }
             ]
           });
           // observer.unobserve(entry.target);
