@@ -4,7 +4,7 @@ import { setLocationObj } from "../moredetailsaddress/moredetailsaddress.js";
 
 export default function decorate(block) {
     
-    let {pagecontent, geoInfo:{city}} = setLocationObj;
+    let {pagecontent, geoInfo:{location}} = setLocationObj;
 
     if(!pagecontent){
       return false;
@@ -15,7 +15,7 @@ export default function decorate(block) {
     let seemoreContent = pagecontent.split(" ").slice(90).join(" ");
     block.innerHTML = `
         <div class="branch-description-wrapper">
-            <h2 class="branch-heading">About Piramal Finance ${city} Branch</h2>
+            <h2 class="branch-heading">About Piramal Finance ${location} Branch</h2>
             <p>
                 <span class="branch-description-content">
                     <strong>${slicedbold}</strong>${slicedData}
