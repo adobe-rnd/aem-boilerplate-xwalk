@@ -1,10 +1,12 @@
 import { showingStateCity } from "../../scripts/scripts.js";
 import { onClickCity, onClickState } from "./branchlocator-biz.js";
 import { setLocationObj } from "./branchlocator-init.js";
+import { sortElements } from "./sort.js";
 
 export function renderState(block, setLocationObj){
     let renderStateLi = block.closest('.section').querySelector('.state-wrapper > .option-wrapper');
     renderStateLi.innerHTML = setLocationObj.stateLi;
+    sortElements(renderStateLi);
     hideshowState(block);
     searchStateCity(block);
     onClickState(block);
@@ -13,6 +15,7 @@ export function renderState(block, setLocationObj){
 export function renderCity(block){
     let renderCityLi = block.closest('.section').querySelector('.city-wrapper > .option-wrapper');
     renderCityLi.innerHTML = setLocationObj.cityLi;
+    sortElements(renderCityLi);
     hideshowCity(block);
     searchStateCity(block);
     onClickCity(block);

@@ -26,8 +26,8 @@
     justify-content: start;
     padding: 16px 24px;
     flex-direction: column-reverse;
-    min-height: 220px;
-    row-gap: 10px;
+    min-height: 240px;
+    row-gap: 16px;
 }
 
 .section.home-loans-products-wrapper.home-loans-products-single-card .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper .keyfeatures .homeloanteaser .cmp-teaser .cmp-teaser__link,
@@ -331,8 +331,8 @@
 
 @media (min-width:768px) and (max-width: 1024px) {
     .section.home-loans-products-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper .keyfeatures .homeloanteaser .cmp-teaser .cmp-teaser__link{
-        min-height: 240px;
-        row-gap: 12px;
+        min-height: 270px;
+        /* row-gap: 12px; */
         padding: 16px 24px;
     }
     .section.home-loans-products-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper .keyfeatures .homeloanteaser .cmp-teaser .cmp-teaser__link .cmp-teaser__content p{
@@ -343,10 +343,6 @@
     }
     .section.home-loans-products-wrapper.renovation-home-loan-products .keyfeature-container .keyfeatures-info .keyfeatures{
         min-height: 272px;
-    }
-
-    .section.personal-loan-key-feature>.fragment-wrapper>.section .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper .keyfeatures .homeloanteaser .cmp-teaser .cmp-teaser__link {
-        min-height: 220px;
     }
 }
 
