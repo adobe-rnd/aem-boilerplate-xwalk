@@ -1,4 +1,5 @@
 import { fetchAPI } from "../../scripts/scripts.js";
+console.log('Accordian');
 
 /* this function also gets called by accordion-group */
 export function generateAccordionDOM(block) {
@@ -23,11 +24,11 @@ export function generateAccordionDOM(block) {
         elementDiv.innerHTML = elementText;
       }
 
-      
+
       details.append(elementDiv);
     }
   });
-  
+
   return details;
 }
 
@@ -55,7 +56,7 @@ function KYCDocuments(data) {
     <td style=" text-align: right;"><img src="${each.rowtwoimg}" alt=""></td>`
         : "";
     html +=
-    `<table class="${each.class} " cellpadding="1" cellspacing="0" border="1">
+      `<table class="${each.class} " cellpadding="1" cellspacing="0" border="1">
         <tbody>
             <tr>
                 <th style="text-align: left;">${each.title}
