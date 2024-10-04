@@ -48,7 +48,7 @@ function openFunctionFAQ(block) {
       if (this.classList.contains('active')) {
         setTimeout(() => {
           this.closest("details").removeAttribute("open");
-        }, 1000);
+        });
         this.classList.remove("active");
       } else {
         titles.forEach(function (title) {
