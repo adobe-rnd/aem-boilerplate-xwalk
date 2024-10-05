@@ -1,6 +1,6 @@
 
 export default async function decorate(block) {
-    const bannersResponse = await fetch("/variations-index.json");
+    const bannersResponse = await fetch("/series-banners-index.json");
     const bannerIndex = await bannersResponse.json();
     const variationPages = bannerIndex.data;
 

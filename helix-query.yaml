@@ -1,9 +1,22 @@
 version: 1
 indices:
-  variations:
-    target: /variations-index.json
+  series-banners:
+    target: /series-banners-index.json
     include:
-      - /banners/variation-*
+      - /series-banners/variation-*
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: |
+          attribute(el, 'content')
+      url:
+        select: head > meta[property="og:url"]
+        value: |
+          attribute(el, 'content')
+  foot-banners:
+    target: /foot-banners-index.json
+    include:
+      - /foot-banners/variation-*
     properties:
       title:
         select: head > meta[property="og:title"]
