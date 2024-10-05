@@ -7,7 +7,7 @@ function insertSmartCrop(url, smartCropName) {
 export default async function decorate(block) {
     const config = readBlockConfig(block);
 
-    const smartCropName = '320x120';
+    const smartCropName = '190x90';
 
     const image1Path = insertSmartCrop(config.image1, smartCropName);
     const image2Path = insertSmartCrop(config.image2, smartCropName);
@@ -25,8 +25,8 @@ export default async function decorate(block) {
             <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
             <div id="f1" class="frame-visual absolute">
                 <div class="month absolute">${text1}</div>
-                <div class="img centerY">
-                    <img src="${image1Path}" alt="" class="centerY">
+                <div class="img centerX">
+                    <img src="${image1Path}" alt="" class="centerX">
                 </div>
                 <div class="bottom absolute">
                     <img src="${image6Path}" alt="" class="logo-bottom absolute">
@@ -37,8 +37,8 @@ export default async function decorate(block) {
 
             <div id="f2" class="frame-visual absolute">
                 <div class="month absolute">${text1}</div>
-                <div class="img centerY">
-                    <img src="${image2Path}" alt="" class="centerY">
+                <div class="img centerX">
+                    <img src="${image2Path}" alt="" class="centerX">
                 </div>
                 <div class="bottom absolute">
                     <img src="${image6Path}" alt="" class="logo-bottom absolute">
@@ -49,8 +49,8 @@ export default async function decorate(block) {
 
             <div id="f3" class="frame-visual absolute">
                 <div class="month absolute">${text1}</div>
-                <div class="img centerY">
-                    <img src="${image3Path}" alt="" class="centerY">
+                <div class="img centerX">
+                    <img src="${image3Path}" alt="" class="centerX">
                 </div>
                 <div class="bottom absolute">
                     <img src="${image6Path}" alt="" class="logo-bottom absolute">
@@ -60,9 +60,9 @@ export default async function decorate(block) {
             </div>
 
             <div id="packshot" class="absolute">
-                <img src="${image4Path}" alt="" id="logo-top" class="centerX">
+                <img src="${image4Path}" alt="" id="logo-top" class="centerY">
                 <img src="${image5Path}" alt="" id="offer" class="centerXY">
-                <div class="cta centerX"><div class="shadow"></div>${text2}</div>
+                <div class="cta centerY"><div class="shadow"></div>${text2}</div>
                 <div class="ml absolute">${text3}</div>
             </div>
         </div>
@@ -87,7 +87,7 @@ function loadScript() {
     TweenMax.set('.centerY', {position:'absolute', yPercent:-50, top:'50%'});
     TweenMax.set('.centerXY', {position:'absolute', xPercent:-50, yPercent:-50, left:'50%', top:'50%'});
 
-    var tl = new TimelineMax(/*{repeat:1, repeatDelay: 3}*/)
+    var tl = new TimelineMax()
     .set('#ad', {visibility : 'visible'})
 
     .addLabel('start', '+=.2')
@@ -115,7 +115,7 @@ function loadScript() {
 
     .addLabel('packshot', '+=1.2')
     .to('#f3', .5, {opacity:0, ease:Power0.easeOut}, 'packshot-=.5')
-    .from('#packshot #logo-top', .6, {y:-35, ease:Power2.easeOut}, 'packshot')
+    .from('#packshot #logo-top', .6, {y:-50, opacity:0, ease:Power2.easeOut}, 'packshot')
     .from('#packshot #offer', .5, {opacity:0, ease:Power0.easeOut}, '-=.1')
     .from('#packshot .cta', .5, {opacity:0, ease:Power0.easeOut}, '-=.1')
     .from('#packshot .ml', .5, {opacity:0, ease:Power0.easeOut}, '-=.3')

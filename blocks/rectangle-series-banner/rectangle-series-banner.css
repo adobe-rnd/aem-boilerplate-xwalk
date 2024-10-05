@@ -1,128 +1,128 @@
-
 *, *:before, *:after {
-box-sizing: border-box;
-}
-body {
-margin: 0;
-padding: 0;
-}
-#ad {
-background-color: #000;
-position: relative;
-width: 728px;
-height: 90px;
-overflow: hidden;
-border: 1px solid #000;
-visibility: hidden;
-cursor: pointer;
-color:#FFF;
-font-family: 'Canalp-Regu', sans-serif;
-font-size: 16px;
-font-weight: normal;
-line-height: 1;
-}
-.absolute {position: absolute}
-
-
-.frame-visual {
-width:100%;
-height:100%;
-}
-.frame-visual .month {
+    box-sizing: border-box;
+    }
+    body {
+    margin: 0;
+    padding: 0;
+    }
+    #ad {
+    background-color: #000;
+    position: relative;
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    border: 1px solid #000;
+    visibility: hidden;
+    cursor: pointer;
+    color:#FFF;
+    font-family: 'Canalp-Regu', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1;
+    }
+    .absolute {position: absolute}
+    
+    
+    .frame-visual {
+    width:100%;
+    height:100%;
+    }
+    .frame-visual .month {
+    width: 100%;
     text-align: center;
     font-family: 'CanalpDem-Ital';
-    font-size: 11px;
-    top: 7px;
-    width: 239px;
-}
-.frame-visual > .img {
-width: 50%;
-height: 100%;
-overflow: hidden;
-margin-left:-35px;
-}
-.frame-visual > .img img {
-height:100%;
-}
-
-.frame-visual .bottom {
-width: 100%;
-bottom: 0;
-height: 100%;
-}
-.frame-visual .bottom img {
-    bottom: 31px;
-    right: 162px;
-    width: 119px;
-}
-.frame-visual .bottom .cta {
+    font-size: 10px;
+    top: 4px;
+    }
+    .frame-visual > .img {
+    width: 100%;
+    margin-top: -20px;
+    height: 100%;
+    overflow: hidden;
+    }
+    .frame-visual > .img img {
+    width:100%;
+    }
+    
+    .frame-visual .bottom {
+    width: 100%;
+    bottom: 0;
+    height: 100%;
+    }
+    .frame-visual .bottom img {
+    bottom: 20px;
+    left: 6px;
+    width: 87px;
+    }
+    .frame-visual .bottom .cta {
     background: #EB3554;
     border-radius: 4px;
     font-family: 'Canalp-BoldItal';
     text-transform: uppercase;
-    bottom: 18px;
-    right: 10px;
-    width: 139px;
-    height: 59px;
-    line-height: 59px;
-    text-align: center;
-    font-size: 16px;
-    overflow: hidden;
-}
-.frame-visual .bottom .cta .shadow {
-position: absolute;
-height: 100%;
-width: 100%;
-transform: rotate(-50deg);
-top: 0;
-left: 0;
-background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.01) 1%, rgba(255, 255, 255, 0.69) 50%, rgba(255, 255, 255, 0) 100%);
-}
-.frame-visual .bottom .ml{
-    bottom: 5px;
-    font-size: 6px;
-    right: 11px;
-
-}
-
-
-#packshot {
-    width:100%;
-    height:100%;
-}
-#packshot #logo-top {
-    width: 129px;
-    left: 10px;
-}
-#packshot #offer {
-    width: 220px;
-    margin: 0 0 0 -57px;
-}
-#packshot .cta {
-    background: #EB3554;
-    border-radius: 3px;
-    font-family: 'Canalp-BoldItal';
-    text-transform: uppercase;
-    right: 37px;
-    width: 211px;
-    height: 27px;
-    line-height: 27px;
+    bottom: 16px;
+    right: 7px;
+    width: 188px;
+    height: 34px;
+    line-height: 34px;
     text-align: center;
     font-size: 15px;
     overflow: hidden;
-    margin-top: -2px;
-}
-#packshot .cta .shadow {
-position: absolute;
-height: 100%;
-width: 100%;
-transform: rotate(-50deg);
-top: 0;
-left: 0;
-background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.01) 1%, rgba(255, 255, 255, 0.69) 50%, rgba(255, 255, 255, 0) 100%);
-}
-#packshot .ml{
+    }
+    .frame-visual .bottom .cta .shadow {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: rotate(-50deg);
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.01) 1%, rgba(255, 255, 255, 0.69) 50%, rgba(255, 255, 255, 0) 100%);
+    }
+    .frame-visual .bottom .ml{
     bottom: 5px;
     font-size: 6px;
-    right: 11px;
-}
+    left: 8px;
+    
+    }
+    
+    
+    #packshot {
+        width:100%;
+        height:100%;
+    }
+    #packshot #logo-top {
+        width: 286px;
+        top: 12px;
+    }
+    #packshot #offer {
+        width: 250px;
+        margin-top: -10px;
+    }
+    #packshot .cta {
+        background: #EB3554;
+        border-radius: 3px;
+        font-family: 'Canalp-BoldItal';
+        text-transform: uppercase;
+        bottom: 26px;
+        right: 7px;
+        width: 201px;
+        height: 27px;
+        line-height: 27px;
+        text-align: center;
+        font-size: 15px;
+        overflow: hidden;
+    }
+    #packshot .cta .shadow {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: rotate(-50deg);
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.01) 1%, rgba(255, 255, 255, 0.69) 50%, rgba(255, 255, 255, 0) 100%);
+    }
+    #packshot .ml{
+    bottom: 5px;
+    font-size: 6px;
+    left: 8px;
+    
+    }
