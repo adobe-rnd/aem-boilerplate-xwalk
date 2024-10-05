@@ -19,21 +19,21 @@ export default async function decorate(block) {
             <div class="iframe-row">
                 <div class="iframe-container">
                     <div class="iframe-wrapper iframe-wrapper-728">
-                        <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-1?${timestamp}"></iframe>
+                        <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/horizontal-series-banner?${timestamp}"></iframe>
                     </div>
-                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-1?${timestamp}" target="_blank">Open Banner 1</a>
+                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/horizontal-series-banner?${timestamp}" target="_blank">Open Banner</a>
                 </div>
                 <div class="iframe-container">
                     <div class="iframe-wrapper iframe-wrapper-300">
-                        <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-3?${timestamp}"></iframe>
+                        <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/rectangle-series-banner?${timestamp}"></iframe>
                     </div>
-                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-3?${timestamp}" target="_blank">Open Banner 3</a>
+                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/rectangle-series-banner?${timestamp}" target="_blank">Open Banner</a>
                 </div>
                 <div class="iframe-container">
                     <div class="iframe-wrapper iframe-wrapper-160">
-                        <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-2?${timestamp}"></iframe>
+                        <iframe src="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/vertical-series-banner?${timestamp}"></iframe>
                     </div>
-                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/banner-2?${timestamp}" target="_blank">Open Banner 2</a>
+                    <a class="external-link" href="https://main--xwalk-automation--fornacif.hlx.live${variationPath}/vertical-series-banner?${timestamp}" target="_blank">Open Banner</a>
                 </div>
             </div>
         `;
