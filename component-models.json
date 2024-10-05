@@ -191,7 +191,7 @@
     ]
   },
   {
-    "id": "banner",
+    "id": "series-banner",
     "fields": [
       {
         "component": "reference",

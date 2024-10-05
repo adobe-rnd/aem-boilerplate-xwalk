@@ -173,15 +173,15 @@
           }
         },
         {
-          "title": "Banner 1",
-          "id": "banner1",
+          "title": "Horizontal Series Banner",
+          "id": "horizontal-series-banner",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "banner1",
-                  "model": "banner",  
+                  "name": "horizontal-series-banner",
+                  "model": "series-banner",  
                   "key-value": true
                 }
               }
@@ -189,15 +189,15 @@
           }
         },
         {
-          "title": "Banner 2",
-          "id": "banner2",
+          "title": "Rectangle Series Banner",
+          "id": "rectangle-series-banner",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "banner2",
-                  "model": "banner",  
+                  "name": "rectangle-series-banner",
+                  "model": "series-banner",  
                   "key-value": true
                 }
               }
@@ -205,15 +205,15 @@
           }
         },
         {
-          "title": "Banner 3",
-          "id": "banner3",
+          "title": "Vertical Series Banner",
+          "id": "vertical-series-banner",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "banner3",
-                  "model": "banner",  
+                  "name": "vertical-series-banner",
+                  "model": "series-banner",  
                   "key-value": true
                 }
               }

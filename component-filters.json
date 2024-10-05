@@ -14,9 +14,9 @@
       "title",
       "hero",
       "banners",
-      "banner1",
-      "banner2",
-      "banner3",
+      "horizontal-series-banner",
+      "rectangle-series-banner",
+      "vertical-series-banner",
       "cards",
       "columns",
       "fragment"
