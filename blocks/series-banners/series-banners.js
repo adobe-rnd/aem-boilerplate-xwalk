@@ -5,7 +5,7 @@ export default async function decorate(block) {
     const variationPages = bannerIndex.data;
 
     let htmlContent = `
-        <h1>HTML Banners Automation - Canal+</h1>
+        <h1>HTML Series Banners Automation - Canal+</h1>
     `;
 
     const timestamp = Date.now();
