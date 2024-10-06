@@ -23,7 +23,7 @@ export default async function decorate(block) {
 
     const content = document.createRange().createContextualFragment(`
         <div id="ad">
-
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
             <div id="f1" class="frame absolute">
                 <div class="moment absolute">${text1}</div>
                 <div class="text-center centerY">${text2}</div>
