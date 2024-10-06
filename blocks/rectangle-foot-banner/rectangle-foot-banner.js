@@ -7,7 +7,7 @@ function insertSmartCrop(url, smartCropName) {
 export default async function decorate(block) {
     const config = readBlockConfig(block);
 
-    const smartCropName = '728x90';
+    const smartCropName = '300x250';
 
     const image1Path = config.image1;
     const image2Path = config.image2;
@@ -26,7 +26,7 @@ export default async function decorate(block) {
             <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
             <div id="f1" class="frame absolute">
                 <div class="moment absolute">${text1}</div>
-                <div class="text-center centerY">${text2}</div>
+                <div class="text-center centerXY">${text2}</div>
                 <div class="bottom absolute">
                     <img src="${image4Path}" alt="" class="logo-bottom absolute">
                     <div class="cta absolute"><div class="shadow"></div>${text4}</div>
@@ -35,12 +35,15 @@ export default async function decorate(block) {
             </div>
 
             <div id="f2" class="frame absolute">
-                <img src="${image3Path}" alt="" class="bg">
+                <img src="stade.jpg" alt="" class="bg">
+                <div class="shadow absolute"></div>
                 <div class="moment absolute">${text1}</div>
-                <div id="packshot" class="centerY">
+                <div id="packshot" class="absolute">
+                    ${text3}
+                    <div class="team-pics">
                         <img src="${image1Path}" alt="">
-                        <div>${text3}</div>
                         <img src="${image2Path}" alt="">
+                    </div>
                 </div>
                 <div class="bottom absolute">
                     <img src="${image4Path}" alt="" class="logo-bottom absolute">
@@ -52,13 +55,11 @@ export default async function decorate(block) {
             <div id="f3" class="frame ps absolute">
                 <div class="shadow absolute"></div>
           
-                <img src="${image4Path}" alt="" class="logo centerY">
-                <img src="${image5Path}" alt="" id="prix" class="centerXY">
+                <img src="${image4Path}" alt="" class="logo centerX">
+                <img src="prix.svg" alt="" id="prix" class="centerXY">
                 <div class="cta absolute"><div class="shadow"></div>${text4}</div>
                 <div class="ml absolute">${text5}</div>
             </div>
-
-
         </div>
     `);
 

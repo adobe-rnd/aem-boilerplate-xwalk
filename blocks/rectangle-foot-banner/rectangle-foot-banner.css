@@ -8,8 +8,8 @@ padding: 0;
 #ad {
 background-color: #000;
 position: relative;
-width: 728px;
-height: 90px;
+width: 300px;
+height: 250px;
 overflow: hidden;
 border: 1px solid #000;
 visibility: hidden;
@@ -22,7 +22,7 @@ line-height: 1;
 }
 .absolute {position: absolute}
 .bg {
-    width: 100%;
+    height: 100%;
 }
 
 .frame {
@@ -30,10 +30,11 @@ width:100%;
 height:100%;
 }
 .frame .moment {
-    font-family: 'CanalpDem-Ital';
-    font-size: 11px;
-    top: 4px;
-    left: 120px;
+width: 100%;
+text-align: center;
+font-family: 'CanalpDem-Ital';
+font-size: 11px;
+top: 4px;
 }
 .frame > .img {
 width: 100%;
@@ -43,27 +44,22 @@ overflow: hidden;
 }
 .frame > .img img {
 width:100%;
-margin:0 10px;
 }
 
 .frame .bottom {
-    width: 290px;
-    bottom: 0;
-    right: 0;
-    height: 100%;
-    background: #000;
+width: 100%;
+bottom: 0;
+height: 100%;
 }
 .frame .bottom img {
-    top: 29px;
-    left: 10px;
-    width: 118px;
+bottom: 24px;
+left: 6px;
+width: 87px;
 }
-
 .ml{
-    bottom: 5px;
-    font-size: 6px;
-    width: 100%;
-    text-align: center;
+bottom: 5px;
+font-size: 6px;
+left: 8px;
 
 }
 .frame .shadow {
@@ -73,61 +69,76 @@ margin:0 10px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.9010197829131653) 20%, rgba(0, 0, 0, 0.6041010154061625) 30%, rgba(29, 29, 29, 0.1) 40%, rgba(255, 255, 255, 0) 100%);
     top: 0;
 }
-.frame .bottom .cta, .ps .cta  {
+.frame .bottom .cta, .ps .cta {
     background: #EB3554;
     border-radius: 4px;
     font-family: 'Canalp-BoldItal';
     text-transform: uppercase;
-    bottom: 18px;
-    right: 10px;
-    width: 140px;
-    height: 59px;
-    line-height: 60px;
+    bottom: 16px;
+    right: 7px;
+    width: 188px;
+    height: 34px;
+    line-height: 34px;
     text-align: center;
-    font-size: 16px;
+    font-size: 15px;
     overflow: hidden;
-}
-.frame .bottom .cta .shadow, .ps .cta .shadow {
-position: absolute;
-height: 100%;
-width: 100%;
-transform: rotate(-50deg);
-top: 0;
-left: 0;
-background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.01) 1%, rgba(255, 255, 255, 0.69) 50%, rgba(255, 255, 255, 0) 100%);
-}
+    }
+    .frame .bottom .cta .shadow, .ps .cta .shadow {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: rotate(-50deg);
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.01) 1%, rgba(255, 255, 255, 0.69) 50%, rgba(255, 255, 255, 0) 100%);
+    }
 .text-center {
     font-family: 'CanalpDem-Ital';
     font-size: 19px;
-    white-space: nowrap;
-    left: 60px;
+    margin-top: -24px;
+    white-space: nowrap;;
 }
 #packshot {
     font-family: 'CanalpDem-Ital';
-    width: 438px;
+    width: 100%;
     text-align: center;
-    margin-top: 10px;
-    font-size: 16px;
+    top: 26px;
+    font-size: 25px;
 }
-#packshot div {display:inline-block;}
-#packshot img {
+#packshot .team-pics img {
     display: inline-block;
-    height: 70px;
-    vertical-align: middle;
+    height: 90px;
+    margin: 13px 5px 0;
 }
 
 
 .ps {
-    background: #000;
-    }
-    .ps .logo {
-        width: 160px;
-        left:15px;
-    }
-    .ps #prix {
-        width: 260px;
-    }
-    .ps .ml {
-        text-align: right;
-        right: 14px;
-    }
+background: #000;
+}
+.ps .logo {
+    width: 160px;
+    top:15px;
+}
+.ps #prix {
+    width: 270px;
+    margin-top:-6px;
+}
+.ps .cta {
+    background: #EB3554;
+    border-radius: 4px;
+    font-family: 'Canalp-BoldItal';
+    text-transform: uppercase;
+    bottom: 16px;
+    right: 7px;
+    width: 283px;
+    height: 39px;
+    line-height: 39px;
+    text-align: center;
+    font-size: 18px;
+    overflow: hidden;
+}
+.ps .ml {
+    text-align: center;
+    width: 100%;
+    left: 0;
+}
