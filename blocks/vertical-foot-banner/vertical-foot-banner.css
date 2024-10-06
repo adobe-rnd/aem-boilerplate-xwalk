@@ -1,0 +1,129 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    }
+    body {
+    margin: 0;
+    padding: 0;
+    }
+    #ad {
+    background-color: #000;
+    position: relative;
+    width: 160px;
+    height: 600px;
+    overflow: hidden;
+    border: 1px solid #000;
+    visibility: hidden;
+    cursor: pointer;
+    color:#FFF;
+    font-family: 'Canalp-Regu', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1;
+    }
+    .absolute {position: absolute}
+    .bg {
+        height: 100%;
+    }
+    
+    .frame {
+    width:100%;
+    height:100%;
+    }
+    .frame .moment {
+        width: 100%;
+        text-align: center;
+        font-family: 'CanalpDem-Ital';
+        font-size: 15px;
+        top: 13px;
+        line-height: 1.1;
+    }
+    .frame > .img {
+    width: 100%;
+    margin-top: -20px;
+    height: 100%;
+    overflow: hidden;
+    }
+    .frame > .img img {
+    width:100%;
+    }
+    
+    .frame .bottom {
+    width: 100%;
+    bottom: 0;
+    height: 100%;
+    }
+    .frame .bottom img {
+        bottom: 100px;
+        left: 11px;
+        width: 137px;
+    }
+    
+    .ml{
+        bottom: 19px;
+        font-size: 8.5px;
+        padding: 0 5px;
+        text-align: center;
+    }
+    .frame .shadow {
+        width: 100%;
+        height: 100%;
+        background: rgb(0, 0, 0);
+        background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.9010197829131653) 20%, rgba(0, 0, 0, 0.6041010154061625) 30%, rgba(29, 29, 29, 0.1) 40%, rgba(255, 255, 255, 0) 100%);
+        top: 0;
+    }
+    .frame .bottom .cta, .ps .cta {
+        background: #EB3554;
+        border-radius: 4px;
+        font-family: 'Canalp-BoldItal';
+        text-transform: uppercase;
+        bottom: 56px;
+        right: 10px;
+        width: 138px;
+        height: 27px;
+        line-height: 27px;
+        text-align: center;
+        font-size: 14px;
+        overflow: hidden;
+    }
+    .frame .bottom .cta .shadow, .ps .cta .shadow {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: rotate(-50deg);
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.01) 1%, rgba(255, 255, 255, 0.69) 50%, rgba(255, 255, 255, 0) 100%);
+    }
+    .text-center {
+        font-family: 'CanalpDem-Ital';
+        font-size: 19px;
+        margin-top: -37px;
+        white-space: nowrap;
+        line-height: 1.1;
+    }
+    #packshot {
+        font-family: 'CanalpDem-Ital';
+        width: 100%;
+        text-align: center;
+        top: 163px;
+        font-size: 20px;
+    }
+    #packshot .team-pics img {
+        display: inline-block;
+        width: 45%;
+        margin: 70px 0 0 0;
+    }
+    
+    
+    .ps {
+        background: #000;
+        }
+        .ps .logo {
+            width: 140px;
+            top:15px;
+        }
+        .ps #prix {
+            width: 150px;
+            margin-top:20px;
+        }
+    
