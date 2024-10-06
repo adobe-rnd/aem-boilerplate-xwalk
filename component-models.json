@@ -319,11 +319,6 @@
         "component": "text",
         "name": "text5",
         "label": "Text 5"
-      },
-      {
-        "component": "text",
-        "name": "text6",
-        "label": "Text 6"
       }
     ]
   }
