@@ -7,7 +7,7 @@ function insertSmartCrop(url, smartCropName) {
 export default async function decorate(block) {
     const config = readBlockConfig(block);
 
-    const smartCropName = '728x90';
+    const smartCropName = '160x600';
 
     const image1Path = config.image1;
     const image2Path = config.image2;
