@@ -17,6 +17,10 @@
       "horizontal-series-banner",
       "rectangle-series-banner",
       "vertical-series-banner",
+      "foot-banners",
+      "horizontal-foot-banner",
+      "rectangle-foot-banner",
+      "vertical-foot-banner",
       "cards",
       "columns",
       "fragment"
