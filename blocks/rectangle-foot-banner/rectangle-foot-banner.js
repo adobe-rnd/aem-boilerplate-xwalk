@@ -35,7 +35,7 @@ export default async function decorate(block) {
             </div>
 
             <div id="f2" class="frame absolute">
-                <img src="stade.jpg" alt="" class="bg">
+                <img src="${image3Path}" alt="" class="bg">
                 <div class="shadow absolute"></div>
                 <div class="moment absolute">${text1}</div>
                 <div id="packshot" class="absolute">
@@ -56,7 +56,7 @@ export default async function decorate(block) {
                 <div class="shadow absolute"></div>
           
                 <img src="${image4Path}" alt="" class="logo centerX">
-                <img src="prix.svg" alt="" id="prix" class="centerXY">
+                <img src="${image5Path}" alt="" id="prix" class="centerXY">
                 <div class="cta absolute"><div class="shadow"></div>${text4}</div>
                 <div class="ml absolute">${text5}</div>
             </div>
