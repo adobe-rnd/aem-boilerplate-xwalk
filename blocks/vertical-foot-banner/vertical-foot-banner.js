@@ -35,14 +35,14 @@ export default async function decorate(block) {
             </div>
 
             <div id="f2" class="frame absolute">
-                <img src="stade.jpg" alt="" class="bg">
+                <img src="${image3Path}" alt="" class="bg">
                 <div class="shadow absolute"></div>
                 <div class="moment absolute">${text1}</div>
                 <div id="packshot" class="centerY">
                     ${text3}
                     <div class="team-pics">
-                        <img src="psg-players.png" alt="">
-                        <img src="barca-players.png" alt="">
+                        <img src="${image1Path}" alt="">
+                        <img src="${image2Path}" alt="">
                     </div>
                 </div>
                 <div class="bottom absolute">
