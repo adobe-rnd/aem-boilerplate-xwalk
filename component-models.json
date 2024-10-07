@@ -1300,6 +1300,10 @@
               {
                 "name": "video-component-carousel",
                 "value": "video-component-carousel"
+              },
+              {
+                "name": "carousel-heading-inline-mob",
+                "value": "carousel-heading-inline-mob"
               }
             ]
           },
