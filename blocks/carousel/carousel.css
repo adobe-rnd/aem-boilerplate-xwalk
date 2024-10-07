@@ -455,7 +455,8 @@
   background-repeat: no-repeat;
 }
 
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>h1 {
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>h1,
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>h1>strong {
   color: var(--black);
   font-family: "Nunito-Extrabold", sans-serif;
   font-size: 3rem;
@@ -464,8 +465,8 @@
   margin-bottom: 16px;
 }
 
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>h2 {
-  display: none;
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>h1>strong {
+  display: block;
 }
 
 @media (min-width:1024px) and (max-width:1366px) {
@@ -708,7 +709,8 @@
     background-image: url("/images/banner2-background-image-mobile.png");
   }
 
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>h1 {
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>h1,
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>h1>strong {
     font-size: 1.5rem;
     line-height: 32px;
     margin-bottom: unset;
@@ -799,17 +801,8 @@
     padding-top: 40px;
   }
 
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>h2 {
-    display: block;
-    font-size: 1.5rem;
-    line-height: 32px;
-    color: var(--black);
-    font-family: "Nunito-Extrabold", sans-serif;
-    font-weight: 800;
-  }
-
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>h1 {
-    display: none;
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.carousel-heading-inline-mob>.background .foreground .text .long-description>h1>strong {
+    display: inline;
   }
 }
 
