@@ -1,3 +1,9 @@
+@font-face { font-family: 'Canalp-BoldItal';src: url('fonts/Canalp-BoldItal.woff') format('woff');font-weight: normal;font-style: normal;}
+@font-face { font-family: 'CanalpDem-Ital';src:url('fonts/CanalpDem-Ital.woff') format('woff');font-weight: normal;font-style: normal;}
+@font-face { font-family: 'Canalp-Regu';src: url('fonts/Canalp-Regu.woff') format('woff');font-weight: normal;font-style: normal;}
+@font-face { font-family: 'CanalpDem-Regu';src: url('fonts/CanalpDem-Regu.woff') format('woff');font-weight: normal;font-style: normal;}
+@font-face { font-family: 'Canalp-ReguItal';src: url('fonts/Canalp-ReguItal.woff') format('woff');font-weight: normal;font-style: normal;}
+
 *, *:before, *:after {
 box-sizing: border-box;
 }
