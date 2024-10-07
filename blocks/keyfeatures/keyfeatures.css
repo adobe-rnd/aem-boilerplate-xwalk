@@ -141,7 +141,8 @@
     padding-left: 16px;
 }
 
-.section.home-loans-products-wrapper .homeloanteaser .keyfeature-container .keyfeatures .feature .feature-details div p:first-child{
+.section.home-loans-products-wrapper .homeloanteaser .keyfeature-container .keyfeatures .feature .feature-details div p:first-child,
+.section.home-loans-products-wrapper .homeloanteaser .keyfeature-container .keyfeatures .feature .feature-details div p {
     color: #666;
     font-family: Nunito-Regular, sans-serif;
     font-size: 0.875rem;
