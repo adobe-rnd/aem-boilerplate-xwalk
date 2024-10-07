@@ -417,7 +417,6 @@
   right: 0;
 }
 
-.section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>h1,
 .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>p {
   display: none
 }
@@ -753,19 +752,10 @@
   .section.banner-carousel-wrapper.self-employed-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
     right: 10px;
   }
-  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>h1,
   .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>p {
     display: block;
   }
 
-  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>h1 {
-    color: var(--black);
-    font-family: "Nunito-Extrabold", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 800;
-    line-height: 32px;
-    margin: unset;
-  }
   .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>p {
     color: var(--gradient-gray);
     font-family: "Nunito-Regular", sans-serif;
@@ -774,8 +764,6 @@
     line-height: 20px;
     margin-top: 12px;
   }
-  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .title>h1,
-  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .eyebrow,
   .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>p {
     display: none;
   }
