@@ -1056,6 +1056,10 @@
               {
                 "name": "Right",
                 "value": "right"
+              },
+              {
+                "name": "Bottom",
+                "value": "bottom"
               }
             ]
           },
