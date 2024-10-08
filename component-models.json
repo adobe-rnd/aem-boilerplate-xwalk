@@ -1300,6 +1300,10 @@
               {
                 "name": "video-component-carousel",
                 "value": "video-component-carousel"
+              },
+              {
+                "name": "carousel-heading-inline-mob",
+                "value": "carousel-heading-inline-mob"
               }
             ]
           },
@@ -2744,6 +2748,17 @@
         "name": "branchkeyfeatures",
         "value": "Url text",
         "label": "URL Text"
+      }
+    ]
+  },
+  {
+    "id": "schema-tag",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "schema-tag",
+        "label": "Schema Tag"
       }
     ]
   }
