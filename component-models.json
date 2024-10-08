@@ -150,7 +150,7 @@
     ]
   },
   {
-    "id": "table",
+    "id": "table-tag",
     "fields": [
       {
         "component": "text",

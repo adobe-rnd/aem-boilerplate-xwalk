@@ -48,7 +48,6 @@
     "components": [
       "text",
       "image",
-      "table",
       "button",
       "title",
       "hero",
@@ -61,6 +60,7 @@
       "testimonial",
       "financialreports",
       "faq",
+      "table-tag",
       "schema-tag",
       "offer-documents",
       "carousel",

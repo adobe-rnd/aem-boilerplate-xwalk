@@ -92,8 +92,8 @@
           }
         },
         {
-          "title": "Table",
-          "id": "table",
+          "title": "Table Tag",
+          "id": "table-tag",
           "plugins": {
             "xwalk": {
               "page": {
