@@ -97,7 +97,9 @@
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/block/v1/block"
+                "resourceType": "core/franklin/components/block/v1/block",
+                "name": "Table Tag",
+                "model": "table-tag"
               }
             }
           }
