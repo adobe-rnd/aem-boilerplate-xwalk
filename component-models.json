@@ -207,6 +207,61 @@
     ]
   },
   {
+    "id": "table",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Style",
+        "valueType": "string",
+        "required": true,
+        "maxSize": 2,
+        "options": [
+          {
+            "name": "Theme",
+            "children": [
+              {
+                "name": "Light",
+                "value": "light"
+              },
+              {
+                "name": "Dark",
+                "value": "dark"
+              }
+            ]
+          },
+          {
+            "name": "Alignment",
+            "children": [
+              {
+                "name": "Left",
+                "value": "left"
+              },
+              {
+                "name": "Right",
+                "value": "right"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "label": "Rows",
+        "name": "rows",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "label": "Columns",
+        "name": "columns",
+        "value": ""
+      }
+    ]
+  },
+  {
     "id": "breadcrumb",
     "fields": [
       {
@@ -1018,6 +1073,10 @@
               {
                 "name": "Right",
                 "value": "right"
+              },
+              {
+                "name": "Bottom",
+                "value": "bottom"
               }
             ]
           },
@@ -2748,6 +2807,17 @@
         "name": "branchkeyfeatures",
         "value": "Url text",
         "label": "URL Text"
+      }
+    ]
+  },
+  {
+    "id": "schema-tag",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "schema-tag",
+        "label": "Schema Tag"
       }
     ]
   }

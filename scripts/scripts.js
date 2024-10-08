@@ -159,11 +159,11 @@ function decorateImageIcons(element, prefix = '') {
     let { href } = anchor;
     let imageName = '';
 
-    if(href.includes('/play.google.com-s/')){
+    if (href.includes('/play.google.com-s/')) {
       anchor.href = href.replace('play.google.com-s', "play.google.com");
-    }else if(href.includes('/apps.apple.com-s/')){
+    } else if (href.includes('/apps.apple.com-s/')) {
       anchor.href = href.replace('apps.apple.com-s', "apps.apple.com");
-    }else if (href.includes('play.google.com')) {
+    } else if (href.includes('play.google.com')) {
       imageName = 'playstore';
     } else if (href.includes('apps.apple.com')) {
       imageName = 'appstore';
@@ -855,7 +855,7 @@ export function showingStateCity(searchInputAll) {
       eachLi.classList.remove("dp-none");
     });
   });
-}   
+}
 
 setTimeout(() => {
   try {
@@ -907,7 +907,7 @@ function renderSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Apply for a Home loan online with Piramal Finance ",
+    "name": "Apply for a Home loan online with Piramal Finance 1 ",
     "url": "https://www.piramalfinance.com/",
     "logo": "/",
     "contactPoint": {
@@ -932,7 +932,7 @@ function renderSchema() {
 }
 renderSchema();
 
-export function getDay(){
+export function getDay() {
   const date = new Date();
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const currentDayOfWeek = daysOfWeek[date.getDay()];
@@ -940,18 +940,18 @@ export function getDay(){
 }
 
 
-export function branchURLStr(location = "", city = "", state = "", urlstrhand, locationcode = ""){
+export function branchURLStr(location = "", city = "", state = "", urlstrhand, locationcode = "") {
   let locationAdd = location?.replace(/\s+/g, "-").replace(/[()/]/g, "").trim().toLowerCase();
   let cityStr = city?.replace(/\s+/g, "-").replace(/[()/]/g, "").trim().toLowerCase();
   let stateStr = state?.replace(/\s+/g, "-").replace(/[()/]/g, "").trim().toLowerCase();
-  if(urlstrhand == "shorthand"){
+  if (urlstrhand == "shorthand") {
     return `/branch-locator/${stateStr}/${cityStr}`;
-  }else if(urlstrhand == "shorthandstate"){
+  } else if (urlstrhand == "shorthandstate") {
     return `/branch-locator/${stateStr}`;
-  }else if(urlstrhand == "loans"){
-    if(locationAdd == cityStr){
+  } else if (urlstrhand == "loans") {
+    if (locationAdd == cityStr) {
       return `/branch-locator/loans-in-${cityStr}-${stateStr}-${locationcode}`;
-    }else{
+    } else {
       return `/branch-locator/loans-in-${locationAdd}-${cityStr}-${stateStr}-${locationcode}`;
     }
   }
