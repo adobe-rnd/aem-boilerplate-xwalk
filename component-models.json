@@ -2750,5 +2750,16 @@
         "label": "URL Text"
       }
     ]
+  },
+  {
+    "id": "schema-tag",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "schema-tag",
+        "label": "Schema Tag"
+      }
+    ]
   }
 ]

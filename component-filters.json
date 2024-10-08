@@ -3,6 +3,7 @@
     "id": "main",
     "components": [
       "section",
+      "schema-tag",
       "title",
       "tab-name",
       "tab-container",

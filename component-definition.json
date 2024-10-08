@@ -1004,6 +1004,21 @@
               }
             }
           }
+        },
+        {
+          "title": "Schema Tag",
+          "id": "schema-tag",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Schema Tag",
+                  "model": "schema-tag"
+                }
+              }
+            }
+          }
         }
       ]
     }
