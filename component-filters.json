@@ -48,6 +48,7 @@
     "components": [
       "text",
       "image",
+      "table",
       "button",
       "title",
       "hero",

@@ -92,6 +92,17 @@
           }
         },
         {
+          "title": "Table",
+          "id": "table",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/taxonomy/v1/taxonomy"
+              }
+            }
+          }
+        },
+        {
           "title": "Hero",
           "id": "hero",
           "plugins": {
