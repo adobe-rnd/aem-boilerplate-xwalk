@@ -97,7 +97,7 @@
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/taxonomy/v1/taxonomy"
+                "resourceType": "core/franklin/components/block/v1/block"
               }
             }
           }
