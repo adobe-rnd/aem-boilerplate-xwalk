@@ -15,6 +15,10 @@
     "components": []
   },
   {
+    "id": "table-record",
+    "components": []
+  },
+  {
     "id": "column",
     "components": [
       "text",
@@ -53,6 +57,7 @@
       "hero",
       "cards",
       "columns",
+      "table-record",
       "breadcrumb",
       "rte",
       "city-list",
