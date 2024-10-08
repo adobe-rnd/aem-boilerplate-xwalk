@@ -150,6 +150,25 @@
     ]
   },
   {
+    "id": "table-tag",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "columns",
+        "value": "",
+        "label": "Columns"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "rows",
+        "value": "",
+        "label": "Rows"
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {
@@ -2752,6 +2771,17 @@
         "name": "branchkeyfeatures",
         "value": "Url text",
         "label": "URL Text"
+      }
+    ]
+  },
+  {
+    "id": "schema-tag",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "schema-tag",
+        "label": "Schema Tag"
       }
     ]
   }

@@ -120,13 +120,12 @@ export function generateTeaserDOM(props, classes) {
       );
   }
 
-  console.log("Purge test ")
   teaserDOM?.querySelectorAll("a").forEach(function (el, index) {
     el.addEventListener("click", function (e) {
       try {
-        if(!e.target.closest(".calc-desktop-carousel-wrapper")){
-            if (index || e.target.closest(".cta")) {
-          bannerClick(e.target.innerText, targetObject.pageName);
+        if (!e.target.closest(".calc-desktop-carousel-wrapper")) {
+          if (index || e.target.closest(".cta")) {
+            bannerClick(e.target.innerText, targetObject.pageName);
           }
         } else if (this.closest('.carousel-articles-wrapper')) {
           readMoreAnalytics(e);
@@ -137,13 +136,13 @@ export function generateTeaserDOM(props, classes) {
           data.click_text = e.target.closest('.long-description').querySelector('p').textContent.trim();
           data.cta_position = e.target.closest('.section').querySelector('.tab-name-wrapper .carousel-inner .active').textContent.trim();
           ctaClickInteraction(data);
-        } else if(e.target.closest(".calc-desktop-carousel-wrapper")){
+        } else if (e.target.closest(".calc-desktop-carousel-wrapper")) {
           let data = {};
-          data.click_text =e.target.closest(".text").querySelector(".long-description p").textContent.trim();
+          data.click_text = e.target.closest(".text").querySelector(".long-description p").textContent.trim();
           data.cta_position = e.target.closest('.section').querySelector('.default-content-wrapper').textContent.trim();
           ctaClickInteraction(data);
         }
-         else {
+        else {
           applyLoanNow(
             eyebrow.textContent.trim() + " " + title.textContent.trim(),
             targetObject.pageName,
