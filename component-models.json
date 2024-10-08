@@ -246,10 +246,17 @@
         ]
       },
       {
-        "component": "text-input",
+        "component": "text",
         "valueType": "number",
-        "label": "Navigation Start Level",
-        "name": "navigationStartLevel",
+        "label": "Rows",
+        "name": "rows",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "label": "Columns",
+        "name": "columns",
         "value": ""
       }
     ]
