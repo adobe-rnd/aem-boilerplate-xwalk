@@ -210,18 +210,47 @@
     "id": "table",
     "fields": [
       {
-        "component": "text",
-        "valueType": "number",
-        "name": "columns",
-        "value": "",
-        "label": "Columns"
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Style",
+        "valueType": "string",
+        "required": true,
+        "maxSize": 2,
+        "options": [
+          {
+            "name": "Theme",
+            "children": [
+              {
+                "name": "Light",
+                "value": "light"
+              },
+              {
+                "name": "Dark",
+                "value": "dark"
+              }
+            ]
+          },
+          {
+            "name": "Alignment",
+            "children": [
+              {
+                "name": "Left",
+                "value": "left"
+              },
+              {
+                "name": "Right",
+                "value": "right"
+              }
+            ]
+          }
+        ]
       },
       {
-        "component": "text",
+        "component": "text-input",
         "valueType": "number",
-        "name": "rows",
-        "value": "",
-        "label": "Rows"
+        "label": "Navigation Start Level",
+        "name": "navigationStartLevel",
+        "value": ""
       }
     ]
   },
