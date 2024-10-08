@@ -270,6 +270,9 @@
     min-height: 380px;
     height: 380px;
   }
+  .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel.teaser .background .foreground{
+    margin: calc((100% - 1025px) / 2);
+  }
 }
 
 /* carosuel video End */
