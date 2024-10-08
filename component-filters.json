@@ -15,10 +15,6 @@
     "components": []
   },
   {
-    "id": "table-record",
-    "components": []
-  },
-  {
     "id": "column",
     "components": [
       "text",
