@@ -93,11 +93,11 @@ export function AccessTokenAPI() {
     });
 }
 
-export function generateOTPAPI(access_token, mobileno, productName) {
+export function generateOTPAPI(access_token, mobileno, productName, source) {
     let requesObj = {
         requestJson: {
             "mobileno": mobileno,
-            "source": "External",
+            "source": source,
             "productName": productName
         },
         "headerJson": {
@@ -252,7 +252,7 @@ export function resendOtpAPI(loanProduct) {
 export function workFlow() {
     getAccessToken()
         .then(accesstoken => {
-            return generateOTPAPI(accesstoken, cutomerNo().value, loanProduct().dataset.loanType)
+            return generateOTPAPI(accesstoken, cutomerNo().value, loanProduct().dataset.loanType, "Leadform");
         })
         .then(function () {
             //console.log("Data inserted successfully");
