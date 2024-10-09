@@ -3,7 +3,9 @@ import { mobileHeaderAnalytics } from "./code-analytics.js";
 
 export default async function decorate(block) {
     block.innerHTML = await decoratePlaceholder(block);
-
+    if(block.classList.add('table')){
+        decorateTable(block)
+    }
     const titleData = block.children[0]?.querySelector('p')?.textContent.trim() || '';
     block.innerHTML = '';
     if (titleData) {
