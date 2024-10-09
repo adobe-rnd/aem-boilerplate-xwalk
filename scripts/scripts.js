@@ -779,6 +779,7 @@ async function loadingCustomCss() {
     `${window.hlx.codeBasePath}/styles/e-nach-registration/e-nach-registration.css`,
     `${window.hlx.codeBasePath}/styles/support-faq/support-faq.css`,
     `${window.hlx.codeBasePath}/styles/embed-carousel-wrapper/embed-carousel-wrapper.css`,
+    `${window.hlx.codeBasePath}/styles/fixed-headset/fixed-headset.css`,
   ];
 
   loadCssArray.forEach(async (eachCss) => {
