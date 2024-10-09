@@ -16,6 +16,11 @@
         "component": "text",
         "name": "theme",
         "label": "Theme"
+      },
+      {
+        "component": "text",
+        "name": "twitter:title",
+        "label": "Twitter Title"
       }
     ]
   },
