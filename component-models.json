@@ -24,7 +24,7 @@
       },
       {
         "component": "text",
-        "name": "facebook-title",
+        "name": "facebook:title",
         "label": "Facebook Title"
       }
     ]
