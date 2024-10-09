@@ -227,12 +227,11 @@ export function verfyOtpAPI(otp) {
     });
 }
 
-export function resendOtpAPI(loanProduct) {
+export function resendOtpAPI(source) {
     let requesObj = {
         requestJson: {
             "authUniqueId": sessionStorage.getItem("otpAuthId"),
-            "source": "External",
-            "productName": loanProduct
+            "source": source,
         },
         headerJson: {
             Authorization: "Bearer " + sessionStorage.getItem("accesstoken")
@@ -381,7 +380,7 @@ function resendOtpBtnClick() {
         } catch (error) {
             console.warn(error);
         }
-        resendOtpAPI(loanProduct().dataset.loanType)
+        resendOtpAPI("Leadform")
             .then(function ({ responseJson }) {
                 let otpAuthId = responseJson.authUniqueId;
                 sessionStorage.setItem("otpAuthId", otpAuthId);
