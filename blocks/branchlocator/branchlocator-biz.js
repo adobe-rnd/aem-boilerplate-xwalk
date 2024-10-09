@@ -64,7 +64,7 @@ export async function onloadBranchLocator(block) {
   }else{
     branchhList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
   }
-  loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k").then((resolve) => {
+  loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ").then((resolve) => {
     myMap(setLocationObj.lat, setLocationObj.lng, branchhList);
   });
   bizStateDD(setLocationObj.getExcelData, block);
@@ -124,7 +124,7 @@ async function getStateCity(lat, lng) {
 
 function getStateName(lat, lan) {
   return new Promise(function (resolve, reject) {
-    fetchAPI("GET", "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lan + "&sensor=true&key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k")
+    fetchAPI("GET", "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lan + "&sensor=true&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ")
       .then(function (res) {
         resolve(res);
       })
@@ -190,10 +190,6 @@ function myMap(lat, long, sortedBranch) {
   // adding the markers
   function addMarkers() {
     for (let eachLagLong of sortedBranch) {
-      if (typeof eachLagLong["Latitude"] == "string" || typeof eachLagLong["Longitude"] == "string") {
-        continue;
-      }
-
         new google.maps.Marker({
           position: new google.maps.LatLng(eachLagLong["Latitude"], eachLagLong["Longitude"]),
           title: eachLagLong['Address'],
@@ -259,7 +255,7 @@ export function onClickState(block){
         defaultSelectedCityState(block);  
         renderCity(block);
         let branchhList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
-        loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k").then((resolve) => {
+        loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ").then((resolve) => {
           myMap(setLocationObj.lat, setLocationObj.lng, branchhList);
         });
         let multipleBranch = innerBranchFunc(branchhList);
@@ -280,7 +276,7 @@ export function onClickCity(block){
         setLocationObj.lng = excelValueObj[0]['Longitude'];
         defaultSelectedCityState(block);
         let branchhList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
-        loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k").then((resolve) => {
+        loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ").then((resolve) => {
           myMap(setLocationObj.lat, setLocationObj.lng, branchhList);
         });
         let multipleBranch = innerBranchFunc(branchhList);
@@ -306,7 +302,7 @@ export function locateMeClick(block){
         if(setLocationObj.lat && setLocationObj.lng){
         await getStateCity(setLocationObj.lat, setLocationObj.lng);
         let branchhList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
-        loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k").then((resolve) => {
+        loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ").then((resolve) => {
           myMap(setLocationObj.lat, setLocationObj.lng, branchhList);
           let gettingStortedBranchlat = branchhList[0]["Latitude"];
           let gettingStortedBranchlag = branchhList[0]["Longitude"];

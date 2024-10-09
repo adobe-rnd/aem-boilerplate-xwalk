@@ -61,8 +61,8 @@ export function getAccessToken() {
 export function AccessTokenAPI() {
     const requestJson = {
         requestJson: {
-            "client_id": "79641f863d2a4151b7fcaadfece67e9e",
-            "client_secret": "2a86f9105b464e8389883d2362cb96b0",
+            "client_id": "270762d6d2544ce695908b3496d25e06",
+            "client_secret": "5c2e50eedd8f484387ad432be9897ce4",
             "source": "WebApp"
         },
     }

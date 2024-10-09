@@ -150,25 +150,6 @@
     ]
   },
   {
-    "id": "table-tag",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "number",
-        "name": "columns",
-        "value": "",
-        "label": "Columns"
-      },
-      {
-        "component": "text",
-        "valueType": "number",
-        "name": "rows",
-        "value": "",
-        "label": "Rows"
-      }
-    ]
-  },
-  {
     "id": "card",
     "fields": [
       {
@@ -266,6 +247,66 @@
         "label": "Breadcrumb URL",
         "valueType": "string",
         "multi": true
+      }
+    ]
+  },
+  {
+    "id": "boards",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Style",
+        "valueType": "string",
+        "required": true,
+        "maxSize": 2,
+        "options": [
+          {
+            "name": "Theme",
+            "children": [
+              {
+                "name": "Light",
+                "value": "light"
+              },
+              {
+                "name": "Dark",
+                "value": "dark"
+              }
+            ]
+          },
+          {
+            "name": "Alignment",
+            "children": [
+              {
+                "name": "Left",
+                "value": "left"
+              },
+              {
+                "name": "Right",
+                "value": "right"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "board-item",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "rte",
+        "label": "Board Item",
+        "valueType": "string",
+        "raw": true
+      },
+      {
+        "component": "text",
+        "name": "no",
+        "label": "Number",
+        "valueType": "number",
+        "raw": true
       }
     ]
   },
