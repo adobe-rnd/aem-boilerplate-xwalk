@@ -973,3 +973,39 @@ export function selectBranchDetails(block) {
     }
   })
 }
+
+export function calculatorFlatStrLogic(data) {
+  var mainObj = {};
+
+  data.forEach(function (eachData) {
+    const { Fieldset, Name, Type, Value, ID } = eachData;
+
+    if (Fieldset) {
+      if (!mainObj[Fieldset]) {
+        mainObj[Fieldset] = {};
+      }
+
+      if (Type === "loanamout") {
+        if (!mainObj[Fieldset].loanamout) {
+          mainObj[Fieldset].loanamout = [];
+        }
+
+        let loanItem = mainObj[Fieldset].loanamout[ID];
+        if (!loanItem) {
+          loanItem = {};
+          mainObj[Fieldset].loanamout[ID] = loanItem;
+        }
+
+        loanItem[Name] = Value;
+      } else if (Type === "array") {
+        mainObj[Fieldset][Name] = [];
+      } else {
+        mainObj[Fieldset][Name] = Value;
+      }
+    } else {
+      mainObj[Name] = Value;
+    }
+  });
+
+  return mainObj;
+}
