@@ -11,7 +11,7 @@
     background-color: #20303f;
     border-radius: 100px;
     cursor: pointer;
-    z-index: 1;
+    z-index: 12;
 }
 
 .section.fixed-headset-wrapper .default-content-wrapper p {
