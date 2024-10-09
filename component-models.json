@@ -16,6 +16,11 @@
         "component": "text",
         "name": "theme",
         "label": "Theme"
+      },
+      {
+        "component": "text",
+        "name": "twitter-title",
+        "label": "Twitter Title"
       }
     ]
   },
@@ -133,6 +138,23 @@
   {
     "id": "columns",
     "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Style",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Type",
+            "children": [
+              {
+                "name": "Table",
+                "value": "table"
+              }
+            ]
+          }
+        ]
+      },
       {
         "component": "text",
         "valueType": "number",
@@ -2173,6 +2195,23 @@
   {
     "id": "code",
     "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Style",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Type",
+            "children": [
+              {
+                "name": "Table",
+                "value": "table"
+              }
+            ]
+          }
+        ]
+      },
       {
         "component": "text-area",
         "valueType": "string",
