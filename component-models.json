@@ -251,7 +251,7 @@
     ]
   },
   {
-    "id": "board",
+    "id": "boards",
     "fields": [
       {
         "component": "multiselect",
@@ -298,31 +298,6 @@
         "component": "richtext",
         "name": "rte",
         "label": "Board Item",
-        "valueType": "string",
-        "raw": true
-      }
-    ]
-  },
-  {
-    "id": "board-item-2",
-    "fields": [
-      {
-        "component": "text",
-        "name": "str",
-        "label": "Board Item",
-        "valueType": "string"
-      },
-      {
-        "component": "richtext",
-        "name": "rte",
-        "label": "Board Item 1",
-        "valueType": "string",
-        "raw": true
-      },
-      {
-        "component": "richtext",
-        "name": "rte2",
-        "label": "Board Item 2",
         "valueType": "string",
         "raw": true
       }
