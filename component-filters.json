@@ -51,7 +51,6 @@
       "button",
       "title",
       "hero",
-      "table",
       "cards",
       "columns",
       "breadcrumb",
@@ -114,10 +113,6 @@
   {
     "id": "cards",
     "components": ["card"]
-  },
-  {
-    "id": "table",
-    "components": ["row"]
   },
   {
     "id": "carousel",
