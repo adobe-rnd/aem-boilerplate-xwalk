@@ -244,20 +244,6 @@
             ]
           }
         ]
-      },
-      {
-        "component": "text",
-        "valueType": "number",
-        "label": "Rows",
-        "name": "rows",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "valueType": "number",
-        "label": "Columns",
-        "name": "columns",
-        "value": ""
       }
     ]
   },
@@ -266,16 +252,23 @@
     "fields": [
       {
         "component": "text",
-        "valueType": "number",
-        "label": "Rows",
-        "name": "rows",
+        "valueType": "string",
+        "label": "Column 0",
+        "name": "column0",
         "value": ""
       },
       {
-        "component": "text",
-        "valueType": "number",
-        "label": "Columns",
-        "name": "columns",
+        "component": "richtext",
+        "valueType": "string",
+        "label": "Column 1",
+        "name": "column1",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "label": "Column 2",
+        "name": "column2",
         "value": ""
       }
     ]
