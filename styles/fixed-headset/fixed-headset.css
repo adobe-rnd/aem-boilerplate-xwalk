@@ -11,7 +11,7 @@
     background-color: #20303f;
     border-radius: 100px;
     cursor: pointer;
-    z-index: 1;
+    z-index: 12;
 }
 
 .section.fixed-headset-wrapper .default-content-wrapper p {
@@ -49,11 +49,14 @@
 }
 
 .section.fixed-headset-wrapper .default-content-wrapper ul li a {
-    color: #f58667;
-    text-decoration: underline;
+    color: #fff;
+    text-decoration: none;
     font-family: Nunito-Bold, 'sans-serif';
 }
-
+.section.fixed-headset-wrapper .default-content-wrapper ul li:first-child a {
+    color: #f58667;
+    text-decoration: underline;
+}
 .section.fixed-headset-wrapper .default-content-wrapper:hover {
     width: 180px;
     transition: width .1s;
@@ -87,7 +90,7 @@
         padding-left: 9px;
     }
     .section.fixed-headset-wrapper .default-content-wrapper p span img{
-        width: 26px;
-        height: 26px;
+        width: 22px;
+        height: 22px;
     }
 }
