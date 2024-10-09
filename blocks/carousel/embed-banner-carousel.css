@@ -244,7 +244,8 @@
 
 @media (min-width:1025px) and (max-width:1300px) {
   .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel .background {
-    /* height: 380px; */
+    height: 529px;
+    min-height: 529px;
     background-size: cover;
     background-position: center top;
   }
@@ -265,11 +266,11 @@
     padding: 0 14px;
   }
 
-  .sectio .carousel-wrapper .teaser.blockn.video-component-carousel .background .foreground,
-  .sectio .carousel-wrapper .teaser.blockn.video-component-carousel {
-    min-height: 380px;
-    height: 380px;
-  }
+  /* .section .carousel-wrapper .teaser.block.video-component-carousel .background .foreground,
+  .section .carousel-wrapper .teaser.block.video-component-carousel {
+    height: 529px;
+    min-height: 529px;
+  } */
   .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel.teaser .background .foreground{
     margin: calc((100% - 1025px) / 2);
   }
