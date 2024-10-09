@@ -51,10 +51,10 @@
       "button",
       "title",
       "hero",
-      "table",
       "cards",
       "columns",
       "breadcrumb",
+      "boards",
       "rte",
       "city-list",
       "imgwithlink",
@@ -116,8 +116,8 @@
     "components": ["card"]
   },
   {
-    "id": "table",
-    "components": ["row"]
+    "id": "boards",
+    "components": ["board-item"]
   },
   {
     "id": "carousel",
