@@ -117,15 +117,7 @@
   },
   {
     "id": "table",
-    "components": [
-      "row",
-      "columns2",
-      "columns3",
-      "columns4",
-      "columns5",
-      "columns6",
-      "columns7"
-    ]
+    "components": ["row"]
   },
   {
     "id": "carousel",
