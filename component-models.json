@@ -300,6 +300,13 @@
         "label": "Board Item",
         "valueType": "string",
         "raw": true
+      },
+      {
+        "component": "text",
+        "name": "no",
+        "label": "Number",
+        "valueType": "number",
+        "raw": true
       }
     ]
   },
