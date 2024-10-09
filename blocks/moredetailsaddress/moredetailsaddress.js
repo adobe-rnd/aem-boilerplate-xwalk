@@ -96,7 +96,7 @@ async function getStateCity(lat, lng) {
             for (var j = 0; j < results.length; j++) {
                   if (results[j].place_id) {
                      reviewRating = await getReviewRating(results[j].place_id);
-                    if(reviewRating.result.reviews && reviewRating.result.opening_hours.weekday_text){
+                    if(reviewRating.result.reviews && reviewRating.result?.opening_hours?.weekday_text){
                       setLocationObj.review = reviewRating.result.reviews;
                       setLocationObj.working = reviewRating.result.opening_hours.weekday_text;
                       console.log(reviewRating);
@@ -119,7 +119,7 @@ async function getStateCity(lat, lng) {
 
   function getStateName(lat, lan) {
     return new Promise(function (resolve, reject) {
-      fetchAPI("GET", "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lan + "&sensor=true&key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k")
+      fetchAPI("GET", "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lan + "&sensor=true&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ")
         .then(function (res) {
           resolve(res);
         })
@@ -148,11 +148,11 @@ async function getStateCity(lat, lng) {
 
 async function getReviewRating(placeID){
   return new Promise(function(resolve, reject){
-    fetchAPI('GET',`https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeID}&key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k`) // api for the get request
+    fetchAPI('GET',`https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeID}&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ`) // api for the get request
     .then((response) => response.json())
     .then((data) => resolve(data)).catch(error => console.log(error));
 
-    /* fetchAPI('GET', `https://maps.googleapis.com/maps/api/place/details/json?place_id=${setLocationObj.placeid}&key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k`).then((res)=>{
+    /* fetchAPI('GET', `https://maps.googleapis.com/maps/api/place/details/json?place_id=${setLocationObj.placeid}&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ`).then((res)=>{
       resolve(res);
     })
     .catch(function(err){
@@ -452,7 +452,7 @@ function nearBLBreadCrumb() {
 
 /* function nearBybranch(){
   debugger;
-  fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${setLocationObj.lat},${setLocationObj.lng}&radius=1500&key=AIzaSyCJr5F6tJXVCcA_VIJreibOtqG9Vf_rb0k`)
+  fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${setLocationObj.lat},${setLocationObj.lng}&radius=1500&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ`)
   .then((response) => response.json())
   .then((data) => resolve(data)).catch(error => console.log(error));
 } */
