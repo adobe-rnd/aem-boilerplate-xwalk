@@ -27,8 +27,8 @@ export default async function decorate(block) {
     // if (header && i === 0) thead.append(row);
     // else 
     tbody.append(row);
-    // [...child.firstElementChild?.firstElementChild?.children]?.forEach((col) => {
-    [...child.children].forEach((col) => {
+    [...child.firstElementChild?.firstElementChild?.children]?.forEach((col) => {
+    // [...child.children].forEach((col) => {
       const cell = buildCell(header ? i : i + 1);
       if (col.innerHTML.includes('img') && col.textContent.trim()) {
         col.remove();
