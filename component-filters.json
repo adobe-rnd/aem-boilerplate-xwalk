@@ -51,6 +51,7 @@
       "button",
       "title",
       "hero",
+      "table",
       "cards",
       "columns",
       "breadcrumb",
@@ -115,6 +116,10 @@
     "components": ["card"]
   },
   {
+    "id": "table",
+    "components": ["row"]
+  },
+  {
     "id": "carousel",
     "components": [
       "text",
@@ -173,7 +178,7 @@
       "indentation": ["indent", "outdent"],
       "sr_script": ["superscript", "subscript"],
       "list": ["bullist", "numlist"],
-      "insert": ["link", "image", "table"],
+      "insert": ["link", "image"],
       "advanced": [],
       "extensions": [],
       "editor": ["removeformat"]
