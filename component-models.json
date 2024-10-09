@@ -262,6 +262,25 @@
     ]
   },
   {
+    "id": "row",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "number",
+        "label": "Rows",
+        "name": "rows",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "label": "Columns",
+        "name": "columns",
+        "value": ""
+      }
+    ]
+  },
+  {
     "id": "breadcrumb",
     "fields": [
       {

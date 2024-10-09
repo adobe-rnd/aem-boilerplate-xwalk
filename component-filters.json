@@ -116,6 +116,10 @@
     "components": ["card"]
   },
   {
+    "id": "table",
+    "components": ["row"]
+  },
+  {
     "id": "carousel",
     "components": [
       "text",
