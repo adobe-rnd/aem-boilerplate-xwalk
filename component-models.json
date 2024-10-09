@@ -207,61 +207,6 @@
     ]
   },
   {
-    "id": "table",
-    "fields": [
-      {
-        "component": "multiselect",
-        "name": "classes",
-        "label": "Style",
-        "valueType": "string",
-        "required": true,
-        "maxSize": 2,
-        "options": [
-          {
-            "name": "Theme",
-            "children": [
-              {
-                "name": "Light",
-                "value": "light"
-              },
-              {
-                "name": "Dark",
-                "value": "dark"
-              }
-            ]
-          },
-          {
-            "name": "Alignment",
-            "children": [
-              {
-                "name": "Left",
-                "value": "left"
-              },
-              {
-                "name": "Right",
-                "value": "right"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "component": "text",
-        "valueType": "number",
-        "label": "Rows",
-        "name": "rows",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "valueType": "number",
-        "label": "Columns",
-        "name": "columns",
-        "value": ""
-      }
-    ]
-  },
-  {
     "id": "breadcrumb",
     "fields": [
       {
@@ -302,6 +247,78 @@
         "label": "Breadcrumb URL",
         "valueType": "string",
         "multi": true
+      }
+    ]
+  },
+  {
+    "id": "board",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Style",
+        "valueType": "string",
+        "required": true,
+        "maxSize": 2,
+        "options": [
+          {
+            "name": "Theme",
+            "children": [
+              {
+                "name": "Light",
+                "value": "light"
+              },
+              {
+                "name": "Dark",
+                "value": "dark"
+              }
+            ]
+          },
+          {
+            "name": "Alignment",
+            "children": [
+              {
+                "name": "Left",
+                "value": "left"
+              },
+              {
+                "name": "Right",
+                "value": "right"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "board-item",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "rte",
+        "label": "Board Item",
+        "valueType": "string",
+        "raw": true
+      }
+    ]
+  },
+  {
+    "id": "board-item-2",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "rte",
+        "label": "Board Item 1",
+        "valueType": "string",
+        "raw": true
+      },
+      {
+        "component": "richtext",
+        "name": "rte2",
+        "label": "Board Item 2",
+        "valueType": "string",
+        "raw": true
       }
     ]
   },
