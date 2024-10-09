@@ -183,6 +183,21 @@
           }
         },
         {
+          "title": "Board Item 2",
+          "id": "board-item-2",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Board Item 2",
+                  "model": "board-item-2"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "RTE",
           "id": "rte",
           "plugins": {

@@ -117,7 +117,7 @@
   },
   {
     "id": "board",
-    "components": ["board-item"]
+    "components": ["board-item", "board-item-2"]
   },
   {
     "id": "carousel",

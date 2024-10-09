@@ -304,6 +304,25 @@
     ]
   },
   {
+    "id": "board-item-2",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "rte",
+        "label": "Board Item 1",
+        "valueType": "string",
+        "raw": true
+      },
+      {
+        "component": "richtext",
+        "name": "rte2",
+        "label": "Board Item 2",
+        "valueType": "string",
+        "raw": true
+      }
+    ]
+  },
+  {
     "id": "rte",
     "fields": [
       {
