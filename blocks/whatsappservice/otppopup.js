@@ -29,7 +29,7 @@ export function otpPopupCall(block) {
     addLoaderWithBlur(); 1
     afterGenerateOtp();
     getAccessToken().then((accesstoken) => {
-      generateOTPAPI(accesstoken, mobileNumber, "Whatsapp").then(function (response) {
+      generateOTPAPI(accesstoken, mobileNumber, "Whatsapp", "Whatsapp").then(function (response) {
         if (response.returnResponse.statusCode == 100) {
           removeLoader();
         }
@@ -45,7 +45,7 @@ export function otpPopupCall(block) {
     if (otpStage.atWhichStage == "generateOtp") {
       afterGenerateOtp();
       getAccessToken().then((accesstoken) => {
-        generateOTPAPI(accesstoken, mobileNumber, "Whatsapp").then(function (response) {
+        generateOTPAPI(accesstoken, mobileNumber, "Whatsapp", "Whatsapp").then(function (response) {
           if (response.returnResponse.statusCode == 100) {
             removeLoader();
             document.querySelector(".failedContainer").style.display = "none";
