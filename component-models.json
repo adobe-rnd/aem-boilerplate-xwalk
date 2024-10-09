@@ -251,6 +251,59 @@
     ]
   },
   {
+    "id": "board",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Style",
+        "valueType": "string",
+        "required": true,
+        "maxSize": 2,
+        "options": [
+          {
+            "name": "Theme",
+            "children": [
+              {
+                "name": "Light",
+                "value": "light"
+              },
+              {
+                "name": "Dark",
+                "value": "dark"
+              }
+            ]
+          },
+          {
+            "name": "Alignment",
+            "children": [
+              {
+                "name": "Left",
+                "value": "left"
+              },
+              {
+                "name": "Right",
+                "value": "right"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "board-item",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "rte",
+        "label": "Board Item",
+        "valueType": "string",
+        "raw": true
+      }
+    ]
+  },
+  {
     "id": "rte",
     "fields": [
       {

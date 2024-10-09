@@ -54,6 +54,7 @@
       "cards",
       "columns",
       "breadcrumb",
+      "board",
       "rte",
       "city-list",
       "imgwithlink",
@@ -113,6 +114,10 @@
   {
     "id": "cards",
     "components": ["card"]
+  },
+  {
+    "id": "board",
+    "components": ["board-item"]
   },
   {
     "id": "carousel",
