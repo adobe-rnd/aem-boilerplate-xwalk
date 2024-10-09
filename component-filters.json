@@ -119,7 +119,6 @@
     "id": "table",
     "components": [
       "row",
-      "columns1",
       "columns2",
       "columns3",
       "columns4",
