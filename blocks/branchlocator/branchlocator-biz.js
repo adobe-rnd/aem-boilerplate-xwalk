@@ -190,10 +190,6 @@ function myMap(lat, long, sortedBranch) {
   // adding the markers
   function addMarkers() {
     for (let eachLagLong of sortedBranch) {
-      if (typeof eachLagLong["Latitude"] == "string" || typeof eachLagLong["Longitude"] == "string") {
-        continue;
-      }
-
         new google.maps.Marker({
           position: new google.maps.LatLng(eachLagLong["Latitude"], eachLagLong["Longitude"]),
           title: eachLagLong['Address'],
