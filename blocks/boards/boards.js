@@ -19,7 +19,7 @@ export default async function decorate(block) {
   const tbody = document.createElement('tbody');
 
   const header = !block.classList.contains('no-header');
-  if (header) table.append(thead);
+  // if (header) table.append(thead);
   table.append(tbody);
 
   [...block.children].forEach((child, i) => {
@@ -27,8 +27,8 @@ export default async function decorate(block) {
     // if (header && i === 0) thead.append(row);
     // else 
     tbody.append(row);
-    // [...child.children].forEach((col) => {
-    [...child.firstElementChild?.firstElementChild?.children]?.forEach((col) => {
+    // [...child.firstElementChild?.firstElementChild?.children]?.forEach((col) => {
+    [...child.children].forEach((col) => {
       const cell = buildCell(header ? i : i + 1);
       if (col.innerHTML.includes('img') && col.textContent.trim()) {
         col.remove();
