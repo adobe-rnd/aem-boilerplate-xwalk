@@ -117,7 +117,16 @@
   },
   {
     "id": "table",
-    "components": ["row"]
+    "components": [
+      "row",
+      "columns1",
+      "columns2",
+      "columns3",
+      "columns4",
+      "columns5",
+      "columns6",
+      "columns7"
+    ]
   },
   {
     "id": "carousel",

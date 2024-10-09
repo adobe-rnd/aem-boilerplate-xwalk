@@ -138,6 +138,96 @@
           }
         },
         {
+          "title": "Columns 2",
+          "id": "columns2",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Columns 2",
+                  "model": "columns2"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Columns 3",
+          "id": "columns3",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Columns 3",
+                  "model": "columns3"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Columns 4",
+          "id": "columns4",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Columns 4",
+                  "model": "columns4"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Columns 5",
+          "id": "columns5",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Columns 5",
+                  "model": "columns5"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Columns 6",
+          "id": "columns6",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Columns 6",
+                  "model": "columns6"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Columns 7",
+          "id": "columns7",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Columns 7",
+                  "model": "columns7"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Cards",
           "id": "cards",
           "plugins": {

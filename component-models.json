@@ -274,6 +274,25 @@
     ]
   },
   {
+    "id": "columns2",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "label": "Column 1",
+        "name": "column1",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "label": "Column 2",
+        "name": "column2",
+        "value": ""
+      }
+    ]
+  },
+  {
     "id": "breadcrumb",
     "fields": [
       {
