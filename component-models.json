@@ -19,7 +19,7 @@
       },
       {
         "component": "text",
-        "name": "twitter:title",
+        "name": "twitter-title",
         "label": "Twitter Title"
       }
     ]
