@@ -293,6 +293,101 @@
     ]
   },
   {
+    "id": "columns3",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "label": "Column 1",
+        "name": "column1",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "label": "Column 2",
+        "name": "column2",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "columns4",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "label": "Column 1",
+        "name": "column1",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "label": "Column 2",
+        "name": "column2",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "columns5",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "label": "Column 1",
+        "name": "column1",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "label": "Column 2",
+        "name": "column2",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "columns6",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "label": "Column 1",
+        "name": "column1",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "label": "Column 2",
+        "name": "column2",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "columns7",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "label": "Column 1",
+        "name": "column1",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "label": "Column 2",
+        "name": "column2",
+        "value": ""
+      }
+    ]
+  },
+  {
     "id": "breadcrumb",
     "fields": [
       {
