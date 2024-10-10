@@ -22,9 +22,9 @@ export default function decorate(block) {
   //     "https://www.linkedin.com/company/pf"
   //   ]
   // }
-  const script = document.createElement('script')
-  script.type = "application/ld+json";
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
   script.innerHTML = block.textContent;
   block.innerHTML = '';
-  document.head.append(script)
+  document.head.append(script);
 }

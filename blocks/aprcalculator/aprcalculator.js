@@ -1,9 +1,9 @@
-import { fetchAPI } from "../../scripts/scripts.js";
-import { homeLoanCalcFunc } from "../emiandeligiblitycalc/homeloancalculators.js";
-import { homeloanCalHTML } from "../homeloancalculatorv2/templatehtmlv2.js";
+import { fetchAPI } from '../../scripts/scripts.js';
+import { homeLoanCalcFunc } from '../emiandeligiblitycalc/homeloancalculators.js';
+import { homeloanCalHTML } from '../homeloancalculatorv2/templatehtmlv2.js';
 
 export default async function decorate(block) {
-  let cfURL = block.textContent.trim();
+  const cfURL = block.textContent.trim();
 
   const cfRepsonse = await CFApiCall(cfURL);
   const repsonseData = cfRepsonse.data[0].data;
@@ -11,18 +11,19 @@ export default async function decorate(block) {
 
   block.innerHTML = homeloanCalHTML(jsonResponseData);
 
-  let elgCalDiv, elgOverlay;
+  let elgCalDiv; let
+    elgOverlay;
 
   try {
-    elgCalDiv = document.querySelector(".home-page-calculator-call-xf");
-    elgOverlay = elgCalDiv.querySelector(".cmp-container--caloverlay");
+    elgCalDiv = document.querySelector('.home-page-calculator-call-xf');
+    elgOverlay = elgCalDiv.querySelector('.cmp-container--caloverlay');
 
-    const currentSection = document.querySelector(".home-page-calculator-call-xf");
+    const currentSection = document.querySelector('.home-page-calculator-call-xf');
 
-    if (document.querySelector(".home-loan-calculator-parent").classList.contains("combined-emi-eligibility")) {
-      document.querySelector(".home-loan-calculator-parent").classList.remove("combined-emi-eligibility");
-      document.querySelector(".homeloancalculator").querySelector(".eligibilitycalculator") &&
-        (document.querySelector(".homeloancalculator").querySelector(".eligibilitycalculator").style.display = "block");
+    if (document.querySelector('.home-loan-calculator-parent').classList.contains('combined-emi-eligibility')) {
+      document.querySelector('.home-loan-calculator-parent').classList.remove('combined-emi-eligibility');
+      document.querySelector('.homeloancalculator').querySelector('.eligibilitycalculator')
+        && (document.querySelector('.homeloancalculator').querySelector('.eligibilitycalculator').style.display = 'block');
     }
 
     homeLoanCalcFunc(currentSection);
@@ -34,36 +35,40 @@ export default async function decorate(block) {
 }
 
 export async function CFApiCall(cfurl) {
-  const response = await fetchAPI("GET", cfurl);
+  const response = await fetchAPI('GET', cfurl);
   const responseJson = await response.json();
   return responseJson;
 }
 
 function onloadAPRCalc() {
-  let isAprCalculator = document.querySelector(".homeloancalculator .apr");
+  const isAprCalculator = document.querySelector('.homeloancalculator .apr');
   if (isAprCalculator) {
-    let parentElement = isAprCalculator.closest(".homeloancalculator");
-    let resultElement = parentElement.querySelector("[data-cal-result=resultAmt]");
+    const parentElement = isAprCalculator.closest('.homeloancalculator');
+    const resultElement = parentElement.querySelector('[data-cal-result=resultAmt]');
 
-    let { loanAmt, loanOrigination, roi, tenure } = getApiInputs();
-    let aprValue = CheckAprRate(loanAmt, loanOrigination, roi, tenure);
+    const {
+      loanAmt, loanOrigination, roi, tenure,
+    } = getApiInputs();
+    const aprValue = CheckAprRate(loanAmt, loanOrigination, roi, tenure);
     renderAprValue(resultElement, aprValue);
 
-    parentElement.addEventListener("change", function ({ target }) {
-      if (target.tagName != "INPUT") return;
+    parentElement.addEventListener('change', ({ target }) => {
+      if (target.tagName != 'INPUT') return;
 
-      let { loanAmt, loanOrigination, roi, tenure } = getApiInputs();
-      let aprValue = CheckAprRate(loanAmt, loanOrigination, roi, tenure);
+      const {
+        loanAmt, loanOrigination, roi, tenure,
+      } = getApiInputs();
+      const aprValue = CheckAprRate(loanAmt, loanOrigination, roi, tenure);
       renderAprValue(resultElement, aprValue);
     });
 
     function getApiInputs() {
-      let obj = {};
+      const obj = {};
 
-      obj.loanAmt = parentElement.querySelector("[data-cal-input=loanamt]")?.value.replaceAll(",", "");
-      obj.roi = parentElement.querySelector("[data-cal-input=roi]")?.value.replaceAll(",", "");
-      obj.tenure = parentElement.querySelector("[data-cal-input=tenure]")?.value;
-      obj.loanOrigination = parentElement.querySelector("[data-cal-input=origincharges")?.value.replaceAll(",", "");
+      obj.loanAmt = parentElement.querySelector('[data-cal-input=loanamt]')?.value.replaceAll(',', '');
+      obj.roi = parentElement.querySelector('[data-cal-input=roi]')?.value.replaceAll(',', '');
+      obj.tenure = parentElement.querySelector('[data-cal-input=tenure]')?.value;
+      obj.loanOrigination = parentElement.querySelector('[data-cal-input=origincharges')?.value.replaceAll(',', '');
 
       return obj;
     }
@@ -71,34 +76,34 @@ function onloadAPRCalc() {
 }
 
 function renderAprValue(element, value) {
-  element.textContent = value + "%";
+  element.textContent = `${value}%`;
 }
 
 export const CheckAprRate = (LA, LO, IR, LT) => {
-  let present = LA - LO;
-  let guess = 0.01,
-    future = 0,
-    type = 0;
-  let ROI = IR / 100;
-  let rateI = ROI / 12,
-    fv = 0;
-  let pvif = Math.pow(1 + rateI, LT);
-  let pmt = (rateI / (pvif - 1)) * -(LA * pvif + fv);
-  let payment = pmt;
+  const present = LA - LO;
+  const guess = 0.01;
+  const future = 0;
+  const type = 0;
+  const ROI = IR / 100;
+  const rateI = ROI / 12;
+  const fv = 0;
+  const pvif = (1 + rateI) ** LT;
+  const pmt = (rateI / (pvif - 1)) * -(LA * pvif + fv);
+  const payment = pmt;
 
   // Set maximum epsilon for end of iteration
-  let epsMax = 1e-10;
+  const epsMax = 1e-10;
   // Set maximum number of iterations
-  let iterMax = 10;
+  const iterMax = 10;
 
   // Implement Newton's method
-  let y,
-    y0,
-    y1,
-    x0,
-    x1 = 0,
-    f = 0,
-    i = 0;
+  let y;
+  let y0;
+  let y1;
+  let x0;
+  let x1 = 0;
+  let f = 0;
+  let i = 0;
   let rate = guess;
   if (Math.abs(rate) < epsMax) {
     y = present * (1 + LT * rate) + payment * (1 + rate * type) * LT + future;
@@ -124,26 +129,26 @@ export const CheckAprRate = (LA, LO, IR, LT) => {
     y1 = y;
     ++i;
   }
-  var rate1 = rate * 100;
-  var ddk = rate1 * 12;
+  const rate1 = rate * 100;
+  let ddk = rate1 * 12;
   ddk = isNaN(ddk) ? 0 : ddk;
 
   return ddk.toFixed(2);
 };
 
 function readMoreFucn(block) {
-    document.querySelector('.discalimer-details').classList.remove('dp-none');
-    if (block.querySelector(".discalimer-calc")) {
-      const readMoreBtn = block.querySelector(".read-more-discalimer-calc");
-      const discalimerContainer = block.querySelector(".disclaimer-container");
-      readMoreBtn.addEventListener("click", (e) => {
-        if(e.target.textContent.trim() == "Read more"){
-          discalimerContainer.classList.remove('dp-none');
-          readMoreBtn.textContent = "Read less"
-        }else if(e.target.textContent.trim() == "Read less"){
-          discalimerContainer.classList.add('dp-none');
-          readMoreBtn.textContent = "Read more";
-        }
-      });
-    }
+  document.querySelector('.discalimer-details').classList.remove('dp-none');
+  if (block.querySelector('.discalimer-calc')) {
+    const readMoreBtn = block.querySelector('.read-more-discalimer-calc');
+    const discalimerContainer = block.querySelector('.disclaimer-container');
+    readMoreBtn.addEventListener('click', (e) => {
+      if (e.target.textContent.trim() == 'Read more') {
+        discalimerContainer.classList.remove('dp-none');
+        readMoreBtn.textContent = 'Read less';
+      } else if (e.target.textContent.trim() == 'Read less') {
+        discalimerContainer.classList.add('dp-none');
+        readMoreBtn.textContent = 'Read more';
+      }
+    });
   }
+}

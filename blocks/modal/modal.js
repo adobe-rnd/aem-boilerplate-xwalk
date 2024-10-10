@@ -33,7 +33,7 @@ export async function createModal(contentNodes) {
   });
 
   try {
-    let customButton = dialog.querySelector('.support-contact-us-popup')
+    const customButton = dialog.querySelector('.support-contact-us-popup');
     customButton && dialog.querySelector('.support-contact-us-popup .button-container').addEventListener('click', () => dialog.close());
   } catch (error) {
     console.warn(error);

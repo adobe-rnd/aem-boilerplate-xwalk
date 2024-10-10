@@ -1,4 +1,4 @@
-export let customerTemplateCopy = `
+export const customerTemplateCopy = `
 <div class="forName">
 <div class="happy-customer">
     <div class="info-card">
@@ -11,9 +11,8 @@ export let customerTemplateCopy = `
     </div>
 </div>
 </div>
-`
-export let customerCardCopy =
-    `
+`;
+export const customerCardCopy = `
 <div class="forName">
 <div class="customer-info {customerClass}" id="{customerId}">
     <div class="card-images">
@@ -34,7 +33,7 @@ export let customerCardCopy =
     </div>
 </div>
 </div>
-`
+`;
 
 // export customerTemplate;
 // export customerCard;

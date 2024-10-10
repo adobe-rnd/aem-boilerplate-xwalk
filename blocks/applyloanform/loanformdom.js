@@ -1,47 +1,47 @@
-export {loanInnerForm, loanFormContainer, loanProduct, formLoanAmt, cutomerName, cutomerNo, cutomerEmployment, cutomerIncome, 
-    formDobInput, stateInput, stateDropDownContainer, stateDropDownUL, branchInput, 
-    branchParent, brachDropDownUl, formTc, loanFromBtn, loanOtpInput, loanFormOtpBtn, otpPhoneNum, otpNumChange};
-
-let nullDom = document.createElement("div");
-
-const querySelectorFallback = (selector) => {
-    return document.querySelector(selector) || nullDom;
+export {
+  loanInnerForm, loanFormContainer, loanProduct, formLoanAmt, cutomerName, cutomerNo, cutomerEmployment, cutomerIncome,
+  formDobInput, stateInput, stateDropDownContainer, stateDropDownUL, branchInput,
+  branchParent, brachDropDownUl, formTc, loanFromBtn, loanOtpInput, loanFormOtpBtn, otpPhoneNum, otpNumChange,
 };
 
-const loanInnerForm = () => querySelectorFallback(".loan-form-sub-parent");
+const nullDom = document.createElement('div');
 
-const loanFormContainer = () => querySelectorFallback(".applyloanform .cmp-container");
+const querySelectorFallback = (selector) => document.querySelector(selector) || nullDom;
 
-const loanProduct = () => querySelectorFallback("#form-loan-type");
+const loanInnerForm = () => querySelectorFallback('.loan-form-sub-parent');
 
-const formLoanAmt = () => querySelectorFallback("#form-loan-amount");
+const loanFormContainer = () => querySelectorFallback('.applyloanform .cmp-container');
 
-const cutomerName = () => querySelectorFallback("#form-customer-name");
+const loanProduct = () => querySelectorFallback('#form-loan-type');
 
-const cutomerNo = () => querySelectorFallback("#form-customer-no");
+const formLoanAmt = () => querySelectorFallback('#form-loan-amount');
 
-const cutomerEmployment = () => querySelectorFallback("[name=emplyoment]:checked");
+const cutomerName = () => querySelectorFallback('#form-customer-name');
 
-const cutomerIncome = () => querySelectorFallback("#form-income");
+const cutomerNo = () => querySelectorFallback('#form-customer-no');
 
-const formDobInput = () => querySelectorFallback("#loan-form-dob");
+const cutomerEmployment = () => querySelectorFallback('[name=emplyoment]:checked');
 
-const stateInput = () => querySelectorFallback("#form-state");
-const stateDropDownContainer = () => querySelectorFallback("#statecontainer .option-form");
-const stateDropDownUL = () => querySelectorFallback("#statecontainer .option-form ul");
+const cutomerIncome = () => querySelectorFallback('#form-income');
 
-const branchParent = () => querySelectorFallback("#branchparent");
-const branchInput = () => querySelectorFallback("#form-branch-city");
-const brachDropDownUl = () => querySelectorFallback("#branchcontainer .option-form ul");
+const formDobInput = () => querySelectorFallback('#loan-form-dob');
 
-const formTc = () => querySelectorFallback("#loanformcheck");
+const stateInput = () => querySelectorFallback('#form-state');
+const stateDropDownContainer = () => querySelectorFallback('#statecontainer .option-form');
+const stateDropDownUL = () => querySelectorFallback('#statecontainer .option-form ul');
 
-const loanFromBtn = () => querySelectorFallback("#loan-form-button");
+const branchParent = () => querySelectorFallback('#branchparent');
+const branchInput = () => querySelectorFallback('#form-branch-city');
+const brachDropDownUl = () => querySelectorFallback('#branchcontainer .option-form ul');
 
-const loanOtpInput = () => querySelectorFallback("#loan-form-otp-input");
+const formTc = () => querySelectorFallback('#loanformcheck');
 
-const loanFormOtpBtn = () => querySelectorFallback("#loan-from-otp-verify");
+const loanFromBtn = () => querySelectorFallback('#loan-form-button');
 
-const otpPhoneNum = () => querySelectorFallback("#loan-form-otpnum");
+const loanOtpInput = () => querySelectorFallback('#loan-form-otp-input');
 
-const otpNumChange = () => querySelectorFallback("#otp-change-num");
+const loanFormOtpBtn = () => querySelectorFallback('#loan-from-otp-verify');
+
+const otpPhoneNum = () => querySelectorFallback('#loan-form-otpnum');
+
+const otpNumChange = () => querySelectorFallback('#otp-change-num');

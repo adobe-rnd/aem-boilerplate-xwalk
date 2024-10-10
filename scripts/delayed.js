@@ -6,8 +6,8 @@ sampleRUM('cwv');
 
 // add more delayed functionality here
 function loadHeadGTM() {
-  const scriptTag = document.createElement("script");
-  
+  const scriptTag = document.createElement('script');
+
   scriptTag.innerHTML = `// Google Tag Manager 
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -19,22 +19,20 @@ function loadHeadGTM() {
 }
 
 function loadBodyGTM() {
-  const noScriptTag = document.createElement("noscript");
+  const noScriptTag = document.createElement('noscript');
 
-  let iframe = document.createElement("iframe");
-  iframe.src = "https://www.googletagmanager.com/ns.html?id=GTM-T5MTVQ9";
-  iframe.height = "0";
-  iframe.width = "0";
-  iframe.style.display = "none";
-  iframe.style.visibility = "hidden";
+  const iframe = document.createElement('iframe');
+  iframe.src = 'https://www.googletagmanager.com/ns.html?id=GTM-T5MTVQ9';
+  iframe.height = '0';
+  iframe.width = '0';
+  iframe.style.display = 'none';
+  iframe.style.visibility = 'hidden';
   noScriptTag.appendChild(iframe);
-  
+
   document.body.prepend(noScriptTag);
 }
 
-
-
-if(!window.location.hostname.includes('localhost') && !window.location.hostname.includes('author')) {
-    loadHeadGTM();
-    loadBodyGTM();
-} 
+if (!window.location.hostname.includes('localhost') && !window.location.hostname.includes('author')) {
+  loadHeadGTM();
+  loadBodyGTM();
+}

@@ -6,7 +6,9 @@
   "scripts": {
     "lint:js": "eslint . --ext .json,.js",
     "lint:css": "stylelint blocks/**/*.css styles/*.css",
-    "lint": "npm run lint:js && npm run lint:css"
+    "lint": "npm run lint:js && npm run lint:css",
+    "fix-css": " stylelint --fix **/**/*.css",
+    "fix-js": "eslint --fix **/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -26,5 +28,8 @@
     "eslint-plugin-json": "3.1.0",
     "stylelint": "16.6.1",
     "stylelint-config-standard": "36.0.0"
+  },
+  "dependencies": {
+    "@moengage/web-sdk": "^2.46.1"
   }
 }

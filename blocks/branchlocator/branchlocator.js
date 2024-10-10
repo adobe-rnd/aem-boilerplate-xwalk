@@ -1,11 +1,9 @@
-import { branchURLStr, fetchAPI } from "../../scripts/scripts.js";
-import { dropDownStateCity, locateMeClick, onloadBranchLocator } from "./branchlocator-biz.js";
-import { setLocationObj } from "./branchlocator-init.js";
+import { branchURLStr, fetchAPI } from '../../scripts/scripts.js';
+import { dropDownStateCity, locateMeClick, onloadBranchLocator } from './branchlocator-biz.js';
+import { setLocationObj } from './branchlocator-init.js';
 
-
-export function branchLocator_dropdown(_block){
-
-   let html =  `<div class='container dropdown-container'> 
+export function branchLocator_dropdown(_block) {
+  const html = `<div class='container dropdown-container'> 
                                 <div class='dropdown-wrapper'>
 
                                     <div class='state-dropdown dropdown dropdown-li-logic'>
@@ -29,12 +27,11 @@ export function branchLocator_dropdown(_block){
                                 </div>
                           </div>`;
 
-                          return html
+  return html;
 }
 
-export function branchLocator_Map(_block){
-
-    let html = `<div class='container map-container-wrapper mt-30 mob-mt-15'>
+export function branchLocator_Map(_block) {
+  const html = `<div class='container map-container-wrapper mt-30 mob-mt-15'>
 
                         <div class='map-branchinfo-wrapper'>
 
@@ -54,14 +51,12 @@ export function branchLocator_Map(_block){
 
                         </div>
                     </div>
-                    `
-    return html
+                    `;
+  return html;
 }
 
-
 export function branchLocator() {
-
-    let branch_cards = `<div class='cards-branches cards-branches-container mt-45 mb-40 mob-mb-45'>
+  const branch_cards = `<div class='cards-branches cards-branches-container mt-45 mb-40 mob-mb-45'>
             <div class='title'>
                  <h2 class="title-to-show"> Find all Mumbai Branches here </h2>
             </div>
@@ -76,96 +71,90 @@ export function branchLocator() {
 
             </div>
         </div>`;
-    return branch_cards;
+  return branch_cards;
 }
 
-export function innerBranchFunc(branchhList){
-  let innerBranch = "";
-  branchhList.forEach(eachBranch => {
-    let eachState = eachBranch['State'];
-    let eachCity = eachBranch['City'];
-    let eachLocationCode = eachBranch['Location Code'];
-    let eachLocation = eachBranch['Location'];
-    innerBranch +=
-                `<div class='card-box'>
-              <h3 class='card-title'> ${eachBranch['Location']} </h3>
-              <p class='card-address'>${eachBranch['Address']}</p>
+export function innerBranchFunc(branchhList) {
+  let innerBranch = '';
+  branchhList.forEach((eachBranch) => {
+    const eachState = eachBranch.State;
+    const eachCity = eachBranch.City;
+    const eachLocationCode = eachBranch['Location Code'];
+    const eachLocation = eachBranch.Location;
+    innerBranch
+                += `<div class='card-box'>
+              <h3 class='card-title'> ${eachBranch.Location} </h3>
+              <p class='card-address'>${eachBranch.Address}</p>
               <p class='card-gmail'> <span> <img src='/images/gmail.svg' alt='gmail-icon'/> </span> customercare@piramal.com </p>
-              <a href="${branchURLStr(eachLocation ,eachCity, eachState, "loans", eachLocationCode)}" id='more-details-btn'> More details </a>
+              <a href="${branchURLStr(eachLocation, eachCity, eachState, 'loans', eachLocationCode)}" id='more-details-btn'> More details </a>
             </div>`;
-            // <a href="/branch-locator/${eachState}/${eachCity}/loans-in-${eachCity}-${eachState}-${eachLocationCode}" id='more-details-btn'> More details </a>
-
+    // <a href="/branch-locator/${eachState}/${eachCity}/loans-in-${eachCity}-${eachState}-${eachLocationCode}" id='more-details-btn'> More details </a>
   });
   return innerBranch;
 }
 
 export async function CFApiCall(cfurl) {
-    const response = await fetchAPI("GET", cfurl);
-    const responseJson = await response.json();
-    return responseJson;
-  }
-
+  const response = await fetchAPI('GET', cfurl);
+  const responseJson = await response.json();
+  return responseJson;
+}
 
 export default async function decorate(block) {
+  const props = Array.from(block.children, (row) => row.firstElementChild);
 
-    const props = Array.from(block.children, (row) => row.firstElementChild);
+  const [linkURL] = props;
 
-    let [ linkURL ] = props;
+  const url = linkURL.textContent.trim();
+  const urlRepoonse = await CFApiCall(url);
+  // const jsonResponseData = JSON.parse(urlRepoonse?.data[0]?.branchlocatorobj);
+  const jsonResponseData = urlRepoonse?.data;
 
-    let url = linkURL.textContent.trim();
-    let urlRepoonse = await CFApiCall(url);
-    // const jsonResponseData = JSON.parse(urlRepoonse?.data[0]?.branchlocatorobj);
-    const jsonResponseData = urlRepoonse?.data;
+  if (sessionStorage.getItem('data')) {
+    setLocationObj.getExcelData = JSON.parse(sessionStorage.getItem('data'));
+  } else {
+    setLocationObj.getExcelData = dropDownStateCity(jsonResponseData);
+    sessionStorage.setItem('data', JSON.stringify(setLocationObj.getExcelData));
+  }
 
-    if(sessionStorage.getItem('data')){
-        setLocationObj.getExcelData = JSON.parse(sessionStorage.getItem('data'));
-    }else{
-        setLocationObj.getExcelData = dropDownStateCity(jsonResponseData);
-        sessionStorage.setItem('data', JSON.stringify(setLocationObj.getExcelData));
-    }
+  block.innerHTML = branchLocator_dropdown(block);
+  block.innerHTML += branchLocator_Map(block);
+  block.innerHTML += branchLocator();
 
-    block.innerHTML = branchLocator_dropdown(block);    ;
-    block.innerHTML += branchLocator_Map(block);
-    block.innerHTML += branchLocator();
+  onloadBranchLocator(block);
+  locateMeClick(block);
+  BLNavUpdate(block);
 
-    onloadBranchLocator(block);
-    locateMeClick(block);
-    BLNavUpdate(block);
-
-    /* function myMap(lat, long) {
+  /* function myMap(lat, long) {
       var mapProp = {
           center: new google.maps.LatLng(lat, long),
           zoom: 15,
       };
       var map = new google.maps.Map(block.closest('.section').querySelector('.map-container'), mapProp);
   }
-  
+
     returnLatLan().then(function ({ lat, lng }) {
         loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ").then((resolve) => {
             myMap(lat, lng);
         });
     }); */
-
 }
 
-
-function BLNavUpdate(block){
-    let breadCrumb = '';
-    let newState = setLocationObj.geoInfo.state.charAt(0).toLowerCase() + setLocationObj.geoInfo.state.slice(1).replace(' ', '-').toLowerCase();
-    let newSetState = setLocationObj.geoInfo.state.charAt(0).toUpperCase() + setLocationObj.geoInfo.state.slice(1).replace(' ', '-').toLowerCase();
-    let newCity = setLocationObj.geoInfo.city.charAt(0).toLowerCase() + setLocationObj.geoInfo.city.slice(1).replace(' ', '-').toLowerCase();
-    let newSetCity = setLocationObj.geoInfo.city.charAt(0).toUpperCase() + setLocationObj.geoInfo.city.slice(1).replace(' ', '-').toLowerCase();
-    if(setLocationObj.geoInfo.state && setLocationObj.geoInfo.city){
-        breadCrumb = `<span class="breadcrumb-separator"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.00195L4.29293 5.70902C4.68182 5.32013 4.68182 4.68377 4.29293 4.29488L1 1.00195" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+function BLNavUpdate(block) {
+  let breadCrumb = '';
+  const newState = setLocationObj.geoInfo.state.charAt(0).toLowerCase() + setLocationObj.geoInfo.state.slice(1).replace(' ', '-').toLowerCase();
+  const newSetState = setLocationObj.geoInfo.state.charAt(0).toUpperCase() + setLocationObj.geoInfo.state.slice(1).replace(' ', '-').toLowerCase();
+  const newCity = setLocationObj.geoInfo.city.charAt(0).toLowerCase() + setLocationObj.geoInfo.city.slice(1).replace(' ', '-').toLowerCase();
+  const newSetCity = setLocationObj.geoInfo.city.charAt(0).toUpperCase() + setLocationObj.geoInfo.city.slice(1).replace(' ', '-').toLowerCase();
+  if (setLocationObj.geoInfo.state && setLocationObj.geoInfo.city) {
+    breadCrumb = `<span class="breadcrumb-separator"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.00195L4.29293 5.70902C4.68182 5.32013 4.68182 4.68377 4.29293 4.29488L1 1.00195" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
         <a href="/branch-locator/${newState}">${newSetState}</a>
         <span class="breadcrumb-separator"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.00195L4.29293 5.70902C4.68182 5.32013 4.68182 4.68377 4.29293 4.29488L1 1.00195" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
         <a href="/branch-locator/${newState}/${newCity}">${newSetCity}</a>
-        `
-    }else if(setLocationObj.geoInfo.state){
-        breadCrumb = `<span class="breadcrumb-separator"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.00195L4.29293 5.70902C4.68182 5.32013 4.68182 4.68377 4.29293 4.29488L1 1.00195" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        `;
+  } else if (setLocationObj.geoInfo.state) {
+    breadCrumb = `<span class="breadcrumb-separator"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.00195L4.29293 5.70902C4.68182 5.32013 4.68182 4.68377 4.29293 4.29488L1 1.00195" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
         <a href="/branch-locator/${newState}">${newSetState}</a>
-        `
-    } 
-    block.closest('body').querySelector('.breadcrumb nav').insertAdjacentHTML("beforeend",breadCrumb);
+        `;
+  }
+  block.closest('body').querySelector('.breadcrumb nav').insertAdjacentHTML('beforeend', breadCrumb);
 }
-

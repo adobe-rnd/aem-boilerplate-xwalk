@@ -1,6 +1,5 @@
 /* import { resetCalculator } from "./resetCalculator.js";
 
-
 export default function overlayCalculator() {
   var emiCalDiv = document.querySelector(".cmp-teaser--emicalculatorteaser");
   var elgCalDiv = document.querySelector(".cmp-teaser--elgcalculatorteaser");
