@@ -1,4 +1,3 @@
-import moengage from '@moengage/web-sdk';
 import { formOpen, overlay } from '../blocks/applyloanform/applyloanforms.js';
 import { statemasterGetStatesApi } from '../blocks/applyloanform/statemasterapi.js';
 import { validationJSFunc } from '../blocks/applyloanform/validation.js';
@@ -9,10 +8,6 @@ import {
 } from './aem.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
-
-// or, using `require`
-
-moengage.initialize({ app_id: 'MSLKV5SKRDLGUKY8FB8NXQM3', cluster: 'DC_3', useLatest: true });
 
 console.log('Main Branch 1.3');
 /**
