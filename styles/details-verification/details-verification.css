@@ -319,7 +319,7 @@
     }
 }
 
-@media screen and (max-width:768px) and (max-width:1024px) {
+@media screen and (min-width:768px) and (max-width:1024px) {
     .section.embed-text-center .embed-wrapper .embed>.videotag>video {
         width: 100%;
         height: 414px;
