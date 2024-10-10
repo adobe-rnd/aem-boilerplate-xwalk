@@ -16,14 +16,14 @@ export default async function decorate(block) {
         block.append(titleElement);
     }
 
-    const iframe = block.querySelectorAll('iframe');
-    if (iframe.length != 0) {
-        block.parentElement.classList.add('iframe-width');
-    }
-    // adding relative url to table image src
-    block.querySelectorAll('img').forEach((img)=>{
-        let url = new URL(img.src);
-        img.src = url.pathname;
-    });
-    mobileHeaderAnalytics(block);
+  const iframe = block.querySelectorAll('iframe');
+  if (iframe.length != 0) {
+    block.parentElement.classList.add('iframe-width');
+  }
+  // adding relative url to table image src
+  block.querySelectorAll('img').forEach((img) => {
+    const url = new URL(img.src);
+    img.src = url.pathname;
+  });
+  mobileHeaderAnalytics(block);
 }

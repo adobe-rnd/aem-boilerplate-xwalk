@@ -1,4 +1,4 @@
-import { decorateViewMore } from "../../scripts/scripts.js";
+import { decorateViewMore } from '../../scripts/scripts.js';
 import { statemasterGetStatesApi } from '../applyloanform/statemasterapi.js';
 import { validationJSFunc } from '../applyloanform/validation.js';
 import { formOpen } from '../applyloanform/applyloanforms.js';
@@ -29,11 +29,10 @@ export default function decorate(block) {
   }
 }
 
-
 function openFormColumn(block) {
-  var sectionBlock = block.closest(".section");
+  const sectionBlock = block.closest('.section');
   if (sectionBlock.classList.contains('open-form-on-click-column')) {
-    sectionBlock.querySelector('.open-form-on-click-column .columns-wrapper').querySelectorAll('.button-container').forEach(function (eachApplyFormClick) {
+    sectionBlock.querySelector('.open-form-on-click-column .columns-wrapper').querySelectorAll('.button-container').forEach((eachApplyFormClick) => {
       eachApplyFormClick.addEventListener('click', async (e) => {
         statemasterGetStatesApi();
         validationJSFunc();

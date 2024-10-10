@@ -19,8 +19,13 @@
       },
       {
         "component": "text",
-        "name": "twitter:title",
+        "name": "twitter-title",
         "label": "Twitter Title"
+      },
+      {
+        "component": "text",
+        "name": "facebook:title",
+        "label": "Facebook Title"
       }
     ]
   },

@@ -1,10 +1,10 @@
-import { onloadLoginCall } from "./login.js";
-import { otpPopupCall } from "./otppopup.js";
+import { onloadLoginCall } from './login.js';
+import { otpPopupCall } from './otppopup.js';
 
 export default function decorate(block) {
   const props = Array.from(block.children, (row) => row.firstElementChild);
   const renderWhatsAppHTML = renderWhatsAppFactory(props, block);
-  const otpPopupHtml = otpPopupWhatsAppHTML(); 
+  const otpPopupHtml = otpPopupWhatsAppHTML();
   block.innerHTML = renderWhatsAppHTML;
   block.innerHTML += otpPopupHtml;
 
@@ -14,15 +14,13 @@ export default function decorate(block) {
   } catch (error) {
     console.warn(error);
   }
-
 }
 
 function renderWhatsAppFactory(props, block) {
   const [frontImage, description, buttonText, buttonHref, placeholder, spantext, uppertext, submitText, tnc, checkbox] = props;
 
-  const checboxHtml =
-    checkbox?.textContent.trim() === "true"
-      ? `<div class="checkbox-field">
+  const checboxHtml = checkbox?.textContent.trim() === 'true'
+    ? `<div class="checkbox-field">
             <label class="cmp-form-options__field-label">
                 <input class="cmp-form-options__field cmp-form-options__field--checkbox" name="tnc" value="tnc"
                     type="checkbox">
@@ -31,7 +29,7 @@ function renderWhatsAppFactory(props, block) {
                 </span>
             </label>
             </div>`
-      : "";
+    : '';
 
   const html = `<div class="whats-app-service">
     <div class="front-image">${frontImage.innerHTML}</div>
@@ -66,8 +64,8 @@ function renderWhatsAppFactory(props, block) {
   return html;
 }
 
-function otpPopupWhatsAppHTML(){
-    return `<div class="otppopup">
+function otpPopupWhatsAppHTML() {
+  return `<div class="otppopup">
     <div class="applyloanform">
         <div class="loan-form-sub-parent">
             <div class="cmp-container">
@@ -185,5 +183,5 @@ function otpPopupWhatsAppHTML(){
         </div>
 
     </div>
-</div>`
+</div>`;
 }

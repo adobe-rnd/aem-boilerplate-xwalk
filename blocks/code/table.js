@@ -28,7 +28,7 @@ export function decorateTable(block) {
         // else 
         tbody.append(row);
         // [...child.firstElementChild?.firstElementChild?.children]?.forEach((col) => {
-            [...child.querySelector('ul')?.children].forEach((col) => {
+        [...child.querySelector('ul')?.children].forEach((col) => {
             const cell = buildCell(header ? i : i + 1);
             if (col.innerHTML.includes('img') && col.textContent.trim()) {
                 col.remove();

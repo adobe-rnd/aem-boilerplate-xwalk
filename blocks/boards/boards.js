@@ -25,7 +25,7 @@ export default async function decorate(block) {
   [...block.children].forEach((child, i) => {
     const row = document.createElement('tr');
     // if (header && i === 0) thead.append(row);
-    // else 
+    // else
     tbody.append(row);
     [...child.firstElementChild?.firstElementChild?.children]?.forEach((col) => {
     // [...child.children].forEach((col) => {
@@ -35,8 +35,8 @@ export default async function decorate(block) {
         const p = document.createElement('p');
         const span = document.createElement('span');
         span.append(col.textContent.trim());
-        p.append(col.querySelector('img'))
-        p.append(span)
+        p.append(col.querySelector('img'));
+        p.append(span);
         cell.append(p);
       } else if (col.innerHTML.includes('img')) {
         col.remove();
