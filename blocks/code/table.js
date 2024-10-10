@@ -22,13 +22,13 @@ export function decorateTable(block) {
     // if (header) table.append(thead);
     table.append(tbody);
 
-    [...block.children].forEach((child, i) => {
+    [...block.querySelector('ul')?.children].forEach((child, i) => {
         const row = document.createElement('tr');
         // if (header && i === 0) thead.append(row);
         // else 
         tbody.append(row);
-        [...child.firstElementChild?.firstElementChild?.children]?.forEach((col) => {
-            // [...child.children].forEach((col) => {
+        // [...child.firstElementChild?.firstElementChild?.children]?.forEach((col) => {
+            [...child.querySelector('ul')?.children].forEach((col) => {
             const cell = buildCell(header ? i : i + 1);
             if (col.innerHTML.includes('img') && col.textContent.trim()) {
                 col.remove();

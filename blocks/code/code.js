@@ -1,10 +1,12 @@
 import { decoratePlaceholder } from "../../scripts/scripts.js";
 import { mobileHeaderAnalytics } from "./code-analytics.js";
+import { decorateTable } from "./table.js";
 
 export default async function decorate(block) {
     block.innerHTML = await decoratePlaceholder(block);
-    if(block.classList.add('table')){
+    if(block.classList.contains('table')){
         decorateTable(block)
+        return block
     }
     const titleData = block.children[0]?.querySelector('p')?.textContent.trim() || '';
     block.innerHTML = '';

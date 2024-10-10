@@ -2,13 +2,8 @@ import { decorateViewMore } from "../../scripts/scripts.js";
 import { statemasterGetStatesApi } from '../applyloanform/statemasterapi.js';
 import { validationJSFunc } from '../applyloanform/validation.js';
 import { formOpen } from '../applyloanform/applyloanforms.js';
-import decorateTable from "../boards/boards.js";
 
 export default function decorate(block) {
-  if (block.classList.contains('table')) {
-    decorateTable(block);
-    return block;
-  }
   decorateViewMore(block);
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
