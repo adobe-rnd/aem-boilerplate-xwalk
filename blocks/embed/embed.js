@@ -68,7 +68,7 @@ const embedTwitter = (url) => {
 const videoTag = (url) => {
   // <source src="movie.ogg" type="video/ogg">
   const videoHTML = `<div class="videotag">
-          <video width="320" height="240" controls autoplay>
+          <video controls autoplay>
                     <source src="${url.href}" type="video/mp4">
           </video>
   </div>`
