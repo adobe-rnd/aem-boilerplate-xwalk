@@ -144,23 +144,6 @@
     "id": "columns",
     "fields": [
       {
-        "component": "multiselect",
-        "name": "classes",
-        "label": "Style",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Type",
-            "children": [
-              {
-                "name": "Table",
-                "value": "table"
-              }
-            ]
-          }
-        ]
-      },
-      {
         "component": "text",
         "valueType": "number",
         "name": "columns",
@@ -2212,6 +2195,10 @@
               {
                 "name": "Table",
                 "value": "table"
+              },
+              {
+                "name": "test",
+                "value": "test"
               }
             ]
           }
