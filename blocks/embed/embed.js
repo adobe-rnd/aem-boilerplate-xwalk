@@ -65,6 +65,14 @@ const embedTwitter = (url) => {
   return embedHTML;
 };
 
+const videoTag = (url) => {
+  // <source src="movie.ogg" type="video/ogg">
+  const videoHTML = `<video width="320" height="240" controls autoplay>
+             <source src="${url.href}" type="video/mp4">
+          </video>`
+  return videoHTML;
+}
+
 const loadEmbed = (block, link, autoplay) => {
   if (block.classList.contains('embed-is-loaded')) {
     return;
@@ -83,6 +91,10 @@ const loadEmbed = (block, link, autoplay) => {
       match: ['twitter'],
       embed: embedTwitter,
     },
+    {
+      match: ['video'],
+      embed: videoTag,
+    }
   ];
 
   const config = EMBEDS_CONFIG.find((e) => e.match.some((match) => link.includes(match)));
