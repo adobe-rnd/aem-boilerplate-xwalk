@@ -73,9 +73,9 @@ async function loadMoengage(){
 	
 }
 
-// if (!window.location.hostname.includes('localhost') && !window.location.hostname.includes('author')) {
+if (!window.location.hostname.includes('localhost') && !window.location.hostname.includes('author')) {
   loadServiceWorker();
   loadHeadGTM();
   loadBodyGTM();
   loadMoengage();
-// }
+}
