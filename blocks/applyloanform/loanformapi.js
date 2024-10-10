@@ -353,8 +353,9 @@ function verifyOtpBtnClick() {
             }
           }
 
-        //   leadAPI(sessionStorage.getItem('accesstoken'), authUniqueId)
-          leadAPI(sessionStorage.getItem('accesstoken'), sessionStorage.getItem('otpAuthId'))
+          
+          //   leadAPI(sessionStorage.getItem('accesstoken'), sessionStorage.getItem('otpAuthId'))
+          leadAPI(sessionStorage.getItem('accesstoken'), authUniqueId)
             .catch((error) => {
               console.warn(error);
               showNetworkFailedScreen(error);
