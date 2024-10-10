@@ -1,13 +1,13 @@
-import { cutomerIncome, formDobInput, formLoanAmt } from "./loanformdom.js";
+import { cutomerIncome, formDobInput, formLoanAmt } from './loanformdom.js';
 
-const getIncome = () =>  cutomerIncome()?.value.replaceAll(",", "");
+const getIncome = () => cutomerIncome()?.value.replaceAll(',', '');
 const getDob = () => formDobInput()?.value;
-const getProfile = () => document.querySelector('[name=emplyoment]:checked').id == "radio-salary" ? "sal" : "se";
+const getProfile = () => (document.querySelector('[name=emplyoment]:checked').id == 'radio-salary' ? 'sal' : 'se');
 
 const isValidAge = (dob, min, max) => {
-  let age = calculateAge(dob);
+  const age = calculateAge(dob);
   return isInRange(age, min, max);
-}
+};
 
 function calculateAge(dob) {
   // Format: DD/MM/YYYY
@@ -21,19 +21,27 @@ function calculateAge(dob) {
 }
 
 const loadProduct = {
-  //income value: monthly
-  otherLoanSAL: { location: "branch", age: { min: 21}, income: { min: 15000 } },
-  otherLoanSE: { location: "branch", age: { min: 23}, income: { min: 15000 } },
-  bussinessLoan: { location: "branch selected", profile: "se", age: { min: 21 }, income: { min: 15000 } },
-  personalLoan: { location: "branch selected", profile: "sal", age: { min: 23, max: 57 }, income: { min: 20000 }, loan: {min: 500000} },
-  preOwnedCarLoanSAL: { location: "branch selected", profile: "sal", age: { min: 21, max: 60 }, income: { min: 16666 }, loan: {max: 1500000}},
-  preOwnedCarLoanSE: { location: "branch selected", profile: "se", age: { min: 23, max: 65 }, income: { min: 20833 }, loan: {max: 1500000}},
-}
+  // income value: monthly
+  otherLoanSAL: { location: 'branch', age: { min: 21 }, income: { min: 15000 } },
+  otherLoanSE: { location: 'branch', age: { min: 23 }, income: { min: 15000 } },
+  bussinessLoan: {
+    location: 'branch selected', profile: 'se', age: { min: 21 }, income: { min: 15000 },
+  },
+  personalLoan: {
+    location: 'branch selected', profile: 'sal', age: { min: 23, max: 57 }, income: { min: 20000 }, loan: { min: 500000 },
+  },
+  preOwnedCarLoanSAL: {
+    location: 'branch selected', profile: 'sal', age: { min: 21, max: 60 }, income: { min: 16666 }, loan: { max: 1500000 },
+  },
+  preOwnedCarLoanSE: {
+    location: 'branch selected', profile: 'se', age: { min: 23, max: 65 }, income: { min: 20833 }, loan: { max: 1500000 },
+  },
+};
 
 export function ProductLogics(loanType) {
-  let obj = {};
-  let loanObj = loadProduct[loanType];
-  if(loanObj == false || loanObj == null) return false;
+  const obj = {};
+  const loanObj = loadProduct[loanType];
+  if (loanObj == false || loanObj == null) return false;
   obj.age = isValidAge(getDob(), loanObj.age.min, loanObj.age.max);
   obj.income = isInRange(getIncome(), loanObj.income.min, loanObj.income.max);
 
@@ -41,23 +49,21 @@ export function ProductLogics(loanType) {
     obj.profile = loanObj.profile == getProfile();
   }
 
-  if(loanObj.loan) {
-    let loanAmt = formLoanAmt().value.trim().replaceAll(",", "");
-    if(loanAmt == "") return false;
+  if (loanObj.loan) {
+    const loanAmt = formLoanAmt().value.trim().replaceAll(',', '');
+    if (loanAmt == '') return false;
 
-    let isMin = loanObj.loan.min ? loanAmt >= loanObj.loan.min : true;
-    let isMax = loanObj.loan.max ? loanAmt <= loanObj.loan.max : true;
-
+    const isMin = loanObj.loan.min ? loanAmt >= loanObj.loan.min : true;
+    const isMax = loanObj.loan.max ? loanAmt <= loanObj.loan.max : true;
 
     obj.loan = isMin && isMax;
   }
 
-
-  return Object.values(obj).every(value => value === true);
+  return Object.values(obj).every((value) => value === true);
 }
 
 function isInRange(value, min, max) {
-  if(value == null) return false;
+  if (value == null) return false;
 
   if (max) {
     return value >= min && value <= max;

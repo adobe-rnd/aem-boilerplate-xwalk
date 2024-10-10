@@ -1,11 +1,10 @@
-import { fetchAPI } from "../../scripts/scripts.js";
-import { homeLoanCalcFunc } from "../emiandeligiblitycalc/homeloancalculators.js";
-import { onloadDatePickerCalls } from "./partpaymentdatepicker.js";
-import { partPaymentCalHTML } from "./partpaymenttemplate.js"
-
+import { fetchAPI } from '../../scripts/scripts.js';
+import { homeLoanCalcFunc } from '../emiandeligiblitycalc/homeloancalculators.js';
+import { onloadDatePickerCalls } from './partpaymentdatepicker.js';
+import { partPaymentCalHTML } from './partpaymenttemplate.js';
 
 export default async function decorate(block) {
-  let cfURL = block.textContent.trim();
+  const cfURL = block.textContent.trim();
 
   const cfRepsonse = await CFApiCall(cfURL);
   const repsonseData = cfRepsonse.data[0].data;
@@ -13,16 +12,17 @@ export default async function decorate(block) {
 
   block.innerHTML = partPaymentCalHTML(jsonResponseData);
 
-  let elgCalDiv, elgOverlay;
+  let elgCalDiv; let
+    elgOverlay;
 
   try {
-    elgCalDiv = document.querySelector(".home-page-calculator-call-xf");
-    elgOverlay = elgCalDiv.querySelector(".cmp-container--caloverlay");
+    elgCalDiv = document.querySelector('.home-page-calculator-call-xf');
+    elgOverlay = elgCalDiv.querySelector('.cmp-container--caloverlay');
 
-    const currentSection = document.querySelector(".home-page-calculator-call-xf");
+    const currentSection = document.querySelector('.home-page-calculator-call-xf');
 
-    if (document.querySelector(".home-loan-calculator-parent").classList.contains("combined-emi-eligibility")) {
-      document.querySelector(".home-loan-calculator-parent").classList.remove("combined-emi-eligibility");
+    if (document.querySelector('.home-loan-calculator-parent').classList.contains('combined-emi-eligibility')) {
+      document.querySelector('.home-loan-calculator-parent').classList.remove('combined-emi-eligibility');
       /* document.querySelector(".homeloancalculator").querySelector(".eligibilitycalculator") &&
         (document.querySelector(".homeloancalculator").querySelector(".eligibilitycalculator").style.display = "block"); */
     }
@@ -36,25 +36,24 @@ export default async function decorate(block) {
 }
 
 export async function CFApiCall(cfurl) {
-  const response = await fetchAPI("GET", cfurl);
+  const response = await fetchAPI('GET', cfurl);
   const responseJson = await response.json();
   return responseJson;
 }
 
 function readMoreFucn(block) {
-  document.querySelector(".discalimer-details").classList.remove("dp-none");
-  if (block.querySelector(".discalimer-calc")) {
-    const readMoreBtn = block.querySelector(".read-more-discalimer-calc");
-    const discalimerContainer = block.querySelector(".disclaimer-container");
-    readMoreBtn.addEventListener("click", (e) => {
-      if (e.target.textContent.trim() == "Read more") {
-        discalimerContainer.classList.remove("dp-none");
-        readMoreBtn.textContent = "Read less";
-      } else if (e.target.textContent.trim() == "Read less") {
-        discalimerContainer.classList.add("dp-none");
-        readMoreBtn.textContent = "Read more";
+  document.querySelector('.discalimer-details').classList.remove('dp-none');
+  if (block.querySelector('.discalimer-calc')) {
+    const readMoreBtn = block.querySelector('.read-more-discalimer-calc');
+    const discalimerContainer = block.querySelector('.disclaimer-container');
+    readMoreBtn.addEventListener('click', (e) => {
+      if (e.target.textContent.trim() == 'Read more') {
+        discalimerContainer.classList.remove('dp-none');
+        readMoreBtn.textContent = 'Read less';
+      } else if (e.target.textContent.trim() == 'Read less') {
+        discalimerContainer.classList.add('dp-none');
+        readMoreBtn.textContent = 'Read more';
       }
     });
   }
 }
-

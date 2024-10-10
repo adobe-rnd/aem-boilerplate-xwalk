@@ -24,15 +24,14 @@ export default async function decorate(block) {
   block.textContent = '';
   block.append(ul);
 
-
   try {
-    if(block.closest('.section.ratings-card-wrapper')){
-      block.closest('.section.ratings-card-wrapper').querySelectorAll('a').forEach(eachAnchor => {
-        eachAnchor.addEventListener('click', function (e) {
-            let data = {};
-            data.click_text = e.target.textContent.trim();
-            data.cta_position = e.target.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
-            ctaClickInteraction(data);
+    if (block.closest('.section.ratings-card-wrapper')) {
+      block.closest('.section.ratings-card-wrapper').querySelectorAll('a').forEach((eachAnchor) => {
+        eachAnchor.addEventListener('click', (e) => {
+          const data = {};
+          data.click_text = e.target.textContent.trim();
+          data.cta_position = e.target.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
+          ctaClickInteraction(data);
         });
       });
     }

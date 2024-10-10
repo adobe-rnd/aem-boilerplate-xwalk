@@ -6,21 +6,21 @@
  * @param {array} attributes attributes to be added
  */
 function createTag(tag, attributes, html) {
-    const el = document.createElement(tag);
-    if (html) {
-      if (html instanceof HTMLElement || html instanceof SVGElement) {
-        el.append(html);
-      } else {
-        el.insertAdjacentHTML('beforeend', html);
-      }
+  const el = document.createElement(tag);
+  if (html) {
+    if (html instanceof HTMLElement || html instanceof SVGElement) {
+      el.append(html);
+    } else {
+      el.insertAdjacentHTML('beforeend', html);
     }
-    if (attributes) {
-      Object.entries(attributes).forEach(([key, val]) => {
-        el.setAttribute(key, val);
-      });
-    }
-    return el;
   }
+  if (attributes) {
+    Object.entries(attributes).forEach(([key, val]) => {
+      el.setAttribute(key, val);
+    });
+  }
+  return el;
+}
 
 function changeTabs(e) {
   const { target } = e;

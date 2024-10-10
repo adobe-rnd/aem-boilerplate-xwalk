@@ -107,37 +107,6 @@
           }
         },
         {
-          "title": "Table",
-          "id": "table",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Table",
-                  "model": "table",
-                  "filter": "table"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Row",
-          "id": "row",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "Row",
-                  "model": "row"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "Cards",
           "id": "cards",
           "plugins": {
@@ -177,6 +146,37 @@
                 "template": {
                   "name": "Breadcrumb",
                   "model": "breadcrumb"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Boards",
+          "id": "boards",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Boards",
+                  "filter": "boards",
+                  "model": "boards"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Board Item",
+          "id": "board-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Board Item",
+                  "model": "board-item"
                 }
               }
             }

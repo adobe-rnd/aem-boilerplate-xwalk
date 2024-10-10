@@ -1,8 +1,8 @@
-import { workflowHomeLoanCalculation } from "./calhelpers.js";
+import { workflowHomeLoanCalculation } from './calhelpers.js';
 
-window.addEventListener("DOMContentLoaded", function() {
+window.addEventListener('DOMContentLoaded', () => {
 
-   /*  let isCombinedEmiEligibility = document.querySelector(".combined-emi-eligibility");
+  /*  let isCombinedEmiEligibility = document.querySelector(".combined-emi-eligibility");
     if(isCombinedEmiEligibility) {
         let parentElement = isCombinedEmiEligibility.closest(".homeloancalculator");
         renderEmiEligibility(parentElement);
@@ -19,32 +19,29 @@ window.addEventListener("DOMContentLoaded", function() {
 
 });
 
-
 export function mainTabClick(parentElement) {
-    let tabs = parentElement.querySelectorAll(".radiotab li");
+  const tabs = parentElement.querySelectorAll('.radiotab li');
 
-    tabs.forEach(tab => {
-        tab.addEventListener("click", function() {
-            renderEmiEligibility(parentElement);
-        });
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      renderEmiEligibility(parentElement);
     });
+  });
 }
 
 export function calculatorTypeTabClick(parentElement) {
-    let calculators = parentElement.querySelectorAll(".tab-common");
-    calculators.forEach(cal => {
-        cal.addEventListener("click", function() {
-            renderEmiEligibility(parentElement);
-        });
+  const calculators = parentElement.querySelectorAll('.tab-common');
+  calculators.forEach((cal) => {
+    cal.addEventListener('click', () => {
+      renderEmiEligibility(parentElement);
     });
+  });
 }
 
 export function renderEmiEligibility(parentElement) {
-    
-    let calculators = parentElement.querySelector(".calctabs").children;
-    let currentCalculator = Array.from(calculators).filter( element => element.style.display != "none")[0];
-    let calculatorType = currentCalculator && currentCalculator.classList.contains("emicalculator") ? "emi" : "eligibility";
+  const calculators = parentElement.querySelector('.calctabs').children;
+  const currentCalculator = Array.from(calculators).filter((element) => element.style.display != 'none')[0];
+  const calculatorType = currentCalculator && currentCalculator.classList.contains('emicalculator') ? 'emi' : 'eligibility';
 
-    workflowHomeLoanCalculation(currentCalculator, calculatorType);
+  workflowHomeLoanCalculation(currentCalculator, calculatorType);
 }
-

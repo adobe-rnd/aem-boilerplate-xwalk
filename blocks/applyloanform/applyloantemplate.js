@@ -1,5 +1,4 @@
 export function appplyLoanTemplate(properties) {
-    
   /* const properties = {
     rupeeIcon: "/images/rupee-icon.svg",
     mainFormHeading: "Apply Loan In A Minute",
@@ -69,23 +68,23 @@ export function appplyLoanTemplate(properties) {
   }; */
 
   function createLoanTypeDropDown() {
-    let container = document.createElement("div");
+    const container = document.createElement('div');
 
     properties.options.forEach((category) => {
-      let ul = document.createElement("ul");
-      for (let [key, value] of Object.entries(category)) {
-        let liCategory = document.createElement("li");
+      const ul = document.createElement('ul');
+      for (const [key, value] of Object.entries(category)) {
+        const liCategory = document.createElement('li');
         liCategory.textContent = key;
-        liCategory.setAttribute("data-get-input","form-loan-type");
-        liCategory.classList.add("subpoints");
+        liCategory.setAttribute('data-get-input', 'form-loan-type');
+        liCategory.classList.add('subpoints');
         ul.appendChild(liCategory);
 
         value.forEach((item) => {
-          let liItem = document.createElement("li");
+          const liItem = document.createElement('li');
           liItem.textContent = item.litext;
-          liItem.setAttribute("data-loan-type", item.loantype);
-          liItem.setAttribute("data-get-input","form-loan-type");
-          liItem.classList.add("subpoints");
+          liItem.setAttribute('data-loan-type', item.loantype);
+          liItem.setAttribute('data-get-input', 'form-loan-type');
+          liItem.classList.add('subpoints');
           ul.appendChild(liItem);
         });
       }
@@ -95,7 +94,7 @@ export function appplyLoanTemplate(properties) {
     return container.innerHTML;
   }
 
-  let listofLoanTypes = createLoanTypeDropDown();
+  const listofLoanTypes = createLoanTypeDropDown();
 
   const appplyLoanTemplate = `<div class="loan-form-sub-parent">
         <div class="cmp-container">

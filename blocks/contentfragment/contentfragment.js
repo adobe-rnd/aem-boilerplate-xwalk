@@ -1,64 +1,64 @@
 export default async function decorate(blocks) {
   try {
-    let cfURL = blocks.querySelector("a")?.textContent.trim();
-    cfURL = cfURL?.replace("/content/dam/", "/api/assets/");
-    var hardCodedVal = {
+    let cfURL = blocks.querySelector('a')?.textContent.trim();
+    cfURL = cfURL?.replace('/content/dam/', '/api/assets/');
+    const hardCodedVal = {
       links: [
         {
-          rel: ["self"],
-          href: "https://author-p133703-e1305981.adobeaemcloud.com/api/assets/piramalfinance/in/en/content-fragment/faq/location/home-loan/ahmedabad-/how-is-the-emi-calculated-for-a-home-loan-in-ahmedabad-.json",
+          rel: ['self'],
+          href: 'https://author-p133703-e1305981.adobeaemcloud.com/api/assets/piramalfinance/in/en/content-fragment/faq/location/home-loan/ahmedabad-/how-is-the-emi-calculated-for-a-home-loan-in-ahmedabad-.json',
         },
         {
-          rel: ["parent"],
-          href: "https://author-p133703-e1305981.adobeaemcloud.com/api/assets/piramalfinance/in/en/content-fragment/faq/location/home-loan/ahmedabad-.json",
+          rel: ['parent'],
+          href: 'https://author-p133703-e1305981.adobeaemcloud.com/api/assets/piramalfinance/in/en/content-fragment/faq/location/home-loan/ahmedabad-.json',
         },
       ],
-      class: ["assets/asset"],
+      class: ['assets/asset'],
       actions: [
         {
-          method: "DELETE",
-          name: "delete",
-          href: "https://author-p133703-e1305981.adobeaemcloud.com/api/assets/piramalfinance/in/en/content-fragment/faq/location/home-loan/ahmedabad-/how-is-the-emi-calculated-for-a-home-loan-in-ahmedabad-",
-          title: "Delete",
+          method: 'DELETE',
+          name: 'delete',
+          href: 'https://author-p133703-e1305981.adobeaemcloud.com/api/assets/piramalfinance/in/en/content-fragment/faq/location/home-loan/ahmedabad-/how-is-the-emi-calculated-for-a-home-loan-in-ahmedabad-',
+          title: 'Delete',
         },
         {
-          method: "PUT",
-          name: "update-fragment",
-          href: "https://author-p133703-e1305981.adobeaemcloud.com/api/assets/piramalfinance/in/en/content-fragment/faq/location/home-loan/ahmedabad-/how-is-the-emi-calculated-for-a-home-loan-in-ahmedabad-",
-          type: "application/json",
-          title: "Update Content Fragment",
+          method: 'PUT',
+          name: 'update-fragment',
+          href: 'https://author-p133703-e1305981.adobeaemcloud.com/api/assets/piramalfinance/in/en/content-fragment/faq/location/home-loan/ahmedabad-/how-is-the-emi-calculated-for-a-home-loan-in-ahmedabad-',
+          type: 'application/json',
+          title: 'Update Content Fragment',
         },
       ],
       properties: {
-        publishedBy: "rajashree",
+        publishedBy: 'rajashree',
         metadata: {},
         created: 1715257713711,
-        description: "",
+        description: '',
         published: 1715675350483,
-        title: "How is the EMI calculated for a home loan in Ahmedabad?",
+        title: 'How is the EMI calculated for a home loan in Ahmedabad?',
         contentFragment: true,
-        createdBy: "rajashree",
-        elementsOrder: ["faqAnswer"],
+        createdBy: 'rajashree',
+        elementsOrder: ['faqAnswer'],
         elements: {
           faqAnswer: {
             variationsOrder: [],
             translatable: false,
-            ":type": "text/html",
+            ':type': 'text/html',
             variations: {},
-            dataType: "string",
-            title: "FAQ Answer",
+            dataType: 'string',
+            title: 'FAQ Answer',
             multiValue: false,
             value:
-              "\u003Cp\u003EWhen calculating the EMI for a home loan in Ahmedabad, use this formula: P x R x (1+R)^N / [(1+R)^N-1]. Here, N stands for loan tenure, P for the principal loan amount, and R for the monthly interest rate.\u003C/p\u003E\n",
+              '\u003Cp\u003EWhen calculating the EMI for a home loan in Ahmedabad, use this formula: P x R x (1+R)^N / [(1+R)^N-1]. Here, N stands for loan tenure, P for the principal loan amount, and R for the monthly interest rate.\u003C/p\u003E\n',
           },
         },
-        name: "how-is-the-emi-calculated-for-a-home-loan-in-ahmedabad-",
+        name: 'how-is-the-emi-calculated-for-a-home-loan-in-ahmedabad-',
         modified: 1715257732445,
-        modifiedBy: "rajashree",
-        "cq:model": {
-          path: "/conf/piramalfinance/settings/dam/cfm/models/faq",
+        modifiedBy: 'rajashree',
+        'cq:model': {
+          path: '/conf/piramalfinance/settings/dam/cfm/models/faq',
         },
-        "srn:paging": {
+        'srn:paging': {
           total: 0,
           offset: 0,
           limit: 20,
@@ -66,7 +66,7 @@ export default async function decorate(blocks) {
       },
     };
 
-    let html = `<div class="forName">
+    const html = `<div class="forName">
                 <div id="question">
                     <div class="grid gap-6">
                         <div></div>
@@ -87,40 +87,39 @@ export default async function decorate(blocks) {
                     </div></div>
                 </div>`;
 
-    var newXFHtml = renderHelper([hardCodedVal], html);
+    const newXFHtml = renderHelper([hardCodedVal], html);
     blocks.innerHTML = newXFHtml;
-
   } catch (error) {
     console.error(error);
   }
 }
 
 function renderHelper(data, template, callBack) {
-  var dom = document.createElement("div");
+  const dom = document.createElement('div');
   dom.innerHTML = template;
-  var loopEl = dom.getElementsByClassName("forName");
-  Array.prototype.slice.call(loopEl).forEach(function (eachLoop) {
-    var templates = "";
-    var localtemplate = eachLoop.innerHTML;
-    for (var key in data) {
+  const loopEl = dom.getElementsByClassName('forName');
+  Array.prototype.slice.call(loopEl).forEach((eachLoop) => {
+    let templates = '';
+    const localtemplate = eachLoop.innerHTML;
+    for (const key in data) {
       if (Object.hasOwnProperty.call(data, key)) {
-        var element = data[key];
+        const element = data[key];
         // data.forEach(function (element, index) {
         var dataItem = callBack ? callBack(element, key) : element;
-        var keys = Object.keys(dataItem);
+        const keys = Object.keys(dataItem);
         var copyTemplate = localtemplate;
-        copyTemplate.split("{").forEach(function (ecahKey) {
-          var key = ecahKey.split("}")[0];
-          var keys = key.split(".");
-          var value = dataItem;
-          keys.forEach(function (key) {
+        copyTemplate.split('{').forEach((ecahKey) => {
+          const key = ecahKey.split('}')[0];
+          const keys = key.split('.');
+          let value = dataItem;
+          keys.forEach((key) => {
             if (value && value.hasOwnProperty(key)) {
               value = value[key];
             } else {
-              value = "";
+              value = '';
             }
           });
-          copyTemplate = copyTemplate.replace("{" + key + "}", value);
+          copyTemplate = copyTemplate.replace(`{${key}}`, value);
         });
         templates += copyTemplate;
         // });
@@ -130,5 +129,3 @@ function renderHelper(data, template, callBack) {
   });
   return dom.innerHTML;
 }
-
-

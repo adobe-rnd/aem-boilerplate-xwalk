@@ -1,15 +1,14 @@
 export function partPaymentCalHTML(callJson) {
+  const isMobile = window.matchMedia('(max-width: 768px)');
+  let buttonLink1 = callJson.button1link;
+  let buttonLink2 = callJson.button2link;
+  if (isMobile.matches && buttonLink1 && buttonLink2) {
+    buttonLink1 = callJson.button1link.replace('DWEB', 'MWEB');
+    buttonLink2 = callJson.button2link.replace('DWEB', 'MWEB');
+  }
 
-    let isMobile = window.matchMedia("(max-width: 768px)");
-    let buttonLink1 = callJson.button1link;
-    let buttonLink2 = callJson.button2link;
-    if (isMobile.matches && buttonLink1 && buttonLink2) {
-    buttonLink1 = callJson.button1link.replace("DWEB", "MWEB");
-    buttonLink2 = callJson.button2link.replace("DWEB", "MWEB");
-    }
-
-    const salaried = callJson.salaried?.salariedcheck
-      ? `
+  const salaried = callJson.salaried?.salariedcheck
+    ? `
     <li id="salaryTab" class="firsttab onetab">
         <div class="customecheck">
             <div class="salary-parent">
@@ -31,10 +30,10 @@ export function partPaymentCalHTML(callJson) {
     
         </div>
     </li>`
-      : "";
-  
-    const business = callJson.business?.businesscheck
-      ? `
+    : '';
+
+  const business = callJson.business?.businesscheck
+    ? `
     <li id="${callJson.business.businesstabid}" class="firsttab secondtab twotab">
         <div class="customecheck">
             <div class="salary-parent business-parent">
@@ -57,16 +56,16 @@ export function partPaymentCalHTML(callJson) {
         </div>
     
     </li> `
-      : "";
-  
-    let emiinputdiv = "";
-    callJson["chechboxemiobj"]["chechboxemi"] &&
-      callJson["chechboxemiobj"].loanamout.forEach(function (each, index) {
+    : '';
+
+  let emiinputdiv = '';
+  callJson.chechboxemiobj.chechboxemi
+      && callJson.chechboxemiobj.loanamout.forEach((each, index) => {
         emiinputdiv += `<div class="loanamount">
               <div class="data">
                   <label class="description">${each.label}</label>
                   <!-- add class yearstext for displaying textvalue -->
-                  <div class="inputdivs ${each.labelyearsvalue ? "yearstext" : ""} ">
+                  <div class="inputdivs ${each.labelyearsvalue ? 'yearstext' : ''} ">
           
                       <span class="rupee">${each.rupeesign}</span>
           
@@ -88,15 +87,15 @@ export function partPaymentCalHTML(callJson) {
               </div>
           </div>`;
       });
-  
-    let eligibilityinputdiv = "";
-    callJson["chechboxelibilityobj"]["chechboxemi"] &&
-      callJson["chechboxelibilityobj"].loanamout.forEach(function (each, index) {
+
+  let eligibilityinputdiv = '';
+  callJson.chechboxelibilityobj.chechboxemi
+      && callJson.chechboxelibilityobj.loanamout.forEach((each, index) => {
         eligibilityinputdiv += `<div class="loanamount">
               <div class="data">
                   <label class="description">${each.label}</label>
                   <!-- add class yearstext for displaying textvalue -->
-                  <div class="inputdivs ${each.labelyearsvalue ? "yearstext" : ""} ">
+                  <div class="inputdivs ${each.labelyearsvalue ? 'yearstext' : ''} ">
           
                       <span class="rupee">${each.rupeesign}</span>
           
@@ -118,9 +117,9 @@ export function partPaymentCalHTML(callJson) {
               </div>
           </div>`;
       });
-  
-    const rightSideAmount = callJson.principaltext
-      ? `<div class="amountdiv">
+
+  const rightSideAmount = callJson.principaltext
+    ? `<div class="amountdiv">
                           <div class="firstamout">
                               <p>${callJson.principaltext}</p>
                               <p class="amount"><span>₹</span><span
@@ -134,12 +133,12 @@ export function partPaymentCalHTML(callJson) {
                               </p>
                           </div>
       </div>`
-      : "";
-  
-      // Part Payment Start
-    let partpaymentoutputDiv = "";
-    callJson.partpayment &&
-      callJson.partpayment.forEach(function (eachDiv, index) {
+    : '';
+
+  // Part Payment Start
+  let partpaymentoutputDiv = '';
+  callJson.partpayment
+      && callJson.partpayment.forEach((eachDiv, index) => {
         partpaymentoutputDiv += `<div class="parpaymentmainoutputcontainer">
               <div class="text-and-img">
                   <img data-src="${eachDiv.rightimage}" class="outputimg lozad" alt="roi"
@@ -155,9 +154,9 @@ export function partPaymentCalHTML(callJson) {
               </div>
           </div>`;
       });
-  
-    const partpaymentlogic = callJson.partpaymentlogic
-      ? `<div class="partpaymentSection">
+
+  const partpaymentlogic = callJson.partpaymentlogic
+    ? `<div class="partpaymentSection">
       <div class="loanamount partPayment">
           <div class="data">
               <label class="description">${callJson.partpaymentlogic.firstLoanEmiDate}</label>
@@ -224,12 +223,12 @@ export function partPaymentCalHTML(callJson) {
           <span class="addMorePartPayment">${callJson.partpaymentlogic.payMorePartPayment}</span>
       </div>
   </div>`
-      : "";
-  
-      // Part Payment End
-  
-    const emidiv = callJson.chechboxemiobj.chechboxemi
-      ? `
+    : '';
+
+  // Part Payment End
+
+  const emidiv = callJson.chechboxemiobj.chechboxemi
+    ? `
     <div class="emicalculator commoncalculator">
         <div class="parent-emi" id="emic">
             <div class="inputDiv">
@@ -250,10 +249,10 @@ export function partPaymentCalHTML(callJson) {
             </div>
         </div>
     </div>`
-      : "";
-  
-    const eligibilitydiv = callJson.chechboxelibilityobj.chechboxemi
-      ? `
+    : '';
+
+  const eligibilitydiv = callJson.chechboxelibilityobj.chechboxemi
+    ? `
     <div class="eligibilitycalculator calculator commoncalculator">
         <div class="parent-emi parent-eligibility" id="emic">
             <div class="inputDiv">
@@ -282,10 +281,10 @@ export function partPaymentCalHTML(callJson) {
             </div>
         </div>
     </div>`
-      : "";
-  
-    const discalimerDiv = callJson.disclaimertitle
-      ? `<div class='discalimer-calc'> 
+    : '';
+
+  const discalimerDiv = callJson.disclaimertitle
+    ? `<div class='discalimer-calc'> 
           <span class='title'>${callJson.disclaimertitle}</span>
           <p class='discalimer-first-para'>${callJson.discalimerpara1}</p>
           <div class="disclaimer-container dp-none">
@@ -294,18 +293,18 @@ export function partPaymentCalHTML(callJson) {
           </div>
           <button class='read-more-discalimer-calc'>Read more</button>
       </div>`
-      : "";
-  
-    return `
+    : '';
+
+  return `
      <div class="container responsivegrid show">
           <div id="container-7dfdb51cd4" class="cmp-container">
               <div class="title home-loan-title">
                   <div id="title-bd2a9ac3b1" class="cmp-title">
-                      <h3 class="cmp-title__text">${callJson.title || ""}</h3>
+                      <h3 class="cmp-title__text">${callJson.title || ''}</h3>
                   </div>
               </div>
-              <div class="homeloancalculator ${callJson.tabcenterclass || ""} ">
-                  <div class="home-loan-calculator-parent combined-emi-eligibility ${callJson.mainheadingclass || ""} ${callJson.emiclass || ""}">
+              <div class="homeloancalculator ${callJson.tabcenterclass || ''} ">
+                  <div class="home-loan-calculator-parent combined-emi-eligibility ${callJson.mainheadingclass || ''} ${callJson.emiclass || ''}">
       
                       <div class="hlc-subparent">
                           <ul class="radiotab">
@@ -318,27 +317,27 @@ export function partPaymentCalHTML(callJson) {
                       </div>
                   </div>
       
-                  <div class="calculator-parent ${callJson.handleclass || ""}">
+                  <div class="calculator-parent ${callJson.handleclass || ''}">
                       <div class="calculator-parent-child">
                           <div class="cp-child">
-                              <div class="mainheading ${callJson.dpnoneclass || ""}">
-                                  <p class="first-head">${callJson.selectloantype.subheading || ""}</p>
-                                    <p class="second-head">${callJson.selectloantype.subheadingtow || ""}</p>
+                              <div class="mainheading ${callJson.dpnoneclass || ''}">
+                                  <p class="first-head">${callJson.selectloantype.subheading || ''}</p>
+                                    <p class="second-head">${callJson.selectloantype.subheadingtow || ''}</p>
                               </div>
-                              <div class="headingtabs ${callJson.dpnoneclass || ""}">
+                              <div class="headingtabs ${callJson.dpnoneclass || ''}">
                                   <ul class="headul">
     
     
                                       <li class="tab-emi-calc tab-common active">
-                                          <p>${callJson.tabname.firsttabbname || ""}</p>
+                                          <p>${callJson.tabname.firsttabbname || ''}</p>
                                       </li>
       
                                       <li class="tab-eligibility-calc tab-common">
-                                          <p>${callJson.tabname.secondtabbname || ""}</p>
+                                          <p>${callJson.tabname.secondtabbname || ''}</p>
                                       </li>
     
                                       <li class="tab-eligibility-calc tab-common gst-third-tab">
-                                          <p>${callJson.tabname.thridtabname || ""}</p>
+                                          <p>${callJson.tabname.thridtabname || ''}</p>
                                       </li>
       
       
@@ -352,15 +351,15 @@ export function partPaymentCalHTML(callJson) {
       
                               </div>
       
-                              <div class="customerbuttons ${callJson.button1text ? "" : "dp-none"}">
+                              <div class="customerbuttons ${callJson.button1text ? '' : 'dp-none'}">
       
-                                  <a href="${buttonLink1 || ""}" target="_self">
+                                  <a href="${buttonLink1 || ''}" target="_self">
       
-                                      <button class="expert">${callJson.button1text || ""}</button>
+                                      <button class="expert">${callJson.button1text || ''}</button>
                                   </a>
-                                  <a href="${buttonLink2 || ""}" target="_self">
+                                  <a href="${buttonLink2 || ''}" target="_self">
       
-                                      <button class="expert orangeexpert">${callJson.button2text || ""}</button>
+                                      <button class="expert orangeexpert">${callJson.button2text || ''}</button>
                                   </a>
       
                               </div>
@@ -372,11 +371,10 @@ export function partPaymentCalHTML(callJson) {
                   </div>
       
                   <div class="homepagemobiledesign"></div>
-                  <input type="hidden" name="product type" id="calculator-product-type" value="${callJson.pageproperties || ""}">
+                  <input type="hidden" name="product type" id="calculator-product-type" value="${callJson.pageproperties || ''}">
                   <!-- tab-center--calculator -->
               </div>
           </div>
       </div>
       `;
-  }
-  
+}

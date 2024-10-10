@@ -136,91 +136,23 @@
 .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary::before{
     content: none;
 }
-.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(1) details{
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details {
+    padding: unset;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary>div{
     position: relative;
-    padding-left: unset;
-    padding-right: 0;
-    padding-bottom: unset;
 }
-.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(1) details::before{
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary>div p>span {
     position: absolute;
-    background-image: url('/images/kycdoc.svg');
-    left: 0;
-    top: 40px;
-    object-fit: contain;
-    content:'';
-    height: 32px;
-    margin-right: 24px;
+    left: 2px;
+    top: 12px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary>div p>span,
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary>div p>span>img {
     width: 32px;
-}
-.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(2) details{
-    position: relative;
-    padding-left: unset;
-    padding-right: 0;
-    padding-bottom: unset;
-}
-.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(2) details::before{
-    position: absolute;
-    background-image: url('/images/income.svg');
-    left: 0;
-    top: 40px;
-    object-fit: contain;
-    content:'';
     height: 32px;
-    margin-right: 24px;
-    width: 32px;
 }
-.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(3) details{
-    position: relative;
-    padding-left: unset;
-    padding-right: 0;
-    padding-bottom: unset;
-}
-.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(3) details::before{
-    position: absolute;
-    background-image: url('/images/property.svg');
-    left: 0;
-    top: 40px;
-    object-fit: contain;
-    content:'';
-    height: 32px;
-    margin-right: 24px;
-    width: 32px;
-}
-.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(4) details{
-    position: relative;
-    padding-left: unset;
-    padding-right: 0;
-    padding-bottom: unset;
-}
-.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(4) details::before{
-    position: absolute;
-    background-image: url('/images/coapplicants.svg');
-    left: 0;
-    top: 30px;
-    object-fit: contain;
-    content:'';
-    height: 32px;
-    margin-right: 24px;
-    width: 32px;
-}
-.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(5) details{
-    position: relative;
-    padding-left: unset;
-    padding-right: 0;
-    padding-bottom: unset;
-}
-.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(5) details::before{
-    position: absolute;
-    background-image: url('/images/photodocm.svg');
-    left: 0;
-    top: 30px;
-    object-fit: contain;
-    content:'';
-    height: 32px;
-    margin-right: 24px;
-    width: 32px;
-}
+
 .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion.block{
     border-bottom: 1px dashed #ccc;
 }
@@ -407,21 +339,21 @@ table {
     font-family: 'Nunito-Regular', sans-serif;
  }
  
-.section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion details:not(:has(p))::before {
-   top: 30px;
+.section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion details summary>div:not(:has(p:last-child)) p>span{
+   top: -2px;
 }
 
-.section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion details:not(:has(p)) summary>div::before {
+.section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion details:not(:has(p:last-child)) summary>div::before {
     top: 0;
 }
 
-.section.documents-required-brown.document-required-accordion-img-swap .accordion-group-wrapper .accordion-group .accordion:nth-last-child(2) details::before{
+/* .section.documents-required-brown.document-required-accordion-img-swap .accordion-group-wrapper .accordion-group .accordion:nth-last-child(2) details::before{
     background-image: url('/images/coapplicants.svg');
-}
+} */
 
-.section.documents-required-brown.document-required-accordion-img-swap .accordion-group-wrapper .accordion-group .accordion:last-child details::before{
+/* .section.documents-required-brown.document-required-accordion-img-swap .accordion-group-wrapper .accordion-group .accordion:last-child details::before{
     background-image: url('/images/photodocm.svg');
-}
+} */
 
 .section.documents-required-brown.document-required-accordion-img table:nth-child(2) > tbody > tr> th:nth-child(3), 
 .section.documents-required-brown.document-required-accordion-img table:nth-child(2) > tbody > tr> th:nth-child(2),
@@ -517,18 +449,6 @@ table {
         /* top: unset; */
         width: 100%;
     }
-    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(1) details::before,
-    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(2) details::before,
-    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(3) details::before,
-    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(4) details::before,
-    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(5) details::before{
-        height: 24px;
-        width: 24px;
-        margin-right: 16px;
-        background-size: 100%;
-        top: 26px;
-        margin-left: 12px;
-    }
     .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary div h3{
         font-size: 0.875rem;
         line-height: 20px;
@@ -545,11 +465,6 @@ table {
     }
     .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(4) details summary div{
         padding-left: 51px;
-    }
-    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(4) details::before,
-    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(5) details::before{
-        top: 15px;
-        margin-left: 12px;
     }
     .section.documents-required-brown .accordion-group{
         border-radius: 12px;
@@ -697,6 +612,16 @@ table {
     .section.documents-required-brown.document-required-accordion-img table:nth-child(9) > tbody > tr > td:nth-last-child(2) {
         width: 20%;
     }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary>div p>span {
+        position: absolute;
+        left: 12px;
+        top: 10px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary>div p>span,
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary>div p>span>img {
+        width: 24px;
+        height: 24px;
+    }
 }
 @media screen and (min-width:768px) and (max-width:1024px) {
     .section.documents-required-brown .default-content-wrapper .button-container{     
@@ -710,6 +635,9 @@ table {
         } */
         .section.documents-required-brown .accordion-group-wrapper {
             margin-bottom: unset;
+        }
+        .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary>div p>span {
+            top: 10px;
         }
 }
 
