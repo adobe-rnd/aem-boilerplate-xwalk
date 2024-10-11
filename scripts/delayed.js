@@ -77,5 +77,5 @@ if (!window.location.hostname.includes('localhost') && !window.location.hostname
   loadServiceWorker();
   loadHeadGTM();
   loadBodyGTM();
-  loadMoengage();
+  // loadMoengage();
 }
