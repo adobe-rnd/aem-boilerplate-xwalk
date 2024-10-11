@@ -504,7 +504,7 @@
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five>.background .foreground,
   .banner-carousel-wrapper.personal-loan-sub-page-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
     width: 100%;
-    min-height: 450px;
+    min-height: 440px;
   }
 
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .title>h2,
@@ -720,7 +720,7 @@
 
 @media screen and (max-width:767px) {
   .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser {
-    min-height: 450px;
+    min-height: 440px;
   }
 
   .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
@@ -741,7 +741,7 @@
   }
 
   .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .carousel .panel-container .teaser {
-    min-height: 450px;
+    min-height: 440px;
   }
 
   .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
@@ -1048,7 +1048,7 @@
     display: flex;
     align-items: end;
     justify-content: center;
-    min-height: 450px;
+    min-height: 440px;
   }
 }
 /* ek lakh loan end */
