@@ -288,7 +288,7 @@ function getLeadFormData(loanStatus, authUniqueId) {
   const leadDataObj = {
     Name: formCustomerName,
     MobileNumber: formCustomerNo,
-    Occupation,
+    Occupation: Occupation,
     LoanProduct: formLoanType,
     MonthlyIncome: formIncome,
     LoanAmount: formLoanAmount,
