@@ -83,6 +83,7 @@ export function appplyLoanTemplate(properties) {
           const liItem = document.createElement('li');
           liItem.textContent = item.litext;
           liItem.setAttribute('data-loan-type', item.loantype);
+          liItem.setAttribute('data-loan-name', item.loanname);
           liItem.setAttribute('data-get-input', 'form-loan-type');
           liItem.classList.add('subpoints');
           ul.appendChild(liItem);

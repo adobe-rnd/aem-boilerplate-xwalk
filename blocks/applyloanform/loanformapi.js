@@ -256,7 +256,7 @@ export function resendOtpAPI(source) {
 
 export function workFlow() {
   getAccessToken()
-    .then((accesstoken) => generateOTPAPI(accesstoken, cutomerNo().value, loanProduct().dataset.loanType, 'Leadform'))
+    .then((accesstoken) => generateOTPAPI(accesstoken, cutomerNo().value, loanProduct().dataset.loanName, 'Leadform'))
     .then(() => {
       // console.log("Data inserted successfully");
       verifyOtpBtnClick();
