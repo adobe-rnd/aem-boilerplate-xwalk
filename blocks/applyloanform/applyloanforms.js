@@ -274,8 +274,9 @@ export function applyLoanFormClick() {
         input.value = event.target.textContent.trim();
 
         if (input.id == 'form-loan-type') {
-          const { loanType } = event.target.dataset;
+          const { loanType, loanName } = event.target.dataset;
           input.dataset.loanType = loanType;
+          input.dataset.loanName = loanName;
           stateInput().value = '';
           loanProduct().dispatchEvent(new Event('change'));
         }
