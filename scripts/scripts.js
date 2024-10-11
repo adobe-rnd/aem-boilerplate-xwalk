@@ -541,16 +541,6 @@ export function decorateAnchorTag(main) {
           });
         });
       }
-
-      // Rel Tags
-      if(anchor.textContent.trim().includes("~")){
-        let mainAnchor = anchor.textContent.trim().split('~');
-        anchor.innerText = mainAnchor[0];
-        anchor.setAttribute('title', mainAnchor[0]);
-        let relTags = mainAnchor[1].replace(',', " ");
-        anchor.setAttribute('rel', relTags);
-      }
-
     });
   } catch (error) {
     console.warn(error);
