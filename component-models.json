@@ -611,6 +611,19 @@
         "value": "",
         "label": "Offer documents image",
         "description": "Sets the image of the documents."
+      },
+      {
+        "component": "multiselect",
+        "name": "multiselect",
+        "label": "Rel Added",
+        "valueType": "string",
+        "options": [
+          { "name": "noopener", "value": "noopener" },
+          { "name": "noreferrer", "value": "noreferrer" },
+          { "name": "nofollow", "value": "nofollow" },
+          { "name": "dofollow", "value": "dofollow" },
+          { "name": "noindex", "value": "noindex" }
+        ]
       }
     ]
   },
