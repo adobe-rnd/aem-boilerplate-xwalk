@@ -51,6 +51,6 @@
     "/content/piramalfinance-eds/in/en/api/branchlocatorobj:/api/branchlocatorobj.json",
     "/content/piramalfinance-eds/in/en/api/updatesheet:/api/updatesheet.json",
     "/content/piramalfinance-eds/in/en/api/branchloanmapping:/api/branchloanmapping.json",
-    "/content/piramalfinance-eds/in/en/api/flat-demo:/api/flat-demo.json"
+    "/content/piramalfinance-eds/in/apply-form-loan:/apply-form-loan.json"
   ]
 }
