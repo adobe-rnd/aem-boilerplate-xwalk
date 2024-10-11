@@ -29,12 +29,13 @@ export function loanutmForm() {
   }
 }
 
-export function loanFormUTM() {
+export function loanFormUTM(makewebFormURL) {
   let redirectionLink = 'https://www.piramalfinance.com/loan';
   const utm_device = isMobile.any() ? 'MWEB' : 'DWEB';
   const utm_source = window.location.pathname.split('/').pop().replace(/\.html$/, '');
 
-  redirectionLink = `${redirectionLink}?utm_device=${utm_device}&utm_source=website-leadform-${utm_source}`;
+  // redirectionLink = `${redirectionLink}?utm_device=${utm_device}&utm_source=website-leadform-${utm_source}`;
+  redirectionLink = `${redirectionLink}?utm_device=${utm_device}&utm_source=website-leadform-${makewebFormURL}`;
   window.open(redirectionLink, '_self');
 }
 
