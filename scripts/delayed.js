@@ -55,7 +55,7 @@ async function loadMoengage(){
   const scriptTag = document.createElement('script');
   scriptTag.type = 'text/javascript';
   
-	var moeDataCenter = "dc_0.3"; // placeholders.monenage_dc; // Replace "DC" with the actual Data center value from the above table
+	var moeDataCenter = "dc_3"; // placeholders.monenage_dc; // Replace "DC" with the actual Data center value from the above table
 	var moeAppID = "MSLKV5SKRDLGUKY8FB8NXQM3"; // placeholders.monenage_appid; // Replace "WorkspaceID" available in the settings page of MoEngage Dashboard.
   var debug_logs = 0; // placeholders.monegage_debuglog // MoEngage Web SDK uses a parameter debug_logs: 1 to detect that you are integrating in TEST environment. When you decide to take your website LIVE, just pass the parameter debug_logs: 0 and all data about your actual users would start appearing in LIVE environment
 	var sdkVersion = ''; // Replace this value with the version of Web SDK that you intend to use. It is recommended to use the format x (major);
