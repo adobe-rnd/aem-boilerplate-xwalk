@@ -1301,6 +1301,14 @@
               {
                 "name": "lightshadegray",
                 "value": "--light-gray"
+              },
+              {
+                "name": "darkbrown",
+                "value": "darkbrown"
+              },
+              {
+                "name": "stonebrown",
+                "value": "stonebrown"
               }
             ]
           },

@@ -236,6 +236,21 @@
   }
 }
 
+@media screen and (min-width:768px) and (max-width:1024px) {
+  .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel .background {
+    background-size: contain;
+    background-position: left;
+  }
+
+  .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel.darkbrown .background {
+    background-color: #1f1610;
+  }
+
+  .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel.stonebrown .background {
+    background-color: #a3907c;
+  }
+}
+
 @media (min-width:1025px) and (max-width:1300px) {
   .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel .background {
     height: 529px;
