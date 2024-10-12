@@ -973,3 +973,9 @@ export function calculatorFlatStrLogic(data) {
 
   return mainObj;
 }
+
+export async function CFApiCall(cfurl) {
+  const response = await fetchAPI('GET', cfurl);
+  const responseJson = await response.json();
+  return responseJson;
+}
