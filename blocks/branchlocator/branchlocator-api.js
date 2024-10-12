@@ -29,7 +29,7 @@ export async function searchBranchByURL() {
     // State Check
     if (splitSearch[4]) {
       setLocationObj.geoInfo.state = splitSearch[4];
-      setLocationObj.geoInfo.state = setLocationObj.geoInfo.state.charAt(0).toUpperCase() + setLocationObj.geoInfo.state.slice(1).replace('-', ' ');
+      setLocationObj.geoInfo.state = setLocationObj.geoInfo.state.charAt(0).toUpperCase() + setLocationObj.geoInfo.state.slice(1).replaceAll('-', ' ');
     } else {
       return false;
     }
@@ -37,7 +37,7 @@ export async function searchBranchByURL() {
     // City Check
     if (splitSearch[5]) {
       setLocationObj.geoInfo.city = splitSearch[5];
-      setLocationObj.geoInfo.city = setLocationObj.geoInfo.city.charAt(0).toUpperCase() + setLocationObj.geoInfo.city.slice(1).replace('-', ' ');
+      setLocationObj.geoInfo.city = setLocationObj.geoInfo.city.charAt(0).toUpperCase() + setLocationObj.geoInfo.city.slice(1).replaceAll('-', ' ');
     }
 
     /* // Location Code Check
