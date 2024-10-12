@@ -1,10 +1,73 @@
 import { onloadLoginCall } from './login.js';
 import { otpPopupCall } from './otppopup.js';
 
+function getValueAthor(val){
+    return val.querySelector('img') ? val.querySelector('img').getAttribute('src') : val.textContent.trim();
+}
+
 export default function decorate(block) {
   const props = Array.from(block.children, (row) => row.firstElementChild);
+  const [frontImage,
+    description,
+    buttonText,
+    buttonHref,
+    placeholder,
+    spantext,
+    uppertext,
+    submitText,
+    tnc,
+    checkbox,
+    whatsapplock,
+    whatsapplockalt,
+    otphead,
+    otpsubhead,
+    otpphonenum,
+    otpchangenum,
+    otpsubsubhead,
+    changeableDigit,
+    spanDigittext,
+    resendtext,
+    loanformresendotp,
+    timer,
+    namasteicon,
+    namasteiconalt,
+    namasteText,
+    whatsappNumbertext,
+    mobileNumber,
+    somethingwrong,
+    somethingwrongAlt,
+    namasteFalied,
+    namasteFaliedGrey,
+    failureTryAgain,
+    otpverify
+   ] = props;
+
   const renderWhatsAppHTML = renderWhatsAppFactory(props, block);
-  const otpPopupHtml = otpPopupWhatsAppHTML();
+  const otpPopupHtml = otpPopupWhatsAppHTML({
+    whatsapplock,
+    whatsapplockalt,
+    otphead,
+    otpsubhead,
+    otpphonenum,
+    otpchangenum,
+    otpsubsubhead,
+    changeableDigit,
+    spanDigittext,
+    resendtext,
+    loanformresendotp,
+    timer,
+    namasteicon,
+    namasteiconalt,
+    namasteText,
+    whatsappNumbertext,
+    mobileNumber,
+    somethingwrong,
+    somethingwrongAlt,
+    namasteFalied,
+    namasteFaliedGrey,
+    failureTryAgain,
+    otpverify
+  });
   block.innerHTML = renderWhatsAppHTML;
   block.innerHTML += otpPopupHtml;
 
@@ -17,7 +80,42 @@ export default function decorate(block) {
 }
 
 function renderWhatsAppFactory(props, block) {
-  const [frontImage, description, buttonText, buttonHref, placeholder, spantext, uppertext, submitText, tnc, checkbox] = props;
+    const [frontImage,
+        description,
+        buttonText,
+        buttonHref,
+        placeholder,
+        spantext,
+        uppertext,
+        submitText,
+        tnc,
+        checkbox,
+        whatsapplock,
+        whatsapplockalt,
+        otphead,
+        otpsubhead,
+        otpphonenum,
+        otpchangenum,
+        otpsubsubhead,
+        changeableDigit,
+        spanDigittext,
+        resendtext,
+        loanformresendotp,
+        timer,
+        namasteicon,
+        namasteiconalt,
+        namasteText,
+        whatsappNumbertext,
+        mobileNumber,
+        somethingwrong,
+        somethingwrongAlt,
+        namasteFalied,
+        namasteFaliedGrey,
+        failureTryAgain,
+        otpverify
+       ] = props;
+
+
 
   const checboxHtml = checkbox?.textContent.trim() === 'true'
     ? `<div class="checkbox-field">
@@ -64,7 +162,32 @@ function renderWhatsAppFactory(props, block) {
   return html;
 }
 
-function otpPopupWhatsAppHTML() {
+function otpPopupWhatsAppHTML({
+        whatsapplock,
+        whatsapplockalt,
+        otphead,
+        otpsubhead,
+        otpphonenum,
+        otpchangenum,
+        otpsubsubhead,
+        changeableDigit,
+        spanDigittext,
+        resendtext,
+        loanformresendotp,
+        timer,
+        namasteicon,
+        namasteiconalt,
+        namasteText,
+        whatsappNumbertext,
+        mobileNumber,
+        somethingwrong,
+        somethingwrongAlt,
+        namasteFalied,
+        namasteFaliedGrey,
+        failureTryAgain,
+        otpverify
+}) {
+
   return `<div class="otppopup">
     <div class="applyloanform">
         <div class="loan-form-sub-parent">
@@ -74,9 +197,9 @@ function otpPopupWhatsAppHTML() {
                         <div class="loan-form-heading-parent ">
                             <div class="cmp-container">
                                 <div class="image">
-                                    <img data-src="/content/dam/piramalfinance/support/whatsaap/whatsapplock.svg"
-                                        src="/content/dam/piramalfinance/support/whatsaap/whatsapplock.svg"
-                                        class="cmp-image__image lozad" alt="send">
+                                    <img data-src="${getValueAthor(whatsapplock)}"
+                                        src="${getValueAthor(whatsapplock)}"
+                                        class="cmp-image__image lozad" alt="${getValueAthor(whatsapplockalt)}">
                                 </div>
                                 <div class="image crossimage">
                                     <img src="/images/close-icon.svg"
@@ -88,27 +211,27 @@ function otpPopupWhatsAppHTML() {
                             <div class="loan-form-otp-parent">
                                 <img class="leftarrow lozad"
                                     src="/images/back-arrow.png" alt="arrow">
-                                <p class="otphead">Enter OTP</p>
+                                <p class="otphead">${getValueAthor(otphead)}</p>
                                 <div class="otpsubheadcontainer">
-                                    <p class="otpsubhead">Enter the 4 digit OTP sent on <span class="otp-phone-num"
-                                            id="loan-form-otpnum">7896543210</span></p>
-                                    <p class="otp-change-num" id="otp-change-num">Change</p>
+                                    <p class="otpsubhead">${getValueAthor(otpsubhead)} <span class="otp-phone-num"
+                                            id="loan-form-otpnum">${getValueAthor(otpphonenum)}</span></p>
+                                    <p class="otp-change-num" id="otp-change-num">${getValueAthor(otpchangenum)}</p>
                                 </div>
 
-                                <p class="otpsubsubhead">4 Digit Code</p>
+                                <p class="otpsubsubhead">${getValueAthor(otpsubsubhead)}</p>
                                 <div class="inputotp">
                                     <input type="text" id="loan-form-otp-input" maxlength="4">
-                                    <div id="otp-digits"><span class="changeableDigit">0</span>/4 Digits</div>
+                                    <div id="otp-digits"><span class="changeableDigit">${getValueAthor(changeableDigit)}</span>${getValueAthor(spanDigittext)}</div>
                                 </div>
                                 <div class="wrongotpmessage">
 
                                 </div>
                                 <div class="resendtext">
                                     <p>
-                                        Didn't recieve OTP?
+                                    ${getValueAthor(resendtext)}
                                     </p>
-                                    <button type="button" id="loan-form-resend-otp">Resend OTP</button>
-                                    <span class="timer">00:30</span>
+                                    <button type="button" id="loan-form-resend-otp">${getValueAthor(loanformresendotp)}</button>
+                                    <span class="timer">${getValueAthor(timer)}</span>
                                 </div>
 
                             </div>
@@ -121,20 +244,20 @@ function otpPopupWhatsAppHTML() {
                             <img src="/images/close-icon.svg"
                                 class="closeImg" alt="close-img">
                             <div class="imageContainer">
-                                <img src="/content/dam/piramalfinance/support/whatsaap/namaste.png" alt="Success-Image">
+                                <img src="${getValueAthor(namasteicon)}" alt="${getValueAthor(namasteiconalt)}">
                             </div>
                             <div class="textContainer">
                                 <div class="namasteText">
-                                    <p><span class="boldtext">We’ve sent a "Namaste! 🙏"</span></p>
+                                    <p><span class="boldtext">${getValueAthor(namasteText)}"</span></p>
 
                                 </div>
                                 <div class="whatsappNumberContainer">
                                     <div class="labelText">
-                                        <p>On your WhatsApp Number</p>
+                                        <p>${getValueAthor(whatsappNumbertext)}</p>
 
                                     </div>
                                     <div class="mobileNumber">
-                                        7896543210
+                                    ${getValueAthor(mobileNumber)}
                                     </div>
                                 </div>
                             </div>
@@ -143,24 +266,23 @@ function otpPopupWhatsAppHTML() {
                             <img src="/images/close-icon.svg"
                                 class="closeImg" alt="close-img">
                             <div class="imageContainer">
-                                <img src="/content/dam/piramalfinance/support/whatsaap/somethingwrong.png"
-                                    alt="failed-Image">
+                                <img src="${getValueAthor(somethingwrong)}"
+                                    alt="${getValueAthor(somethingwrongAlt)}">
                             </div>
                             <div class="textContainer">
                                 <div class="namasteText">
-                                    <p><span class="boldtext">Something went wrong</span></p>
-                                    <p><span class="greyboldtext">Oops! We couldn't send you a message. We request you
-                                            to please retry</span></p>
+                                    <p><span class="boldtext">${getValueAthor(namasteFalied)}</span></p>
+                                    <p><span class="greyboldtext">${getValueAthor(namasteFaliedGrey)}</span></p>
 
                                 </div>
                             </div>
-                            <button class="failureTryAgain">Try Again</button>
+                            <button class="failureTryAgain">${getValueAthor(failureTryAgain)}</button>
                         </div>
                     </div>
                 </div>
                 <div class="loan-form-button-container  loan-form-otp-button-container">
                     <button id="loan-from-otp-verify" class="cmp-container">
-                        <div class="btn-text"> Verify OTP</div>
+                        <div class="btn-text"> ${getValueAthor(otpverify)} OTP</div>
                         <div class="loader"></div>
                     </button>
                 </div>
