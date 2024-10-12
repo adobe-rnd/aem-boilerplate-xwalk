@@ -417,12 +417,12 @@ function nearBLBreadCrumb() {
 
   let breadCrumb = '';
 
-  const newState = state.charAt(0).toLowerCase() + state.slice(1).replace(' ', '-').toLowerCase();
-  const newCity = city.charAt(0).toLowerCase() + city.slice(1).replace(' ', '-').toLowerCase();
+  const newState = state.charAt(0).toLowerCase() + state.slice(1).replaceAll(' ', '-').toLowerCase();
+  const newCity = city.charAt(0).toLowerCase() + city.slice(1).replaceAll(' ', '-').toLowerCase();
   const newLoaction = location.replace(/\s+/g, '-').replace(/[()/]/g, '').trim().toLowerCase();
 
-  const newSetState = state.charAt(0).toUpperCase() + state.slice(1).replace(' ', '-').toLowerCase();
-  const newSetCity = city.charAt(0).toUpperCase() + city.slice(1).replace(' ', '-').toLowerCase();
+  const newSetState = state.charAt(0).toUpperCase() + state.slice(1).replaceAll(' ', '-').toLowerCase();
+  const newSetCity = city.charAt(0).toUpperCase() + city.slice(1).replaceAll(' ', '-').toLowerCase();
   const newSetLocation = location.charAt(0).toUpperCase() + location.slice(1);
 
   if (newCity == newLoaction) {

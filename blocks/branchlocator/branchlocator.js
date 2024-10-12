@@ -141,10 +141,10 @@ export default async function decorate(block) {
 
 function BLNavUpdate(block) {
   let breadCrumb = '';
-  const newState = setLocationObj.geoInfo.state.charAt(0).toLowerCase() + setLocationObj.geoInfo.state.slice(1).replace(' ', '-').toLowerCase();
-  const newSetState = setLocationObj.geoInfo.state.charAt(0).toUpperCase() + setLocationObj.geoInfo.state.slice(1).replace(' ', '-').toLowerCase();
-  const newCity = setLocationObj.geoInfo.city.charAt(0).toLowerCase() + setLocationObj.geoInfo.city.slice(1).replace(' ', '-').toLowerCase();
-  const newSetCity = setLocationObj.geoInfo.city.charAt(0).toUpperCase() + setLocationObj.geoInfo.city.slice(1).replace(' ', '-').toLowerCase();
+  const newState = setLocationObj.geoInfo.state.charAt(0).toLowerCase() + setLocationObj.geoInfo.state.slice(1).replaceAll(' ', '-').toLowerCase();
+  const newSetState = setLocationObj.geoInfo.state.charAt(0).toUpperCase() + setLocationObj.geoInfo.state.slice(1).replaceAll(' ', '-').toLowerCase();
+  const newCity = setLocationObj.geoInfo.city.charAt(0).toLowerCase() + setLocationObj.geoInfo.city.slice(1).replaceAll(' ', '-').toLowerCase();
+  const newSetCity = setLocationObj.geoInfo.city.charAt(0).toUpperCase() + setLocationObj.geoInfo.city.slice(1).replaceAll(' ', '-').toLowerCase();
   if (setLocationObj.geoInfo.state && setLocationObj.geoInfo.city) {
     breadCrumb = `<span class="breadcrumb-separator"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.00195L4.29293 5.70902C4.68182 5.32013 4.68182 4.68377 4.29293 4.29488L1 1.00195" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
         <a href="/branch-locator/${newState}">${newSetState}</a>
