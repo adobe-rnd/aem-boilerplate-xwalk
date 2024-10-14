@@ -53,6 +53,8 @@
     "/content/piramalfinance-eds/in/en/api/updatesheet:/api/updatesheet.json",
     "/content/piramalfinance-eds/in/en/api/branchloanmapping:/api/branchloanmapping.json",
     "/content/piramalfinance-eds/in/apply-form-loan:/apply-form-loan.json",
+    "/content/piramalfinance-eds/in/sarfaesiwholesale:/sarfaesiwholesale.json",
+    "/content/piramalfinance-eds/in/eauctioncsv:/eauctioncsv.json",
     "/content/piramalfinance-eds/in/en/api/authorisedcsv:/api/authorisedcsv.json"
   ]
 }
