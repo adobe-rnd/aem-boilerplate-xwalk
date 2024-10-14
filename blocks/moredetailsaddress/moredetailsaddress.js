@@ -143,7 +143,7 @@ export function dropDownStateCity(response) {
 async function getReviewRating(placeID) {
   return new Promise((resolve, reject) => {
     // https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeID}&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ
-    fetchAPI('GET', `/content/piramalfinance-eds/mapapi.json?place_id=${placeID}&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ`) // api for the get request
+    fetchAPI('GET', `/content/piramalfinance/api/mapapi.json?place_id=${placeID}&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ`) // api for the get request
       .then((response) => response.json())
       .then((data) => resolve(data)).catch((error) => console.log(error));
 
