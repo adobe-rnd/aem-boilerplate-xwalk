@@ -2,17 +2,16 @@ import { renderCalculatorData } from '../emiandeligiblitycalc/renderhpcal.js';
 import { homeLoanCalcFunc } from '../emiandeligiblitycalc/homeloancalculators.js';
 import { CalcHTM } from '../emiandeligiblitycalc/templatehtml1.js';
 import { firstTabActive } from '../emiandeligiblitycalc/commonfile.js';
-import { fetchAPI, targetObject } from '../../scripts/scripts.js';
+import { calculatorFlatStrLogic, CFApiCall, fetchAPI, targetObject } from '../../scripts/scripts.js';
 
-let calculatorType; let elgCalDiv; let elgOverlay; let
-  overlay;
+let calculatorType; let elgCalDiv; let elgOverlay; let overlay;
 
 export default async function decorate(block) {
   const cfURL = block.textContent.trim();
 
   const cfRepsonse = await CFApiCall(cfURL);
-  const repsonseData = cfRepsonse.data[0].data;
-  const jsonResponseData = JSON.parse(repsonseData);
+  const repsonseData = cfRepsonse.data;
+  const jsonResponseData = calculatorFlatStrLogic(repsonseData);
 
   /*  const callAJson = {
      total: 1,
@@ -23,7 +22,7 @@ export default async function decorate(block) {
          maindivbackground: "emi",
          title: "Eligibility Calculator",
          mainheadingclass: "",
-         salaried: {
+         salaried: {j
            salariedcheck: true,
            salariedtabid: "salariedTab",
            salariedtabname: "businessStatus",
@@ -190,11 +189,7 @@ export default async function decorate(block) {
   }
 }
 
-export async function CFApiCall(cfurl) {
-  const response = await fetchAPI('GET', cfurl);
-  const responseJson = await response.json();
-  return responseJson;
-}
+
 
 export function eligibilityCalculatorCallXf() {
   document.querySelectorAll("[data-teaserv2-xf='homepage-eligibility-calculator-call-xf']")

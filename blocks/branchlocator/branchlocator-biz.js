@@ -45,8 +45,8 @@ export async function onloadBranchLocator(block) {
     }
   }
 
-  const URLstate = setLocationObj.geoInfo.state.charAt(0).toLowerCase() + setLocationObj.geoInfo.state.slice(1).replace(' ', '-').toLowerCase();
-  const URLcity = setLocationObj.geoInfo.city.charAt(0).toLowerCase() + setLocationObj.geoInfo.city.slice(1).replace(' ', '-').toLowerCase();
+  const URLstate = setLocationObj.geoInfo.state.charAt(0).toLowerCase() + setLocationObj.geoInfo.state.slice(1).replaceAll(' ', '-').toLowerCase();
+  const URLcity = setLocationObj.geoInfo.city.charAt(0).toLowerCase() + setLocationObj.geoInfo.city.slice(1).replaceAll(' ', '-').toLowerCase();
   if (!location.href.includes('author') && !location.href.includes(URLstate)) {
     if (setLocationObj.geoInfo.state && setLocationObj.geoInfo.city) {
       location.href = branchURLStr(setLocationObj.geoInfo.location, setLocationObj.geoInfo.city, setLocationObj.geoInfo.state, 'shorthand');

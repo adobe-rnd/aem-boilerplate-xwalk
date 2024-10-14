@@ -61,7 +61,7 @@ export function generateTeaserDOM(props, classes) {
   ctaImageAnchor2.innerHTML = ctaImage2.innerHTML;
   ctaImageAnchor3.innerHTML = ctaImage3.innerHTML;
   // const bgPictureStyle = bgPicture?.querySelector("img")?.src || '';
-  const bgPictureStyle = bgPicture?.querySelector('img')?.src ? ` style='background-image:url(${bgPicture?.querySelector('img')?.src})' ` : '';
+  const bgPictureStyle = bgPicture?.querySelector('img')?.src && bgPicture?.querySelector('img').src.split("?")[0] ? ` style='background-image:url(${bgPicture?.querySelector('img').src.split("?")[0]})' ` : '';
   const mobileImageStyle = mobileImage?.querySelector('img')?.src ? ` style='background-image:url(${mobileImage?.querySelector('img')?.src})' ` : '';
   let bgImageAllow = bgPictureStyle;
   if (targetObject.isTab) {

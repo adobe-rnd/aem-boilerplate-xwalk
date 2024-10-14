@@ -2690,6 +2690,144 @@
             "valueType": "boolean"
           }
         ]
+      },
+      {
+        "component": "text-input",
+        "name": "text9",
+        "label": "whatsapplock",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text10",
+        "label": "whatsapplockalt",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text11",
+        "label": "otphead",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text12",
+        "label": "otpsubhead",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text13",
+        "label": "otp-phone-num",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text14",
+        "label": "otp-change-num",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text15",
+        "label": "otpsubsubhead",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text16",
+        "label": "changeableDigit",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text17",
+        "label": "spanDigittext",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text18",
+        "label": "resendtext",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text19",
+        "label": "loan-form-resend-otp",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text20",
+        "label": "timer",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text21",
+        "label": "namasteicon",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text22",
+        "label": "namasteiconalt",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text23",
+        "label": "namasteText",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text24",
+        "label": "whatsappNumbertext",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text25",
+        "label": "mobileNumber",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text26",
+        "label": "somethingwrong",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text27",
+        "label": "somethingwrongAlt",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text28",
+        "label": "namasteFalied",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text29",
+        "label": "namasteFaliedGrey",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text30",
+        "label": "failureTryAgain",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "text31",
+        "label": "otp-verify",
+        "valueType": "string"
       }
     ]
   },

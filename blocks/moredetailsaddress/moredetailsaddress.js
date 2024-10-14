@@ -142,7 +142,8 @@ export function dropDownStateCity(response) {
 
 async function getReviewRating(placeID) {
   return new Promise((resolve, reject) => {
-    fetchAPI('GET', `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeID}&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ`) // api for the get request
+    // https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeID}&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ
+    fetchAPI('GET', `/content/piramalfinance-eds/mapapi.json?place_id=${placeID}&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ`) // api for the get request
       .then((response) => response.json())
       .then((data) => resolve(data)).catch((error) => console.log(error));
 
@@ -416,12 +417,12 @@ function nearBLBreadCrumb() {
 
   let breadCrumb = '';
 
-  const newState = state.charAt(0).toLowerCase() + state.slice(1).replace(' ', '-').toLowerCase();
-  const newCity = city.charAt(0).toLowerCase() + city.slice(1).replace(' ', '-').toLowerCase();
+  const newState = state.charAt(0).toLowerCase() + state.slice(1).replaceAll(' ', '-').toLowerCase();
+  const newCity = city.charAt(0).toLowerCase() + city.slice(1).replaceAll(' ', '-').toLowerCase();
   const newLoaction = location.replace(/\s+/g, '-').replace(/[()/]/g, '').trim().toLowerCase();
 
-  const newSetState = state.charAt(0).toUpperCase() + state.slice(1).replace(' ', '-').toLowerCase();
-  const newSetCity = city.charAt(0).toUpperCase() + city.slice(1).replace(' ', '-').toLowerCase();
+  const newSetState = state.charAt(0).toUpperCase() + state.slice(1).replaceAll(' ', '-').toLowerCase();
+  const newSetCity = city.charAt(0).toUpperCase() + city.slice(1).replaceAll(' ', '-').toLowerCase();
   const newSetLocation = location.charAt(0).toUpperCase() + location.slice(1);
 
   if (newCity == newLoaction) {

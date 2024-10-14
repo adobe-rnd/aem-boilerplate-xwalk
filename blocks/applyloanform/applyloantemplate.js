@@ -294,24 +294,24 @@ export function appplyLoanTemplate(properties) {
                                 <img class="leftarrow lozad" src="/images/back-arrow.png" data-src="/images/back-arrow.png" alt="arrow">
                                 <p class="otphead">${properties.verifyHead}</p>
                                 <div class="otpsubheadcontainer">
-                                    <p class="otpsubhead">Enter the 4 digit OTP sent to <span class="otp-phone-num" id="loan-form-otpnum">7845789658</span></p>
-                                    <p class="otp-change-num" id="otp-change-num">Change</p>
+                                    <p class="otpsubhead">${properties.otpsubhead} <span class="otp-phone-num" id="loan-form-otpnum">${properties.otpnumber}</span></p>
+                                    <p class="otp-change-num" id="otp-change-num">${properties.otpchangetext}</p>
                                 </div>
                                
-                                <p class="otpsubsubhead">4 Digit Code<code></code></p>
+                                <p class="otpsubsubhead">${properties.otpsubsubhead}<code></code></p>
                                  <div class="inputotp">
                                     <input type="text" id="loan-form-otp-input" maxlength="4">
-                                    <span id="otp-digits">0/4 Digits</span>
+                                    <span id="otp-digits">${properties.otpdigits}</span>
                                  </div>
                                  <div class="wrongotpmessage">
-                                    Invalid Code Try Again
+                                    ${properties.wrongotpmessage}
                                  </div>
                                  <div class="resendtext">
                                     <p>
-                                        Didn’t receive code?
+                                        ${properties.resendtext}
                                     </p>
-                                    <button type="button" id="loan-form-resend-otp">Resend code</button>
-                                    <span class="timer">00:30</span>
+                                    <button type="button" id="loan-form-resend-otp">${properties.resendtextotp}</button>
+                                    <span class="timer">${properties.resendtimer}</span>
                             </div>
                            
                              </div>
@@ -357,7 +357,7 @@ export function appplyLoanTemplate(properties) {
                                <p class="main-heading">${properties.errorhead}</p>
                                <p class="main-sub-heading">${properties.errorSubhead}</p>
                                <div class="redbox">
-                                <img class= "alertimg lozad" src="/images/error-warning.svg" data-src="/images/error-warning.svg" alt="error-warning">
+                                <img class= "alertimg lozad" src="${properties.errorwarning}" data-src="${properties.errorwarning}" alt="error-warning">
                                 
                                 <P>${properties.RedBoxText}</P>
                                </div>
