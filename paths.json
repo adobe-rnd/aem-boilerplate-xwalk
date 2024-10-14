@@ -52,6 +52,6 @@
     "/content/piramalfinance-eds/in/en/api/updatesheet:/api/updatesheet.json",
     "/content/piramalfinance-eds/in/en/api/branchloanmapping:/api/branchloanmapping.json",
     "/content/piramalfinance-eds/in/apply-form-loan:/apply-form-loan.json",
-    "/content/piramalfinance-eds/in/en/api/testauthorised1:/api/testauthorised1.json"
+    "/content/piramalfinance-eds/in/en/api/authorisedcsv:/api/authorisedcsv.json"
   ]
 }
