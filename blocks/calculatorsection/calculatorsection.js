@@ -1,4 +1,4 @@
-import { CFApiCall, fetchAPI } from '../../scripts/scripts.js';
+import { calculatorFlatStrLogic, CFApiCall, fetchAPI } from '../../scripts/scripts.js';
 import { homeLoanCalcFunc } from '../emiandeligiblitycalc/homeloancalculators.js';
 import { renderCalculatorData } from './renderdatafunc.js';
 import { homeloanCalHTML } from '../homeloancalculatorv2/templatehtmlv2.js';
@@ -6,9 +6,9 @@ import { homeloanCalHTML } from '../homeloancalculatorv2/templatehtmlv2.js';
 export default async function decorate(block) {
   const cfURL = block.textContent.trim();
 
-  const cfRepsonse = await CFApiCall(cfURL);
-  const repsonseData = cfRepsonse.data[0].data;
-  const jsonResponseData = JSON.parse(repsonseData);
+  const cfRepsonse = cfURL && await CFApiCall(cfURL);
+  const repsonseData = cfRepsonse.data;
+  const jsonResponseData = calculatorFlatStrLogic(repsonseData);
 
   block.innerHTML = homeloanCalHTML(jsonResponseData);
 
