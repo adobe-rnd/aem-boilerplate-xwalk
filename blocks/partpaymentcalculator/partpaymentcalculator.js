@@ -1,4 +1,4 @@
-import { fetchAPI } from '../../scripts/scripts.js';
+import { CFApiCall, fetchAPI } from '../../scripts/scripts.js';
 import { homeLoanCalcFunc } from '../emiandeligiblitycalc/homeloancalculators.js';
 import { onloadDatePickerCalls } from './partpaymentdatepicker.js';
 import { partPaymentCalHTML } from './partpaymenttemplate.js';
@@ -33,12 +33,6 @@ export default async function decorate(block) {
   } catch (error) {
     console.warn(error);
   }
-}
-
-export async function CFApiCall(cfurl) {
-  const response = await fetchAPI('GET', cfurl);
-  const responseJson = await response.json();
-  return responseJson;
 }
 
 function readMoreFucn(block) {

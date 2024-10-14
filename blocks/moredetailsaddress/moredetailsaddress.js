@@ -1,4 +1,4 @@
-import { fetchAPI, getDay } from '../../scripts/scripts.js';
+import { CFApiCall, fetchAPI, getDay } from '../../scripts/scripts.js';
 
 export const setLocationObj = {};
 const locationInLatLan = {};
@@ -156,11 +156,6 @@ async function getReviewRating(placeID) {
   });
 }
 
-export async function CFApiCall(cfurl) {
-  const response = await fetchAPI('GET', cfurl);
-  const responseJson = await response.json();
-  return responseJson;
-}
 
 /* async function onbranchDetails(block) {
   let locationCodeURL = location.href.split("/").pop().split("-").pop();
