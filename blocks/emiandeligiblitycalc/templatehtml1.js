@@ -1,5 +1,5 @@
 export function CalcHTM(callJson) {
-  const salaried = callJson.salaried?.salariedcheck
+  const salaried = callJson.salaried?.salariedcheck == 'true'
     ? `
 <li id="salaryTab" class="firsttab onetab" style="display: block; background: rgb(255, 255, 255);">
     <div class="customecheck">
@@ -22,9 +22,9 @@ export function CalcHTM(callJson) {
 
     </div>
 </li>`
-    : "";
+    : '';
 
-  const business = callJson.business?.businesscheck
+  const business = callJson.business?.businesscheck == 'true'
     ? `
 <li id="${callJson.business.businesstabid}" class="firsttab secondtab twotab">
     <div class="customecheck">
@@ -48,16 +48,16 @@ export function CalcHTM(callJson) {
     </div>
 
 </li> `
-    : "";
+    : '';
 
-let emiinputdiv = "";
-  callJson["chechboxemiobj"]["chechboxemi"] &&
-    callJson["chechboxemiobj"].loanamout.forEach(function (each, index) {
+  let emiinputdiv = '';
+  callJson.chechboxemiobj.chechboxemi == 'true'
+    && callJson.chechboxemiobj.loanamout.forEach((each, index) => {
       emiinputdiv += `<div class="loanamount">
           <div class="data">
               <label class="description">${each.label}</label>
               <!-- add class yearstext for displaying textvalue -->
-              <div class="inputdivs ${each.labelyearsvalue ? "yearstext" : ''} ">
+              <div class="inputdivs ${each.labelyearsvalue ? 'yearstext' : ''} ">
       
                   <span class="rupee">${each.rupeesign}</span>
       
@@ -80,14 +80,14 @@ let emiinputdiv = "";
       </div>`;
     });
 
-let eligibilityinputdiv = "";
-  callJson["chechboxelibilityobj"]["chechboxemi"] &&
-    callJson["chechboxelibilityobj"].loanamout.forEach(function (each, index) {
-        eligibilityinputdiv += `<div class="loanamount">
+  let eligibilityinputdiv = '';
+  callJson.chechboxelibilityobj.chechboxemi == 'true'
+    && callJson.chechboxelibilityobj.loanamout.forEach((each, index) => {
+      eligibilityinputdiv += `<div class="loanamount">
           <div class="data">
               <label class="description">${each.label}</label>
               <!-- add class yearstext for displaying textvalue -->
-              <div class="inputdivs ${each.labelyearsvalue ? "yearstext" : ''} ">
+              <div class="inputdivs ${each.labelyearsvalue ? 'yearstext' : ''} ">
       
                   <span class="rupee">${each.rupeesign}</span>
       
@@ -125,9 +125,9 @@ let eligibilityinputdiv = "";
                           </p>
                       </div>
   </div>`
-    : "";
+    : '';
 
-  const emidiv = callJson.chechboxemiobj.chechboxemi
+  const emidiv = callJson.chechboxemiobj.chechboxemi == 'true'
     ? `
 <div class="emicalculator commoncalculator">
     <div class="parent-emi" id="emic">
@@ -157,10 +157,9 @@ let eligibilityinputdiv = "";
         </div>
     </div>
 </div>`
-    : "";
+    : '';
 
-
-const eligibilitydiv = callJson.chechboxelibilityobj.chechboxemi
+  const eligibilitydiv = callJson.chechboxelibilityobj.chechboxemi == 'true'
     ? `
 <div class="eligibilitycalculator calculator commoncalculator">
     <div class="parent-emi parent-eligibility" id="emic">
@@ -190,7 +189,7 @@ const eligibilitydiv = callJson.chechboxelibilityobj.chechboxemi
         </div>
     </div>
 </div>`
-    : "";
+    : '';
 
   return `
  <div class="container responsivegrid overlayDiv cmp-container--caloverlay">
@@ -218,19 +217,19 @@ const eligibilitydiv = callJson.chechboxelibilityobj.chechboxemi
                   <div class="calculator-parent-child">
                       <div class="cp-child">
                           <div class="mainheading ${callJson.mainheadingclass}">
-                              <p class="first-head">${callJson.selectloantype.subheading || ""}</p>
-                                <p class="second-head">${callJson.selectloantype.subheadingtow || ""}</p>
+                              <p class="first-head">${callJson.selectloantype.subheading || ''}</p>
+                                <p class="second-head">${callJson.selectloantype.subheadingtow || ''}</p>
                           </div>
                           <div class="headingtabs ${callJson.mainheadingclass}">
                               <ul class="headul">
 
 
                                   <li class="tab-emi-calc tab-common active">
-                                      <p>${callJson.tabname.firsttabbname || ""}</p>
+                                      <p>${callJson.tabname.firsttabbname || ''}</p>
                                   </li>
   
                                   <li class="tab-eligibility-calc tab-common">
-                                      <p>${callJson.tabname.secondtabbname || ""}</p>
+                                      <p>${callJson.tabname.secondtabbname || ''}</p>
                                   </li>
 
                                   <li class="tab-eligibility-calc tab-common gst-third-tab">
@@ -248,7 +247,7 @@ const eligibilitydiv = callJson.chechboxelibilityobj.chechboxemi
   
                           </div>
   
-                          <div class="customerbuttons ${callJson.button1text ? "" : "dp-none"}">
+                          <div class="customerbuttons ${callJson.button1text ? '' : 'dp-none'}">
   
                               <a href="${callJson.button1link}" target="_self">
   

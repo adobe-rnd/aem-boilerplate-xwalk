@@ -1,19 +1,17 @@
-import { renderCalculatorData } from "../emiandeligiblitycalc/renderhpcal.js";
-import { homeLoanCalcFunc } from "../emiandeligiblitycalc/homeloancalculators.js";
-import { CalcHTM } from "../emiandeligiblitycalc/templatehtml1.js";
-import { firstTabActive } from "../emiandeligiblitycalc/commonfile.js";
-import { fetchAPI, targetObject } from "../../scripts/scripts.js";
+import { renderCalculatorData } from '../emiandeligiblitycalc/renderhpcal.js';
+import { homeLoanCalcFunc } from '../emiandeligiblitycalc/homeloancalculators.js';
+import { CalcHTM } from '../emiandeligiblitycalc/templatehtml1.js';
+import { firstTabActive } from '../emiandeligiblitycalc/commonfile.js';
+import { calculatorFlatStrLogic, CFApiCall, fetchAPI, targetObject } from '../../scripts/scripts.js';
 
-let calculatorType, elgCalDiv, elgOverlay, overlay;
-
+let calculatorType; let elgCalDiv; let elgOverlay; let overlay;
 
 export default async function decorate(block) {
-
-  let cfURL = block.textContent.trim();
+  const cfURL = block.textContent.trim();
 
   const cfRepsonse = await CFApiCall(cfURL);
-  const repsonseData = cfRepsonse.data[0].data;
-  const jsonResponseData = JSON.parse(repsonseData)
+  const repsonseData = cfRepsonse.data;
+  const jsonResponseData = calculatorFlatStrLogic(repsonseData);
 
   /*  const callAJson = {
      total: 1,
@@ -24,7 +22,7 @@ export default async function decorate(block) {
          maindivbackground: "emi",
          title: "Eligibility Calculator",
          mainheadingclass: "",
-         salaried: {
+         salaried: {j
            salariedcheck: true,
            salariedtabid: "salariedTab",
            salariedtabname: "businessStatus",
@@ -183,38 +181,34 @@ export default async function decorate(block) {
   block.innerHTML = CalcHTM(jsonResponseData);
 
   try {
-    elgCalDiv = document.querySelector(".home-page-calculator-call-xf .eligibilitycalculator-wrapper");
-    elgOverlay = elgCalDiv.querySelector(".cmp-container--caloverlay");
+    elgCalDiv = document.querySelector('.home-page-calculator-call-xf .eligibilitycalculator-wrapper');
+    elgOverlay = elgCalDiv.querySelector('.cmp-container--caloverlay');
     eligibilityCalculatorCallXf();
   } catch (error) {
     console.warn(error);
   }
 }
 
-export async function CFApiCall(cfurl) {
-  const response = await fetchAPI("GET", cfurl);
-  const responseJson = await response.json();
-  return responseJson;
-}
+
 
 export function eligibilityCalculatorCallXf() {
-  document.querySelectorAll("[data-teaserv2-xf='homepage-eligibility-calculator-call-xf']") &&
-    document.querySelectorAll("[data-teaserv2-xf='homepage-eligibility-calculator-call-xf']").forEach((eachTeaserv2) => {
-      eachTeaserv2.addEventListener("click", function (e) {
+  document.querySelectorAll("[data-teaserv2-xf='homepage-eligibility-calculator-call-xf']")
+    && document.querySelectorAll("[data-teaserv2-xf='homepage-eligibility-calculator-call-xf']").forEach((eachTeaserv2) => {
+      eachTeaserv2.addEventListener('click', function (e) {
         e.stopImmediatePropagation();
-        const xfGetAttr = this.getAttribute("data-teaserv2-xf");
-        const findSectionXFShow = document.querySelector(".home-page-calculator-call-xf");
-        const currentSection = document.querySelector(".home-page-calculator-call-xf .eligibilitycalculator-wrapper");
-        findSectionXFShow.querySelector(".eligibilitycalculator-wrapper").querySelector(".overlayDiv").classList.add("show");
-        if (xfGetAttr == "homepage-eligibility-calculator-call-xf") {
-          targetObject.calculatorType = "Eligibility Calculator";
-          findSectionXFShow.classList.remove("dp-none");
-          document.querySelector(".modal-overlay").classList.add("overlay");
-          document.querySelector(".modal-overlay").classList.remove("dp-none");
-          calculatorType = "eligibility";
-          elgOverlay.classList.add("show");
+        const xfGetAttr = this.getAttribute('data-teaserv2-xf');
+        const findSectionXFShow = document.querySelector('.home-page-calculator-call-xf');
+        const currentSection = document.querySelector('.home-page-calculator-call-xf .eligibilitycalculator-wrapper');
+        findSectionXFShow.querySelector('.eligibilitycalculator-wrapper').querySelector('.overlayDiv').classList.add('show');
+        if (xfGetAttr == 'homepage-eligibility-calculator-call-xf') {
+          targetObject.calculatorType = 'Eligibility Calculator';
+          findSectionXFShow.classList.remove('dp-none');
+          document.querySelector('.modal-overlay').classList.add('overlay');
+          document.querySelector('.modal-overlay').classList.remove('dp-none');
+          calculatorType = 'eligibility';
+          elgOverlay.classList.add('show');
           //   overlay.classList.add("show");
-          document.body.style.overflow = "hidden";
+          document.body.style.overflow = 'hidden';
           homeLoanCalcFunc(currentSection);
           renderCalculatorData(currentSection, calculatorType);
           firstTabActive(currentSection);

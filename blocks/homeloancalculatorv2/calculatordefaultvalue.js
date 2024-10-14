@@ -2,7 +2,7 @@
 
 window.addEventListener("DOMContentLoaded", function() {
     let calculators = document.querySelectorAll(".homeloancalculator .calctabs .commoncalculator");
-    
+
     calculators.forEach((cal, index) => {
         const resetId = "calid-" + index;
         cal.dataset.resetId = resetId;

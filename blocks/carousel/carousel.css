@@ -218,9 +218,10 @@
 .section.banner-carousel-wrapper .carousel-wrapper .carousel.block .button-container>button {
   height: 8px;
   width: 8px;
-  background-color: var(--black);
   opacity: .2;
   border: unset;
+  background-color: #858585;
+  opacity: 0.3;
 }
 
 .section.banner-carousel-wrapper .carousel-wrapper .carousel.block .button-container>button.selected {
@@ -417,7 +418,6 @@
   right: 0;
 }
 
-.section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>h1,
 .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>p {
   display: none
 }
@@ -455,6 +455,20 @@
   background-repeat: no-repeat;
 }
 
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>h1,
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>h1>strong {
+  color: var(--black);
+  font-family: "Nunito-Extrabold", sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 60px;
+  margin-bottom: 16px;
+}
+
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>h1>strong {
+  display: block;
+}
+
 @media (min-width:1024px) and (max-width:1366px) {
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
     width: 312px;
@@ -489,7 +503,7 @@
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five>.background .foreground,
   .banner-carousel-wrapper.personal-loan-sub-page-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
     width: 100%;
-    min-height: 450px;
+    min-height: 440px;
   }
 
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .title>h2,
@@ -694,11 +708,18 @@
   .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-blue {
     background-image: url("/images/banner2-background-image-mobile.png");
   }
+
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>h1,
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>h1>strong {
+    font-size: 1.5rem;
+    line-height: 32px;
+    margin-bottom: unset;
+  }
 }
 
 @media screen and (max-width:767px) {
   .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser {
-    min-height: 450px;
+    min-height: 440px;
   }
 
   .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
@@ -719,7 +740,7 @@
   }
 
   .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .carousel .panel-container .teaser {
-    min-height: 450px;
+    min-height: 440px;
   }
 
   .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
@@ -732,19 +753,10 @@
   .section.banner-carousel-wrapper.self-employed-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
     right: 10px;
   }
-  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>h1,
   .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>p {
     display: block;
   }
 
-  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>h1 {
-    color: var(--black);
-    font-family: "Nunito-Extrabold", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 800;
-    line-height: 32px;
-    margin: unset;
-  }
   .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>p {
     color: var(--gradient-gray);
     font-family: "Nunito-Regular", sans-serif;
@@ -753,8 +765,6 @@
     line-height: 20px;
     margin-top: 12px;
   }
-  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .title>h1,
-  .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .eyebrow,
   .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>p {
     display: none;
   }
@@ -778,6 +788,10 @@
   .section.banner-carousel-wrapper.breadcrumb-container.improve-cibil-score-breadcrumb-handle .carousel-wrapper .panel-container .teaser.block>.background .foreground .text,
   .section.banner-carousel-wrapper.breadcrumb-container.breadcrumb-handle-scroll .carousel-wrapper .panel-container .teaser.block>.background .foreground .text {
     padding-top: 40px;
+  }
+
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.carousel-heading-inline-mob>.background .foreground .text .long-description>h1>strong {
+    display: inline;
   }
 }
 
@@ -1033,7 +1047,7 @@
     display: flex;
     align-items: end;
     justify-content: center;
-    min-height: 450px;
+    min-height: 440px;
   }
 }
 /* ek lakh loan end */

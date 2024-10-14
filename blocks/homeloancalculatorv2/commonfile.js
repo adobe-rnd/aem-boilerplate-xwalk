@@ -1,10 +1,9 @@
 /* import { resetCalculator } from "./resetCalculator.js";
 
-
 /* export function xfShowHideBodyClick(findSectionXFShow) {
-  
+
   body.addEventListener("click", function (e) {
-    
+
   });
 } *)
 

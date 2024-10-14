@@ -50,6 +50,8 @@
     "/content/piramalfinance-ueds/in/en/api/branch-locator:/api/branch-locator.json",
     "/content/piramalfinance-ueds/in/en/api/branchlocatorobj:/api/branchlocatorobj.json",
     "/content/piramalfinance-ueds/in/en/api/updatesheet:/api/updatesheet.json",
-    "/content/piramalfinance-ueds/in/en/api/branchloanmapping:/api/branchloanmapping.json"
+    "/content/piramalfinance-ueds/in/en/api/branchloanmapping:/api/branchloanmapping.json",
+    "/content/piramalfinance-ueds/in/apply-form-loan:/apply-form-loan.json",
+    "/content/piramalfinance-ueds/in/en/api/authorisedcsv:/api/authorisedcsv.json"
   ]
 }
