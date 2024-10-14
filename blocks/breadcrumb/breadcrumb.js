@@ -73,7 +73,7 @@ export default async function decorate(block) {
     'aria-label': 'Breadcrumb',
   });
 
-  if (multiText && multiUrl) {
+  if (multiText.innerText?.trim() && multiUrl.innerText?.trim()) {
     const breadcrumbsText = [];
     const multiUrls = multiUrl.innerText.trim().replace(/~/g, '/').split(',');
     multiText.innerText.trim().split(',').forEach((text, index) => {
