@@ -1,4 +1,4 @@
-import { branchURLStr, fetchAPI } from '../../scripts/scripts.js';
+import { branchURLStr, CFApiCall, fetchAPI } from '../../scripts/scripts.js';
 import { dropDownStateCity, locateMeClick, onloadBranchLocator } from './branchlocator-biz.js';
 import { setLocationObj } from './branchlocator-init.js';
 
@@ -91,12 +91,6 @@ export function innerBranchFunc(branchhList) {
     // <a href="/branch-locator/${eachState}/${eachCity}/loans-in-${eachCity}-${eachState}-${eachLocationCode}" id='more-details-btn'> More details </a>
   });
   return innerBranch;
-}
-
-export async function CFApiCall(cfurl) {
-  const response = await fetchAPI('GET', cfurl);
-  const responseJson = await response.json();
-  return responseJson;
 }
 
 export default async function decorate(block) {
