@@ -218,10 +218,9 @@
 .section.banner-carousel-wrapper .carousel-wrapper .carousel.block .button-container>button {
   height: 8px;
   width: 8px;
-  background-color: var(--black);
   opacity: .2;
   border: unset;
-  background-color: rgb(51, 51, 51);
+  background-color: #858585;
   opacity: 0.3;
 }
 
