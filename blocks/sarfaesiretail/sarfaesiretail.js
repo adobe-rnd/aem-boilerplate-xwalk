@@ -4,7 +4,6 @@ export default async function decorate(block) {
   const cfURL = block.textContent.trim();
   const cfRepsonse = await CFApiCall(cfURL);
   const repsonseData = cfRepsonse.data;
-  console.log(repsonseData);
 
   const headers = Object.keys(repsonseData[0]);
   const headerRow = `

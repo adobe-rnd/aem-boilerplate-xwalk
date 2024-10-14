@@ -282,7 +282,7 @@ function otpPopupWhatsAppHTML({
                 </div>
                 <div class="loan-form-button-container  loan-form-otp-button-container">
                     <button id="loan-from-otp-verify" class="cmp-container">
-                        <div class="btn-text"> ${getValueAthor(otpverify)} OTP</div>
+                        <div class="btn-text"> ${getValueAthor(otpverify)} </div>
                         <div class="loader"></div>
                     </button>
                 </div>

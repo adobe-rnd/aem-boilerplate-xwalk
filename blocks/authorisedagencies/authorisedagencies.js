@@ -4,8 +4,12 @@ import { ctaClickInteraction } from '../../dl.js';
 export default async function decorate(block) {
   const cfURL = block.textContent.trim();
   const cfRepsonse = await CFApiCall(cfURL);
-  const repsonseData = cfRepsonse.data[0].data;
-  const jsonResponseData = JSON.parse(repsonseData);
+  const repsonseData = cfRepsonse.data;
+  const result = Object.groupBy(repsonseData, ({ Location }) => {
+    const lowercaseLocation = Location.toLowerCase();
+    return lowercaseLocation.charAt(0).toUpperCase() + lowercaseLocation.slice(1);
+  });
+  const jsonResponseData = (result);
   const selectContainerWrapper = createAndAppend('div', '', 'select-container-wrapper');
   const selectContainer = createAndAppend('div', '', 'select-container');
   const cardContainer = createAndAppend('div', '', 'card-container');

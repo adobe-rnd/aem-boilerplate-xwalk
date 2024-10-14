@@ -4,8 +4,6 @@
     "/content/piramalfinance-eds/in/en/:/",
     "/content/piramalfinance/in/en/:/",
     "/content/piramalfinance/content/in/en/:/",
-    "/content/piramalfinance-eds/in/en/api/redirects:/api/redirects.json",
-    "/content/piramalfinance-eds/in/en/api/redirects:/api/redirects.json",
     "/content/piramalfinance-eds/in/en/api/cust-testimonial:/api/cust-testimonial.json",
     "/content/piramalfinance-eds/in/en/api/cust-testimonial-business-loan:/api/cust-testimonial-business-loan.json",
     "/content/piramalfinance-eds/in/en/api/cust-testimonial-business-loan-working-capital:/api/cust-testimonial-business-loan-working-capital.json",
@@ -44,6 +42,7 @@
     "/content/piramalfinance-eds/in/en/api/sarfaesi:/api/sarfaesi.json",
     "/content/piramalfinance-eds/in/en/api/neeyat-muti-lang:/api/neeyat-muti-lang.json",
     "/content/piramalfinance-eds/in/headers:/.helix/headers.json",
+    "/content/piramalfinance-eds/in/redirects:/redirects.json",
     "/content/piramalfinance-eds/in/configuration:/.helix/config.json",
     "/content/piramalfinance-eds/in/en/api/authorisedagencies:/api/authorisedagencies.json",
     "/content/piramalfinance-eds/in/en/api/sarfaesi:/api/sarfaesi.json",
@@ -51,6 +50,9 @@
     "/content/piramalfinance-eds/in/en/api/branchlocatorobj:/api/branchlocatorobj.json",
     "/content/piramalfinance-eds/in/en/api/updatesheet:/api/updatesheet.json",
     "/content/piramalfinance-eds/in/en/api/branchloanmapping:/api/branchloanmapping.json",
-    "/content/piramalfinance-eds/in/apply-form-loan:/apply-form-loan.json"
+    "/content/piramalfinance-eds/in/apply-form-loan:/apply-form-loan.json",
+    "/content/piramalfinance-eds/in/en/api/sarfaesiwholesale:/api/sarfaesiwholesale.json",
+    "/content/piramalfinance-eds/in/en/api/eauctioncsv:/api/eauctioncsv.json",
+    "/content/piramalfinance-eds/in/en/api/authorisedcsv:/api/authorisedcsv.json"
   ]
 }
