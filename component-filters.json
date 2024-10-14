@@ -54,12 +54,14 @@
       "cards",
       "columns",
       "breadcrumb",
+      "boards",
       "rte",
       "city-list",
       "imgwithlink",
       "testimonial",
       "financialreports",
       "faq",
+      "schema-tag",
       "offer-documents",
       "carousel",
       "teaser",
@@ -112,6 +114,10 @@
   {
     "id": "cards",
     "components": ["card"]
+  },
+  {
+    "id": "boards",
+    "components": ["board-item"]
   },
   {
     "id": "carousel",
@@ -172,7 +178,7 @@
       "indentation": ["indent", "outdent"],
       "sr_script": ["superscript", "subscript"],
       "list": ["bullist", "numlist"],
-      "insert": ["link", "image", "table"],
+      "insert": ["link", "image"],
       "advanced": [],
       "extensions": [],
       "editor": ["removeformat"]

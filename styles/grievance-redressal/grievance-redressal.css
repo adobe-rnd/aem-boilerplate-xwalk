@@ -9,7 +9,7 @@
 }
 
 .section.grievance-redressal-levels .columns-wrapper .columns>div {
-    margin-top: 40px;
+    margin-top: 32px;
     align-items: start;
 }
 
@@ -129,7 +129,9 @@
 @media screen and (max-width:767px) {
     .section.grievance-redressal-levels .columns-wrapper .columns{
         grid-template-columns: repeat(1, minmax(0, 1fr));
+        row-gap: 0px;
     }
+    
 }
 /* grievance redressal levels  End */
 
@@ -209,6 +211,7 @@ margin-top: -16px;
         font-size: 1.125rem;
         font-weight: 800;
         line-height: 27px;
+        min-height: 27px;
     }
 }
 /* Stakeholder Insurance Services End */

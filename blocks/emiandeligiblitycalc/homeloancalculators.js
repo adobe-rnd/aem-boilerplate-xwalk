@@ -1,55 +1,54 @@
-import { currenyCommaSeperation } from "../../scripts/scripts.js";
-import { resetCalculator } from "./resetCalculator.js";
+import { currenyCommaSeperation } from '../../scripts/scripts.js';
+import { resetCalculator } from './resetCalculator.js';
 
 /* document.addEventListener("DOMContentLoaded", function () {
   homeLoanCalcFunc();
 }); */
 
 export function homeLoanCalcFunc(currentSection) {
+  const salariedDivs = currentSection.querySelectorAll('.onetab');
+  const businessDivs = currentSection.querySelectorAll('.twotab');
 
-  var salariedDivs = currentSection.querySelectorAll(".onetab");
-  var businessDivs = currentSection.querySelectorAll(".twotab");
-
-  var salariedRadios = currentSection.querySelectorAll(".input_salary_checkbox");
-  var businessRadios = currentSection.querySelectorAll(".input_business_checkbox");
+  const salariedRadios = currentSection.querySelectorAll('.input_salary_checkbox');
+  const businessRadios = currentSection.querySelectorAll('.input_business_checkbox');
 
   // just below heading tabs color changes and input click  code start
-  salariedDivs.forEach(function (salariedDiv, index) {
-    salariedDiv.addEventListener("click", function () {
+  salariedDivs.forEach((salariedDiv, index) => {
+    salariedDiv.addEventListener('click', () => {
       handleTabClick(salariedDiv, true, index);
     });
   });
-  businessDivs.forEach(function (businessDiv, index) {
-    businessDiv.addEventListener("click", function () {
+  businessDivs.forEach((businessDiv, index) => {
+    businessDiv.addEventListener('click', () => {
       handleTabClick(businessDiv, false, index);
     });
   });
 
   function handleTabClick(tabDiv, isSalaried, index) {
-    var backgroundDiv = tabDiv.closest(".home-loan-calculator-parent");
-    var calculatorDiv = tabDiv.parentElement.closest(".home-loan-calculator-parent ").nextElementSibling;
-    var radioInput = isSalaried ? salariedRadios[index] : businessRadios[index];
-    var docRequiredBackground = currentSection.querySelector("#document-required-container");
-    var docSalaries = currentSection.querySelectorAll(".cmp-text--doc-salary");
-    var docBusinesses = currentSection.querySelectorAll(".cmp-text--doc-business");
+    const backgroundDiv = tabDiv.closest('.home-loan-calculator-parent');
+    const calculatorDiv = tabDiv.parentElement.closest('.home-loan-calculator-parent ').nextElementSibling;
+    const radioInput = isSalaried ? salariedRadios[index] : businessRadios[index];
+    const docRequiredBackground = currentSection.querySelector('#document-required-container');
+    const docSalaries = currentSection.querySelectorAll('.cmp-text--doc-salary');
+    const docBusinesses = currentSection.querySelectorAll('.cmp-text--doc-business');
 
     radioInput.checked = true;
-    tabDiv.style.background = isSalaried ? "#fff7f4" : "#eef3ff";
-    var otherTabDiv = isSalaried ? businessDivs[index] : salariedDivs[index];
-    otherTabDiv.style.background = "#ffffff";
+    tabDiv.style.background = isSalaried ? '#fff7f4' : '#eef3ff';
+    const otherTabDiv = isSalaried ? businessDivs[index] : salariedDivs[index];
+    otherTabDiv.style.background = '#ffffff';
 
-    calculatorDiv.style.background = isSalaried ? "#fff7f4" : "#eef3ff";
-    backgroundDiv.style.background = isSalaried ? "-webkit-linear-gradient(right, #fff 50%, #fff7f4 50%)" : "-webkit-linear-gradient(right, #eef3ff 50%, #fff 50%)";
+    calculatorDiv.style.background = isSalaried ? '#fff7f4' : '#eef3ff';
+    backgroundDiv.style.background = isSalaried ? '-webkit-linear-gradient(right, #fff 50%, #fff7f4 50%)' : '-webkit-linear-gradient(right, #eef3ff 50%, #fff 50%)';
     if (docRequiredBackground) {
-      docRequiredBackground.style.background = isSalaried ? "#fff7f4" : "#eef3ff";
+      docRequiredBackground.style.background = isSalaried ? '#fff7f4' : '#eef3ff';
     }
     if (docSalaries) {
       docSalaries.forEach((docSalary) => {
-        docSalary.style.display = isSalaried ? "block" : "none";
+        docSalary.style.display = isSalaried ? 'block' : 'none';
       });
 
       docBusinesses.forEach((docBusiness) => {
-        docBusiness.style.display = isSalaried ? "none" : "block";
+        docBusiness.style.display = isSalaried ? 'none' : 'block';
       });
     }
   }
@@ -78,108 +77,108 @@ export function homeLoanCalcFunc(currentSection) {
 
   // this for emi and elg calculator click
 
-  const emiTabs = currentSection.querySelectorAll(".tab-emi-calc");
-  const elgTabs = currentSection.querySelectorAll(".tab-eligibility-calc");
-  const emiDivs = currentSection.querySelectorAll(".emicalculator.commoncalculator");
-  const elgDivs = currentSection.querySelectorAll(".eligibilitycalculator.commoncalculator");
+  const emiTabs = currentSection.querySelectorAll('.tab-emi-calc');
+  const elgTabs = currentSection.querySelectorAll('.tab-eligibility-calc');
+  const emiDivs = currentSection.querySelectorAll('.emicalculator.commoncalculator');
+  const elgDivs = currentSection.querySelectorAll('.eligibilitycalculator.commoncalculator');
   // const emiCalDiv = document.querySelector(".home-page-calculator-call-xf .homeloancalculator-wrapper");
   // const elgDivs = document.querySelectorAll(".home-page-calculator-call-xf .eligibilitycalculator");
-  const firstHead = currentSection.querySelector(".first-head");
-  const secondHead = currentSection.querySelector(".second-head");
-  const gstBtn = currentSection.querySelector(".gst-third-tab");
+  const firstHead = currentSection.querySelector('.first-head');
+  const secondHead = currentSection.querySelector('.second-head');
+  const gstBtn = currentSection.querySelector('.gst-third-tab');
 
   // Function to handle click on emi tabs
   function handleEmiTabClick(index) {
     // Activate emi tab and deactivate eligibility tab
-    let isAlreadyActive = emiTabs[index].classList.contains("active");
-    emiTabs[index].classList.add("active");
-    elgTabs[index].classList.remove("active");
+    const isAlreadyActive = emiTabs[index].classList.contains('active');
+    emiTabs[index].classList.add('active');
+    elgTabs[index].classList.remove('active');
 
     // Show emi div and hide eligibility div
-    emiDivs[index].style.display = "block";
-    elgDivs[index].style.display = "none";
+    emiDivs[index].style.display = 'block';
+    elgDivs[index].style.display = 'none';
 
     if (isAlreadyActive == false) {
       resetCalculator(emiDivs[index]);
     }
 
     if (secondHead) {
-      secondHead.style.display = "block";
-      firstHead.style.display = "block";
+      secondHead.style.display = 'block';
+      firstHead.style.display = 'block';
     }
   }
 
   // Function to handle click on eligibility tabs
   function handleElgTabClick(index) {
     // Activate eligibility tab and deactivate emi tab
-    let isAlreadyActive = elgTabs[index].classList.contains("active");
+    const isAlreadyActive = elgTabs[index].classList.contains('active');
 
-    elgTabs[index].classList.add("active");
-    emiTabs[index].classList.remove("active");
+    elgTabs[index].classList.add('active');
+    emiTabs[index].classList.remove('active');
 
     // Show eligibility div and hide emi div
-    elgDivs[index].style.display = "block";
-    emiDivs[index].style.display = "none";
+    elgDivs[index].style.display = 'block';
+    emiDivs[index].style.display = 'none';
 
     if (isAlreadyActive == false) {
       resetCalculator(elgDivs[index]);
     }
 
     if (secondHead) {
-      firstHead.style.display = "block";
-      secondHead.style.display = "block";
+      firstHead.style.display = 'block';
+      secondHead.style.display = 'block';
     }
   }
 
   function handleSalaryTabClickNone(index) {
-    var salariedDivs = currentSection.querySelectorAll(".onetab");
+    const salariedDivs = currentSection.querySelectorAll('.onetab');
 
-    salariedDivs[index].style.display = "none";
+    salariedDivs[index].style.display = 'none';
   }
   function handleSalaryTabClickBlock(index) {
-    var salariedDivs = currentSection.querySelectorAll(".onetab");
+    const salariedDivs = currentSection.querySelectorAll('.onetab');
 
-    salariedDivs[index].style.display = "block";
+    salariedDivs[index].style.display = 'block';
   }
 
   // Add event listeners to emi tabs
   if (emiTabs[0]) {
-    emiTabs[0].addEventListener("click", function () {
+    emiTabs[0].addEventListener('click', () => {
       handleEmiTabClick(0);
       if (gstBtn) {
-        gstBtn.classList.remove("active");
+        gstBtn.classList.remove('active');
       }
     });
   }
 
   if (emiTabs[1]) {
-    emiTabs[1].addEventListener("click", function () {
+    emiTabs[1].addEventListener('click', () => {
       handleEmiTabClick(1);
 
       // handleSalaryTabClickBlock(1);
     });
   }
   if (gstBtn) {
-    gstBtn.addEventListener("click", function () {
-      elgTabs[0].classList.remove("active");
-      emiTabs[0].classList.remove("active");
-      gstBtn.classList.add("active");
-      elgDivs[0].style.display = "block";
-      emiDivs[0].style.display = "none";
+    gstBtn.addEventListener('click', () => {
+      elgTabs[0].classList.remove('active');
+      emiTabs[0].classList.remove('active');
+      gstBtn.classList.add('active');
+      elgDivs[0].style.display = 'block';
+      emiDivs[0].style.display = 'none';
     });
   }
   // Add event listeners to eligibility tabs
   if (elgTabs[0]) {
-    elgTabs[0].addEventListener("click", function () {
+    elgTabs[0].addEventListener('click', () => {
       handleElgTabClick(0);
       if (gstBtn) {
-        gstBtn.classList.remove("active");
+        gstBtn.classList.remove('active');
       }
       // handleSalaryTabClickNone(0);
     });
   }
   if (elgTabs[1]) {
-    elgTabs[1].addEventListener("click", function () {
+    elgTabs[1].addEventListener('click', () => {
       handleElgTabClick(1);
 
       // handleSalaryTabClickNone(1);
@@ -187,24 +186,24 @@ export function homeLoanCalcFunc(currentSection) {
   }
 
   //  Slider linear gradient and slider value and input value code start
-  var sliderValues = currentSection.querySelectorAll(".slider-value");
+  const sliderValues = currentSection.querySelectorAll('.slider-value');
 
-  sliderValues.forEach(function (sliderValue) {
-    var sliderId = sliderValue.dataset.slider;
-    var myRangeSlider = currentSection.querySelector("#"+sliderId);
-    var calInput = myRangeSlider.dataset.calInput;
+  sliderValues.forEach((sliderValue) => {
+    const sliderId = sliderValue.dataset.slider;
+    const myRangeSlider = currentSection.querySelector(`#${sliderId}`);
+    const { calInput } = myRangeSlider.dataset;
 
     sliderValue.value = formatIndianNumber(myRangeSlider.value);
 
-    myRangeSlider.addEventListener("input", function () {
+    myRangeSlider.addEventListener('input', () => {
       updateInputValue();
       sliderValue.value = formatIndianNumber(myRangeSlider.value);
     });
 
-    sliderValue.addEventListener("focusout", function () {
-      var parsedValue = parseFloat(sliderValue.value.replaceAll(",", "")) || 0;
-      var minValue = parseFloat(myRangeSlider.min);
-      var maxValue = parseFloat(myRangeSlider.max);
+    sliderValue.addEventListener('focusout', function () {
+      let parsedValue = parseFloat(sliderValue.value.replaceAll(',', '')) || 0;
+      const minValue = parseFloat(myRangeSlider.min);
+      const maxValue = parseFloat(myRangeSlider.max);
       if (parsedValue < minValue) {
         parsedValue = minValue;
       }
@@ -212,44 +211,44 @@ export function homeLoanCalcFunc(currentSection) {
         parsedValue = maxValue;
       }
       myRangeSlider.value = parsedValue;
-      if (this.dataset.calInput === "roi") {
+      if (this.dataset.calInput === 'roi') {
         sliderValue.value = parseFloat(parsedValue);
       } else {
         sliderValue.value = formatIndianNumber(parsedValue);
       }
       updateInputValue();
 
-      sliderValue.dispatchEvent(new Event("change", { bubbles: true }));
+      sliderValue.dispatchEvent(new Event('change', { bubbles: true }));
     });
 
     function updateInputValue() {
-      var valPercent = ((myRangeSlider.value - myRangeSlider.min) / (myRangeSlider.max - myRangeSlider.min)) * 100;
+      const valPercent = ((myRangeSlider.value - myRangeSlider.min) / (myRangeSlider.max - myRangeSlider.min)) * 100;
       myRangeSlider.style.background = `linear-gradient(90deg, #da4d34 ${valPercent}%, #dbd7d8 ${valPercent}%)`;
     }
 
-    myRangeSlider.dispatchEvent(new Event("input"));
+    myRangeSlider.dispatchEvent(new Event('input'));
 
     function formatIndianNumber(value) {
       //  let newvalue = value.replace(/,/g, "");
-      let val = value;
+      const val = value;
       return isNaN(Number(val)) ? 0 : currenyCommaSeperation(val);
     }
 
-    sliderValue.addEventListener("input", function (number) {
-      var inputValue = sliderValue.value;
+    sliderValue.addEventListener('input', function (number) {
+      const inputValue = sliderValue.value;
 
       // Remove non-numeric characters except the decimal point
-      var cleanedValue = inputValue.replace(/[^\d.]/g, "");
-      let inputType = this.dataset.calInput;
+      let cleanedValue = inputValue.replace(/[^\d.]/g, '');
+      const inputType = this.dataset.calInput;
       // not accept decimal point
 
-      var parsedValue = cleanedValue;
+      let parsedValue = cleanedValue;
       cleanedValue = String(cleanedValue);
 
-      if (inputType === "roi") {
+      if (inputType === 'roi') {
         parsedValue = parsedValue;
-      } else if (inputType === "tenure") {
-        parsedValue = cleanedValue.replace(/\./g, "").replaceAll(",", "");
+      } else if (inputType === 'tenure') {
+        parsedValue = cleanedValue.replace(/\./g, '').replaceAll(',', '');
       } else {
         parsedValue = formatIndianNumber(parsedValue);
       }
@@ -257,16 +256,16 @@ export function homeLoanCalcFunc(currentSection) {
       sliderValue.value = parsedValue;
     });
 
-    sliderValue.addEventListener("change", function (e) {
-      var inputValue = sliderValue.value;
+    sliderValue.addEventListener('change', function (e) {
+      const inputValue = sliderValue.value;
 
       // Remove non-numeric characters except the decimal point
-      var cleanedValue = inputValue.replace(/[^\d.]/g, "");
-      let inputType = this.dataset.calInput;
+      let cleanedValue = inputValue.replace(/[^\d.]/g, '');
+      const inputType = this.dataset.calInput;
       // not accept decimal point
 
-      var minValue = parseFloat(myRangeSlider.min);
-      var maxValue = parseFloat(myRangeSlider.max);
+      const minValue = parseFloat(myRangeSlider.min);
+      const maxValue = parseFloat(myRangeSlider.max);
 
       if (cleanedValue < minValue) {
         cleanedValue = minValue;
@@ -275,12 +274,12 @@ export function homeLoanCalcFunc(currentSection) {
         cleanedValue = maxValue;
       }
 
-      var parsedValue = String(cleanedValue);
+      let parsedValue = String(cleanedValue);
 
-      if (inputType === "roi") {
+      if (inputType === 'roi') {
         parsedValue = parsedValue;
-      } else if (inputType === "tenure") {
-        parsedValue = parsedValue.replace(/\./g, "").replaceAll(",", "");
+      } else if (inputType === 'tenure') {
+        parsedValue = parsedValue.replace(/\./g, '').replaceAll(',', '');
       } else {
         parsedValue = formatIndianNumber(parsedValue);
       }

@@ -478,4 +478,13 @@
         line-height: 22px;
         padding: 3px 0;
     }
+
+    .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-selectvalue {
+        padding: 8px 18px 8px 10px;
+    }
+
+    .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-selectvalue::after {
+        top: 13px;
+        right: 10px;
+    }
 }

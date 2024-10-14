@@ -7,9 +7,10 @@ import { validationJSFunc } from '../applyloanform/validation.js';
 import { generateDetailedTeaserDOM } from '../detailed-teaser/detailed-teaser.js';
 import { generateTeaserDOM } from '../teaser/teaser.js';
 import gliderMin from './glider.min.js';
-const carouselContainerMapping = {}
-carouselContainerMapping["detailed-teaser"] = generateDetailedTeaserDOM;
-carouselContainerMapping["ss-teaser"] = generateDetailedTeaserDOM;
+
+const carouselContainerMapping = {};
+carouselContainerMapping['detailed-teaser'] = generateDetailedTeaserDOM;
+carouselContainerMapping['ss-teaser'] = generateDetailedTeaserDOM;
 
 // callback for touch based scrolling event
 function updateButtons(entries) {
@@ -42,25 +43,24 @@ export default function decorate(block) {
   const buttonContainer = document.createElement('div');
   buttonContainer.classList.add('button-container');
 
-
-  const slideNavButtons = document.createElement("div");
-  slideNavButtons.classList.add("carousel-navigation-buttons");
+  const slideNavButtons = document.createElement('div');
+  slideNavButtons.classList.add('carousel-navigation-buttons');
   slideNavButtons.innerHTML = `
-    <button type="button" class="slide-prev glider-prev" aria-label="${"Previous Slide"
-    }">${block.children[0].outerHTML || "<"}</button>
-    <button type="button" class="slide-next glider-next" aria-label="${"Next Slide"
-    }">${block.children[1].outerHTML || ">"}</button>
+    <button type="button" class="slide-prev glider-prev" aria-label="${'Previous Slide'
+}">${block.children[0].outerHTML || '<'}</button>
+    <button type="button" class="slide-next glider-next" aria-label="${'Next Slide'
+}">${block.children[1].outerHTML || '>'}</button>
   `;
   // block.appendChild(slideNavButtons);
 
-  const carouselshowtype = block.children[2].innerText.trim() || "primary";
-  const rotatetype = block.children[3].innerText.trim() || "rotate-off";
-  const version = block.children[4].innerText.trim() || "One";
-  const configData = block.children[5].innerText.trim() || "";
+  const carouselshowtype = block.children[2].innerText.trim() || 'primary';
+  const rotatetype = block.children[3].innerText.trim() || 'rotate-off';
+  const version = block.children[4].innerText.trim() || 'One';
+  const configData = block.children[5].innerText.trim() || '';
 
-  const isOldversion = targetObject.isMobile || version === "One";
+  const isOldversion = targetObject.isMobile || version === 'One';
   // const isOldversion = false;
-  const isrotate = rotatetype === "rotate-on";
+  const isrotate = rotatetype === 'rotate-on';
   block.classList.add(carouselshowtype, version);
 
   // get all children elements
@@ -76,17 +76,17 @@ export default function decorate(block) {
     let blockType = 'teaser';
     // const blockType = [...classes].includes('detailed-teaser') ? 'detailed-teaser' : 'teaser';
     // check if we have to render teaser or a detailed teaser
-    // const teaserDOM = 
+    // const teaserDOM =
     //   blockType === 'detailed-teaser'
     //     ? generateDetailedTeaserDOM([imagebg, image, ...rest], classes)
     //     : generateTeaserDOM([imagebg, image, ...rest], classes);
     let generateOtherComponent = null;
-    classes.forEach(function (className) {
+    classes.forEach((className) => {
       if (carouselContainerMapping[className]) {
         blockType = className;
         generateOtherComponent = carouselContainerMapping[className];
       }
-    })
+    });
     generateOtherComponent = generateOtherComponent ? generateOtherComponent([imagebg, image, ...rest], classes) : generateTeaserDOM([imagebg, image, ...rest], classes);
     panel.textContent = '';
     panel.classList.add(blockType, 'block', 'carousel-item');
@@ -101,14 +101,14 @@ export default function decorate(block) {
       buttonContainer.append(button);
       button.title = `Slide ${i + 1}`;
       button.dataset.panel = `panel_${i}`;
-      panels[i].classList.forEach(function (panelclass) {
-        if (!["teaser", "block", "carousel-item"].includes(panelclass)) {
+      panels[i].classList.forEach((panelclass) => {
+        if (!['teaser', 'block', 'carousel-item'].includes(panelclass)) {
           button.classList.add(panelclass);
         }
-      })
+      });
       if (!i) button.classList.add('selected');
 
-      if (version === "Glider") {
+      if (version === 'Glider') {
 
       } else if (isOldversion) {
         observer.observe(panel);
@@ -124,13 +124,13 @@ export default function decorate(block) {
   block.textContent = '';
   block.append(panelContainer);
   block.append(slideNavButtons);
-  const slidePrev = block.querySelector(".slide-prev");
-  const slideNext = block.querySelector(".slide-next")
+  const slidePrev = block.querySelector('.slide-prev');
+  const slideNext = block.querySelector('.slide-next');
 
   // /*
-  if (version === "Glider") {
+  if (version === 'Glider') {
     const configJson = JSON.parse(configData);
-    //console.log(configJson);
+    // console.log(configJson);
     configJson.arrows = {};
     configJson.arrows.prev = slidePrev;
     configJson.arrows.next = slideNext;
@@ -144,42 +144,41 @@ export default function decorate(block) {
             new Glider(panelContainer, configJson);
           }
         });
-      }
+      },
     );
 
     observer.observe(block);
   } else if (isOldversion) {
-
     function activePanelContainer(panel) {
       panelContainer.scrollTo({ top: 0, left: panel.offsetLeft - panel.parentNode.offsetLeft, behavior: 'smooth' });
     }
     function slidePrevEventHandler() {
-      const actviveBtn = buttonContainer.querySelector(".selected");
-      const activePanel = block.querySelector('[data-panel=' + actviveBtn.dataset.panel + ']');
+      const actviveBtn = buttonContainer.querySelector('.selected');
+      const activePanel = block.querySelector(`[data-panel=${actviveBtn.dataset.panel}]`);
       const panel = activePanel.previousElementSibling;
-      if (panel) activePanelContainer(panel)
+      if (panel) activePanelContainer(panel);
     }
     function slideNextEventHandler() {
-      const actviveBtn = buttonContainer.querySelector(".selected");
-      const activePanel = block.querySelector('[data-panel=' + actviveBtn.dataset.panel + ']');
+      const actviveBtn = buttonContainer.querySelector('.selected');
+      const activePanel = block.querySelector(`[data-panel=${actviveBtn.dataset.panel}]`);
       if (isrotate) {
         const panel = activePanel.nextElementSibling ? activePanel.nextElementSibling : block.querySelector('[data-panel');
         if (panel) activePanelContainer(panel);
       } else {
         const panel = activePanel.nextElementSibling;
         if (panel) {
-          activePanelContainer(panel)
+          activePanelContainer(panel);
         } else {
           // slideNext.classList.add("disabled")
-        };
+        }
       }
     }
-    slidePrev?.addEventListener("click", function (e) {
+    slidePrev?.addEventListener('click', (e) => {
       slidePrevEventHandler();
-    })
-    slideNext.addEventListener("click", function (e) {
+    });
+    slideNext.addEventListener('click', (e) => {
       slideNextEventHandler();
-    })
+    });
 
     /* try {
       document.querySelectorAll('.open-form-on-click') && document.querySelectorAll('.open-form-on-click .button-container').forEach(function (eachApplyFormClick) {
@@ -195,17 +194,15 @@ export default function decorate(block) {
     } */
 
     if (buttonContainer.children.length) {
-      block.append(buttonContainer)
-      isrotate && setInterval(function () {
+      block.append(buttonContainer);
+      isrotate && setInterval(() => {
         if ((body.style.overflowY != 'hidden')) {
           slideNextEventHandler();
         }
       }, 7000);
-    };
-  } else {
-    if (buttonContainer.children.length) {
-      block.append(buttonContainer)
-      createCarousle(block, slidePrev, slideNext)
-    };
+    }
+  } else if (buttonContainer.children.length) {
+    block.append(buttonContainer);
+    createCarousle(block, slidePrev, slideNext);
   }
 }

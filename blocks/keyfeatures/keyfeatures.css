@@ -26,8 +26,8 @@
     justify-content: start;
     padding: 16px 24px;
     flex-direction: column-reverse;
-    min-height: 220px;
-    row-gap: 10px;
+    min-height: 240px;
+    row-gap: 16px;
 }
 
 .section.home-loans-products-wrapper.home-loans-products-single-card .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper .keyfeatures .homeloanteaser .cmp-teaser .cmp-teaser__link,
@@ -141,7 +141,8 @@
     padding-left: 16px;
 }
 
-.section.home-loans-products-wrapper .homeloanteaser .keyfeature-container .keyfeatures .feature .feature-details div p:first-child{
+.section.home-loans-products-wrapper .homeloanteaser .keyfeature-container .keyfeatures .feature .feature-details div p:first-child,
+.section.home-loans-products-wrapper .homeloanteaser .keyfeature-container .keyfeatures .feature .feature-details div p {
     color: #666;
     font-family: Nunito-Regular, sans-serif;
     font-size: 0.875rem;
@@ -235,7 +236,7 @@
     height: auto;
 }
 
-.section.personal-loan-key-feature .default-content-wrapper h2 {
+.section.personal-loan-key-feature>.fragment-wrapper>.section .default-content-wrapper h2 {
     color: var(--black);
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
@@ -244,6 +245,10 @@
     line-height: 2.5rem;
     padding-bottom: 8px;
     margin: 0;
+}
+
+.section.personal-loan-key-feature>.fragment-wrapper>.section .wrappercreation-wrapper .wrappercreation {
+    margin-top: 24px;
 }
 
 @media screen and (max-width: 767px) {
@@ -313,17 +318,22 @@
         min-height: 220px;
     }   
 
-    .section.personal-loan-key-feature .default-content-wrapper h2 {
+    .section.personal-loan-key-feature>.fragment-wrapper>.section .default-content-wrapper h2 {
         font-size: 1.25rem;
         line-height: 1.75rem;
         padding-bottom: 4px;
+    }
+
+    .section.personal-loan-key-feature>.fragment-wrapper>.section .wrappercreation-wrapper .wrappercreation,
+    .section.personal-loan-key-feature>.fragment-wrapper>.section .wrappercreation-wrapper .wrappercreation .wrapper-creation-container {
+        margin-top: 9px;
     }
 }
 
 @media (min-width:768px) and (max-width: 1024px) {
     .section.home-loans-products-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper .keyfeatures .homeloanteaser .cmp-teaser .cmp-teaser__link{
-        min-height: 240px;
-        row-gap: 12px;
+        min-height: 270px;
+        /* row-gap: 12px; */
         padding: 16px 24px;
     }
     .section.home-loans-products-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper .keyfeatures .homeloanteaser .cmp-teaser .cmp-teaser__link .cmp-teaser__content p{
@@ -343,8 +353,14 @@
     }
 }
 
-/* @media screen and (min-width:1025px) and (max-width: 1300px) {
-    .section.home-loans-products-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper .keyfeatures .homeloanteaser .cmp-teaser .cmp-teaser__link{
-        min-height: 235px;
+@media screen and (max-width:1024px) {
+    .section.personal-loan-key-feature>.fragment-wrapper>.section>div {
+        padding: unset;
     }
-  } */
+}
+
+@media screen and (min-width:1025px) and (max-width: 1300px) {
+    .section.personal-loan-key-feature>.fragment-wrapper>.section>div {
+        max-width: unset !important;
+    }
+}

@@ -1,6 +1,6 @@
-import { getProps } from "../../scripts/scripts.js";
+import { getProps } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
-    //console.log(block);
-    const [] = getProps(block);
+  // console.log(block);
+  const [] = getProps(block);
 }

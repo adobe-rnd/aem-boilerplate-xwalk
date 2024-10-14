@@ -1,16 +1,16 @@
 export function resetCalculator(calculator) {
-    let calDefaultValueObj = JSON.parse(sessionStorage.getItem("calDefaultValueObj"));
+  const calDefaultValueObj = JSON.parse(sessionStorage.getItem('calDefaultValueObj'));
 
-    let calId = calculator.dataset.resetId;
+  const calId = calculator.dataset.resetId;
 
-    if(calDefaultValueObj == null) return;
-    let calObj = calDefaultValueObj[calId] || {};
+  if (calDefaultValueObj == null) return;
+  const calObj = calDefaultValueObj[calId] || {};
 
-    for(let id in calObj) {
-        let rangeInput = calculator.querySelector("[id=" + id + "]");
-        rangeInput.value = calObj[id];
-        rangeInput.dispatchEvent(new Event("input", {bubbles: true}));
-    }
+  for (const id in calObj) {
+    const rangeInput = calculator.querySelector(`[id=${id}]`);
+    rangeInput.value = calObj[id];
+    rangeInput.dispatchEvent(new Event('input', { bubbles: true }));
+  }
 
-    // calculator.dispatchEvent(new Event("change", {bubbles: true}));
+  // calculator.dispatchEvent(new Event("change", {bubbles: true}));
 }

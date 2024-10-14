@@ -1,5 +1,5 @@
 export function update_sheet(_block) {
-    let update_form = `<div class='update-content-wrapper'>
+  const update_form = `<div class='update-content-wrapper'>
                             <h1>Update Sheet</h1>
                             <div class='select-container'>
                                 <select>
@@ -12,10 +12,10 @@ export function update_sheet(_block) {
                                 <input type="file" placeholder="Enter">
                             </div>
                             <button class='submit-btn'>Submit</button>    
-                        </div>`
-    return update_form;
+                        </div>`;
+  return update_form;
 }
 
 export default function decorate(block) {
-    block.innerHTML = `${update_sheet(block)}`
+  block.innerHTML = `${update_sheet(block)}`;
 }

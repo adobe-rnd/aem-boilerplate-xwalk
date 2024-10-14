@@ -41,7 +41,7 @@
     border-collapse: unset;
     border-radius: 10px;
     margin-top: 24px;
-    width: 100%;
+    width: 100% !important;
 }
 
 .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>th {
@@ -89,7 +89,14 @@
 .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr:last-child td {
     border-bottom: unset;
 }
-
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td span{
+    color: var(--midnight);
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
 .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td {
     border-bottom: 1px solid var(--pattensblue);
     border-left: 1px solid var(--pattensblue);
@@ -489,8 +496,8 @@
     .section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>td>p>img {
         width: 12px;
         height: 12px;
-        left: -12px;
-        top: 2px;
+        left: -14px;
+        top: 6px;
         border-radius: unset;
     }
 }
@@ -500,7 +507,7 @@
     .section.fees-charges-wrapper.three-col-table .code-wrapper .code>div>table>tbody>tr>td>p>img {
         width: 12px;
         height: 12px;
-        left: 39%;
+        left: 35%;
         top: -12px;
         border-radius: unset;
     }
