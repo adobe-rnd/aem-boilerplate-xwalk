@@ -1,4 +1,4 @@
-import { fetchAPI } from '../../scripts/scripts.js';
+import { CFApiCall, fetchAPI } from '../../scripts/scripts.js';
 import { setLocationObj } from '../moredetailsaddress/moredetailsaddress.js';
 
 export default async function decorate(block) {
@@ -25,8 +25,3 @@ export default async function decorate(block) {
   block.classList.add('dp-none');
 }
 
-export async function CFApiCall(linkURL) {
-  const response = await fetchAPI('GET', linkURL);
-  const responseJson = await response.json();
-  return responseJson;
-}

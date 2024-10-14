@@ -1,4 +1,4 @@
-import { currenyCommaSeperation, fetchAPI } from '../../scripts/scripts.js';
+import { CFApiCall, currenyCommaSeperation, fetchAPI } from '../../scripts/scripts.js';
 import { homeLoanCalcFunc } from '../emiandeligiblitycalc/homeloancalculators.js';
 import { homeloanCalHTML } from '../homeloancalculatorv2/templatehtmlv2.js';
 
@@ -11,8 +11,7 @@ export default async function decorate(block) {
 
   block.innerHTML = homeloanCalHTML(jsonResponseData);
 
-  let elgCalDiv; let
-    elgOverlay;
+let elgCalDiv; let elgOverlay;
 
   try {
     elgCalDiv = document.querySelector('.home-page-calculator-call-xf');
@@ -34,11 +33,6 @@ export default async function decorate(block) {
   }
 }
 
-export async function CFApiCall(cfurl) {
-  const response = await fetchAPI('GET', cfurl);
-  const responseJson = await response.json();
-  return responseJson;
-}
 
 function onloadGSTCalc() {
   const isGstCalculator = document.querySelector('.homeloancalculator .gst');

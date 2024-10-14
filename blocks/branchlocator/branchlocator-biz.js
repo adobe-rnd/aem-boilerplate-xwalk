@@ -107,6 +107,11 @@ async function getStateCity(lat, lng) {
           setLocationObj.geoInfo.city = city.long_name;
           setLocationObj.geoInfo.state = region.long_name;
           setLocationObj.geoInfo.country = country.long_name;
+
+          /* setLocationObj.getExcelData[region.long_name].filter((each) => {
+              return each['Location'].includes(city.long_name);
+          }); */
+          
           resolve();
         } else {
           reject('No results found');

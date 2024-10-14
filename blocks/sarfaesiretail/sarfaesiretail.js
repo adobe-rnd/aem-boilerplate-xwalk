@@ -1,8 +1,8 @@
-import { fetchAPI } from '../../scripts/scripts.js';
+import { CFApiCall, fetchAPI } from '../../scripts/scripts.js';
 
 export default async function decorate(block) {
   const cfURL = block.textContent.trim();
-  const cfRepsonse = await fetchApiCall(cfURL);
+  const cfRepsonse = await CFApiCall(cfURL);
   const repsonseData = cfRepsonse.data;
   console.log(repsonseData);
 
@@ -26,8 +26,4 @@ export default async function decorate(block) {
 
   block.innerHTML = `${tableHTML}`;
 }
-async function fetchApiCall(cfurl) {
-  const response = await fetchAPI('GET', cfurl);
-  const responseJson = await response.json();
-  return responseJson;
-}
+

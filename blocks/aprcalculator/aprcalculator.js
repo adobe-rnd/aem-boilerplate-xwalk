@@ -1,4 +1,4 @@
-import { fetchAPI } from '../../scripts/scripts.js';
+import { CFApiCall, fetchAPI } from '../../scripts/scripts.js';
 import { homeLoanCalcFunc } from '../emiandeligiblitycalc/homeloancalculators.js';
 import { homeloanCalHTML } from '../homeloancalculatorv2/templatehtmlv2.js';
 
@@ -32,12 +32,6 @@ export default async function decorate(block) {
   } catch (error) {
     console.warn(error);
   }
-}
-
-export async function CFApiCall(cfurl) {
-  const response = await fetchAPI('GET', cfurl);
-  const responseJson = await response.json();
-  return responseJson;
 }
 
 function onloadAPRCalc() {
