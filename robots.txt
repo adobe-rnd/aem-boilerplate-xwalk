@@ -8,6 +8,7 @@ Disallow: /fragment/
 Disallow: /style-guide/
 Disallow: /spreadsheets/
 Disallow: /scripts/
+Disallow: /content/piramalfinance-eds/
 Disallow: /styles/
 Disallow: /in/
 Disallow: /blocks/
