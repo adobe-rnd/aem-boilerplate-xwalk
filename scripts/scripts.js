@@ -547,6 +547,15 @@ export function decorateAnchorTag(main) {
   }
 }
 
+export function decodeHtmlSymbols(str) {
+  // Create a temporary DOM element
+  let textarea = document.createElement('textarea');
+  // Set the input string as the element's inner HTML
+  textarea.innerHTML = str;
+  // The browser automatically decodes any HTML entities in the innerHTML property
+  return textarea.value;
+}
+
 function scrollToComponentNearBranch(component) {
   if (window.matchMedia('(max-width: 767px)').matches) {
     window.scroll({

@@ -1,9 +1,9 @@
-import { fetchAPI, targetObject } from '../../scripts/scripts.js';
+import { CFApiCall, fetchAPI, targetObject } from '../../scripts/scripts.js';
 import { ctaClickInteraction } from '../../dl.js';
 
 export default async function decorate(block) {
   const cfURL = block.textContent.trim();
-  const cfRepsonse = await fetchApiCall(cfURL);
+  const cfRepsonse = await CFApiCall(cfURL);
   const repsonseData = cfRepsonse.data;
   const result = Object.groupBy(repsonseData, ({ Location }) => {
     const lowercaseLocation = Location.toLowerCase();
@@ -157,9 +157,4 @@ export default async function decorate(block) {
     //     each.style.display = 'block'
     // })
   };
-}
-export async function fetchApiCall(cfurl) {
-  const response = await fetchAPI('GET', cfurl);
-  const responseJson = await response.json();
-  return responseJson;
 }

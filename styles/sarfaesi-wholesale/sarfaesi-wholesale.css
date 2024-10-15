@@ -61,6 +61,7 @@
 .section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td:last-child,
 .section.sarfaesi-retail-wrapper .sarfaesiretail-wrapper .sarfaesiretail table tr td{
     border-right: 1px solid #c5c4c4;
+    padding: 2px;
 }
 .section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td span{
     font-family:' Nunito-Regular', sans-serif ;
