@@ -1,5 +1,7 @@
 {
   "mappings": [
+    "https://devmarketing.piramalfinance.com:/",
+    "https://devmarketing.piramalfinance.com/:/",
     "/content/piramalfinance-eds/:/",
     "/content/piramalfinance-eds/in/en/:/",
     "/content/piramalfinance/in/en/:/",
