@@ -64,7 +64,8 @@
     padding: 12px 0 4px;
 }
 
-.section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-body :nth-child(2) {
+.section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-body :nth-child(2),
+.section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-body :nth-child(3) {
     color: #fff;
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
@@ -73,7 +74,8 @@
     padding: 0;
 }
 
-.section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-body :nth-child(2) > strong {
+.section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-body :nth-child(2) > strong,
+.section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-body :nth-child(3) > strong {
     color: #fff;
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.5rem;
@@ -137,12 +139,14 @@
         padding: 0 0 4px;
     }
 
-    .section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-body :nth-child(2) > strong {
+    .section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-body :nth-child(2) > strong,
+    .section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-body :nth-child(3) > strong {
         font-size: 1rem;
         line-height: 24px;
     }
 
-    .section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-body :nth-child(2) {
+    .section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-body :nth-child(2),
+    .section.key-feature-wrapper .cards-wrapper .cards ul li .cards-card-body :nth-child(3) {
         font-size: 0.75rem;
         line-height: 24px
     }
