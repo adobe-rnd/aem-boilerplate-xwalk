@@ -4,12 +4,14 @@ Disallow: /nav/
 Disallow: /footer/
 Disallow: /metadata/
 Disallow: /fragments/
+Disallow: /fragment/
 Disallow: /style-guide/
 Disallow: /spreadsheets/
 Disallow: /scripts/
 Disallow: /styles/
 Disallow: /in/
 Disallow: /blocks/
+Disallow: /modals/
 Disallow: /*?*
 Disallow: /*?*
 
