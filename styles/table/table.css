@@ -197,6 +197,23 @@
     border-bottom: unset
 }
 
+.section.fees-charges-wrapper.group-loan-finance-table .code-wrapper .code>div>table>tbody>tr>th, 
+.section.fees-charges-wrapper.group-loan-finance-table .code-wrapper .code>div>table>tbody>tr>td {
+    width: 25%;
+}
+
+.section.fees-charges-wrapper.group-loan-finance-table .code-wrapper .code>div>table>tbody>tr>th {
+    background-color: var(--greyishblue);
+    border: 1px solid var(--dark-color);
+    color: var(--background-color);
+    font-family: 'Nunito-Bold', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.25rem;
+    padding: 1.25rem 2px;
+    border-radius: unset;
+}
+
 
 @media screen and (max-width: 767px) {
     .section.fees-charges-wrapper .default-content-wrapper h2 {

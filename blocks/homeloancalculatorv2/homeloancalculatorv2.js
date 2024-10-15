@@ -3,17 +3,16 @@ import { firstTabActive } from "./commonfile.js"; */
 import { homeloanCalHTML } from './templatehtmlv2.js';
 import { homeLoanCalcFunc } from './homeloancalculators.js';
 import { calculatorTypeTabClick, mainTabClick, renderEmiEligibility } from './combineemieligibility.js';
-import { fetchAPI } from '../../scripts/scripts.js';
+import { calculatorFlatStrLogic, CFApiCall, fetchAPI } from '../../scripts/scripts.js';
 
-let calculatorType; let emiCalDiv; let
-  emiOverlay;
+let calculatorType; let emiCalDiv; let emiOverlay;
 
 export default async function decorate(block) {
   const cfURL = block.textContent.trim();
 
   const cfRepsonse = cfURL && await CFApiCall(cfURL);
-  const repsonseData = cfRepsonse && cfRepsonse.data[0].data;
-  const jsonResponseData = repsonseData && JSON.parse(repsonseData);
+  const repsonseData = cfRepsonse.data;
+  const jsonResponseData = calculatorFlatStrLogic(repsonseData);
 
   if (!jsonResponseData) return;
 
@@ -63,12 +62,6 @@ export default async function decorate(block) {
   }
 }
 
-export async function CFApiCall(cfurl) {
-  // const cfModification = cfurl?.replace("/content/dam/", "/api/assets/");
-  const response = await fetchAPI('GET', cfurl);
-  const responseJson = await response.json();
-  return responseJson;
-}
 
 /* export function homeLoancalculatorCallXf() {
   document.querySelectorAll("[data-teaserv2-xf='home-page-calculator-call-xf']") &&
