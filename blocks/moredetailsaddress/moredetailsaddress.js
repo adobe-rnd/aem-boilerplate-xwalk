@@ -1,19 +1,19 @@
-import { fetchAPI, getDay } from '../../scripts/scripts.js';
+import { CFApiCall, fetchAPI, getDay } from "../../scripts/scripts.js";
 
 export const setLocationObj = {};
 const locationInLatLan = {};
-setLocationObj.stateLi = '';
-setLocationObj.cityLi = '';
-setLocationObj.lat = '';
-setLocationObj.lng = '';
+setLocationObj.stateLi = "";
+setLocationObj.cityLi = "";
+setLocationObj.lat = "";
+setLocationObj.lng = "";
 setLocationObj.cityhash = {};
-setLocationObj.address = '';
+setLocationObj.address = "";
 setLocationObj.geoInfo = {
-  city: '',
-  state: '',
-  country: '',
-  location: '',
-  locationcode: '',
+  city: "",
+  state: "",
+  country: "",
+  location: "",
+  locationcode: "",
 };
 
 export default async function decorate(block) {
@@ -26,14 +26,14 @@ export default async function decorate(block) {
   // const jsonResponseData = JSON.parse(urlRepoonse?.data[0]?.branchlocatorobj);
   const jsonResponseData = urlRepoonse?.data;
 
-  if (sessionStorage.getItem('data')) {
-    setLocationObj.getExcelData = JSON.parse(sessionStorage.getItem('data'));
+  if (sessionStorage.getItem("data")) {
+    setLocationObj.getExcelData = JSON.parse(sessionStorage.getItem("data"));
   } else {
     setLocationObj.getExcelData = dropDownStateCity(jsonResponseData);
-    sessionStorage.setItem('data', JSON.stringify(setLocationObj.getExcelData));
+    sessionStorage.setItem("data", JSON.stringify(setLocationObj.getExcelData));
   }
 
-  image?.querySelector('picture > img')?.setAttribute('alt', imagealt?.textContent?.trim() || '');
+  image?.querySelector("picture > img")?.setAttribute("alt", imagealt?.textContent?.trim() || "");
 
   const html = `
         <div class="address-wrapper">
@@ -54,7 +54,7 @@ export default async function decorate(block) {
 
 export function returnLatLan() {
   return new Promise((resolve, reject) => {
-    if ('geolocation' in navigator) {
+    if ("geolocation" in navigator) {
       // Prompt user for permission to access their location
       navigator.geolocation.getCurrentPosition(
         // Success callback function
@@ -70,12 +70,12 @@ export function returnLatLan() {
         (error) => {
           resolve(error);
           // Handle errors, e.g. user denied location sharing permissions
-          console.error('Error getting user location:', error);
-        },
+          console.error("Error getting user location:", error);
+        }
       );
     } else {
       // Geolocation is not supported by the browser
-      console.error('Geolocation is not supported by this browser.');
+      console.error("Geolocation is not supported by this browser.");
     }
   });
 }
@@ -86,7 +86,7 @@ async function getStateCity(lat, lng) {
       .then(async (response) => {
         response = await response.json();
         const { results } = response;
-        let reviewRating = '';
+        let reviewRating = "";
         if (results[0]) {
           for (let j = 0; j < results.length; j++) {
             if (results[j].place_id) {
@@ -102,7 +102,7 @@ async function getStateCity(lat, lng) {
 
           resolve();
         } else {
-          reject('No results found');
+          reject("No results found");
         }
       })
       .catch((err) => {
@@ -114,7 +114,7 @@ async function getStateCity(lat, lng) {
 
 function getStateName(lat, lan) {
   return new Promise((resolve, reject) => {
-    fetchAPI('GET', `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lan}&sensor=true&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ`)
+    fetchAPI("GET", `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lan}&sensor=true&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ`)
       .then((res) => {
         resolve(res);
       })
@@ -143,9 +143,13 @@ export function dropDownStateCity(response) {
 async function getReviewRating(placeID) {
   return new Promise((resolve, reject) => {
     // https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeID}&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ
-    fetchAPI('GET', `/content/piramalfinance/api/mapapi.json?place_id=${placeID}&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ`) // api for the get request
-      .then((response) => response.json())
-      .then((data) => resolve(data)).catch((error) => console.log(error));
+    fetchAPI("GET", `/content/piramalfinance/api/mapapi.json?place_id=${placeID}&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ`) // api for the get request
+      .then((response) => response.text())
+      .then((data) => {
+        const newData =  data.replace(/\"/g,'/"')
+        resolve(newData)
+      })
+      .catch((error) => console.log(error));
 
     /* fetchAPI('GET', `https://maps.googleapis.com/maps/api/place/details/json?place_id=${setLocationObj.placeid}&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ`).then((res)=>{
       resolve(res);
@@ -154,12 +158,6 @@ async function getReviewRating(placeID) {
       resolve(err);
     }) */
   });
-}
-
-export async function CFApiCall(cfurl) {
-  const response = await fetchAPI('GET', cfurl);
-  const responseJson = await response.json();
-  return responseJson;
 }
 
 /* async function onbranchDetails(block) {
@@ -226,21 +224,19 @@ async function onbranchDetails(block) {
   const searchBranchURL = location.href;
   // let searchBranchURL = "https://www.piramalfinance.com/branch-locator/loans-in-anakapalle-andhra-pradesh-6391";
 
-  const splitSearch = searchBranchURL.split('/').pop();
-  if (splitSearch.includes('loans-in')) {
-    const currentLocation = searchBranchURL.split('/').pop().split('-').pop();
+  const splitSearch = searchBranchURL.split("/").pop();
+  if (splitSearch.includes("loans-in")) {
+    const currentLocation = searchBranchURL.split("/").pop().split("-").pop();
     const flatLocationData = Object.values(setLocationObj.getExcelData).flat(); // Flattening the nested arrays
-    const foundLocation = flatLocationData.find((location) => location['Location Code'] == currentLocation);
-    const {
-      State, City, 'Location Code': locationCode, Location, Latitude, Longitude, Address, Pincode, 'On Page Content': pageContent,
-    } = foundLocation;
+    const foundLocation = flatLocationData.find((location) => location["Location Code"] == currentLocation);
+    const { State, City, "Location Code": locationCode, Location, Latitude, Longitude, Address, Pincode, "On Page Content": pageContent } = foundLocation;
     setLocationObj.geoInfo.state = State;
     setLocationObj.geoInfo.city = City;
     setLocationObj.geoInfo.locationcode = locationCode;
     setLocationObj.geoInfo.location = Location;
     setLocationObj.lat = Latitude;
     setLocationObj.lng = Longitude;
-    setLocationObj.geoInfo.country = 'India'; // Country
+    setLocationObj.geoInfo.country = "India"; // Country
     setLocationObj.address = Address;
     setLocationObj.pincode = Pincode;
     setLocationObj.pagecontent = pageContent;
@@ -254,12 +250,12 @@ async function onbranchDetails(block) {
     if (locationInLatLan.lat && locationInLatLan.lng) {
       setLocationObj.distance = calculateDistance(setLocationObj.lat, setLocationObj.lng, locationInLatLan.lat, locationInLatLan.lng);
       if (setLocationObj.distance.toFixed() <= 40) {
-        document.querySelectorAll('.address-info ul li')[2].innerText = `${setLocationObj.distance.toFixed()} Km away from your location`;
+        document.querySelectorAll(".address-info ul li")[2].innerText = `${setLocationObj.distance.toFixed()} Km away from your location`;
       } else {
-        document.querySelectorAll('.address-info ul li')[2].remove();
+        document.querySelectorAll(".address-info ul li")[2].remove();
       }
     } else {
-      document.querySelectorAll('.address-info ul li')[2].remove();
+      document.querySelectorAll(".address-info ul li")[2].remove();
     }
   });
 
@@ -306,13 +302,13 @@ function sortingNearestBranch(lat, lng, data) {
 }
 
 function renderData() {
-  document.querySelector('.address-title h1').innerText = setLocationObj.geoInfo.location;
-  document.querySelector('.address-desktop p').innerText = setLocationObj.address;
-  document.querySelector('.address-mobile p').innerText = setLocationObj.address;
+  document.querySelector(".address-title h1").innerText = setLocationObj.geoInfo.location;
+  document.querySelector(".address-desktop p").innerText = setLocationObj.address;
+  document.querySelector(".address-mobile p").innerText = setLocationObj.address;
   const currentDay = getDay();
   setLocationObj.working?.forEach((element) => {
     if (element.includes(currentDay)) {
-      document.querySelector('.address-timing p').innerText = `${element}`;
+      document.querySelector(".address-timing p").innerText = `${element}`;
     }
   });
 }
@@ -322,52 +318,58 @@ function reviewRender() {
   if (!ratingSpan) {
     return false;
   }
-  document.querySelector('.branchcustomer-review-cards').querySelector('.carousel-inner').innerHTML = ratingSpan;
-  const reviewCards = document.querySelector('.branchcustomer-review-cards').querySelector('.carousel-inner').querySelectorAll('.carousel-item');
-  const currentNextButton = document.querySelector('.branchcustomer-review-cards').querySelector('.glider-next');
-  const currentPrevButton = document.querySelector('.branchcustomer-review-cards').querySelector('.glider-prev');
+  document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").innerHTML = ratingSpan;
+  const reviewCards = document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").querySelectorAll(".carousel-item");
+  const currentNextButton = document.querySelector(".branchcustomer-review-cards").querySelector(".glider-next");
+  const currentPrevButton = document.querySelector(".branchcustomer-review-cards").querySelector(".glider-prev");
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      const intersecting = entry.isIntersecting;
-      if (intersecting) {
-        new Glider(entry.target, {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          draggable: true,
-          scrollLock: true,
-          arrows: {
-            prev: currentPrevButton,
-            next: currentNextButton,
-          },
-          responsive: [
-            { breakpoint: 767, settings: { slidesToShow: 2, slidesToScroll: 1 } },
-            {
-              breakpoint: 1025,
-              settings: {
-                slidesToShow: 3, slidesToScroll: 1, scrollLock: true, draggable: true,
-              },
+    entries.forEach(
+      (entry) => {
+        const intersecting = entry.isIntersecting;
+        if (intersecting) {
+          new Glider(entry.target, {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            draggable: true,
+            scrollLock: true,
+            arrows: {
+              prev: currentPrevButton,
+              next: currentNextButton,
             },
-          ],
-        });
-        // observer.unobserve(entry.target);
-      }
-    }, { rootMargin: '50px' });
+            responsive: [
+              { breakpoint: 767, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+              {
+                breakpoint: 1025,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                  scrollLock: true,
+                  draggable: true,
+                },
+              },
+            ],
+          });
+          // observer.unobserve(entry.target);
+        }
+      },
+      { rootMargin: "50px" }
+    );
   });
-  observer.observe(document.querySelector('.branchcustomer-review-cards').querySelector('.carousel-inner'));
+  observer.observe(document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner"));
 
   if (reviewCards.length <= 3) {
-    document.querySelector('.branchcustomer-review-cards').querySelector('.carousel-inner').querySelector('.carousel-navigation-buttons').classList.add('dp-none');
+    document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").querySelector(".carousel-navigation-buttons").classList.add("dp-none");
   }
 }
 
 function renderRatingDiv() {
-  let html = '';
+  let html = "";
   if (setLocationObj.review) {
     setLocationObj.review.forEach((eachEle) => {
-      let starDiv = '';
+      let starDiv = "";
       const starToShow = eachEle.rating;
-      if ((5 - eachEle.rating == 0)) {
+      if (5 - eachEle.rating == 0) {
         for (let index = 0; index < starToShow; index++) {
           starDiv += '<span class="icon icon-star_Color"><img data-icon-name="star_Color" src="/icons/star_Color.svg" alt="" loading="lazy" /></span>';
         }
@@ -383,8 +385,7 @@ function renderRatingDiv() {
 
       const subStringText = eachEle.text.length > 125 ? `${eachEle.text?.substring(0, 125)}...` : eachEle.text;
 
-      html
-      += `<div class="teaser block carousel-item light">
+      html += `<div class="teaser block carousel-item light">
       <div class="background">
         <div class="front-picture"></div>
         <div class="foreground">
@@ -407,22 +408,20 @@ function renderRatingDiv() {
     });
     return html;
   }
-  document.querySelector('.branchcustomer-review-cards').classList.add('dp-none');
+  document.querySelector(".branchcustomer-review-cards").classList.add("dp-none");
 }
 
 function nearBLBreadCrumb() {
-  const {
-    city, location, locationcode, state,
-  } = setLocationObj.geoInfo;
+  const { city, location, locationcode, state } = setLocationObj.geoInfo;
 
-  let breadCrumb = '';
+  let breadCrumb = "";
 
-  const newState = state.charAt(0).toLowerCase() + state.slice(1).replaceAll(' ', '-').toLowerCase();
-  const newCity = city.charAt(0).toLowerCase() + city.slice(1).replaceAll(' ', '-').toLowerCase();
-  const newLoaction = location.replace(/\s+/g, '-').replace(/[()/]/g, '').trim().toLowerCase();
+  const newState = state.charAt(0).toLowerCase() + state.slice(1).replaceAll(" ", "-").toLowerCase();
+  const newCity = city.charAt(0).toLowerCase() + city.slice(1).replaceAll(" ", "-").toLowerCase();
+  const newLoaction = location.replace(/\s+/g, "-").replace(/[()/]/g, "").trim().toLowerCase();
 
-  const newSetState = state.charAt(0).toUpperCase() + state.slice(1).replaceAll(' ', '-').toLowerCase();
-  const newSetCity = city.charAt(0).toUpperCase() + city.slice(1).replaceAll(' ', '-').toLowerCase();
+  const newSetState = state.charAt(0).toUpperCase() + state.slice(1).replaceAll(" ", "-").toLowerCase();
+  const newSetCity = city.charAt(0).toUpperCase() + city.slice(1).replaceAll(" ", "-").toLowerCase();
   const newSetLocation = location.charAt(0).toUpperCase() + location.slice(1);
 
   if (newCity == newLoaction) {
@@ -440,7 +439,7 @@ function nearBLBreadCrumb() {
         <a href="/branch-locator/loans-in-${newLoaction}-${newCity}-${newState}-${locationcode}">${newSetLocation}</a>
       `;
   }
-  document.querySelector('body').querySelector('.breadcrumb nav').insertAdjacentHTML('beforeend', breadCrumb);
+  document.querySelector("body").querySelector(".breadcrumb nav").insertAdjacentHTML("beforeend", breadCrumb);
 }
 
 /* function nearBybranch(){
