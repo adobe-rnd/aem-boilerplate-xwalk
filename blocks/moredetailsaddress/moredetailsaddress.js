@@ -144,7 +144,10 @@ async function getReviewRating(placeID) {
   return new Promise((resolve, reject) => {
     // https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeID}&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ
     fetchAPI("GET", `/content/piramalfinance/api/mapapi.json?place_id=${placeID}&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ`) // api for the get request
-      .then((response) => response.json())
+      .then(async (response) => {
+        const data = await response.json();
+        resolve(data);
+      })
       .catch((error) => console.log(error));
 
     /* fetchAPI('GET', `https://maps.googleapis.com/maps/api/place/details/json?place_id=${setLocationObj.placeid}&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ`).then((res)=>{
