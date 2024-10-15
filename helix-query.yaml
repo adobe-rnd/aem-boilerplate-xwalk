@@ -7,9 +7,11 @@ indices:
       - /configuration/**
       - /nav/**
       - /footer/**
+      - /modals/**
       - /in/**
       - /metadata/**
       - /fragments/**
+      - /fragment/**
       - /style-guide/**
       - /api/**
     target: /query-index.json
