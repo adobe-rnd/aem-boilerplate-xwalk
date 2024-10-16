@@ -127,6 +127,9 @@
    box-shadow: unset;
    /* background-color: unset; */
 }
+.section.offer-documents-wrapper.partnership-image-popup .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .offer-documents-wrapper .offer-documents .richtext .cmp-text{
+    min-height: unset;
+}
 .section.offer-documents-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .offer-documents-wrapper .offer-documents .richtext .cmp-text:hover{
    background-color: unset;
    box-shadow: unset;
