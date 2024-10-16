@@ -151,6 +151,7 @@ footer.footer-wrapper .footer {
 }
 
 .footer-section-second ul > li > ul > li>a,
+.footer-section-second ul > li > ul > li,
 .footer-section-second ul > li > ul > li>a>sub{
   font-size: 1rem;
   line-height: 1.5rem;
@@ -386,6 +387,7 @@ footer.footer-wrapper .footer {
     color: #fff;
   }
   .footer-section-second ul > li > ul > li>a,
+  .footer-section-second ul > li > ul > li,
   .footer-section-second ul > li > ul > li>a>sub {
     font-size: 0.75rem;
     line-height: 1rem;
@@ -431,6 +433,7 @@ footer.footer-wrapper .footer {
     flex-direction: column;
   }
   .footer-section-second ul > li > ul > li>a,
+  .footer-section-second ul > li > ul > li,
   .footer-section-second ul > li > ul > li>a>sub {
     color: #fff;
     font-family: Nunito-Regular, sans-serif;
