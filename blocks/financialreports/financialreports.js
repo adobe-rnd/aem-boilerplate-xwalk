@@ -30,16 +30,19 @@ export default async function decorate(block) {
       }
       let monthsli = '';
       // Object.keys(months).forEach(function (month) {
-      sortedMonths.forEach((month) => {
+        sortedMonths.forEach((month) => {
+          const listData = months[month].sort((a, b) => new Date(b.pdfDate) - new Date(a.pdfDate));;
+          // console.log( year ,  " - ",month , " : " , listData);
+
         monthsli += `  
                                 <div class="subAccordianContent" style="display: nona;">
                                     <div class="publicDisclosuresWrap">
                                         <div class="innersubAccordianContent">
                                             <a href="javascript:;" class="innersubAccordianTitle">${month}</a>
-                                            <div class="publicDisclosuresWrap innerSubAccordianData" style="display: none;">
-                                                <ul> ${renderHelper(months[month], `
+                                            <div class="publicDisclosuresWrap innerSubAccordianData" style="display: none;" >
+                                                <ul> ${renderHelper(listData, `
                                                     <div class="forName">    
-                                                        <li>
+                                                        <li data-date="{pdfDate}">
                                                             <a href="{PdfPath}" data-category="{Pdf_Category}" target="_blank">
                                                                 <span class="created-date">{Created_Date}</span>
                                                                 {Title}</a>
