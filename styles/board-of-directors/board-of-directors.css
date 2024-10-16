@@ -56,6 +56,11 @@
     position: absolute;
     top: 228px;
     cursor: pointer;
+    width: 100%;
+}
+.section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground .text .cta, 
+.section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background .text .cta{
+    display: none;
 }
 
 .section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background:hover .front-picture,
