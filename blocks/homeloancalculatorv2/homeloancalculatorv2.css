@@ -406,6 +406,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    cursor: pointer;
   }
   .homeloancalculator .home-loan-calculator-parent .hlc-subparent .radiotab .firsttab {
     background: #fff7f4;
