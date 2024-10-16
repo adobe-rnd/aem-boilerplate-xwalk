@@ -1,3 +1,4 @@
+
 .section.branch-locater-banner {
     padding: 59px 0 37px;
     min-height: 248px;
@@ -406,10 +407,11 @@
     
     .section.branchlocator-dropdown .container .dropdown-wrapper {
         width: 100%;
+        gap: 20px;
     }
 
     .section.branchlocator-dropdown .container .dropdown-wrapper .state-dropdown{
-        width: inherit;
+        width: 100%;
     }
 
     .section.branchlocator-dropdown .container .dropdown-wrapper .city-dropdown{
@@ -480,7 +482,9 @@
     }
 
     .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-selectvalue {
-        padding: 8px 18px 8px 10px;
+        padding: 8px 20px 8px 10px;
+        overflow-x: auto;
+        white-space: nowrap;
     }
 
     .section.branchlocator-dropdown .container .dropdown-wrapper .dropdown .dropdown-selectvalue::after {
