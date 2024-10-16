@@ -13,6 +13,7 @@ export default async function decorate(block) {
   }
 
   const keyFeatureDiv = document.createElement('div');
+  let newDivPersonalDiv = '';
 
   const cfRepsonse = linkURL && (await CFApiCall(linkURL));
   const repsonseData = cfRepsonse && cfRepsonse.data[0].branchloanmapping;
@@ -24,6 +25,13 @@ export default async function decorate(block) {
       if (getKeyFeatureEle) {
         getKeyFeatureEle.querySelectorAll('.keyfeatures-wrapper').forEach((eachKeyFeatureEle) => {
           keyFeatureDiv.append(eachKeyFeatureEle);
+        });
+      }
+    }else{
+      if(eachKey == 'personal-loan'){
+        newDivPersonalDiv = document.querySelector('.personal-loan-key-feature .wrappercreation-wrapper').querySelector('.default-content-wrapper');
+        document.querySelector('.personal-loan-key-feature').querySelector('.wrapper-creation-container').querySelectorAll('.keyfeatures-wrapper').forEach(function (eachfeature) {
+          eachfeature.remove();
         });
       }
     }
