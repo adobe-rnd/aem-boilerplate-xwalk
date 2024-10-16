@@ -31,9 +31,12 @@
   .section.home-page-calculator-call-xf .discalimer-calc .discalimer-first-para {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    display: -webkit-box!important;
+    display: block;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+  .section.home-page-calculator-call-xf .discalimer-details .discalimer-calc:has(.dp-none) .discalimer-first-para{
+    display: -webkit-box;
   }
   .section.home-page-calculator-call-xf .discalimer-calc .discalimer-first-para{
     display: inline-block;
