@@ -173,7 +173,7 @@
   {
     "id": "text",
     "rte": {
-      "format": ["bold", "italic", "underline", "strikethrough"],
+      "format": ["bold", "italic", "underline", "strikethrough", "table"],
       "alignment": ["left", "center", "right"],
       "indentation": ["indent", "outdent"],
       "sr_script": ["superscript", "subscript"],
