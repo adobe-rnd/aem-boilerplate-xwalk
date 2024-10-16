@@ -146,6 +146,8 @@
     position: absolute;
     left: 2px;
     top: 12px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary>div p>span,
 .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary>div p>span>img {
@@ -339,13 +341,13 @@ table {
     font-family: 'Nunito-Regular', sans-serif;
  }
  
-.section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion details summary>div:not(:has(p:last-child)) p>span{
+/* .section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion details summary>div:not(:has(p:last-child)) p>span{
    top: -2px;
-}
+} */
 
-.section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion details:not(:has(p:last-child)) summary>div::before {
+/* .section.documents-required-brown.documents-required-img-align .accordion-group-wrapper .accordion-group .accordion details:not(:has(p:last-child)) summary>div::before {
     top: 0;
-}
+} */
 
 /* .section.documents-required-brown.document-required-accordion-img-swap .accordion-group-wrapper .accordion-group .accordion:nth-last-child(2) details::before{
     background-image: url('/images/coapplicants.svg');
@@ -615,7 +617,7 @@ table {
     .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary>div p>span {
         position: absolute;
         left: 12px;
-        top: 10px;
+        /* top: 10px; */
     }
     .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary>div p>span,
     .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary>div p>span>img {
