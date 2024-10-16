@@ -88,7 +88,8 @@
     .section.breadcrumb-handle > .breadcrumb-wrapper > .breadcrumb.block > nav > a{
         white-space: nowrap;
     }
-    .section.breadcrumb-handle.branch-locater-banner .breadcrumb-wrapper .breadcrumb>nav {
+    .section.breadcrumb-handle.branch-locater-banner .breadcrumb-wrapper .breadcrumb>nav,
+    .section.breadcrumb-handle .breadcrumb-wrapper .breadcrumb>nav {
         overflow-x: auto;
         padding-bottom: 4px;
     }
