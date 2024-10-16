@@ -91,7 +91,7 @@ async function getStateCity(lat, lng) {
           for (let j = 0; j < results.length; j++) {
             if (results[j].place_id) {
               reviewRating = await getReviewRating(results[j].place_id);
-              if (reviewRating.result.reviews && reviewRating.result?.opening_hours?.weekday_text) {
+              if (reviewRating?.result?.reviews && reviewRating.result?.opening_hours?.weekday_text) {
                 setLocationObj.review = reviewRating.result.reviews;
                 setLocationObj.working = reviewRating.result.opening_hours.weekday_text;
                 console.log(reviewRating);
