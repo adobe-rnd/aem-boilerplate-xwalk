@@ -464,8 +464,8 @@ export async function decoratePlaceholder(block, path) {
     block.querySelectorAll('*').forEach((el, index) => {
       if (el.firstChild instanceof Text) {
         Object.keys(resp).forEach((key) => {
-          if (resp[key] && resp[key].trim() && el.firstChild.textContent.includes(`{${key}}`)) {
-            el.firstChild.textContent = el.firstChild.textContent.replace(`{${key}}`, resp[key]);
+          if (resp[key] && resp[key].trim() && el.firstChild.textContent.trim() && el.firstChild.textContent.includes(`{${key}}`)) {
+            el.firstChild.textContent = el.firstChild.textContent.replaceAll(`{${key}}`, resp[key]);
           }
         });
       }
