@@ -35,7 +35,7 @@ export async function onloadBranchLocator(block) {
     setLocationObj.geoInfo.state = 'Maharashtra';
     setLocationObj.geoInfo.country = 'India';
 
-    const defaultLatLng = setLocationObj.getExcelData[setLocationObj.geoInfo.state]?.find((eachCityCheck) => eachCityCheck.City === setLocationObj.geoInfo.city);
+    const defaultLatLng = setLocationObj.getExcelData[setLocationObj.geoInfo.state]?.find((eachCityCheck) => eachCityCheck.City.charAt(0).toUpperCase() + eachCityCheck.City.slice(1).toLowerCase() === setLocationObj.geoInfo.city);
     setLocationObj.lat = defaultLatLng.Latitude;
     setLocationObj.lng = defaultLatLng.Longitude;
     setLocationObj.geoInfo.location = defaultLatLng.Location;
