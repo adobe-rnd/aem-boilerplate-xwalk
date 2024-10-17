@@ -51,7 +51,7 @@ export async function searchBranchByURL() {
         setLocationObj.lng = searchBranchLatLng["Longitude"];
       }  else */
     if (setLocationObj.geoInfo.state && setLocationObj.geoInfo.city) {
-      const stateCityLatLng = setLocationObj.getExcelData[setLocationObj.geoInfo.state]?.find((eachCityCheck) => eachCityCheck.City === setLocationObj.geoInfo.city);
+      const stateCityLatLng = setLocationObj.getExcelData[setLocationObj.geoInfo.state]?.find((eachCityCheck) => eachCityCheck.City.charAt(0).toUpperCase() + eachCityCheck.City.slice(1).toLowerCase() === setLocationObj.geoInfo.city);
       setLocationObj.lat = stateCityLatLng.Latitude;
       setLocationObj.lng = stateCityLatLng.Longitude;
       setLocationObj.geoInfo.location = stateCityLatLng.Location;
