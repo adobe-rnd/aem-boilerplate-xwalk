@@ -460,8 +460,17 @@ export function createButton(text, picture) {
 export async function decoratePlaceholder(block, path) {
   try {
     const resp = await fetchPlaceholders(path);
-    // console.log(resp);
-    return renderHelper([resp], `<div class="forName">${block.innerHTML}</div>`);
+    // return renderHelper([resp], `<div class="forName">${block.innerHTML}</div>`);
+    block.querySelectorAll('*').forEach((el, index) => {
+      if (el.firstChild instanceof Text) {
+        Object.keys(resp).forEach((key) => {
+          if (resp[key] && resp[key].trim() && el.firstChild.textContent.trim() && el.firstChild.textContent.includes(`{${key}}`)) {
+            el.firstChild.textContent = el.firstChild.textContent.replaceAll(`{${key}}`, resp[key]);
+          }
+        });
+      }
+    });
+    return block.innerHTML;
   } catch (error) {
     console.warn(error);
   }
