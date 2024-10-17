@@ -4,25 +4,39 @@ export default async function decorate(block) {
   const cfURL = block.textContent.trim();
   const cfRepsonse = await CFApiCall(cfURL);
   const repsonseData = cfRepsonse.data;
+  let headLi = ''
+  let rowLi = ''
+  let key = [];
 
-  const headers = Object.keys(repsonseData[0]);
-  const headerRow = `
-        <tr>
-            ${headers.map((header) => `<th>${header}</th>`).join('')}
-        </tr>
-    `;
-  const rows = repsonseData.map((row) => `
-        <tr>
-            ${headers.map((header) => `<td>${row[header]}</td>`).join('')}
-        </tr>
-    `).join('');
-  const tableHTML = `
-        <table id="dataTable">
-            <div>${headerRow}
-            ${rows}</div>
-        </table>
-    `;
-
-  block.innerHTML = `${tableHTML}`;
+  repsonseData.forEach(function (eachData, index) {
+    if (!index) {
+      key = getFilterTableCell(eachData);
+      headLi = createHead(key);
+    }
+    rowLi += createRow(eachData, key)
+  })
+  block.innerHTML = `<table> ${headLi + rowLi} <table>`;
 }
 
+
+function createRow(data, key) {
+  const td = key.map(function (key) {
+    var value = data[key]
+    if (data[key + " URL"]) {
+      return `<td><a target="_blank" href="${data[key + " URL"]}">${value}</a></td>`;
+    }
+    return `<td>${value}</td>`;
+  })
+  return `<tr>${td.join('')}</tr>`
+}
+function createHead(data) {
+  return `
+            <tr>
+                ${(data).map((header) => `<th>${header}</th>`).join('')}
+            </tr>
+        `;
+}
+
+function getFilterTableCell(data) {
+  return Object.keys(data).filter((key) => !key.includes("URL") || Object.keys(data).includes(key + " URL"))
+}
