@@ -6,6 +6,7 @@ indices:
     exclude:
       - /configuration/**
       - /nav/**
+      - /neeyat/**
       - /footer/**
       - /modals/**
       - /content/piramalfinance-eds/**
