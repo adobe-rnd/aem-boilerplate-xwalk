@@ -63,7 +63,8 @@
     border-right: 1px solid #c5c4c4;
     padding: 2px;
 }
-.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td span{
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td span,
+.section.sarfaesi-retail-wrapper .sarfaesiretail-wrapper .sarfaesiretail table tr td a{
     font-family:' Nunito-Regular', sans-serif ;
     font-size: 0.75rem;
     line-height: 19.5px;
