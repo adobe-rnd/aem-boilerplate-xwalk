@@ -335,8 +335,8 @@ export function appplyLoanTemplate(properties) {
                                 <div class="mobilescanner">
                                     <p class="mobilescannertext">${properties.MobileLineText}</p>
                                     <div class="mobilebuttons">
-                                        <a href="#"><img data-src="${properties.scanImgOne}" src="${properties.scanImgOne}" alt="Play Store" class="first-img lozad"></a>
-                                        <a href="#"><img data-src="${properties.scanImgTwo}" src="${properties.scanImgTwo}" alt="App Store" class="second-img lozad"></a>
+                                        <a href="${properties.scanImgOneLink}"><img data-src="${properties.scanImgOne}" src="${properties.scanImgOne}" alt="Play Store" class="first-img lozad"></a>
+                                        <a href="${properties.scanImgTwoLink}"><img data-src="${properties.scanImgTwo}" src="${properties.scanImgTwo}" alt="App Store" class="second-img lozad"></a>
                                         
                                     </div>
                                 </div>
