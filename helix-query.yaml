@@ -13,8 +13,6 @@ indices:
       - /api/**
       - /**/nav
       - /**/footer
-      - /modals/**
-      - /modals
       - /fragment/**
       - /fragment
     target: /query-index.json
