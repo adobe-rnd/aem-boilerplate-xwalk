@@ -11,6 +11,8 @@ indices:
       - /fragments/**
       - /style-guide/**
       - /api/**
+      - /**/nav
+      - /**/footer
     target: /query-index.json
     properties:
       title:
