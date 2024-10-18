@@ -4,16 +4,11 @@ Disallow: /nav/
 Disallow: /footer/
 Disallow: /metadata/
 Disallow: /fragments/
-Disallow: /fragment/
 Disallow: /style-guide/
 Disallow: /spreadsheets/
 Disallow: /scripts/
-Disallow: /neeyat/
-Disallow: /content/piramalfinance-eds/
 Disallow: /styles/
-Disallow: /in/
 Disallow: /blocks/
-Disallow: /modals/
 Disallow: /*?*
 Disallow: /*?*
 

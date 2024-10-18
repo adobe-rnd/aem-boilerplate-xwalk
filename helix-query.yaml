@@ -6,14 +6,9 @@ indices:
     exclude:
       - /configuration/**
       - /nav/**
-      - /neeyat/**
       - /footer/**
-      - /modals/**
-      - /content/piramalfinance-eds/**
-      - /in/**
       - /metadata/**
       - /fragments/**
-      - /fragment/**
       - /style-guide/**
       - /api/**
     target: /query-index.json
