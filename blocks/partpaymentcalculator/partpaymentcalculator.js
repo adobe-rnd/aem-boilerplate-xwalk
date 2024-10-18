@@ -7,13 +7,13 @@ export default async function decorate(block) {
   const cfURL = block.textContent.trim();
 
   const cfRepsonse = await CFApiCall(cfURL);
-  const repsonseData = cfRepsonse.data[0].data;
-  const jsonResponseData = JSON.parse(repsonseData);
+  const repsonseData = cfRepsonse.data;
+  const jsonResponseData = partPaymentStrCalc(repsonseData);
+  // const jsonResponseData = JSON.parse(repsonseData);
 
   block.innerHTML = partPaymentCalHTML(jsonResponseData);
 
-  let elgCalDiv; let
-    elgOverlay;
+  let elgCalDiv; let elgOverlay;
 
   try {
     elgCalDiv = document.querySelector('.home-page-calculator-call-xf');
@@ -50,4 +50,64 @@ function readMoreFucn(block) {
       }
     });
   }
+}
+
+function partPaymentStrCalc(data) {
+  var mainObj = {};
+
+  data.forEach(function (eachData) {
+    const { Fieldset, Name, Type, Value, ID, View } = eachData;
+
+
+    if (Type === "partpayment") {
+      // Initialize as an array if View is "array"
+      if (View === "array") {
+        mainObj[Name] = mainObj[Name] || [];
+      }
+      
+      // Proceed if ID is provided
+      if (ID) {
+        // Ensure partpayment exists in mainObj
+        mainObj.partpayment = mainObj.partpayment || [];
+        
+        // Fetch or create the partPaymentItem for the given ID
+        let partPaymentItem = mainObj.partpayment[ID] || {};
+        
+        // Assign the value to the dynamic Name key
+        partPaymentItem[Name] = Value;
+        
+        // Update the main object with the new partPaymentItem
+        mainObj.partpayment[ID] = partPaymentItem;
+      }
+    }
+    
+
+    if (Fieldset) {
+      if (!mainObj[Fieldset]) {
+        mainObj[Fieldset] = {};
+      }
+
+      if (Type === "loanamout") {
+        if (!mainObj[Fieldset].loanamout) {
+          mainObj[Fieldset].loanamout = [];
+        }
+
+        let loanItem = mainObj[Fieldset].loanamout[ID];
+        if (!loanItem) {
+          loanItem = {};
+          mainObj[Fieldset].loanamout[ID] = loanItem;
+        }
+
+        loanItem[Name] = Value;
+      }else if (Type === "array") {
+        mainObj[Fieldset][Name] = [];
+      } else {
+        mainObj[Fieldset][Name] = Value;
+      }
+    } else {
+      mainObj[Name] = Value;
+    }
+  });
+
+  return mainObj;
 }

@@ -7,7 +7,7 @@ export function partPaymentCalHTML(callJson) {
     buttonLink2 = callJson.button2link.replace('DWEB', 'MWEB');
   }
 
-  const salaried = callJson.salaried?.salariedcheck
+  const salaried = callJson.salaried?.salariedcheck == 'true'
     ? `
     <li id="salaryTab" class="firsttab onetab">
         <div class="customecheck">
@@ -32,7 +32,7 @@ export function partPaymentCalHTML(callJson) {
     </li>`
     : '';
 
-  const business = callJson.business?.businesscheck
+  const business = callJson.business?.businesscheck == 'true'
     ? `
     <li id="${callJson.business.businesstabid}" class="firsttab secondtab twotab">
         <div class="customecheck">
@@ -59,7 +59,7 @@ export function partPaymentCalHTML(callJson) {
     : '';
 
   let emiinputdiv = '';
-  callJson.chechboxemiobj.chechboxemi
+  callJson.chechboxemiobj.chechboxemi == 'true'
       && callJson.chechboxemiobj.loanamout.forEach((each, index) => {
         emiinputdiv += `<div class="loanamount">
               <div class="data">
@@ -89,7 +89,7 @@ export function partPaymentCalHTML(callJson) {
       });
 
   let eligibilityinputdiv = '';
-  callJson.chechboxelibilityobj.chechboxemi
+  callJson.chechboxelibilityobj.chechboxemi == 'true'
       && callJson.chechboxelibilityobj.loanamout.forEach((each, index) => {
         eligibilityinputdiv += `<div class="loanamount">
               <div class="data">
