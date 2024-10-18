@@ -13,6 +13,8 @@ indices:
       - /api/**
       - /**/nav
       - /**/footer
+      - /modals/**
+      - /modals
     target: /query-index.json
     properties:
       title:
