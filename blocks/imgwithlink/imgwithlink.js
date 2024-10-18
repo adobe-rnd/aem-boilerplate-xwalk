@@ -10,7 +10,7 @@ export default function decorate(block) {
       const desktopLinks = document.querySelectorAll('.download-piramal-wrapper .image-href-desktop a, .contact-us-download-wrapper .image-href-desktop a');
       const mobileLinks = document.querySelectorAll('.download-piramal-wrapper .image-href-desktop a, .contact-us-download-wrapper .image-href-desktop a');
       const anchor_class = desktopLinks.length > 0 ? desktopLinks : mobileLinks;
-      anchor_class[0].removeAttribute('href');
+      anchor_class.length > 0 && anchor_class[0].removeAttribute('href');
       // document.querySelectorAll('.download-piramal-wrapper .image-href-desktop a')[0].removeAttribute('href');
     }
     aTagPreventDefault();
