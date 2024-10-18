@@ -11,8 +11,6 @@ indices:
       - /fragments/**
       - /style-guide/**
       - /api/**
-      - /**/nav
-      - /**/footer
       - /fragment/**
       - /fragment
     target: /query-index.json
