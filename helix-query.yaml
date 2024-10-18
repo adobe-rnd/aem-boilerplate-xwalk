@@ -7,14 +7,12 @@ indices:
       - /configuration/**
       - /nav/**
       - /footer/**
-      - /modals/**
-      - /content/piramalfinance-eds/**
-      - /in/**
       - /metadata/**
       - /fragments/**
-      - /fragment/**
       - /style-guide/**
       - /api/**
+      - /**/nav
+      - /**/footer
     target: /query-index.json
     properties:
       title:
