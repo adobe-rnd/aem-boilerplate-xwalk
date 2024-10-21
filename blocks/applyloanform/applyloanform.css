@@ -217,16 +217,17 @@
 }
 
 .loan-form-sub-parent>.cmp-container .loan-form>.cmp-container .cmp-form {
-    margin-top: 32px;
+    margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+    gap: 30px 32px;
 }
 
 @media screen and (max-width: 1024px) {
     .loan-form-sub-parent>.cmp-container .loan-form>.cmp-container .cmp-form {
         margin-top: 24px;
         grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 32px 32px;
     }
 }
 
