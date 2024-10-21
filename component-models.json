@@ -1069,10 +1069,6 @@
                 "value": "light"
               },
               {
-                "name": "Light",
-                "value": "light"
-              },
-              {
                 "name": "Dark",
                 "value": "dark"
               }
@@ -1103,192 +1099,20 @@
                 "value": "bg-image"
               },
               {
-                "name": "Yellow Light",
-                "value": "bg-yellow-light"
-              },
-              {
-                "name": "Blue Light",
-                "value": "bg-blue-light"
-              },
-              {
-                "name": "Purple",
-                "value": "bg-purple"
-              },
-              {
-                "name": "Orange",
-                "value": "bg-orange"
-              },
-              {
-                "name": "Seafoam",
-                "value": "bg-spectrum-seafoam-700"
-              },
-              {
-                "name": "Yellow",
-                "value": "bg-spectrum-yellow-700"
-              },
-              {
-                "name": "darkcharcoal",
-                "value": "--darkcharcoal"
-              },
-              {
-                "name": "darkgrey",
-                "value": "--darkgrey"
-              },
-              {
                 "name": "white",
                 "value": "--white"
-              },
-              {
-                "name": "orange",
-                "value": "--orange"
-              },
-              {
-                "name": "black",
-                "value": "--black"
-              },
-              {
-                "name": "grey",
-                "value": "--grey"
-              },
-              {
-                "name": "darkblack",
-                "value": "--darkblack"
-              },
-              {
-                "name": "green",
-                "value": "--green"
-              },
-              {
-                "name": "greyishblue",
-                "value": "--greyishblue"
-              },
-              {
-                "name": "floralwhite",
-                "value": "--floralwhite"
               },
               {
                 "name": "lilen",
                 "value": "--lilen"
               },
               {
-                "name": "dustygrey",
-                "value": "--dustygrey"
-              },
-              {
-                "name": "matterhorn",
-                "value": "--matterhorn"
-              },
-              {
-                "name": "chinesesilver",
-                "value": "--chinesesilver"
-              },
-              {
-                "name": "midnight",
-                "value": "--midnight"
-              },
-              {
-                "name": "pattensblue",
-                "value": "--pattensblue"
-              },
-              {
                 "name": "rosewhite",
                 "value": "--rosewhite"
               },
               {
-                "name": "solitude",
-                "value": "--solitude"
-              },
-              {
-                "name": "swansdown",
-                "value": "--swansdown"
-              },
-              {
-                "name": "camarone",
-                "value": "--camarone"
-              },
-              {
-                "name": "zinc",
-                "value": "--zinc"
-              },
-              {
-                "name": "cloud",
-                "value": "--cloud"
-              },
-              {
-                "name": "silver",
-                "value": "--silver"
-              },
-              {
-                "name": "arsenic",
-                "value": "--arsenic"
-              },
-              {
-                "name": "whisper",
-                "value": "--whisper"
-              },
-              {
-                "name": "fossil",
-                "value": "--fossil"
-              },
-              {
-                "name": "blackpearl",
-                "value": "--blackpearl"
-              },
-              {
-                "name": "lightgrey",
-                "value": "--lightgrey"
-              },
-              {
-                "name": "blue",
-                "value": "--blue"
-              },
-              {
-                "name": "whitesmoke",
-                "value": "--whitesmoke"
-              },
-              {
-                "name": "coral",
-                "value": "--coral"
-              },
-              {
-                "name": "salmon",
-                "value": "--salmon"
-              },
-              {
-                "name": "seashell",
-                "value": "--seashell"
-              },
-              {
-                "name": "pale",
-                "value": "--pale"
-              },
-              {
-                "name": "cinnabar",
-                "value": "--cinnabar"
-              },
-              {
                 "name": "coralred",
                 "value": "--coralred"
-              },
-              {
-                "name": "flamingo",
-                "value": "--flamingo"
-              },
-              {
-                "name": "mischka",
-                "value": "--mischka"
-              },
-              {
-                "name": "midorange",
-                "value": "--midorange"
-              },
-              {
-                "name": "pearl",
-                "value": "--pearl"
-              },
-              {
-                "name": "submidorange",
-                "value": "--submidorange"
               },
               {
                 "name": "Skyblue",
@@ -1386,107 +1210,6 @@
               {
                 "name": "carousel-heading-inline-mob",
                 "value": "carousel-heading-inline-mob"
-              }
-            ]
-          },
-          {
-            "name": "Col To Add",
-            "children": [
-              {
-                "name": "col-1",
-                "value": "col-1"
-              },
-              {
-                "name": "col-2",
-                "value": "col-2"
-              },
-              {
-                "name": "col-3",
-                "value": "col-3"
-              },
-              {
-                "name": "col-4",
-                "value": "col-4"
-              },
-              {
-                "name": "col-5",
-                "value": "col-5"
-              },
-              {
-                "name": "col-6",
-                "value": "col-6"
-              },
-              {
-                "name": "col-7",
-                "value": "col-7"
-              },
-              {
-                "name": "col-8",
-                "value": "col-8"
-              },
-              {
-                "name": "col-9",
-                "value": "col-9"
-              },
-              {
-                "name": "col-10",
-                "value": "col-10"
-              },
-              {
-                "name": "col-11",
-                "value": "col-11"
-              },
-              {
-                "name": "col-12",
-                "value": "col-12"
-              },
-              {
-                "name": "mob-col-1",
-                "value": "mob-col-1"
-              },
-              {
-                "name": "mob-col-2",
-                "value": "mob-col-2"
-              },
-              {
-                "name": "mob-col-3",
-                "value": "mob-col-3"
-              },
-              {
-                "name": "mob-col-4",
-                "value": "mob-col-4"
-              },
-              {
-                "name": "mob-col-5",
-                "value": "mob-col-5"
-              },
-              {
-                "name": "mob-col-6",
-                "value": "mob-col-6"
-              },
-              {
-                "name": "mob-col-7",
-                "value": "mob-col-7"
-              },
-              {
-                "name": "mob-col-8",
-                "value": "mob-col-8"
-              },
-              {
-                "name": "mob-col-9",
-                "value": "mob-col-9"
-              },
-              {
-                "name": "mob-col-10",
-                "value": "mob-col-10"
-              },
-              {
-                "name": "mob-col-11",
-                "value": "mob-col-11"
-              },
-              {
-                "name": "mob-col-12",
-                "value": "mob-col-12"
               }
             ]
           },
