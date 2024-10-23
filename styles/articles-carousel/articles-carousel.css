@@ -1,4 +1,4 @@
-.section.carousel-articles-wrapper .default-content-wrapper #recommended-articles{
+.section.carousel-articles-wrapper .default-content-wrapper h2{
     color: #000;
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
@@ -211,7 +211,7 @@
     .section.carousel-articles-wrapper .carousel-wrapper .carousel .panel-container .teaser .background .front-picture picture img{
         display: block;
     }
-    .section.carousel-articles-wrapper .default-content-wrapper #recommended-articles{
+    .section.carousel-articles-wrapper .default-content-wrapper h2{
         font-size: 1.25rem;
         line-height: 28px;
         padding-bottom: 4px;

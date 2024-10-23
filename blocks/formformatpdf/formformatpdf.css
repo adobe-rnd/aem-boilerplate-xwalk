@@ -1,7 +1,7 @@
 .section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div h2, 
 .section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div h1 {
     color: var(--orange);
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.75rem;
     font-weight: 800;
     line-height: 42px;
@@ -28,7 +28,7 @@
     border-radius: 4px;
     color: #333;
     display: block;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     line-height: 24px;
     padding: 20px 61px 20px 36px;

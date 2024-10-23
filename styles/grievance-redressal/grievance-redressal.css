@@ -15,7 +15,7 @@
 
 .section.grievance-redressal-levels .columns-wrapper .columns>div>div {
     color: var(--black);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1pc;
     font-weight: 400;
     line-height: 22px;
@@ -24,7 +24,7 @@
 .section.grievance-redressal-levels .columns-wrapper .columns>div>div>h2 {
     color: #333;
     display: block;
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.125rem;
     font-weight: 800;
     line-height: 27px;
@@ -38,7 +38,7 @@
 
 .section.grievance-redressal-levels .columns-wrapper .columns>div>div>p {
     color: var(--black);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1pc;
     font-weight: 400;
     line-height: 22px;
@@ -48,7 +48,7 @@
 .section.grievance-redressal-levels .columns-wrapper .columns>div>div>p>a {
     color: var(--orange);
     cursor: pointer;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1pc;
     font-weight: 400;
     line-height: 22px;
@@ -56,7 +56,7 @@
 .section.grievance-redressal-levels .columns-wrapper .columns>div>div>p>a sub{
     color: var(--orange);
     cursor: pointer;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
 } 
 .section.grievance-redressal-levels .columns-wrapper .columns>div>div>p>a sub:hover,
 .section.grievance-redressal-levels .columns-wrapper .columns>div>div>p>a:hover{
@@ -64,7 +64,7 @@
 }
 .section.grievance-redressal-levels .default-content-wrapper p {
     color: var(--black);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 22px;
@@ -74,7 +74,7 @@
 .section.grievance-redressal-levels .default-content-wrapper p>a {
     color: var(--orange);
     cursor: pointer;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 22px;
@@ -86,7 +86,7 @@
 
 .section.grievance-redressal-levels .default-content-wrapper p>strong {
     color: var(--black);
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.125rem;
     font-weight: 800;
     line-height: 24px;
@@ -100,7 +100,7 @@
 
 .section.grievance-redressal-levels .default-content-wrapper>ul>li {
     color: var(--black);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -114,7 +114,7 @@
 
 .section.grivience-text-review .default-content-wrapper p   {
     color: var(--black);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 22px;
@@ -123,7 +123,7 @@
 }
 .section.grivience-text-review .default-content-wrapper p strong{
     color: var(--black);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
 }
 @media screen and (max-width:767px) {
@@ -149,7 +149,7 @@
 .section.stakeholder-contact .columns-wrapper .columns>div >div p strong{
     display: block;
     color: var(--black);
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 700;
     font-weight: 1pc;
     line-height: 22px;
@@ -207,7 +207,7 @@ margin-top: -16px;
 @media screen and (max-width:767px) {
     .section.stakeholder-insurance-services .columns-wrapper .columns>div>div>h2{
         color: var(--orange);
-        font-family: Nunito-Extrabold, sans-serif;
+        font-family: 'Nunito-Extrabold', sans-serif;
         font-size: 1.125rem;
         font-weight: 800;
         line-height: 27px;
@@ -221,14 +221,14 @@ margin-top: -16px;
     margin-top: 40px;
     /* margin-bottom: 72px; */
     color: var(--black);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.125rem;
     font-weight: 400;
     line-height: 24px;
 }
 .section.stakeholder-insurance-grievance .default-content-wrapper >p{
     color: var(--black);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.125rem;
     font-weight: 400;
     line-height: 24px;
@@ -240,7 +240,7 @@ margin-top: -16px;
     margin-top: 72px;
     color: var(--black);
     display: block;
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2rem;
     font-weight: 800;
     line-height: 40px;
@@ -266,7 +266,7 @@ margin-top: -16px;
 
 .section.mld-valuation p{
     color: var(--black);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 22px;
@@ -282,7 +282,7 @@ margin-top: -16px;
 
 .section.insurance-services .accordion-group-wrapper .accordion-group .accordion>details>summary>div>p a{
     color: var(--orange);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     line-height: 24px;
 }
@@ -296,7 +296,7 @@ margin-top: -16px;
     right: 75px;
 }
 .section.insurance-services .accordion-group-wrapper .accordion-group .accordion>details>summary>div>p a sub{
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     line-height: 24px;
 }
@@ -315,7 +315,7 @@ margin-top: -16px;
     margin: 0;
     border: none;
     color: #333;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;

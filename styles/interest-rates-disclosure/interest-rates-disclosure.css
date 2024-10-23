@@ -1,6 +1,6 @@
 /* interest rate accordian start */
 .section.interest-rates-accordian-wrapper .default-content-wrapper h2 {
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
     line-height: 30px;
@@ -13,7 +13,7 @@
     border: 1px solid #ccc;
     color: #000;
     display: block;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 14px;
     font-weight: 700;
     line-height: 21px;
@@ -51,7 +51,7 @@
 
 .section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>summary>div>h3,
 .section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>summary>div>p{
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     line-height: 24px;
     margin: 0;
@@ -64,7 +64,7 @@
 .section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>summary::after {
     color: var(--text-color);
     content: "+";
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.75rem;
     font-weight: 800;
     height: 2px;
@@ -111,7 +111,7 @@
     position: relative;
     text-decoration: none;
     display: block;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 0.75rem;
     line-height: 24px;
     margin-bottom: 4px;
@@ -126,7 +126,7 @@
 }
 
 .section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li>ul>li>a {
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     line-height: 24px;
     color: var(--text-color);
@@ -137,7 +137,7 @@
     font-size: 1rem; 
 }
 .section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li>ul>li>a sub:first-child{
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem; 
 }
 .section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li>ul>li>a:hover{
@@ -162,7 +162,7 @@
 .section.stakeholder-disclosures .default-content-wrapper h2{
     margin-top: 16px;
     color: #000;
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.125rem;
     font-weight: 800;
     line-height: 24px;
@@ -170,7 +170,7 @@
 
 .section.stakeholder-disclosures .default-content-wrapper h3{
     color: #666;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     line-height: 22px;
@@ -230,7 +230,7 @@
 .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details >div>p {
     margin: 0;
     color: #333;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -242,7 +242,7 @@
 }
 
 .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details >div>ul >li{
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -273,7 +273,7 @@
 
  .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details >div>ul >li>a{
     color: var(--text-color);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;

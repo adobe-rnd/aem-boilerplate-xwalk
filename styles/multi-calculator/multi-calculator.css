@@ -112,7 +112,7 @@
 .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser .background .foreground .text .long-description p {
     color: var(--white);
     display: block;
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
     line-height: 30px;
@@ -123,7 +123,7 @@
     border: 1px solid var(--white);
     border-radius: 8px;
     color: var(--white);
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 0.875rem;
     font-weight: 700;
     line-height: 21px;
@@ -180,7 +180,7 @@
 .section.home-loan-eligibility-calculator .teaser-wrapper .teaser .background .foreground .text .title h1 {
     color: var(--white);
     display: block;
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2rem;
     font-weight: 800;
     line-height: 32px;
@@ -189,7 +189,7 @@
 
 .section.home-loan-eligibility-calculator .teaser-wrapper .teaser .background .foreground .text .long-description p {
     color: var(--white);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;

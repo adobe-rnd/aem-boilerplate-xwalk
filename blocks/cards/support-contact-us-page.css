@@ -34,7 +34,7 @@
     border-radius: 8px;
     padding: 8px 16px;
     border: 1px solid #365069;
-    font: 700 12px 'nunito-bold', 'sans-serif';
+    font: 700 12px 'Nunito-bold', 'sans-serif';
     line-height: 16px;
     color: #365069;
     background: #ffffff;
@@ -61,7 +61,7 @@
     line-height: 24px;
     font-weight: 400;
     color: #666666;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li ul{
@@ -73,7 +73,7 @@
     color: #000000;
     font-size: 12px;
     font-weight: 700;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h6,
@@ -82,7 +82,7 @@
     font-size: 12px;
     padding-top: 2px;
     font-weight: 400;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h4{
@@ -93,12 +93,12 @@
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li ul li strong {
     color: #4D4D4D;
     font-weight: 700;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
 }
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li a {
     color: #4D4D4D;
     font-weight: 700;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     text-decoration: underline;
 }
 
@@ -118,12 +118,12 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h5{
     color: #27272A;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-weight: 400;
 }
 
@@ -142,7 +142,7 @@
     line-height: 20px;
     font-weight: 700;
     font-style: normal;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
 }
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li:has(em a) em a{
     color: #F26841;
@@ -152,7 +152,7 @@
     /* border-bottom: 1px dashed; */
     font-style: normal;
     text-decoration: underline dashed;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
 }
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body>p span {
     display: contents;

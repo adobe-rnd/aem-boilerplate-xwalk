@@ -19,7 +19,7 @@
 }
 
 .section.press-release-list-wrapper .default-content-wrapper ul>li>a>sub{
-    font-family: Nunito-Semibold, sans-serif;
+    font-family: 'Nunito-Semibold', sans-serif;
     font-size: 0.75rem;
     font-weight: 600;
     line-height: 16px;
@@ -28,7 +28,7 @@
 
 .section.press-release-list-wrapper .default-content-wrapper ul>li>a>sub>strong {
     display: block;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     line-height: 24px;
@@ -63,7 +63,7 @@
 .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>p {
     margin: 0;
     color: #333;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -75,7 +75,7 @@
 }
 
 .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li {
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -91,7 +91,7 @@
 
 .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details>summary::after {
     color: #333;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     line-height: 42px;
     top: 8px;
 }
@@ -137,7 +137,7 @@
 
 .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li>a>sub {
     color: var(--text-color);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;

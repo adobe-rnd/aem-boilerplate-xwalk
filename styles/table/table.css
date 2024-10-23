@@ -49,7 +49,7 @@
     border-bottom: 1px solid var(--pattensblue);
     border-left: 1px solid var(--pattensblue);
     color: #4d4d4d;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     line-height: 24px;
@@ -368,7 +368,7 @@
 
 /* csr committee table start */
 .section.csr-commitee-wrapper .default-content-wrapper h2 {
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
     line-height: 30px;
@@ -381,7 +381,7 @@
     background-color: var(--greyishblue);
     border: 1px solid var(--dark-color);
     color: var(--background-color);
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 0.875rem;
     font-weight: 700;
     line-height: 21px;
@@ -456,7 +456,7 @@
 /* statutory committees table start */
 .section.statutory-committees-wrapper .default-content-wrapper h2 {
     color: var(--orange);
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.75rem;
     font-weight: 800;
     line-height: 42px;
@@ -479,7 +479,7 @@
 
 .section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(3)>p {
     color: var(--black);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 21px;

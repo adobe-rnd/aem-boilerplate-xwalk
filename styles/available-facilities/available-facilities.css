@@ -2,7 +2,7 @@
     margin-bottom: 24px;
     color: #000;
     display: block;
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2rem;
     font-weight: 800;
     line-height: 40px;
@@ -19,7 +19,7 @@
 .section.available-facilities .columns-wrapper .columns >div >div >h2{
     color: #333;
     display: block;
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
     line-height: 28px;
@@ -27,7 +27,7 @@
 }
 .section.available-facilities .columns-wrapper .columns >div >div >p{
     color: #666;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -40,7 +40,7 @@
     }
     .section.available-facilities .columns-wrapper .columns >div >div >h2{
         color: #333;
-        font-family: Nunito-Bold, sans-serif;
+        font-family: 'Nunito-Bold', sans-serif;
         font-size: 1rem;
         font-weight: 700;
         line-height: 24px;

@@ -4,7 +4,7 @@
     margin: 0;
     color: #000;
     display: block;
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2rem;
     font-weight: 800;
     line-height: 2.5rem;
@@ -16,7 +16,7 @@
     margin-bottom: 24px;
     color: #666;
     display: block;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 1.75rem;
@@ -75,7 +75,7 @@
     background: #f26841;
     border-radius: 8px;
     color: #fff;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 0.875rem;
     font-weight: 700;
     line-height: 1.25rem;

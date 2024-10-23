@@ -11,7 +11,7 @@ dialog[open]:has(.modal-content .section.support-contact-us-popup.risk-gradation
     font-size: 2rem;
     line-height: 2.5rem;
     margin-bottom: .5rem;
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-weight: 800;
     color: #000;
 }
@@ -19,7 +19,7 @@ dialog[open]:has(.modal-content .section.support-contact-us-popup.risk-gradation
 .section.support-contact-us-popup.risk-gradation-popup .default-content-wrapper > p {
     font-size: 1.125rem;
     line-height: 1.5rem;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-weight: 400;
 }
 
@@ -35,7 +35,7 @@ dialog[open]:has(.modal-content .section.support-contact-us-popup.risk-gradation
 .section.support-contact-us-popup.risk-gradation-popup .default-content-wrapper ul> li {
     font-size: 1.125rem;
     line-height: 1.75rem;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-weight: 400;
     color: #000;
     margin: 0;

@@ -179,14 +179,14 @@
   }
   .section.download-piramal-wrapper>.default-content-wrapper>h4{
     color: #fff;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     line-height: 2pc;
   }
   .section.download-piramal-wrapper>.default-content-wrapper>p{
     color: #fff;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 28px;

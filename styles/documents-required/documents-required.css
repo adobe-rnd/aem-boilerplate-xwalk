@@ -14,7 +14,7 @@
 .section.documents-required-brown .default-content-wrapper>h2{
     color: #333;
     display: block;
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2rem;
     font-weight: 800;
     line-height: 28px;
@@ -28,7 +28,7 @@
 .section.documents-required-brown .default-content-wrapper p{
     color: #666;
     display: block;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.125rem;
     line-height: 28px;
     padding-bottom: 8px;
@@ -50,7 +50,7 @@
 }
 .section.documents-required-brown .default-content-wrapper .button-container{
     color: #365069;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     line-height: 24px;
     border: 1px solid #365069;
@@ -72,7 +72,7 @@
 .section.documents-required-brown .default-content-wrapper .button-container a{
     background-color: unset;
     color: #365069;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     line-height: 24px;
@@ -82,14 +82,14 @@
 } 
 .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary div h3{
     color: #333;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.25rem;
     line-height: 28px;
     padding-bottom: 4px;
 }
 .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion.block details summary div p{
     color: #666;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     line-height: 24px;
     margin-top: unset;
@@ -171,7 +171,7 @@ summary div::before{
 .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details .active div p{
     color: #000;
     display: block;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     line-height: 24px;
     margin-top: unset;
@@ -184,7 +184,7 @@ summary div::before{
 .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details div p{
     color: #000;
     display: block;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     line-height: 24px;
     margin-top: unset;
@@ -196,7 +196,7 @@ summary div::before{
 }
 .section.documents-required-brown  > div.accordion-group-wrapper > div > div > details > div > p:nth-child(1) > strong{
     color: #f26841;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     line-height: 24px;
@@ -207,14 +207,14 @@ table {
 }
 .accordion.block >details> div> table:nth-child(1)> tbody> tr> th:nth-child(1){
     color: #f26841;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     line-height: 24px;
     padding-top: unset;
 }
 .accordion.block >details> div> table:nth-child(1)> tbody> tr> th:nth-child(3){
     color: #000;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -223,7 +223,7 @@ table {
 
 .section.documents-required-brown table:nth-child(2) > tbody > tr > th:nth-child(1) > span{
     color: #666;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 24px;
@@ -233,7 +233,7 @@ table {
 .section.documents-required-brown table:nth-child(2) > tbody > tr> th:nth-child(2),
 .section.documents-required-brown table:nth-child(2) > tbody > tr> th:nth-child(1){
     color: #f26841;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     line-height: 24px;
@@ -242,7 +242,7 @@ table {
 .section.documents-required-brown th,.section.documents-required-brown td{
     padding-top: 32px;
     color: #000;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -290,7 +290,7 @@ table {
 }
 .section.documents-required-brown .accordion.block > details > div > ul > li > p strong{
     color: #f26841;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     line-height: 24px;
@@ -304,7 +304,7 @@ table {
 .section.documents-required-brown .accordion.block > details > div > ul > li{
     color: #000;
     display: block;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -314,7 +314,7 @@ table {
 .section.documents-required-brown .accordion.block > details > div > ul > li > ul > li {
     color: #000;
     display: block;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;

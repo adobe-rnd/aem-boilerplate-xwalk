@@ -11,7 +11,7 @@
 }
 .section.authorised-agencies-banner .teaser-wrapper .teaser .background .foreground .text .long-description .button-container a sub{
     color: var(--white);
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
     line-height: 28px;
@@ -20,7 +20,7 @@
     background: var(--orange);
     border-radius: 8px;
     color: var(--white);
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
     line-height: 28px;
@@ -33,7 +33,7 @@
 .section.authorised-agencies-banner .teaser-wrapper .teaser .background .foreground .text .short-description p a >u,
 .section.authorised-agencies-banner .teaser-wrapper .teaser .background .foreground .text .short-description p a >u >sub{
     color: #f58667;
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-weight: 700;
 }
 .section.authorised-agencies-banner .teaser-wrapper .teaser .background .foreground .text .long-description .button-container {
@@ -44,7 +44,7 @@
 
 .section.authorised-agencies-banner .teaser-wrapper .teaser .background .foreground .text .short-description p{
     color: #2b4054;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     line-height: 24px;
     margin-top: 16px;
@@ -82,7 +82,7 @@
         margin-left: 30px;
     }
     .section.authorised-agencies-banner .teaser-wrapper .teaser .background .foreground .text .title h1 {
-        font-family: Nunito-Extrabold, sans-serif;
+        font-family: 'Nunito-Extrabold', sans-serif;
         font-size: 2.5rem;
         font-weight: 800;
         line-height: 60px;
@@ -125,7 +125,7 @@
 
 .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .select-container label{
     color: var(--greyishblue);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.125rem;
     font-weight: 400;
     line-height: 28px;
@@ -137,7 +137,7 @@
     border-bottom: 1px solid #000;
     color: var(--black);
     cursor: pointer;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
     line-height: 21px;
@@ -194,7 +194,7 @@
 
 .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .cities-container fieldset legend{
     color: var(--orange);
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     line-height: 24px;
@@ -224,7 +224,7 @@
 .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .cities-container fieldset label span{
     color: var(--black);
     cursor: pointer;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -254,7 +254,7 @@
 
 .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .card-container .card div p:first-child {
     color: var(--black);
-    font-family: Nunito-Semibold, sans-serif;
+    font-family: 'Nunito-Semibold', sans-serif;
     font-size: 0.875rem;
     font-weight: 600;
     line-height: 20px;
@@ -263,7 +263,7 @@
 
 .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .card-container .card div p:nth-child(2) {
     color: var(--gradient-gray);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 20px;
@@ -278,7 +278,7 @@
     .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .select-container label{
         align-self: baseline;
         color: var(--greyishblue);
-        font-family: Nunito-Regular, sans-serif;
+        font-family: 'Nunito-Regular', sans-serif;
         font-size: 1rem;
         font-weight: 400;
         line-height: 20px;
@@ -289,7 +289,7 @@
 
     .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .select-container input{
         color: var(--black);
-        font-family: Nunito-Bold, sans-serif;
+        font-family: 'Nunito-Bold', sans-serif;
         font-size: 1rem;
         font-weight: 700;
         line-height: 20px;

@@ -20,7 +20,7 @@
 
 .section.piramal-group-ajay-info .teaserv2-wrapper .teaserv2 a .bg-image .title {
     color: var(--orange);
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 2.25rem;
     font-weight: 700;
     left: 190px;
@@ -31,7 +31,7 @@
 
 .section.piramal-group-ajay-info .teaserv2-wrapper .teaserv2>a>.bg-image .description {
     color: rgba(0, 0, 0, .871);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.25rem;
     font-weight: 400;
     left: 190px;
@@ -42,7 +42,7 @@
 
 .section.piramal-group-ajay-info .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p {
     color: rgba(0, 0, 0, .871);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;

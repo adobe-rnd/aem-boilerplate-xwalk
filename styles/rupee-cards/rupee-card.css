@@ -15,7 +15,7 @@
 .section.rupee-cards-wrapper .default-content-wrapper p{
     color: #666;
     display: block;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     line-height: 24px;
     margin-bottom: 40px;
@@ -36,7 +36,7 @@
 }
 .section.rupee-cards-wrapper .bg-image .title{
     color: #333;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -44,7 +44,7 @@
 }
 .section.rupee-cards-wrapper .bg-image .description{
     color: #000;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 2rem;
     line-height: 48px;
     text-decoration: none;
@@ -70,13 +70,13 @@
 }
 .section.rupee-cards-wrapper .long-description p strong{
     color: #000;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 2rem;
     line-height: 48px;
 }
 .section.rupee-cards-wrapper .foreground .text .title #loan-for-{
     color: #333;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -95,7 +95,7 @@
 }
 .section.rupee-cards-wrapper .long-description p:nth-child(1){
     color: #333;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -178,7 +178,7 @@
     }
     .section.rupee-cards-wrapper .default-content-wrapper p{
         color: #666;
-        font-family: Nunito-Regular, sans-serif;
+        font-family: 'Nunito-Regular', sans-serif;
         font-size: 0.875rem;
         line-height: 20px;
         margin-bottom: 32px;

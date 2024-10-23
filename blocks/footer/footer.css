@@ -125,7 +125,7 @@ footer.footer-wrapper .footer {
 }
 .footer-section-four .default-content-wrapper p {
   color: #afb9c3;
-  font-family: Nunito-Regular, sans-serif;
+  font-family: 'Nunito-Regular', sans-serif;
   font-size: 0.875rem;
   line-height: 1.25rem;
   margin-top: 6px;
@@ -218,7 +218,7 @@ footer.footer-wrapper .footer {
 }
 .footer-section-third .default-content-wrapper p a{
   color: #f58667;
-  font-family: Nunito-Regular, sans-serif;
+  font-family: 'Nunito-Regular', sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5rem;
@@ -436,7 +436,7 @@ footer.footer-wrapper .footer {
   .footer-section-second ul > li > ul > li,
   .footer-section-second ul > li > ul > li>a>sub {
     color: #fff;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 0.75rem;
     line-height: 1rem;
     margin-top: unset;

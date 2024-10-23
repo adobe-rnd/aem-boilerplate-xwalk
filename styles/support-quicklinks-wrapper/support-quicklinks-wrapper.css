@@ -1,6 +1,6 @@
 .section.support-quicklinks-wrapper .default-content-wrapper h1 {
     color: #333;
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2.5rem;
     font-weight: 800;
     line-height: 5pc;
@@ -47,7 +47,7 @@
 }
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details summary >div h2{
     color: #000;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 28px;
@@ -90,7 +90,7 @@
     padding: 29px 0;
     position: relative;
     color: #000;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 21px;
@@ -138,7 +138,7 @@
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a,
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a sub{
     color: #f26841;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 21px;

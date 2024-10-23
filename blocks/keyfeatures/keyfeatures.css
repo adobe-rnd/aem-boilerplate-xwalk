@@ -1,9 +1,9 @@
 .section.home-loans-products-wrapper .wrappercreation-wrapper .wrappercreation{
     margin-top: 40px;
  }
- .section.home-loans-products-wrapper .default-content-wrapper #more-home-loan-products{
+ .section.home-loans-products-wrapper .default-content-wrapper h2{
     color: #000;
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2rem;
     font-weight: 800;
     line-height: 40px;
@@ -64,7 +64,7 @@
 
 .section.home-loans-products-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper .keyfeatures .homeloanteaser .cmp-teaser .cmp-teaser__link .cmp-teaser__content p{
     color: #666;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -80,7 +80,7 @@
 }
 .section.home-loans-products-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper .keyfeatures .homeloanteaser .cmp-teaser .cmp-teaser__link .cmp-teaser__content p:nth-child(1) strong{
     color: #000;
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.125rem;
     font-weight: 800;
     line-height: 28px;
@@ -123,7 +123,7 @@
 .section.home-loans-products-wrapper .homeloanteaser .cmp-teaser .keyfeature-container .keyfeatures-info .heading{
     color: #333;
     cursor: pointer;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     line-height: 24px;
@@ -144,14 +144,14 @@
 .section.home-loans-products-wrapper .homeloanteaser .keyfeature-container .keyfeatures .feature .feature-details div p:first-child,
 .section.home-loans-products-wrapper .homeloanteaser .keyfeature-container .keyfeatures .feature .feature-details div p {
     color: #666;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 20px;
 }
 .section.home-loans-products-wrapper .homeloanteaser .keyfeature-container .keyfeatures .feature .feature-details div p:last-child strong{
     color: #333;    
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
     line-height: 26px;
@@ -171,7 +171,7 @@
 }
 .view-more-less-js .default-content-wrapper .button-container{
     color: #f26841;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     line-height: 28px;
@@ -212,7 +212,7 @@
 .view-more-less-js .default-content-wrapper p strong{
     color: #000;
     display: block;
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2rem;
     font-weight: 800;
     line-height: 40px;
@@ -220,7 +220,7 @@
 }
 .view-more-less-js .default-content-wrapper p{
     color: #000;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.125rem;
     font-weight: 400;
     line-height: 24px;
@@ -259,7 +259,7 @@
     .section.home-loans-products-wrapper .wrappercreation-wrapper .wrappercreation{
         margin-top: unset;
     }
-    .section.home-loans-products-wrapper .default-content-wrapper #more-home-loan-products{
+    .section.home-loans-products-wrapper .default-content-wrapper h2{
         font-size: 1.25rem;
         line-height: 28px;
         padding-bottom: 4px;

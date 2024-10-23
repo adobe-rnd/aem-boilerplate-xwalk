@@ -523,7 +523,7 @@ header nav .nav-sections .nav-drop::after{
   align-items: center;
   color: #333;
   cursor: pointer;
-  font-family: Nunito-Bold, sans-serif;
+  font-family: 'Nunito-Bold', sans-serif;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.5rem;
@@ -540,7 +540,7 @@ header nav .nav-sections .nav-drop::after{
   border-radius: 19px;
   color: #f26841;
   display: flex;
-  font-family: Nunito-Bold, sans-serif;
+  font-family: 'Nunito-Bold', sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
   min-width: 81px;
@@ -1059,7 +1059,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
     color: #333;
     cursor: pointer;
     display: flex;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     line-height: 1.5rem;
@@ -1157,7 +1157,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
     font-size: 0.875rem;
     line-height: 1.25rem;
     padding-left: 8px;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     text-decoration: none;
     padding: 16px 0;
     display: flex;
@@ -1230,7 +1230,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
 .section.mobile-view-header .code-wrapper .code   div > div > ul:nth-child(2) > li:nth-child(3) > ul li,
 .section.mobile-view-header .code-wrapper .code   div > div > ul:nth-child(2) > li:nth-child(2) > ul li,
 .section.mobile-view-header .code-wrapper .code  div > div > ul:nth-child(2) > li:nth-child(1) > ul li{
-  font-family: Nunito-Regular, sans-serif;
+  font-family: 'Nunito-Regular', sans-serif;
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: #212529;
@@ -1249,7 +1249,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
   color: #fff;
   cursor: pointer;
   display: flex;
-  font-family: Nunito-Bold, sans-serif;
+  font-family: 'Nunito-Bold', sans-serif;
   font-size: 0.75rem;
   height: 16px;
   width: 32px;
@@ -1270,7 +1270,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
     background-color: #41c66e;
     border-radius: 4px;
     color: #fff;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 0.75rem;
     line-height: 1rem;
     margin-left: 10px;
@@ -1315,7 +1315,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
 }
 .section.mobile-view-header .header-mobile-app-store p{
   color: #212529;
-  font-family: Nunito-Bold, sans-serif;
+  font-family: 'Nunito-Bold', sans-serif;
   font-size: 0.875rem;
   line-height: 1.25rem;
   margin: unset;

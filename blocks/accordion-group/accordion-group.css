@@ -34,7 +34,7 @@
     margin: 0;
     word-wrap: break-word;
     color: #333;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -44,7 +44,7 @@
 .section.stakeholder-policies-accordian .accordion-group-wrapper .accordion-group .accordion>details>div p a sub{
     color: #007bff;
     cursor: pointer;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     line-height: 24px;

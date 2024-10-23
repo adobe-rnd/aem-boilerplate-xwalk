@@ -165,7 +165,7 @@ ol .accordion ul {
     margin-top: unset;
     margin-top: unset;
     color: #333;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
     line-height: 28px;
@@ -176,7 +176,7 @@ ol .accordion ul {
 .faq-accordion-css .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary {
     margin-top: unset;
     color: #333;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 28px;
@@ -228,7 +228,7 @@ ol .accordion ul {
 .faq-accordion-css-with-orange-heading .default-content-wrapper h2 {
     color: #000;
     display: block;
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2rem;
     font-weight: 800;
     line-height: 40px;
@@ -261,7 +261,7 @@ ol .accordion ul {
 
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details>div {
     color: #666;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 28px;
@@ -313,7 +313,7 @@ ol .accordion ul {
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary {
     margin-top: unset;
     color: #333;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 28px;
@@ -348,7 +348,7 @@ ol .accordion ul {
 
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details>div {
     color: #666;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 28px;
@@ -383,7 +383,7 @@ ol .accordion ul {
     color: #365069;
     cursor: pointer;
     padding: 1pc 24px;
-    font-family: nunito-bold;
+    font-family: 'nunito-bold';
     font-size: 1.125rem;
 }
 
@@ -419,7 +419,7 @@ ol .accordion ul {
 }
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper > .accordion-group > .accordion details > div > ul > li > strong{
     color: #666;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 20px;
     font-weight: bolder;
     line-height: 28px;

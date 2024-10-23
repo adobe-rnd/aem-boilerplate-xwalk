@@ -3,7 +3,7 @@
 .section.embed-wrapper .default-content-wrapper h2 {
     color: var(--text-color);
     display: block;
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2rem;
     font-weight: 800;
     line-height: 40px;
@@ -176,7 +176,7 @@
 .section.details-verification-wrapper .teaserv2-wrapper .teaserv2.block>a .bg-image .title {
     color: #333;
     flex-basis: 36.4%;
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
     line-height: 30px;
@@ -204,7 +204,7 @@
 .section.details-verification-wrapper .teaserv2-wrapper .teaserv2.block>a .bg-image >div>ul>li {
     list-style-type: disc;
     color: #333;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 40px;

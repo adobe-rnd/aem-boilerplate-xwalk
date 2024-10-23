@@ -51,7 +51,7 @@
 .section.knowledge-card-carousel .primary.block>.carousel-navigation-buttons{
     display: block
 }
-.section.knowledge-card-carousel .default-content-wrapper #piramal-values{
+.section.knowledge-card-carousel .default-content-wrapper h2{
     color: #000;
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
@@ -142,7 +142,7 @@
     .section.knowledge-card-carousel .carousel-wrapper .carousel-navigation-buttons .glider-next{
         display: none;
     }
-    .section.knowledge-card-carousel .default-content-wrapper #piramal-values{
+    .section.knowledge-card-carousel .default-content-wrapper h2{
         font-size: 1.25rem;
         line-height: 28px;
         padding-bottom: 4px;

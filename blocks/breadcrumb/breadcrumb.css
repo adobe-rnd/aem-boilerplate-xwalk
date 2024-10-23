@@ -14,7 +14,7 @@
 }
 .section.breadcrumb-handle > .breadcrumb-wrapper > .breadcrumb.block > nav > a{
     color: #666;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 20px;
@@ -25,7 +25,7 @@
 }
 .section.breadcrumb-handle > .breadcrumb-wrapper > .breadcrumb.block > nav > a:last-child{
     color: #f26841;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 20px;
@@ -50,7 +50,7 @@
 }
 .section.breadcrumb-handle .breadcrumb-wrapper > .breadcrumb.white > nav > a{
     color: #fff;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 20px;

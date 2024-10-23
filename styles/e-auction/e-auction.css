@@ -21,14 +21,14 @@
     padding: 2px;
     font-size: 0.813rem;
     text-align: center;
-    font-family: nunito-bold;
+    font-family: 'Nunito-bold';
     border-style: none;
 }
 .section.e-auction-wrapper .code-wrapper .code.block > div table tbody tr td{
     border: 1px solid #c5c4c4;
     padding: 2px;
     font-size: 0.75rem;
-    font-family: nunito-regular;
+    font-family: 'Nunito-regular';
     vertical-align: middle;
 }
 .section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td a sub,
@@ -60,7 +60,7 @@
 .section.interest-rates-accordian-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li>a sub{
     cursor: pointer;
     display: block;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     line-height: 24px;
 }
@@ -80,7 +80,7 @@
 
 .section.e-auction-sale-notice .default-content-wrapper >h2{
     color: #000;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
     line-height: 24px;
@@ -88,7 +88,7 @@
 }
 .section.e-auction-sale-notice .default-content-wrapper p{
     color: #000;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.125rem;
     font-weight: 400;
     line-height: 24px;
@@ -99,13 +99,13 @@
     padding: 0;
     background: unset;
     border: unset;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.125rem;
     font-weight: 400;
     line-height: 24px;
 }  
 .section.e-auction-sale-notice .default-content-wrapper >p >a >sub{
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.125rem;
     font-weight: 400;
     line-height: 24px;
