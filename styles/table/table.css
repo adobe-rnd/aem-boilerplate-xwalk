@@ -89,7 +89,7 @@
 .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr:last-child td {
     border-bottom: unset;
 }
-.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td span{
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td {
     color: var(--midnight);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
@@ -111,7 +111,7 @@
 }
 
 .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td>p,
-.section.fees-charges-wrapper.three-col-table>.code-wrapper>.code.block>div>table>tbody>tr>td>p>strong>span,
+.section.fees-charges-wrapper.three-col-table>.code-wrapper>.code.block>div>table>tbody>tr>td>p>strong,
 .section.fees-charges-wrapper.iphone-loan-table .code-wrapper .code>div>table>tbody>tr>td>ul>li {
     color: var(--midnight);
     font-family: 'Nunito-Regular', sans-serif;
@@ -121,7 +121,8 @@
 }
 
 
-.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td>p>strong>span {
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td>p>strong,
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td>strong {
     font-family: 'Nunito-Bold', sans-serif;
 }
 

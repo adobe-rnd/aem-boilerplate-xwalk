@@ -15,7 +15,7 @@
     justify-content: flex-end;
 }
 
-.section.legal-banner-wrapper .teaser-wrapper .teaser .background .foreground .text .title h1 {
+.section.legal-banner-wrapper .teaser-wrapper .teaser .background .foreground .text .title :where(h1,h2,h3,h4,h5,h6) {
     color: #333;
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 3rem;
@@ -80,7 +80,7 @@
         width: 52px;
     }
 
-    .section.legal-banner-wrapper .teaser-wrapper .teaser .background .foreground .text .title h1 {
+    .section.legal-banner-wrapper .teaser-wrapper .teaser .background .foreground .text .title :where(h1,h2,h3,h4,h5,h6) {
         font-size: 1.5rem;
         line-height: 36px;
     }

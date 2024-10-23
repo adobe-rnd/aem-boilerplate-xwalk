@@ -51,8 +51,7 @@
     margin-bottom: 32px;
 }
 
-.section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .long-description>p,
-.section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .long-description>h1 {
+.section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .long-description> :where(p,h1,h2,h3,h4,h5,h6) {
     color: #fff;
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.5rem;
@@ -124,8 +123,7 @@
         display: block;
     }
 
-    .section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .long-description>p,
-    .section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .long-description>h1 {
+    .section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .long-description> :where(p,h1,h2,h3,h4,h5,h6) {
         font-size: 0.875rem;
         line-height: 20px;
     }

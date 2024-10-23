@@ -2,8 +2,7 @@
     padding-bottom: 35px;
     background-color: var(--rosewhite);
 }
-.section.financial-reports-carousel .default-content-wrapper >h1,
-.section.financial-reports-carousel .default-content-wrapper >h2{
+.section.financial-reports-carousel .default-content-wrapper > :where(h1,h2,h3,h4,h5,h6){
     margin: 0;
     color: #333;
     font-family: 'Nunito-Extrabold', sans-serif;
@@ -21,8 +20,7 @@
     line-height: 28px;
 }
 @media screen and (max-width: 1024px) {
-    .section.financial-reports-carousel .default-content-wrapper >h2,
-    .section.financial-reports-carousel .default-content-wrapper >h1{
+    .section.financial-reports-carousel .default-content-wrapper > :where(h1,h2,h3,h4,h5,h6){
         padding-top: 54px;
         font-size: 1.375rem;
         line-height: 34px;

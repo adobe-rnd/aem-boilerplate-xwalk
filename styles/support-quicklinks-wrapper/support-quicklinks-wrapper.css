@@ -1,4 +1,4 @@
-.section.support-quicklinks-wrapper .default-content-wrapper h1 {
+.section.support-quicklinks-wrapper .default-content-wrapper :where(h1,h2,h3,h4,h5,h6) {
     color: #333;
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2.5rem;
@@ -10,7 +10,7 @@
     text-align: center;
 }
 
-.section.support-quicklinks-wrapper .default-content-wrapper h1::after {
+.section.support-quicklinks-wrapper .default-content-wrapper :where(h1,h2,h3,h4,h5,h6)::after {
     background-color: #da4e34;
     bottom: 0;
     content: "";
@@ -157,7 +157,7 @@
 }
 @media screen and (max-width: 1024px) {
 
-    .section.support-quicklinks-wrapper .default-content-wrapper h1{
+    .section.support-quicklinks-wrapper .default-content-wrapper :where(h1,h2,h3,h4,h5,h6){
         font-size: 1.5rem;
         line-height: 48px;
         margin-bottom: 40px;
@@ -181,7 +181,7 @@
     .section.support-quicklinks-wrapper .accordion-group-wrapper{
         padding: 8px 16px;
     }
-    .section.support-quicklinks-wrapper .default-content-wrapper h1{
+    .section.support-quicklinks-wrapper .default-content-wrapper :where(h1,h2,h3,h4,h5,h6){
         margin-bottom: 32px;
     }
     .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li{

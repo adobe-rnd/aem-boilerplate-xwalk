@@ -81,7 +81,7 @@
         display: block;
         margin-left: 30px;
     }
-    .section.authorised-agencies-banner .teaser-wrapper .teaser .background .foreground .text .title h1 {
+    .section.authorised-agencies-banner .teaser-wrapper .teaser .background .foreground .text .title :where(h1,h2,h3,h4,h5,h6) {
         font-family: 'Nunito-Extrabold', sans-serif;
         font-size: 2.5rem;
         font-weight: 800;

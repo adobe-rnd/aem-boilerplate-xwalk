@@ -13,8 +13,7 @@
     min-height: 260px;
 }
 
-.section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .title h2,
-.section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .title h1,
+.section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .title :where(h1,h2,h3,h4,h5,h6),
 .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .eyebrow {
     color: var(--black);
     display: inline-block;
@@ -51,8 +50,7 @@
 }
 
 @media screen and (max-width:1024px) {
-    .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .title h2,
-    .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .title h1,
+    .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .title :where(h1,h2,h3,h4,h5,h6),
     .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .eyebrow {
         font-size: 1.5rem;
         line-height: 32px;
@@ -176,8 +174,7 @@
     border-radius: 16px;
 }
 
-.section.home-loan-eligibility-calculator .teaser-wrapper .teaser .background .foreground .text .title h2,
-.section.home-loan-eligibility-calculator .teaser-wrapper .teaser .background .foreground .text .title h1 {
+.section.home-loan-eligibility-calculator .teaser-wrapper .teaser .background .foreground .text .title :where(h1,h2,h3,h4,h5,h6) {
     color: var(--white);
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
@@ -205,8 +202,7 @@
         padding: 20px 8px 20px 20px;
     }
 
-    .section.home-loan-eligibility-calculator .teaser-wrapper .teaser .background .foreground .text .title h2,
-    .section.home-loan-eligibility-calculator .teaser-wrapper .teaser .background .foreground .text .title h1 {
+    .section.home-loan-eligibility-calculator .teaser-wrapper .teaser .background .foreground .text .title :where(h1,h2,h3,h4,h5,h6) {
         font-size: 1rem;
         font-weight: 700;
         line-height: 24px;

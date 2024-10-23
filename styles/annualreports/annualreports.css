@@ -1,6 +1,5 @@
 /* annual reports start */
-.section.annual-reports-wrapper .default-content-wrapper h2,
-.section.annual-reports-wrapper .default-content-wrapper h1 {
+.section.annual-reports-wrapper .default-content-wrapper :where(h1,h2,h3,h4,h5,h6) {
     color: var(--orange);
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.75rem;
