@@ -129,8 +129,8 @@
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six .background .foreground .text .eyebrow,
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-seven .background .foreground .text .title>:where(h1,h2,h3,h4,h5,h6),
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-seven .background .foreground .text .eyebrow,
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>h2,
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>h2>strong {
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>:where(h1,h2,h3,h4,h5,h6),
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>:where(h1,h2,h3,h4,h5,h6)>strong {
   color: var(--black);
   font-family: "Nunito-Extrabold", sans-serif;
   font-size: 3rem;
@@ -307,7 +307,7 @@
 }
 
 /* first banner css  */
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>h2>strong {
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>:where(h1,h2,h3,h4,h5,h6)>strong {
   color: #349E58;
 }
 
@@ -359,7 +359,7 @@
 }
 
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner>.background .foreground .text .eyebrow,
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>h2 {
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>:where(h1,h2,h3,h4,h5,h6) {
   color: var(--darkcharcoal);
 }
 
@@ -508,8 +508,8 @@
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six .background .foreground .text .eyebrow,
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-seven .background .foreground .text .title>:where(h1,h2,h3,h4,h5,h6),
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-seven .background .foreground .text .eyebrow,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>h2,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>h2>strong {
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>:where(h1,h2,h3,h4,h5,h6),
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>:where(h1,h2,h3,h4,h5,h6)>strong {
     font-size: 1.5rem;
     line-height: 32px;
   }
