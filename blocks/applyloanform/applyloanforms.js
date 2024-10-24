@@ -125,6 +125,9 @@ export function applyLoanFormClick() {
             console.warn(error);
           }
         }
+
+        loaninnerform.querySelector('#statecontainer').style.visibility = 'hidden';
+        loaninnerform.querySelector('#branchcontainer').style.visibility = 'hidden';
       });
     });
 
@@ -191,6 +194,10 @@ export function applyLoanFormClick() {
           if (emiOverlay.classList.contains("show") || elgOverlay.classList.contains("show")) { */
         if (checkingFormopen) {
           if (checkingFormopen.querySelector('.homeloancalculator-wrapper .show') || checkingFormopen.querySelector('.eligibilitycalculator-wrapper .show')) {
+            
+            loaninnerform.querySelector('#statecontainer').style.visibility = 'hidden';
+            loaninnerform.querySelector('#branchcontainer').style.visibility = 'hidden';
+
             loaninnerform.style.visibility = 'hidden';
             overlay.style.zIndex = '1111';
 
@@ -204,6 +211,9 @@ export function applyLoanFormClick() {
 
             document.querySelector('.modal-overlay').classList.remove('overlay');
             document.querySelector('.modal-overlay').classList.add('dp-none');
+
+            loaninnerform.querySelector('#statecontainer').style.visibility = 'hidden';
+            loaninnerform.querySelector('#branchcontainer').style.visibility = 'hidden';
 
             bodyElement.style.overflowY = 'auto';
             loaninnerform.style.visibility = 'hidden';
@@ -221,6 +231,10 @@ export function applyLoanFormClick() {
           document.querySelector('.modal-overlay').classList.remove('overlay');
           document.querySelector('.modal-overlay').classList.add('dp-none');
 
+
+          loaninnerform.querySelector('#statecontainer').style.visibility = 'hidden';
+          loaninnerform.querySelector('#branchcontainer').style.visibility = 'hidden';
+
           bodyElement.style.overflowY = 'auto';
           loaninnerform.style.visibility = 'hidden';
           // resetLoanForm();
@@ -229,6 +243,13 @@ export function applyLoanFormClick() {
             loaninnerform.classList.remove('loan-form-success');
             loaninnerform.classList.remove('loan-form-sub-otp');
           }
+        }
+
+        if(loaninnerform){
+          let ulFormBranch = document.createElement('li');
+          ulFormBranch.textContent = "No options";
+          ulFormBranch.classList.add('orangepoints');
+          loaninnerform.querySelector('#branchcontainer ul').innerHTML = ulFormBranch.outerHTML;
         }
 
         resetLoanForm();
@@ -294,12 +315,16 @@ export function applyLoanFormClick() {
       if (!loanSubParent.contains(event.target)) {
         if (emiOverlay || elgOverlay) {
           if (emiOverlay.classList.contains('show') || elgOverlay.classList.contains('show')) {
+            loaninnerform.querySelector('#statecontainer').style.visibility = 'hidden';
+            loaninnerform.querySelector('#branchcontainer').style.visibility = 'hidden';
             loaninnerform.style.visibility = 'hidden';
             overlay.style.zIndex = '1000';
           } else {
             // overlay.classList.remove("show");
             document.querySelector('.modal-overlay').classList.remove('overlay');
             document.querySelector('.modal-overlay').classList.add('dp-none');
+            loaninnerform.querySelector('#statecontainer').style.visibility = 'hidden';
+            loaninnerform.querySelector('#branchcontainer').style.visibility = 'hidden';
             loaninnerform.style.visibility = 'hidden';
             document.body.style.overflowY = 'auto';
             resetLoanForm();
@@ -311,6 +336,8 @@ export function applyLoanFormClick() {
           // overlay.classList.remove("show");
           document.querySelector('.modal-overlay').classList.remove('overlay');
           document.querySelector('.modal-overlay').classList.add('dp-none');
+          loaninnerform.querySelector('#statecontainer').style.visibility = 'hidden';
+          loaninnerform.querySelector('#branchcontainer').style.visibility = 'hidden';
           loaninnerform.style.visibility = 'hidden';
           document.body.style.overflowY = 'auto';
           resetLoanForm();
@@ -318,6 +345,14 @@ export function applyLoanFormClick() {
           loanOtpInput().value = '';
           loaninnerform.classList.remove('loan-form-sub-otp', 'loan-form-success', 'loan-form-request-fail', 'loan-form-something-wrong');
         }
+
+        if(loaninnerform){
+          let ulFormBranch = document.createElement('li');
+          ulFormBranch.textContent = "No options";
+          ulFormBranch.classList.add('orangepoints');
+          loaninnerform.querySelector('#branchcontainer ul').innerHTML = ulFormBranch.outerHTML;
+        }
+
       }
     });
 
@@ -326,8 +361,17 @@ export function applyLoanFormClick() {
         // overlay.classList.remove("show");
         document.querySelector('.modal-overlay').classList.remove('overlay');
         document.querySelector('.modal-overlay').classList.add('dp-none');
+        loaninnerform.querySelector('#statecontainer').style.visibility = 'hidden';
+        loaninnerform.querySelector('#branchcontainer').style.visibility = 'hidden';
         loaninnerform.style.visibility = 'hidden';
         bodyElement.style.overflowY = 'auto';
+
+        if(loaninnerform){
+          let ulFormBranch = document.createElement('li');
+          ulFormBranch.textContent = "No options";
+          ulFormBranch.classList.add('orangepoints');
+          loaninnerform.querySelector('#branchcontainer ul').innerHTML = ulFormBranch.outerHTML;
+        }
       }
     });
 
@@ -375,6 +419,7 @@ export function applyLoanFormClick() {
       ) {
         toggleOptionSelect(statecontainer);
         toggleArrowImage(stateparent.querySelector('.arrowimage'));
+        loaninnerform.querySelector('#statecontainer').style.visibility = 'hidden';
         isStateContainerVisible = false;
       }
       if (
@@ -383,6 +428,7 @@ export function applyLoanFormClick() {
       ) {
         toggleOptionSelect(branchcontainer);
         toggleArrowImage(branchparent.querySelector('.arrowimage'));
+        loaninnerform.querySelector('#branchcontainer').style.visibility = 'hidden';
         isBranchContainerVisible = false;
       }
       if (

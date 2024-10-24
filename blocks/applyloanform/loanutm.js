@@ -1,3 +1,5 @@
+import { fetchPlaceholders } from "../../scripts/aem.js";
+
 export const isMobile = {
   Android() {
     return navigator.userAgent.match(/Android/i);
@@ -29,8 +31,9 @@ export function loanutmForm() {
   }
 }
 
-export function loanFormUTM(makewebFormURL) {
-  let redirectionLink = 'https://www.piramalfinance.com/loan';
+export async function loanFormUTM(makewebFormURL) {
+  const placeholders = await fetchPlaceholders();
+  let redirectionLink = placeholders.formRedirectionLink; //'https://www.piramalfinance.com/loan';
   const utm_device = isMobile.any() ? 'MWEB' : 'DWEB';
   const utm_source = window.location.pathname.split('/').pop().replace(/\.html$/, '');
 

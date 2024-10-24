@@ -807,7 +807,7 @@ async function loadingCustomCss() {
   });
 }
 
-export let body = document.querySelector('body');
+/* export let body = document.querySelector('body');
 body?.addEventListener('click', (e) => {
   // e.stopImmediatePropagation();
   const loaninnerform = document.querySelector('.loan-form-sub-parent') || '';
@@ -867,7 +867,119 @@ body?.addEventListener('click', (e) => {
     document.querySelector('.state-wrapper > input').value = '';
     document.querySelector('.city-wrapper > input').value = '';
   }
+}); */
+
+export const body = document.querySelector('body');
+
+body?.addEventListener('click', (e) => {
+  const target = e.target;
+  const loaninnerform = document.querySelector('.loan-form-sub-parent');
+  const modalOverlay = document.querySelector('.modal-overlay');
+
+  handleModelClick(target, loaninnerform, modalOverlay);
+  handleNavClick(target);
+  handleOverlayClick(target);
+  handleStakePopupClick(target);
+  handleNeeyatLanguageDropdown(target);
+  handleBranchLocatorDropdown(target);
 });
+
+function handleModelClick(target, loaninnerform, modalOverlay) {
+  if (!target.closest('.show') && targetObject.model && loaninnerform?.style.visibility !== 'visible') {
+    targetObject.model?.querySelector('.overlayDiv').classList.remove('show');
+    document.body.style.overflow = 'scroll';
+    updateModalOverlay(modalOverlay);
+    updateLoanInnerForm(loaninnerform);
+  }
+}
+
+function handleNavClick(target) {
+  if (!target.closest('.nav-drop')) {
+    const nav = document.getElementById('nav');
+    const navSections = nav.querySelector('.nav-sections');
+    updateNavSections(navSections);
+  }
+}
+
+function handleOverlayClick(target) {
+  if (target.classList.contains('overlay')) {
+    targetObject.models?.forEach(model => {
+      model.classList.add('dp-none');
+      model.classList.remove('overlay');
+    });
+  }
+}
+
+function handleStakePopupClick(target) {
+  if (!target.closest('.stake-pop-up')) {
+    if(!document.querySelector('.stake-pop-up').length > 0) return false;
+    document.querySelector('.partnership-tab-content.partnership-image-popup .cmp-text.active')?.classList.remove('active');
+    updateStakePopups();
+  }
+}
+
+function handleNeeyatLanguageDropdown(target) {
+  if (document.querySelector('.neeyat-header') && !target.closest('.inner-lang-switch')) {
+    document.querySelector('.maindiv-lang-switch ul')?.classList.add('dp-none');
+  }
+}
+
+function handleBranchLocatorDropdown(target) {
+  if (document.querySelector('.branch-locater-banner')) {
+    if (!target.classList.contains('search-input') && 
+        (!target.closest('.default-state-selected') || !target.closest('.default-city-selected'))) {
+      updateBranchLocator();
+    }
+  }
+}
+
+function updateModalOverlay(modalOverlay) {
+  modalOverlay.classList.remove('overlay');
+  modalOverlay.classList.add('dp-none');
+  modalOverlay.style.zIndex = 'revert-layer';
+}
+
+function updateLoanInnerForm(loaninnerform) {
+  if (loaninnerform) {
+    const ulFormBranch = document.createElement('li');
+    ulFormBranch.textContent = "No options";
+    ulFormBranch.classList.add('orangepoints');
+    loaninnerform.querySelector('#branchcontainer ul').innerHTML = ulFormBranch.outerHTML;
+  }
+}
+
+function updateNavSections(navSections) {
+  navSections?.children[0]?.classList.remove('active');
+  navSections?.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach(navSection => {
+    toggleAllNavSections(navSections);
+    navSection.setAttribute('aria-expanded', 'false');
+    navSections.setAttribute('aria-expanded', 'false');
+    if (document.body.classList.contains('modal-open') && navSection.getAttribute('aria-expanded') === 'false') {
+      document.body.classList.remove('modal-open');
+    }
+  });
+}
+
+function updateStakePopups() {
+  document.querySelectorAll('.stake-pop-up').forEach(ele => {
+    ele.classList.remove('dp-block');
+    ele.classList.add('dp-none');
+  });
+  document.body.style.overflow = 'auto';
+  document.querySelector('.modal-overlay').classList.remove('overlay');
+  document.querySelector('.modal-overlay').classList.add('dp-none');
+}
+
+function updateBranchLocator() {
+  const searchInput = document.querySelectorAll('.search-input');
+  showingStateCity(searchInput);
+  document.querySelector('.state-wrapper').classList.add('dp-none');
+  document.querySelector('.city-wrapper').classList.add('dp-none');
+  document.querySelector('.state-wrapper > input').value = '';
+  document.querySelector('.city-wrapper > input').value = '';
+}
+
+
 
 export function showingStateCity(searchInputAll) {
   searchInputAll.forEach((eachinput) => {
@@ -877,7 +989,7 @@ export function showingStateCity(searchInputAll) {
   });
 }
 
-setTimeout(() => {
+/* setTimeout(() => {
   try {
     document.querySelectorAll('.open-form-on-click') && document.querySelectorAll('.open-form-on-click .button-container').forEach((eachApplyFormClick) => {
       eachApplyFormClick.addEventListener('click', async (e) => {
@@ -905,7 +1017,40 @@ setTimeout(() => {
   } catch (error) {
     console.warn(error);
   }
+}, 5000); */
+
+setTimeout(() => {
+  handleOpenFormOnClick();
+  handleNeeyatClick();
 }, 5000);
+
+function handleOpenFormOnClick() {
+  const formButtons = document.querySelectorAll('.open-form-on-click .button-container');
+  formButtons.forEach(button => {
+    button.addEventListener('click', onCLickApplyFormOpen);
+  });
+}
+
+function handleNeeyatClick() {
+  const neeyatClick = document.querySelector('.neeyat-click');
+  if (!neeyatClick) return;
+
+  const buttonIndex = getNeeyatButtonIndex(neeyatClick);
+  const carouselItems = neeyatClick.querySelectorAll('.block.carousel-item');
+
+  carouselItems.forEach(item => {
+    const button = item.querySelectorAll('.button-container')[buttonIndex];
+    if (button) {
+      button.addEventListener('click', onCLickApplyFormOpen);
+    }
+  });
+}
+
+function getNeeyatButtonIndex(element) {
+  return Array.from(element.classList)
+    .find(className => className.startsWith('neeyat-button-'))
+    ?.replace('neeyat-button-', '') || 0;
+}
 
 function onCLickApplyFormOpen(e) {
   statemasterGetStatesApi();
@@ -931,7 +1076,7 @@ export function getDay() {
   return currentDayOfWeek;
 }
 
-export function branchURLStr(location = '', city = '', state = '', urlstrhand, locationcode = '') {
+/* export function branchURLStr(location = '', city = '', state = '', urlstrhand, locationcode = '') {
   const locationAdd = location?.replace(/\s+/g, '-').replace(/[()/]/g, '').trim().toLowerCase();
   const cityStr = city?.replace(/\s+/g, '-').replace(/[()/]/g, '').trim().toLowerCase();
   const stateStr = state?.replace(/\s+/g, '-').replace(/[()/]/g, '').trim().toLowerCase();
@@ -945,6 +1090,31 @@ export function branchURLStr(location = '', city = '', state = '', urlstrhand, l
     }
     return `/branch-locator/loans-in-${locationAdd}-${cityStr}-${stateStr}-${locationcode}`;
   }
+} */
+
+
+export function branchURLStr(location = '', city = '', state = '', urlstrhand = '', locationcode = '') {
+    // Helper function to clean strings
+    const cleanStr = (str) => str?.replace(/[\s()\/]/g, '-').toLowerCase().trim();
+    
+    // Clean all location strings at once
+    const [locationAdd, cityStr, stateStr] = [location, city, state].map(cleanStr);
+  
+    // Use object literal for different URL patterns
+    const urlPatterns = {
+      shorthand: () => `/branch-locator/${stateStr}/${cityStr}`,
+      shorthandstate: () => `/branch-locator/${stateStr}`,
+      loans: () => {
+        const baseUrl = `/branch-locator/loans-in-`;
+        const locationPart = locationAdd === cityStr 
+          ? `${cityStr}-${stateStr}`
+          : `${locationAdd}-${cityStr}-${stateStr}`;
+        return `${baseUrl}${locationPart}-${locationcode}`;
+      }
+    };
+  
+    // Return the URL if pattern exists, undefined otherwise
+    return urlPatterns[urlstrhand]?.();
 }
 
 export function selectBranchDetails(block) {
