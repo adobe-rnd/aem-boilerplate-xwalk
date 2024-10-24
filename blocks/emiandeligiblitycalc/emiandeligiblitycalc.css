@@ -16,7 +16,7 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    background: #ffffff;
+    background: var(--white);
     overflow-y: scroll;
     top: 0;
     -webkit-box-flex: 1;
@@ -51,7 +51,7 @@
     }
   }
   .overlayDiv > .cmp-container .home-loan-title {
-    background-color: #ffffff;
+    background-color: var(--white);
     padding: 32px 5px 16px 32px;
   }
   @media screen and (max-width: 1024px) {
@@ -75,7 +75,7 @@
     font-weight: 800;
     font-size: 1.5rem;
     line-height: 2.25rem;
-    color: #333333;
+    color: var(--darkcharcoal);
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     .overlayDiv > .cmp-container .home-loan-title .cmp-title .cmp-title__text {
@@ -164,7 +164,7 @@
     font-weight: 700;
     font-size: 1rem;
     line-height: 1.5rem;
-    color: #333333;
+    color: var(--darkcharcoal);
   }
   @media screen and (max-width: 1024px) {
     .overlayDiv > .cmp-container .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .mainheading p {
@@ -191,7 +191,7 @@
   }
   .overlayDiv > .cmp-container .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .headingtabs .headul .tab-common {
     padding: 8px 12px;
-    border: 1px solid #333333;
+    border: 1px solid var(--darkcharcoal);
     border-radius: 50px;
     margin-right: 8px;
   }
@@ -207,14 +207,14 @@
     font-weight: 400;
     font-size: 0.75rem;
     line-height: 0.938rem;
-    color: #333333;
+    color: var(--darkcharcoal);
   }
   .overlayDiv > .cmp-container .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .headingtabs .headul .active {
-    background: #365069;
+    background: var(--greyishblue);
     border-bottom: unset;
   }
   .overlayDiv > .cmp-container .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .headingtabs .headul .active p {
-    color: #ffffff;
+    color: var(--white);
   }
   .overlayDiv > .cmp-container .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi {
     margin-top: 62px;
@@ -343,7 +343,7 @@
     font-weight: 700;
     font-size: 1rem;
     line-height: 1.5rem;
-    color: #000000;
+    color: var(--black);
   }
   .overlayDiv > .cmp-container .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .outputdiv .output-parent .amountdiv .firstamout .amount span, .overlayDiv > .cmp-container .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .outputdiv .output-parent .amountdiv .secondamount .amount span {
     font-family: "Nunito-Bold", sans-serif;
@@ -362,7 +362,7 @@
     .overlayDiv > .cmp-container .homeloancalculator .homepagemobiledesign {
       display: block;
       border-radius: 6px;
-      background-color: #C4C4C4;
+      background-color: var(--silver);
       width: 30px;
       height: 6px;
       margin: auto;
@@ -388,7 +388,7 @@
     background: -webkit-linear-gradient(right, #ffffff 50%, #fff7f4 50%);
   }
   .homeloancalculator .home-loan-calculator-parent .hlc-subparent {
-    background-color: #ffffff;
+    background-color: var(--white);
     max-width: 1240px;
     margin: 0 auto;
   }
@@ -408,7 +408,7 @@
     display: flex;
   }
   .homeloancalculator .home-loan-calculator-parent .hlc-subparent .radiotab .firsttab {
-    background: #fff7f4;
+    background: var(--seashell);
     padding: 12px 24px 0 0;
     width: 50%;
     display: -webkit-box;
@@ -480,14 +480,14 @@
     display: none;
   }
   .homeloancalculator .home-loan-calculator-parent .hlc-subparent .radiotab .firsttab .customecheck .salary-parent input:checked ~ .blackborder .black {
-    background: #333333;
+    background: var(--darkcharcoal);
   }
   .homeloancalculator .home-loan-calculator-parent .hlc-subparent .radiotab .firsttab .customecheck .salary-parent input:checked ~ label {
     font-family: "Nunito-Bold", sans-serif;
     font-weight: 700;
     font-size: 1.25rem;
     line-height: 1.75rem;
-    color: #333333;
+    color: var(--darkcharcoal);
   }
   @media screen and (max-width: 1024px) {
     .homeloancalculator .home-loan-calculator-parent .hlc-subparent .radiotab .firsttab .customecheck .salary-parent input:checked ~ label {
@@ -500,7 +500,7 @@
     font-weight: 400;
     font-size: 1.25rem;
     line-height: 1.75rem;
-    color: #333333;
+    color: var(--darkcharcoal);
     -ms-flex-item-align: self-end;
         align-self: self-end;
     width: 86%;
@@ -513,7 +513,7 @@
     }
   }
   .homeloancalculator .home-loan-calculator-parent .hlc-subparent .radiotab .firsttab .customecheck .salary-parent .blackborder {
-    border: 2px solid #333333;
+    border: 2px solid var(--darkcharcoal);
     height: 22px;
     width: 22px;
     border-radius: 100%;
@@ -583,7 +583,7 @@
         -ms-flex-pack: start;
             justify-content: flex-start;
     border-radius: 12px 0px 0px 0px;
-    background: #ffffff;
+    background: var(--white);
     padding-right: 20px;
     padding-left: unset;
   }
@@ -609,7 +609,7 @@
             justify-content: center;
   }
   .homeloancalculator .calculator-parent {
-    background: #fff7f4;
+    background: var(--seashell);
   }
   .homeloancalculator .calculator-parent .calculator-parent-child {
     padding: 40px 0px 32px;
@@ -620,7 +620,7 @@
     }
   }
   .homeloancalculator .calculator-parent .calculator-parent-child .cp-child {
-    background: #ffffff;
+    background: var(--white);
     max-width: 1240px;
     width: 100%;
     margin: 0 auto;
@@ -652,7 +652,7 @@
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.75rem;
-    color: #666666;
+    color: var(--darkgrey);
   }
   @media screen and (max-width: 1024px) {
     .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .mainheading p {
@@ -689,7 +689,7 @@
     font-weight: 400;
     font-size: 1.5rem;
     line-height: 2rem;
-    color: #333333;
+    color: var(--darkcharcoal);
   }
   @media screen and (max-width: 1024px) {
     .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .headingtabs .headul .tab-common p {
@@ -698,14 +698,14 @@
     }
   }
   .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .headingtabs .headul .active {
-    border-bottom: 2px solid #F26841;
+    border-bottom: 2px solid var(--orange);
   }
   .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .headingtabs .headul .active p {
     font-family: "Nunito-Extrabold", sans-serif;
     font-weight: 800;
     font-size: 1.5rem;
     line-height: 2rem;
-    color: #F26841;
+    color: var(--orange);
   }
   @media screen and (max-width: 1024px) {
     .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .headingtabs .headul .active p {
@@ -795,7 +795,7 @@
     font-weight: 700;
     font-size: 1rem;
     line-height: 1.5rem;
-    color: #666666;
+    color: var(--darkgrey);
   }
   @media screen and (max-width: 1024px) {
     .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .inputDiv .loanamount .data .description {
@@ -806,7 +806,7 @@
   .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .inputDiv .loanamount .data .inputdivs {
     width: 125px;
     padding-bottom: 8px;
-    border-bottom: 1px solid #afb9c3;
+    border-bottom: 1px solid var(--zinc);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -823,7 +823,7 @@
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.5rem;
-    color: #000000;
+    color: var(--black);
     margin-right: 12px;
   }
   .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .inputDiv .loanamount .data .inputdivs .textvalue {
@@ -832,7 +832,7 @@
     font-weight: 400;
     font-size: 0.875rem;
     line-height: 1.5rem;
-    color: #afb9c3;
+    color: var(--zinc);
   }
   .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .inputDiv .loanamount .data .inputdivs label {
     display: none;
@@ -842,7 +842,7 @@
     font-weight: 700;
     font-size: 1rem;
     line-height: 1.5rem;
-    color: #333333;
+    color: var(--darkcharcoal);
     outline: none;
     width: 98px;
     border: none;
@@ -969,7 +969,7 @@
     border-bottom: 2px solid rgba(0, 0, 0, 0.8705882353);
   }
   .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .inputDiv .loanamount.partPayment .inputdivs::after {
-    border-bottom: 2px solid #20303f;
+    border-bottom: 2px solid var(--midnight);
     left: 0px;
     bottom: 0px;
     content: "";
@@ -984,7 +984,7 @@
     pointer-events: none;
   }
   .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .inputDiv .loanamount.partPayment .inputdivs:focus-within::before {
-    border-bottom-color: #20303f;
+    border-bottom-color: var(--midnight);
     /* Change to desired color */
   }
   .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .inputDiv .loanamount.partPayment .inputdivs:focus-within::after {
@@ -1024,7 +1024,7 @@
   }
   .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .inputDiv .loanamount.clearAll .data .description {
     font-size: 1.25rem;
-    color: #000;
+    color: var(--black);
   }
   @media screen and (max-width: 767px) {
     .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .inputDiv .loanamount.clearAll .data .description {
@@ -1036,7 +1036,7 @@
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.5rem;
-    color: #F26841;
+    color: var(--orange);
     text-decoration: underline;
     cursor: pointer;
   }
@@ -1069,10 +1069,10 @@
   }
   .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .inputDiv .boxCont.scrolladd::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: #ebeef0;
+    background: var(--cloud);
   }
   .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .inputDiv .boxCont.scrolladd::-webkit-scrollbar-track {
-    background: #c4c4c4;
+    background: var(--silver);
     border-radius: 10px;
   }
   .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .inputDiv .loanamount.partPayment.partpaymentCardContainer {
@@ -1107,7 +1107,7 @@
     font-weight: 700;
     font-size: 0.875rem;
     line-height: 1.25rem;
-    color: #F26841;
+    color: var(--orange);
     vertical-align: baseline;
     cursor: pointer;
   }
@@ -1232,14 +1232,14 @@
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.5rem;
-    color: #333333;
+    color: var(--darkcharcoal);
   }
   .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .outputdiv .output-parent .mainoutput .outputans, .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .outputdiv .output-parent .mainoutput span {
     font-family: "Nunito-Extrabold", sans-serif;
     font-weight: 800;
     font-size: 2.5rem;
     line-height: 3rem;
-    color: #365069;
+    color: var(--greyishblue);
   }
   @media screen and (max-width: 1024px) {
     .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .outputdiv .output-parent .mainoutput .outputans, .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .outputdiv .output-parent .mainoutput span {
@@ -1334,14 +1334,14 @@
     font-weight: 800;
     font-size: 2rem;
     line-height: 3rem;
-    color: #365069;
+    color: var(--greyishblue);
   }
   .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .outputdiv .output-parent .mainoutput.partPaymentMainOutPut .parpaymentmainoutputcontainer .text-and-img .amountContainer .outputans .amount-2, .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .outputdiv .output-parent .mainoutput.partPaymentMainOutPut .parpaymentmainoutputcontainer .text-and-img .amountContainer .outputans .amount-3 {
     font-family: "Nunito-Extrabold", sans-serif;
     font-weight: 800;
     font-size: 2rem;
     line-height: 3rem;
-    color: #365069;
+    color: var(--greyishblue);
   }
   .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .outputdiv .output-parent .mainoutput.partPaymentMainOutPut .parpaymentmainoutputcontainer:last-child {
     border-bottom: unset;
@@ -1389,7 +1389,7 @@
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.5rem;
-    color: #333333;
+    color: var(--darkcharcoal);
   }
   @media screen and (max-width: 1024px) {
     .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .outputdiv .output-parent .amountdiv .firstamout p {
@@ -1402,7 +1402,7 @@
     font-weight: 400;
     font-size: 1.25rem;
     line-height: 1.75rem;
-    color: #000000;
+    color: var(--black);
   }
   @media screen and (max-width: 1024px) {
     .homeloancalculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .outputdiv .output-parent .amountdiv .firstamout .amount {
@@ -1415,7 +1415,7 @@
     font-weight: 700;
     font-size: 1.25rem;
     line-height: 1.75rem;
-    color: #000000;
+    color: var(--black);
     padding-right: 4px;
   }
   @media screen and (max-width: 1024px) {
@@ -1470,9 +1470,9 @@
     font-weight: 700;
     font-size: 1rem;
     line-height: 1.5rem;
-    color: #365069;
+    color: var(--greyishblue);
     padding: 12px 32px;
-    border: 1px solid #365069;
+    border: 1px solid var(--greyishblue);
     cursor: pointer;
     text-align: center;
     border-radius: 8px;
@@ -1501,8 +1501,8 @@
     font-weight: 700;
     font-size: 1rem;
     line-height: 1.5rem;
-    color: #ffffff;
-    background-color: #F26841;
+    color: var(--white);
+    background-color: var(--orange);
     border: unset;
   }
   @media screen and (max-width: 1024px) {
@@ -1521,13 +1521,13 @@
     pointer-events: none;
   }
   .homeloancalculator .light-red-tab .hlc-subparent .radiotab .firsttab {
-    background: #fff7f4;
+    background: var(--seashell);
   }
   .homeloancalculator .light-red-tab .hlc-subparent .radiotab .secondtab {
-    background: #ffffff;
+    background: var(--white);
   }
   .homeloancalculator .light-red-tab ~ .calculator-parent {
-    background: #fff7f4;
+    background: var(--seashell);
   }
   
   .homeloancalculator .blue-tab {
@@ -1535,27 +1535,27 @@
     pointer-events: none;
   }
   .homeloancalculator .blue-tab .hlc-subparent .radiotab .firsttab {
-    background: #EEF3FF;
+    background: var(--pale);
   }
   .homeloancalculator .blue-tab .hlc-subparent .radiotab .secondtab {
-    background: #ffffff;
+    background: var(--white);
   }
   .homeloancalculator .blue-tab ~ .calculator-parent {
-    background: #EEF3FF;
+    background: var(--pale);
   }
   
   .homeloancalculator .white-tab {
-    background: #ffffff;
+    background: var(--white);
     pointer-events: none;
   }
   .homeloancalculator .white-tab .hlc-subparent .radiotab .firsttab {
-    background: #ffffff;
+    background: var(--white);
   }
   .homeloancalculator .white-tab .hlc-subparent .radiotab .secondtab {
-    background: #ffffff;
+    background: var(--white);
   }
   .homeloancalculator .white-tab ~ .calculator-parent {
-    background: #ffffff;
+    background: var(--white);
   }
   .section.calc-bg-pink .homeloancalculator .white-tab ~ .calculator-parent {
     background-color: #fffcfb; 
@@ -1611,7 +1611,7 @@
     -webkit-appearance: none;
     height: 25px;
     width: 25px;
-    background-color: #ffffff;
+    background-color: var(--white);
     border: 2px solid #da4e34;
     border-radius: 50%;
     cursor: pointer;
@@ -1622,7 +1622,7 @@
     -webkit-appearance: none;
     height: 25px;
     width: 25px;
-    background-color: #ffffff;
+    background-color: var(--white);
     border: 2px solid #da4e34;
     border-radius: 50%;
     cursor: pointer;
@@ -1633,7 +1633,7 @@
     -webkit-appearance: none;
     height: 25px;
     width: 25px;
-    background-color: #ffffff;
+    background-color: var(--white);
     border: 2px solid #da4e34;
     border-radius: 50%;
     cursor: pointer;
@@ -1651,7 +1651,7 @@
   .gst-calculator .calculator-parent .calculator-parent-child .cp-child .headingtabs .headul .tab-common {
     padding: 10px 14px;
     margin: 0 8px;
-    border: 1px solid #333333;
+    border: 1px solid var(--darkcharcoal);
     border-radius: 62.5px;
   }
   @media screen and (max-width: 1024px) {
@@ -1667,7 +1667,7 @@
     font-weight: 400;
     font-size: 0.875rem;
     line-height: 1.25rem;
-    color: #000000;
+    color: var(--black);
   }
   @media screen and (max-width: 1024px) {
     .gst-calculator .calculator-parent .calculator-parent-child .cp-child .headingtabs .headul .tab-common p {
@@ -1679,10 +1679,10 @@
     display: block;
   }
   .gst-calculator .calculator-parent .calculator-parent-child .cp-child .headingtabs .headul .active {
-    background-color: #365069;
+    background-color: var(--greyishblue);
   }
   .gst-calculator .calculator-parent .calculator-parent-child .cp-child .headingtabs .headul .active p {
-    color: #ffffff;
+    color: var(--white);
   }
   .gst-calculator .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .inputDiv .loanamount:nth-child(1) {
     padding-top: 16px;
@@ -1742,13 +1742,13 @@
     opacity: 0.5;
   }
   .part-payment ~ .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .inputDiv .paymentInputContainer .boxCont .partpaymentCardContainer .data .inputdivs.disabled-parent::before {
-    border-bottom: 1px dotted #afb9c3;
+    border-bottom: 1px dotted var(--zinc);
   }
   .part-payment ~ .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .inputDiv .paymentInputContainer .boxCont .partpaymentCardContainer .data .inputdivs.disabled-parent::after {
     display: none;
   }
   .part-payment ~ .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .inputDiv .paymentInputContainer .boxCont .partpaymentCardContainer .loanamount .data .inputdivs {
-    border-bottom: 1px solid #afb9c3;
+    border-bottom: 1px solid var(--zinc);
   }
   .part-payment ~ .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .inputDiv .paymentInputContainer .boxCont .partpaymentCardContainer .loanamount .data .inputdivs::before {
     display: none;
@@ -1775,7 +1775,7 @@
     font-weight: 400;
     font-size: 1.125rem;
     line-height: 1.75rem;
-    color: #000000;
+    color: var(--black);
   }
   @media screen and (max-width: 767px) {
     .part-payment ~ .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .outputdiv .output-parent .amountdiv .firstamout p {
@@ -1788,7 +1788,7 @@
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 2rem;
-    color: #000000;
+    color: var(--black);
   }
   @media screen and (max-width: 767px) {
     .part-payment ~ .calculator-parent .calculator-parent-child .cp-child .calctabs .commoncalculator .parent-emi .outputdiv .output-parent .amountdiv .firstamout .amount span {

@@ -32,7 +32,7 @@
 
 .section.authorised-agencies-banner .teaser-wrapper .teaser .background .foreground .text .short-description p a >u,
 .section.authorised-agencies-banner .teaser-wrapper .teaser .background .foreground .text .short-description p a >u >sub{
-    color: #f58667;
+    color: var(--salmon);
     font-family: 'Nunito-Extrabold', sans-serif;
     font-weight: 700;
 }
@@ -134,7 +134,7 @@
 
 .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .select-container input{
     border: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--black);
     color: var(--black);
     cursor: pointer;
     font-family: 'Nunito-Bold', sans-serif;
@@ -152,11 +152,11 @@
 }
 
 .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .select-container input.cityBlack::placeholder{
-    color: #000;
+    color: var(--black);
 }
 
 .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .select-container input:hover{
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid var(--black);
 }
 
 .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .select-container::after{
@@ -213,7 +213,7 @@
 
 .section.partner-authorised-agencies-wrapper .authorisedagencies-wrapper .authorisedagencies .cities-container fieldset label input{
     accent-color: var(--black);
-    border: 1px solid #a9a9a9;
+    border: 1px solid var(--fossil);
     border-radius: 50%;
     height: 20px;
     margin: unset;

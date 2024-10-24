@@ -6,7 +6,7 @@
 .section.teaser-container-about-us {
     padding: 0;
     margin: 0 !important;
-    background-color: #365069;
+    background-color: var(--greyishblue);
 }
 
 .section.teaser-container-about-us .teaser-wrapper {
@@ -52,7 +52,7 @@
 }
 
 .section.teaser-container-about-us .teaser-wrapper .teaser .foreground .text .long-description> :where(p,h1,h2,h3,h4,h5,h6) {
-    color: #fff;
+    color: var(--white);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
@@ -161,14 +161,14 @@
 
 .section.about-us-buttons .default-content-wrapper p {
     margin: 0;
-    border: 1px solid #333;
+    border: 1px solid var(--darkcharcoal);
     border-radius: 50px;
     position: relative;
 }
 
 .section.about-us-buttons .default-content-wrapper p::after {
     border-radius: 1px;
-    border-right: 2px solid #ccc;
+    border-right: 2px solid var(--dark-color);
     content: "";
     height: 22px;
     position: absolute;
@@ -186,7 +186,7 @@
     text-align: center;
     background: transparent;
     margin: 0;
-    color: #333;
+    color: var(--darkcharcoal);
     font-family: 'Nunito-Bold', sans-serif;
     padding: 8px 16px 7px;
     font-size: 1rem;
@@ -196,8 +196,8 @@
 }
 
 .section.about-us-buttons .default-content-wrapper p a:active {
-    background-color: #365069;
-    color: #fff;
+    background-color: var(--greyishblue);
+    color: var(--white);
 }
 
 /* About us Buttons End */

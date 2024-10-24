@@ -55,7 +55,7 @@
     min-height: 148px;
 }
 .section.partnership-image-popup.retail-fin-border-bottom .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text>.cmp-text.active{
-    border-bottom: 8px solid #f26841;
+    border-bottom: 8px solid var(--orange);
 }
 .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text>.cmp-text:hover {
     -webkit-box-shadow: 0 25px 50px -9pt rgba(0,0,0,.25);
@@ -91,7 +91,7 @@
 }
 
 .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text>p>.title {
-    color: #f26841;
+    color: var(--orange);
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.5rem;
     font-weight: 800;
@@ -101,7 +101,7 @@
 
 .section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text {
     position: relative;
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 1pc;
     box-shadow: 0 11px 15px -7px rgba(0, 0, 0, .2), 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12);
     color: rgba(0, 0, 0, .87);

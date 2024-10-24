@@ -1,6 +1,6 @@
 .section.available-facilities .default-content-wrapper >h2{
     margin-bottom: 24px;
-    color: #000;
+    color: var(--black);
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2rem;
@@ -17,7 +17,7 @@
     align-items: flex-start;
 }
 .section.available-facilities .columns-wrapper .columns >div >div >h2{
-    color: #333;
+    color: var(--darkcharcoal);
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.25rem;
@@ -26,7 +26,7 @@
     padding-bottom: 16px;
 }
 .section.available-facilities .columns-wrapper .columns >div >div >p{
-    color: #666;
+    color: var(--gradient-gray);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -39,7 +39,7 @@
         grid-template-columns: repeat(1, minmax(200px, 1fr));
     }
     .section.available-facilities .columns-wrapper .columns >div >div >h2{
-        color: #333;
+        color: var(--darkcharcoal);
         font-family: 'Nunito-Bold', sans-serif;
         font-size: 1rem;
         font-weight: 700;

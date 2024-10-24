@@ -49,7 +49,7 @@
     margin-bottom: 8px;
 }
 .section.career-social-cards .teaser-wrapper .teaser .background .foreground .text .long-description h2{
-    color: #333;
+    color: var(--darkcharcoal);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.25rem;
     line-height: 28px;

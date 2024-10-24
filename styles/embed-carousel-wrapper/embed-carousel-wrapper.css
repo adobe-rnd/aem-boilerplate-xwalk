@@ -41,9 +41,9 @@
 
 .section.embed-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-prev >div>div>picture>img,
 .section.embed-carousel-wrapper .carousel-wrapper .carousel .carousel-navigation-buttons .slide-next >div>div>picture>img{
-    border: 1px solid #365069;
+    border: 1px solid var(--greyishblue);
     border-radius: 50%;
-    color: #365069;
+    color: var(--greyishblue);
     height: 40px;
     margin-top: unset;
     width: 40px;
@@ -78,8 +78,8 @@
 }
 
 .section.embed-carousel-wrapper .carousel-wrapper .carousel .panel-container .glider-track .teaser .background .foreground .text .cta {
-    background-color: #fff;
-    color: #fff;
+    background-color: var(--white);
+    color: var(--white);
     box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1);
     position: absolute;
     left: 50%;
@@ -153,12 +153,12 @@ dialog[open] .modal-content .section.embed-carousel-youtube-video .embed-wrapper
         height: 6px;
         width: 6px;
         margin: 0 4px;
-        background: #000;
+        background: var(--black);
         opacity: .2;
     }
 
     .section.embed-carousel-wrapper .carousel-wrapper .carousel .button-container.glider-dots .glider-dot.glider-active {
-        background-color: #000;
+        background-color: var(--black);
         border-radius: 4px;
         height: 5px;
         width: 16px;

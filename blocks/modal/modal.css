@@ -6,7 +6,7 @@ body.modal-open {
   --dialog-border-radius: 16px;
 
   overscroll-behavior: none;
-  border: 1px solid #ccc;
+  border: 1px solid var(--dark-color);
   border-radius: var(--dialog-border-radius);
   width: 100vw;
 }

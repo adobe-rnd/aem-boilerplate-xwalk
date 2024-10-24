@@ -14,15 +14,15 @@
 /* media banner css end */
 
 .section.media-coverage-wrapper .tab-link-wrapper .tab-link ul li a{
-    background-color: #fff;
-    border: 1px solid #333;
+    background-color: var(--white);
+    border: 1px solid var(--darkcharcoal);
     border-radius: 9999px;
     cursor: pointer;
     display: block;
     margin-right: 4pc;
     padding: 8px 24px;
     width: fit-content;
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Semibold', sans-serif;
     font-size: 1rem;
     font-weight: 600;
@@ -30,9 +30,9 @@
     text-decoration: none;
 }
 .section.media-coverage-wrapper .tab-link-wrapper .tab-link ul li strong a{
-    background-color: #365069;
-    border: 1px solid #365069;
-    color: #fff;
+    background-color: var(--greyishblue);
+    border: 1px solid var(--greyishblue);
+    color: var(--white);
 }
 
 .section.media-coverage-wrapper .tab-link-wrapper .tab-link ul{
@@ -43,7 +43,7 @@
     position: relative;
 }
 .section.media-coverage-wrapper .tab-link-wrapper .tab-link ul li::after{
-    background-color: #afb9c3;
+    background-color: var(--zinc);
     border-radius: 4px;
     content: "";
     height: 24px;
@@ -162,7 +162,7 @@
 .section.press-release-card-wrapper .default-content-wrapper ul{
     padding: 14px 40px 14px 14px;
     background-color: #F4F4F4;
-    color: #333;
+    color: var(--darkcharcoal);
     margin-bottom: 16px;
 }
 .section.press-release-card-wrapper .default-content-wrapper ul:hover{

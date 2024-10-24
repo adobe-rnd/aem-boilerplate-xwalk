@@ -193,7 +193,7 @@
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li>p>a {
   background: var(--orange);
   border-radius: 8px;
-  color: #fff;
+  color: var(--white);
   font-family: 'Nunito-Bold', sans-serif;
   font-size: 1.125rem;
   font-weight: 700;
@@ -282,7 +282,7 @@
 }
 
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li>ul>li {
-  color: #666;
+  color: var(--gradient-gray);
   font-family: 'Nunito-Regular', sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -290,7 +290,7 @@
 }
 
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li>ul>li>a {
-  color: #365069;
+  color: var(--greyishblue);
   font-family: 'Nunito-Bold', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
@@ -955,10 +955,10 @@
   gap: 16px;
 }
 .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description >ul >li a{
-  background: #f26841;
+  background: var(--orange);
   border: none;
   border-radius: 8px;
-  color: #fff;
+  color: var(--white);
   cursor: pointer;
   font-family: Nunito-Bold, sans-serif;
   font-size: 1.125rem;
@@ -973,8 +973,8 @@
   text-decoration: none;
 }
 .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description >ul >li:last-child a  {
-  background: #fff;
-  color: #365069;
+  background: var(--white);
+  color: var(--greyishblue);
   display: flex;
   gap: 10px;
   align-items: center;

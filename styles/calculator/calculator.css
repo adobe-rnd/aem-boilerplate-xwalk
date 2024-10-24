@@ -2,7 +2,7 @@
 
 .section.calculator-section-wrapper .default-content-wrapper h2 {
     margin: 0;
-    color: #000;
+    color: var(--black);
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2rem;
@@ -14,7 +14,7 @@
 .section.calculator-section-wrapper .default-content-wrapper p {
     margin: 0;
     margin-bottom: 24px;
-    color: #666;
+    color: var(--gradient-gray);
     display: block;
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.25rem;
@@ -60,7 +60,7 @@
     position: absolute;
     top: 24px;
     left: 24px;
-    color: #fff;
+    color: var(--white);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -72,9 +72,9 @@
     position: absolute;
     top: 80px;
     left: 24px;
-    background: #f26841;
+    background: var(--orange);
     border-radius: 8px;
-    color: #fff;
+    color: var(--white);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 0.875rem;
     font-weight: 700;

@@ -8,7 +8,7 @@
     margin: 0 auto;
   }
   .section.home-page-calculator-call-xf .discalimer-details .discalimer-calc .read-more-discalimer-calc{
-    color: #f26841;
+    color: var(--orange);
     cursor: pointer;
     background: unset;
     padding-left: 0px;

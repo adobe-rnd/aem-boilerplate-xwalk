@@ -86,7 +86,7 @@
 
 .section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground .text .title h3,
 .section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background .text .title h3 {
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
@@ -96,7 +96,7 @@
 .section.board-of-directors-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground .text .long-description>p,
 .section.board-of-directors-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background .text .long-description>p {
     text-decoration: none;
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-regular', sans-serif;
     font-size: 1rem;
     line-height: 24px;
@@ -114,7 +114,7 @@
     font-size: 1.5rem;
     line-height: 2rem;
     cursor: pointer;
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Regular',sans-serif;
     line-height: 2pc;
 }

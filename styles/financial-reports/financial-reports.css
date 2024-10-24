@@ -4,7 +4,7 @@
 }
 .section.financial-reports-carousel .default-content-wrapper > :where(h1,h2,h3,h4,h5,h6){
     margin: 0;
-    color: #333;
+    color: var(--darkcharcoal);
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 48px;
     font-weight: 800;
@@ -13,7 +13,7 @@
 }
 .section.financial-reports-carousel .default-content-wrapper >p{
     padding-top: 16px;
-    color: #365069;
+    color: var(--greyishblue);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 18px;
     font-weight: 700;

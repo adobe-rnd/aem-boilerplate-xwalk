@@ -460,12 +460,12 @@
     height: 4px;
     margin: 0 4px;
     border-radius: 50%;
-    background: #000;
+    background: var(--black);
     opacity: .2;
 }
 
 .branchcustomer-review-cards .carousel.block>.button-container.glider-dots button.glider-active{
-    background-color: #000;
+    background-color: var(--black);
     border-radius: 4px;
     height: 4px;
     width: 16px;

@@ -1,5 +1,5 @@
 .section.support-quicklinks-wrapper .default-content-wrapper :where(h1,h2,h3,h4,h5,h6) {
-    color: #333;
+    color: var(--darkcharcoal);
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2.5rem;
     font-weight: 800;
@@ -46,7 +46,7 @@
     position: relative;
 }
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details summary >div h2{
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.25rem;
     font-weight: 700;
@@ -89,7 +89,7 @@
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li{
     padding: 29px 0;
     position: relative;
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -124,7 +124,7 @@
     margin: 0;
 }
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li::before{
-    background-color: #364754;
+    background-color: var(--arsenic);
     border-radius: 50%;
     content: "";
     display: inline-table;
@@ -137,7 +137,7 @@
 
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a,
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a sub{
-    color: #f26841;
+    color: var(--orange);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -147,7 +147,7 @@
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li strong,
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li strong a,
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li strong a sub{
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;

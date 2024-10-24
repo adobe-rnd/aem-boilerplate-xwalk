@@ -12,7 +12,7 @@
 }
 
 .section.csr-committee-wrapper .default-content-wrapper p {
-    color: #333;
+    color: var(--darkcharcoal);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;

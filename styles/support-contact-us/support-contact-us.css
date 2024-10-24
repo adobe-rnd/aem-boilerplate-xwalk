@@ -106,7 +106,7 @@
 
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p:nth-child(2),
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaserv2-wrapper .teaserv2 a .bg-image .rte-text-description p strong {
-    color: #333;
+    color: var(--darkcharcoal);
 }
 
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .default-content-wrapper p>strong {
@@ -139,7 +139,7 @@
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 28px;
-    color: #333;
+    color: var(--darkcharcoal);
     font-style: normal;
 }
 

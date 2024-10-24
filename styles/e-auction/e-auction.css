@@ -6,7 +6,7 @@
 }
 .section.e-auction-wrapper .code-wrapper{
     padding: 10px;
-    border: 1px solid #333;
+    border: 1px solid var(--darkcharcoal);
     width: 90%;
 }
 .section.e-auction-wrapper .code-wrapper .code.block > div table tbody tr{
@@ -17,7 +17,7 @@
 }
 .section.e-auction-wrapper .code-wrapper .code.block > div table tbody tr:first-child td{
     background-color: #fa4616;
-    color: #fff;
+    color: var(--white);
     padding: 2px;
     font-size: 0.813rem;
     text-align: center;
@@ -79,7 +79,7 @@
 /* e auction table ends */
 
 .section.e-auction-sale-notice .default-content-wrapper >h2{
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
@@ -87,7 +87,7 @@
     margin-bottom: 24px;
 }
 .section.e-auction-sale-notice .default-content-wrapper p{
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.125rem;
     font-weight: 400;

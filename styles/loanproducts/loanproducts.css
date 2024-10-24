@@ -4,7 +4,7 @@
   padding: 72px 0 4pc;
 }
 .section.loan-products-wrapper .default-content-wrapper h2 {
-  color: #000;
+  color: var(--black);
   display: block;
   font-family: 'Nunito-Extrabold', sans-serif;
   font-size: 2rem;
@@ -51,7 +51,7 @@
 }
 
 .section.loan-products-wrapper .wrappercreation-wrapper .teaserv2-wrapper .bg-image .title {
-  color: #000;
+  color: var(--black);
   font-family: 'Nunito-Bold', sans-serif;
   font-size: 1.125rem;
   font-weight: 700;

@@ -1,6 +1,6 @@
 /* Eligiblity Criteria Start */
 .section.eligibility-criteria-wrapper .default-content-wrapper>h2 {
-    color: #000;
+    color: var(--black);
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2rem;
@@ -10,7 +10,7 @@
 }
 
 .section.eligibility-criteria-wrapper .default-content-wrapper>p {
-    color: #000;
+    color: var(--black);
     display: block;
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
@@ -19,7 +19,7 @@
 }
 
 .section.eligibility-criteria-wrapper .default-content-wrapper>p>strong {
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Bold',sans-serif;
     font-size: 1rem;
     font-weight: 700;
@@ -33,7 +33,7 @@
 
 .section.eligibility-criteria-wrapper .default-content-wrapper>ul>li strong {
     display: block;
-    color: #f26841;
+    color: var(--orange);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
@@ -42,7 +42,7 @@
 }
 
 .section.eligibility-criteria-wrapper .default-content-wrapper>ul>li>ul>li strong {
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: bold;
@@ -51,7 +51,7 @@
 }
 
 .section.eligibility-criteria-wrapper .default-content-wrapper>ul>li>ul>li {
-    color: #333;
+    color: var(--darkcharcoal);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;

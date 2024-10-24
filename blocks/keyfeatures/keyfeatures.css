@@ -2,7 +2,7 @@
     margin-top: 40px;
  }
  .section.home-loans-products-wrapper .default-content-wrapper h2{
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2rem;
     font-weight: 800;
@@ -20,7 +20,7 @@
     position: relative;
 }
 .section.home-loans-products-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper .keyfeatures .homeloanteaser .cmp-teaser .cmp-teaser__link{
-    background: #fff9f2;
+    background: var(--floralwhite);
     border-radius: 9pt 9pt 0 0;
     display: flex;
     justify-content: start;
@@ -41,7 +41,7 @@
 }
 
 .section.home-loans-products-wrapper.home-loans-single-products-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper {
-    background-color: #fff9f2;
+    background-color: var(--floralwhite);
     border-radius: 9pt;
 }
 
@@ -63,7 +63,7 @@
 }
 
 .section.home-loans-products-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper .keyfeatures .homeloanteaser .cmp-teaser .cmp-teaser__link .cmp-teaser__content p{
-    color: #666;
+    color: var(--gradient-gray);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -79,14 +79,14 @@
 
 }
 .section.home-loans-products-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper .keyfeatures .homeloanteaser .cmp-teaser .cmp-teaser__link .cmp-teaser__content p:nth-child(1) strong{
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.125rem;
     font-weight: 800;
     line-height: 28px;
 }
 .section.home-loans-products-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper .keyfeatures .homeloanteaser .cmp-teaser .cmp-teaser__link .cmp-teaser__content p :nth-child(1):hover{
-    color: #f26841;
+    color: var(--orange);
 }
 .section.home-loans-products-wrapper .cmp-teaser__link .cmp-teaser__image img{
     height: 12px;
@@ -101,7 +101,7 @@
 }
 .section.home-loans-products-wrapper .homeloanteaser .cmp-teaser .keyfeature-container .keyfeatures-info {
     position: relative;
-    background-color: #fff4e7;
+    background-color: var(--lilen);
     border-radius: 0 0 8px 8px;
     height: 100%;
     position: relative;
@@ -121,7 +121,7 @@
     right: 24px
 }
 .section.home-loans-products-wrapper .homeloanteaser .cmp-teaser .keyfeature-container .keyfeatures-info .heading{
-    color: #333;
+    color: var(--darkcharcoal);
     cursor: pointer;
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
@@ -143,14 +143,14 @@
 
 .section.home-loans-products-wrapper .homeloanteaser .keyfeature-container .keyfeatures .feature .feature-details div p:first-child,
 .section.home-loans-products-wrapper .homeloanteaser .keyfeature-container .keyfeatures .feature .feature-details div p {
-    color: #666;
+    color: var(--gradient-gray);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 20px;
 }
 .section.home-loans-products-wrapper .homeloanteaser .keyfeature-container .keyfeatures .feature .feature-details div p:last-child strong{
-    color: #333;    
+    color: var(--darkcharcoal);    
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
@@ -170,7 +170,7 @@
     height: 91px;
 }
 .view-more-less-js .default-content-wrapper .button-container{
-    color: #f26841;
+    color: var(--orange);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -182,7 +182,7 @@
 .view-more-less-js .default-content-wrapper .button-container::after{
     content: '';
     position: absolute;
-    border: solid #f26841;
+    border: solid var(--orange);
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 4px;
@@ -210,7 +210,7 @@
     margin-top: 20px;
 } */
 .view-more-less-js .default-content-wrapper p strong{
-    color: #000;
+    color: var(--black);
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2rem;
@@ -219,7 +219,7 @@
     margin-bottom: 8px;
 }
 .view-more-less-js .default-content-wrapper p{
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.125rem;
     font-weight: 400;

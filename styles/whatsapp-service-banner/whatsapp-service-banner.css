@@ -48,7 +48,7 @@
 
 .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .input-field .cmp-form-text {
     position: relative;
-    border: 1px solid #365069;
+    border: 1px solid var(--greyishblue);
     border-radius: 4px;
     display: flex;
     flex-direction: column;
@@ -110,7 +110,7 @@
 }
 
 .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .input-field .button.desktopButton>button>span {
-    color: #fff;
+    color: var(--white);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
@@ -123,7 +123,7 @@
 }
 
 .section.whatsapp-service-banner .whatsappservice-wrapper .whats-app-service .checkbox-field .cmp-form-options__field-label .cmp-form-options__field {
-    accent-color: #365069;
+    accent-color: var(--greyishblue);
     cursor: pointer;
     height: 16px;
     margin: unset;

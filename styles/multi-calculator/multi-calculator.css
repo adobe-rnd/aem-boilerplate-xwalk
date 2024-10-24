@@ -24,7 +24,7 @@
 }
 
 .section.multi-calculator-wrapper .teaser-wrapper .teaser .background .text .long-description p {
-    color: #666;
+    color: var(--gradient-gray);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.5rem;
     font-weight: 400;

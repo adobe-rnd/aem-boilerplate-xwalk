@@ -22,7 +22,7 @@
 }
 
 .section.grievance-redressal-levels .columns-wrapper .columns>div>div>h2 {
-    color: #333;
+    color: var(--darkcharcoal);
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.125rem;
@@ -314,7 +314,7 @@ margin-top: -16px;
     padding: 0;
     margin: 0;
     border: none;
-    color: #333;
+    color: var(--darkcharcoal);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;

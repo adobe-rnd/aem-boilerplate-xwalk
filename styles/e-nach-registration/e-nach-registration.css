@@ -72,7 +72,7 @@ dialog[open]:has(.modal-content .section.e-nach-reg-modal-wrapper) {
     content: '';
     height: 132px;
     width: 1px;
-    background-color: #d7dce1;
+    background-color: var(--pattensblue);
     z-index: 10;
 }
 
@@ -81,7 +81,7 @@ dialog[open]:has(.modal-content .section.e-nach-reg-modal-wrapper) {
     position: absolute;
     height: 132px;
     width: 1px;
-    background-color: #d7dce1;
+    background-color: var(--pattensblue);
     z-index: 10;
 }
 
@@ -206,7 +206,7 @@ dialog[open]:has(.modal-content .section.e-nach-reg-modal-wrapper) {
 
     height: 1px;
     width: 100%;
-    background-color: #d7dce1;
+    background-color: var(--pattensblue);
     margin-top: 32px;
 }
 
@@ -289,7 +289,7 @@ dialog[open]:has(.modal-content .section.e-nach-reg-modal-wrapper) {
     .section.e-nach-mob-section .default-content-wrapper p {
             display: flex;
             transition: box-shadow .3s cubic-bezier(.4,0,.2,1) 0ms;
-            background-color: #fff;
+            background-color: var(--white);
             color: rgba(0, 0, 0, .87);
             border-radius: 4px;
             box-shadow: 0 3px 3px -2px rgba(0, 0, 0, .2), 0 3px 4px 0 rgba(0, 0, 0, .14), 0 1px 8px 0 rgba(0, 0, 0, .12);
@@ -312,8 +312,8 @@ dialog[open]:has(.modal-content .section.e-nach-reg-modal-wrapper) {
             font-size: 18px;
             line-height: 26px;
             height: 58px;
-            background-color: #f26841;
-            color: #fff;
+            background-color: var(--orange);
+            color: var(--white);
             width: 100%;
             text-align: center;
             border-radius: 8px;
