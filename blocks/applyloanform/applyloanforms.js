@@ -126,6 +126,13 @@ export function applyLoanFormClick() {
           }
         }
 
+        if(loaninnerform){
+          let ulFormBranch = document.createElement('li');
+          ulFormBranch.textContent = "No options";
+          ulFormBranch.classList.add('orangepoints');
+          loaninnerform.querySelector('#branchcontainer ul').innerHTML = ulFormBranch.outerHTML;
+        }
+
         loaninnerform.querySelector('#statecontainer').style.visibility = 'hidden';
         loaninnerform.querySelector('#branchcontainer').style.visibility = 'hidden';
       });

@@ -912,7 +912,7 @@ function handleOverlayClick(target) {
 
 function handleStakePopupClick(target) {
   if (!target.closest('.stake-pop-up')) {
-    if(!document.querySelector('.stake-pop-up').length > 0) return false;
+    if(!document.querySelector('.stake-pop-up')?.length > 0) return false;
     document.querySelector('.partnership-tab-content.partnership-image-popup .cmp-text.active')?.classList.remove('active');
     updateStakePopups();
   }
