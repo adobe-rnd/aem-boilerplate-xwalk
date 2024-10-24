@@ -1,6 +1,9 @@
 import { fetchAPI } from '../../scripts/scripts.js';
 
 let data;
+const gooleMapKey = "AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ";
+
+
 export async function getSelectedLanguage(selectedLanguage = '', apiUrl = '/api/neeyat-muti-lang.json') {
   if (!data) {
     const resp = await fetchAPI('GET', apiUrl);
@@ -43,7 +46,7 @@ export default function returnLatLan() {
 
 function getStateName(lat, lan) {
   return new Promise((resolve, reject) => {
-    fetchAPI('GET', `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lan}&sensor=true&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ`).then((res) => {
+    fetchAPI('GET', `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lan}&sensor=true&key=${gooleMapKey}`).then((res) => {
       resolve(res);
     }).catch((err) => {
       resolve(err);
