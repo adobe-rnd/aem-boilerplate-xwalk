@@ -1,6 +1,6 @@
-.section.support-quicklinks-wrapper .default-content-wrapper h1 {
-    color: #333;
-    font-family: Nunito-Extrabold, sans-serif;
+.section.support-quicklinks-wrapper .default-content-wrapper :where(h1,h2,h3,h4,h5,h6) {
+    color: var(--darkcharcoal);
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2.5rem;
     font-weight: 800;
     line-height: 5pc;
@@ -10,7 +10,7 @@
     text-align: center;
 }
 
-.section.support-quicklinks-wrapper .default-content-wrapper h1::after {
+.section.support-quicklinks-wrapper .default-content-wrapper :where(h1,h2,h3,h4,h5,h6)::after {
     background-color: #da4e34;
     bottom: 0;
     content: "";
@@ -46,8 +46,8 @@
     position: relative;
 }
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details summary >div h2{
-    color: #000;
-    font-family: Nunito-Bold, sans-serif;
+    color: var(--black);
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 28px;
@@ -89,8 +89,8 @@
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li{
     padding: 29px 0;
     position: relative;
-    color: #000;
-    font-family: Nunito-Regular, sans-serif;
+    color: var(--black);
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 21px;
@@ -124,7 +124,7 @@
     margin: 0;
 }
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li::before{
-    background-color: #364754;
+    background-color: var(--arsenic);
     border-radius: 50%;
     content: "";
     display: inline-table;
@@ -137,8 +137,8 @@
 
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a,
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li a sub{
-    color: #f26841;
-    font-family: Nunito-Regular, sans-serif;
+    color: var(--orange);
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 21px;
@@ -147,7 +147,7 @@
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li strong,
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li strong a,
 .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li strong a sub{
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -157,7 +157,7 @@
 }
 @media screen and (max-width: 1024px) {
 
-    .section.support-quicklinks-wrapper .default-content-wrapper h1{
+    .section.support-quicklinks-wrapper .default-content-wrapper :where(h1,h2,h3,h4,h5,h6){
         font-size: 1.5rem;
         line-height: 48px;
         margin-bottom: 40px;
@@ -181,7 +181,7 @@
     .section.support-quicklinks-wrapper .accordion-group-wrapper{
         padding: 8px 16px;
     }
-    .section.support-quicklinks-wrapper .default-content-wrapper h1{
+    .section.support-quicklinks-wrapper .default-content-wrapper :where(h1,h2,h3,h4,h5,h6){
         margin-bottom: 32px;
     }
     .section.support-quicklinks-wrapper .accordion-group-wrapper .accordion-group .accordion details >div >ul >li{

@@ -118,7 +118,7 @@
 .section.awards-recognition-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background .foreground .text .long-description>ul>li {
     list-style-type: disc;
     margin-bottom: 16px;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.125rem;
     line-height: 28px;
 }
@@ -241,7 +241,7 @@
 
 .section.awards-content-tab-wrapper .tab-container-wrapper .tab-container .panel-container .teaser .background .foreground .text .long-description p:nth-child(2){
     color: var(--gradient-gray);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     line-height: 24px
 }

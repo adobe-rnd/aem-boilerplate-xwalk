@@ -1,6 +1,6 @@
 .section.piramal-since-wrapper .default-content-wrapper h4 {
   margin: 0 auto;
-  color: #000;
+  color: var(--black);
   display: block;
   font-family: 'Nunito-Extrabold', sans-serif;
   font-size: 2rem;
@@ -13,9 +13,9 @@
 .section.piramal-since-wrapper .default-content-wrapper p {
   margin: 0;
   margin-bottom: 24px;
-  color: #666;
+  color: var(--gradient-gray);
   display: block;
-  font-family: Nunito-Regular, sans-serif;
+  font-family: 'Nunito-Regular', sans-serif;
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.75rem;
@@ -52,15 +52,15 @@
 }
 
 .section.piramal-since-wrapper .columns-wrapper .columns div div>p:nth-child(2) {
-  color: #333;
-  font-family: Nunito-Regular, sans-serif;
+  color: var(--darkcharcoal);
+  font-family: 'Nunito-Regular', sans-serif;
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.75rem;
   margin-bottom: 10px;
 }
 .section.piramal-since-wrapper .columns-wrapper .columns div div>p:nth-child(3) {
-  color: #333;
+  color: var(--darkcharcoal);
   font-family: 'Nunito-Bold', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
@@ -110,7 +110,7 @@
 /* our journey so far start */
 
 .section.our-journey-wrapper {
-  background-color: #FFF7F4;
+  background-color: var(--seashell);
 }
 
 .section.our-journey-wrapper .default-content-wrapper h4 {

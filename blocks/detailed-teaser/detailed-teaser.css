@@ -95,7 +95,7 @@
   }
   
   .detailed-teaser.block.dark > .foreground > .text > .eyebrow > .subtitle  {
-    color: #ccc;
+    color: var(--dark-color);
   }
   
   /* the main title */

@@ -3,7 +3,7 @@
 }
 
 .section.support-contact-us-popup .default-content-wrapper h6 {
-    color: #333;
+    color: var(--darkcharcoal);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
@@ -85,7 +85,7 @@ dialog[open]:has(.modal-content .section.support-contact-us-popup) .close-button
     }
 
     .section.support-contact-us-popup .default-content-wrapper .button-container {
-        border: 1px solid #4d4d4d;
+        border: 1px solid var(--matterhorn);
         border-radius: 8px;
         display: flex;
         align-items: center;
@@ -98,7 +98,7 @@ dialog[open]:has(.modal-content .section.support-contact-us-popup) .close-button
     .section.support-contact-us-popup .default-content-wrapper .button-container a{
         margin: 0;
         padding: 0;
-        color: #000;
+        color: var(--black);
         font-family: 'Nunito-Bold', sans-serif;
         font-size: 1.125rem;
         font-weight: 700;

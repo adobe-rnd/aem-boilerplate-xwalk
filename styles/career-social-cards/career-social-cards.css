@@ -40,17 +40,17 @@
     width: 62px;
     height: 62px;
 }
-.section.career-social-cards .foreground .text .title #have-questions-get-in-touch-with-us{
+.section.career-social-cards .foreground .text .title h3{
     color: var(--gradient-gray);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
     margin-bottom: 8px;
 }
 .section.career-social-cards .teaser-wrapper .teaser .background .foreground .text .long-description h2{
-    color: #333;
-    font-family: Nunito-Bold, sans-serif;
+    color: var(--darkcharcoal);
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.25rem;
     line-height: 28px;
     text-decoration: none;
@@ -63,7 +63,7 @@
 }
 .section.career-social-cards .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .default-content-wrapper p{
     color: var(--gradient-gray);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     line-height: 24px;
 }

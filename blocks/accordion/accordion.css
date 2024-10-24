@@ -131,7 +131,7 @@ ol .accordion ul {
 /* faq Accordion */
 
 .faq-accordion-css .accordion-group-wrapper {
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 24px;
     -webkit-box-shadow: 0 4px 9pt rgba(51, 51, 51, .08);
     box-shadow: 0 4px 9pt rgba(51, 51, 51, .08);
@@ -146,7 +146,7 @@ ol .accordion ul {
 }
 
 .faq-accordion-css .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block {
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid var(--solitude);
 }
 
 
@@ -164,8 +164,8 @@ ol .accordion ul {
 .faq-accordion-css .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details>div p {
     margin-top: unset;
     margin-top: unset;
-    color: #333;
-    font-family: Nunito-Bold, sans-serif;
+    color: var(--darkcharcoal);
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
     line-height: 28px;
@@ -175,8 +175,8 @@ ol .accordion ul {
 .faq-accordion-css .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details h3,
 .faq-accordion-css .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary {
     margin-top: unset;
-    color: #333;
-    font-family: Nunito-Bold, sans-serif;
+    color: var(--darkcharcoal);
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 28px;
@@ -226,9 +226,9 @@ ol .accordion ul {
 }
 
 .faq-accordion-css-with-orange-heading .default-content-wrapper h2 {
-    color: #000;
+    color: var(--black);
     display: block;
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2rem;
     font-weight: 800;
     line-height: 40px;
@@ -260,8 +260,8 @@ ol .accordion ul {
 }
 
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details>div {
-    color: #666;
-    font-family: Nunito-Regular, sans-serif;
+    color: var(--gradient-gray);
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 28px;
@@ -274,7 +274,7 @@ ol .accordion ul {
 }
 
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block {
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid var(--solitude);
 }
 
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary {
@@ -312,8 +312,8 @@ ol .accordion ul {
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details p>strong,
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary {
     margin-top: unset;
-    color: #333;
-    font-family: Nunito-Regular, sans-serif;
+    color: var(--darkcharcoal);
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 28px;
@@ -323,7 +323,7 @@ ol .accordion ul {
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details>div h3,
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details>div p,
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details p>strong {
-    color: #666;
+    color: var(--gradient-gray);
 }
 
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details p>strong {
@@ -331,7 +331,7 @@ ol .accordion ul {
 }
 
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details p a {
-    color: #f26841;
+    color: var(--orange);
 }
 
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details p a:hover{
@@ -347,8 +347,8 @@ ol .accordion ul {
 }
 
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details>div {
-    color: #666;
-    font-family: Nunito-Regular, sans-serif;
+    color: var(--gradient-gray);
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 28px;
@@ -360,7 +360,7 @@ ol .accordion ul {
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary.active h3,
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary.active p,
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary.active {
-    color: #f26841;
+    color: var(--orange);
     font-weight: 700;
 }
 
@@ -378,12 +378,12 @@ ol .accordion ul {
 }
 .section.faq-view-more-logic .default-content-wrapper .button-container {
     background-color: transparent;
-    border: 1px solid #365069;
+    border: 1px solid var(--greyishblue);
     border-radius: 8px;
-    color: #365069;
+    color: var(--greyishblue);
     cursor: pointer;
     padding: 1pc 24px;
-    font-family: nunito-bold;
+    font-family: 'nunito-bold';
     font-size: 1.125rem;
 }
 
@@ -399,7 +399,7 @@ ol .accordion ul {
 }
 
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block>details ul>li {
-    color: #666;
+    color: var(--gradient-gray);
     font-size: 1.25rem;
     line-height: 28px;
     font-family: "Nunito-Regular";
@@ -415,11 +415,11 @@ ol .accordion ul {
     width: 98%;
 }
 .faq-section-wrapper .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block{
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid var(--solitude);
 }
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper > .accordion-group > .accordion details > div > ul > li > strong{
-    color: #666;
-    font-family: Nunito-Regular, sans-serif;
+    color: var(--gradient-gray);
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 20px;
     font-weight: bolder;
     line-height: 28px;
@@ -512,7 +512,7 @@ ol .accordion ul {
     .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary.active h3,
     .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary.active p,
     .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary.active {
-        color: #f26841;
+        color: var(--orange);
         font-size: 1rem;
     }
 

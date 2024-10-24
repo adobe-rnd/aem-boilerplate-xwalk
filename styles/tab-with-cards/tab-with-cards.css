@@ -274,14 +274,14 @@
 }
 
 .section.we-care-card-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground .text .title h3 {
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-weight: 800;
     margin: 0;
 }
 
 .section.we-care-card-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground .text .long-description p {
     color: var(--white);
-    font-family: Nunito-Extralight, sans-serif;
+    font-family: 'Nunito-Extralight', sans-serif;
     font-size: 1rem;
     font-weight: 200;
     line-height: 24px;
@@ -340,7 +340,7 @@
 
     .section.we-care-card-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground .text .title h3 {
         color: var(--white);
-        font-family: Nunito-Extrabold, sans-serif;
+        font-family: 'Nunito-Extrabold', sans-serif;
         font-size: 1.25rem;
         font-weight: 800;
         line-height: 28px;
@@ -348,7 +348,7 @@
 
     .section.we-care-card-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .teaser-wrapper .teaser .background .foreground .text .long-description p {
         color: var(--white);
-        font-family: Nunito-Extralight, sans-serif;
+        font-family: 'Nunito-Extralight', sans-serif;
         font-size: 1rem;
         font-weight: 200;
         line-height: 24px;

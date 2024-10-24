@@ -4,7 +4,7 @@
     min-height: 292px;
 }
 
-.moredetailsaddress.block .address-wrapper .address-title h1{
+.moredetailsaddress.block .address-wrapper .address-title :where(h1,h2,h3,h4,h5,h6){
     font-family: "Nunito-Bold";
     font-size: 2rem;
     line-height: 40px;
@@ -82,7 +82,7 @@
         min-height: 300px;
     }
 
-    .moredetailsaddress.block .address-wrapper .address-title h1 {
+    .moredetailsaddress.block .address-wrapper .address-title :where(h1,h2,h3,h4,h5,h6) {
         font-size: 1.75rem;
         line-height: 36px;
     }
