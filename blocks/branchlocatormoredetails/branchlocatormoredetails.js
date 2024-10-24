@@ -29,10 +29,9 @@ function myMap(lat, long) {
   });
 }
 
-export function settingCurrentLoct(setLocationObj) {
+function settingCurrentLoct(setLocationObj) {
   loadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ').then((resolve) => {
     myMap(setLocationObj.lat, setLocationObj.lng);
   });
 }
-/* returnLatLan().then(function ({ lat, lng }) {
-});  */
+

@@ -1,17 +1,29 @@
-import returnLatLan from '../select-tag/getSelectedLanguage.js';
+import returnLatLan from "./sort.js";
 
-export const setLocationObj = {};
-const { lat, lng } = await returnLatLan();
-
-setLocationObj.lat = lat;
-setLocationObj.lng = lng;
-setLocationObj.stateLi = '';
-setLocationObj.cityLi = '';
-setLocationObj.cityhash = {};
-setLocationObj.geoInfo = {
-  city: '',
-  state: '',
-  country: '',
-  location: '',
-  locationcode: '',
+export const locationInLatLan = {};
+export const setLocationObj = {
+  lat: 0,
+  lng: 0,
+  stateLi: "",
+  cityLi: "",
+  cityhash: {},
+  geoInfo: {
+    city: "",
+    state: "",
+    country: "",
+    location: "",
+    locationcode: "",
+  },
 };
+
+async function initializeLocation() {
+  try {
+    const { lat, lng } = await returnLatLan();
+    Object.assign(setLocationObj, { lat, lng });
+  } catch (error) {
+    console.error("Error initializing location:", error);
+  }
+}
+
+// Call this function to initialize the location
+await initializeLocation();
