@@ -7,7 +7,7 @@ let statemasterGlobal = statemasterDataMap.get('statemasterGlobal') || {};
 let productStatemaster = {};
 let productStates = [];
 
-const defaultCityLi = brachDropDownUl().querySelector('.orangepoints');
+const defaultCityLi = brachDropDownUl().querySelector('.orangepoints') || '<li class="orangepoints">No options</li>';
 
 function stateMasterProcessData(statemasterRaw) {
   const statemasterArr = statemasterRaw.filter((stateobj) => Boolean(stateobj.state) && stateobj.state != '#N/A');

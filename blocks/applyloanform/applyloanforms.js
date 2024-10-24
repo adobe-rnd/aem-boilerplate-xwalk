@@ -126,12 +126,12 @@ export function applyLoanFormClick() {
           }
         }
 
-        if(loaninnerform){
+        /* if(loaninnerform){
           let ulFormBranch = document.createElement('li');
           ulFormBranch.textContent = "No options";
           ulFormBranch.classList.add('orangepoints');
           loaninnerform.querySelector('#branchcontainer ul').innerHTML = ulFormBranch.outerHTML;
-        }
+        } */
 
         loaninnerform.querySelector('#statecontainer').style.visibility = 'hidden';
         loaninnerform.querySelector('#branchcontainer').style.visibility = 'hidden';
@@ -252,12 +252,12 @@ export function applyLoanFormClick() {
           }
         }
 
-        if(loaninnerform){
+        /* if(loaninnerform){
           let ulFormBranch = document.createElement('li');
           ulFormBranch.textContent = "No options";
           ulFormBranch.classList.add('orangepoints');
           loaninnerform.querySelector('#branchcontainer ul').innerHTML = ulFormBranch.outerHTML;
-        }
+        } */
 
         resetLoanForm();
         loaninnerform.classList.remove('loan-form-sub-otp', 'loan-form-success', 'loan-form-request-fail', 'loan-form-something-wrong');
@@ -353,12 +353,12 @@ export function applyLoanFormClick() {
           loaninnerform.classList.remove('loan-form-sub-otp', 'loan-form-success', 'loan-form-request-fail', 'loan-form-something-wrong');
         }
 
-        if(loaninnerform){
+        /* if(loaninnerform){
           let ulFormBranch = document.createElement('li');
           ulFormBranch.textContent = "No options";
           ulFormBranch.classList.add('orangepoints');
           loaninnerform.querySelector('#branchcontainer ul').innerHTML = ulFormBranch.outerHTML;
-        }
+        } */
 
       }
     });
@@ -373,12 +373,12 @@ export function applyLoanFormClick() {
         loaninnerform.style.visibility = 'hidden';
         bodyElement.style.overflowY = 'auto';
 
-        if(loaninnerform){
+        /* if(loaninnerform){
           let ulFormBranch = document.createElement('li');
           ulFormBranch.textContent = "No options";
           ulFormBranch.classList.add('orangepoints');
           loaninnerform.querySelector('#branchcontainer ul').innerHTML = ulFormBranch.outerHTML;
-        }
+        } */
       }
     });
 
