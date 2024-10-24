@@ -33,7 +33,7 @@ export function loanutmForm() {
 
 export async function loanFormUTM(makewebFormURL) {
   const placeholders = await fetchPlaceholders();
-  let redirectionLink = placeholders.formRedirectionLink; //'https://www.piramalfinance.com/loan';
+  let redirectionLink = placeholders.formredirectionlink; //'https://www.piramalfinance.com/loan';
   const utm_device = isMobile.any() ? 'MWEB' : 'DWEB';
   const utm_source = window.location.pathname.split('/').pop().replace(/\.html$/, '');
 
