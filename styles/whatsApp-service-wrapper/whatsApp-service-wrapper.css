@@ -36,8 +36,8 @@
     align-items: center;
     justify-content: flex-end;
     flex-direction: column;
-    background-color: #fff;
-    border: 1px solid #fac3b3;
+    background-color: var(--white);
+    border: 1px solid var(--coral);
     border-radius: 9pt;
     height: 100%;
     max-width: 359px;

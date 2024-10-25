@@ -1,7 +1,7 @@
 /* quick Approvals Start */
 
 .section.metro-cities-wrapper {
-    background-color: #FFF7F4;
+    background-color: var(--seashell);
 }
 
 .section.metro-cities-wrapper .default-content-wrapper {
@@ -9,7 +9,7 @@
 }
 
 .section.metro-cities-wrapper .default-content-wrapper>h2 {
-    color: #000;
+    color: var(--black);
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2rem;
@@ -20,7 +20,7 @@
 
 .section.metro-cities-wrapper .default-content-wrapper>p {
     margin-bottom: 24px;
-    color: #666;
+    color: var(--gradient-gray);
     display: block;
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.25rem;
@@ -50,13 +50,13 @@
 
 .section.metro-cities-wrapper .default-content-wrapper>ul li::marker,
 .section.metro-cities-wrapper .city-list-wrapper .city-list > ul li::marker {
-    color: #f26841;
+    color: var(--orange);
     font-size: 1.188rem;
 }
 
 .section.metro-cities-wrapper .default-content-wrapper>ul li a,
 .section.metro-cities-wrapper .city-list-wrapper .city-list > ul li a {
-    color: #333;
+    color: var(--darkcharcoal);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 700;
@@ -64,7 +64,7 @@
 }
 .section.metro-cities-wrapper .default-content-wrapper>ul li a:hover,
 .section.metro-cities-wrapper .city-list-wrapper .city-list > ul li a:hover{
-    color: #f26841
+    color: var(--orange)
 }
 
 .section.metro-cities-wrapper.personal-loan-metro-cities .default-content-wrapper>h2 {

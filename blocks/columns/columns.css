@@ -58,8 +58,8 @@
 .section.view-more-btn .default-content-wrapper .button-container a{
    background-color: transparent;
     margin-top: 1pc;
-    color: #f26841;
-    font-family: Nunito-Bold, sans-serif;
+    color: var(--orange);
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 24px;
     font-weight: 700;
     line-height: 36px;

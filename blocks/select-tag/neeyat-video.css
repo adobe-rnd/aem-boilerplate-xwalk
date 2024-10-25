@@ -7,7 +7,7 @@ div.block.modal>dialog {
 .block.modal dialog {
     --dialog-border-radius: 5px 5px 0 0;
     overscroll-behavior: none;
-    border: 1px solid #ccc;
+    border: 1px solid var(--dark-color);
     border-radius: var(--dialog-border-radius);
     width: 100vw;
 }

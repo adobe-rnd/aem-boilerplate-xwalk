@@ -33,11 +33,11 @@
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li:first-child .cards-card-body ul li:last-child:has(p >a) p a{
     border-radius: 8px;
     padding: 8px 16px;
-    border: 1px solid #365069;
-    font: 700 12px 'nunito-bold', 'sans-serif';
+    border: 1px solid var(--greyishblue);
+    font: 700 12px 'Nunito-bold', 'sans-serif';
     line-height: 16px;
-    color: #365069;
-    background: #ffffff;
+    color: var(--greyishblue);
+    background: var(--white);
     margin: 0;
     text-decoration: none;
 }
@@ -60,8 +60,8 @@
     font-size: 1rem;
     line-height: 24px;
     font-weight: 400;
-    color: #666666;
-    font-family: Nunito-Regular, sans-serif;
+    color: var(--darkgrey);
+    font-family: 'Nunito-Regular', sans-serif;
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li ul{
@@ -70,10 +70,10 @@
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h3{
-    color: #000000;
+    color: var(--black);
     font-size: 12px;
     font-weight: 700;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h6,
@@ -82,23 +82,23 @@
     font-size: 12px;
     padding-top: 2px;
     font-weight: 400;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h4{
-    color: #000;
+    color: var(--black);
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li strong,
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li ul li strong {
-    color: #4D4D4D;
+    color: var(--matterhorn);
     font-weight: 700;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
 }
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li a {
-    color: #4D4D4D;
+    color: var(--matterhorn);
     font-weight: 700;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     text-decoration: underline;
 }
 
@@ -114,16 +114,16 @@
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li a:has(sup) sup,
 .section.support-contact-us-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .columns-wrapper .columns div div p>strong>a:has(sup) sup{
-    color: #4d4d4d;
+    color: var(--matterhorn);
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
 }
 
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li h5{
     color: #27272A;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-weight: 400;
 }
 
@@ -137,22 +137,22 @@
     /* position: absolute; */
     top: 0;
     right: 0;
-    color: #F26841;
+    color: var(--orange);
     font-size: .85rem;
     line-height: 20px;
     font-weight: 700;
     font-style: normal;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
 }
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body ul li:has(em a) em a{
-    color: #F26841;
+    color: var(--orange);
     font-size: .85rem;
     line-height: 20px;
     font-weight: 700;
     /* border-bottom: 1px dashed; */
     font-style: normal;
     text-decoration: underline dashed;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
 }
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body>p span {
     display: contents;
@@ -249,7 +249,7 @@
 }
 .section.contact-us-download-wrapper>.default-content-wrapper>h4 {
     margin: 0;
-    color: #fff;
+    color: var(--white);
     font-family: "Nunito-Bold", sans-serif;
     font-size: 1.875rem;
     font-weight: 700;
@@ -258,7 +258,7 @@
 }
 .section.contact-us-download-wrapper>.default-content-wrapper>p {
     margin: 0px;
-    color: #fff;
+    color: var(--white);
     font-family: "Nunito-Regular", sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
@@ -278,7 +278,7 @@
     max-width: 110px;
     font: 700 12px 'Nunito-Bold', 'sans-serif';
     line-height: 16px;
-    color: #fff;
+    color: var(--white);
 }
 
 .section.contact-us-download-wrapper .default-content-wrapper ul li span {
@@ -297,9 +297,9 @@
 
 .section.contact-us-download-wrapper .default-content-wrapper>p:last-child>a {
     /* position: absolute; */
-    background: #f26841;
+    background: var(--orange);
     border-radius: 8px;
-    color: #fff;
+    color: var(--white);
     font-family: "Nunito-Bold", sans-serif;
     font-size: 0.75rem;
     font-weight: 700;
@@ -371,12 +371,12 @@ section.contact-us-download-wrapper .imgwithlink-wrapper .imgwithlink{
     .section.contact-us-download-wrapper>.default-content-wrapper>h4{
         font-size: 18px;
         font-weight: 700;
-        color: #fff;
+        color: var(--white);
         line-height: unset;
     }
     .section.contact-us-download-wrapper>.default-content-wrapper>p{
         font-size: 14px;
-        color: #fff;
+        color: var(--white);
         padding-top: 2px;
         position: unset;
         margin-bottom: 0;

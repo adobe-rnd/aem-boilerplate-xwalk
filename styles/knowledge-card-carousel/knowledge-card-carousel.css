@@ -33,7 +33,7 @@
     flex-direction: column;
 }
 .section.knowledge-card-carousel .carousel-wrapper .carousel .panel-container .teaser .background .foreground .text .long-description p{
-    color: #333;
+    color: var(--darkcharcoal);
     display: block;
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
@@ -42,7 +42,7 @@
     margin-bottom: 32px;
 }
 .section.knowledge-card-carousel .carousel-wrapper .carousel .panel-container .teaser .background .foreground .text .long-description p strong{
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     font-weight: 700;
@@ -51,8 +51,8 @@
 .section.knowledge-card-carousel .primary.block>.carousel-navigation-buttons{
     display: block
 }
-.section.knowledge-card-carousel .default-content-wrapper #piramal-values{
-    color: #000;
+.section.knowledge-card-carousel .default-content-wrapper h2{
+    color: var(--black);
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2rem;
@@ -82,9 +82,9 @@
 }
 .section.knowledge-card-carousel .carousel-wrapper .carousel .panel-container .teaser .background .foreground .text .cta a{
     margin: unset;
-    background-color: #365069;
+    background-color: var(--greyishblue);
     border-radius: 67px;
-    color: #fff;
+    color: var(--white);
     cursor: default;
     display: block;
     font-family: 'Nunito-Bold', sans-serif;
@@ -128,11 +128,11 @@
         height: 4px;
         margin: 0 4px;
         border-radius: 50%;
-        background: #000;
+        background: var(--black);
         opacity: .2;
     }
     .section.knowledge-card-carousel .carousel.block>.button-container button.glider-active{
-        background-color: #000;
+        background-color: var(--black);
         border-radius: 4px;
         height: 4px;
         width: 16px;    
@@ -142,7 +142,7 @@
     .section.knowledge-card-carousel .carousel-wrapper .carousel-navigation-buttons .glider-next{
         display: none;
     }
-    .section.knowledge-card-carousel .default-content-wrapper #piramal-values{
+    .section.knowledge-card-carousel .default-content-wrapper h2{
         font-size: 1.25rem;
         line-height: 28px;
         padding-bottom: 4px;

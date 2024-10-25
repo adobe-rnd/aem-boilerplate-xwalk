@@ -15,9 +15,9 @@
     justify-content: flex-end;
 }
 
-.section.legal-banner-wrapper .teaser-wrapper .teaser .background .foreground .text .title h1 {
-    color: #333;
-    font-family: Nunito-Extrabold, sans-serif;
+.section.legal-banner-wrapper .teaser-wrapper .teaser .background .foreground .text .title :where(h1,h2,h3,h4,h5,h6) {
+    color: var(--darkcharcoal);
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 3rem;
     font-weight: 800;
     line-height: 72px;
@@ -37,7 +37,7 @@
 }
 
 .section.company-details-wrapper.legal-banner-wrapper .tab-link-wrapper .tab-link .compony-details div ul li a{
-    color: #333;
+    color: var(--darkcharcoal);
     font-family: 'Nunito-Regular', sans-serif;
 }
 
@@ -80,7 +80,7 @@
         width: 52px;
     }
 
-    .section.legal-banner-wrapper .teaser-wrapper .teaser .background .foreground .text .title h1 {
+    .section.legal-banner-wrapper .teaser-wrapper .teaser .background .foreground .text .title :where(h1,h2,h3,h4,h5,h6) {
         font-size: 1.5rem;
         line-height: 36px;
     }
@@ -96,7 +96,7 @@
 
     .section.company-details-wrapper.legal-banner-wrapper .tab-link-wrapper .tab-link.block .text.legal-mobile-text .cmp-text p:nth-child(2) {
         padding: 0;
-        color: #333;
+        color: var(--darkcharcoal);
     }
 
     .section.company-details-wrapper.legal-banner-wrapper .tab-link-wrapper .tab-link.block .text.legal-mobile-text .cmp-text::after {
@@ -127,7 +127,7 @@
     }
 
     .section.company-details-wrapper.about-us-company-details .tab-link-wrapper .tab-link.block>div>div>ul>li a::before {
-        border: 1px solid #a9a9a9;
+        border: 1px solid var(--fossil);
     }
 
     .section.company-details-wrapper.about-us-company-details .tab-link-wrapper .tab-link.block>div>div>ul>li>strong>a::after {
@@ -155,7 +155,7 @@
 /* legal privacy policy css start */
 .section.legal-privacy-policy-wrapper .default-content-wrapper h4 {
     color: var(--orange);
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.75rem;
     font-weight: 800;
     line-height: 42px;
@@ -164,8 +164,8 @@
 
 .section.legal-privacy-policy-wrapper .default-content-wrapper p,
 .section.legal-privacy-policy-wrapper .default-content-wrapper h6 {
-    color: #333;
-    font-family: Nunito-Regular, sans-serif;
+    color: var(--darkcharcoal);
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -183,8 +183,8 @@
 }
 
 .section.legal-privacy-policy-wrapper .default-content-wrapper ul li {
-    color: #333;
-    font-family: Nunito-Regular, sans-serif;
+    color: var(--darkcharcoal);
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -204,8 +204,8 @@
 }
 
 .section.legal-privacy-policy-wrapper .default-content-wrapper p a {
-    color: #333;
-    font-family: Nunito-Regular, sans-serif;
+    color: var(--darkcharcoal);
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -246,8 +246,8 @@
 /* legal website usage css start */
 .section.legal-website-usage-wrapper .default-content-wrapper p strong,
 .section.legal-website-usage-wrapper .default-content-wrapper ul li strong {
-    color: #333;
-    font-family: Nunito-Bold, sans-serif;
+    color: var(--darkcharcoal);
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     font-weight: 700;
 }

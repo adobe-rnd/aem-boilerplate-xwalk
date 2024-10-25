@@ -16,7 +16,7 @@
     font-weight: 800;
     font-size: 2rem;
     line-height: 2.5rem;
-    color: #333333;
+    color: var(--darkcharcoal);
     text-align: center;
 }
 
@@ -136,7 +136,7 @@
 
 .happy-customer .info-card .customer-info .zoom-circleone {
     border-radius: 50%;
-    background: #F26841;
+    background: var(--orange);
     width: 204px;
     height: 204px;
     position: absolute;
@@ -185,7 +185,7 @@
 
 .happy-customer .info-card .customer-info .zoom-circletwo {
     border-radius: 50%;
-    background: #F26841;
+    background: var(--orange);
     width: 204px;
     height: 204px;
     position: absolute;
@@ -220,7 +220,7 @@
 
 .happy-customer .info-card .customer-info .zoom-circlethree {
     border-radius: 50%;
-    background: #F26841;
+    background: var(--orange);
     width: 204px;
     height: 204px;
     position: absolute;
@@ -259,7 +259,7 @@
     padding: 32px 64px;
     border-radius: 24px;
     position: relative;
-    background-color: #ffffff;
+    background-color: var(--white);
     margin-top: 15px;
 }
 
@@ -274,7 +274,7 @@
     height: 14px;
     border-left: 13px solid transparent;
     border-right: 16px solid transparent;
-    border-bottom: 13px solid #ffffff;
+    border-bottom: 13px solid var(--white);
     content: " ";
     position: absolute;
     left: 48%;
@@ -286,7 +286,7 @@
     .happy-customer .info-card .customer-info .customer-comments .arrowup {
         border-left: 18px solid transparent;
         border-right: 21px solid transparent;
-        border-bottom: 15px solid #ffffff;
+        border-bottom: 15px solid var(--white);
         left: 48%;
         margin-top: -30px;
     }
@@ -307,7 +307,7 @@
     font-weight: 400;
     font-size: 1.125rem;
     line-height: 1.75rem;
-    color: #333333;
+    color: var(--darkcharcoal);
     margin-bottom: 20px;
     display: block;
 }
@@ -324,7 +324,7 @@
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 2rem;
-    color: #333333;
+    color: var(--darkcharcoal);
     margin-bottom: 4px;
     display: block;
 }
@@ -731,7 +731,7 @@
 }
 
 .section.testimonial-content-wrapper .default-content-wrapper h2 {
-    color: #000;
+    color: var(--black);
     display: block;
     font-family: 'Nunito-Extrabold',sans-serif;
     font-size: 2rem;

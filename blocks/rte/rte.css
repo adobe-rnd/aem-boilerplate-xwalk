@@ -4,7 +4,7 @@
     font-size: 1rem;
     line-height: 24px;
     margin: 7px 0 0;
-    color: #333;
+    color: var(--darkcharcoal);
 }
 
 .section.content-wrapper .rte.block > div >div>h4 {
@@ -14,7 +14,7 @@
     font-size: 1rem;
     line-height: 24px;
     font-weight: 400;
-    color: #333;
+    color: var(--darkcharcoal);
 }
 
 .section.content-wrapper .rte.block > div >div>ul>li {
@@ -22,7 +22,7 @@
     font-size: 1rem;
     line-height: 24px;
     font-weight: 400;
-    color: #333;
+    color: var(--darkcharcoal);
     padding: 5px 0;
 }
 
@@ -37,7 +37,7 @@
 
 .section.content-wrapper .rte.block > div >div>p>a {
     text-decoration: none;
-    color: #000;
+    color: var(--black);
 }
 /* privacy policy content css end */
 

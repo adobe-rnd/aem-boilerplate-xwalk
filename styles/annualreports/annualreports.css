@@ -1,8 +1,7 @@
 /* annual reports start */
-.section.annual-reports-wrapper .default-content-wrapper h2,
-.section.annual-reports-wrapper .default-content-wrapper h1 {
+.section.annual-reports-wrapper .default-content-wrapper :where(h1,h2,h3,h4,h5,h6) {
     color: var(--orange);
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.75rem;
     font-weight: 800;
     line-height: 42px;
@@ -23,9 +22,9 @@
 .section.annual-reports-wrapper .default-content-wrapper ul>li>a {
     background: var(--whitesmoke);
     border-radius: 4px;
-    color: #333;
+    color: var(--darkcharcoal);
     display: block;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     line-height: 24px;
     padding: 20px 50px 20px 16px;
@@ -45,7 +44,7 @@
     top: 35%;
     height: 20px;
     width: 20px;
-    color: #333;
+    color: var(--darkcharcoal);
 }
 
 .section.annual-reports-wrapper .default-content-wrapper ul>li>a:hover::after {
@@ -75,14 +74,14 @@
 
 .section.offer-documents-wrapper .default-content-wrapper ul>li>p ,
 .section.offer-documents-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .offer-documents-wrapper .offer-documents .richtext .cmp-text >p{
-    background-color: #f8f8f8;
+    background-color: var(--whitesmoke);
     border-radius: 4px;
-    color: #333;
+    color: var(--darkcharcoal);
     cursor: pointer;
     display: block;
     display: flex;
     align-items: center;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -97,13 +96,13 @@
 }
 
 .section.offer-documents-wrapper .default-content-wrapper ul>li>p>a{
-    color: #333;
+    color: var(--darkcharcoal);
     margin: 0;
     border: unset;
     font-weight: 400;
     background-color: unset;
     border-radius: unset;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     padding: 20px 61px 20px 24px;
     text-align: unset;
     width: 100%;
@@ -145,7 +144,7 @@
     line-height: 1px;
     height: 20px;
     width: 20px;
-    color: #333;
+    color: var(--darkcharcoal);
 }
 
 .section.offer-documents-wrapper .default-content-wrapper ul>li>a:hover::after,
@@ -159,7 +158,7 @@
 .section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText {
     max-width: 60pc;
     position: relative;
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 1pc;
     box-shadow: 0 11px 15px -7px rgba(0, 0, 0, .2), 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12);
     color: rgba(0, 0, 0, .87);
@@ -211,7 +210,7 @@
     font-size: 1.75rem;
 }
 .section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div ul li::before{
-    background-color: #333;
+    background-color: var(--darkcharcoal);
     border-radius: 50%;
     content: "";
     display: inline-table;
@@ -223,7 +222,7 @@
 }
 .section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text>p:nth-child(2),
 .section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text>p:nth-child(2) span {
-    color: #333;
+    color: var(--darkcharcoal);
     display: flex;
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
@@ -253,10 +252,10 @@
 }
 
 .section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer >p .popupbutton a {
-    background-color: #f26841;
+    background-color: var(--orange);
     border-radius: 4px;
-    color: #fff;
-    font-family: Nunito-Bold, sans-serif;
+    color: var(--white);
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1pc;
     font-weight: 700;
     line-height: 24px;
@@ -268,7 +267,7 @@
     margin-left: 0;
     list-style-type: none;
     color: rgba(0, 0, 0, .871);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1pc;
     font-weight: 400;
     line-height: 24px;

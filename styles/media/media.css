@@ -14,25 +14,25 @@
 /* media banner css end */
 
 .section.media-coverage-wrapper .tab-link-wrapper .tab-link ul li a{
-    background-color: #fff;
-    border: 1px solid #333;
+    background-color: var(--white);
+    border: 1px solid var(--darkcharcoal);
     border-radius: 9999px;
     cursor: pointer;
     display: block;
     margin-right: 4pc;
     padding: 8px 24px;
     width: fit-content;
-    color: #000;
-    font-family: Nunito-Semibold, sans-serif;
+    color: var(--black);
+    font-family: 'Nunito-Semibold', sans-serif;
     font-size: 1rem;
     font-weight: 600;
     line-height: 24px;
     text-decoration: none;
 }
 .section.media-coverage-wrapper .tab-link-wrapper .tab-link ul li strong a{
-    background-color: #365069;
-    border: 1px solid #365069;
-    color: #fff;
+    background-color: var(--greyishblue);
+    border: 1px solid var(--greyishblue);
+    color: var(--white);
 }
 
 .section.media-coverage-wrapper .tab-link-wrapper .tab-link ul{
@@ -43,7 +43,7 @@
     position: relative;
 }
 .section.media-coverage-wrapper .tab-link-wrapper .tab-link ul li::after{
-    background-color: #afb9c3;
+    background-color: var(--zinc);
     border-radius: 4px;
     content: "";
     height: 24px;
@@ -72,7 +72,7 @@
 }
     .section.media-cards-wrapper .carousel-item{
     color: var(--black);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 32px;
@@ -82,7 +82,7 @@
 .section.media-cards-wrapper .carousel-item.active{
     border-bottom: 2px solid var(--orange);
     color: var(--orange);
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.5rem;
     font-weight: 800;
     line-height: 32px;
@@ -102,20 +102,20 @@
 }
 .section.media-cards-wrapper .long-description ul li{
     color: var(--gradient-gray);
-    font-family: Nunito-Semibold, sans-serif;
+    font-family: 'Nunito-Semibold', sans-serif;
     font-size: 0.875rem;
     line-height: 20px;
 }
 .section.media-cards-wrapper .long-description ul li a{
     color: var(--gradient-gray);
-    font-family: Nunito-Semibold, sans-serif;
+    font-family: 'Nunito-Semibold', sans-serif;
     font-size: 0.875rem;
     line-height: 20px;
 }
 .section.media-cards-wrapper .long-description ul li:nth-child(3) a sub,
 .section.media-cards-wrapper .long-description ul li:nth-child(2) a sub{
     color: var(--orange);
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     line-height: 24px;
     text-decoration: none;
@@ -126,7 +126,7 @@
     display: -webkit-box;
     overflow: hidden;
     color: var(--black);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -162,7 +162,7 @@
 .section.press-release-card-wrapper .default-content-wrapper ul{
     padding: 14px 40px 14px 14px;
     background-color: #F4F4F4;
-    color: #333;
+    color: var(--darkcharcoal);
     margin-bottom: 16px;
 }
 .section.press-release-card-wrapper .default-content-wrapper ul:hover{
@@ -170,7 +170,7 @@
     color: var(--white);
 }
 .section.press-release-card-wrapper .default-content-wrapper ul li{
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
 }
 .section.press-release-card-wrapper .default-content-wrapper{
     padding-top: 48px;

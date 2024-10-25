@@ -1,5 +1,5 @@
-.section.carousel-articles-wrapper .default-content-wrapper #recommended-articles{
-    color: #000;
+.section.carousel-articles-wrapper .default-content-wrapper h2{
+    color: var(--black);
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2rem;
@@ -8,7 +8,7 @@
     padding-bottom: 8px;
 }
 .section.carousel-articles-wrapper .default-content-wrapper p{
-    color: #666;
+    color: var(--gradient-gray);
     display: block;
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.25rem;
@@ -40,9 +40,9 @@
 }
 .section.carousel-articles-wrapper .carousel-wrapper .slide-prev  div div picture img,
 .section.carousel-articles-wrapper .carousel-wrapper .slide-next div div picture img{
-    border: 1px solid #365069;
+    border: 1px solid var(--greyishblue);
     border-radius: 50%;
-    color: #365069;
+    color: var(--greyishblue);
     height: 40px;
     margin-top: unset;
     width: 40px;
@@ -85,7 +85,7 @@
     display: inline-block;
 }
 .section.carousel-articles-wrapper .button-container a{
-    color: #f26841;
+    color: var(--orange);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -95,7 +95,7 @@
     position: relative;
 }
 .section.carousel-articles-wrapper .long-description ul li a {
-    color: #333;
+    color: var(--darkcharcoal);
     display: inline-block;
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
@@ -111,7 +111,7 @@
 }
 
 .section.carousel-articles-wrapper .default-content-wrapper .button-container a {
-    color: #f26841;
+    color: var(--orange);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -126,7 +126,7 @@
 .section.carousel-articles-wrapper .default-content-wrapper .button-container ::after{
     content: '';
     position: absolute;
-    border: solid #f26841;
+    border: solid var(--orange);
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 3px;
@@ -193,11 +193,11 @@
         height: 4px;
         width: 4px;
         margin: 0 4px;
-        background: #000;
+        background: var(--black);
         opacity: .2;
     }
     .section.carousel-articles-wrapper .carousel .button-container button.selected{
-        background-color: #000;
+        background-color: var(--black);
         border-radius: 4px;
         height: 4px;
         width: 16px;
@@ -211,7 +211,7 @@
     .section.carousel-articles-wrapper .carousel-wrapper .carousel .panel-container .teaser .background .front-picture picture img{
         display: block;
     }
-    .section.carousel-articles-wrapper .default-content-wrapper #recommended-articles{
+    .section.carousel-articles-wrapper .default-content-wrapper h2{
         font-size: 1.25rem;
         line-height: 28px;
         padding-bottom: 4px;
