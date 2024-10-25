@@ -726,13 +726,86 @@ function loadDelayed() {
 
 async function loadPage() {
   loadHeader(document.querySelector('header'));
-  loadingCustomCss();
+  await loadingCustomCss();
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
 }
 
 loadPage();
+
+// async function loadingCustomCss() {
+//   // load custom css files
+//   const loadCssArray = [
+//     `${window.hlx.codeBasePath}/styles/loanproducts/loanproducts.css`,
+//     `${window.hlx.codeBasePath}/styles/calculator/calculator.css`,
+//     `${window.hlx.codeBasePath}/styles/choose-us/choose-us.css`,
+//     `${window.hlx.codeBasePath}/styles/download-piramal/download-piramal.css`,
+//     `${window.hlx.codeBasePath}/styles/our-media/our-media.css`,
+//     `${window.hlx.codeBasePath}/styles/piramal-since/piramal-since.css`,
+//     `${window.hlx.codeBasePath}/styles/about-us-company/about-us-company.css`,
+//     `${window.hlx.codeBasePath}/styles/reset.css`,
+//     `${window.hlx.codeBasePath}/styles/key-features/key-features.css`,
+//     `${window.hlx.codeBasePath}/styles/metro-cities/metro-cities.css`,
+//     `${window.hlx.codeBasePath}/styles/articles-carousel/articles-carousel.css`,
+//     `${window.hlx.codeBasePath}/styles/details-verification/details-verification.css`,
+//     `${window.hlx.codeBasePath}/styles/elgibility-criteria/elgibility-criteria.css`,
+//     `${window.hlx.codeBasePath}/styles/table/table.css`,
+//     `${window.hlx.codeBasePath}/styles/tab-with-cards/tab-with-cards.css`,
+//     `${window.hlx.codeBasePath}/styles/e-auction/e-auction.css`,
+//     `${window.hlx.codeBasePath}/styles/list-content/list-content.css`,
+//     `${window.hlx.codeBasePath}/styles/real-estate-banner/real-estate-banner.css`,
+//     `${window.hlx.codeBasePath}/styles/rte-wrapper/rte-wrapper.css`,
+//     `${window.hlx.codeBasePath}/styles/partnerships-cards/partnerships-cards.css`,
+//     `${window.hlx.codeBasePath}/styles/knowledge-card-carousel/knowledge-card-carousel.css`,
+//     `${window.hlx.codeBasePath}/styles/board-of-directors/board-of-directors.css`,
+//     `${window.hlx.codeBasePath}/styles/ratings-card/ratings-card.css`,
+//     `${window.hlx.codeBasePath}/styles/partnership-cards-tab/partnership-cards-tab.css`,
+//     `${window.hlx.codeBasePath}/styles/company-details/company-details.css`,
+//     `${window.hlx.codeBasePath}/styles/years-info-tab/years-info-tab.css`,
+//     `${window.hlx.codeBasePath}/styles/media/media.css`,
+//     `${window.hlx.codeBasePath}/styles/partnership/partnership.css`,
+//     `${window.hlx.codeBasePath}/styles/rupee-cards/rupee-card.css`,
+//     `${window.hlx.codeBasePath}/styles/interest-rates-disclosure/interest-rates-disclosure.css`,
+//     `${window.hlx.codeBasePath}/styles/annualreports/annualreports.css`,
+//     `${window.hlx.codeBasePath}/styles/awards-recognition/awards-recognition.css`,
+//     `${window.hlx.codeBasePath}/styles/multi-calculator/multi-calculator.css`,
+//     `${window.hlx.codeBasePath}/styles/career-social-cards/career-social-cards.css`,
+//     `${window.hlx.codeBasePath}/styles/available-facilities/available-facilities.css`,
+//     `${window.hlx.codeBasePath}/styles/nearest-branches/nearest-branches.css`,
+//     `${window.hlx.codeBasePath}/styles/steps-for-apply/steps-for-apply.css`,
+//     `${window.hlx.codeBasePath}/styles/csr-committee/csr-committee.css`,
+//     `${window.hlx.codeBasePath}/styles/grievance-redressal/grievance-redressal.css`,
+//     `${window.hlx.codeBasePath}/styles/documents-required/documents-required.css`,
+//     `${window.hlx.codeBasePath}/styles/mobile-sticky-button/mobile-sticky-button.css`,
+//     // `${window.hlx.codeBasePath}/styles/breadcrumb/breadcrumb.css`,
+//     `${window.hlx.codeBasePath}/styles/disclaimer/disclaimer.css`,
+//     `${window.hlx.codeBasePath}/styles/risk-gradation-popup/risk-gradation-popup.css`,
+//     `${window.hlx.codeBasePath}/styles/piramal-group-ajay-info/piramal-group-ajay-info.css`,
+//     `${window.hlx.codeBasePath}/styles/legal/legal.css`,
+//     `${window.hlx.codeBasePath}/styles/calculator-mob-carousel/calculator-mob-carousel.css`,
+//     `${window.hlx.codeBasePath}/styles/media/media-list.css`,
+//     // `${window.hlx.codeBasePath}/styles/authorisedagencies/authorisedagencies.css`,
+//     `${window.hlx.codeBasePath}/styles/table-whatsapp-btn/table-whatsapp-btn.css`,
+//     `${window.hlx.codeBasePath}/styles/financial-reports/financial-reports.css`,
+//     `${window.hlx.codeBasePath}/styles/support-quicklinks-wrapper/support-quicklinks-wrapper.css`,
+//     `${window.hlx.codeBasePath}/styles/support-contact-us/support-contact-us.css`,
+//     `${window.hlx.codeBasePath}/styles/whatsApp-service-wrapper/whatsApp-service-wrapper.css`,
+//     `${window.hlx.codeBasePath}/styles/sarfaesi-wholesale/sarfaesi-wholesale.css`,
+//     `${window.hlx.codeBasePath}/styles/whatsapp-service-loan-products/whatsapp-service-loan-products.css`,
+//     `${window.hlx.codeBasePath}/styles/forms-formats/forms-formats.css`,
+//     `${window.hlx.codeBasePath}/styles/whatsapp-service-banner/whatsapp-service-banner.css`,
+//     `${window.hlx.codeBasePath}/styles/support-contact-us/support-contact-popup.css`,
+//     `${window.hlx.codeBasePath}/styles/e-nach-registration/e-nach-registration.css`,
+//     `${window.hlx.codeBasePath}/styles/support-faq/support-faq.css`,
+//     `${window.hlx.codeBasePath}/styles/embed-carousel-wrapper/embed-carousel-wrapper.css`,
+//     `${window.hlx.codeBasePath}/styles/fixed-headset/fixed-headset.css`,
+//   ];
+
+//   loadCssArray.forEach(async (eachCss) => {
+//     await loadCSS(eachCss);
+//   });
+// }
 
 async function loadingCustomCss() {
   // load custom css files
@@ -752,54 +825,6 @@ async function loadingCustomCss() {
     `${window.hlx.codeBasePath}/styles/elgibility-criteria/elgibility-criteria.css`,
     `${window.hlx.codeBasePath}/styles/table/table.css`,
     `${window.hlx.codeBasePath}/styles/tab-with-cards/tab-with-cards.css`,
-    `${window.hlx.codeBasePath}/styles/e-auction/e-auction.css`,
-    `${window.hlx.codeBasePath}/styles/list-content/list-content.css`,
-    `${window.hlx.codeBasePath}/styles/real-estate-banner/real-estate-banner.css`,
-    `${window.hlx.codeBasePath}/styles/rte-wrapper/rte-wrapper.css`,
-    `${window.hlx.codeBasePath}/styles/partnerships-cards/partnerships-cards.css`,
-    `${window.hlx.codeBasePath}/styles/knowledge-card-carousel/knowledge-card-carousel.css`,
-    `${window.hlx.codeBasePath}/styles/board-of-directors/board-of-directors.css`,
-    `${window.hlx.codeBasePath}/styles/ratings-card/ratings-card.css`,
-    `${window.hlx.codeBasePath}/styles/partnership-cards-tab/partnership-cards-tab.css`,
-    `${window.hlx.codeBasePath}/styles/company-details/company-details.css`,
-    `${window.hlx.codeBasePath}/styles/years-info-tab/years-info-tab.css`,
-    `${window.hlx.codeBasePath}/styles/media/media.css`,
-    `${window.hlx.codeBasePath}/styles/partnership/partnership.css`,
-    `${window.hlx.codeBasePath}/styles/rupee-cards/rupee-card.css`,
-    `${window.hlx.codeBasePath}/styles/interest-rates-disclosure/interest-rates-disclosure.css`,
-    `${window.hlx.codeBasePath}/styles/annualreports/annualreports.css`,
-    `${window.hlx.codeBasePath}/styles/awards-recognition/awards-recognition.css`,
-    `${window.hlx.codeBasePath}/styles/multi-calculator/multi-calculator.css`,
-    `${window.hlx.codeBasePath}/styles/career-social-cards/career-social-cards.css`,
-    `${window.hlx.codeBasePath}/styles/available-facilities/available-facilities.css`,
-    `${window.hlx.codeBasePath}/styles/nearest-branches/nearest-branches.css`,
-    `${window.hlx.codeBasePath}/styles/steps-for-apply/steps-for-apply.css`,
-    `${window.hlx.codeBasePath}/styles/csr-committee/csr-committee.css`,
-    `${window.hlx.codeBasePath}/styles/grievance-redressal/grievance-redressal.css`,
-    `${window.hlx.codeBasePath}/styles/documents-required/documents-required.css`,
-    `${window.hlx.codeBasePath}/styles/mobile-sticky-button/mobile-sticky-button.css`,
-    // `${window.hlx.codeBasePath}/styles/breadcrumb/breadcrumb.css`,
-    `${window.hlx.codeBasePath}/styles/disclaimer/disclaimer.css`,
-    `${window.hlx.codeBasePath}/styles/risk-gradation-popup/risk-gradation-popup.css`,
-    `${window.hlx.codeBasePath}/styles/piramal-group-ajay-info/piramal-group-ajay-info.css`,
-    `${window.hlx.codeBasePath}/styles/legal/legal.css`,
-    `${window.hlx.codeBasePath}/styles/calculator-mob-carousel/calculator-mob-carousel.css`,
-    `${window.hlx.codeBasePath}/styles/media/media-list.css`,
-    // `${window.hlx.codeBasePath}/styles/authorisedagencies/authorisedagencies.css`,
-    `${window.hlx.codeBasePath}/styles/table-whatsapp-btn/table-whatsapp-btn.css`,
-    `${window.hlx.codeBasePath}/styles/financial-reports/financial-reports.css`,
-    `${window.hlx.codeBasePath}/styles/support-quicklinks-wrapper/support-quicklinks-wrapper.css`,
-    `${window.hlx.codeBasePath}/styles/support-contact-us/support-contact-us.css`,
-    `${window.hlx.codeBasePath}/styles/whatsApp-service-wrapper/whatsApp-service-wrapper.css`,
-    `${window.hlx.codeBasePath}/styles/sarfaesi-wholesale/sarfaesi-wholesale.css`,
-    `${window.hlx.codeBasePath}/styles/whatsapp-service-loan-products/whatsapp-service-loan-products.css`,
-    `${window.hlx.codeBasePath}/styles/forms-formats/forms-formats.css`,
-    `${window.hlx.codeBasePath}/styles/whatsapp-service-banner/whatsapp-service-banner.css`,
-    `${window.hlx.codeBasePath}/styles/support-contact-us/support-contact-popup.css`,
-    `${window.hlx.codeBasePath}/styles/e-nach-registration/e-nach-registration.css`,
-    `${window.hlx.codeBasePath}/styles/support-faq/support-faq.css`,
-    `${window.hlx.codeBasePath}/styles/embed-carousel-wrapper/embed-carousel-wrapper.css`,
-    `${window.hlx.codeBasePath}/styles/fixed-headset/fixed-headset.css`,
   ];
 
   loadCssArray.forEach(async (eachCss) => {
