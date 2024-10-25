@@ -1093,29 +1093,30 @@ export function getDay() {
 } */
 
 
-export function branchURLStr(location = '', city = '', state = '', urlstrhand = '', locationcode = '') {
-    // Helper function to clean strings
-    const cleanStr = (str) => str?.replace(/[\s()\/]/g, '-').toLowerCase().trim();
-    
-    // Clean all location strings at once
-    const [locationAdd, cityStr, stateStr] = [location, city, state].map(cleanStr);
+  export function branchURLStr(location = '', city = '', state = '', urlstrhand, locationcode = '') {
+    const sanitizeString = (str) => str?.replace(/\s+|[()\/]/g, (match) => (match.trim() ? '' : '-')).toLowerCase().trim();
+
+    const locationAdd = sanitizeString(location);
+    const cityStr = sanitizeString(city);
+    const stateStr = sanitizeString(state);
   
-    // Use object literal for different URL patterns
-    const urlPatterns = {
+    const urlMap = {
       shorthand: () => `/branch-locator/${stateStr}/${cityStr}`,
       shorthandstate: () => `/branch-locator/${stateStr}`,
       loans: () => {
-        const baseUrl = `/branch-locator/loans-in-`;
-        const locationPart = locationAdd === cityStr 
-          ? `${cityStr}-${stateStr}`
-          : `${locationAdd}-${cityStr}-${stateStr}`;
-        return `${baseUrl}${locationPart}-${locationcode}`;
+        const baseUrl = '/branch-locator/loans-in-';
+        const isLocationSameAsCity = locationAdd === cityStr;
+        const segments = isLocationSameAsCity 
+          ? [cityStr, stateStr, locationcode]
+          : [locationAdd, cityStr, stateStr, locationcode];
+          
+        return baseUrl + segments.join('-');
       }
     };
   
-    // Return the URL if pattern exists, undefined otherwise
-    return urlPatterns[urlstrhand]?.();
-}
+    return urlMap[urlstrhand]?.();
+  }
+  
 
 export function selectBranchDetails(block) {
   const cards = block.closest('.section').querySelectorAll('.branch-list-wrapper a');
