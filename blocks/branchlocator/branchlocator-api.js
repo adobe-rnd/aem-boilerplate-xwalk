@@ -23,35 +23,43 @@ export function initMap(sortedLat, sortedLng) {
 
 export async function searchBranchByURL() {
   const url = new URL(location.href);
-  const pathSegments = url.pathname.split("/").filter(Boolean);
-
-  if (!pathSegments.includes("branch-locator") || pathSegments.length < 5) {
+  const pathSegments = url.pathname.split('/').filter(Boolean);
+  
+  if (!pathSegments.includes('branch-locator')) {
     return false;
   }
 
-  const [, , , state, city] = pathSegments;
+  const stateIndex = pathSegments.indexOf('branch-locator') + 1;
+  const state = pathSegments[stateIndex];
+  const city = pathSegments[stateIndex + 1];
+
+  if (!state) {
+    return false;
+  }
+
+  const formatString = (str) => 
+    str.charAt(0).toUpperCase() + 
+    str.slice(1).replaceAll('-', ' ');
 
   setLocationObj.geoInfo = {
-    state: capitalizeAndReplace(state),
-    city: city ? capitalizeAndReplace(city) : "",
-    country: "India",
+    state: formatString(state),
+    city: city ? formatString(city) : '',
+    country: 'India'
   };
 
   if (setLocationObj.geoInfo.state && setLocationObj.geoInfo.city) {
-    const stateCityData = setLocationObj.getExcelData[setLocationObj.geoInfo.state]?.find((entry) => entry.City === setLocationObj.geoInfo.city);
+    const stateData = setLocationObj.getExcelData[setLocationObj.geoInfo.state];
+    const cityData = stateData?.find(
+      entry => entry.City === setLocationObj.geoInfo.city
+    );
 
-    if (stateCityData) {
-      Object.assign(setLocationObj, {
-        lat: stateCityData.Latitude,
-        lng: stateCityData.Longitude,
-        "geoInfo.location": stateCityData.Location,
-      });
+    if (cityData) {
+      setLocationObj.lat = cityData.Latitude;
+      setLocationObj.lng = cityData.Longitude;
+      setLocationObj.geoInfo.location = cityData.Location;
     }
   }
 
   return true;
 }
 
-function capitalizeAndReplace(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1).replace(/-/g, " ");
-}
