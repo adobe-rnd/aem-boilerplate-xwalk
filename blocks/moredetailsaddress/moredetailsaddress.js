@@ -96,7 +96,7 @@ async function onbranchDetails() {
   setLocationObj.storedata = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
 
   renderData();
-  setTimeout(reviewRender, 3000);
+  setTimeout(reviewRender, 5000);
 }
 
 async function getStateCity(lat, lng) {
@@ -168,48 +168,52 @@ function reviewRender() {
   if (!ratingSpan) {
     return false;
   }
-  document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").innerHTML = ratingSpan;
-  const reviewCards = document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").querySelectorAll(".carousel-item");
-  const currentNextButton = document.querySelector(".branchcustomer-review-cards").querySelector(".glider-next");
-  const currentPrevButton = document.querySelector(".branchcustomer-review-cards").querySelector(".glider-prev");
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(
-      (entry) => {
-        const intersecting = entry.isIntersecting;
-        if (intersecting) {
-          new Glider(entry.target, {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            draggable: true,
-            scrollLock: true,
-            arrows: {
-              prev: currentPrevButton,
-              next: currentNextButton,
-            },
-            responsive: [
-              { breakpoint: 767, settings: { slidesToShow: 2, slidesToScroll: 1 } },
-              {
-                breakpoint: 1025,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 1,
-                  scrollLock: true,
-                  draggable: true,
-                },
+  try {
+    document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner")?.innerHTML = ratingSpan;
+    const reviewCards = document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner")?.querySelectorAll(".carousel-item");
+    const currentNextButton = document.querySelector(".branchcustomer-review-cards").querySelector(".glider-next");
+    const currentPrevButton = document.querySelector(".branchcustomer-review-cards").querySelector(".glider-prev");
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(
+        (entry) => {
+          const intersecting = entry.isIntersecting;
+          if (intersecting) {
+            new Glider(entry.target, {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              draggable: true,
+              scrollLock: true,
+              arrows: {
+                prev: currentPrevButton,
+                next: currentNextButton,
               },
-            ],
-          });
-          // observer.unobserve(entry.target);
-        }
-      },
-      { rootMargin: "50px" }
-    );
-  });
-  observer.observe(document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner"));
-
-  if (reviewCards.length <= 3) {
-    document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").querySelector(".carousel-navigation-buttons").classList.add("dp-none");
+              responsive: [
+                { breakpoint: 767, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+                {
+                  breakpoint: 1025,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    scrollLock: true,
+                    draggable: true,
+                  },
+                },
+              ],
+            });
+            // observer.unobserve(entry.target);
+          }
+        },
+        { rootMargin: "50px" }
+      );
+    });
+    observer.observe(document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner"));
+  
+    if (reviewCards.length <= 3) {
+      document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").querySelector(".carousel-navigation-buttons").classList.add("dp-none");
+    }
+  } catch (error) {
+    console.error("Error: Review Rating Logic", error);
   }
 }
 
