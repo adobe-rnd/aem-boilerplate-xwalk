@@ -96,7 +96,7 @@ async function onbranchDetails() {
   setLocationObj.storedata = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
 
   renderData();
-  setTimeout(reviewRender, 5000);
+  setTimeout(reviewRender, 3000);
 }
 
 async function getStateCity(lat, lng) {
