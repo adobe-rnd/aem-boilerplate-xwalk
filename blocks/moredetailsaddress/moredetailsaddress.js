@@ -168,7 +168,7 @@ function reviewRender() {
   if (!ratingSpan) {
     return false;
   }
-  try {
+  // try {
     document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner")?.innerHTML = ratingSpan;
     const reviewCards = document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner")?.querySelectorAll(".carousel-item");
     const currentNextButton = document.querySelector(".branchcustomer-review-cards").querySelector(".glider-next");
@@ -212,9 +212,9 @@ function reviewRender() {
     if (reviewCards.length <= 3) {
       document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").querySelector(".carousel-navigation-buttons").classList.add("dp-none");
     }
-  } catch (error) {
-    console.error("Error: Review Rating Logic", error);
-  }
+  // } catch (error) {
+  //   console.error("Error: Review Rating Logic", error);
+  // }
 }
 
 function renderRatingDiv() {
