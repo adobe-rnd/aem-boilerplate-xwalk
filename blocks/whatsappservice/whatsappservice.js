@@ -333,11 +333,11 @@ function createInputFieldHTML(uppertext, spantext, placeholder, submitText) {
   return `
 <div class="input-field">
   <div class="cmp-form-text">
-    <label for="form-text-1975602141">${getText(placeholder)}</label>
+    <label for="form-text-1975602141">${getText(uppertext)}</label>
     <span class="inptContainer">
       <span class="countryCode">${getText(spantext)}</span>
       <input class="cmp-form-text__text" data-cmp-hook-form-text="input" type="text" maxlength="10"
-        id="form-text-1975602141" placeholder="${getText(uppertext)}" name="number" spellcheck="true">
+        id="form-text-1975602141" placeholder="${getText(placeholder)}" name="number" spellcheck="true">
     </span>
   </div>
   <div class="button desktopButton">
