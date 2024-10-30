@@ -43,15 +43,23 @@ export default async function decorate(block) {
 
   document.querySelector('.view-more-less-js .wrapper-creation-container').insertAdjacentHTML('beforeend', keyFeatureDiv.innerHTML);
 
-  document.querySelectorAll('.view-more-less-js .wrapper-creation-container .keyfeatures-wrapper').forEach((eackfeatures, index) => {
-    if (index <= 2) {
-      eackfeatures.classList.remove('dp-none');
-    } else {
-      eackfeatures.classList.add('dp-none');
-    }
-  });
+
+  let mainFeatureDiv = document.querySelector('.view-more-less-js.wrappercreation-container');
+  let featureWrapperCheck = document.querySelectorAll('.view-more-less-js .wrapper-creation-container .keyfeatures-wrapper').length;
+  if(featureWrapperCheck > 0){
+    document.querySelectorAll('.view-more-less-js .wrapper-creation-container .keyfeatures-wrapper').forEach((eackfeatures, index) => {
+      if (index <= 2) {
+        eackfeatures.classList.remove('dp-none');
+      } else {
+        eackfeatures.classList.add('dp-none');
+      }
+    });
+  }else{
+    mainFeatureDiv.classList.add('dp-none');
+  }
 
   const featurePlus = document.querySelector('.view-more-less-js .wrapper-creation-container');
+
   try {
     featureDropDownClick(featurePlus);
   } catch (error) {
