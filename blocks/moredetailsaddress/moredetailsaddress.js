@@ -146,7 +146,7 @@ function returnLatLan() {
 }
 
 async function getReviewRating(placeID) {
-  const response = await fetchAPI("GET", `/content/piramalfinance/api/mapapi.json?place_id=${placeID}&key=AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ`);
+  const response = await fetchAPI("GET", `/content/piramalfinance/api/mapapi.json?place_id=${placeID}&key=${GOOGLE_MAPS_API_KEY}`);
   // const response = await fetchAPI("GET", `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeID}&key=${GOOGLE_MAPS_API_KEY}`);
   return response.json();
 }
