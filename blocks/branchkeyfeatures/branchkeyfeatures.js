@@ -1,4 +1,4 @@
-import { CFApiCall, fetchAPI } from '../../scripts/scripts.js';
+import { CFApiCall, groupAllKeys } from '../../scripts/scripts.js';
 import { featureDropDownClick } from '../keyfeatures/keyfeatures.js';
 import { setLocationObj } from '../moredetailsaddress/moredetailsaddress.js';
 
@@ -8,16 +8,23 @@ export default async function decorate(block) {
   } = setLocationObj;
   const linkURL = block.textContent.trim();
 
-  if (!linkURL) {
-    return false;
-  }
-
   const keyFeatureDiv = document.createElement('div');
-  let newDivPersonalDiv = '';
 
-  const cfRepsonse = linkURL && (await CFApiCall(linkURL));
-  const repsonseData = cfRepsonse && cfRepsonse.data[0].branchloanmapping;
-  const jsonResponseData = repsonseData && JSON.parse(repsonseData);
+  let jsonResponseData = '';
+  if(sessionStorage.getItem('branchloanmapping')){
+    jsonResponseData = JSON.parse(sessionStorage.getItem('branchloanmapping'));
+  }else{
+    if (!linkURL) {
+      return false;
+    }
+    const cfRepsonse = linkURL && await CFApiCall(linkURL);
+    const reponseData = cfRepsonse && cfRepsonse.data;
+    jsonResponseData = groupAllKeys(reponseData);
+    sessionStorage.setItem('branchloanmapping', JSON.stringify(jsonResponseData));
+  
+    /* const repsonseData = cfRepsonse && cfRepsonse.data[0].branchloanmapping;
+    const jsonResponseData = repsonseData && JSON.parse(repsonseData); */
+  }
 
   Object.keys(jsonResponseData).forEach((eachKey) => {
     if (jsonResponseData[eachKey].includes(city)) {
@@ -29,7 +36,6 @@ export default async function decorate(block) {
       }
     }else{
       if(eachKey == 'personal-loan'){
-        newDivPersonalDiv = document.querySelector('.personal-loan-key-feature .wrappercreation-wrapper').querySelector('.default-content-wrapper');
         document.querySelector('.personal-loan-key-feature').querySelector('.wrapper-creation-container').querySelectorAll('.keyfeatures-wrapper').forEach(function (eachfeature) {
           eachfeature.remove();
         });

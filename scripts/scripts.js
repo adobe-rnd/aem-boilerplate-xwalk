@@ -1199,3 +1199,31 @@ export async function CFApiCall(cfurl) {
   const responseJson = await response.json();
   return responseJson;
 }
+
+
+// Create a function to group all loans
+export function groupAllKeys(array) {
+  return array.reduce((result, current) => {
+    for (let key in current) {
+      // Convert key to lowercase and replace spaces with hyphens for consistent key names
+      let formattedKey = key.toLowerCase().replace(/\s+/g, '-');
+      
+      // If the key doesn't exist in the result object, initialize it with an empty array
+      if (!result[formattedKey]) {
+        result[formattedKey] = [];
+      }
+      
+      // Push the current value of the key into the array
+        let currnetKeyFirstName = '';
+        if(current[key].includes('-')){
+            currnetKeyFirstName = current[key].split('-')[0]
+        }else{
+            currnetKeyFirstName = current[key]
+        }
+    
+      result[formattedKey].push(currnetKeyFirstName);
+    }
+    return result;
+  }, {});
+}
+
