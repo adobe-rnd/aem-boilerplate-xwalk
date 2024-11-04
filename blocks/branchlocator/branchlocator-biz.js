@@ -75,7 +75,7 @@ async function loadGoogleMapsAndRender(branchList) {
   myMap(setLocationObj.lat, setLocationObj.lng, branchList);
 }
 
-function updateUI(block, branchList) {
+async function updateUI(block, branchList) {
   const section = block.closest(".section");
   bizStateDD(setLocationObj.getExcelData, block);
   bizCityDD(setLocationObj.getExcelData, block);
@@ -83,7 +83,7 @@ function updateUI(block, branchList) {
   renderCity(block, setLocationObj);
   renderState(block, setLocationObj);
 
-  const multipleBranch = innerBranchFunc(branchList);
+  const multipleBranch = await innerBranchFunc(branchList);
   section.querySelector(".title-to-show").textContent = `Find all ${setLocationObj.geoInfo.city} Branches here`;
   section.querySelector(".branch-list-wrapper").innerHTML = multipleBranch;
 
@@ -287,7 +287,7 @@ async function handleStateClick(e, block) {
     const branchList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
     await loadGoogleMapsAndRender(branchList);
 
-    const multipleBranch = innerBranchFunc(branchList);
+    const multipleBranch = await innerBranchFunc(branchList);
     block.closest(".section").querySelector(".branch-list-wrapper").innerHTML = multipleBranch;
 
     e.target.closest("ul").classList.add("dp-none");
@@ -311,7 +311,7 @@ async function handleCityClick(e, block) {
     const branchList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
     await loadGoogleMapsAndRender(branchList);
 
-    const multipleBranch = innerBranchFunc(branchList);
+    const multipleBranch = await innerBranchFunc(branchList);
     const section = block.closest(".section");
     section.querySelector(".branch-list-wrapper").innerHTML = multipleBranch;
     section.querySelector(".title-to-show").textContent = `Find all ${city} Branches here`;
@@ -368,8 +368,8 @@ async function updateDropdownsAndRender(block) {
   renderState(block, setLocationObj);
 }
 
-function renderBranchList(block, branchList) {
-  const multipleBranch = innerBranchFunc(branchList);
+async function renderBranchList(block, branchList) {
+  const multipleBranch = await innerBranchFunc(branchList);
   block.closest(".section").querySelector(".branch-list-wrapper").innerHTML = multipleBranch;
 }
 
