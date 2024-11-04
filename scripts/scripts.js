@@ -1216,12 +1216,14 @@ export function groupAllKeys(array) {
       // Push the current value of the key into the array
         let currnetKeyFirstName = '';
         if(current[key].includes('-')){
-            currnetKeyFirstName = current[key].split('-')[0]
+            currnetKeyFirstName = current[key].split('-')[0].trim();
         }else{
-            currnetKeyFirstName = current[key]
+            currnetKeyFirstName = current[key].trim();
         }
     
-      result[formattedKey].push(currnetKeyFirstName);
+        if(!result[formattedKey].includes(currnetKeyFirstName)){
+          result[formattedKey].push(currnetKeyFirstName);
+        }
     }
     return result;
   }, {});
