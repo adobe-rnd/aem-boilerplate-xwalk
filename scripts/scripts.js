@@ -734,7 +734,7 @@ async function loadPage() {
 
 loadPage();
 
-async function loadingCustomCss() {
+/* async function loadingCustomCss() {
   // load custom css files
   const loadCssArray = [
     `${window.hlx.codeBasePath}/styles/loanproducts/loanproducts.css`,
@@ -803,9 +803,9 @@ async function loadingCustomCss() {
   loadCssArray.forEach(async (eachCss) => {
     await loadCSS(eachCss);
   });
-}
+} */
 
-/* async function loadingCustomCss() {
+async function loadingCustomCss() {
   // load custom css files
   const loadCssArray = [
     `${window.hlx.codeBasePath}/styles/loanproducts/loanproducts.css`,
@@ -829,7 +829,7 @@ async function loadingCustomCss() {
   loadCssArray.forEach(async (eachCss) => {
     await loadCSS(eachCss);
   });
-} */
+}
 
 /* export let body = document.querySelector('body');
 body?.addEventListener('click', (e) => {
