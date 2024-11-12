@@ -4,9 +4,19 @@
       "id": "page-metadata",
       "fields": [
         {
-          "component": "text",
+          "component": "select",
           "name": "template",
-          "label": "Template"
+          "label": "Template",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "Article",
+              "value": "article"
+            }
+          ]
         },
         {
           "component": "container",
@@ -26,12 +36,30 @@
       "id": "article-metadata",
       "fields": [
         {
-          "...": "#/models/page-metadata/fields"
+          "...": "#/models/page-metadata/fields/template"
         },
         {
-          "component": "text",
-          "name": "articleAuthor",
-          "label": "Author"
+          "component": "container",
+          "name": "social",
+          "label": "Social",
+          "fields": [
+            {
+              "...": "#/models/page-metadata/fields/social/fields"
+            },
+            {
+              "component": "text",
+              "name": "article:author",
+              "label": "Author",
+              "condition": {
+                "===": [
+                  {
+                    "var": "template"
+                  },
+                  "author"
+                ]
+              }
+            }
+          ]
         }
       ]
     }
