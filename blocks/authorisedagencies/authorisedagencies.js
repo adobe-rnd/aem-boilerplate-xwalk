@@ -1,6 +1,7 @@
 import { CFApiCall, fetchAPI, targetObject } from '../../scripts/scripts.js';
 import { ctaClickInteraction } from '../../dl.js';
 
+/*
 export default async function decorate(block) {
   const cfURL = block.textContent.trim();
   const cfRepsonse = await CFApiCall(cfURL);
@@ -158,3 +159,156 @@ export default async function decorate(block) {
     // })
   };
 }
+*/
+
+export default async function decorate(block) {
+  const cfURL = block.textContent.trim();
+  const cfRepsonse = await CFApiCall(cfURL);
+  const repsonseData = cfRepsonse.data;
+  const result = Object.groupBy(repsonseData, ({ Location }) => {
+    const lowercaseLocation = Location.toLowerCase();
+    return lowercaseLocation.charAt(0).toUpperCase() + lowercaseLocation.slice(1);
+  });
+  const jsonResponseData = result;
+
+  const sortedCities = Object.keys(jsonResponseData).sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
+
+  let inputHTML = sortedCities.map((city) => {
+    return `
+      <label>
+        <input type="radio" value="${city}" name="branchlocation">
+        <span>${city}</span>
+      </label>
+    `;
+  }).join('');
+
+  block.innerHTML = `
+    <div class="select-container-wrapper">
+      <div class="select-container">
+        <label>Select Location</label>
+        <input class="toggleCityContainer" readOnly value="Location ">
+      </div>
+      <div class="cities-container" style="display:none;">
+        <fieldset>
+          <legend>locations</legend>
+          ${inputHTML}
+        </fieldset>
+      </div>
+    </div>
+  `;
+
+  // const selectContainerWrapper = block.querySelector('.select-container-wrapper');
+  const selectContainer = block.querySelector('.select-container');
+  const citiesContainer = block.querySelector('.cities-container');
+  const inputLocation = block.querySelector('.toggleCityContainer');
+  // const cityDropdown = citiesContainer.querySelector('fieldset');
+
+  let inputLocationValue;
+
+  inputLocation.addEventListener('click', () => {
+    citiesContainer.style.display = citiesContainer.style.display === 'none' ? 'block' : 'none';
+    selectContainer.classList.toggle('open');
+  });
+
+  citiesContainer.addEventListener('change', (e) => {
+    if (e.target.name === 'branchlocation') {
+      const selectedCity = e.target.value;
+      inputLocationValue = selectedCity;
+      inputLocation.value = selectedCity;
+      inputLocation.className = 'cityBlack';
+      citiesContainer.style.display = 'none';
+      selectContainer.classList.remove('open');
+
+      window.onscroll = null;
+
+      try {
+        const data = {};
+        data.click_text = e.target.closest('label').querySelector('span').textContent.trim();
+        data.cta_position = 'Select Location';
+        ctaClickInteraction(data);
+      } catch (error) {
+        console.warn(error);
+      }
+      displayCards(selectedCity);
+    }
+  });
+
+  function displayCards(selectedCityName, index) {
+    const cardContainer = block.querySelector('.card-container') || document.createElement('div');
+    cardContainer.className = 'card-container';
+    cardContainer.innerHTML = ''; 
+    block.appendChild(cardContainer);
+
+    const dataToDisplay = selectedCityName ? { [selectedCityName]: jsonResponseData[selectedCityName] } : jsonResponseData;
+
+    Object.keys(dataToDisplay).slice(0, index).forEach((city) => {
+      dataToDisplay[city].forEach((data) => {
+        const arr = data.Location.split(' ');
+        const locationValue = arr.map(item => {
+          const location = item.toLowerCase();
+          return location.charAt(0).toUpperCase() + location.slice(1);
+        }).join(' ');
+
+        const cardHTML = `
+          <div class="card">
+            <div>
+              <p>Location</p>
+              <p>${locationValue}</p>
+            </div>
+            <div>
+              <p>Agency Address</p>
+              <p>${data['Agency Address']}</p>
+            </div>
+            <div>
+              <p>Vendor Name:</p>
+              <p>${data['Vendor Name']}</p>
+            </div>
+            <div>
+              <p>Date of Agreement:</p>
+              <p>${data['Date of Agreement']}</p>
+            </div>
+            <div>
+              <p>Date of Expiry:</p>
+              <p>${data['Date of Expiry']}</p>
+            </div>
+            <div>
+              <p>Tenure:</p>
+              <p>${data.Tenure}</p>
+            </div>
+            <div>
+              <p>Agency Signatory:</p>
+              <p>${data['Agency owner']}</p>
+            </div>
+            <div>
+              <p>Contact No.:</p>
+              <p>${data['Contact No']}</p>
+            </div>
+          </div>
+        `;
+        cardContainer.innerHTML += cardHTML; 
+      });
+    });
+  }
+
+  if (targetObject.isTab || targetObject.isMobile) {
+    displayCards(undefined, 1);
+  } else {
+    displayCards(undefined, 2);
+  }
+
+  block.closest('body').addEventListener('click', (e) => {
+    if (!e.target.closest('.toggleCityContainer') && !e.target.closest('.select-container') && !e.target.closest('fieldset') && !e.target.closest('cityBlack')) {
+      if (block.querySelector('.select-container.open')) {
+        if (block.querySelector('.cities-container').style.display == 'block') {
+          block.querySelector('.cities-container').style.display = 'none';
+          block.querySelector('.select-container').classList.remove('open');
+        }
+      }
+    }
+  });
+
+  window.onscroll = function () {
+    displayCards();
+  };
+}
+
