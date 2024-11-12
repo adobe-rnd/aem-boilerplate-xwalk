@@ -1,5 +1,54 @@
 [
   {
+    "id": "page-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template"
+      },
+      {
+        "component": "container",
+        "name": "social",
+        "label": "Social",
+        "fields": [
+          {
+            "component": "text",
+            "name": "og:title",
+            "label": "Title"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "article-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template"
+      },
+      {
+        "component": "container",
+        "name": "social",
+        "label": "Social",
+        "fields": [
+          {
+            "component": "text",
+            "name": "og:title",
+            "label": "Title"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "articleAuthor",
+        "label": "Author"
+      }
+    ]
+  },
+  {
     "id": "image",
     "fields": [
       {
