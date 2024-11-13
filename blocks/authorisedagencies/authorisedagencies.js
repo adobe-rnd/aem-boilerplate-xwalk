@@ -165,15 +165,29 @@ export default async function decorate(block) {
   const cfURL = block.textContent.trim();
   const cfRepsonse = await CFApiCall(cfURL);
   const repsonseData = cfRepsonse.data;
-  const result = Object.groupBy(repsonseData, ({ Location }) => {
+  
+  const groupedLocations = groupAndSortLocations(repsonseData);
+  renderLocationSelection(block, groupedLocations);
+  initEventListeners(block, groupedLocations);
+  if (targetObject.isTab || targetObject.isMobile) {
+    displayCards(block,undefined,groupedLocations.grouped, 1);
+  } else {
+    displayCards(block, undefined, groupedLocations.grouped, 2);
+  }
+}
+
+function groupAndSortLocations(data) {
+  const grouped = Object.groupBy(data, ({ Location }) => {
     const lowercaseLocation = Location.toLowerCase();
     return lowercaseLocation.charAt(0).toUpperCase() + lowercaseLocation.slice(1);
   });
-  const jsonResponseData = result;
 
-  const sortedCities = Object.keys(jsonResponseData).sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
+  const sortedCities = Object.keys(grouped).sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
+  return { grouped, sortedCities };
+}
 
-  let inputHTML = sortedCities.map((city) => {
+function renderLocationSelection(block, { grouped, sortedCities }) {
+  const inputHTML = sortedCities.map((city) => {
     return `
       <label>
         <input type="radio" value="${city}" name="branchlocation">
@@ -186,7 +200,7 @@ export default async function decorate(block) {
     <div class="select-container-wrapper">
       <div class="select-container">
         <label>Select Location</label>
-        <input class="toggleCityContainer" readOnly value="Location ">
+        <input class="toggleCityContainer" readOnly value="Location">
       </div>
       <div class="cities-container" style="display:none;">
         <fieldset>
@@ -196,12 +210,12 @@ export default async function decorate(block) {
       </div>
     </div>
   `;
+}
 
-  // const selectContainerWrapper = block.querySelector('.select-container-wrapper');
+function initEventListeners(block, groupedLocations) {
   const selectContainer = block.querySelector('.select-container');
   const citiesContainer = block.querySelector('.cities-container');
   const inputLocation = block.querySelector('.toggleCityContainer');
-  // const cityDropdown = citiesContainer.querySelector('fieldset');
 
   let inputLocationValue;
 
@@ -211,104 +225,96 @@ export default async function decorate(block) {
   });
 
   citiesContainer.addEventListener('change', (e) => {
-    if (e.target.name === 'branchlocation') {
-      const selectedCity = e.target.value;
-      inputLocationValue = selectedCity;
-      inputLocation.value = selectedCity;
-      inputLocation.className = 'cityBlack';
-      citiesContainer.style.display = 'none';
-      selectContainer.classList.remove('open');
+    const selectedCity = e.target.value;
+    inputLocationValue = selectedCity;
+    inputLocation.value = selectedCity;
+    inputLocation.className = 'cityBlack';
+    citiesContainer.style.display = 'none';
+    selectContainer.classList.remove('open');
 
-      window.onscroll = null;
-
-      try {
-        const data = {};
-        data.click_text = e.target.closest('label').querySelector('span').textContent.trim();
-        data.cta_position = 'Select Location';
-        ctaClickInteraction(data);
-      } catch (error) {
-        console.warn(error);
-      }
-      displayCards(selectedCity);
+    try {
+      const data = {};
+      data.click_text = e.target.closest('label').querySelector('span').textContent.trim();
+      data.cta_position = 'Select Location';
+      ctaClickInteraction(data);
+    } catch (error) {
+      console.warn(error);
     }
+    displayCards(block, selectedCity, groupedLocations.grouped);
   });
-
-  function displayCards(selectedCityName, index) {
-    const cardContainer = block.querySelector('.card-container') || document.createElement('div');
-    cardContainer.className = 'card-container';
-    cardContainer.innerHTML = ''; 
-    block.appendChild(cardContainer);
-
-    const dataToDisplay = selectedCityName ? { [selectedCityName]: jsonResponseData[selectedCityName] } : jsonResponseData;
-
-    Object.keys(dataToDisplay).slice(0, index).forEach((city) => {
-      dataToDisplay[city].forEach((data) => {
-        const arr = data.Location.split(' ');
-        const locationValue = arr.map(item => {
-          const location = item.toLowerCase();
-          return location.charAt(0).toUpperCase() + location.slice(1);
-        }).join(' ');
-
-        const cardHTML = `
-          <div class="card">
-            <div>
-              <p>Location</p>
-              <p>${locationValue}</p>
-            </div>
-            <div>
-              <p>Agency Address</p>
-              <p>${data['Agency Address']}</p>
-            </div>
-            <div>
-              <p>Vendor Name:</p>
-              <p>${data['Vendor Name']}</p>
-            </div>
-            <div>
-              <p>Date of Agreement:</p>
-              <p>${data['Date of Agreement']}</p>
-            </div>
-            <div>
-              <p>Date of Expiry:</p>
-              <p>${data['Date of Expiry']}</p>
-            </div>
-            <div>
-              <p>Tenure:</p>
-              <p>${data.Tenure}</p>
-            </div>
-            <div>
-              <p>Agency Signatory:</p>
-              <p>${data['Agency owner']}</p>
-            </div>
-            <div>
-              <p>Contact No.:</p>
-              <p>${data['Contact No']}</p>
-            </div>
-          </div>
-        `;
-        cardContainer.innerHTML += cardHTML; 
-      });
-    });
-  }
-
-  if (targetObject.isTab || targetObject.isMobile) {
-    displayCards(undefined, 1);
-  } else {
-    displayCards(undefined, 2);
-  }
 
   block.closest('body').addEventListener('click', (e) => {
     if (!e.target.closest('.toggleCityContainer') && !e.target.closest('.select-container') && !e.target.closest('fieldset') && !e.target.closest('cityBlack')) {
-      if (block.querySelector('.select-container.open')) {
-        if (block.querySelector('.cities-container').style.display == 'block') {
-          block.querySelector('.cities-container').style.display = 'none';
-          block.querySelector('.select-container').classList.remove('open');
-        }
+      if (selectContainer.classList.contains('open')) {
+        citiesContainer.style.display = 'none';
+        selectContainer.classList.remove('open');
       }
     }
   });
 
-  window.onscroll = function () {
-    displayCards();
-  };
+  window.onscroll = () => displayCards(block, inputLocationValue, groupedLocations.grouped);
 }
+
+
+function displayCards(block, selectedCityName, groupedLocations,index) {
+  const cardContainer = block.querySelector('.card-container') || document.createElement('div');
+  cardContainer.className = 'card-container';
+  cardContainer.innerHTML = ''; 
+  block.appendChild(cardContainer);
+
+  const dataToDisplay = selectedCityName ? { [selectedCityName]: groupedLocations[selectedCityName] } : groupedLocations;
+
+  Object.keys(dataToDisplay).slice(0, index).forEach((city) => {
+    dataToDisplay[city].forEach((data) => {
+      const locationValue = formatLocation(data.Location);
+
+      const cardHTML = `
+        <div class="card">
+          <div>
+            <p>Location</p>
+            <p>${locationValue}</p>
+          </div>
+          <div>
+            <p>Agency Address</p>
+            <p>${data['Agency Address']}</p>
+          </div>
+          <div>
+            <p>Vendor Name:</p>
+            <p>${data['Vendor Name']}</p>
+          </div>
+          <div>
+            <p>Date of Agreement:</p>
+            <p>${data['Date of Agreement']}</p>
+          </div>
+          <div>
+            <p>Date of Expiry:</p>
+            <p>${data['Date of Expiry']}</p>
+          </div>
+          <div>
+            <p>Tenure:</p>
+            <p>${data.Tenure}</p>
+          </div>
+          <div>
+            <p>Agency Signatory:</p>
+            <p>${data['Agency owner']}</p>
+          </div>
+          <div>
+            <p>Contact No.:</p>
+            <p>${data['Contact No']}</p>
+          </div>
+        </div>
+      `;
+      cardContainer.innerHTML += cardHTML; 
+    });
+  });
+}
+
+function formatLocation(location) {
+  const arr = location.split(' ');
+  return arr.map(item => {
+    const lowercased = item.toLowerCase();
+    return lowercased.charAt(0).toUpperCase() + lowercased.slice(1);
+  }).join(' ');
+}
+
 
