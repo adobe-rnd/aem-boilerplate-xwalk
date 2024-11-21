@@ -80,6 +80,8 @@ async function onbranchDetails() {
 
   await getStateCity(setLocationObj.lat, setLocationObj.lng);
 
+  renderData();
+
   const userLocation = await returnLatLan();
   if (userLocation) {
     setLocationObj.distance = calculateDistance(setLocationObj.lat, setLocationObj.lng, userLocation.lat, userLocation.lng);
@@ -95,8 +97,17 @@ async function onbranchDetails() {
 
   setLocationObj.storedata = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
 
-  renderData();
-  setTimeout(reviewRender, 3000);
+  // setTimeout(reviewRender, 3000);
+  const reviewRatingObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        reviewRender();
+        reviewRatingObserver.unobserve(document.querySelector(".branchcustomer-review-cards"))
+      }
+    });
+  }, { rootMargin: "150px" })
+  reviewRatingObserver.observe(document.querySelector(".branchcustomer-review-cards"));
+
 }
 
 async function getStateCity(lat, lng) {
@@ -201,10 +212,10 @@ function reviewRender() {
                 },
               ],
             });
-            // observer.unobserve(entry.target);
+            observer.unobserve(entry.target);
           }
         },
-        { rootMargin: "50px" }
+        { rootMargin: "100px" }
       );
     });
     observer.observe(document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner"));
