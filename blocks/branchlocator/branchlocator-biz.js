@@ -53,14 +53,19 @@ function setDefaultLocation() {
   }
 }
 
-function updateURL() {
+async function updateURL() {
   const { geoInfo } = setLocationObj;
   const URLstate = formatURLString(geoInfo.state);
   const URLcity = formatURLString(geoInfo.city);
 
   if (!location.href.includes("author") && !location.href.includes(URLstate)) {
-    location.href =
-      geoInfo.state && geoInfo.city ? branchURLStr(geoInfo.location, geoInfo.city, geoInfo.state, "shorthand") : branchURLStr(geoInfo.location, geoInfo.city, geoInfo.state, "shorthandstate");
+    var branchUrl = geoInfo.state && geoInfo.city ? branchURLStr(geoInfo.location, geoInfo.city, geoInfo.state, "shorthand") : branchURLStr(geoInfo.location, geoInfo.city, geoInfo.state, "shorthandstate");
+    const resp = await fetch(branchUrl);
+    if (resp.ok) {
+      location.href = branchUrl
+    } else {
+      location.href = '/branch-locator/maharashtra/mumbai';
+    }
   }
 }
 
