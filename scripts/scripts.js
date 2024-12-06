@@ -1043,10 +1043,45 @@ export function showingStateCity(searchInputAll) {
   }
 }, 5000); */
 
-setTimeout(() => {
+/* setTimeout(() => {
   handleOpenFormOnClick();
   handleNeeyatClick();
-}, 5000);
+}, 5000); */
+
+window.addEventListener("load", () => {
+  // Initialize IntersectionObserver
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (entry.target.classList.contains("open-form-on-click")) {
+          handleOpenFormOnClick();
+        } else if (entry.target.classList.contains("neeyat-click")) {
+          handleNeeyatClick(entry.target);
+        }
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: "50px" });
+
+  // Observe elements - Fixed version
+  const formSections = document.querySelectorAll('.open-form-on-click');
+  const neeyatSections = document.querySelectorAll('.neeyat-click');
+
+  // Handle formSections
+  if (formSections.length > 0) {
+    formSections.forEach(section => {
+      observer.observe(section);
+    });
+  }
+
+  // Handle neeyatSections
+  if (neeyatSections.length > 0) {
+    neeyatSections.forEach(section => {
+      observer.observe(section);
+    });
+  }
+});
+
 
 function handleOpenFormOnClick() {
   const formButtons = document.querySelectorAll('.open-form-on-click .button-container');
@@ -1055,8 +1090,7 @@ function handleOpenFormOnClick() {
   });
 }
 
-function handleNeeyatClick() {
-  const neeyatClick = document.querySelector('.neeyat-click');
+function handleNeeyatClick(neeyatClick) {
   if (!neeyatClick) return;
 
   const buttonIndex = getNeeyatButtonIndex(neeyatClick);
@@ -1118,8 +1152,28 @@ export function getDay() {
 
 
   export function branchURLStr(location = '', city = '', state = '', urlstrhand, locationcode = '') {
-    const sanitizeString = (str) => str?.replace(/\s+|[()\/]/g, (match) => (match.trim() ? '' : '-')).toLowerCase().trim();
+    // const sanitizeString = (str) => str?.replace(/\s+|[()\/]/g, (match) => (match.trim() ? '' : '-')).toLowerCase().trim();
 
+    const sanitizeString  = (str) => {
+       
+      // Convert to lowercase and trim whitespace
+      let cleaned = str.toLowerCase().trim();
+
+      // Replace unwanted spaces around dashes and parentheses
+      cleaned = cleaned.replace(/\s*-\s*/g, '-')    // Normalize dashes
+                      .replace(/\s*\(\s*/g, '-')  // Replace opening parenthesis with a dash
+                      .replace(/\s*\)\s*/g, '')   // Remove closing parenthesis with spaces
+                      .replace(/\s+/g, '-');      // Replace spaces with dashes
+
+      // Replace multiple dashes with a single dash
+      cleaned = cleaned.replace(/-+/g, '-');
+
+      // Remove leading and trailing dashes
+      return cleaned.replace(/^-+|-+$/g, '');
+
+    }
+    
+    
     const locationAdd = sanitizeString(location);
     const cityStr = sanitizeString(city);
     const stateStr = sanitizeString(state);
