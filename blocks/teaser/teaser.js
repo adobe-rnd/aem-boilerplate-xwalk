@@ -121,7 +121,6 @@ export function generateTeaserDOM(props, classes) {
 
   teaserDOM?.querySelectorAll('a').forEach((el, index) => {
     el.addEventListener('click', function (e) {
-      debugger;
       try {
         if (!e.target.closest('.calc-desktop-carousel-wrapper')) {
           if (index || e.target.closest('.cta')) {
