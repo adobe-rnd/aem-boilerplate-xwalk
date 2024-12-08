@@ -1,7 +1,7 @@
 import {
   applyLoanNow, bannerClick, ctaClickInteraction, readMoreInteraction,
 } from '../../dl.js';
-import { targetObject } from '../../scripts/scripts.js';
+import { targetObject , handleOpenFormOnClick } from '../../scripts/scripts.js';
 
 export function decorateButtons(...buttons) {
   return buttons
@@ -76,28 +76,28 @@ export function generateTeaserDOM(props, classes) {
       <div class='foreground'>
         <div class='text'>
           ${eyebrow.textContent.trim() !== ''
-    ? `<div class='eyebrow'>${eyebrow.textContent.trim()}</div>`
-    : ''
-}
+      ? `<div class='eyebrow'>${eyebrow.textContent.trim()}</div>`
+      : ''
+    }
           <div class='title'>${title.innerHTML}</div>
           <div class='long-description'>${longDescr.innerHTML}</div>
           <!-- <div class='short-description'>${hasShortDescr ? shortDescr.innerHTML : longDescr.innerHTML
-}</div>-->
+    }</div>-->
           <div class='short-description'>${shortDescr.innerHTML}</div>
           <div class='cta-image-wrapper'>
             <div class="img-with-text-wrap">
               <div class="cta-image">${ctaImageAnchor ? ctaImageAnchor.outerHTML : ''
-}</div>
+    }</div>
               <p class="cta-text">${imageText.innerText}</p>
             </div>
             <div class="img-with-text-wrap">
               <div class="cta-image">${ctaImageAnchor2 ? ctaImageAnchor2.outerHTML : ''
-}</div>
+    }</div>
               <p class="cta-text">${imageText2.innerText}</p>
             </div>
             <div class="img-with-text-wrap">
               <div class="cta-image">${ctaImageAnchor3 ? ctaImageAnchor3.outerHTML : ''
-}</div>
+    }</div>
               <p class="cta-text">${imageText3.innerText}</p>
             </div>
           </div>
@@ -121,10 +121,15 @@ export function generateTeaserDOM(props, classes) {
 
   teaserDOM?.querySelectorAll('a').forEach((el, index) => {
     el.addEventListener('click', function (e) {
+      debugger;
       try {
         if (!e.target.closest('.calc-desktop-carousel-wrapper')) {
           if (index || e.target.closest('.cta')) {
             bannerClick(e.target.innerText, targetObject.pageName);
+          }
+          if (e.target.closest('.open-form-on-click')) {
+            const formClickSection = e.target.closest('.open-form-on-click');
+            handleOpenFormOnClick(formClickSection);
           }
         } else if (this.closest('.carousel-articles-wrapper')) {
           readMoreAnalytics(e);
