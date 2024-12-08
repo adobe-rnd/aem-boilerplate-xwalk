@@ -221,7 +221,7 @@ function reviewRender() {
     observer.observe(document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner"));
   
     if (reviewCards.length <= 3) {
-      document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-inner").querySelector(".carousel-navigation-buttons").classList.add("dp-none");
+      document.querySelector(".branchcustomer-review-cards").querySelector(".carousel-navigation-buttons").classList.add("dp-none");
     }
   } catch (error) {
     console.error("Error: Review Rating Logic", error);
