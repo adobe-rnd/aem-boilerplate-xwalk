@@ -99,7 +99,7 @@
 .section.download-piramal-wrapper>div:nth-child(2) {
   display: block;
   position: absolute;
-  left: 204px;
+  left: calc((100% - 1120px) / 2);
   top: 50px;
   font-size: 1.875rem;
   font-family: "Nunito-Regular";
@@ -214,6 +214,10 @@
   
   .section.download-piramal-wrapper div:nth-child(4) {
     left: calc((100% - 460px) / 2);
+  }
+
+  .section.download-piramal-wrapper>div:nth-child(2) {
+    left: calc((100% - 860px) / 2);;
   }
 }
 
