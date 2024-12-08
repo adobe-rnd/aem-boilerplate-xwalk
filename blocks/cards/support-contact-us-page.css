@@ -166,12 +166,22 @@
     object-fit: fill;
 }
 
+.section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body>p:last-child:has(span img){
+    display: block;
+    width: 80px;
+    height: 80px;
+}
+
 .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body>p:has(span img):last-child span img {
     width: 80px;
     height: 80px;
     display: block;
     background-size: contain;
     object-fit: fill;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 @media screen and (min-width:768px) and (max-width:1200px) {
@@ -197,6 +207,10 @@
 
     .section.contact-us-card-wrapper .cards-wrapper>.cards>ul>li .cards-card-body ul {
         align-self: center;
+    }
+
+    .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body>p:last-child:has(span img) {
+        display: none;
     }
 
     .section.contact-us-card-wrapper .cards-wrapper .cards ul li .cards-card-body>p span img {
