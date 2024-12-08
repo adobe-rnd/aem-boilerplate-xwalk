@@ -662,6 +662,7 @@ export async function decorateMain(main) {
   decorateSections(main);
   decorateBlocks(main);
   decorateImageIcons(main);
+  handleOpenFormOnClick(main);
 }
 
 /**
@@ -1048,44 +1049,45 @@ export function showingStateCity(searchInputAll) {
   handleNeeyatClick();
 }, 5000); */
 
-window.addEventListener("load", () => {
-  // Initialize IntersectionObserver
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        if (entry.target.classList.contains("open-form-on-click")) {
-          handleOpenFormOnClick();
-        } else if (entry.target.classList.contains("neeyat-click")) {
-          handleNeeyatClick(entry.target);
-        }
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { rootMargin: "50px" });
+// window.addEventListener("load", () => {
+//   // Initialize IntersectionObserver
+//   const observer = new IntersectionObserver((entries, observer) => {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+//         if (entry.target.classList.contains("open-form-on-click")) {
+//           handleOpenFormOnClick();
+//         } else if (entry.target.classList.contains("neeyat-click")) {
+//           handleNeeyatClick(entry.target);
+//         }
+//         observer.unobserve(entry.target);
+//       }
+//     });
+//   }, { rootMargin: "50px" });
 
-  // Observe elements - Fixed version
-  const formSections = document.querySelectorAll('.open-form-on-click');
-  const neeyatSections = document.querySelectorAll('.neeyat-click');
+//   // Observe elements - Fixed version
+//   const formSections = document.querySelectorAll('.open-form-on-click');
+//   const neeyatSections = document.querySelectorAll('.neeyat-click');
 
-  // Handle formSections
-  if (formSections.length > 0) {
-    formSections.forEach(section => {
-      observer.observe(section);
-    });
-  }
+//   // Handle formSections
+//   if (formSections.length > 0) {
+//     formSections.forEach(section => {
+//       observer.observe(section);
+//     });
+//   }
 
-  // Handle neeyatSections
-  if (neeyatSections.length > 0) {
-    neeyatSections.forEach(section => {
-      observer.observe(section);
-    });
-  }
-});
+//   // Handle neeyatSections
+//   if (neeyatSections.length > 0) {
+//     neeyatSections.forEach(section => {
+//       observer.observe(section);
+//     });
+//   }
+// });
 
 
-function handleOpenFormOnClick() {
-  const formButtons = document.querySelectorAll('.open-form-on-click .button-container');
+export function handleOpenFormOnClick(el) {
+  const formButtons = el.querySelectorAll('.open-form-on-click .button-container');
   formButtons.forEach(button => {
+    console.log(button);
     button.addEventListener('click', onCLickApplyFormOpen);
   });
 }
