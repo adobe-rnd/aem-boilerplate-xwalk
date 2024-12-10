@@ -1256,12 +1256,9 @@ export function groupAllKeys(array) {
 
 // Helper functions
 const handleRel = (anchor, hrefSplit) => {
-  if (hrefSplit.includes(',')) {
-    const rels = hrefSplit.split(',');
-    rels.forEach(function (eachRel) {
-      debugger
-      anchor.rel += `${eachRel.trim()}`;
-    });
+  if (hrefSplit.includes('@')) {
+    const rels = hrefSplit.split('@');
+    anchor.rel = rels.join(' ');
   } else {
     anchor.rel = hrefSplit;
   }
