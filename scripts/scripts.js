@@ -524,39 +524,8 @@ export function decorateViewMore(block) {
 export function decorateAnchorTag(main) {
   try {
     main.querySelectorAll('a').forEach((anchor) => {
-      if (anchor.innerHTML.includes('<sub>')) {
-        anchor.target = '_blank';
-      } else if (anchor.href.includes('/modal-popup/')) {
-        const paths = anchor.href.split('/');
-        const dataid = paths[paths.length - 1];
-        anchor.dataset.modelId = dataid;
-        targetObject.modelId = dataid;
-        anchor.dataset.href = anchor.href;
-        anchor.href = 'javascript:void(0)';
-        anchor.addEventListener('click', (e) => {
-          targetObject.models = document.querySelectorAll(`.${dataid}`);
-          targetObject.models?.forEach((eachModel) => {
-            eachModel.classList.add('dp-none');
-            eachModel.remove();
-            body.prepend(eachModel);
-          });
-          e.preventDefault();
-          body.style.overflow = 'hidden';
-
-          targetObject.models?.forEach((eachModel) => {
-            eachModel.classList.remove('dp-none');
-            eachModel.classList.add('overlay');
-            const crossIcon = eachModel.querySelector('em');
-            if (crossIcon.innerHTML.includes(':cross-icon')) {
-              crossIcon.innerHTML = '';
-              crossIcon.addEventListener('click', (e) => {
-                eachModel.classList.remove('overlay');
-                eachModel.classList.add('dp-none');
-              });
-            }
-          });
-        });
-      }
+      const body = document.body;
+      processAnchor(anchor, body);
     });
   } catch (error) {
     console.warn(error);
@@ -1284,4 +1253,69 @@ export function groupAllKeys(array) {
     return result;
   }, {});
 }
+
+// Helper functions
+const handleRel = (anchor, hrefSplit) => {
+  if (hrefSplit.includes(',')) {
+    const rels = hrefSplit.split(',');
+    rels.forEach(function (eachRel) {
+      debugger
+      anchor.rel += `${eachRel.trim()}`;
+    });
+  } else {
+    anchor.rel = hrefSplit;
+  }
+};
+const handleModalPopup = (anchor, body) => {
+  const dataid = anchor.href.split('/').pop();
+  // Set attributes
+  anchor.dataset.modelId = dataid;
+  targetObject.modelId = dataid;
+  anchor.dataset.href = anchor.href;
+  anchor.href = 'javascript:void(0)';
+  anchor.addEventListener('click', (e) => {
+    e.preventDefault();
+    const models = document.querySelectorAll(`.${dataid}`);
+    targetObject.models = models;
+    if (!models.length) return;
+    // Handle models
+    models.forEach(model => {
+      model.classList.add('dp-none');
+      model.remove();
+      body.prepend(model);
+      // Show modal
+      model.classList.remove('dp-none');
+      model.classList.add('overlay');
+      // Handle close button
+      const crossIcon = model.querySelector('em');
+      if (crossIcon?.innerHTML.includes(':cross-icon')) {
+        crossIcon.innerHTML = '';
+        crossIcon.addEventListener('click', () => {
+          model.classList.remove('overlay');
+          model.classList.add('dp-none');
+        });
+      }
+    });
+    body.style.overflow = 'hidden';
+  });
+};
+// Main function
+const processAnchor = (anchor, body) => {
+  // Handle rel attribute
+  if (anchor.href.includes('$')) {
+    const hrefSplit = anchor.href.split('$')[1];
+    if (hrefSplit) {
+      handleRel(anchor, hrefSplit);
+      anchor.href = anchor.href.split('$')[0];
+    }
+  }
+  // Handle target attribute
+  if (anchor.innerHTML.includes('<sub>')) {
+    anchor.target = '_blank';
+  }
+  // Handle modal popup
+  if (anchor.href.includes('/modal-popup/')) {
+    handleModalPopup(anchor, body);
+  }
+};
 
