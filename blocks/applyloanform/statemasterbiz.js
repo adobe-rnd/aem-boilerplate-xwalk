@@ -7,7 +7,11 @@ let statemasterGlobal = statemasterDataMap.get('statemasterGlobal') || {};
 let productStatemaster = {};
 let productStates = [];
 
-const defaultCityLi = brachDropDownUl().querySelector('.orangepoints');
+let ulFormBranch = document.createElement('li');
+ulFormBranch.textContent = "No options";
+ulFormBranch.classList.add('orangepoints');
+
+const defaultCityLi = brachDropDownUl()?.querySelector('.orangepoints') || ulFormBranch;
 
 function stateMasterProcessData(statemasterRaw) {
   const statemasterArr = statemasterRaw.filter((stateobj) => Boolean(stateobj.state) && stateobj.state != '#N/A');

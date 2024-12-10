@@ -30,7 +30,7 @@
 }
 .section.rte-wrapper.rte-bg-light-yellow .default-content-wrapper p{
     color: var(--black);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.125rem;
     font-weight: 400;
     line-height: 24px;
@@ -71,7 +71,7 @@
 /* startup business loan text start */
 
 .section.startup-business-text .default-content-wrapper > p {
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 18px;
     font-weight: 400;
@@ -79,7 +79,7 @@
 }
 
 .section.startup-business-text .default-content-wrapper > p > strong{
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 18px;
     font-weight: 700;

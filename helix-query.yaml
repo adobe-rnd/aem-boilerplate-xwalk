@@ -1,4 +1,4 @@
-version: 2
+version: 1
 indices:
   default:
     include:
@@ -11,6 +11,8 @@ indices:
       - /fragments/**
       - /style-guide/**
       - /api/**
+      - /fragment/**
+      - /fragment
     target: /query-index.json
     properties:
       title:

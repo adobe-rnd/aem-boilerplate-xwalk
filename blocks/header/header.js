@@ -363,5 +363,5 @@ export default async function decorate(block) {
   const mobileSections = document.querySelector('.nav-sections .default-content-wrapper');
   const mobileLogo = a.cloneNode(true);
   mobileLogo.classList.add('mobile-logo');
-  mobileSections.prepend(mobileLogo);
+  mobileSections?.prepend(mobileLogo);
 }

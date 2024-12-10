@@ -23,14 +23,14 @@
 }
 
 .accordianpdf .publicDisclosuresWrap ul {
-    border-color: #cccccc;
+    border-color: var(--chinesesilver);
     border-style: solid;
     border-width: 1px 1px 0px 1px;
 }
 
 .accordianpdf .publicDisclosuresWrap ul li {
-    background: #ffffff;
-    border-bottom: 1px solid #cccccc;
+    background: var(--white);
+    border-bottom: 1px solid var(--chinesesilver);
     position: relative;
 }
 
@@ -59,7 +59,7 @@
     }
 
     &:hover {
-        color: #f26841;
+        color: var(--orange);
     }
 }
 
@@ -127,7 +127,7 @@
             color: darkcharcoal;
             display: block;
             position: relative;
-            background: #f8f8f8;
+            background: var(--whitesmoke);
             padding: 20px 50px 20px 16px;
             border-radius: 4px;
 
@@ -170,8 +170,8 @@
             }
 
             &:hover {
-                background: #f26841;
-                color: #fff;
+                background: var(--orange);
+                color: var(--white);
             }
         }
 
@@ -197,7 +197,7 @@
                 }
 
                 &:hover {
-                    color: #f26841;
+                    color: var(--orange);
                 }
             }
         }
@@ -207,12 +207,12 @@
 
         .subAccordianTitle,
         .innersubAccordianContent.active .innersubAccordianTitle {
-            background: #f26841;
-            color: #fff;
+            background: var(--orange);
+            color: var(--white);
 
             &::after {
                 content: "-";
-                color: #fff;
+                color: var(--white);
             }
         }
     }
@@ -223,7 +223,7 @@
 }
 
 .accordianpdf .publicDisclosuresWrap ul.grey-border {
-    border: 1px solid #cccccc;
+    border: 1px solid var(--chinesesilver);
 } */
 
 
@@ -236,8 +236,8 @@
 }
 .section.financial-reports-carousel .default-content-wrapper >h2{
     margin: 0;
-    color: #333;
-    font-family: Nunito-Extrabold, sans-serif;
+    color: var(--darkcharcoal);
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 48px;
     font-weight: 800;
     line-height: 72px;
@@ -245,8 +245,8 @@
 }
 .section.financial-reports-carousel .default-content-wrapper >p{
     padding-top: 16px;
-    color: #365069;
-    font-family: Nunito-Bold, sans-serif;
+    color: var(--greyishblue);
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 18px;
     font-weight: 700;
     line-height: 28px;
@@ -276,7 +276,7 @@
 }
 .section.financial-report-content-wrap .default-content-wrapper h2 {
     color: var(--orange);
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.75rem;
     font-weight: 800;
     line-height: 42px;
@@ -296,9 +296,9 @@
 .section.financial-report-content-wrap .financialreports-wrapper .financialreports .accordianpdf-section .container .accordianContent .accordianBox .subAccordianWrap .subAccordianBox .subAccordianTitle {
     background: var(--whitesmoke);
     border-radius: 4px;
-    color: #333;
+    color: var(--darkcharcoal);
     display: block;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     line-height: 24px;
     padding: 20px 50px 20px 16px;
@@ -321,7 +321,7 @@
 .section.financial-report-content-wrap .financialreports-wrapper .financialreports .accordianpdf-section .container .accordianContent .accordianBox .subAccordianWrap .subAccordianBox .subAccordianTitle::after {
     color: var(--text-color);
     content: "+";
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.75rem;
     font-weight: 800;
     height: 2px;
@@ -344,9 +344,9 @@
 .section.financial-report-content-wrap .financialreports-wrapper .financialreports .accordianpdf-section .container .accordianContent .accordianBox .subAccordianWrap .subAccordianBox .subAccordianContent .publicDisclosuresWrap .innersubAccordianContent .innersubAccordianTitle {
     background: var(--whitesmoke);
     border-radius: 4px;
-    color: #333;
+    color: var(--darkcharcoal);
     display: block;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     line-height: 24px;
     position: relative;
@@ -362,7 +362,7 @@
 .section.financial-report-content-wrap .financialreports-wrapper .financialreports .accordianpdf-section .container .accordianContent .accordianBox .subAccordianWrap .subAccordianBox .subAccordianContent .publicDisclosuresWrap .innersubAccordianContent .innersubAccordianTitle::after {
     color: var(--text-color);
     content: "+";
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.75rem;
     font-weight: 800;
     width: 12px;
@@ -385,17 +385,17 @@
 .section.financial-report-content-wrap .financialreports-wrapper .financialreports .accordianpdf-section .container .accordianContent .accordianBox .subAccordianWrap .subAccordianBox .subAccordianContent .publicDisclosuresWrap.innerSubAccordianData>ul>li {
     padding: 9pt 40px;
     position: relative;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--dark-color);
     padding: unset;
 }
 
 .section.financial-report-content-wrap .financialreports-wrapper .financialreports .accordianpdf-section .container .accordianContent .accordianBox .subAccordianWrap .subAccordianBox .subAccordianContent .publicDisclosuresWrap.innerSubAccordianData>ul>li>a {
     position: relative;
     cursor: pointer;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     line-height: 24px;
-    color: #000;
+    color: var(--black);
     padding: 9pt 40px;
     display: block;
 }
@@ -427,7 +427,7 @@
 }
 
 .section.financial-report-content-wrap .financialreports-wrapper .financialreports .accordianpdf-section .container .accordianContent .accordianBox .subAccordianWrap .subAccordianBox .grey-border {
-    border: 1px solid #ccc;
+    border: 1px solid var(--dark-color);
     display: none;
 }
 

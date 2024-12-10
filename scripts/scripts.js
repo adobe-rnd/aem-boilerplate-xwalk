@@ -460,8 +460,24 @@ export function createButton(text, picture) {
 export async function decoratePlaceholder(block, path) {
   try {
     const resp = await fetchPlaceholders(path);
-    // console.log(resp);
-    return renderHelper([resp], `<div class="forName">${block.innerHTML}</div>`);
+    // return renderHelper([resp], `<div class="forName">${block.innerHTML}</div>`);
+    block.querySelectorAll('*').forEach((el, index) => {
+      if (el.firstChild instanceof Text) {
+        Object.keys(resp).forEach((key) => {
+          var value = resp[key];
+          if (value && value.trim() && el.firstChild.textContent.trim() && el.firstChild.textContent.includes(`{${key}}`)) {
+            console.log(el.innerHTML, " :: ", el.firstChild.textContent);
+            el.innerHTML = el.firstChild.textContent.replaceAll(`{${key}}`, value);
+          }
+          // if (value && value.trim() && !value.includes('<') && el.firstChild.textContent.trim() && el.firstChild.textContent.includes(`{${key}}`)) {
+          //   el.firstChild.textContent = el.firstChild.textContent.replaceAll(`{${key}}`, value);
+          // }else {
+
+          // }
+        });
+      }
+    });
+    return block.innerHTML;
   } catch (error) {
     console.warn(error);
   }
@@ -646,6 +662,7 @@ export async function decorateMain(main) {
   decorateSections(main);
   decorateBlocks(main);
   decorateImageIcons(main);
+  handleOpenFormOnClick(main);
 }
 
 /**
@@ -762,14 +779,12 @@ async function loadingCustomCss() {
     `${window.hlx.codeBasePath}/styles/grievance-redressal/grievance-redressal.css`,
     `${window.hlx.codeBasePath}/styles/documents-required/documents-required.css`,
     `${window.hlx.codeBasePath}/styles/mobile-sticky-button/mobile-sticky-button.css`,
-    // `${window.hlx.codeBasePath}/styles/breadcrumb/breadcrumb.css`,
     `${window.hlx.codeBasePath}/styles/disclaimer/disclaimer.css`,
     `${window.hlx.codeBasePath}/styles/risk-gradation-popup/risk-gradation-popup.css`,
     `${window.hlx.codeBasePath}/styles/piramal-group-ajay-info/piramal-group-ajay-info.css`,
     `${window.hlx.codeBasePath}/styles/legal/legal.css`,
     `${window.hlx.codeBasePath}/styles/calculator-mob-carousel/calculator-mob-carousel.css`,
     `${window.hlx.codeBasePath}/styles/media/media-list.css`,
-    // `${window.hlx.codeBasePath}/styles/authorisedagencies/authorisedagencies.css`,
     `${window.hlx.codeBasePath}/styles/table-whatsapp-btn/table-whatsapp-btn.css`,
     `${window.hlx.codeBasePath}/styles/financial-reports/financial-reports.css`,
     `${window.hlx.codeBasePath}/styles/support-quicklinks-wrapper/support-quicklinks-wrapper.css`,
@@ -791,7 +806,33 @@ async function loadingCustomCss() {
   });
 }
 
-export let body = document.querySelector('body');
+/* async function loadingCustomCss() {
+  // load custom css files
+  const loadCssArray = [
+    `${window.hlx.codeBasePath}/styles/loanproducts/loanproducts.css`,
+    `${window.hlx.codeBasePath}/styles/calculator/calculator.css`,
+    `${window.hlx.codeBasePath}/styles/choose-us/choose-us.css`,
+    `${window.hlx.codeBasePath}/styles/download-piramal/download-piramal.css`,
+    `${window.hlx.codeBasePath}/styles/our-media/our-media.css`,
+    `${window.hlx.codeBasePath}/styles/piramal-since/piramal-since.css`,
+    `${window.hlx.codeBasePath}/styles/about-us-company/about-us-company.css`,
+    `${window.hlx.codeBasePath}/styles/reset.css`,
+    `${window.hlx.codeBasePath}/styles/key-features/key-features.css`,
+    `${window.hlx.codeBasePath}/styles/metro-cities/metro-cities.css`,
+    `${window.hlx.codeBasePath}/styles/articles-carousel/articles-carousel.css`,
+    `${window.hlx.codeBasePath}/styles/details-verification/details-verification.css`,
+    `${window.hlx.codeBasePath}/styles/elgibility-criteria/elgibility-criteria.css`,
+    `${window.hlx.codeBasePath}/styles/table/table.css`,
+    `${window.hlx.codeBasePath}/styles/tab-with-cards/tab-with-cards.css`,
+    `${window.hlx.codeBasePath}/styles/fixed-headset/fixed-headset.css`,
+  ];
+
+  loadCssArray.forEach(async (eachCss) => {
+    await loadCSS(eachCss);
+  });
+} */
+
+/* export let body = document.querySelector('body');
 body?.addEventListener('click', (e) => {
   // e.stopImmediatePropagation();
   const loaninnerform = document.querySelector('.loan-form-sub-parent') || '';
@@ -851,7 +892,119 @@ body?.addEventListener('click', (e) => {
     document.querySelector('.state-wrapper > input').value = '';
     document.querySelector('.city-wrapper > input').value = '';
   }
+}); */
+
+export const body = document.querySelector('body');
+
+body?.addEventListener('click', (e) => {
+  const target = e.target;
+  const loaninnerform = document.querySelector('.loan-form-sub-parent');
+  const modalOverlay = document.querySelector('.modal-overlay');
+
+  handleModelClick(target, loaninnerform, modalOverlay);
+  handleNavClick(target);
+  handleOverlayClick(target);
+  handleStakePopupClick(target);
+  handleNeeyatLanguageDropdown(target);
+  handleBranchLocatorDropdown(target);
 });
+
+function handleModelClick(target, loaninnerform, modalOverlay) {
+  if (!target.closest('.show') && targetObject.model && loaninnerform?.style.visibility !== 'visible') {
+    targetObject.model?.querySelector('.overlayDiv').classList.remove('show');
+    document.body.style.overflow = 'scroll';
+    updateModalOverlay(modalOverlay);
+    updateLoanInnerForm(loaninnerform);
+  }
+}
+
+function handleNavClick(target) {
+  if (!target.closest('.nav-drop')) {
+    const nav = document.getElementById('nav');
+    const navSections = nav.querySelector('.nav-sections');
+    updateNavSections(navSections);
+  }
+}
+
+function handleOverlayClick(target) {
+  if (target.classList.contains('overlay')) {
+    targetObject.models?.forEach(model => {
+      model.classList.add('dp-none');
+      model.classList.remove('overlay');
+    });
+  }
+}
+
+function handleStakePopupClick(target) {
+  if (!target.closest('.stake-pop-up')) {
+    if(!document.querySelector('.stake-pop-up')?.length > 0) return false;
+    document.querySelector('.partnership-tab-content.partnership-image-popup .cmp-text.active')?.classList.remove('active');
+    updateStakePopups();
+  }
+}
+
+function handleNeeyatLanguageDropdown(target) {
+  if (document.querySelector('.neeyat-header') && !target.closest('.inner-lang-switch')) {
+    document.querySelector('.maindiv-lang-switch ul')?.classList.add('dp-none');
+  }
+}
+
+function handleBranchLocatorDropdown(target) {
+  if (document.querySelector('.branch-locater-banner')) {
+    if (!target.classList.contains('search-input') && 
+        (!target.closest('.default-state-selected') || !target.closest('.default-city-selected'))) {
+      updateBranchLocator();
+    }
+  }
+}
+
+function updateModalOverlay(modalOverlay) {
+  modalOverlay.classList.remove('overlay');
+  modalOverlay.classList.add('dp-none');
+  modalOverlay.style.zIndex = 'revert-layer';
+}
+
+function updateLoanInnerForm(loaninnerform) {
+  if (loaninnerform) {
+    const ulFormBranch = document.createElement('li');
+    ulFormBranch.textContent = "No options";
+    ulFormBranch.classList.add('orangepoints');
+    loaninnerform.querySelector('#branchcontainer ul').innerHTML = ulFormBranch.outerHTML;
+  }
+}
+
+function updateNavSections(navSections) {
+  navSections?.children[0]?.classList.remove('active');
+  navSections?.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach(navSection => {
+    toggleAllNavSections(navSections);
+    navSection.setAttribute('aria-expanded', 'false');
+    navSections.setAttribute('aria-expanded', 'false');
+    if (document.body.classList.contains('modal-open') && navSection.getAttribute('aria-expanded') === 'false') {
+      document.body.classList.remove('modal-open');
+    }
+  });
+}
+
+function updateStakePopups() {
+  document.querySelectorAll('.stake-pop-up').forEach(ele => {
+    ele.classList.remove('dp-block');
+    ele.classList.add('dp-none');
+  });
+  document.body.style.overflow = 'auto';
+  document.querySelector('.modal-overlay').classList.remove('overlay');
+  document.querySelector('.modal-overlay').classList.add('dp-none');
+}
+
+function updateBranchLocator() {
+  const searchInput = document.querySelectorAll('.search-input');
+  showingStateCity(searchInput);
+  document.querySelector('.state-wrapper').classList.add('dp-none');
+  document.querySelector('.city-wrapper').classList.add('dp-none');
+  document.querySelector('.state-wrapper > input').value = '';
+  document.querySelector('.city-wrapper > input').value = '';
+}
+
+
 
 export function showingStateCity(searchInputAll) {
   searchInputAll.forEach((eachinput) => {
@@ -861,7 +1014,7 @@ export function showingStateCity(searchInputAll) {
   });
 }
 
-setTimeout(() => {
+/* setTimeout(() => {
   try {
     document.querySelectorAll('.open-form-on-click') && document.querySelectorAll('.open-form-on-click .button-container').forEach((eachApplyFormClick) => {
       eachApplyFormClick.addEventListener('click', async (e) => {
@@ -889,7 +1042,75 @@ setTimeout(() => {
   } catch (error) {
     console.warn(error);
   }
-}, 5000);
+}, 5000); */
+
+/* setTimeout(() => {
+  handleOpenFormOnClick();
+  handleNeeyatClick();
+}, 5000); */
+
+// window.addEventListener("load", () => {
+//   // Initialize IntersectionObserver
+//   const observer = new IntersectionObserver((entries, observer) => {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+//         if (entry.target.classList.contains("open-form-on-click")) {
+//           handleOpenFormOnClick();
+//         } else if (entry.target.classList.contains("neeyat-click")) {
+//           handleNeeyatClick(entry.target);
+//         }
+//         observer.unobserve(entry.target);
+//       }
+//     });
+//   }, { rootMargin: "50px" });
+
+//   // Observe elements - Fixed version
+//   const formSections = document.querySelectorAll('.open-form-on-click');
+//   const neeyatSections = document.querySelectorAll('.neeyat-click');
+
+//   // Handle formSections
+//   if (formSections.length > 0) {
+//     formSections.forEach(section => {
+//       observer.observe(section);
+//     });
+//   }
+
+//   // Handle neeyatSections
+//   if (neeyatSections.length > 0) {
+//     neeyatSections.forEach(section => {
+//       observer.observe(section);
+//     });
+//   }
+// });
+
+
+export function handleOpenFormOnClick(el) {
+  const formButtons = el.querySelectorAll('.open-form-on-click .button-container');
+  formButtons.forEach(button => {
+    console.log(button);
+    button.addEventListener('click', onCLickApplyFormOpen);
+  });
+}
+
+function handleNeeyatClick(neeyatClick) {
+  if (!neeyatClick) return;
+
+  const buttonIndex = getNeeyatButtonIndex(neeyatClick);
+  const carouselItems = neeyatClick.querySelectorAll('.block.carousel-item');
+
+  carouselItems.forEach(item => {
+    const button = item.querySelectorAll('.button-container')[buttonIndex];
+    if (button) {
+      button.addEventListener('click', onCLickApplyFormOpen);
+    }
+  });
+}
+
+function getNeeyatButtonIndex(element) {
+  return Array.from(element.classList)
+    .find(className => className.startsWith('neeyat-button-'))
+    ?.replace('neeyat-button-', '') || 0;
+}
 
 function onCLickApplyFormOpen(e) {
   statemasterGetStatesApi();
@@ -915,7 +1136,7 @@ export function getDay() {
   return currentDayOfWeek;
 }
 
-export function branchURLStr(location = '', city = '', state = '', urlstrhand, locationcode = '') {
+/* export function branchURLStr(location = '', city = '', state = '', urlstrhand, locationcode = '') {
   const locationAdd = location?.replace(/\s+/g, '-').replace(/[()/]/g, '').trim().toLowerCase();
   const cityStr = city?.replace(/\s+/g, '-').replace(/[()/]/g, '').trim().toLowerCase();
   const stateStr = state?.replace(/\s+/g, '-').replace(/[()/]/g, '').trim().toLowerCase();
@@ -929,7 +1150,53 @@ export function branchURLStr(location = '', city = '', state = '', urlstrhand, l
     }
     return `/branch-locator/loans-in-${locationAdd}-${cityStr}-${stateStr}-${locationcode}`;
   }
-}
+} */
+
+
+  export function branchURLStr(location = '', city = '', state = '', urlstrhand, locationcode = '') {
+    // const sanitizeString = (str) => str?.replace(/\s+|[()\/]/g, (match) => (match.trim() ? '' : '-')).toLowerCase().trim();
+
+    const sanitizeString  = (str) => {
+       
+      // Convert to lowercase and trim whitespace
+      let cleaned = str.toLowerCase().trim();
+
+      // Replace unwanted spaces around dashes and parentheses
+      cleaned = cleaned.replace(/\s*-\s*/g, '-')    // Normalize dashes
+                      .replace(/\s*\(\s*/g, '-')  // Replace opening parenthesis with a dash
+                      .replace(/\s*\)\s*/g, '')   // Remove closing parenthesis with spaces
+                      .replace(/\s+/g, '-');      // Replace spaces with dashes
+
+      // Replace multiple dashes with a single dash
+      cleaned = cleaned.replace(/-+/g, '-');
+
+      // Remove leading and trailing dashes
+      return cleaned.replace(/^-+|-+$/g, '');
+
+    }
+    
+    
+    const locationAdd = sanitizeString(location);
+    const cityStr = sanitizeString(city);
+    const stateStr = sanitizeString(state);
+  
+    const urlMap = {
+      shorthand: () => `/branch-locator/${stateStr}/${cityStr}`,
+      shorthandstate: () => `/branch-locator/${stateStr}`,
+      loans: () => {
+        const baseUrl = '/branch-locator/loans-in-';
+        const isLocationSameAsCity = locationAdd === cityStr;
+        const segments = isLocationSameAsCity 
+          ? [cityStr, stateStr, locationcode]
+          : [locationAdd, cityStr, stateStr, locationcode];
+          
+        return baseUrl + segments.join('-');
+      }
+    };
+  
+    return urlMap[urlstrhand]?.();
+  }
+  
 
 export function selectBranchDetails(block) {
   const cards = block.closest('.section').querySelectorAll('.branch-list-wrapper a');
@@ -988,3 +1255,33 @@ export async function CFApiCall(cfurl) {
   const responseJson = await response.json();
   return responseJson;
 }
+
+
+// Create a function to group all loans
+export function groupAllKeys(array) {
+  return array.reduce((result, current) => {
+    for (let key in current) {
+      // Convert key to lowercase and replace spaces with hyphens for consistent key names
+      let formattedKey = key.toLowerCase().replace(/\s+/g, '-');
+      
+      // If the key doesn't exist in the result object, initialize it with an empty array
+      if (!result[formattedKey]) {
+        result[formattedKey] = [];
+      }
+      
+      // Push the current value of the key into the array
+        let currnetKeyFirstName = '';
+        if(current[key].includes('-')){
+            currnetKeyFirstName = current[key].split('-')[0].trim();
+        }else{
+            currnetKeyFirstName = current[key].trim();
+        }
+    
+        if(!result[formattedKey].includes(currnetKeyFirstName)){
+          result[formattedKey].push(currnetKeyFirstName);
+        }
+    }
+    return result;
+  }, {});
+}
+

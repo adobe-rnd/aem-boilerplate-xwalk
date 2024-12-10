@@ -5,7 +5,7 @@
 @media screen and (max-width:1024px) {
     .section.mobile-sticky-button {
         display: block;
-        background: #fff;
+        background: var(--white);
         bottom: 0;
         box-shadow: 0 -4px 8px rgba(0, 0, 0, .08);
         margin: auto;
@@ -26,11 +26,11 @@
         align-items: center;
     }
     .section.mobile-sticky-button .default-content-wrapper>p>a {
-        background-color: #f26841;
+        background-color: var(--orange);
         border-radius: 8px;
-        color: #fff;
+        color: var(--white);
         display: inline-block;
-        font-family: Nunito-Bold, sans-serif;
+        font-family: 'Nunito-Bold', sans-serif;
         font-size: 1rem;
         font-weight: 700;
         line-height: 24px;

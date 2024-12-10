@@ -8,7 +8,7 @@
 
 .section.sheet-update-content-wrap .update-sheet.block .update-content-wrapper h1 {
     margin: 0;
-    color: #000;
+    color: var(--black);
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2rem;

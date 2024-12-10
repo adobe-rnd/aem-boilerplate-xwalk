@@ -478,7 +478,7 @@
   border-radius: 67px;
   padding: 10px 20px;
   width: 10pc;
-  color: #fff;
+  color: var(--white);
   font-family: 'Nunito-Bold',sans-serif;
   font-size: 1.25rem;
   line-height: 28px;

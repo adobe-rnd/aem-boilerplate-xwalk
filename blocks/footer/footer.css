@@ -17,7 +17,7 @@ footer .footer p {
 
 footer.footer-wrapper {
   padding: 0px;
-  background: #365069 !important;
+  background: var(--greyishblue) !important;
 }
 /* Footer Background Color */
 
@@ -28,7 +28,7 @@ footer.footer-wrapper .footer {
   padding: 48px 0;
 }
 .footer-wrapper p {
-  color: #fff;
+  color: var(--white);
 }
 
 .footer-section-first {
@@ -63,7 +63,7 @@ footer.footer-wrapper .footer {
   line-height: 1.5rem;
   font-family: "Nunito-Bold";
   font-weight: 700;
-  color: #fff;
+  color: var(--white);
   text-align: right;
   margin-right: 25%;
   position: relative;
@@ -71,12 +71,12 @@ footer.footer-wrapper .footer {
   margin-bottom: 40px;
 }
 .footer-section-first .columns-wrapper p a{
-  color: #fff;
+  color: var(--white);
   text-decoration: none;
 }
 .footer-section-first .columns-wrapper p sup{
   background-color: #41C672;
-  color: #fff;
+  color: var(--white);
   font-size: 0.75rem;
   font-family: 'Nunito-Bold';
   padding: 6px 10px;
@@ -124,8 +124,8 @@ footer.footer-wrapper .footer {
   font-family: "Nunito-Regular";
 }
 .footer-section-four .default-content-wrapper p {
-  color: #afb9c3;
-  font-family: Nunito-Regular, sans-serif;
+  color: var(--zinc);
+  font-family: 'Nunito-Regular', sans-serif;
   font-size: 0.875rem;
   line-height: 1.25rem;
   margin-top: 6px;
@@ -144,17 +144,18 @@ footer.footer-wrapper .footer {
 }
 .footer-section-second ul > li > p {
   font-size: 1.125rem;
-  color: #fff;
+  color: var(--white);
   padding-bottom: 8px;
   font-family: "Nunito-Extrabold";
   font-weight: 800;
 }
 
 .footer-section-second ul > li > ul > li>a,
+.footer-section-second ul > li > ul > li,
 .footer-section-second ul > li > ul > li>a>sub{
   font-size: 1rem;
   line-height: 1.5rem;
-  color: #fff;
+  color: var(--white);
   margin-top: 0.5rem;
   font-family: "Nunito-Regular";
   cursor: pointer;
@@ -216,8 +217,8 @@ footer.footer-wrapper .footer {
   margin-left: auto;
 }
 .footer-section-third .default-content-wrapper p a{
-  color: #f58667;
-  font-family: Nunito-Regular, sans-serif;
+  color: var(--salmon);
+  font-family: 'Nunito-Regular', sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5rem;
@@ -235,7 +236,7 @@ footer.footer-wrapper .footer {
 }
 
 .footer-section-third .wrappercreation-wrapper .wrapper-creation-container .default-content-wrapper > p {
-  color: #fff;
+  color: var(--white);
   font-family: 'Nunito-Regular',sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -253,7 +254,7 @@ footer.footer-wrapper .footer {
 }
 
 .section.footer-follow-us-wrapper .default-content-wrapper p {
-  color: #afb9c3;
+  color: var(--zinc);
   font-family: 'Nunito-Regular',sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -278,7 +279,7 @@ footer.footer-wrapper .footer {
 }
 
 .section.footer-last-wrapper .default-content-wrapper p>strong {
-  color: #afb9c3;
+  color: var(--zinc);
   font-family: 'Nunito-Bold',sans-serif;
   font-size: 1rem;
   font-weight: 700;
@@ -296,7 +297,7 @@ footer.footer-wrapper .footer {
 }
 
 .section.footer-last-wrapper .default-content-wrapper p {
-  color: #afb9c3;
+  color: var(--zinc);
   font-family: 'Nunito-Regular',sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
@@ -383,13 +384,14 @@ footer.footer-wrapper .footer {
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--white);
   }
   .footer-section-second ul > li > ul > li>a,
+  .footer-section-second ul > li > ul > li,
   .footer-section-second ul > li > ul > li>a>sub {
     font-size: 0.75rem;
     line-height: 1rem;
-    color: #fff;
+    color: var(--white);
     /* margin-left: -40px; */
     margin-top: 0.5rem;
   }
@@ -431,9 +433,10 @@ footer.footer-wrapper .footer {
     flex-direction: column;
   }
   .footer-section-second ul > li > ul > li>a,
+  .footer-section-second ul > li > ul > li,
   .footer-section-second ul > li > ul > li>a>sub {
-    color: #fff;
-    font-family: Nunito-Regular, sans-serif;
+    color: var(--white);
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 0.75rem;
     line-height: 1rem;
     margin-top: unset;
@@ -471,7 +474,7 @@ footer.footer-wrapper .footer {
   }
   .footer-section-first .columns-wrapper p sup{
     background-color: #41C672;
-    color: #fff;
+    color: var(--white);
     font-size: 0.75rem;
     font-family: 'Nunito-Bold';
     padding: 6px 10px;
@@ -518,11 +521,11 @@ footer.footer-wrapper .footer {
   }
   .section.mobile-footer-section-third {
     padding: 24px 0;
-    border-bottom: 1px solid #5e7387;
+    border-bottom: 1px solid var(--piramal-blue-80);
   }
   
   .section.mobile-footer-section-third .default-content-wrapper p {
-    color: #fff;
+    color: var(--white);
     font-family: 'Nunito-Bold',sans-serif;
     font-size: 0.875rem;
     font-weight: 700;
@@ -546,11 +549,11 @@ footer.footer-wrapper .footer {
 
   .section.mobile-left-side-footer {
     padding: 16px 0;
-    border-bottom: 1px solid #5e7387;
+    border-bottom: 1px solid var(--piramal-blue-80);
   }
 
   .section.mobile-left-side-footer .default-content-wrapper p {
-    color: #fff;
+    color: var(--white);
     font-family: 'Nunito-Regular',sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -560,7 +563,7 @@ footer.footer-wrapper .footer {
 
   .section.mobile-left-side-footer .default-content-wrapper p>a {
     display: block;
-    color: #f58667;
+    color: var(--salmon);
   }
 
   .section.footer-follow-us-wrapper {
@@ -658,7 +661,7 @@ footer.footer-wrapper .footer {
   } 
   .section.mobile-footer-section-third {
     padding: 24px 0 32px;
-    border-bottom: 1px solid #5e7387;
+    border-bottom: 1px solid var(--piramal-blue-80);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -666,7 +669,7 @@ footer.footer-wrapper .footer {
   }
   
   .section.mobile-footer-section-third .default-content-wrapper p {
-    color: #fff;
+    color: var(--white);
     font-family: 'Nunito-Bold',sans-serif;
     font-size: 0.875rem;
     font-weight: 700;
@@ -690,11 +693,11 @@ footer.footer-wrapper .footer {
 
   .section.mobile-left-side-footer {
     padding: 16px 0 24px;
-    border-bottom: 1px solid #5e7387;
+    border-bottom: 1px solid var(--piramal-blue-80);
   }
 
   .section.mobile-left-side-footer .default-content-wrapper p {
-    color: #fff;
+    color: var(--white);
     font-family: 'Nunito-Regular',sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -704,7 +707,7 @@ footer.footer-wrapper .footer {
 
   .section.mobile-left-side-footer .default-content-wrapper p>a {
     display: inline;
-    color: #f58667;
+    color: var(--salmon);
     margin-left: 16px;
   }
 

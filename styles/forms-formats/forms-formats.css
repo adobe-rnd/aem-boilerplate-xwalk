@@ -11,7 +11,7 @@
     display: flex;
     gap: 36px;
     align-items: center;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -45,12 +45,12 @@
 }
 
 .section.annual-reports-wrapper.forms-pdf .default-content-wrapper ul>li>a:hover {
-    color: #000;
+    color: var(--black);
 
 }
 
 .section.multi-calculator-wrapper.forms-format-banner {
-    background-color: #E4EAFA;
+    background-color: var(--piramal-blue-20);
 }
 
 .section.multi-calculator-wrapper.forms-format-banner .teaser-wrapper .teaser .background .front-picture picture>img {

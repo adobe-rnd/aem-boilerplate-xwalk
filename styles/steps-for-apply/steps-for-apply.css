@@ -1,5 +1,5 @@
 .section.steps-for-apply .default-content-wrapper >h2{
-    color: #000;
+    color: var(--black);
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2rem;
@@ -11,7 +11,7 @@
 .section.steps-for-apply .default-content-wrapper >h5,
 .section.steps-for-apply .default-content-wrapper >h4,
 .section.steps-for-apply .default-content-wrapper >h4>a{
-    color: #000;
+    color: var(--black);
     /* display: block; */
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
@@ -32,7 +32,7 @@
 .section.steps-for-apply .default-content-wrapper >h5>strong,
 .section.steps-for-apply .default-content-wrapper >h4>strong{
     font-style: normal;
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Bold',sans-serif;
     font-size: 1rem;
     font-weight: 700;

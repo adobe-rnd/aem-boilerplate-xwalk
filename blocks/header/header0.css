@@ -497,7 +497,7 @@ header nav .nav-sections .nav-drop::after{
   bottom: -36px;
   width: calc(100% + 15px);
   height: 2px;
-  background-color: #f26841;
+  background-color: var(--orange);
   transition: all ease 0.3s;
 }
 
@@ -515,15 +515,15 @@ header nav .nav-sections .nav-drop::after{
       bottom: -35px;
       width: calc(100% + 15px);
       height: 2.5px;
-      background-color: #f26841;
+      background-color: var(--orange);
       transition: all ease 0.3s;
   }
 } */
 .header-wrapper .nav-wrapper nav .nav-sections .default-content-wrapper>ul>li:last-child p{
   align-items: center;
-  color: #333;
+  color: var(--darkcharcoal);
   cursor: pointer;
-  font-family: Nunito-Bold, sans-serif;
+  font-family: 'Nunito-Bold', sans-serif;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.5rem;
@@ -535,12 +535,12 @@ header nav .nav-sections .nav-drop::after{
 }
 .login-button-wrapper .default-content-wrapper .button-container a{
   align-items: center;
-  background: #fef0ec;
-  border: 1px solid #f26841;
+  background: var(--rosewhite);
+  border: 1px solid var(--orange);
   border-radius: 19px;
-  color: #f26841;
+  color: var(--orange);
   display: flex;
-  font-family: Nunito-Bold, sans-serif;
+  font-family: 'Nunito-Bold', sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
   min-width: 81px;
@@ -564,20 +564,20 @@ header nav .nav-sections .nav-drop::after{
   opacity: 1;
 }
 /* .default-content-wrapper.active > ul li p {
-  color: #ccc !important;
+  color: var(--dark-color) !important;
 }
 .default-content-wrapper.active > ul li.navigation-level-active p {
-  color: #333 !important;
+  color: var(--darkcharcoal) !important;
 } */
 .default-content-wrapper.active > ul li p, .default-content-wrapper.active > ul li p a {
-  color: #ccc !important;
+  color: var(--dark-color) !important;
 }
 .default-content-wrapper.active > ul li.navigation-level-active p,.default-content-wrapper.active > ul li.navigation-level-active a {
-  color: #333 !important;
+  color: var(--darkcharcoal) !important;
 }
 
 .navigation-level-active p{
-  color: #333 !important;
+  color: var(--darkcharcoal) !important;
 }
 
 .header-wrapper .nav-wrapper nav .nav-sections .default-content-wrapper>ul>li:last-child[aria-expanded="true"]>p::before {
@@ -587,7 +587,7 @@ header nav .nav-sections .nav-drop::after{
   bottom: -40px;
   width: calc(100% + 15px);
   height: 2px;
-  background-color: #f26841;
+  background-color: var(--orange);
   transition: all ease 0.3s;
 }
 
@@ -702,7 +702,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
   bottom: -36px;
   width: calc(100% + 30px);
   height: 2px;
-  background-color: #f26841;
+  background-color: var(--orange);
   transition: all ease 0.3s;
 }
 .header-wrapper .nav-wrapper div.section.nav-sections > div > ul > li.nav-drop.navigation-level-active > ul li a{
@@ -734,7 +734,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
 
   .header-wrapper .nav-wrapper .nav-hamburger button .nav-hamburger-icon {
     height: 1.5px;
-    background: #666666;
+    background: var(--darkgrey);
     width: 18px;
   }
 
@@ -748,7 +748,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
 
   .header-wrapper .nav-wrapper .nav-hamburger button .nav-hamburger-icon::before, .header-wrapper .nav-wrapper .nav-hamburger button .nav-hamburger-icon::after {
     width: 18px;
-    background: #666666;
+    background: var(--darkgrey);
     height: 1.5px;
   }
 
@@ -973,7 +973,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
     height: 1.5px;
     border-radius: 2px;
     background: currentcolor;
-    color: #666;
+    color: var(--gradient-gray);
     width: 18px;
   }
   header.header-wrapper .nav-wrapper nav[aria-expanded="true"] .nav-hamburger .nav-hamburger-icon {
@@ -982,7 +982,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
   header.header-wrapper .nav-wrapper nav[aria-expanded="true"] .nav-hamburger .nav-hamburger-icon::before,
   header.header-wrapper .nav-wrapper nav[aria-expanded="true"] .nav-hamburger .nav-hamburger-icon::after {
     width: 18px;
-    color: #666;
+    color: var(--gradient-gray);
     height: 1.5px;
   }
   header.header-wrapper .nav-wrapper nav[aria-expanded="true"] .nav-hamburger {
@@ -1056,10 +1056,10 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
   }
   .section.mobile-view-header .code-wrapper .code div div h2{
     align-items: center;
-    color: #333;
+    color: var(--darkcharcoal);
     cursor: pointer;
     display: flex;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     line-height: 1.5rem;
@@ -1129,7 +1129,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
   .section.mobile-view-header .code-wrapper .code div div ul:nth-child(1) li:nth-child(2).active span,
   .section.mobile-view-header .code-wrapper .code div div ul:nth-child(1) li:nth-child(3).active span,
   .section.mobile-view-header .code-wrapper .code div div ul:nth-child(1) li:nth-child(4).active span{
-    color: #f26841;
+    color: var(--orange);
     border-bottom: unset;
   }
 
@@ -1157,7 +1157,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
     font-size: 0.875rem;
     line-height: 1.25rem;
     padding-left: 8px;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     text-decoration: none;
     padding: 16px 0;
     display: flex;
@@ -1177,7 +1177,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
   .section.mobile-view-header .code-wrapper .code div div ul:nth-child(2) li:nth-child(3).active span::after,
   .section.mobile-view-header .code-wrapper .code div div ul:nth-child(2) li:nth-child(4).active span::after{
     transform: rotate(315deg);
-    border: 1px solid #f26841;
+    border: 1px solid var(--orange);
     border-radius: 0 3px 0 0;
     border-width: 2px 2px 0 0;
     top: 28px;
@@ -1230,7 +1230,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
 .section.mobile-view-header .code-wrapper .code   div > div > ul:nth-child(2) > li:nth-child(3) > ul li,
 .section.mobile-view-header .code-wrapper .code   div > div > ul:nth-child(2) > li:nth-child(2) > ul li,
 .section.mobile-view-header .code-wrapper .code  div > div > ul:nth-child(2) > li:nth-child(1) > ul li{
-  font-family: Nunito-Regular, sans-serif;
+  font-family: 'Nunito-Regular', sans-serif;
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: #212529;
@@ -1249,7 +1249,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
   color: #fff;
   cursor: pointer;
   display: flex;
-  font-family: Nunito-Bold, sans-serif;
+  font-family: 'Nunito-Bold', sans-serif;
   font-size: 0.75rem;
   height: 16px;
   width: 32px;
@@ -1270,7 +1270,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
     background-color: #41c66e;
     border-radius: 4px;
     color: #fff;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 0.75rem;
     line-height: 1rem;
     margin-left: 10px;
@@ -1315,7 +1315,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
 }
 .section.mobile-view-header .header-mobile-app-store p{
   color: #212529;
-  font-family: Nunito-Bold, sans-serif;
+  font-family: 'Nunito-Bold', sans-serif;
   font-size: 0.875rem;
   line-height: 1.25rem;
   margin: unset;
@@ -1580,7 +1580,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
 
   .section.mobile-view-header .code-wrapper .code div div ul:nth-child(3) li:nth-child(1) {
     align-items: center;
-    color: #333;
+    color: var(--darkcharcoal);
     cursor: pointer;
     display: flex;
     font-family: Nunito-Bold, sans-serif;

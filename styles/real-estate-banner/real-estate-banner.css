@@ -19,7 +19,7 @@
 }
 
 .section.corporate-financing-banner-wrapper .teaserv2-wrapper .teaserv2>a .bg-image .description .containerimage>.cmp-container>.text>.cmp-text>h1 .title strong {
-    color: #fff;
+    color: var(--white);
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 3rem;
@@ -34,8 +34,8 @@
     margin: 0 auto;
     padding: 120px 0 158px;
 }
-.section.corporate-financing-banner-wrapper .rte-text-description > h1 {
-    color: #fff;
+.section.corporate-financing-banner-wrapper .rte-text-description > :where(h1,h2,h3,h4,h5,h6) {
+    color: var(--white);
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 3rem;
@@ -44,7 +44,7 @@
     width: 80%;
 }
 .section.corporate-financing-banner-wrapper .rte-text-description > p{
-    color: #fff;
+    color: var(--white);
     display: block;
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1.5rem;
@@ -70,7 +70,7 @@
         padding: 90px 16px 10pc;
         width: 100%;
     }
-    .section.corporate-financing-banner-wrapper .rte-text-description > h1,
+    .section.corporate-financing-banner-wrapper .rte-text-description > :where(h1,h2,h3,h4,h5,h6),
     .section.corporate-financing-banner-wrapper .rte-text-description > p {
         width: 100%;
     }
@@ -89,7 +89,7 @@
         font-size: 0.875rem;
         line-height: 20px;
     }
-    .section.corporate-financing-banner-wrapper .rte-text-description > h1{
+    .section.corporate-financing-banner-wrapper .rte-text-description > :where(h1,h2,h3,h4,h5,h6){
         font-size: 1.5rem;
         line-height: 2pc;
     }

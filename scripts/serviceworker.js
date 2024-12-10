@@ -1,3 +1,9 @@
 // Import external script from MoEngage CDN
 
-importScripts("https://cdn.moengage.com/release/dc_0.3/serviceworker_cdn.min.latest.js");
+import { fetchPlaceholders } from "./aem.js";
+
+const placeholders = await fetchPlaceholders();
+
+importScripts(`${placeholders.moengageserviceworkerurl}`);
+
+// importScripts("https://cdn.moengage.com/release/dc_0.3/serviceworker_cdn.min.latest.js");

@@ -16,6 +16,7 @@
     max-height: unset;
     height: 100%;
     max-width: 397px;
+    cursor: auto;
 }
 
 .section.loan-products-wrapper.whatsapp-service-loan-products-wraaper .wrappercreation-wrapper .teaserv2-wrapper .bg-image {
@@ -43,7 +44,7 @@
     margin-bottom: 0;
 }
 
-.section.loan-products-wrapper.whatsapp-service-loan-products-wraaper .wrappercreation-wrapper .teaserv2-wrapper .bg-image .description>div>div {
+.section.loan-products-wrapper.whatsapp-service-loan-products-wraaper .wrappercreation-wrapper .teaserv2-wrapper .bg-image .description {
     color: var(--gradient-gray);
     font-family: 'Nunito-Regular',sans-serif;
     font-size: 1rem;

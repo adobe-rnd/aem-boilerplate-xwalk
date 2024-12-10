@@ -1,4 +1,5 @@
-import { branchURLStr, CFApiCall, fetchAPI } from '../../scripts/scripts.js';
+import { fetchPlaceholders } from '../../scripts/aem.js';
+import { branchURLStr, CFApiCall } from '../../scripts/scripts.js';
 import { dropDownStateCity, locateMeClick, onloadBranchLocator } from './branchlocator-biz.js';
 import { setLocationObj } from './branchlocator-init.js';
 
@@ -30,21 +31,21 @@ export function branchLocator_dropdown(_block) {
   return html;
 }
 
-export function branchLocator_Map(_block) {
+export function branchLocator_Map(_block, placeholders) {
   const html = `<div class='container map-container-wrapper mt-30 mob-mt-15'>
 
                         <div class='map-branchinfo-wrapper'>
 
                             <div class='branch-info-container'>
-                                 <p class="nearest-txt">Find The Nearest Branch From Your Place</p>
-                                 <div class="branch-deatils dp-none">
-                                    <p class="branch-addr">Branch - Borivali east</p>
-                                    <p class="branch-distance">Distance - 1.4km </p>
+                                 <p class="nearest-txt">${placeholders.nearesttext}</p> 
+                                 <div class="branch-deatils dp-none"> 
+                                    <p class="branch-addr"></p>
+                                    <p class="branch-distance"></p>
                                  </div>
                                     <button class="btn-locate"><img src='/images/location-pointer.svg' class="locate-me-img" alt="locate-me-img">
-                                    <span>Locate Me</span>
+                                    <span>${placeholders.locatetext}</span>
                                     </button>
-                                 <a class="btn-locate-details dp-none">Branch Details</a>
+                                 <a class="btn-locate-details dp-none">${placeholders.branchdetailstext}</a>
                             </div>
 
                             <div class='map-container'><div>
@@ -58,7 +59,7 @@ export function branchLocator_Map(_block) {
 export function branchLocator() {
   const branch_cards = `<div class='cards-branches cards-branches-container mt-45 mb-40 mob-mb-45'>
             <div class='title'>
-                 <h2 class="title-to-show"> Find all Mumbai Branches here </h2>
+                 <h2 class="title-to-show"></h2> 
             </div>
 
             <div class='cards-container'>
@@ -74,8 +75,9 @@ export function branchLocator() {
   return branch_cards;
 }
 
-export function innerBranchFunc(branchhList) {
+export async function innerBranchFunc(branchhList) {
   let innerBranch = '';
+  const placeholders = await fetchPlaceholders();
   branchhList.forEach((eachBranch) => {
     const eachState = eachBranch.State;
     const eachCity = eachBranch.City;
@@ -85,8 +87,8 @@ export function innerBranchFunc(branchhList) {
                 += `<div class='card-box'>
               <h3 class='card-title'> ${eachBranch.Location} </h3>
               <p class='card-address'>${eachBranch.Address}</p>
-              <p class='card-gmail'> <span> <img src='/images/gmail.svg' alt='gmail-icon'/> </span> customercare@piramal.com </p>
-              <a href="${branchURLStr(eachLocation, eachCity, eachState, 'loans', eachLocationCode)}" id='more-details-btn'> More details </a>
+              <p class='card-gmail'> <span> <img src='/images/gmail.svg' alt='gmail-icon'/> </span> ${placeholders.branchlocatorgmail} </p> 
+              <a href="${branchURLStr(eachLocation, eachCity, eachState, 'loans', eachLocationCode)}" id='more-details-btn'>${placeholders.moredetailtext}  </a> 
             </div>`;
     // <a href="/branch-locator/${eachState}/${eachCity}/loans-in-${eachCity}-${eachState}-${eachLocationCode}" id='more-details-btn'> More details </a>
   });
@@ -94,6 +96,8 @@ export function innerBranchFunc(branchhList) {
 }
 
 export default async function decorate(block) {
+
+  const placeholders = await fetchPlaceholders();
   const props = Array.from(block.children, (row) => row.firstElementChild);
 
   const [linkURL] = props;
@@ -111,7 +115,7 @@ export default async function decorate(block) {
   }
 
   block.innerHTML = branchLocator_dropdown(block);
-  block.innerHTML += branchLocator_Map(block);
+  block.innerHTML += branchLocator_Map(block, placeholders);
   block.innerHTML += branchLocator();
 
   onloadBranchLocator(block);
@@ -134,21 +138,30 @@ export default async function decorate(block) {
 }
 
 function BLNavUpdate(block) {
-  let breadCrumb = '';
-  const newState = setLocationObj.geoInfo.state.charAt(0).toLowerCase() + setLocationObj.geoInfo.state.slice(1).replaceAll(' ', '-').toLowerCase();
-  const newSetState = setLocationObj.geoInfo.state.charAt(0).toUpperCase() + setLocationObj.geoInfo.state.slice(1).replaceAll(' ', '-').toLowerCase();
-  const newCity = setLocationObj.geoInfo.city.charAt(0).toLowerCase() + setLocationObj.geoInfo.city.slice(1).replaceAll(' ', '-').toLowerCase();
-  const newSetCity = setLocationObj.geoInfo.city.charAt(0).toUpperCase() + setLocationObj.geoInfo.city.slice(1).replaceAll(' ', '-').toLowerCase();
-  if (setLocationObj.geoInfo.state && setLocationObj.geoInfo.city) {
-    breadCrumb = `<span class="breadcrumb-separator"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.00195L4.29293 5.70902C4.68182 5.32013 4.68182 4.68377 4.29293 4.29488L1 1.00195" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-        <a href="/branch-locator/${newState}">${newSetState}</a>
-        <span class="breadcrumb-separator"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.00195L4.29293 5.70902C4.68182 5.32013 4.68182 4.68377 4.29293 4.29488L1 1.00195" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-        <a href="/branch-locator/${newState}/${newCity}">${newSetCity}</a>
-        `;
-  } else if (setLocationObj.geoInfo.state) {
-    breadCrumb = `<span class="breadcrumb-separator"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.00195L4.29293 5.70902C4.68182 5.32013 4.68182 4.68377 4.29293 4.29488L1 1.00195" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-        <a href="/branch-locator/${newState}">${newSetState}</a>
-        `;
+  const { state, city } = setLocationObj.geoInfo;
+
+  if (!state) return;
+
+  const formatString = (str, capitalize = false) => {
+    const formatted = str.toLowerCase().replace(/\s+/g, '-');
+    return capitalize ? formatted.charAt(0).toUpperCase() + formatted.slice(1) : formatted;
+  };
+
+  const newState = formatString(state);
+  const newSetState = formatString(state, true);
+
+  const separatorSVG = '<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.00195L4.29293 5.70902C4.68182 5.32013 4.68182 4.68377 4.29293 4.29488L1 1.00195" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
+  const separator = `<span class="breadcrumb-separator">${separatorSVG}</span>`;
+
+  const breadcrumbItems = [`<a href="/branch-locator/${newState}">${newSetState}</a>`];
+
+  if (city) {
+    const newCity = formatString(city);
+    const newSetCity = formatString(city, true);
+    breadcrumbItems.push(`<a href="/branch-locator/${newState}/${newCity}">${newSetCity}</a>`);
   }
+
+  const breadCrumb = breadcrumbItems.map(item => `${separator}${item}`).join('');
+
   block.closest('body').querySelector('.breadcrumb nav').insertAdjacentHTML('beforeend', breadCrumb);
 }

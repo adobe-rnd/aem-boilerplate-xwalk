@@ -56,20 +56,20 @@
     padding: 8px 1pc 7px;
     position: relative;
     white-space: nowrap;
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1pc;
     font-weight: 400;
     line-height: 24px;
     background: transparent;
-    border: 1px solid #365069;
+    border: 1px solid var(--greyishblue);
     border-radius: 50px;
 }
 
 .section.company-details-wrapper .tab-link-wrapper .tab-link.block>div>div>ul>li a:after,
 .section.financial-reports-carousel .tab-link-wrapper .tab-link.block>div .glider .glider-track li a::after {
     border-radius: 1px;
-    border-right: 2px solid #ccc;
+    border-right: 2px solid var(--dark-color);
     content: "";
     height: 22px;
     position: absolute;
@@ -86,14 +86,14 @@
 .section.company-details-wrapper .tab-link-wrapper .tab-link.block>div>div>ul>li>strong>a,
 .section.financial-reports-carousel .tab-link-wrapper .tab-link.block>div .glider .glider-track li strong a {
     background-color: var(--greyishblue);
-    color: #fce6e5;
+    color: var(--submidorange);
 }
 
 .section.company-details-wrapper .tab-link-wrapper .tab-link.block>div>div>ul>li>a:hover,
 .section.company-details-wrapper .tab-link-wrapper .tab-link.block>div>div>ul>li>strong>a:hover,
 .section.financial-reports-carousel .tab-link-wrapper .tab-link.block>div .glider .glider-track li a:hover {
     background-color: var(--greyishblue);
-    color: #fce6e5;
+    color: var(--submidorange);
     text-decoration: none;
 }
 
@@ -113,7 +113,7 @@
 
 .section.company-details-wrapper.about-us-company-details .tab-link-wrapper .tab-link.block>div>div>ul>li a {
     font-family: 'Nunito-Bold', sans-serif;
-    border: 1px solid #333333;
+    border: 1px solid var(--darkcharcoal);
 }
 
 .section.company-details-wrapper.about-us-company-details .tab-link-wrapper .tab-link.block>div>div>ul>li a:after,
@@ -129,7 +129,7 @@
 .section.company-details-wrapper.about-us-company-details .tab-link-wrapper .tab-link.block>div>div>ul>li>a:hover,
 .section.company-details-wrapper.about-us-company-details .tab-link-wrapper .tab-link.block>div>div>ul>li>strong>a:hover {
     background-color: var(--white);
-    color: #000;
+    color: var(--black);
 }
 
 @media screen and (max-width:1024px) {
@@ -205,7 +205,7 @@
         padding: 28px 0 1pc;
         position: relative;
         text-align: center;
-        color: #010812;
+        color: var(--blackpearl);
         font-family: 'Nunito-Bold', sans-serif;
         font-size: 1.125rem;
         font-weight: 700;
@@ -251,7 +251,7 @@
     }
 
     .section.company-details-wrapper .tab-link-wrapper .tab-link.block>div>div>ul>li a::before {
-        border: 1px solid #a9a9a9;
+        border: 1px solid var(--fossil);
         border-radius: 50%;
         content: "";
         display: block;
@@ -265,7 +265,7 @@
 
     .section.company-details-wrapper .tab-link-wrapper .tab-link.block>div>div>ul>li>strong>a::after,
     .section.company-details-wrapper .tab-link-wrapper .tab-link.block>div>div>ul>li>strong>a:last-child::after {
-        background: #000;
+        background: var(--black);
         border-radius: 50%;
         content: "";
         display: block;

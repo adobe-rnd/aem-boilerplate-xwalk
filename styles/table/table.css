@@ -24,7 +24,7 @@
 }
 
 .section.fees-charges-wrapper .default-content-wrapper p>strong {
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 18px;
     font-weight: 700;
@@ -48,8 +48,8 @@
     background-color: var(--rosewhite);
     border-bottom: 1px solid var(--pattensblue);
     border-left: 1px solid var(--pattensblue);
-    color: #4d4d4d;
-    font-family: Nunito-Bold, sans-serif;
+    color: var(--matterhorn);
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     line-height: 24px;
@@ -89,7 +89,7 @@
 .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr:last-child td {
     border-bottom: unset;
 }
-.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td span{
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td {
     color: var(--midnight);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
@@ -111,7 +111,7 @@
 }
 
 .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td>p,
-.section.fees-charges-wrapper.three-col-table>.code-wrapper>.code.block>div>table>tbody>tr>td>p>strong>span,
+.section.fees-charges-wrapper.three-col-table>.code-wrapper>.code.block>div>table>tbody>tr>td>p>strong,
 .section.fees-charges-wrapper.iphone-loan-table .code-wrapper .code>div>table>tbody>tr>td>ul>li {
     color: var(--midnight);
     font-family: 'Nunito-Regular', sans-serif;
@@ -121,7 +121,8 @@
 }
 
 
-.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td>p>strong>span {
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td>p>strong,
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td>strong {
     font-family: 'Nunito-Bold', sans-serif;
 }
 
@@ -368,7 +369,7 @@
 
 /* csr committee table start */
 .section.csr-commitee-wrapper .default-content-wrapper h2 {
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
     line-height: 30px;
@@ -381,7 +382,7 @@
     background-color: var(--greyishblue);
     border: 1px solid var(--dark-color);
     color: var(--background-color);
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 0.875rem;
     font-weight: 700;
     line-height: 21px;
@@ -405,7 +406,7 @@
 
 /* offer document table start */
 .section.offer-document-table-wrapper .default-content-wrapper h2 {
-    color: #333;
+    color: var(--darkcharcoal);
     margin-bottom: 40px;
 }
 
@@ -456,7 +457,7 @@
 /* statutory committees table start */
 .section.statutory-committees-wrapper .default-content-wrapper h2 {
     color: var(--orange);
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.75rem;
     font-weight: 800;
     line-height: 42px;
@@ -479,7 +480,7 @@
 
 .section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(3)>p {
     color: var(--black);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 21px;

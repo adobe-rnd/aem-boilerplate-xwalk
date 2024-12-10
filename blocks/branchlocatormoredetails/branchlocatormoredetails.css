@@ -6,7 +6,7 @@
 }
 
 
-.branch-more-detail .default-content-wrapper h1{
+.branch-more-detail .default-content-wrapper :where(h1,h2,h3,h4,h5,h6){
     font-size: 2rem;
     font-weight: 800;
     line-height: 40px;
@@ -89,7 +89,7 @@
 /* Banner More Details */
 
 /*Map Location*/
-.branchlocator-moredetail-map .branchlocatormoredetails-wrapper .branchlocatormoredetails .map-title h1{
+.branchlocator-moredetail-map .branchlocatormoredetails-wrapper .branchlocatormoredetails .map-title :where(h1,h2,h3,h4,h5,h6){
     font-size: 1.5rem;
     line-height: 32px;
     color: var(--darkcharcoal);
@@ -244,7 +244,7 @@
     padding-bottom: 38px;
 }
 
-.branch-more-detail .default-content-wrapper h1{
+.branch-more-detail .default-content-wrapper :where(h1,h2,h3,h4,h5,h6){
     margin-top: 24px;
     line-height: 34px;
     font-size: 1.875rem;
@@ -268,7 +268,7 @@
 /* Banner More Details */
 
 /* Locator Map */
-.branchlocator-moredetail-map .branchlocatormoredetails-wrapper .branchlocatormoredetails .map-title h1{
+.branchlocator-moredetail-map .branchlocatormoredetails-wrapper .branchlocatormoredetails .map-title :where(h1,h2,h3,h4,h5,h6){
     line-height: 36px;
     font-size: 1.75rem;
 }
@@ -348,7 +348,7 @@
     padding-bottom: 29px;
 }
 
-.branch-more-detail .default-content-wrapper h1{
+.branch-more-detail .default-content-wrapper :where(h1,h2,h3,h4,h5,h6){
     font-weight: 700;
     line-height: 36px;
     font-size: 1.75rem;
@@ -415,7 +415,7 @@
 /* Banner More Details */
 
 /* Locator Map */
-.branchlocator-moredetail-map .branchlocatormoredetails-wrapper .branchlocatormoredetails .map-title h1{
+.branchlocator-moredetail-map .branchlocatormoredetails-wrapper .branchlocatormoredetails .map-title :where(h1,h2,h3,h4,h5,h6){
     font-size: 1.5rem;
     line-height: 32px;
 }
@@ -460,12 +460,12 @@
     height: 4px;
     margin: 0 4px;
     border-radius: 50%;
-    background: #000;
+    background: var(--black);
     opacity: .2;
 }
 
 .branchcustomer-review-cards .carousel.block>.button-container.glider-dots button.glider-active{
-    background-color: #000;
+    background-color: var(--black);
     border-radius: 4px;
     height: 4px;
     width: 16px;

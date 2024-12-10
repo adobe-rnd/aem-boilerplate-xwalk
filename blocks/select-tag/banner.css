@@ -1,5 +1,5 @@
 .neeyat-banner.teaserv2-container{
-    background-color: #f8f8f8;
+    background-color: var(--whitesmoke);
 }
 
 .neeyat-banner.teaserv2-container.mb-40{

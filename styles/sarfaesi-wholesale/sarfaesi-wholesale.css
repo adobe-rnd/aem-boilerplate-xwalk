@@ -1,6 +1,6 @@
 .section.sarfaesi-wholesale-wrapper .code-wrapper,
 .section.sarfaesi-retail-wrapper .sarfaesiretail-wrapper{
-    border: 1px solid #000;
+    border: 1px solid var(--black);
     margin: 0 auto !important;
     padding: 30px 10px;
     width: 90%;
@@ -25,14 +25,14 @@
     text-align: center;
     vertical-align: middle;
     padding: 2px;
-    color: #fff;
-    font-family: Nunito-Bold, sans-serif;
+    color: var(--white);
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 0.813rem;
     line-height: 19.5px;
 }
 .section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child th p{
-    color: #fff;
-    font-family: Nunito-Bold, sans-serif;
+    color: var(--white);
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 0.813rem;
     line-height: 19.5px;
 }
@@ -40,9 +40,9 @@
 /* .section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:first-child td strong span{
     line-height: 19.5px;
     text-align: center;
-    color: #fff;
+    color: var(--white);
     padding: 2px;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 0.813rem;
 } */
 
@@ -63,18 +63,19 @@
     border-right: 1px solid #c5c4c4;
     padding: 2px;
 }
-.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td span{
-    font-family:' Nunito-Regular', sans-serif ;
+.section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td span,
+.section.sarfaesi-retail-wrapper .sarfaesiretail-wrapper .sarfaesiretail table tr td a{
+    font-family: 'Nunito-Regular', sans-serif ;
     font-size: 0.75rem;
     line-height: 19.5px;
-    color: #000;
+    color: var(--black);
 }
 .section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td span a,
 .section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td span a sub{
-    font-family:' Nunito-Regular', sans-serif !important;
+    font-family: 'Nunito-Regular', sans-serif !important;
     font-size: 0.75rem;
     line-height: 19.5px;
-    color: #000;
+    color: var(--black);
 }
 .section.sarfaesi-wholesale-wrapper .code-wrapper .code >div >table tbody tr:nth-child(n+2) td span a:hover{
     text-decoration: none;

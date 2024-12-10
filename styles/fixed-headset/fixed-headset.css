@@ -23,11 +23,14 @@
     align-content: center;
 }
 .section.fixed-headset-wrapper .default-content-wrapper p span{
-    display: contents;
+    display: unset;
 }
 .section.fixed-headset-wrapper .default-content-wrapper p span img{
     width: 32px;
     height: 32px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 .section.fixed-headset-wrapper .default-content-wrapper:hover p {
     border: 1px solid var(--dustygrey);

@@ -15,20 +15,20 @@
 }
 
 .section.press-release-list-wrapper .default-content-wrapper ul>li>a:hover>sub{
-    color: #fff;
+    color: var(--white);
 }
 
 .section.press-release-list-wrapper .default-content-wrapper ul>li>a>sub{
-    font-family: Nunito-Semibold, sans-serif;
+    font-family: 'Nunito-Semibold', sans-serif;
     font-size: 0.75rem;
     font-weight: 600;
     line-height: 16px;
-    color: #000;
+    color: var(--black);
 }
 
 .section.press-release-list-wrapper .default-content-wrapper ul>li>a>sub>strong {
     display: block;
-    font-family: Nunito-Bold, sans-serif;
+    font-family: 'Nunito-Bold', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     line-height: 24px;
@@ -55,15 +55,15 @@
 
 .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div {
     padding: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--dark-color);
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
 }
 
 .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>p {
     margin: 0;
-    color: #333;
-    font-family: Nunito-Regular, sans-serif;
+    color: var(--darkcharcoal);
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -75,7 +75,7 @@
 }
 
 .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li {
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
@@ -90,8 +90,8 @@
 }
 
 .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details>summary::after {
-    color: #333;
-    font-family: Nunito-Bold, sans-serif;
+    color: var(--darkcharcoal);
+    font-family: 'Nunito-Bold', sans-serif;
     line-height: 42px;
     top: 8px;
 }
@@ -103,7 +103,7 @@
     top: 35%;
     left: 16px;
     font-size: 18px;
-    color: #000;
+    color: var(--black);
 }
 
 .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion:nth-child(2)>details summary::before {
@@ -113,11 +113,11 @@
     top: 35%;
     left: 16px;
     font-size: 16px;
-    color: #000;
+    color: var(--black);
 }
 
 .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details>summary.active::before {
-    color: #fff;
+    color: var(--white);
 }
 
 .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li::before {
@@ -137,7 +137,7 @@
 
 .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details>div>ul>li>a>sub {
     color: var(--text-color);
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 24px;

@@ -11,7 +11,7 @@
 }
 
 .section.list-content-wrapper .default-content-wrapper h3 {
-    color: #000;
+    color: var(--black);
     display: block;
     font-family: 'Nunito-Extrabold',sans-serif;
     font-size: 24px;
@@ -71,14 +71,14 @@
     margin-bottom: 8px;
 }
 .section.supply-chain-description > .default-content-wrapper > p{
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
 }
 .section.supply-chain-description > .default-content-wrapper > p > strong{
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 18px;
     font-weight: 700;
@@ -87,14 +87,14 @@
 .section.list-content-wrapper .default-content-wrapper > p >strong,
 .section.list-content-wrapper .default-content-wrapper ul > li>strong,
 .section.list-content-wrapper .default-content-wrapper ul>li>p>strong{
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 18px;
     font-weight: 700;
     line-height: 24px;
 }
 .section.inventory-financing .default-content-wrapper > h2{
-    color: #000;
+    color: var(--black);
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 2pc;
@@ -103,21 +103,21 @@
     padding-bottom: 8px;
 }
 .section.inventory-financing .default-content-wrapper > ul > li > p >strong{
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 18px;
     font-weight: 700;
     line-height: 24px;
 }
 .section.inventory-financing .default-content-wrapper > p > strong{
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 18px;
     font-weight: 700;
     line-height: 24px;
 }
 .section.inventory-financing .default-content-wrapper > p{
-    color: #000;
+    color: var(--black);
     font-family: 'Nunito-Regular', sans-serif;
     font-size: 18px;
     font-weight: 400;

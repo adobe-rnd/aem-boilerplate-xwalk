@@ -1,7 +1,6 @@
-.section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div h2, 
-.section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div h1 {
+.section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div :where(h1,h2,h3,h4,h5,h6) {
     color: var(--orange);
-    font-family: Nunito-Extrabold, sans-serif;
+    font-family: 'Nunito-Extrabold', sans-serif;
     font-size: 1.75rem;
     font-weight: 800;
     line-height: 42px;
@@ -26,9 +25,9 @@
 .section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div ul>li>a {
     background: var(--whitesmoke);
     border-radius: 4px;
-    color: #333;
+    color: var(--darkcharcoal);
     display: block;
-    font-family: Nunito-Regular, sans-serif;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 1rem;
     line-height: 24px;
     padding: 20px 61px 20px 36px;
@@ -64,7 +63,7 @@
     display: block;
 }
 .section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div ul>li>a:hover {
-    color: #000;
+    color: var(--black);
 }
 
 .section.forms-pdf .formformatpdf-wrapper .formformatpdf >div >div ul>li a sub span{
@@ -72,7 +71,7 @@
 }
 
 .section.multi-calculator-wrapper.forms-format-banner {
-    background-color: #E4EAFA;
+    background-color: var(--piramal-blue-20);
 }
 
 .section.multi-calculator-wrapper.forms-format-banner .teaser-wrapper .teaser .background .front-picture picture>img {

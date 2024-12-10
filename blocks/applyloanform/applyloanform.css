@@ -213,20 +213,21 @@
     font-weight: 700;
     font-size: 1.25rem;
     line-height: 28px;
-    color: #333333;
+    color: var(--darkcharcoal);
 }
 
 .loan-form-sub-parent>.cmp-container .loan-form>.cmp-container .cmp-form {
-    margin-top: 32px;
+    margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+    gap: 30px 32px;
 }
 
 @media screen and (max-width: 1024px) {
     .loan-form-sub-parent>.cmp-container .loan-form>.cmp-container .cmp-form {
         margin-top: 24px;
         grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 32px 32px;
     }
 }
 
@@ -245,7 +246,7 @@
     font-weight: 400;
     font-size: 0.875rem;
     line-height: 20px;
-    color: #365069;
+    color: var(--greyishblue);
 }
 
 .loan-form-sub-parent>.cmp-container .loan-form>.cmp-container .cmp-form .loan-form-checkbox .cmp-form-options--radio .cmp-field-parent-parent {
@@ -266,7 +267,7 @@
 }
 
 .loan-form-sub-parent>.cmp-container .loan-form>.cmp-container .cmp-form .loan-form-checkbox .cmp-form-options--radio .cmp-field-parent-parent .cmp-form-option-parent {
-    border: 1px solid #afb9c3;
+    border: 1px solid var(--zinc);
     border-radius: 12px;
     cursor: pointer;
     padding: 8.7px 20px;
@@ -309,11 +310,11 @@
 }
 
 .loan-form-sub-parent>.cmp-container .loan-form>.cmp-container .cmp-form .loan-form-checkbox .cmp-form-options--radio .cmp-field-parent-parent .cmp-form-option-parent .cmp-form-options__field-label .cmp-form-input-parent .cmp-form-options__field--radio:checked {
-    border: 1px solid #F26841;
+    border: 1px solid var(--orange);
 }
 
 .loan-form-sub-parent>.cmp-container .loan-form>.cmp-container .cmp-form .loan-form-checkbox .cmp-form-options--radio .cmp-field-parent-parent .cmp-form-option-parent .cmp-form-options__field-label .cmp-form-input-parent .cmp-form-options__field--radio:checked::before {
-    background: #F26841;
+    background: var(--orange);
     content: "";
     display: block;
     width: 60%;
@@ -323,7 +324,7 @@
 }
 
 .loan-form-sub-parent>.cmp-container .loan-form>.cmp-container .cmp-form .loan-form-checkbox .cmp-form-options--radio .cmp-field-parent-parent .cmp-form-option-parent .cmp-form-options__field-label .cmp-form-input-parent .cmp-form-options__field--radio:checked~.cmp-form-options__field-description {
-    color: #f26741;
+    color: var(--midorange);
 }
 
 .loan-form-sub-parent>.cmp-container .loan-form>.cmp-container .cmp-form .loan-form-checkbox .cmp-form-options--radio .cmp-field-parent-parent .cmp-form-option-parent .cmp-form-options__field-label .cmp-form-input-parent .cmp-form-options__field--radio:checked~.coloricon {
@@ -338,7 +339,7 @@
     -moz-appearance: none;
     appearance: none;
     -webkit-appearance: none;
-    accent-color: #000000;
+    accent-color: var(--black);
 }
 
 .loan-form-sub-parent>.cmp-container .loan-form>.cmp-container .cmp-form .loan-form-checkbox .cmp-form-options--radio .cmp-field-parent-parent .cmp-form-option-parent .cmp-form-options__field-label .cmp-form-input-parent .cmp-form-options__field-description {
@@ -404,7 +405,7 @@
     font-weight: 400;
     font-size: 0.875rem;
     line-height: 20px;
-    color: #365069;
+    color: var(--greyishblue);
 }
 
 .loan-form-sub-parent>.cmp-container .loan-form>.cmp-container .cmp-form .text .cmp-form-text label span {
@@ -412,7 +413,7 @@
     font-weight: 400;
     font-size: 0.875rem;
     line-height: 20px;
-    color: #eb5752;
+    color: var(--flamingo);
 }
 
 .loan-form-sub-parent>.cmp-container .loan-form>.cmp-container .cmp-form .text .cmp-form-text .cmp-form-text-parent {
@@ -443,7 +444,7 @@
 }
 
 .loan-form-sub-parent>.cmp-container .loan-form>.cmp-container .cmp-form .text .cmp-form-text .cmp-form-text-parent::after {
-    border-bottom: 2px solid #20303f;
+    border-bottom: 2px solid var(--midnight);
     left: 0px;
     bottom: 0px;
     content: "";
@@ -459,7 +460,7 @@
 }
 
 .loan-form-sub-parent>.cmp-container .loan-form>.cmp-container .cmp-form .text .cmp-form-text .cmp-form-text-parent:focus-within::before {
-    border-bottom-color: #20303f;
+    border-bottom-color: var(--midnight);
     /* Change to desired color */
 }
 
@@ -485,7 +486,7 @@
     font-weight: 400;
     font-size: 1rem;
     line-height: 23px;
-    color: #afb9c3;
+    color: var(--zinc);
     opacity: 1;
 }
 
@@ -494,7 +495,7 @@
     font-weight: 400;
     font-size: 1rem;
     line-height: 23px;
-    color: #afb9c3;
+    color: var(--zinc);
     opacity: 1;
 }
 
@@ -503,7 +504,7 @@
     font-weight: 400;
     font-size: 1rem;
     line-height: 23px;
-    color: #afb9c3;
+    color: var(--zinc);
     opacity: 1;
 }
 
@@ -512,7 +513,7 @@
     font-weight: 400;
     font-size: 1rem;
     line-height: 23px;
-    color: #afb9c3;
+    color: var(--zinc);
     opacity: 1;
 }
 
@@ -521,7 +522,7 @@
     font-weight: 400;
     font-size: 1rem;
     line-height: 23px;
-    color: #afb9c3;
+    color: var(--zinc);
     opacity: 1;
 }
 
@@ -593,12 +594,12 @@
     font-weight: 400;
     font-size: 0.75rem;
     line-height: 16px;
-    color: #EF4444;
+    color: var(--coralred);
 }
 
 .loan-form-sub-parent>.cmp-container .loan-form>.cmp-container .cmp-form .text .cmp-form-text>.option-form-parent {
     display: none;
-    background: #ffffff;
+    background: var(--white);
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
     overflow-y: scroll;
@@ -629,7 +630,7 @@
     font-weight: 700;
     font-size: 1rem;
     line-height: 24px;
-    color: #F58667;
+    color: var(--salmon);
     padding: 12px 0px 12px 0px;
     pointer-events: none;
 }
@@ -639,7 +640,7 @@
 }
 
 .loan-form-sub-parent>.cmp-container .loan-form>.cmp-container .cmp-form .text .cmp-form-text>.option-form-parent .option-form ul li:hover {
-    background-color: #F0F0F0;
+    background-color: var(--pearl);
     border-radius: 4px;
 }
 
@@ -671,7 +672,7 @@
     font-weight: 400;
     font-size: 0.875rem;
     line-height: 20px;
-    color: #333333;
+    color: var(--darkcharcoal);
 }
 
 .loan-form-sub-parent>.cmp-container .loan-form>.cmp-container .cmp-form-checkbox>.checkboxtext a {
@@ -681,7 +682,7 @@
     font-weight: 400;
     font-size: 0.875rem;
     line-height: 20px;
-    color: #333333;
+    color: var(--darkcharcoal);
 }
 
 .loan-form-sub-parent>.cmp-container .loan-form>.cmp-container .loan-form-otp {
@@ -702,7 +703,7 @@
 
 .loan-form-sub-parent>.cmp-container>.loan-form-button-container {
     padding: 0px 32px 32px;
-    background: #ffffff;
+    background: var(--white);
 }
 
 @media screen and (max-width: 1024px) {
@@ -718,13 +719,13 @@
     width: 100%;
     height: 48px;
     margin-top: 48px;
-    background: #FAC3B3;
+    background: var(--coral);
     border-radius: 8px;
     font-family: "Nunito-Bold", sans-serif;
     font-weight: 700;
     font-size: 1rem;
     line-height: 20px;
-    color: #ffffff;
+    color: var(--white);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -748,7 +749,7 @@
     font-weight: 700;
     font-size: 1rem;
     line-height: 20px;
-    color: #ffffff;
+    color: var(--white);
 }
 
 .loan-form-sub-parent>.cmp-container>.loan-form-button-container .cmp-container .loader {
@@ -785,7 +786,7 @@
 
 .loan-form-sub-parent>.cmp-container>.loan-form-button-container.btn-active .cmp-container,
 .loan-form-sub-parent>.cmp-container .loan-form-otp-button-container.btn-active .cmp-container {
-    background: #F26841;
+    background: var(--orange);
 }
 
 .loan-form-sub-parent>.cmp-container>.loan-form-otp-button-container {
@@ -798,7 +799,7 @@
 
 .loan-form-sub-parent>.cmp-container>.option-form-parent {
     visibility: hidden;
-    background: #ffffff;
+    background: var(--white);
     border-radius: 6px;
     overflow-y: scroll;
     height: 142px;
@@ -838,7 +839,7 @@
     font-weight: 700;
     font-size: 1rem;
     line-height: 24px;
-    color: #F58667;
+    color: var(--salmon);
     padding: 12px 0px 12px 0px;
     pointer-events: none;
 }
@@ -848,7 +849,7 @@
 }
 
 .loan-form-sub-parent>.cmp-container>.option-form-parent .option-form ul li:hover {
-    background-color: #F0F0F0;
+    background-color: var(--pearl);
     border-radius: 4px;
 }
 
@@ -1187,7 +1188,7 @@
     font-weight: 400;
     font-size: 0.875rem;
     line-height: 20px;
-    color: #666666;
+    color: var(--darkgrey);
 }
 
 @media screen and (max-width: 1024px) {
@@ -1202,7 +1203,7 @@
     font-weight: 400;
     font-size: 0.875rem;
     line-height: 20px;
-    color: #666666;
+    color: var(--darkgrey);
 }
 
 @media screen and (max-width: 1024px) {
@@ -1226,7 +1227,7 @@
     font-weight: 400;
     font-size: 0.875rem;
     line-height: 20px;
-    color: #333333;
+    color: var(--darkcharcoal);
     text-decoration: underline;
 }
 
@@ -1242,7 +1243,7 @@
     font-weight: 700;
     font-size: 0.875rem;
     line-height: 20px;
-    color: #365069;
+    color: var(--greyishblue);
 }
 
 .loan-form-sub-otp>.cmp-container .loan-form>.cmp-container .loan-form-otp .loan-form-otp-parent .inputotp {
@@ -1273,7 +1274,7 @@
 }
 
 .loan-form-sub-otp>.cmp-container .loan-form>.cmp-container .loan-form-otp .loan-form-otp-parent .inputotp::after {
-    border-bottom: 2px solid #20303f;
+    border-bottom: 2px solid var(--midnight);
     left: 0px;
     bottom: 0px;
     content: "";
@@ -1289,7 +1290,7 @@
 }
 
 .loan-form-sub-otp>.cmp-container .loan-form>.cmp-container .loan-form-otp .loan-form-otp-parent .inputotp:focus-within::before {
-    border-bottom-color: #20303f;
+    border-bottom-color: var(--midnight);
     /* Change to desired color */
 }
 
@@ -1322,7 +1323,7 @@
     font-weight: 400;
     font-size: 1rem;
     line-height: 23px;
-    color: #20303f;
+    color: var(--midnight);
     position: absolute;
     right: 0;
 }
@@ -1334,7 +1335,7 @@
     font-weight: 400;
     font-size: 0.75rem;
     line-height: 16px;
-    color: #EF4444;
+    color: var(--coralred);
 }
 
 .loan-form-sub-otp>.cmp-container .loan-form>.cmp-container .loan-form-otp .loan-form-otp-parent .resendtext {
@@ -1353,7 +1354,7 @@
     font-weight: 400;
     font-size: 0.75rem;
     line-height: 16px;
-    color: #666666;
+    color: var(--darkgrey);
 }
 
 .loan-form-sub-otp>.cmp-container .loan-form>.cmp-container .loan-form-otp .loan-form-otp-parent .resendtext button {
@@ -1361,7 +1362,7 @@
     font-weight: 400;
     font-size: 0.75rem;
     line-height: 16px;
-    color: #666666;
+    color: var(--darkgrey);
     background: transparent;
     border: 0px;
     cursor: pointer;
@@ -1372,7 +1373,7 @@
     font-weight: 400;
     font-size: 0.75rem;
     line-height: 16px;
-    color: #666666;
+    color: var(--darkgrey);
 }
 
 .loan-form-sub-otp>.cmp-container>.loan-form-button-container {
@@ -1502,7 +1503,7 @@
     font-weight: 400;
     font-size: 1rem;
     line-height: 24px;
-    color: #333333;
+    color: var(--darkcharcoal);
 }
 
 @media screen and (max-width: 1024px) {
@@ -1546,7 +1547,7 @@
         font-weight: 400;
         font-size: 0.875rem;
         line-height: 20px;
-        color: #333333;
+        color: var(--darkcharcoal);
     }
 }
 
@@ -1697,12 +1698,12 @@
     font-weight: 400;
     font-size: 1rem;
     line-height: 24px;
-    color: #333333;
+    color: var(--darkcharcoal);
 }
 
 .loan-form-request-fail>.cmp-container .loan-form .cmp-container .loan-request-fail-form .redbox {
     padding: 16px;
-    background-color: #FCE6E5;
+    background-color: var(--submidorange);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1841,7 +1842,7 @@
     font-weight: 400;
     font-size: 0.875rem;
     line-height: 20px;
-    color: #333333;
+    color: var(--darkcharcoal);
 }
 
 .loan-form-something-wrong>.cmp-container .loan-form-button-container {
@@ -1861,7 +1862,7 @@
 }
 
 .loan-form-something-wrong>.cmp-container .sw-wrong-button-container .cmp-container {
-    background-color: #F26841;
+    background-color: var(--orange);
     border: unset;
     margin-top: 48px;
     border-radius: 8px;
@@ -1873,7 +1874,7 @@
     font-weight: 700;
     font-size: 1rem;
     line-height: 24px;
-    color: #ffffff;
+    color: var(--white);
 }
 
 @media screen and (max-width: 1024px) {
