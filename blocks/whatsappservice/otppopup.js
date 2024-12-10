@@ -295,9 +295,9 @@ export function getWhatAPIAuth() {
       bot_id: '1',
     },
   };
-
   return new Promise((resolve, reject) => {
-    fetchAPI('POST', getWhatAPIAuthURL, requestObj)
+    // fetchAPI('POST', getWhatAPIAuthURL, requestObj)
+    fetchAPI('GET', getWhatAPIAuthURL)
       .then((response) => {
         resolve(response.responseJson);
       })
