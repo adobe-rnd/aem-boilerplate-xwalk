@@ -114,21 +114,14 @@ async function getStateCity(lat, lng) {
   try {
     const response = await getStateName(lat, lng);
     const { results } = await response.json();
-    let placeIDs = [];
     if (results[0]) {
       for (const result of results) {
-        if (result.place_id) placeIDs.push(result.place_id);
-        /* const reviewRating = await getReviewRating(result.place_id);
+        const reviewRating = await getReviewRating(result.place_id);
         if (reviewRating.result.reviews && reviewRating.result?.opening_hours?.weekday_text) {
           setLocationObj.review = reviewRating.result.reviews;
           setLocationObj.working = reviewRating.result.opening_hours.weekday_text;
           break;
-        } */
-      }
-      const reviewRating = await getReviewRating(placeIDs);
-      if(reviewRating.statusCode == 200){
-        setLocationObj.review = reviewRating.result.reviews;
-        setLocationObj.working = reviewRating.result.opening_hours.weekday_text;
+        }
       }
     }
   } catch (err) {
@@ -161,17 +154,8 @@ function returnLatLan() {
   });
 }
 
-async function getReviewRating(placeIDs) {
-  let requestObj = {
-    requestJson : {
-      placeIds: "",
-      googleKey : ""
-    }
-  };
-  requestObj.requestJson.placeIds = placeIDs;
-  requestObj.requestJson.googleKey = GOOGLE_MAPS_API_KEY;
-  const response = await fetchAPI("POST", '/content/piramalfinance/api/mapapi.json', requestObj);
-  // const response = await fetchAPI("GET", `/content/piramalfinance/api/mapapi.json?place_id=${placeID}&key=${GOOGLE_MAPS_API_KEY}`);
+async function getReviewRating(placeID) {
+  const response = await fetchAPI("GET", `/content/piramalfinance/api/mapapi.json?place_id=${placeID}&key=${GOOGLE_MAPS_API_KEY}`);
   // const response = await fetchAPI("GET", `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeID}&key=${GOOGLE_MAPS_API_KEY}`);
   return response.json();
 }

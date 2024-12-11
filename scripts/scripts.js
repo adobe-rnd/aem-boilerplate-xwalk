@@ -1254,15 +1254,53 @@ export function groupAllKeys(array) {
   }, {});
 }
 
-// Helper functions
-const handleRel = (anchor, hrefSplit) => {
-  if (hrefSplit.includes('@')) {
-    const rels = hrefSplit.split('@');
-    anchor.rel = rels.join(' ');
-  } else {
-    anchor.rel = hrefSplit;
+
+// Main function
+const processAnchor = (anchor, body) => {
+
+  // Handle Rel 
+  handleReltags(anchor);
+
+  // Handle target attribute
+  if (anchor.innerHTML.includes('<sub>')) {
+    anchor.target = '_blank';
+  }
+
+  // Handle modal popup
+  if (anchor.href.includes('/modal-popup/')) {
+    handleModalPopup(anchor, body);
+  }
+ 
+};
+
+const handleReltags = (anchor) => {
+  const getHref = anchor.href;
+  const paramToRemove = 'rel';
+  const url = new URL(getHref);
+  const params = new URLSearchParams(url.search);
+  if(params.has(paramToRemove)){
+    let newRel = params.get(paramToRemove);
+    if(newRel.includes(',')){
+      anchor.rel = newRel.replaceAll(',', '');
+    }else{
+      anchor.rel = newRel;
+    }
+
+    // Remove the parameter from the URL
+    function removeRelParameter(url) {
+      const urlObj = new URL(url); // Parse the URL
+      const searchParams = urlObj.searchParams; // Access query parameters
+  
+      searchParams.delete('rel'); // Remove the 'rel' parameter
+  
+      return urlObj.toString(); // Return the modified URL
+    }
+
+    anchor.href = removeRelParameter(getHref);
+
   }
 };
+
 const handleModalPopup = (anchor, body) => {
   const dataid = anchor.href.split('/').pop();
   // Set attributes
@@ -1295,24 +1333,5 @@ const handleModalPopup = (anchor, body) => {
     });
     body.style.overflow = 'hidden';
   });
-};
-// Main function
-const processAnchor = (anchor, body) => {
-  // Handle rel attribute
-  if (anchor.href.includes('$')) {
-    const hrefSplit = anchor.href.split('$')[1];
-    if (hrefSplit) {
-      handleRel(anchor, hrefSplit);
-      anchor.href = anchor.href.split('$')[0];
-    }
-  }
-  // Handle target attribute
-  if (anchor.innerHTML.includes('<sub>')) {
-    anchor.target = '_blank';
-  }
-  // Handle modal popup
-  if (anchor.href.includes('/modal-popup/')) {
-    handleModalPopup(anchor, body);
-  }
 };
 
