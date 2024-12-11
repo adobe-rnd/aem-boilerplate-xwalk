@@ -1,17 +1,3 @@
 User-agent: *
-Disallow: /configuration/
-Disallow: /nav/
-Disallow: /footer/
-Disallow: /metadata/
-Disallow: /fragments/
-Disallow: /style-guide/
-Disallow: /spreadsheets/
-Disallow: /scripts/
-Disallow: /styles/
-Disallow: /blocks/
-Disallow: /*?*
 Disallow: /
 
-
-
-Sitemap: https://devmarketing.piramalfinance.com/sitemap-english.xml
