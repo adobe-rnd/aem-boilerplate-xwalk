@@ -10,7 +10,7 @@ Disallow: /scripts/
 Disallow: /styles/
 Disallow: /blocks/
 Disallow: /*?*
-Disallow: /*?*
+Disallow: /
 
 
 
