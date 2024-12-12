@@ -364,4 +364,19 @@ export default async function decorate(block) {
   const mobileLogo = a.cloneNode(true);
   mobileLogo.classList.add('mobile-logo');
   mobileSections?.prepend(mobileLogo);
+
+  try {
+    let moengageContainer = document.getElementById("moengage-container");
+    let heightMoengage = moengageContainer.clientHeight;
+    navWrapper.style.marginTop = `${heightMoengage}px`;
+    window.addEventListener('scroll', function (event) {
+      if (window.scrollY > 50) {
+        navWrapper.style.marginTop = "0px"
+      } else {
+        navWrapper.style.marginTop = `${heightMoengage}px`;
+      }
+    })
+  } catch (error) {
+    console.warn("Moengage Error :: ", error);
+  }
 }
