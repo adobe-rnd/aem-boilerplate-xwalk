@@ -1,7 +1,7 @@
 // import { ProductLogics } from "./loadformlogic";
 // import { otpPopupFailureFun, removeLoader } from "../../../../clientlibs/support/otppopup/js/otppopup";
 import {
-  errorPopUp, formInteraction, generateLead, resendOtp, thankYouPopUp, verifyOtp,
+  errorPopUp, formInteraction, generateLead, lpOtpValidate, resendOtp, thankYouPopUp, verifyOtp,
 } from '../../dl.js';
 import { fetchAPI, targetObject } from '../../scripts/scripts.js';
 import {
@@ -40,6 +40,7 @@ export function buttonCLick() {
     try {
       updateFormValuve();
       formInteraction(formLoanType, 'Form Submit', targetObject.pageName);
+      generateLead(formName, formLoanType, formLoanAmount, formState, formBranchCity, targetObject.pageName);
     } catch (error) {
       console.warn(error);
     }
@@ -314,8 +315,14 @@ function verifyOtpBtnClick() {
   verifyOtpBtn.addEventListener('click', (e) => {
     updateFormValuve();
     const otpValue = document.querySelector('#loan-form-otp-input').value;
-    verifyOtpBtn.closest('.loan-form-button-container').classList.add('loader-initialized');
+    verifyOtpBtn.closest('.loan-form-button-container').classList.add('loader-initialized'); 
     formInteraction(formLoanType, 'verify', targetObject.pageName);
+    try {
+      const click_text = e.target.textContent.trim() || "";
+      lpOtpValidate(click_text,formLoanType,targetObject.pageName)
+    } catch (error) {
+        console.log(error)
+    }
     if (otpValue) {
       verfyOtpAPI(otpValue)
         .then(({ returnResponse, authUniqueId }) => {
@@ -333,11 +340,11 @@ function verifyOtpBtnClick() {
           if (ProductLogics(loanFormCriteria())) {
             loaninnerform.classList.add('loan-form-success');
             loanStatus = 'Approved';
-            try {
-              generateLead(formName, formLoanType, formLoanAmount, formState, formBranchCity, targetObject.pageName);
-            } catch (error) {
-              console.warn(error);
-            }
+            // try {
+            //   generateLead(formName, formLoanType, formLoanAmount, formState, formBranchCity, targetObject.pageName);
+            // } catch (error) {
+            //   console.warn(error);
+            // }
             try {
               thankYouPopUp(formName, formLoanType, targetObject.pageName);
             } catch (error) {

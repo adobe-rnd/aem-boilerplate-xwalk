@@ -251,7 +251,7 @@ export default async function decorate(block) {
                 if (e.target.tagName == 'IMG' || e.target.querySelector('icon-language')) {
                   click_text = e.target.getAttribute('data-icon-name');
                 } else {
-                  click_text = e.target.innerText;
+                  click_text = e.target.textContent.trim();
                 }
                 const menu_category = e.target.closest('ul').closest('li')?.querySelector('p')?.innerText || '';
                 targetObject.ctaPosition = 'Top Menu Bar';
