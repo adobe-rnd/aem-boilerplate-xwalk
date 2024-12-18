@@ -84,14 +84,14 @@ function initEventListeners(block, groupedLocations) {
     displayCards(block, selectedCity, groupedLocations.grouped);
   });
 
-  block.closest('body').addEventListener('click', (e) => {
+  /* block.closest('body').addEventListener('click', (e) => {
     if (!e.target.closest('.toggleCityContainer') && !e.target.closest('.select-container') && !e.target.closest('fieldset') && !e.target.closest('cityBlack')) {
       if (selectContainer.classList.contains('open')) {
         citiesContainer.style.display = 'none';
         selectContainer.classList.remove('open');
       }
     }
-  });
+  }); */
 
   window.onscroll = () => displayCards(block, inputLocationValue, groupedLocations.grouped);
 }

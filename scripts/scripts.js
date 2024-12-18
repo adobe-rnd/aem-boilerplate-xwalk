@@ -521,7 +521,7 @@ export function decorateViewMore(block) {
   });
 }
 
-export function decorateAnchorTag(main) {
+/* export function decorateAnchorTag(main) {
   try {
     main.querySelectorAll('a').forEach((anchor) => {
       if (anchor.innerHTML.includes('<sub>')) {
@@ -557,6 +557,18 @@ export function decorateAnchorTag(main) {
           });
         });
       }
+    });
+  } catch (error) {
+    console.warn(error);
+  }
+} */
+
+
+export function decorateAnchorTag(main) {
+  try {
+    main.querySelectorAll('a').forEach((anchor) => {
+      const body = document.body;
+      processAnchor(anchor, body);
     });
   } catch (error) {
     console.warn(error);
@@ -901,12 +913,18 @@ body?.addEventListener('click', (e) => {
   const loaninnerform = document.querySelector('.loan-form-sub-parent');
   const modalOverlay = document.querySelector('.modal-overlay');
 
-  handleModelClick(target, loaninnerform, modalOverlay);
-  handleNavClick(target);
-  handleOverlayClick(target);
-  handleStakePopupClick(target);
-  handleNeeyatLanguageDropdown(target);
-  handleBranchLocatorDropdown(target);
+  try {
+    handleModelClick(target, loaninnerform, modalOverlay);
+    handleNavClick(target);
+    handleOverlayClick(target);
+    handleStakePopupClick(target);
+    handleNeeyatLanguageDropdown(target);
+    handleBranchLocatorDropdown(target);
+    handleAuthoriseAgencies(target);
+  } catch (error) {
+    console.warn(error);
+  }
+  
 });
 
 function handleModelClick(target, loaninnerform, modalOverlay) {
@@ -954,6 +972,17 @@ function handleBranchLocatorDropdown(target) {
     if (!target.classList.contains('search-input') && 
         (!target.closest('.default-state-selected') || !target.closest('.default-city-selected'))) {
       updateBranchLocator();
+    }
+  }
+}
+
+function handleAuthoriseAgencies(target){
+  if (!target.closest('.toggleCityContainer') && !target.closest('.select-container') && !target.closest('fieldset') && !target.closest('cityBlack')) {
+    const selectContainer = document.querySelector('.select-container');
+    const citiesContainer = document.querySelector('.cities-container');
+    if (selectContainer.classList.contains('open')) {
+      citiesContainer.style.display = 'none';
+      selectContainer.classList.remove('open');
     }
   }
 }
@@ -1284,4 +1313,84 @@ export function groupAllKeys(array) {
     return result;
   }, {});
 }
+
+// Main function
+const processAnchor = (anchor, body) => {
+
+  // Handle Rel 
+  handleReltags(anchor);
+
+  // Handle target attribute
+  if (anchor.innerHTML.includes('<sub>')) {
+    anchor.target = '_blank';
+  }
+
+  // Handle modal popup
+  if (anchor.href.includes('/modal-popup/')) {
+    handleModalPopup(anchor, body);
+  }
+ 
+};
+
+const handleReltags = (anchor) => {
+  const getHref = anchor.href;
+  const relParamCheck = 'rel';
+  const url = new URL(getHref);
+  const params = new URLSearchParams(url.search);
+  if(params.has(relParamCheck)){
+    let newRelContent = params.get(relParamCheck);
+    if(newRelContent.includes(',')){
+      anchor.rel = newRelContent.replaceAll(',', '');
+    }else{
+      anchor.rel = newRelContent;
+    }
+
+    // Remove the parameter from the URL
+    function removeRelParameter(url) {
+      const urlObj = new URL(url); // Parse the URL
+      const searchParams = urlObj.searchParams; // Access query parameters
+  
+      searchParams.delete(relParamCheck); // Remove the 'rel' parameter
+  
+      return urlObj.toString(); // Return the modified URL
+    }
+
+    anchor.href = removeRelParameter(getHref);
+
+  }
+};
+
+const handleModalPopup = (anchor, body) => {
+  const dataid = anchor.href.split('/').pop();
+  // Set attributes
+  anchor.dataset.modelId = dataid;
+  targetObject.modelId = dataid;
+  anchor.dataset.href = anchor.href;
+  anchor.href = 'javascript:void(0)';
+  anchor.addEventListener('click', (e) => {
+    e.preventDefault();
+    const models = document.querySelectorAll(`.${dataid}`);
+    targetObject.models = models;
+    if (!models.length) return;
+    // Handle models
+    models.forEach(model => {
+      model.classList.add('dp-none');
+      model.remove();
+      body.prepend(model);
+      // Show modal
+      model.classList.remove('dp-none');
+      model.classList.add('overlay');
+      // Handle close button
+      const crossIcon = model.querySelector('em');
+      if (crossIcon?.innerHTML.includes(':cross-icon')) {
+        crossIcon.innerHTML = '';
+        crossIcon.addEventListener('click', () => {
+          model.classList.remove('overlay');
+          model.classList.add('dp-none');
+        });
+      }
+    });
+    body.style.overflow = 'hidden';
+  });
+};
 
