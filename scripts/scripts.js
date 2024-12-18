@@ -981,9 +981,9 @@ function handleAuthoriseAgencies(target){
   if (!target.closest('.toggleCityContainer') && !target.closest('.select-container') && !target.closest('fieldset') && !target.closest('cityBlack')) {
     const selectContainer = document.querySelector('.select-container');
     const citiesContainer = document.querySelector('.cities-container');
-    if (selectContainer.classList.contains('open')) {
-      citiesContainer.style.display = 'none';
-      selectContainer.classList.remove('open');
+    if (selectContainer?.classList.contains('open')) {
+      citiesContainer?.style.display = 'none';
+      selectContainer?.classList.remove('open');
     }
   }
 }
