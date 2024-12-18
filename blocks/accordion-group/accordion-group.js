@@ -1,4 +1,4 @@
-import { ctaClickInteraction, documentRequiredInteraction, faqInteraction } from '../../dl.js';
+import { ctaClick, ctaClickInteraction, documentRequiredInteraction, faqInteraction } from '../../dl.js';
 import { fetchPlaceholders } from '../../scripts/aem.js';
 import { targetObject } from '../../scripts/scripts.js';
 import { documentRequired, generateAccordionDOM } from '../accordion/accordion.js';
@@ -43,7 +43,7 @@ function openFunctionFAQ(block) {
   const titles = block.querySelectorAll('details summary');
 
   titles.forEach((title) => {
-    title.addEventListener('click', function () {
+    title.addEventListener('click', function (e) {
       if (this.classList.contains('active')) {
         setTimeout(() => {
           this.closest('details').removeAttribute('open');
@@ -61,6 +61,10 @@ function openFunctionFAQ(block) {
           if (title.closest('.documents-required-brown')) {
             dataAnalytics.click_text = title.querySelector('h3').textContent.trim();
             documentRequiredInteraction(dataAnalytics);
+            const click_text = title.querySelector('h3').textContent.trim();
+            const cta_position = '';
+            const cta_category = title.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
+            ctaClick(click_text, cta_category, cta_position, targetObject.pageName);
           } else {
             dataAnalytics.click_text = title.textContent.trim();
             faqInteraction(dataAnalytics);
