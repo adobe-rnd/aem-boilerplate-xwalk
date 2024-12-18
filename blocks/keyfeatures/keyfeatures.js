@@ -1,6 +1,6 @@
-import { ctaClickInteraction, keyFeaturesInteraction } from '../../dl.js';
+import { ctaClick, ctaClickInteraction, keyFeaturesInteraction } from '../../dl.js';
 import { fetchPlaceholders } from '../../scripts/aem.js';
-import { decoratePlaceholder, renderHelper } from '../../scripts/scripts.js';
+import { decoratePlaceholder, renderHelper, targetObject } from '../../scripts/scripts.js';
 
 export default async function decorate(block) {
   block.innerHTML = await decoratePlaceholder(block);
@@ -195,6 +195,13 @@ export function featureDropDownClick(block) {
       dataAnalytics.click_text = e.target.closest('.keyfeatures-wrapper')?.querySelector('.cmp-teaser__content p')?.textContent.trim();
       dataAnalytics.cta_position = e.target.closest('.section')?.querySelector('.default-content-wrapper')?.textContent.trim();
       keyFeaturesInteraction(dataAnalytics);
+      try {
+        const cta_position = '';
+        const cta_category = dataAnalytics.cta_position;
+        ctaClick(dataAnalytics.click_text, cta_category, cta_position, targetObject.pageName);
+      } catch (error) {
+        console.log(error);
+      }
       keyfeaturesList.forEach((keyfeatures) => {
         if (keyfeatures.style.display === 'none') {
           keyfeatures.style.display = 'block';
@@ -304,6 +311,13 @@ function keyFeaturesAnalytics(block) {
       data.click_text = e.target.closest('.cmp-teaser')?.querySelector('.cmp-teaser__content p')?.textContent.trim();
       data.cta_position = e.target.closest('.section')?.querySelector('.default-content-wrapper strong')?.textContent.trim() || e.target.closest('.section')?.querySelector('.default-content-wrapper')?.textContent.trim();
       keyFeaturesInteraction(data);
+      try {
+        const cta_position = '';
+        const cta_category = data.cta_position;
+        ctaClick(data.click_text, cta_category, cta_position, targetObject.pageName);
+      } catch (error) {
+          console.log(error);
+      }
     });
   });
 }

@@ -117,8 +117,10 @@ export function applyLoanFormClick() {
             const ctaPos = e.target?.closest('.section')?.querySelector('.calculator-parent p')?.textContent.trim();
             if (e.target.innerText.trim() === 'Talk to loan expert') {
               talkToExpert('calculator', emiName, ctaPos, targetObject.pageName);
+              formInteraction(emiName,"Form Open",targetObject.pageName)
             } else if (e.target.innerText.trim() === 'Apply loan now') {
               applyLoanNow('calculator', emiName, ctaPos, targetObject.pageName);
+              formInteraction(targetObject.pageName,"Form Open",targetObject.pageName)
             }
             // console.log("calculator type :  ", targetObject.calculatorType);
           } catch (error) {

@@ -68,7 +68,7 @@ export function applyLoanNow(cta_category, loan_type, cta_position, page_type) {
 export function ctaClick(click_text, cta_category, cta_position, page_type) {
   try {
     window.dataLayer.push({
-      event: 'cta_click',
+      event: 'cta_click', 
       click_text,
       cta_category,
       cta_position,
@@ -316,5 +316,18 @@ export function intertextLinkingInteraction(data) {
     });
   } catch (error) {
     console.warn(error);
+  }
+}
+
+export function lpOtpValidate(click_text,loan_type,page_type){
+  try {
+    window.dataLayer.push({
+      event: 'LP_otp_validate',
+      click_text: click_text || '',
+      loan_type: loan_type || '',
+      page_type: page_type || '' 
+      });
+  } catch (error) {
+      console.log(error); 
   }
 }
