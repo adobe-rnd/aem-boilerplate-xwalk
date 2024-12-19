@@ -73,6 +73,7 @@ async function loadMoengage() {
 
   try {
     let moengageContainer = document.getElementById("moengage-container");
+    if(!moengageContainer) return false;
     let navWrapper = document.querySelector(".nav-wrapper");
     let heightMoengage = moengageContainer.clientHeight;
     window.addEventListener('scroll', function (event) {
