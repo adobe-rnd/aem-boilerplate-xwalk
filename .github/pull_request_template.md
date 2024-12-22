@@ -3,5 +3,5 @@ Please always provide the [GitHub issue(s)](../issues) your PR is for, as well a
 Fix #<gh-issue-id>
 
 Test URLs:
-- Before: https://main--piramalfinance--shamalijadhav.hlx.live/
-- After: https://<branch>--piramalfinance--shamalijadhav.hlx.live/
+- Before: https://main--piramalfinance--wwwpiramalfinancecom.hlx.live/
+- After: https://<branch>--piramalfinance--wwwpiramalfinancecom.hlx.live/

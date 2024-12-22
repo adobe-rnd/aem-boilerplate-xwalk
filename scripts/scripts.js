@@ -2,7 +2,7 @@ import { formOpen, overlay } from '../blocks/applyloanform/applyloanforms.js';
 import { statemasterGetStatesApi } from '../blocks/applyloanform/statemasterapi.js';
 import { validationJSFunc } from '../blocks/applyloanform/validation.js';
 import { toggleAllNavSections } from '../blocks/header/header.js';
-import { applyLoanInteraction, selectBranchInteraction } from '../dl.js';
+import { applyLoanInteraction, ctaClick, ctaClickInteraction, selectBranchInteraction } from '../dl.js';
 import {
   sampleRUM, loadHeader, loadFooter, decorateButtons, decorateIcons, decorateSections, decorateBlocks, decorateTemplateAndTheme, waitForLCP, loadBlocks, loadCSS, fetchPlaceholders,
 } from './aem.js';
@@ -521,6 +521,49 @@ export function decorateViewMore(block) {
   });
 }
 
+/* export function decorateAnchorTag(main) {
+  try {
+    main.querySelectorAll('a').forEach((anchor) => {
+      if (anchor.innerHTML.includes('<sub>')) {
+        anchor.target = '_blank';
+      } else if (anchor.href.includes('/modal-popup/')) {
+        const paths = anchor.href.split('/');
+        const dataid = paths[paths.length - 1];
+        anchor.dataset.modelId = dataid;
+        targetObject.modelId = dataid;
+        anchor.dataset.href = anchor.href;
+        anchor.href = 'javascript:void(0)';
+        anchor.addEventListener('click', (e) => {
+          targetObject.models = document.querySelectorAll(`.${dataid}`);
+          targetObject.models?.forEach((eachModel) => {
+            eachModel.classList.add('dp-none');
+            eachModel.remove();
+            body.prepend(eachModel);
+          });
+          e.preventDefault();
+          body.style.overflow = 'hidden';
+
+          targetObject.models?.forEach((eachModel) => {
+            eachModel.classList.remove('dp-none');
+            eachModel.classList.add('overlay');
+            const crossIcon = eachModel.querySelector('em');
+            if (crossIcon.innerHTML.includes(':cross-icon')) {
+              crossIcon.innerHTML = '';
+              crossIcon.addEventListener('click', (e) => {
+                eachModel.classList.remove('overlay');
+                eachModel.classList.add('dp-none');
+              });
+            }
+          });
+        });
+      }
+    });
+  } catch (error) {
+    console.warn(error);
+  }
+} */
+
+
 export function decorateAnchorTag(main) {
   try {
     main.querySelectorAll('a').forEach((anchor) => {
@@ -632,6 +675,7 @@ export async function decorateMain(main) {
   decorateBlocks(main);
   decorateImageIcons(main);
   handleOpenFormOnClick(main);
+  handleReadAll(main);
 }
 
 /**
@@ -870,12 +914,18 @@ body?.addEventListener('click', (e) => {
   const loaninnerform = document.querySelector('.loan-form-sub-parent');
   const modalOverlay = document.querySelector('.modal-overlay');
 
-  handleModelClick(target, loaninnerform, modalOverlay);
-  handleNavClick(target);
-  handleOverlayClick(target);
-  handleStakePopupClick(target);
-  handleNeeyatLanguageDropdown(target);
-  handleBranchLocatorDropdown(target);
+  try {
+    handleModelClick(target, loaninnerform, modalOverlay);
+    handleNavClick(target);
+    handleOverlayClick(target);
+    handleStakePopupClick(target);
+    handleNeeyatLanguageDropdown(target);
+    handleBranchLocatorDropdown(target);
+    handleAuthoriseAgencies(target);
+  } catch (error) {
+    console.warn(error);
+  }
+  
 });
 
 function handleModelClick(target, loaninnerform, modalOverlay) {
@@ -906,7 +956,7 @@ function handleOverlayClick(target) {
 
 function handleStakePopupClick(target) {
   if (!target.closest('.stake-pop-up')) {
-    if(!document.querySelector('.stake-pop-up')?.length > 0) return false;
+    if (!document.querySelector('.stake-pop-up')?.length > 0) return false;
     document.querySelector('.partnership-tab-content.partnership-image-popup .cmp-text.active')?.classList.remove('active');
     updateStakePopups();
   }
@@ -920,9 +970,20 @@ function handleNeeyatLanguageDropdown(target) {
 
 function handleBranchLocatorDropdown(target) {
   if (document.querySelector('.branch-locater-banner')) {
-    if (!target.classList.contains('search-input') && 
-        (!target.closest('.default-state-selected') || !target.closest('.default-city-selected'))) {
+    if (!target.classList.contains('search-input') &&
+      (!target.closest('.default-state-selected') || !target.closest('.default-city-selected'))) {
       updateBranchLocator();
+    }
+  }
+}
+
+function handleAuthoriseAgencies(target){
+  if (!target.closest('.toggleCityContainer') && !target.closest('.select-container') && !target.closest('fieldset') && !target.closest('cityBlack')) {
+    const selectContainer = document.querySelector('.select-container');
+    const citiesContainer = document.querySelector('.cities-container');
+    if (selectContainer?.classList.contains('open') && selectContainer && citiesContainer) {
+      citiesContainer.style.display = 'none';
+      selectContainer.classList.remove('open');
     }
   }
 }
@@ -1052,6 +1113,28 @@ export function showingStateCity(searchInputAll) {
 //   }
 // });
 
+export function handleReadAll(el) {
+  try {
+    const readAllBTNSection = el.querySelector(".section.carousel-articles-wrapper")
+    let readAllBTN = readAllBTNSection.querySelector(".default-content-wrapper p a");
+    readAllBTN.addEventListener("click", onClickReadAllBtn)
+  } catch (error) {
+  }
+}
+
+function onClickReadAllBtn(e) {
+  try {
+    if (e.target.closest(".section.read-all-dl")) {
+      const click_text = e.target.textContent.trim();
+      const cta_position = e.target.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
+      const cta_category = '';
+      ctaClick(click_text, cta_category, cta_position, targetObject.pageName);
+    }
+  } catch (error) {
+    console.log("read all not found Analytics")
+  }
+}
+
 
 export function handleOpenFormOnClick(el) {
   const formButtons = el.querySelectorAll('.open-form-on-click .button-container');
@@ -1087,9 +1170,17 @@ function onCLickApplyFormOpen(e) {
   formOpen();
   try {
     if (!e.target.closest('.section').classList.contains('banner-carousel-wrapper')) {
-      const data = {};
-      data.click_text = e.target.textContent.trim();
-      applyLoanInteraction(data);
+      if (!e.target.closest('.section').classList.contains('documents-required-brown')) {
+        const data = {};
+        data.click_text = e.target.textContent.trim();
+        applyLoanInteraction(data);
+      }
+    }
+    if (e.target.closest('.section').classList.contains('documents-required-brown')) {
+      const click_text = e.target.textContent.trim();
+      const cta_category = e.target.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
+      const cta_position = '';
+      ctaClick(click_text, cta_category, cta_position, targetObject.pageName);
     }
   } catch (error) {
     console.warn(error);
@@ -1122,50 +1213,50 @@ export function getDay() {
 } */
 
 
-  export function branchURLStr(location = '', city = '', state = '', urlstrhand, locationcode = '') {
-    // const sanitizeString = (str) => str?.replace(/\s+|[()\/]/g, (match) => (match.trim() ? '' : '-')).toLowerCase().trim();
+export function branchURLStr(location = '', city = '', state = '', urlstrhand, locationcode = '') {
+  // const sanitizeString = (str) => str?.replace(/\s+|[()\/]/g, (match) => (match.trim() ? '' : '-')).toLowerCase().trim();
 
-    const sanitizeString  = (str) => {
-       
-      // Convert to lowercase and trim whitespace
-      let cleaned = str.toLowerCase().trim();
+  const sanitizeString = (str) => {
 
-      // Replace unwanted spaces around dashes and parentheses
-      cleaned = cleaned.replace(/\s*-\s*/g, '-')    // Normalize dashes
-                      .replace(/\s*\(\s*/g, '-')  // Replace opening parenthesis with a dash
-                      .replace(/\s*\)\s*/g, '')   // Remove closing parenthesis with spaces
-                      .replace(/\s+/g, '-');      // Replace spaces with dashes
+    // Convert to lowercase and trim whitespace
+    let cleaned = str.toLowerCase().trim();
 
-      // Replace multiple dashes with a single dash
-      cleaned = cleaned.replace(/-+/g, '-');
+    // Replace unwanted spaces around dashes and parentheses
+    cleaned = cleaned.replace(/\s*-\s*/g, '-')    // Normalize dashes
+      .replace(/\s*\(\s*/g, '-')  // Replace opening parenthesis with a dash
+      .replace(/\s*\)\s*/g, '')   // Remove closing parenthesis with spaces
+      .replace(/\s+/g, '-');      // Replace spaces with dashes
 
-      // Remove leading and trailing dashes
-      return cleaned.replace(/^-+|-+$/g, '');
+    // Replace multiple dashes with a single dash
+    cleaned = cleaned.replace(/-+/g, '-');
 
-    }
-    
-    
-    const locationAdd = sanitizeString(location);
-    const cityStr = sanitizeString(city);
-    const stateStr = sanitizeString(state);
-  
-    const urlMap = {
-      shorthand: () => `/branch-locator/${stateStr}/${cityStr}`,
-      shorthandstate: () => `/branch-locator/${stateStr}`,
-      loans: () => {
-        const baseUrl = '/branch-locator/loans-in-';
-        const isLocationSameAsCity = locationAdd === cityStr;
-        const segments = isLocationSameAsCity 
-          ? [cityStr, stateStr, locationcode]
-          : [locationAdd, cityStr, stateStr, locationcode];
-          
-        return baseUrl + segments.join('-');
-      }
-    };
-  
-    return urlMap[urlstrhand]?.();
+    // Remove leading and trailing dashes
+    return cleaned.replace(/^-+|-+$/g, '');
+
   }
-  
+
+
+  const locationAdd = sanitizeString(location);
+  const cityStr = sanitizeString(city);
+  const stateStr = sanitizeString(state);
+
+  const urlMap = {
+    shorthand: () => `/branch-locator/${stateStr}/${cityStr}`,
+    shorthandstate: () => `/branch-locator/${stateStr}`,
+    loans: () => {
+      const baseUrl = '/branch-locator/loans-in-';
+      const isLocationSameAsCity = locationAdd === cityStr;
+      const segments = isLocationSameAsCity
+        ? [cityStr, stateStr, locationcode]
+        : [locationAdd, cityStr, stateStr, locationcode];
+
+      return baseUrl + segments.join('-');
+    }
+  };
+
+  return urlMap[urlstrhand]?.();
+}
+
 
 export function selectBranchDetails(block) {
   const cards = block.closest('.section').querySelectorAll('.branch-list-wrapper a');
@@ -1232,28 +1323,26 @@ export function groupAllKeys(array) {
     for (let key in current) {
       // Convert key to lowercase and replace spaces with hyphens for consistent key names
       let formattedKey = key.toLowerCase().replace(/\s+/g, '-');
-      
       // If the key doesn't exist in the result object, initialize it with an empty array
       if (!result[formattedKey]) {
         result[formattedKey] = [];
       }
-      
+
       // Push the current value of the key into the array
-        let currnetKeyFirstName = '';
-        if(current[key].includes('-')){
-            currnetKeyFirstName = current[key].split('-')[0].trim();
-        }else{
-            currnetKeyFirstName = current[key].trim();
-        }
-    
-        if(!result[formattedKey].includes(currnetKeyFirstName)){
-          result[formattedKey].push(currnetKeyFirstName);
-        }
+      let currnetKeyFirstName = '';
+      if (current[key].includes('-')) {
+        currnetKeyFirstName = current[key].split('-')[0].trim();
+      } else {
+        currnetKeyFirstName = current[key].trim();
+      }
+
+      if (!result[formattedKey].includes(currnetKeyFirstName)) {
+        result[formattedKey].push(currnetKeyFirstName);
+      }
     }
     return result;
   }, {});
 }
-
 
 // Main function
 const processAnchor = (anchor, body) => {
@@ -1275,15 +1364,15 @@ const processAnchor = (anchor, body) => {
 
 const handleReltags = (anchor) => {
   const getHref = anchor.href;
-  const paramToRemove = 'rel';
+  const relParamCheck = 'rel';
   const url = new URL(getHref);
   const params = new URLSearchParams(url.search);
-  if(params.has(paramToRemove)){
-    let newRel = params.get(paramToRemove);
-    if(newRel.includes(',')){
-      anchor.rel = newRel.replaceAll(',', '');
+  if(params.has(relParamCheck)){
+    let newRelContent = params.get(relParamCheck);
+    if(newRelContent.includes(',')){
+      anchor.rel = newRelContent.replaceAll(',', '');
     }else{
-      anchor.rel = newRel;
+      anchor.rel = newRelContent;
     }
 
     // Remove the parameter from the URL
@@ -1291,7 +1380,7 @@ const handleReltags = (anchor) => {
       const urlObj = new URL(url); // Parse the URL
       const searchParams = urlObj.searchParams; // Access query parameters
   
-      searchParams.delete('rel'); // Remove the 'rel' parameter
+      searchParams.delete(relParamCheck); // Remove the 'rel' parameter
   
       return urlObj.toString(); // Return the modified URL
     }

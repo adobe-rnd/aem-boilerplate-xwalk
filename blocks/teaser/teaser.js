@@ -1,5 +1,5 @@
 import {
-  applyLoanNow, bannerClick, ctaClickInteraction, readMoreInteraction,
+  applyLoanNow, bannerClick, ctaClick, ctaClickInteraction, readMoreInteraction,
 } from '../../dl.js';
 import { targetObject , handleOpenFormOnClick } from '../../scripts/scripts.js';
 
@@ -123,9 +123,17 @@ export function generateTeaserDOM(props, classes) {
     el.addEventListener('click', function (e) {
       try {
         if (!e.target.closest('.calc-desktop-carousel-wrapper')) {
+          if(!e.target.closest(".multi-calc-teaser-wrapper")){
           if (index || e.target.closest('.cta')) {
             bannerClick(e.target.innerText, targetObject.pageName);
           }
+        }
+        if(e.target.closest(".multi-calc-teaser-wrapper")){
+            const click_text = e.target.textContent.trim();
+            const cta_position = '';
+            const cta_category = e.target.closest('.foreground').querySelector('.long-description').querySelector('p') .textContent.trim()
+            ctaClick(click_text, cta_category, cta_position, targetObject.pageName);
+        }
           if (e.target.closest('.open-form-on-click')) {
             const formClickSection = e.target.closest('.open-form-on-click');
             handleOpenFormOnClick(formClickSection);

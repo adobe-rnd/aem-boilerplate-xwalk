@@ -288,13 +288,13 @@ function getWhatsappServicesApi(mobileNumber) {
 }
 
 export function getWhatAPIAuth() {
-  // const requestObj = {
-  //   requestJson: {
-  //     username: 'test.kumar@getcogno.ai',
-  //     password: 'Success@123$',
-  //     bot_id: '1',
-  //   },
-  // };
+  /* const requestObj = {
+    requestJson: {
+      username: 'test.kumar@getcogno.ai',
+      password: 'Success@123$',
+      bot_id: '1',
+    },
+  }; */
   const requestObj = {
     requestJson: {}
   }

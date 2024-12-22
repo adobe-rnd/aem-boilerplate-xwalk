@@ -17,11 +17,12 @@ export default async function decorate(block) {
 }
 
 function groupAndSortLocations(data) {
-  const grouped = Object.groupBy(data, ({ Location }) => {
-    const lowercaseLocation = Location.toLowerCase();
-    return lowercaseLocation.charAt(0).toUpperCase() + lowercaseLocation.slice(1);
-  });
-
+  const grouped = data.reduce((acc, item) => {
+    const location = item.Location.charAt(0).toUpperCase() + item.Location.slice(1).toLowerCase();
+    acc[location] = acc[location] || [];
+    acc[location].push(item);
+    return acc;
+  }, {});
   const sortedCities = Object.keys(grouped).sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
   return { grouped, sortedCities };
 }
@@ -83,14 +84,14 @@ function initEventListeners(block, groupedLocations) {
     displayCards(block, selectedCity, groupedLocations.grouped);
   });
 
-  block.closest('body').addEventListener('click', (e) => {
+  /* block.closest('body').addEventListener('click', (e) => {
     if (!e.target.closest('.toggleCityContainer') && !e.target.closest('.select-container') && !e.target.closest('fieldset') && !e.target.closest('cityBlack')) {
       if (selectContainer.classList.contains('open')) {
         citiesContainer.style.display = 'none';
         selectContainer.classList.remove('open');
       }
     }
-  });
+  }); */
 
   window.onscroll = () => displayCards(block, inputLocationValue, groupedLocations.grouped);
 }

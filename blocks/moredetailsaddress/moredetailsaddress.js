@@ -114,15 +114,18 @@ async function getStateCity(lat, lng) {
   try {
     const response = await getStateName(lat, lng);
     const { results } = await response.json();
-    if (results[0]) {
-      for (const result of results) {
-        const reviewRating = await getReviewRating(result.place_id);
-        if (reviewRating.result.reviews && reviewRating.result?.opening_hours?.weekday_text) {
-          setLocationObj.review = reviewRating.result.reviews;
-          setLocationObj.working = reviewRating.result.opening_hours.weekday_text;
-          break;
-        }
-      }
+    if (results && results[0]?.place_id) {
+      // for (const result of results) {
+      //   if (result.place_id) {
+          // const reviewRating = await getReviewRating(result.place_id);
+          const reviewRating = await getReviewRating(results[0].place_id);
+          if (reviewRating.result.reviews && reviewRating.result?.opening_hours?.weekday_text) {
+            setLocationObj.review = reviewRating.result.reviews;
+            setLocationObj.working = reviewRating.result.opening_hours.weekday_text;
+            // break;
+          }
+      //   }
+      // }
     }
   } catch (err) {
     console.error(err);
