@@ -89,9 +89,43 @@ async function loadMoengage() {
   }
 }
 
+const handleReltags = () => {
+  const anchors = document.querySelectorAll('a');
+  anchors.forEach(anchor => {
+    const getHref = anchor.href;
+    const relParamCheck = 'rel';
+    if(!getHref) return false;
+    const url = new URL(getHref);
+    const params = new URLSearchParams(url.search);
+    if(params.has(relParamCheck)){
+      let newRelContent = params.get(relParamCheck);
+      if(newRelContent.includes(',')){
+        anchor.rel = newRelContent.replaceAll(',', '');
+      }else{
+        anchor.rel = newRelContent;
+      }
+  
+      // Remove the parameter from the URL
+      function removeRelParameter(url) {
+        const urlObj = new URL(url); // Parse the URL
+        const searchParams = urlObj.searchParams; // Access query parameters
+    
+        searchParams.delete(relParamCheck); // Remove the 'rel' parameter
+    
+        return urlObj.toString(); // Return the modified URL
+      }
+  
+      anchor.href = removeRelParameter(getHref);
+  
+    }
+  })
+};
+
+
 if (!window.location.hostname.includes('localhost') && !window.location.hostname.includes('author')) {
   loadServiceWorker();
   loadHeadGTM();
   loadBodyGTM();
   loadMoengage();
+  handleReltags();
 }

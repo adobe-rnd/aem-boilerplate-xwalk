@@ -1347,9 +1347,6 @@ export function groupAllKeys(array) {
 // Main function
 const processAnchor = (anchor, body) => {
 
-  // Handle Rel 
-  handleReltags(anchor);
-
   // Handle target attribute
   if (anchor.innerHTML.includes('<sub>')) {
     anchor.target = '_blank';
@@ -1362,33 +1359,6 @@ const processAnchor = (anchor, body) => {
  
 };
 
-const handleReltags = (anchor) => {
-  const getHref = anchor.href;
-  const relParamCheck = 'rel';
-  const url = new URL(getHref);
-  const params = new URLSearchParams(url.search);
-  if(params.has(relParamCheck)){
-    let newRelContent = params.get(relParamCheck);
-    if(newRelContent.includes(',')){
-      anchor.rel = newRelContent.replaceAll(',', '');
-    }else{
-      anchor.rel = newRelContent;
-    }
-
-    // Remove the parameter from the URL
-    function removeRelParameter(url) {
-      const urlObj = new URL(url); // Parse the URL
-      const searchParams = urlObj.searchParams; // Access query parameters
-  
-      searchParams.delete(relParamCheck); // Remove the 'rel' parameter
-  
-      return urlObj.toString(); // Return the modified URL
-    }
-
-    anchor.href = removeRelParameter(getHref);
-
-  }
-};
 
 const handleModalPopup = (anchor, body) => {
   const dataid = anchor.href.split('/').pop();
