@@ -1348,9 +1348,6 @@ export function groupAllKeys(array) {
 // Main function
 const processAnchor = (anchor, body) => {
 
-  // Handle Rel 
-  handleReltags(anchor);
-
   // Handle target attribute
   if (anchor.innerHTML.includes('<sub>')) {
     anchor.target = '_blank';
