@@ -170,7 +170,7 @@ function renderData() {
   const currentDay = getDay();
   setLocationObj.working?.forEach((element) => {
     if (element.includes(currentDay)) {
-      document.querySelector(".address-timing p").innerText = `${element}`;
+      // document.querySelector(".address-timing p").innerText = `${element}`;
     }
   });
 }
