@@ -89,6 +89,29 @@ async function loadMoengage() {
   }
 }
 
+async function loadAdobeScript(){
+  const placeholders = await fetchPlaceholders();
+  const checkingEnv = location.href;
+  let adobeScript;
+  if(checkingEnv.includes("uatmarketing.piramalfinance") || checkingEnv.includes("main--piramalfinance")){
+    adobeScript = placeholders.adobescriptstage;
+  }
+  else if(checkingEnv.includes("www.piramalfinance") || checkingEnv.includes("main--prodpiramalfinance")){
+    adobeScript = placeholders.adobescriptprod;
+  }
+  // Create a script element
+  const script = document.createElement('script');
+
+  // Set the script's src attribute
+  script.src = adobeScript;
+
+  // Set the async attribute
+  script.async = true;
+
+  // Append the script to the document head
+  document.head.appendChild(script);
+}
+
 const handleReltags = () => {
   const anchors = document.querySelectorAll('a');
   anchors.forEach(anchor => {
@@ -128,4 +151,5 @@ if (!window.location.hostname.includes('localhost') && !window.location.hostname
   loadBodyGTM();
   loadMoengage();
   handleReltags();
+  loadAdobeScript();
 }
