@@ -1528,6 +1528,14 @@
         "value": "",
         "label": "Teaser Background Color Code",
         "description": "Teaser Background Color Code"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "lineargradientcolor",
+        "value": "",
+        "label": "Teaser Background linear Gradient Color",
+        "description": "Teaser Background linear Gradient Color"
       }
     ]
   },
