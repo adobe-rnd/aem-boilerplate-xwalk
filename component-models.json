@@ -1520,6 +1520,22 @@
         "name": "mobile-bg-image",
         "label": "Mobile Background Image",
         "description": "Mobile Background Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "bgcolorcode",
+        "value": "",
+        "label": "Teaser Background Color Code",
+        "description": "Teaser Background Color Code"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "lineargradientcolor",
+        "value": "",
+        "label": "Teaser Background linear Gradient Color",
+        "description": "Teaser Background linear Gradient Color"
       }
     ]
   },

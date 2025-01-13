@@ -71,6 +71,8 @@ export default function decorate(block) {
   [...panels].forEach((panel, i) => {
     // generate the  panel
     const [imagebg, image, classList, ...rest] = panel.children;
+    const bgColorCode =rest[rest.length-2].textContent.trim();
+    const bgLinearGradientColor =rest[rest.length-1].textContent.trim();
     const classesText = classList.textContent.trim();
     const classes = (classesText ? classesText.split(',') : []).map((c) => c && c.trim()).filter((c) => !!c);
     let blockType = 'teaser';
@@ -93,6 +95,8 @@ export default function decorate(block) {
     classes.forEach((c) => panel.classList.add(c.trim()));
     panel.dataset.panel = `panel_${i}`;
     panel.append(generateOtherComponent);
+    bgColorCode ? (panel.style.backgroundColor =  bgColorCode) : "";
+    bgLinearGradientColor ? (panel.style.backgroundImage =  bgLinearGradientColor) : "";
     panelContainer.append(panel);
 
     if (panels.length > 1) {
