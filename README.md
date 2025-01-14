@@ -37,8 +37,6 @@ you can just delete the folder and re-add the plugin via the `git subtree add` c
 
 ## Project instrumentation
 
-:warning: The plugin requires that you have a recent RUM instrumentation from the AEM boilerplate that supports `sampleRUM.always`. If you are getting errors that `.on` cannot be called on an `undefined` object, please apply the changes from https://github.com/adobe/aem-boilerplate/pull/247/files to your `lib-franklin.js`.
-
 ### On top of a regular boilerplate project
 
 Typically, you'd know you don't have the plugin system if you don't see a reference to `window.hlx.plugins` in your `scripts.js`. In that case, you can still manually instrument this plugin in your project by falling back to a more manual instrumentation. To properly connect and configure the plugin for your project, you'll need to edit your `scripts.js` in your AEM project and add the following:
@@ -79,6 +77,16 @@ Typically, you'd know you don't have the plugin system if you don't see a refere
       toCamelCase,
       toClassName,
     };
+    ```
+    And make sure to import any missing/undefined methods from `aem.js`/`lib-franklin.js` at the very top of the file:
+    ```js
+    import {
+      ...
+      getMetadata,
+      loadScript,
+      toCamelCase,
+      toClassName,
+    } from './aem.js';
     ```
 3. Early in the `loadEager` method you'll need to add:
     ```js
@@ -183,6 +191,6 @@ runEager.call(document, {
 ```
 
 For detailed implementation instructions on the different features, please read the dedicated pages we have on those topics:
-- [Audiences](https://github.com/adobe/aem-experimentation/wiki/Audiences)
-- [Campaigns](https://github.com/adobe/aem-experimentation/wiki/Campaigns)
-- [Experiments](https://github.com/adobe/aem-experimentation/wiki/Experiments)
+- [Audiences](/documentation/audiences.md)
+- [Campaigns](/documentation/campaigns.md)
+- [Experiments](/documentation/experiments.md)
