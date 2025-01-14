@@ -1,5 +1,4 @@
 import {
-  sampleRUM,
   loadHeader,
   loadFooter,
   decorateButtons,
@@ -7,16 +6,16 @@ import {
   decorateSections,
   decorateBlocks,
   decorateTemplateAndTheme,
-  waitForLCP,
-  loadBlocks,
+  waitForFirstImage,
+  loadSection,
+  loadSections,
   loadCSS,
   toClassName,
   getMetadata,
   loadScript,
   toCamelCase,
+  sampleRUM,
 } from './aem.js';
-
-const LCP_BLOCKS = []; // add your LCP blocks to the list
 
 const AUDIENCES = {
   mobile: () => window.innerWidth < 600,
@@ -149,7 +148,7 @@ async function loadEager(doc) {
   if (main) {
     decorateMain(main);
     document.body.classList.add('appear');
-    await waitForLCP(LCP_BLOCKS);
+    await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
 
   try {
@@ -168,7 +167,7 @@ async function loadEager(doc) {
  */
 async function loadLazy(doc) {
   const main = doc.querySelector('main');
-  await loadBlocks(main);
+  await loadSections(main);
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
@@ -179,10 +178,6 @@ async function loadLazy(doc) {
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
-
-  sampleRUM('lazy');
-  sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
-  sampleRUM.observe(main.querySelectorAll('picture > img'));
 
   if ((getMetadata('experiment')
     || Object.keys(getAllMetadata('campaign')).length
@@ -201,7 +196,6 @@ function loadDelayed() {
   // eslint-disable-next-line import/no-cycle
   window.setTimeout(() => import('./delayed.js'), 3000);
   // load anything that can be postponed to the latest here
-  import('./sidekick.js').then(({ initSidekick }) => initSidekick());
 }
 
 async function loadPage() {
