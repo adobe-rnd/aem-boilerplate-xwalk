@@ -32,6 +32,21 @@ export const DEFAULT_OPTIONS = {
 };
 
 /**
+ * Triggers the callback when the page is actually activated,
+ * This is to properly handle speculative page prerendering and marketing events.
+ * @param {Function} cb The callback to run
+ */
+async function onPageActivation(cb) {
+  // Speculative prerender-aware execution.
+  // See: https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API#unsafe_prerendering
+  if (document.prerendering) {
+    document.addEventListener('prerenderingchange', cb, { once: true });
+  } else {
+    cb();
+  }
+}
+
+/**
  * Checks if the current engine is detected as being a bot.
  * @returns `true` if the current engine is detected as being, `false` otherwise
  */
@@ -441,9 +456,11 @@ export async function runExperiment(document, options, context) {
   if (experimentConfig.selectedVariant === experimentConfig.variantNames[0]) {
     document.body.classList.add(`experiment-${context.toClassName(experimentConfig.id)}`);
     document.body.classList.add(`variant-${context.toClassName(experimentConfig.selectedVariant)}`);
-    context.sampleRUM('experiment', {
-      source: experimentConfig.id,
-      target: experimentConfig.selectedVariant,
+    onPageActivation(() => {
+      context.sampleRUM('experiment', {
+        source: experimentConfig.id,
+        target: experimentConfig.selectedVariant,
+      });
     });
     return false;
   }
@@ -474,9 +491,11 @@ export async function runExperiment(document, options, context) {
     console.debug(`failed to serve variant ${window.hlx.experiment.selectedVariant}. Falling back to ${experimentConfig.variantNames[0]}.`);
   }
   document.body.classList.add(`variant-${context.toClassName(result ? experimentConfig.selectedVariant : experimentConfig.variantNames[0])}`);
-  context.sampleRUM('experiment', {
-    source: experimentConfig.id,
-    target: result ? experimentConfig.selectedVariant : experimentConfig.variantNames[0],
+  onPageActivation(() => {
+    context.sampleRUM('experiment', {
+      source: experimentConfig.id,
+      target: result ? experimentConfig.selectedVariant : experimentConfig.variantNames[0],
+    });
   });
   return result;
 }
@@ -530,9 +549,11 @@ export async function runCampaign(document, options, context) {
       console.debug(`failed to serve campaign ${campaign}. Falling back to default content.`);
     }
     document.body.classList.add(`campaign-${campaign}`);
-    context.sampleRUM('campaign', {
-      source: window.location.href,
-      target: result ? campaign : 'default',
+    onPageActivation(() => {
+      context.sampleRUM('campaign', {
+        source: window.location.href,
+        target: result ? campaign : 'default',
+      });
     });
     return result;
   } catch (err) {
@@ -584,9 +605,11 @@ export async function serveAudience(document, options, context) {
       console.debug(`failed to serve audience ${selectedAudience}. Falling back to default content.`);
     }
     document.body.classList.add(audiences.map((audience) => `audience-${audience}`));
-    context.sampleRUM('audiences', {
-      source: window.location.href,
-      target: result ? forcedAudience || audiences.join(',') : 'default',
+    onPageActivation(() => {
+      context.sampleRUM('audiences', {
+        source: window.location.href,
+        target: result ? forcedAudience || audiences.join(',') : 'default',
+      });
     });
     return result;
   } catch (err) {
@@ -697,7 +720,9 @@ function adjustRumSampligRate(document, options, context) {
 }
 
 export async function loadEager(document, options, context) {
-  adjustRumSampligRate(document, options, context);
+  onPageActivation(() => {
+    adjustRumSampligRate(document, options, context);
+  });
   let res = await runCampaign(document, options, context);
   if (!res) {
     res = await runExperiment(document, options, context);
