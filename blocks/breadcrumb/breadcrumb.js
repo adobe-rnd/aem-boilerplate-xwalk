@@ -80,6 +80,8 @@ export default async function decorate(block) {
       breadcrumbsText.push(`<a href="${multiUrls[index]}">${text}</a>`);
     });
 
+    generateBreadcrumbSchema(breadcrumbsText);
+
     block.innerHTML = '';
     block.classList.add(className);
     breadcrumb.innerHTML = breadcrumbsText.join(`<span class="breadcrumb-separator">${RIGHTARROW}</span>`);
@@ -123,4 +125,31 @@ export default async function decorate(block) {
     breadcrumb.innerHTML = breadcrumbLinks.join(`<span class="breadcrumb-separator">${RIGHTARROW}</span>`);
     block.append(breadcrumb);
   }, 0);
+}
+
+function generateBreadcrumbSchema(breadcrumbsText) {
+  const listItems = [];
+  const div = document.createElement('div');
+  breadcrumbsText.forEach((ele, index) => {
+    div.innerHTML = ele;
+    const anchor = div.querySelector('a');
+
+    listItems.push({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": anchor.textContent,
+      "item": location.origin + anchor.getAttribute('href')
+    });
+  });
+
+  let breadCrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": listItems
+  }
+
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.innerHTML = JSON.stringify(breadCrumbSchema);
+  document.head.append(script);
 }
