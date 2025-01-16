@@ -3,6 +3,7 @@ import { fetchPlaceholders } from '../../scripts/aem.js';
 import { targetObject } from '../../scripts/scripts.js';
 import { documentRequired, generateAccordionDOM } from '../accordion/accordion.js';
 
+const faqQA = [];
 export default async function decorate(block) {
   const resp = await fetchPlaceholders();
   // console.log("placeholder resp :: ", resp);
@@ -19,13 +20,29 @@ export default async function decorate(block) {
     accordion.classList.add('accordion', 'block');
     accordion.append(accordionDOM);
 
+    if (accordion.closest('.section.faq-section-wrapper')) {
+      let faqQuestion = accordion?.querySelector("summary >div >p")?.textContent?.trim()|| "";
+      let faqAnsText = accordion?.querySelector("details >div")?.textContent?.trim() || "";
+      let faqAns= faqAnsText?.replace(/\s+/g, ' ')?.trim()?.replace(/\n/g, ' ') || "";
+      faqQA.push({
+        "@type": "Question",
+        "name": faqQuestion,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faqAns
+        }
+      })
+    }
+
     try {
       mediaLiClickAnalytics(accordionDOM);
     } catch (error) {
       console.warn(error);
     }
   });
-
+  if (block.closest('.section.faq-section-wrapper')) {
+    faqSchemaQA(faqQA);
+  }
   // use same styling as shade-box from /docs
   block.classList.add('shade-box');
   try {
@@ -133,4 +150,17 @@ function mediaLiClickAnalytics(accordionDOM) {
       ctaClickInteraction(data);
     });
   });
+}
+
+
+function faqSchemaQA(faqQA) {
+  let faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqQA
+  }
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.innerHTML = JSON.stringify(faqSchema) || "";
+  document.head.append(script);
 }
