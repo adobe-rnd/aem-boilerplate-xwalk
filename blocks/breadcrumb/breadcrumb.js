@@ -130,15 +130,25 @@ export default async function decorate(block) {
 function generateBreadcrumbSchema(breadcrumbsText) {
   const listItems = [];
   const div = document.createElement('div');
-  breadcrumbsText.forEach((ele, index) => {
-    div.innerHTML = ele;
-    const anchor = div.querySelector('a');
+  div.innerHTML = breadcrumbsText.join("");
+  const isBranchLocator = Array.from(div.querySelectorAll("a")).some((e) => {
+    if (e.getAttribute('href').includes("/branch-locator")) {
+      return true;
+    }
+    return false;
+  });
 
+  if (isBranchLocator) {
+    return; 
+  }
+
+  div.querySelectorAll("a").forEach((ele, index) => {
+    
     listItems.push({
       "@type": "ListItem",
       "position": index + 1,
-      "name": anchor.textContent,
-      "item": location.origin + anchor.getAttribute('href')
+      "name": ele.textContent,
+      "item": location.origin + ele.getAttribute('href')
     });
   });
 

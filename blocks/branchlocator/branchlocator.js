@@ -164,4 +164,27 @@ function BLNavUpdate(block) {
   const breadCrumb = breadcrumbItems.map(item => `${separator}${item}`).join('');
 
   block.closest('body').querySelector('.breadcrumb nav').insertAdjacentHTML('beforeend', breadCrumb);
+
+  let existedBreadCrumb = block.closest('body').querySelectorAll('.breadcrumb nav a');
+  const existedBreadCrumbSchema = [];
+   existedBreadCrumb.forEach(((a,index)=>{
+    existedBreadCrumbSchema.push({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": a.textContent,
+      "item": location.origin + a.getAttribute('href')
+    });
+  }))
+
+  let branchLocatorBreadCrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": existedBreadCrumbSchema
+  }
+
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.innerHTML = JSON.stringify(branchLocatorBreadCrumbSchema);
+  document.head.append(script);
+
 }
