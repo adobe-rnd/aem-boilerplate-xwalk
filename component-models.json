@@ -1075,6 +1075,20 @@
             ]
           },
           {
+            "name": "Text Color",
+            "children": [
+              {
+                "name": "Black",
+                "value": "black"
+              },
+              {
+                "name": "Red",
+                "value": "red"
+              }
+            ]
+          }
+          ,
+          {
             "name": "Alignment",
             "children": [
               {
@@ -1592,19 +1606,6 @@
               {
                 "name": "Right",
                 "value": "right"
-              }
-            ]
-          },
-          {
-            "name": "Text Color",
-            "children": [
-              {
-                "name": "Black",
-                "value": "black"
-              },
-              {
-                "name": "Red",
-                "value": "red"
               }
             ]
           }
