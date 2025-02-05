@@ -886,6 +886,6 @@ footer:has(.neeyat-footer) {
   }
 }
 
-.font-size-change{
+.font-size-change >p{
  font-size: 14px !important;
 }
