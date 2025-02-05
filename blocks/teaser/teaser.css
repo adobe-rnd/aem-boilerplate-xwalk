@@ -502,5 +502,5 @@ color: blue !important;
 underline: unset;
 }
 .piramal-blue >h2{
-    color : #3E6C95;
+    color : #3E6C95 !important;
 } 
