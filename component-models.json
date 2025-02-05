@@ -1092,12 +1092,7 @@
               {
                 "name": "Piramal Blue",
                 "value": "piramal-blue"
-              }
-            ]
-          } ,
-          {
-            "name": "Background Heading Text Position",
-            "children": [
+              },
               {
                 "name": "Top",
                 "value": "top"
