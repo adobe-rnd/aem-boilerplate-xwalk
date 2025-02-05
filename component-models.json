@@ -1094,8 +1094,28 @@
                 "value": "piramal-blue"
               }
             ]
-          }
-          ,
+          } ,
+          {
+            "name": "Background Heading Text Position",
+            "children": [
+              {
+                "name": "Top",
+                "value": "top"
+              },
+              {
+                "name": "Middle",
+                "value": "middle"
+              },
+              {
+                "name": "bottom",
+                "value": "bottom"
+              },
+              {
+                "name": "Button Position bottom",
+                "value": "btn-bottom"
+              }
+            ]
+          },
           {
             "name": "Alignment",
             "children": [
