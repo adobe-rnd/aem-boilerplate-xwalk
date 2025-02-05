@@ -1078,18 +1078,6 @@
             "name": "Text Color",
             "children": [
               {
-                "name": "Black",
-                "value": "black"
-              },
-              {
-                "name": "Red",
-                "value": "red"
-              },
-              {
-                "name": "Blue",
-                "value": "blue"
-              },
-              {
                 "name": "Piramal Blue",
                 "value": "piramal-blue"
               },
@@ -1106,7 +1094,7 @@
                 "value": "bottom"
               },
               {
-                "name": "Button Position bottom",
+                "name": "Button Bottom",
                 "value": "btn-bottom"
               }
             ]
