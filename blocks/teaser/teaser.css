@@ -501,6 +501,6 @@ color: blue !important;
 color: blue !important;
 underline: unset;
 }
-.piramal-blue >h2{
-    color : #3E6C95 !important;
+.piramal-blue .long-description h2{
+    color: #3E6C95 !important;
 } 
