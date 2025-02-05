@@ -1075,6 +1075,19 @@
             ]
           },
           {
+            "name": "Button position",
+            "children": [
+              {
+                "name": "Top",
+                "value": "top"
+              },
+              {
+                "name": "Bottom",
+                "value": "bottom"
+              }
+            ]
+          },
+          {
             "name": "Alignment",
             "children": [
               {
