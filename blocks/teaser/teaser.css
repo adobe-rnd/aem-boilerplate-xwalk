@@ -496,3 +496,8 @@
 .blue .eyebrow{
 color: blue !important;
 }
+
+.blue .long-description >p >u{
+color: blue !important;
+underline: unset;
+}
