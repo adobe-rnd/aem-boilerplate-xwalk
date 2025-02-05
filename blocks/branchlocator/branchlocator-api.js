@@ -50,7 +50,7 @@ export async function searchBranchByURL() {
   if (setLocationObj.geoInfo.state && setLocationObj.geoInfo.city) {
     const stateData = setLocationObj.getExcelData[setLocationObj.geoInfo.state];
     const cityData = stateData?.find(
-      entry => entry.City.toLowerCae() === setLocationObj.geoInfo.city.toLowerCase()
+      entry => entry.City.toLowerCase() === setLocationObj.geoInfo.city.toLowerCase()
     );
 
     if(!cityData){
