@@ -1078,12 +1078,12 @@
             "name": "Button position",
             "children": [
               {
-                "name": "Top",
-                "value": "top"
+                "name": "Button Top",
+                "value": "btn-top"
               },
               {
-                "name": "Bottom",
-                "value": "bottom"
+                "name": "Button Bottom",
+                "value": "btn-bottom"
               }
             ]
           },
