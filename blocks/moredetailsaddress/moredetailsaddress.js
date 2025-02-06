@@ -78,7 +78,7 @@ async function onbranchDetails() {
     }
   }
 
-  await getStateCity(setLocationObj.lat, setLocationObj.lng);
+  // await getStateCity(setLocationObj.lat, setLocationObj.lng);
 
   renderData();
 
@@ -95,22 +95,23 @@ async function onbranchDetails() {
     document.querySelector(".address-info ul li:nth-child(3)").remove();
   }
 
-  setLocationObj.storedata = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
+  // setLocationObj.storedata = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
+  setLocationObj.storedata = sortByCityandState(setLocationObj.getExcelData[setLocationObj.geoInfo.state]);
 
   // setTimeout(reviewRender, 3000);
-  const reviewRatingObserver = new IntersectionObserver((entries) => {
+ /*  const reviewRatingObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         reviewRender();
         reviewRatingObserver.unobserve(document.querySelector(".branchcustomer-review-cards"))
       }
     });
-  }, { rootMargin: "150px" })
-  reviewRatingObserver.observe(document.querySelector(".branchcustomer-review-cards"));
+  }, { rootMargin: "150px" }) */
+  // reviewRatingObserver.observe(document.querySelector(".branchcustomer-review-cards"));
 
 }
 
-async function getStateCity(lat, lng) {
+/* async function getStateCity(lat, lng) {
   try {
     const response = await getStateName(lat, lng);
     const { results } = await response.json();
@@ -130,11 +131,11 @@ async function getStateCity(lat, lng) {
   } catch (err) {
     console.error(err);
   }
-}
+} */
 
-function getStateName(lat, lan) {
+/* function getStateName(lat, lan) {
   return fetchAPI("GET", `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lan}&sensor=true&key=${GOOGLE_MAPS_API_KEY}`);
-}
+} */
 
 function returnLatLan() {
   return new Promise((resolve) => {
@@ -157,25 +158,25 @@ function returnLatLan() {
   });
 }
 
-async function getReviewRating(placeID) {
+/* async function getReviewRating(placeID) {
   const response = await fetchAPI("GET", `/content/piramalfinance/api/mapapi.json?place_id=${placeID}&key=${GOOGLE_MAPS_API_KEY}`);
   // const response = await fetchAPI("GET", `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeID}&key=${GOOGLE_MAPS_API_KEY}`);
   return response.json();
-}
+} */
 
 function renderData() {
   document.querySelector(".address-title h1").innerText = setLocationObj.geoInfo.location;
   document.querySelector(".address-desktop p").innerText = setLocationObj.address;
   document.querySelector(".address-mobile p").innerText = setLocationObj.address;
-  const currentDay = getDay();
+  /* const currentDay = getDay();
   setLocationObj.working?.forEach((element) => {
     if (element.includes(currentDay)) {
       document.querySelector(".address-timing p").innerText = `${element}`;
     }
-  });
+  }); */
 }
 
-function reviewRender() {
+/* function reviewRender() {
   const ratingSpan = renderRatingDiv();
   if (!ratingSpan) {
     return false;
@@ -227,9 +228,9 @@ function reviewRender() {
   } catch (error) {
     console.error("Error: Review Rating Logic", error);
   }
-}
+} */
 
-function renderRatingDiv() {
+/* function renderRatingDiv() {
   if (!setLocationObj.review || setLocationObj.review.length === 0) {
     document.querySelector(".branchcustomer-review-cards").classList.add("dp-none");
     return "";
@@ -267,7 +268,7 @@ function renderRatingDiv() {
       </div>
     `;
   }).join('');
-}
+} */
 
 function nearBLBreadCrumb() {
   const { city, location, locationcode, state } = setLocationObj.geoInfo;
@@ -317,7 +318,14 @@ function deg2rad(deg) {
   return deg * (Math.PI / 180);
 }
 
-function sortingNearestBranch(lat, lng, data) {
+function sortByCityandState(data) {
+  var fliterLocation = data.filter(function (location) {
+    return location.City.toLowerCase() === setLocationObj.geoInfo.city.toLowerCase();
+  });
+  return fliterLocation;
+}
+
+/* function sortingNearestBranch(lat, lng, data) {
   const filteredLocations = Object.values(data)
     .flat()
     .map((location) => {
@@ -334,7 +342,7 @@ function sortingNearestBranch(lat, lng, data) {
   console.log(filteredLocations);
 
   return filteredLocations;
-}
+} */
 
 function dropDownStateCity(response) {
   return response.reduce((acc, location) => {
