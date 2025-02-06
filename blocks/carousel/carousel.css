@@ -189,6 +189,26 @@
   margin-top: 2rem;
 }
 
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.btn-bottom >.background .foreground .text .cta{
+  position: absolute;
+  bottom: 61px;
+}
+
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.btn-bottom .background .foreground .text .cta-image-wrapper{
+  margin-bottom: 50px;
+}
+
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.btn-bottom >.background .foreground .text .cta-image-wrapper,
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.two-btn-bottom >.background .foreground .text .long-description{
+  margin-bottom: 75px;
+}
+
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.two-btn-bottom >.background .foreground .text .short-description{
+  position: absolute;
+  bottom: 61px;
+}
+
+
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .cta>a,
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li>p>a {
   background: var(--orange);
@@ -529,6 +549,11 @@
     margin-top: 12px;
   }
 
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.btn-bottom >.background .foreground .text .cta-image-wrapper,
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.two-btn-bottom >.background .foreground .text .long-description{
+  margin-bottom: unset;
+}
+
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .cta>a,
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li>p>a {
     font-size: .875rem;
@@ -539,6 +564,14 @@
 
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .cta {
     margin-top: 24px;
+  }
+
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.btn-bottom>.background .foreground .text .cta{
+    position: unset;
+  }
+
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.btn-bottom .background .foreground .text .cta-image-wrapper{
+    margin-bottom: unset;
   }
 
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description {
@@ -915,6 +948,11 @@
   .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-blue,
   .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-violet {
     background-size: cover;
+  }
+
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.btn-bottom >.background .foreground .text .cta,
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.two-btn-bottom >.background .foreground .text .short-description{
+    bottom: 90px;
   }
 }
 
