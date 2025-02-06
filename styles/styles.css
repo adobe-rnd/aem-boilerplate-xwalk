@@ -885,3 +885,7 @@ footer:has(.neeyat-footer) {
     min-height: 100%;
   }
 }
+
+.font-size-change p{
+ font-size: 12px !important;
+}
