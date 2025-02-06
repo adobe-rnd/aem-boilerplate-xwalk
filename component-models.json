@@ -1110,6 +1110,10 @@
               {
                 "name": "Button Bottom",
                 "value": "btn-bottom"
+              },
+               {
+                "name": "Two Button Bottom",
+                "value": "two-btn-bottom"
               }
             ]
           },
