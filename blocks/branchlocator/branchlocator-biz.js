@@ -70,9 +70,19 @@ async function updateURL() {
 }
 
 function getBranchList() {
-  return setLocationObj.geoInfo.state && !setLocationObj.geoInfo.city
-    ? sortByState(setLocationObj.getExcelData)
-    : sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
+  if (setLocationObj.geoInfo.state && !setLocationObj.geoInfo.city) {
+    return sortByState(setLocationObj.getExcelData)
+  } else {
+    return sortByCityandState(setLocationObj.getExcelData[setLocationObj.geoInfo.state]);
+  }
+}
+
+function sortByCityandState(data) {
+  var fliterLocation = data.filter(function (location) {
+    return location.City.toLowerCase() === setLocationObj.geoInfo.city.toLowerCase();
+  });
+  return fliterLocation;
+  // return sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, filteredLocations);
 }
 
 async function loadGoogleMapsAndRender(branchList) {
@@ -156,7 +166,7 @@ function getStateName(lat, lan) {
   });
 }
 
-function sortingNearestBranch(lat, lng, data) {
+/* function sortingNearestBranch(lat, lng, data) {
   const filteredLocations = Object.values(data)
     .flat()
     .map((location) => ({
@@ -169,7 +179,7 @@ function sortingNearestBranch(lat, lng, data) {
   console.log(filteredLocations);
 
   return filteredLocations;
-}
+} */
 
 function calculateDistance(lat1, lng1, lat2, lng2) {
   const R = 6371; // Radius of the Earth in km
@@ -289,7 +299,8 @@ async function handleStateClick(e, block) {
     defaultSelectedCityState(block);
     renderCity(block);
 
-    const branchList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
+    // const branchList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
+    const branchList = sortByCityandState(setLocationObj.getExcelData[setLocationObj.geoInfo.state]);
     await loadGoogleMapsAndRender(branchList);
 
     const multipleBranch = await innerBranchFunc(branchList);
@@ -313,7 +324,8 @@ async function handleCityClick(e, block) {
 
     defaultSelectedCityState(block);
 
-    const branchList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
+    // const branchList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
+    const branchList = sortByCityandState(setLocationObj.getExcelData[setLocationObj.geoInfo.state]);
     await loadGoogleMapsAndRender(branchList);
 
     const multipleBranch = await innerBranchFunc(branchList);
@@ -340,7 +352,8 @@ async function handleLocateMeClick(e, block) {
     Object.assign(setLocationObj, { lat, lng });
 
     await getStateCity(lat, lng);
-    const branchList = sortingNearestBranch(lat, lng, setLocationObj.getExcelData);
+    // const branchList = sortingNearestBranch(lat, lng, setLocationObj.getExcelData);
+    const branchList = sortByCityandState(setLocationObj.getExcelData[setLocationObj.geoInfo.state]);
     await loadGoogleMapsAndRender(branchList);
 
     const [nearestBranch] = branchList;
