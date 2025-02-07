@@ -63,8 +63,8 @@ async function onbranchDetails() {
 
     if (foundLocation) {
       Object.assign(setLocationObj.geoInfo, {
-        state: foundLocation.State,
-        city: foundLocation.City,
+        state: formatURLString(foundLocation.State),
+        city: formatURLString(foundLocation.City),
         locationcode: foundLocation["Location Code"],
         location: foundLocation.Location,
       });
@@ -354,5 +354,9 @@ function dropDownStateCity(response) {
     acc[state].push(location);
     return acc;
   }, {});
+}
+
+function formatURLString(str) {
+  return str.charAt(0).toLowerCase() + str.slice(1).replaceAll(" ", "-").toLowerCase();
 }
 
