@@ -56,8 +56,7 @@
 
 .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel.txt-bottom .background .foreground .text .long-description :where(h1,h2,h3,h4,h5,h6){
   position: absolute;
-  bottom: 28px;
-  transform: translateY(-50%);
+  bottom: 100px;
 }
 
 .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel .background .foreground .text .long-description p:first-child {
