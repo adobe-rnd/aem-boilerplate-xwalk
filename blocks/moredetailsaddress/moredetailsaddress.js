@@ -63,8 +63,8 @@ async function onbranchDetails() {
 
     if (foundLocation) {
       Object.assign(setLocationObj.geoInfo, {
-        state: formatURLString(foundLocation.State),
-        city: formatURLString(foundLocation.City),
+        state: firstLetterCap(foundLocation.State),
+        city: firstLetterCap(foundLocation.City),
         locationcode: foundLocation["Location Code"],
         location: foundLocation.Location,
       });
@@ -356,7 +356,7 @@ function dropDownStateCity(response) {
   }, {});
 }
 
-function formatURLString(str) {
-  return str.charAt(0).toLowerCase() + str.slice(1).replaceAll(" ", "-").toLowerCase();
+function firstLetterCap(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }
 
