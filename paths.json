@@ -1,8 +1,7 @@
 {
   "mappings": [
-    "/content/piramalfinance-eds/:/",
-    "/content/piramalfinance/in/en/:/",
     "/content/piramalfinance/content/in/en/:/",
+    "/content/piramalfinance/in/en/:/",
     "/content/piramalfinance-eds/in/en/:/",
     "/content/piramalfinance-eds/in/hi/:/hi/",
     "/content/piramalfinance-eds/in/mr/:/mr/",
