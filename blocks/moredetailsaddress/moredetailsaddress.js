@@ -63,8 +63,8 @@ async function onbranchDetails() {
 
     if (foundLocation) {
       Object.assign(setLocationObj.geoInfo, {
-        state: foundLocation.State,
-        city: foundLocation.City,
+        state: firstLetterCap(foundLocation.State),
+        city: firstLetterCap(foundLocation.City),
         locationcode: foundLocation["Location Code"],
         location: foundLocation.Location,
       });
@@ -85,15 +85,16 @@ async function onbranchDetails() {
   const userLocation = await returnLatLan();
   if (userLocation) {
     setLocationObj.distance = calculateDistance(setLocationObj.lat, setLocationObj.lng, userLocation.lat, userLocation.lng);
-    const distanceElement = document.querySelector(".address-info ul li:nth-child(3)");
+    // const distanceElement = document.querySelector(".address-info ul li:nth-child(3)");
+    let distanceElement = document.createElement("li");
+    const addressUL = document.querySelector(".address-info ul");
     if (setLocationObj.distance <= 40) {
       distanceElement.innerText = `${setLocationObj.distance.toFixed()} Km away from your location`;
+      addressUL.append(distanceElement)
     } else {
       distanceElement.remove();
     }
-  } else {
-    document.querySelector(".address-info ul li:nth-child(3)").remove();
-  }
+  } 
 
   // setLocationObj.storedata = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
   setLocationObj.storedata = sortByCityandState(setLocationObj.getExcelData[setLocationObj.geoInfo.state]);
@@ -353,5 +354,9 @@ function dropDownStateCity(response) {
     acc[state].push(location);
     return acc;
   }, {});
+}
+
+function firstLetterCap(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }
 
