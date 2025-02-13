@@ -24,6 +24,7 @@
 
 .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel.left .background .foreground .text {
   justify-content: start;
+  position: relative;
 }
 
 .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel.left .background .foreground .text .long-description {
@@ -42,6 +43,21 @@
   font-family: 'Nunito-Extrabold';
 }
 
+.section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel.txt-top .background .foreground .text .long-description :where(h1,h2,h3,h4,h5,h6){
+  position: absolute;
+  top: 0;
+}
+.section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel.txt-middle .background .foreground .text .long-description :where(h1,h2,h3,h4,h5,h6){
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel.txt-bottom .background .foreground .text .long-description :where(h1,h2,h3,h4,h5,h6){
+  position: absolute;
+  bottom: 28px;
+  transform: translateY(-50%);
+}
+
 .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel .background .foreground .text .long-description p:first-child {
   padding: 5px 5px 0 5px;
 }
@@ -55,6 +71,11 @@
   margin-top: 2.25rem;
   display: inline-block;
   position: unset;
+}
+
+.section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel.txt-bottom .background .foreground .text .long-description :where(h1,h2,h3,h4,h5,h6){
+  position: absolute;
+  bottom: 100px;
 }
 
 .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel .background .foreground .text .long-description p.button-container a {
@@ -90,6 +111,11 @@
 .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel .background .foreground .text .long-description p.button-container:last-child {
   line-height: 30px;
   vertical-align: bottom;
+}
+
+.section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel.btn-bottom .background .foreground .text .long-description p.button-container:last-child{
+  position: absolute;
+  bottom: 10px;
 }
 
 /* .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel .background .foreground .text .long-description p.button-container:last-child a.button {
@@ -158,6 +184,10 @@
     margin: 0px;
     height: 390px;
     max-width: unset;
+  }
+
+  .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel.btn-bottom .background .foreground .text .long-description p.button-container:last-child{
+    position: unset;
   }
 
   .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel .background .foreground .text .long-description p:not(p.button-container) {
@@ -232,6 +262,14 @@
     width: 22px;
     height: 22px;
   }
+
+  .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel.btn-bottom .background .foreground .text .long-description p.button-container:last-child{
+    position: unset;
+  }
+  .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel.txt-top .background .foreground .text .long-description :where(h1,h2,h3,h4,h5,h6){
+    top: 50px;
+  }
+
 }
 
 @media screen and (min-width:768px) and (max-width:1024px) {
@@ -281,6 +319,11 @@
   .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel.teaser .background .foreground{
     margin: calc((100% - 1025px) / 2);
   }
+
+  .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel.btn-bottom .background .foreground .text .long-description p.button-container:last-child{
+    bottom: 28px;
+  }
+  
 }
 
 /* carosuel video End */
