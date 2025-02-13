@@ -1075,6 +1075,36 @@
             ]
           },
           {
+            "name": "Text Heading Position",
+            "children": [
+              {
+                "name": "Text Top",
+                "value": "txt-top"
+              },
+              {
+                "name": "Text Middle",
+                "value": "txt-middle"
+              },
+              {
+                "name": "Text Bottom",
+                "value": "txt-bottom"
+              }
+            ]
+          },
+          {
+            "name": "Button Position",
+            "children": [
+              {
+                "name": "Button Bottom",
+                "value": "btn-bottom"
+              },
+               {
+                "name": "Two Button Bottom",
+                "value": "two-btn-bottom"
+              }
+            ]
+          },
+          {
             "name": "Alignment",
             "children": [
               {
