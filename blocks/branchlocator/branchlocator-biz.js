@@ -351,9 +351,20 @@ async function handleLocateMeClick(e, block) {
 
     Object.assign(setLocationObj, { lat, lng });
 
+    var {perviousCity , perviousState} = setLocationObj.geoInfo;
+
     await getStateCity(lat, lng);
     // const branchList = sortingNearestBranch(lat, lng, setLocationObj.getExcelData);
-    const branchList = sortByCityandState(setLocationObj.getExcelData[setLocationObj.geoInfo.state]);
+    let branchList = sortByCityandState(setLocationObj.getExcelData[setLocationObj.geoInfo.state]);
+
+    if(branchList.length == 0){
+      Object.assign(setLocationObj.geoInfo, { 
+        state : perviousState,
+        city : perviousCity
+       });
+      branchList = sortByCityandState(setLocationObj.getExcelData[setLocationObj.geoInfo.state]);
+    }
+
     await loadGoogleMapsAndRender(branchList);
 
     const [nearestBranch] = branchList;
@@ -375,7 +386,7 @@ async function handleLocateMeClick(e, block) {
 
 function updateUIForNoLocation(block, target) {
   block.closest(".section").querySelector(".nearest-txt").textContent = "Kindly enable your Location and Refresh the page";
-  target.classList.add("dp-none");
+  target.closest('.btn-locate')?.classList.add("dp-none");
 }
 
 async function updateDropdownsAndRender(block) {
