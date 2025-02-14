@@ -83,7 +83,7 @@ function getBranchList() {
   }
 }
 
-function sortByCityandState(data) {
+function sortByCityandState(data = []) {
   var fliterLocation = data.filter(function (location) {
     return location.City.toLowerCase() === setLocationObj.geoInfo.city.toLowerCase();
   });
@@ -364,6 +364,8 @@ async function handleLocateMeClick(e, block) {
 
     await getStateCity(lat, lng);
     // const branchList = sortingNearestBranch(lat, lng, setLocationObj.getExcelData);
+    setLocationObj.geoInfo.state = setLocationObj.geoInfo.state ? firstLetterCap(setLocationObj.geoInfo.state) : setLocationObj.geoInfo.state;
+    
     let branchList = sortByCityandState(setLocationObj.getExcelData[setLocationObj.geoInfo.state]);
 
     if(branchList.length == 0){
@@ -446,3 +448,8 @@ function updateUIAfterLocateMe(block, nearestBranch, currentDistance) {
 function sortByState(data) {
   return Object.values(data[setLocationObj.geoInfo.state]);
 }
+
+function firstLetterCap(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
+
