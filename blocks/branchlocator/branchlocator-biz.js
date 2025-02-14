@@ -351,7 +351,8 @@ async function handleLocateMeClick(e, block) {
 
     Object.assign(setLocationObj, { lat, lng });
 
-    var {perviousCity , perviousState} = setLocationObj.geoInfo;
+    let perviousCity = setLocationObj.geoInfo.city;
+    let perviousState = setLocationObj.geoInfo.state;
 
     await getStateCity(lat, lng);
     // const branchList = sortingNearestBranch(lat, lng, setLocationObj.getExcelData);
