@@ -386,7 +386,7 @@ async function handleLocateMeClick(e, block) {
 
 function updateUIForNoLocation(block, target) {
   block.closest(".section").querySelector(".nearest-txt").textContent = "Kindly enable your Location and Refresh the page";
-  target.closest('.btn-locate')?.classList.add("dp-none");
+  target.classList.add("dp-none");
 }
 
 async function updateDropdownsAndRender(block) {
