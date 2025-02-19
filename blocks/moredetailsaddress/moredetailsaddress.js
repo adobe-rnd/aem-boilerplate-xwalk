@@ -300,8 +300,6 @@ function nearBLBreadCrumb() {
     breadcrumbItems.push(`<a href="/branch-locator/loans-in-${newLocation}-${newCity}-${newState}-${locationcode}">${newSetLocation}</a>`);
   }
 
-  breadcrumbItems.push(`<a href="/branch-locator/loans-in-${newLocation}-${newCity}-${newState}-${locationcode}">${newSetLocation}</a>`);
-
   const breadCrumb = breadcrumbItems.join(separator);
 
   document.querySelector("body .breadcrumb nav").insertAdjacentHTML("beforeend", separator + breadCrumb);
