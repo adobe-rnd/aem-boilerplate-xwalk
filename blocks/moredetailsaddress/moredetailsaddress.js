@@ -292,11 +292,12 @@ function nearBLBreadCrumb() {
     `<a href="/branch-locator/${newState}">${newSetState}</a>`,
   ];
 
-  if (newCity !== newLocation) {
+  if (newCity == newLocation) {
     breadcrumbItems.push(`<a href="/branch-locator/${newState}/${newCity}">${newSetCity}</a>`);
+  }else if (newCity !== newLocation) {
+    breadcrumbItems.push(`<a href="/branch-locator/${newState}/${newCity}">${newSetCity}</a>`);
+    breadcrumbItems.push(`<a href="/branch-locator/loans-in-${newLocation}-${newCity}-${newState}-${locationcode}">${newSetLocation}</a>`);
   }
-
-  breadcrumbItems.push(`<a href="/branch-locator/loans-in-${newLocation}-${newCity}-${newState}-${locationcode}">${newSetLocation}</a>`);
 
   const breadCrumb = breadcrumbItems.join(separator);
 
