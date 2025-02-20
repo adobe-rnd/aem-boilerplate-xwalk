@@ -106,6 +106,7 @@ export function generateTeaserDOM(props, classes) {
         <div class='spacer'></div>
       </div>
   `,
+  
   );
 
   // set the mobile background color
