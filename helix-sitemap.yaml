@@ -10,10 +10,10 @@ sitemaps:
     destination: /sitemap-hindi.xml
     lastmod: YYYY-MM-DD
     hreflang: hi
-    alternate: hi
+    alternate: /hi/*
   kn:
     source: /kn/query-index.json
     destination: /sitemap-kannada.xml
     lastmod: YYYY-MM-DD
     hreflang: kn
-    alternate: kn
+    alternate: /kn/*
