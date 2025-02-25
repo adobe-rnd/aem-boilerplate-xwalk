@@ -9,4 +9,4 @@ sitemaps:
     source: /hi/query-index.json
     destination: /sitemap-hindi.xml
     hreflang: hi
-    alternate: /hi/{path}
+    alternate: /hi/*
