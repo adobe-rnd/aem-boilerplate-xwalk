@@ -26,6 +26,11 @@
         "component": "text",
         "name": "facebook:title",
         "label": "Facebook Title"
+      },
+      {
+        "component": "text",
+        "name": "canonical",
+        "label": "Canonical URL"
       }
     ]
   },
