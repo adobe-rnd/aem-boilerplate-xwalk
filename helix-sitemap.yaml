@@ -11,7 +11,7 @@ sitemaps:
     lastmod: YYYY-MM-DD
     hreflang: hi
     alternate: hi
-  kn :
+  kn:
     source: /kn/query-index.json
     destination: /sitemap-kannada.xml
     lastmod: YYYY-MM-DD
