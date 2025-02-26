@@ -15,6 +15,9 @@ indices:
       - /fragment
     target: /query-index.json
     properties:
+      primary-language-url:
+        select: head > meta[name="primary-language-url"]
+        value: attribute(el, "content")
       title:
         select: head > meta[property="og:title"]
         value: attribute(el, "content")

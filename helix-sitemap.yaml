@@ -1,19 +1,13 @@
-sitemaps:
-  example:
-     default: en
+ sitemaps:
+   default:
      lastmod: YYYY-MM-DD
      languages:
-      en:
-        source: /en/query-index.json
-        destination: /sitemap-english.xml
-        hreflang: /en/*
-      hi:
-        source: /hi/query-index.json
-        destination: /sitemap-hindi.xml
-        hreflang: hi
-        alternate: /hi/*
-      kn:
-        source: /kn/query-index.json
-        destination: /sitemap-kannada.xml
-        hreflang: kn
-        alternate: /kn/*
+       en:
+         source: /query-index.json
+         destination: /sitemap-english.xml
+         hreflang: en
+       hi:
+         source: /hi/query-index.json
+         destination: /sitemap-hindi.xml
+         hreflang: hi
+         alternate: /hi/{path}
