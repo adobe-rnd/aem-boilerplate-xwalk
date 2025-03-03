@@ -1,14 +1,33 @@
-import { CFApiCall, fetchAPI } from '../../scripts/scripts.js';
+import { CFApiCall, fetchAPI, targetObject } from '../../scripts/scripts.js';
 
 export default async function decorate(block) {
   const cfURL = block.textContent.trim();
   const cfRepsonse = await CFApiCall(cfURL);
   const repsonseData = cfRepsonse.data;
+  let respLength = 0;
+  repsonseData.length < 60 ? respLength = repsonseData.length : respLength = 60;
+  if (targetObject.isTab || targetObject.isMobile) {
+    makeTable(block, repsonseData, 20)
+  }
+  else {
+    makeTable(block, repsonseData, respLength)
+  }
+  // block.addEventListener("scroll",() => makeTable(block, repsonseData))
+  let onceScroll = false;
+
+  window.onscroll = () => {
+      if (!onceScroll) {
+          makeTable(block, repsonseData);  
+          onceScroll = true;  
+      }
+  };
+}
+
+function makeTable(block, repsonseData, count) {
   let headLi = ''
   let rowLi = ''
   let key = [];
-
-  repsonseData.forEach(function (eachData, index) {
+  repsonseData.slice(0, count).forEach(function (eachData, index) {
     if (!index) {
       key = getFilterTableCell(eachData);
       headLi = createHead(key);
@@ -17,7 +36,6 @@ export default async function decorate(block) {
   })
   block.innerHTML = `<table> ${headLi + rowLi} <table>`;
 }
-
 
 function createRow(data, key) {
   const td = key.map(function (key) {
@@ -29,6 +47,7 @@ function createRow(data, key) {
   })
   return `<tr>${td.join('')}</tr>`
 }
+
 function createHead(data) {
   return `
             <tr>
