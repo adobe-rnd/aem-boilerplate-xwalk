@@ -5,6 +5,7 @@ import { toggleAllNavSections } from '../blocks/header/header.js';
 import { applyLoanInteraction, ctaClick, ctaClickInteraction, selectBranchInteraction } from '../dl.js';
 import {
   sampleRUM, loadHeader, loadFooter, decorateButtons, decorateIcons, decorateSections, decorateBlocks, decorateTemplateAndTheme, waitForLCP, loadBlocks, loadCSS, fetchPlaceholders,
+  getMetadata,
 } from './aem.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
@@ -1355,6 +1356,16 @@ const processAnchor = (anchor, body) => {
   // Handle modal popup
   if (anchor.href.includes('/modal-popup/')) {
     handleModalPopup(anchor, body);
+  }
+
+  // Current URL Structure Logic
+  const pathname = new URL(anchor.href)?.pathname;
+  if (pathname?.startsWith("/")) {
+    if (anchor.textContent.trim()?.startsWith("/")) {
+      anchor.textContent =  `${getMetadata("primary-language-path") ? getMetadata("primary-language-path") + pathname : ""}`;
+    }
+    console.log("My ", pathname);
+    anchor.setAttribute("href", `${getMetadata("primary-language-path") ? getMetadata("primary-language-path") + pathname : ""}`);
   }
  
 };
