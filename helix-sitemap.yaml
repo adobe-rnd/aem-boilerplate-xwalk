@@ -13,3 +13,8 @@
          destination: /sitemap-hindi.xml
          hreflang: hi
          alternate: /hi/{path}
+       gu:
+         source: /gu/query-index.json
+         destination: /sitemap-gu.xml
+         hreflang: gu
+         alternate: /gu/{path}
