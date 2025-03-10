@@ -54,15 +54,15 @@ indices:
     include:
       - '/hi/**'
     exclude:
-      - /configuration/**
-      - /nav/**
-      - /footer/**
-      - /metadata/**
-      - /fragments/**
-      - /style-guide/**
-      - /api/**
-      - /fragment/**
-      - /fragment
+      - /hi/configuration/**
+      - /hi/nav/**
+      - /hi/footer/**
+      - /hi/metadata/**
+      - /hi/fragments/**
+      - /hi/style-guide/**
+      - /hi/api/**
+      - /hi/fragment/**
+      - /hi/fragment
     target: /hi/query-index.json
   site-gu:
     <<: *base-site
@@ -79,4 +79,79 @@ indices:
       - /gu/fragment/**
       - /gu/fragment
     target: /gu/query-index.json
+  site-mr:
+    <<: *base-site
+    include:
+      - '/mr/**'
+    exclude:
+      - /mr/configuration/**
+      - /mr/nav/**
+      - /mr/footer/**
+      - /mr/metadata/**
+      - /mr/fragments/**
+      - /mr/style-guide/**
+      - /mr/api/**
+      - /mr/fragment/**
+      - /mr/fragment
+    target: /mr/query-index.json
+  site-ta:
+    <<: *base-site
+    include:
+      - '/ta/**'
+    exclude:
+      - /ta/configuration/**
+      - /ta/nav/**
+      - /ta/footer/**
+      - /ta/metadata/**
+      - /ta/fragments/**
+      - /ta/style-guide/**
+      - /ta/api/**
+      - /ta/fragment/**
+      - /ta/fragment
+    target: /ta/query-index.json
+  site-te:
+    <<: *base-site
+    include:
+      - '/te/**'
+    exclude:
+      - /te/configuration/**
+      - /te/nav/**
+      - /te/footer/**
+      - /te/metadata/**
+      - /te/fragments/**
+      - /te/style-guide/**
+      - /te/api/**
+      - /te/fragment/**
+      - /te/fragment
+    target: /te/query-index.json
+  site-kn:
+    <<: *base-site
+    include:
+      - '/kn/**'
+    exclude:
+      - /kn/configuration/**
+      - /kn/nav/**
+      - /kn/footer/**
+      - /kn/metadata/**
+      - /kn/fragments/**
+      - /kn/style-guide/**
+      - /kn/api/**
+      - /kn/fragment/**
+      - /kn/fragment
+    target: /kn/query-index.json
+  site-ml:
+    <<: *base-site
+    include:
+      - '/ml/**'
+    exclude:
+      - /ml/configuration/**
+      - /ml/nav/**
+      - /ml/footer/**
+      - /ml/metadata/**
+      - /ml/fragments/**
+      - /ml/style-guide/**
+      - /ml/api/**
+      - /ml/fragment/**
+      - /ml/fragment
+    target: /ml/query-index.json
     
