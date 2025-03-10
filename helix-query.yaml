@@ -1,10 +1,11 @@
 version: 1
 indices:
-  default:
+  site-en: &base-site
     include:
       - /**
     exclude:
       - /configuration/**
+      - /hi/**
       - /nav/**
       - /footer/**
       - /metadata/**
@@ -48,3 +49,34 @@ indices:
       robots:
         select: head > meta[name="robots"]
         value: attribute(el, "content")
+  site-hi:
+    <<: *base-site
+    include:
+      - '/hi/**'
+    exclude:
+      - /configuration/**
+      - /nav/**
+      - /footer/**
+      - /metadata/**
+      - /fragments/**
+      - /style-guide/**
+      - /api/**
+      - /fragment/**
+      - /fragment
+    target: /hi/query-index.json
+  site-gu:
+    <<: *base-site
+    include:
+      - '/gu/**'
+    exclude:
+      - /gu/configuration/**
+      - /gu/nav/**
+      - /gu/footer/**
+      - /gu/metadata/**
+      - /gu/fragments/**
+      - /gu/style-guide/**
+      - /gu/api/**
+      - /gu/fragment/**
+      - /gu/fragment
+    target: /gu/query-index.json
+    

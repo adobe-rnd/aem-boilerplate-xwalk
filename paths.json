@@ -18,6 +18,7 @@
     "/content/piramalfinance-eds/in/kn/:/kn/",
     "/content/piramalfinance-eds/in/ml:/ml",
     "/content/piramalfinance-eds/in/ml/:/ml/",
+    "/content/piramalfinance-eds/gu/query-index.json:gu/query-index.json",
     "/content/piramalfinance-eds/in/en/api/cust-testimonial:/api/cust-testimonial.json",
     "/content/piramalfinance-eds/in/en/api/cust-testimonial-business-loan:/api/cust-testimonial-business-loan.json",
     "/content/piramalfinance-eds/in/en/api/cust-testimonial-business-loan-working-capital:/api/cust-testimonial-business-loan-working-capital.json",
