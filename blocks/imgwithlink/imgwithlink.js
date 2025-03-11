@@ -37,7 +37,7 @@ function createImageWithLink(block) {
   }
 
   const createHref = document.createElement('a');
-  createHref.href = hrefElem;
+  createHref.href = hrefElem || 'javascript:void(0)';
   createHref.target = '_blank';
   createHref.classList.add('anchor-event-link');
   createHref.appendChild(blockPic);
