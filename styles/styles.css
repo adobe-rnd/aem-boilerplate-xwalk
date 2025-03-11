@@ -831,7 +831,7 @@ body.overlay-active {
 
 header {
   height: 112px;
-  display: none;
+  /* display: none; */
 }
 
 @media screen and (width <= 1200px) {
