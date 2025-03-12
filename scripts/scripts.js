@@ -565,11 +565,12 @@ export function decorateViewMore(block) {
 } */
 
 
-export function decorateAnchorTag(main) {
+export async function decorateAnchorTag(main) {
   try {
+    const placeholders = await fetchPlaceholders();
     main.querySelectorAll('a').forEach((anchor) => {
       const body = document.body;
-      processAnchor(anchor, body);
+      processAnchor(anchor, body, placeholders);
     });
   } catch (error) {
     console.warn(error);
@@ -1346,7 +1347,7 @@ export function groupAllKeys(array) {
 }
 
 // Main function
-const processAnchor = (anchor, body) => {
+const processAnchor = (anchor, body, placeholders) => {
 
   // Handle target attribute
   if (anchor.innerHTML.includes('<sub>')) {
@@ -1359,14 +1360,7 @@ const processAnchor = (anchor, body) => {
   }
 
   // Current URL Structure Logic
-  const pathname = new URL(anchor.href)?.pathname;
-  if (pathname?.startsWith("/")) {
-    if (anchor.textContent.trim()?.startsWith("/")) {
-      anchor.textContent =  `${getMetadata("primary-language-path") ? getMetadata("primary-language-path") + pathname : ""}`;
-    }
-    console.log("My ", pathname);
-    anchor.setAttribute("href", `${getMetadata("primary-language-path") ? getMetadata("primary-language-path") + pathname : ""}`);
-  }
+  handlePathname(anchor, body, placeholders);
  
 };
 
@@ -1405,3 +1399,18 @@ const handleModalPopup = (anchor, body) => {
   });
 };
 
+const handlePathname = (anchor, body, placeholders) => {
+  const pathname = new URL(anchor.href).pathname;
+  const excludedPaths = placeholders.excludedpaths?.split(',');
+  const primaryLangPath = getMetadata("primary-language-path");
+  debugger;
+  if (pathname?.startsWith('/') && !excludedPaths.some(path => pathname.startsWith(path) || pathname == '/')) {
+    const newPath = primaryLangPath ? primaryLangPath + pathname : '';
+    
+    if (anchor.textContent.trim()?.startsWith('/')) {
+      anchor.textContent = newPath;
+    }
+    
+    anchor.href = newPath;
+  }
+}
