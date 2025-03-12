@@ -1403,7 +1403,6 @@ const handlePathname = (anchor, body, placeholders) => {
   const pathname = new URL(anchor.href).pathname;
   const excludedPaths = placeholders.excludedpaths?.split(',');
   const primaryLangPath = getMetadata("primary-language-path");
-  debugger;
   if (pathname?.startsWith('/') && !excludedPaths.some(path => pathname.startsWith(path) || pathname == '/')) {
     const newPath = primaryLangPath ? primaryLangPath + pathname : '';
     
