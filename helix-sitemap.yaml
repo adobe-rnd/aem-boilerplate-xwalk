@@ -6,7 +6,15 @@
        en:
          source: /query-index.json
          destination: /sitemap-english.xml
-         hreflang: en
+         hreflang: 
+          - en
+          - hi 
+          - gu
+          - mr
+          - ta 
+          - te
+          - kn
+          - ml 
          alternate: /{path}
        hi:
          source: /hi/query-index.json
