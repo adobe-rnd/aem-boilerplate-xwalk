@@ -567,10 +567,9 @@ export function decorateViewMore(block) {
 
 export async function decorateAnchorTag(main) {
   try {
-    const placeholders = await fetchPlaceholders();
     main.querySelectorAll('a').forEach((anchor) => {
       const body = document.body;
-      processAnchor(anchor, body, placeholders);
+      processAnchor(anchor, body);
     });
   } catch (error) {
     console.warn(error);
@@ -1243,10 +1242,10 @@ export function branchURLStr(location = '', city = '', state = '', urlstrhand, l
   const stateStr = sanitizeString(state);
 
   const urlMap = {
-    shorthand: () => `/branch-locator/${stateStr}/${cityStr}`,
-    shorthandstate: () => `/branch-locator/${stateStr}`,
+    shorthand: () => `${getMetadata("primary-language-path")}/branch-locator/${stateStr}/${cityStr}`,
+    shorthandstate: () => `${getMetadata("primary-language-path")}/branch-locator/${stateStr}`,
     loans: () => {
-      const baseUrl = '/branch-locator/loans-in-';
+      const baseUrl = `${getMetadata("primary-language-path")}/branch-locator/loans-in-`;
       const isLocationSameAsCity = locationAdd === cityStr;
       const segments = isLocationSameAsCity
         ? [cityStr, stateStr, locationcode]
@@ -1347,7 +1346,7 @@ export function groupAllKeys(array) {
 }
 
 // Main function
-const processAnchor = (anchor, body, placeholders) => {
+const processAnchor = (anchor, body) => {
 
   // Handle target attribute
   if (anchor.innerHTML.includes('<sub>')) {
@@ -1358,9 +1357,6 @@ const processAnchor = (anchor, body, placeholders) => {
   if (anchor.href.includes('/modal-popup/')) {
     handleModalPopup(anchor, body);
   }
-
-  // Current URL Structure Logic
-  handlePathname(anchor, body, placeholders);
  
 };
 
@@ -1399,17 +1395,3 @@ const handleModalPopup = (anchor, body) => {
   });
 };
 
-const handlePathname = (anchor, body, placeholders) => {
-  const pathname = new URL(anchor.href).pathname;
-  const excludedPaths = placeholders.excludedpaths?.split(',');
-  const primaryLangPath = getMetadata("primary-language-path");
-  if (pathname?.startsWith('/') && !excludedPaths.some(path => pathname.startsWith(path) || pathname == '/')) {
-    const newPath = primaryLangPath ? primaryLangPath + pathname : '';
-    
-    if (anchor.textContent.trim()?.startsWith('/')) {
-      anchor.textContent = newPath;
-    }
-    
-    anchor.href = newPath;
-  }
-}

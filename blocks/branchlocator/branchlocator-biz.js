@@ -1,5 +1,5 @@
 import { locateMeInteraction, selectBranchInteraction } from "../../dl.js";
-import { loadScript } from "../../scripts/aem.js";
+import { getMetadata, loadScript } from "../../scripts/aem.js";
 import { branchURLStr, fetchAPI, selectBranchDetails } from "../../scripts/scripts.js";
 import returnLatLan from "./sort.js";
 import { initMap, searchBranchByURL } from "./branchlocator-api.js";
@@ -64,7 +64,7 @@ async function updateURL() {
     if (resp.ok) {
       location.href = branchUrl
     } else {
-      location.href = '/branch-locator/maharashtra/mumbai';
+      location.href = getMetadata("primary-language-path")+'/branch-locator/maharashtra/mumbai';
     }
   }
 }

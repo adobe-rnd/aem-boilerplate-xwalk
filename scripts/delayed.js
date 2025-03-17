@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-cycle
-import { fetchPlaceholders, sampleRUM } from './aem.js';
+import { fetchPlaceholders, getMetadata, sampleRUM } from './aem.js';
 
 
 
@@ -112,9 +112,27 @@ async function loadAdobeScript(){
   document.head.appendChild(script);
 }
 
-const handleReltags = () => {
+const handlePathname = (anchor, placeholders) => {
+  const pathname = new URL(anchor.href).pathname;
+  const excludedPaths = placeholders.excludedpaths?.split(',');
+  const primaryLangPath = getMetadata("primary-language-path");
+  if (pathname?.startsWith('/') && !excludedPaths.some(path => pathname.startsWith(path) || pathname == '/')) {
+    const newPath = primaryLangPath ? primaryLangPath + pathname : pathname;
+    
+    if (anchor.textContent.trim()?.startsWith('/')) {
+      anchor.textContent = newPath;
+    }
+    
+    anchor.href = newPath;
+  }
+}
+
+const handleReltags = async () => {
   const anchors = document.querySelectorAll('a');
+  const placeholders = await fetchPlaceholders();
+
   anchors.forEach(anchor => {
+    handlePathname(anchor, placeholders);
     const getHref = anchor.href;
     const relParamCheck = 'rel';
     if(!getHref) return false;
