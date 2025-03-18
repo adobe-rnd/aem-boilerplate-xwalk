@@ -7,15 +7,22 @@
          source: /query-index.json
          destination: /sitemap-english.xml
          hreflang: 
-          - en
-          - hi 
-          - gu
-          - mr
-          - ta 
-          - te
-          - kn
-          - ml 
+            - en
          alternate: /{path}
+            - hi 
+         alternate: /hi/{path}
+            - gu
+         alternate: /gu/{path}
+            - mr
+         alternate: /mr/{path}
+            - ta 
+         alternate: /ta/{path}
+            - te
+         alternate: /te/{path}
+            - kn
+         alternate: /kn/{path}
+            - ml 
+         alternate: /ml/{path}
        hi:
          source: /hi/query-index.json
          destination: /sitemap-hindi.xml
