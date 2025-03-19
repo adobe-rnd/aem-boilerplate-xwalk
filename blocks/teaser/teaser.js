@@ -1,7 +1,7 @@
 import {
   applyLoanNow, bannerClick, ctaClick, ctaClickInteraction, readMoreInteraction,
 } from '../../dl.js';
-import { targetObject , handleOpenFormOnClick } from '../../scripts/scripts.js';
+import { targetObject, handleOpenFormOnClick } from '../../scripts/scripts.js';
 
 export function decorateButtons(...buttons) {
   return buttons
@@ -62,11 +62,11 @@ export function generateTeaserDOM(props, classes) {
   ctaImageAnchor3.innerHTML = ctaImage3.innerHTML;
   // const bgPictureStyle = bgPicture?.querySelector("img")?.src || '';
   let bgPictureStyle;
-  if(classes.includes("original-img")){
-   bgPictureStyle = bgPicture?.querySelector('img')?.src && bgPicture?.querySelector('img').src ? ` style='background-image:url(${bgPicture?.querySelector('img').src.split("?")[0]})' ` : '';
+  if ([...classes].includes("original-img")) {
+    bgPictureStyle = bgPicture?.querySelector('img')?.src && bgPicture?.querySelector('img').src ? ` style='background-image:url(${bgPicture?.querySelector('img').src.split("?")[0]})' ` : '';
   }
-  else{
-   bgPictureStyle = bgPicture?.querySelector('img')?.src && bgPicture?.querySelector('img').src ? ` style='background-image:url(${bgPicture?.querySelector('img').src})' ` : '';
+  else {
+    bgPictureStyle = bgPicture?.querySelector('img')?.src && bgPicture?.querySelector('img').src ? ` style='background-image:url(${bgPicture?.querySelector('img').src})' ` : '';
   }
   // const bgPictureStyle = bgPicture?.querySelector('img')?.src && bgPicture?.querySelector('img').src ? ` style='background-image:url(${bgPicture?.querySelector('img').src})' ` : '';
   const mobileImageStyle = mobileImage?.querySelector('img')?.src ? ` style='background-image:url(${mobileImage?.querySelector('img')?.src})' ` : '';
@@ -113,7 +113,7 @@ export function generateTeaserDOM(props, classes) {
         <div class='spacer'></div>
       </div>
   `,
-  
+
   );
 
   // set the mobile background color
@@ -131,17 +131,17 @@ export function generateTeaserDOM(props, classes) {
     el.addEventListener('click', function (e) {
       try {
         if (!e.target.closest('.calc-desktop-carousel-wrapper')) {
-          if(!e.target.closest(".multi-calc-teaser-wrapper")){
-          if (index || e.target.closest('.cta')) {
-            bannerClick(e.target.innerText, targetObject.pageName);
+          if (!e.target.closest(".multi-calc-teaser-wrapper")) {
+            if (index || e.target.closest('.cta')) {
+              bannerClick(e.target.innerText, targetObject.pageName);
+            }
           }
-        }
-        if(e.target.closest(".multi-calc-teaser-wrapper")){
+          if (e.target.closest(".multi-calc-teaser-wrapper")) {
             const click_text = e.target.textContent.trim();
             const cta_position = '';
-            const cta_category = e.target.closest('.foreground').querySelector('.long-description').querySelector('p') .textContent.trim()
+            const cta_category = e.target.closest('.foreground').querySelector('.long-description').querySelector('p').textContent.trim()
             ctaClick(click_text, cta_category, cta_position, targetObject.pageName);
-        }
+          }
           if (e.target.closest('.open-form-on-click')) {
             const formClickSection = e.target.closest('.open-form-on-click');
             handleOpenFormOnClick(formClickSection);
