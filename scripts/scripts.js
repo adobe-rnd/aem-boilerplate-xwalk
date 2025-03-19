@@ -751,7 +751,7 @@ loadPage();
 async function loadingCustomCss() {
   // load custom css files
   const loadCssArray = [
-    // `${window.hlx.codeBasePath}/styles/common/common.css`,
+    `${window.hlx.codeBasePath}/styles/common/common.css`,
     `${window.hlx.codeBasePath}/styles/reset.css`
   ];
 
