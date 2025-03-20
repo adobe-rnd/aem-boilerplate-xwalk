@@ -5,6 +5,7 @@
   background-position: top;
   background-repeat: no-repeat;
   max-width: 100%;
+  background-size: 100% 100%;
 }
 
 .section.banner-carousel-wrapper.banner-video-carousel .carousel-wrapper .teaser.block.video-component-carousel .background .foreground {
