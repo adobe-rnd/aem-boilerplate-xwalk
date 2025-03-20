@@ -1062,6 +1062,15 @@
             ]
           },
           {
+            "name": "Image Render Type",
+            "children": [
+              {
+                "name": "original Image",
+                "value": "original-img"
+              }
+            ]
+          },
+          {
             "name": "Theme",
             "children": [
               {
