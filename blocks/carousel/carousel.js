@@ -37,8 +37,10 @@ export default function decorate(block) {
   try {
     if(window.location.pathname === '/personal-loan' && window.location.search){
       const a = block.querySelector('a');
+      const mobA = document.querySelector('.camp-btn').querySelector('a');
       const url = new URL(a.href)
-      a.href = url.origin+      url.pathname + window.location.search;
+      a.href = (url.origin+url.pathname + window.location.search);
+      mobA.href = (url.origin+url.pathname + window.location.search);
     }
   } catch (error) {
     console.warn(error);
