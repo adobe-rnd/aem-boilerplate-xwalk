@@ -34,6 +34,16 @@ function updateButtons(entries) {
 const observer = new IntersectionObserver(updateButtons, { threshold: 0.6, rootMargin: '500px 0px' });
 
 export default function decorate(block) {
+  try {
+    if(window.location.pathname === '/personal-loan' && window.location.search){
+      const a = block.querySelector('a');
+      const url = new URL(a.href)
+      a.href = url.origin+      url.pathname + window.location.search;
+    }
+  } catch (error) {
+    console.warn(error);
+  }
+  
   // the panels container
   const panelContainer = document.createElement('div');
   panelContainer.classList.add('panel-container', 'carousel-inner');
