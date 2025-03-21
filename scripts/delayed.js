@@ -168,6 +168,6 @@ if (!window.location.hostname.includes('localhost') && !window.location.hostname
   loadHeadGTM();
   loadBodyGTM();
   loadMoengage();
-  handleReltags();
+  // handleReltags();
   loadAdobeScript();
 }
