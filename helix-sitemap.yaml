@@ -26,35 +26,140 @@
        hi:
          source: /hi/query-index.json
          destination: /sitemap-hindi.xml
-         hreflang: hi
+         hreflang: 
+            - hi 
          alternate: /hi/{path}
+            - en
+         alternate: /{path}
+            - gu
+         alternate: /gu/{path}
+            - mr
+         alternate: /mr/{path}
+            - ta 
+         alternate: /ta/{path}
+            - te
+         alternate: /te/{path}
+            - kn
+         alternate: /kn/{path}
+            - ml 
+         alternate: /ml/{path}
        gu:
          source: /gu/query-index.json
          destination: /sitemap-gu.xml
-         hreflang: gu
+         hreflang: 
+            - gu
          alternate: /gu/{path}
+            - en
+         alternate: /{path}
+            - hi 
+         alternate: /hi/{path}
+            - mr
+         alternate: /mr/{path}
+            - ta 
+         alternate: /ta/{path}
+            - te
+         alternate: /te/{path}
+            - kn
+         alternate: /kn/{path}
+            - ml 
+         alternate: /ml/{path}
        mr:
          source: /mr/query-index.json
          destination: /sitemap-mr.xml
-         hreflang: mr
+         hreflang: 
+            - mr
          alternate: /mr/{path}
+            - en
+         alternate: /{path}
+            - hi 
+         alternate: /hi/{path}
+            - gu
+         alternate: /gu/{path}
+            - ta 
+         alternate: /ta/{path}
+            - te
+         alternate: /te/{path}
+            - kn
+         alternate: /kn/{path}
+            - ml 
+         alternate: /ml/{path}
        ta:
          source: /ta/query-index.json
          destination: /sitemap-ta.xml
-         hreflang: ta
+         hreflang: 
+            - ta 
          alternate: /ta/{path}
+            - en
+         alternate: /{path}
+            - hi 
+         alternate: /hi/{path}
+            - gu
+         alternate: /gu/{path}
+            - mr
+         alternate: /mr/{path}
+            - te
+         alternate: /te/{path}
+            - kn
+         alternate: /kn/{path}
+            - ml 
+         alternate: /ml/{path}
        te:
          source: /te/query-index.json
          destination: /sitemap-te.xml
-         hreflang: te
+         hreflang: 
+            - te
          alternate: /te/{path}
+            - en
+         alternate: /{path}
+            - hi 
+         alternate: /hi/{path}
+            - gu
+         alternate: /gu/{path}
+            - mr
+         alternate: /mr/{path}
+            - ta 
+         alternate: /ta/{path}
+            - kn
+         alternate: /kn/{path}
+            - ml 
+         alternate: /ml/{path}
        kn:
          source: /kn/query-index.json
          destination: /sitemap-kn.xml
-         hreflang: kn
+         hreflang:
+            - kn
          alternate: /kn/{path}
+            - en
+         alternate: /{path}
+            - hi 
+         alternate: /hi/{path}
+            - gu
+         alternate: /gu/{path}
+            - mr
+         alternate: /mr/{path}
+            - ta 
+         alternate: /ta/{path}
+            - te
+         alternate: /te/{path}
+            - ml 
+         alternate: /ml/{path}
        ml:
          source: /ml/query-index.json
          destination: /sitemap-ml.xml
-         hreflang: ml
+         hreflang:
+            - ml 
          alternate: /ml/{path}
+            - en
+         alternate: /{path}
+            - hi 
+         alternate: /hi/{path}
+            - gu
+         alternate: /gu/{path}
+            - mr
+         alternate: /mr/{path}
+            - ta 
+         alternate: /ta/{path}
+            - te
+         alternate: /te/{path}
+            - kn
+         alternate: /kn/{path}
