@@ -5,40 +5,40 @@ sitemaps:
     languages:
       en:
         source: /query-index.json
-        destination: /sitemap-master.xml
+        destination: /sitemap-index.xml
         hreflang: en
       hi:
         source: /hi/query-index.json
-        destination: /hi/sitemap-master.xml
+        destination: /hi/sitemap-index.xml
         alternate: /hi/{path}
         hreflang: hi
       gu:
         source: /gu/query-index.json
-        destination: /gu/sitemap-master.xml
+        destination: /gu/sitemap-index.xml
         alternate: /gu/{path}
         hreflang: gu
       mr:
         source: /mr/query-index.json
-        destination: /mr/sitemap-master.xml
+        destination: /mr/sitemap-index.xml
         alternate: /mr/{path}
         hreflang: mr
       ta:
         source: /ta/query-index.json
-        destination: /ta/sitemap-master.xml
+        destination: /ta/sitemap-index.xml
         alternate: /ta/{path}
         hreflang: ta
       te:
         source: /te/query-index.json
-        destination: /te/sitemap-master.xml
+        destination: /te/sitemap-index.xml
         alternate: /te/{path}
         hreflang: te
       kn:
         source: /kn/query-index.json
-        destination: /kn/sitemap-master.xml
+        destination: /kn/sitemap-index.xml
         alternate: /kn/{path}
         hreflang: kn
       ml:
         source: /ml/query-index.json
-        destination: /ml/sitemap-master.xml
+        destination: /ml/sitemap-index.xml
         alternate: /ml/{path}
         hreflang: ml
