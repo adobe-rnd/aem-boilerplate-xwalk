@@ -1,7 +1,7 @@
 sitemaps:
   example:
     default: en
-    lastmod: YYYY-MM-DD
+    lastmod: YYYY-MM-DD  # Dynamic date to be updated for each request or generation
     languages:
       en:
         source: /query-index.json
