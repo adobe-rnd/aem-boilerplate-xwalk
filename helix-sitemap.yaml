@@ -5,41 +5,40 @@
      languages:
        en:
          source: /query-index.json
-         destination: /sitemap-english.xml
+         destination: /sitemap-index.xml
          hreflang: en
-         alternate: /{path}
        hi:
          source: /hi/query-index.json
-         destination: /sitemap-hindi.xml
+         destination: /hi/sitemap-index.xml
          hreflang: hi
          alternate: /hi/{path}
        gu:
          source: /gu/query-index.json
-         destination: /sitemap-gu.xml
+         destination: /gu/sitemap-index.xml
          hreflang: gu
          alternate: /gu/{path}
        mr:
          source: /mr/query-index.json
-         destination: /sitemap-mr.xml
+         destination: /mr/sitemap-index.xml
          hreflang: mr
          alternate: /mr/{path}
        ta:
          source: /ta/query-index.json
-         destination: /sitemap-ta.xml
+         destination: /ta/sitemap-index.xml
          hreflang: ta
          alternate: /ta/{path}
        te:
          source: /te/query-index.json
-         destination: /sitemap-te.xml
+         destination: /te/sitemap-index.xml
          hreflang: te
          alternate: /te/{path}
        kn:
          source: /kn/query-index.json
-         destination: /sitemap-kn.xml
+         destination: /kn/sitemap-index.xml
          hreflang: kn
          alternate: /kn/{path}
        ml:
          source: /ml/query-index.json
-         destination: /sitemap-ml.xml
+         destination: /ml/sitemap-index.xml
          hreflang: ml
          alternate: /ml/{path}
