@@ -7,94 +7,38 @@
          source: /query-index.json
          destination: /sitemap-index.xml
          hreflang: en
-         hreflang: hi
-         hreflang: gu
-         hreflang: mr
-         hreflang: ta
-         hreflang: te
-         hreflang: kn
-         hreflang: ml
        hi:
          source: /hi/query-index.json
          destination: /hi/sitemap-index.xml
          alternate: /hi/{path}
-         hreflang: en
          hreflang: hi
-         hreflang: gu
-         hreflang: mr
-         hreflang: ta
-         hreflang: te
-         hreflang: kn
-         hreflang: ml
        gu:
          source: /gu/query-index.json
          destination: /gu/sitemap-index.xml
          alternate: /gu/{path}
-         hreflang: en
-         hreflang: hi
          hreflang: gu
-         hreflang: mr
-         hreflang: ta
-         hreflang: te
-         hreflang: kn
-         hreflang: ml
        mr:
          source: /mr/query-index.json
          destination: /mr/sitemap-index.xml
          alternate: /mr/{path}
-         hreflang: en
-         hreflang: hi
-         hreflang: gu
          hreflang: mr
-         hreflang: ta
-         hreflang: te
-         hreflang: kn
-         hreflang: ml
        ta:
          source: /ta/query-index.json
          destination: /ta/sitemap-index.xml
          alternate: /ta/{path}
-         hreflang: en
-         hreflang: hi
-         hreflang: gu
-         hreflang: mr
          hreflang: ta
-         hreflang: te
-         hreflang: kn
-         hreflang: ml
        te:
          source: /te/query-index.json
          destination: /te/sitemap-index.xml
          alternate: /te/{path}
-         hreflang: en
-         hreflang: hi
-         hreflang: gu
-         hreflang: mr
-         hreflang: ta
          hreflang: te
-         hreflang: kn
-         hreflang: ml
        kn:
          source: /kn/query-index.json
          destination: /kn/sitemap-index.xml
          alternate: /kn/{path}
-         hreflang: en
-         hreflang: hi
-         hreflang: gu
-         hreflang: mr
-         hreflang: ta
-         hreflang: te
          hreflang: kn
-         hreflang: ml
        ml:
          source: /ml/query-index.json
          destination: /ml/sitemap-index.xml
          alternate: /ml/{path}
-         hreflang: en
-         hreflang: hi
-         hreflang: gu
-         hreflang: mr
-         hreflang: ta
-         hreflang: te
-         hreflang: kn
          hreflang: ml
