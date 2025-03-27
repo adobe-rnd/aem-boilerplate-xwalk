@@ -14,7 +14,7 @@ indices:
       - /api/**
       - /fragment/**
       - /fragment
-    target: /query-index.json
+    target: /query-master.json
     properties:
       title:
         select: head > meta[property="og:title"]
@@ -60,7 +60,7 @@ indices:
       - /hi/api/**
       - /hi/fragment/**
       - /hi/fragment
-    target: /hi/query-index.json
+    target: /hi/query-master.json
   site-gu:
     <<: *base-site
     include:
@@ -75,7 +75,7 @@ indices:
       - /gu/api/**
       - /gu/fragment/**
       - /gu/fragment
-    target: /gu/query-index.json
+    target: /gu/query-master.json
   site-mr:
     <<: *base-site
     include:
@@ -90,7 +90,7 @@ indices:
       - /mr/api/**
       - /mr/fragment/**
       - /mr/fragment
-    target: /mr/query-index.json
+    target: /mr/query-master.json
   site-ta:
     <<: *base-site
     include:
@@ -105,7 +105,7 @@ indices:
       - /ta/api/**
       - /ta/fragment/**
       - /ta/fragment
-    target: /ta/query-index.json
+    target: /ta/query-master.json
   site-te:
     <<: *base-site
     include:
@@ -120,7 +120,7 @@ indices:
       - /te/api/**
       - /te/fragment/**
       - /te/fragment
-    target: /te/query-index.json
+    target: /te/query-master.json
   site-kn:
     <<: *base-site
     include:
@@ -135,7 +135,7 @@ indices:
       - /kn/api/**
       - /kn/fragment/**
       - /kn/fragment
-    target: /kn/query-index.json
+    target: /kn/query-master.json
   site-ml:
     <<: *base-site
     include:
@@ -150,5 +150,5 @@ indices:
       - /ml/api/**
       - /ml/fragment/**
       - /ml/fragment
-    target: /ml/query-index.json
+    target: /ml/query-master.json
     
