@@ -6,6 +6,12 @@ indices:
     exclude:
       - /configuration/**
       - /hi/**
+      - /gu/**
+      - /mr/**
+      - /ta/**
+      - /te/**
+      - /kn/**
+      - /ml/**
       - /nav/**
       - /footer/**
       - /metadata/**
