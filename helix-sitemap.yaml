@@ -6,39 +6,39 @@ sitemaps:
       en:
         source: /query-master.json
         destination: /sitemap-index.xml
-        hreflang: en
+        hreflang: en-in
       hi:
         source: /hi/query-master.json
         destination: /hi/sitemap-index.xml
         alternate: /hi/{path}
-        hreflang: hi
+        hreflang: hi-in
       gu:
         source: /gu/query-master.json
         destination: /gu/sitemap-index.xml
         alternate: /gu/{path}
-        hreflang: gu
+        hreflang: gu-in
       mr:
         source: /mr/query-master.json
         destination: /mr/sitemap-index.xml
         alternate: /mr/{path}
-        hreflang: mr
+        hreflang: mr-in
       ta:
         source: /ta/query-master.json
         destination: /ta/sitemap-index.xml
         alternate: /ta/{path}
-        hreflang: ta
+        hreflang: ta-in
       te:
         source: /te/query-master.json
         destination: /te/sitemap-index.xml
         alternate: /te/{path}
-        hreflang: te
+        hreflang: te-in
       kn:
         source: /kn/query-master.json
         destination: /kn/sitemap-index.xml
         alternate: /kn/{path}
-        hreflang: kn
+        hreflang: kn-in
       ml:
         source: /ml/query-master.json
         destination: /ml/sitemap-index.xml
         alternate: /ml/{path}
-        hreflang: ml
+        hreflang: ml-in
