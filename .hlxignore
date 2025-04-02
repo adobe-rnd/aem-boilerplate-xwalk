@@ -5,4 +5,4 @@ LICENSE
 package.json
 package-lock.json
 test/*
-_*
+_*.json
