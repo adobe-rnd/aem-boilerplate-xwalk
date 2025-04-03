@@ -114,10 +114,13 @@ async function loadAdobeScript(){
 
 const handlePathname = (anchor, placeholders) => {
   const pathname = new URL(anchor.href).pathname;
+  const searchParamter = new URL(anchor.href).search;
   const excludedPaths = placeholders.excludedpaths?.split(',');
   const primaryLangPath = getMetadata("primary-language-path");
   if (pathname?.startsWith('/') && !excludedPaths.some(path => pathname.startsWith(path) || pathname == '/')) {
-    const newPath = primaryLangPath ? primaryLangPath + pathname : pathname;
+    const langPathname = primaryLangPath + pathname + searchParamter;
+    const mainPath = pathname + searchParamter;
+    const newPath = primaryLangPath ? langPathname : mainPath;
     
     if (anchor.textContent.trim()?.startsWith('/')) {
       anchor.textContent = newPath;

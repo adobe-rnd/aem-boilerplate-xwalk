@@ -1,60 +1,44 @@
- sitemaps:
-   default:
-     default: en
-     lastmod: YYYY-MM-DD
-     languages:
-       en:
-         source: /query-index.json
-         destination: /sitemap-english.xml
-         hreflang: 
-            - en
-         alternate: /{path}
-            - hi 
-         alternate: /hi/{path}
-            - gu
-         alternate: /gu/{path}
-            - mr
-         alternate: /mr/{path}
-            - ta 
-         alternate: /ta/{path}
-            - te
-         alternate: /te/{path}
-            - kn
-         alternate: /kn/{path}
-            - ml 
-         alternate: /ml/{path}
-       hi:
-         source: /hi/query-index.json
-         destination: /sitemap-hindi.xml
-         hreflang: hi
-         alternate: /hi/{path}
-       gu:
-         source: /gu/query-index.json
-         destination: /sitemap-gu.xml
-         hreflang: gu
-         alternate: /gu/{path}
-       mr:
-         source: /mr/query-index.json
-         destination: /sitemap-mr.xml
-         hreflang: mr
-         alternate: /mr/{path}
-       ta:
-         source: /ta/query-index.json
-         destination: /sitemap-ta.xml
-         hreflang: ta
-         alternate: /ta/{path}
-       te:
-         source: /te/query-index.json
-         destination: /sitemap-te.xml
-         hreflang: te
-         alternate: /te/{path}
-       kn:
-         source: /kn/query-index.json
-         destination: /sitemap-kn.xml
-         hreflang: kn
-         alternate: /kn/{path}
-       ml:
-         source: /ml/query-index.json
-         destination: /sitemap-ml.xml
-         hreflang: ml
-         alternate: /ml/{path}
+sitemaps:
+  example:
+    default: en
+    lastmod: YYYY-MM-DD  # Dynamic date to be updated for each request or generation
+    languages:
+      en:
+        source: /query-master.json
+        destination: /sitemap-index.xml
+        hreflang: en-in
+      hi:
+        source: /hi/query-master.json
+        destination: /hi/sitemap-index.xml
+        alternate: /hi/{path}
+        hreflang: hi-in
+      gu:
+        source: /gu/query-master.json
+        destination: /gu/sitemap-index.xml
+        alternate: /gu/{path}
+        hreflang: gu-in
+      mr:
+        source: /mr/query-master.json
+        destination: /mr/sitemap-index.xml
+        alternate: /mr/{path}
+        hreflang: mr-in
+      ta:
+        source: /ta/query-master.json
+        destination: /ta/sitemap-index.xml
+        alternate: /ta/{path}
+        hreflang: ta-in
+      te:
+        source: /te/query-master.json
+        destination: /te/sitemap-index.xml
+        alternate: /te/{path}
+        hreflang: te-in
+      kn:
+        source: /kn/query-master.json
+        destination: /kn/sitemap-index.xml
+        alternate: /kn/{path}
+        hreflang: kn-in
+      ml:
+        source: /ml/query-master.json
+        destination: /ml/sitemap-index.xml
+        alternate: /ml/{path}
+        hreflang: ml-in
