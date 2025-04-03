@@ -1,216 +1,29 @@
-import {
-  applyLoanNow, bannerClick, ctaClick, ctaClickInteraction, readMoreInteraction,
-} from '../../dl.js';
-import { targetObject , handleOpenFormOnClick } from '../../scripts/scripts.js';
-
-export function decorateButtons(...buttons) {
-  return buttons
-    .map((div) => {
-      const a = div.querySelector('a');
-      if (a) {
-        a.classList.add('button');
-        if (a.parentElement.tagName === 'EM') a.classList.add('secondary');
-        if (a.parentElement.tagName === 'STRONG') a.classList.add('primary');
-        return a.outerHTML;
-      }
-      return '';
-    })
-    .join('');
-}
-function createAnchor(element) {
-  const a = document.createElement('a');
-  a.href = element.innerText.trim();
-  return a;
-}
-export function generateTeaserDOM(props, classes) {
-  // Extract properties, always same order as in model, empty string if not set
-  const nullDom = document.createElement('a');
-  nullDom.classList.add('null-dom');
-  const [
-    pictureBgContainer,
-    pictureContainer,
-    eyebrow,
-    title,
-    longDescr,
-    shortDescr,
-    firstCta,
-    secondCta,
-    ctaImage,
-    ctaImageAlt,
-    ctaImageUrl,
-    imageText,
-    ctaImage2,
-    ctaImageAlt2,
-    ctaImageUrl2,
-    imageText2,
-    ctaImage3,
-    ctaImageAlt3,
-    ctaImageUrl3,
-    imageText3,
-    mobileImage,
-  ] = props;
-
-  const bgPicture = pictureBgContainer.querySelector('picture');
-  const picture = pictureContainer.querySelector('picture');
-  const hasShortDescr = shortDescr.textContent.trim() !== '';
-  // Build DOM
-  const ctaImageAnchor = ctaImageUrl.querySelector('a') || createAnchor(ctaImageUrl);
-  const ctaImageAnchor2 = ctaImageUrl2.querySelector('a') || createAnchor(ctaImageUrl2);
-  const ctaImageAnchor3 = ctaImageUrl3.querySelector('a') || createAnchor(ctaImageUrl3);
-  ctaImageAnchor.innerHTML = ctaImage.innerHTML;
-  ctaImageAnchor2.innerHTML = ctaImage2.innerHTML;
-  ctaImageAnchor3.innerHTML = ctaImage3.innerHTML;
-  // const bgPictureStyle = bgPicture?.querySelector("img")?.src || '';
-  const bgPictureStyle = bgPicture?.querySelector('img')?.src && bgPicture?.querySelector('img').src ? ` style='background-image:url(${bgPicture?.querySelector('img').src})' ` : '';
-  const mobileImageStyle = mobileImage?.querySelector('img')?.src ? ` style='background-image:url(${mobileImage?.querySelector('img')?.src})' ` : '';
-  let bgImageAllow = bgPictureStyle;
-  if (targetObject.isTab) {
-    bgImageAllow = mobileImageStyle;
-  }
-
-  const teaserDOM = document.createRange().createContextualFragment(
-    // <div class='background' style='background-image:url(${bgImageAllow})'>
-    `
-    <div class='background' ${bgImageAllow}'>
-      <div class="front-picture">${picture ? picture.outerHTML : ''}</div>
+import{applyLoanNow as j,bannerClick as B,ctaClick as F,ctaClickInteraction as s,readMoreInteraction as G}from"../../dl.js";import{targetObject as o,handleOpenFormOnClick as W}from"../../scripts/scripts.js";export function decorateButtons(...r){return r.map(e=>{const a=e.querySelector("a");return a?(a.classList.add("button"),a.parentElement.tagName==="EM"&&a.classList.add("secondary"),a.parentElement.tagName==="STRONG"&&a.classList.add("primary"),a.outerHTML):""}).join("")}function f(r){const e=document.createElement("a");return e.href=r.innerText.trim(),e}export function generateTeaserDOM(r,e){document.createElement("a").classList.add("null-dom");const[l,b,d,x,y,p,v,$,I,Q,C,H,_,V,S,A,E,X,T,D,q]=r,m=l.querySelector("picture"),w=b.querySelector("picture"),N=p.textContent.trim()!=="",u=C.querySelector("a")||f(C),g=S.querySelector("a")||f(S),h=T.querySelector("a")||f(T);u.innerHTML=I.innerHTML,g.innerHTML=_.innerHTML,h.innerHTML=E.innerHTML;const O=m?.querySelector("img")?.src&&m?.querySelector("img").src?` style='background-image:url(${m?.querySelector("img").src})' `:"",P=q?.querySelector("img")?.src?` style='background-image:url(${q?.querySelector("img")?.src})' `:"";let L=O;o.isTab&&(L=P);const i=document.createRange().createContextualFragment(`
+    <div class='background' ${L}'>
+      <div class="front-picture">${w?w.outerHTML:""}</div>
       <div class='foreground'>
         <div class='text'>
-          ${eyebrow.textContent.trim() !== ''
-      ? `<div class='eyebrow'>${eyebrow.textContent.trim()}</div>`
-      : ''
-    }
-          <div class='title'>${title.innerHTML}</div>
-          <div class='long-description'>${longDescr.innerHTML}</div>
-          <!-- <div class='short-description'>${hasShortDescr ? shortDescr.innerHTML : longDescr.innerHTML
-    }</div>-->
-          <div class='short-description'>${shortDescr.innerHTML}</div>
+          ${d.textContent.trim()!==""?`<div class='eyebrow'>${d.textContent.trim()}</div>`:""}
+          <div class='title'>${x.innerHTML}</div>
+          <div class='long-description'>${y.innerHTML}</div>
+          <!-- <div class='short-description'>${N?p.innerHTML:y.innerHTML}</div>-->
+          <div class='short-description'>${p.innerHTML}</div>
           <div class='cta-image-wrapper'>
             <div class="img-with-text-wrap">
-              <div class="cta-image">${ctaImageAnchor ? ctaImageAnchor.outerHTML : ''
-    }</div>
-              <p class="cta-text">${imageText.innerText}</p>
+              <div class="cta-image">${u?u.outerHTML:""}</div>
+              <p class="cta-text">${H.innerText}</p>
             </div>
             <div class="img-with-text-wrap">
-              <div class="cta-image">${ctaImageAnchor2 ? ctaImageAnchor2.outerHTML : ''
-    }</div>
-              <p class="cta-text">${imageText2.innerText}</p>
+              <div class="cta-image">${g?g.outerHTML:""}</div>
+              <p class="cta-text">${A.innerText}</p>
             </div>
             <div class="img-with-text-wrap">
-              <div class="cta-image">${ctaImageAnchor3 ? ctaImageAnchor3.outerHTML : ''
-    }</div>
-              <p class="cta-text">${imageText3.innerText}</p>
+              <div class="cta-image">${h?h.outerHTML:""}</div>
+              <p class="cta-text">${D.innerText}</p>
             </div>
           </div>
-          <div class='cta'>${decorateButtons(firstCta, secondCta)}</div>
+          <div class='cta'>${decorateButtons(v,$)}</div>
         </div>
         <div class='spacer'></div>
       </div>
-  `,
-  
-  );
-
-  // set the mobile background color
-  const backgroundColor = [...classes].find((cls) => cls.startsWith('bg-'));
-  if (backgroundColor) {
-    teaserDOM
-      .querySelector('.foreground')
-      .style.setProperty(
-        '--teaser-background-color',
-        `var(--${backgroundColor.substr(3)})`,
-      );
-  }
-
-  teaserDOM?.querySelectorAll('a').forEach((el, index) => {
-    el.addEventListener('click', function (e) {
-      try {
-        if (!e.target.closest('.calc-desktop-carousel-wrapper')) {
-          if(!e.target.closest(".multi-calc-teaser-wrapper")){
-          if (index || e.target.closest('.cta')) {
-            bannerClick(e.target.innerText, targetObject.pageName);
-          }
-        }
-        if(e.target.closest(".multi-calc-teaser-wrapper")){
-            const click_text = e.target.textContent.trim();
-            const cta_position = '';
-            const cta_category = e.target.closest('.foreground').querySelector('.long-description').querySelector('p') .textContent.trim()
-            ctaClick(click_text, cta_category, cta_position, targetObject.pageName);
-        }
-          if (e.target.closest('.open-form-on-click')) {
-            const formClickSection = e.target.closest('.open-form-on-click');
-            handleOpenFormOnClick(formClickSection);
-          }
-        } else if (this.closest('.carousel-articles-wrapper')) {
-          readMoreAnalytics(e);
-        } else if (this.closest('.csr-committee-wrapper')) {
-          csrfReportAnalytics(e);
-        } else if (e.target.closest('.media-cards-wrapper')) {
-          const data = {};
-          data.click_text = e.target.closest('.long-description').querySelector('p').textContent.trim();
-          data.cta_position = e.target.closest('.section').querySelector('.tab-name-wrapper .carousel-inner .active').textContent.trim();
-          ctaClickInteraction(data);
-        } else if (e.target.closest('.calc-desktop-carousel-wrapper')) {
-          const data = {};
-          data.click_text = e.target.closest('.text').querySelector('.long-description p').textContent.trim();
-          data.cta_position = e.target.closest('.section').querySelector('.default-content-wrapper').textContent.trim();
-          ctaClickInteraction(data);
-        } else {
-          applyLoanNow(
-            `${eyebrow.textContent.trim()} ${title.textContent.trim()}`,
-            targetObject.pageName,
-            'banner',
-            targetObject.pageName,
-          );
-        }
-      } catch (error) {
-        console.warn(error);
-      }
-    });
-  });
-  try {
-    const checkClass = [...classes];
-    if (checkClass?.includes('click-able')) {
-      teaserDOM.children[0].addEventListener('click', function (e) {
-        /* About Us Comapny Analytics Start */
-        try {
-          if (this.closest('.section.board-of-directors-wrapper')) {
-            const data = {};
-            data.click_text = this.querySelector('.title').textContent.trim();
-            data.cta_position = this.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
-            ctaClickInteraction(data);
-          }
-        } catch (error) {
-          console.warn(error);
-        }
-        /* About Us Comapny Analytics End */
-
-        location.href = firstCta.innerText;
-      });
-    }
-  } catch (error) {
-  }
-  // add final teaser DOM and classes if used as child component
-  return teaserDOM;
-}
-
-export default function decorate(block) {
-  // get the first and only cell from each row
-  const props = [...block.children].map((row) => row.firstElementChild);
-  const teaserDOM = generateTeaserDOM(props, block.classList);
-  block.textContent = '';
-  block.append(teaserDOM);
-}
-
-function readMoreAnalytics(e) {
-  const data = {};
-  data.article_name = e?.target.getAttribute('href').split('/').pop();
-  data.cta_position = e?.target.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
-  data.click_header = e?.target.textContent.trim();
-  readMoreInteraction(data);
-}
-
-function csrfReportAnalytics(e) {
-  const data = {};
-  data.click_text = e.target.textContent.trim();
-  data.cta_position = e.target.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
-  ctaClickInteraction(data);
-}
+  `),k=[...e].find(n=>n.startsWith("bg-"));k&&i.querySelector(".foreground").style.setProperty("--teaser-background-color",`var(--${k.substr(3)})`),i?.querySelectorAll("a").forEach((n,M)=>{n.addEventListener("click",function(t){try{if(t.target.closest(".calc-desktop-carousel-wrapper"))if(this.closest(".carousel-articles-wrapper"))J(t);else if(this.closest(".csr-committee-wrapper"))K(t);else if(t.target.closest(".media-cards-wrapper")){const c={};c.click_text=t.target.closest(".long-description").querySelector("p").textContent.trim(),c.cta_position=t.target.closest(".section").querySelector(".tab-name-wrapper .carousel-inner .active").textContent.trim(),s(c)}else if(t.target.closest(".calc-desktop-carousel-wrapper")){const c={};c.click_text=t.target.closest(".text").querySelector(".long-description p").textContent.trim(),c.cta_position=t.target.closest(".section").querySelector(".default-content-wrapper").textContent.trim(),s(c)}else j(`${d.textContent.trim()} ${x.textContent.trim()}`,o.pageName,"banner",o.pageName);else{if(t.target.closest(".multi-calc-teaser-wrapper")||(M||t.target.closest(".cta"))&&B(t.target.innerText,o.pageName),t.target.closest(".multi-calc-teaser-wrapper")){const c=t.target.textContent.trim(),R="",U=t.target.closest(".foreground").querySelector(".long-description").querySelector("p").textContent.trim();F(c,U,R,o.pageName)}if(t.target.closest(".open-form-on-click")){const c=t.target.closest(".open-form-on-click");W(c)}}}catch(c){console.warn(c)}})});try{[...e]?.includes("click-able")&&i.children[0].addEventListener("click",function(M){try{if(this.closest(".section.board-of-directors-wrapper")){const t={};t.click_text=this.querySelector(".title").textContent.trim(),t.cta_position=this.closest(".section").querySelector(".default-content-wrapper").querySelector("h1, h2, h3, h4, h5, h6").textContent.trim(),s(t)}}catch(t){console.warn(t)}location.href=v.innerText})}catch{}return i}export default function z(r){const e=[...r.children].map(l=>l.firstElementChild),a=generateTeaserDOM(e,r.classList);r.textContent="",r.append(a)}function J(r){const e={};e.article_name=r?.target.getAttribute("href").split("/").pop(),e.cta_position=r?.target.closest(".section").querySelector(".default-content-wrapper").querySelector("h1, h2, h3, h4, h5, h6").textContent.trim(),e.click_header=r?.target.textContent.trim(),G(e)}function K(r){const e={};e.click_text=r.target.textContent.trim(),e.cta_position=r.target.closest(".section").querySelector(".default-content-wrapper").querySelector("h1, h2, h3, h4, h5, h6").textContent.trim(),s(e)}
