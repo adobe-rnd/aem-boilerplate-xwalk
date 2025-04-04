@@ -5,7 +5,7 @@ sitemaps:
     languages:
       en:
         source: /query-master.json
-        destination: /sitemap-index.xml
+        destination: /en/sitemap-index.xml
         hreflang: en-in
       hi:
         source: /hi/query-master.json
