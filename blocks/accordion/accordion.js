@@ -11,3 +11,4 @@ import{fetchAPI as u}from"../../scripts/scripts.js";console.log("Accordian");exp
             </tr>
         </tbody>
       </table>`}),o}export function documentRequired(){if(document.querySelector(".documents-required-brown").querySelectorAll(".accordion.block").length>0){const e=document.querySelector(".documents-required-brown").querySelectorAll(".accordion.block")[1]?.querySelectorAll("div > ul");e.length>0&&(e[0].classList.add("cmp-text--doc-salary"),e[1]?.classList.add("cmp-text--doc-business"))}}
+      
