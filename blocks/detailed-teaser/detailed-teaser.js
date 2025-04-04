@@ -12,4 +12,3 @@ import{decorateButtons as m}from"../teaser/teaser.js";export function generateDe
       </div>
     </div>
   `)}export default function b(e){const a=[...e.children].map(t=>t.firstElementChild),i=generateDetailedTeaserDOM(a,e.classList);e.textContent="",e.append(i)}
-

@@ -52,5 +52,3 @@ import{CFApiCall as u,targetObject as l}from"../../scripts/scripts.js";import{ct
           </div>
         </div>
       `;e.innerHTML+=d})})}function C(t){return t.split(" ").map(i=>{const n=i.toLowerCase();return n.charAt(0).toUpperCase()+n.slice(1)}).join(" ")}
-
-      

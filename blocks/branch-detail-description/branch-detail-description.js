@@ -10,5 +10,3 @@ import{intertextLinkingInteraction as p}from"../../dl.js";import{setLocationObj 
             </p>
         </div>
     `;const o=e.querySelector(".button-container"),a=e.querySelector(".branch-description-content");o.addEventListener("click",l=>{try{const n={};n.click_text=l.target.textContent.trim().toLowerCase(),p(n)}catch(n){console.warn(n)}a.querySelector(".dp-none").classList.remove("dp-none"),o.classList="dp-none"})}
-
-    
