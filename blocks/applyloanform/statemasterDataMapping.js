@@ -9,3 +9,4 @@ export const statemasterDataMap = (function () {
     },
   };
 }());
+

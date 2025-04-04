@@ -1,43 +1,9 @@
-import { CFApiCall, targetObject } from '../../scripts/scripts.js';
-import { ctaClickInteraction } from '../../dl.js';
-
-export default async function decorate(block) {
-  const cfURL = block.textContent.trim();
-  const cfRepsonse = await CFApiCall(cfURL);
-  const repsonseData = cfRepsonse.data;
-  
-  const groupedLocations = groupAndSortLocations(repsonseData);
-  renderLocationSelection(block, groupedLocations);
-  initEventListeners(block, groupedLocations);
-  if (targetObject.isTab || targetObject.isMobile) {
-    displayCards(block,"",groupedLocations.grouped, 1);
-  } else {
-    displayCards(block, "", groupedLocations.grouped, 2);
-  }
-}
-
-function groupAndSortLocations(data) {
-  const grouped = data.reduce((acc, item) => {
-    const location = item.Location.charAt(0).toUpperCase() + item.Location.slice(1).toLowerCase();
-    acc[location] = acc[location] || [];
-    acc[location].push(item);
-    return acc;
-  }, {});
-  const sortedCities = Object.keys(grouped).sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
-  return { grouped, sortedCities };
-}
-
-function renderLocationSelection(block, { grouped, sortedCities }) {
-  const inputHTML = sortedCities.map((city) => {
-    return `
+import{CFApiCall as u,targetObject as l}from"../../scripts/scripts.js";import{ctaClickInteraction as v}from"../../dl.js";export default async function y(t){const o=t.textContent.trim(),n=(await u(o)).data,e=g(n);L(t,e),f(t,e),l.isTab||l.isMobile?p(t,"",e.grouped,1):p(t,"",e.grouped,2)}function g(t){const o=t.reduce((n,e)=>{const a=e.Location.charAt(0).toUpperCase()+e.Location.slice(1).toLowerCase();return n[a]=n[a]||[],n[a].push(e),n},{}),i=Object.keys(o).sort((n,e)=>n.localeCompare(e,void 0,{sensitivity:"base"}));return{grouped:o,sortedCities:i}}function L(t,{grouped:o,sortedCities:i}){const n=i.map(e=>`
       <label>
-        <input type="radio" value="${city}" name="branchlocation">
-        <span>${city}</span>
+        <input type="radio" value="${e}" name="branchlocation">
+        <span>${e}</span>
       </label>
-    `;
-  }).join('');
-
-  block.innerHTML = `
+    `).join("");t.innerHTML=`
     <div class="select-container-wrapper">
       <div class="select-container">
         <label>Select Location</label>
@@ -46,116 +12,43 @@ function renderLocationSelection(block, { grouped, sortedCities }) {
       <div class="cities-container" style="display:none;">
         <fieldset>
           <legend>locations</legend>
-          ${inputHTML}
+          ${n}
         </fieldset>
       </div>
     </div>
-  `;
-}
-
-function initEventListeners(block, groupedLocations) {
-  const selectContainer = block.querySelector('.select-container');
-  const citiesContainer = block.querySelector('.cities-container');
-  const inputLocation = block.querySelector('.toggleCityContainer');
-
-  let inputLocationValue;
-
-  inputLocation.addEventListener('click', () => {
-    citiesContainer.style.display = citiesContainer.style.display === 'none' ? 'block' : 'none';
-    selectContainer.classList.toggle('open');
-  });
-
-  citiesContainer.addEventListener('change', (e) => {
-    const selectedCity = e.target.value;
-    inputLocationValue = selectedCity;
-    inputLocation.value = selectedCity;
-    inputLocation.className = 'cityBlack';
-    citiesContainer.style.display = 'none';
-    selectContainer.classList.remove('open');
-
-    try {
-      const data = {};
-      data.click_text = e.target.closest('label').querySelector('span').textContent.trim();
-      data.cta_position = 'Select Location';
-      ctaClickInteraction(data);
-    } catch (error) {
-      console.warn(error);
-    }
-    displayCards(block, selectedCity, groupedLocations.grouped);
-  });
-
-  /* block.closest('body').addEventListener('click', (e) => {
-    if (!e.target.closest('.toggleCityContainer') && !e.target.closest('.select-container') && !e.target.closest('fieldset') && !e.target.closest('cityBlack')) {
-      if (selectContainer.classList.contains('open')) {
-        citiesContainer.style.display = 'none';
-        selectContainer.classList.remove('open');
-      }
-    }
-  }); */
-
-  window.onscroll = () => displayCards(block, inputLocationValue, groupedLocations.grouped);
-}
-
-
-function displayCards(block, selectedCityName, groupedLocations,index) {
-  const cardContainer = block.querySelector('.card-container') || document.createElement('div');
-  cardContainer.className = 'card-container';
-  cardContainer.innerHTML = ''; 
-  block.appendChild(cardContainer);
-
-  const dataToDisplay = selectedCityName ? { [selectedCityName]: groupedLocations[selectedCityName] } : groupedLocations;
-
-  Object.keys(dataToDisplay).slice(0, index).forEach((city) => {
-    dataToDisplay[city].forEach((data) => {
-      const locationValue = formatLocation(data.Location);
-
-      const cardHTML = `
+  `}function f(t,o){const i=t.querySelector(".select-container"),n=t.querySelector(".cities-container"),e=t.querySelector(".toggleCityContainer");let a;e.addEventListener("click",()=>{n.style.display=n.style.display==="none"?"block":"none",i.classList.toggle("open")}),n.addEventListener("change",s=>{const r=s.target.value;a=r,e.value=r,e.className="cityBlack",n.style.display="none",i.classList.remove("open");try{const c={};c.click_text=s.target.closest("label").querySelector("span").textContent.trim(),c.cta_position="Select Location",v(c)}catch(c){console.warn(c)}p(t,r,o.grouped)}),window.onscroll=()=>p(t,a,o.grouped)}function p(t,o,i,n){const e=t.querySelector(".card-container")||document.createElement("div");e.className="card-container",e.innerHTML="",t.appendChild(e);const a=o?{[o]:i[o]}:i;Object.keys(a).slice(0,n).forEach(s=>{a[s].forEach(r=>{const d=`
         <div class="card">
           <div>
             <p>Location</p>
-            <p>${locationValue}</p>
+            <p>${C(r.Location)}</p>
           </div>
           <div>
             <p>Agency Address</p>
-            <p>${data['Agency Address']}</p>
+            <p>${r["Agency Address"]}</p>
           </div>
           <div>
             <p>Vendor Name:</p>
-            <p>${data['Vendor Name']}</p>
+            <p>${r["Vendor Name"]}</p>
           </div>
           <div>
             <p>Date of Agreement:</p>
-            <p>${data['Date of Agreement']}</p>
+            <p>${r["Date of Agreement"]}</p>
           </div>
           <div>
             <p>Date of Expiry:</p>
-            <p>${data['Date of Expiry']}</p>
+            <p>${r["Date of Expiry"]}</p>
           </div>
           <div>
             <p>Tenure:</p>
-            <p>${data.Tenure}</p>
+            <p>${r.Tenure}</p>
           </div>
           <div>
             <p>Agency Signatory:</p>
-            <p>${data['Agency owner']}</p>
+            <p>${r["Agency owner"]}</p>
           </div>
           <div>
             <p>Contact No.:</p>
-            <p>${data['Contact No']}</p>
+            <p>${r["Contact No"]}</p>
           </div>
         </div>
-      `;
-      cardContainer.innerHTML += cardHTML; 
-    });
-  });
-}
-
-function formatLocation(location) {
-  const arr = location.split(' ');
-  return arr.map(item => {
-    const lowercased = item.toLowerCase();
-    return lowercased.charAt(0).toUpperCase() + lowercased.slice(1);
-  }).join(' ');
-}
-
-
+      `;e.innerHTML+=d})})}function C(t){return t.split(" ").map(i=>{const n=i.toLowerCase();return n.charAt(0).toUpperCase()+n.slice(1)}).join(" ")}

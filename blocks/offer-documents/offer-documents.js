@@ -1,47 +1,35 @@
-import { ctaClickInteraction } from '../../dl.js';
-import { getProps } from '../../scripts/scripts.js';
-
-export default function decorate(block) {
-  const [mainTitle, title, subTitle, content, button, buttonURL, type, image] = getProps(block, {
-    index: [3, 7],
-  });
-
-  if (type === 'secondary') {
-    block.innerHTML = `
+import{ctaClickInteraction as p}from"../../dl.js";import{getProps as v}from"../../scripts/scripts.js";export default function y(a){const[c,i,l,d,u,r,m,n]=v(a,{index:[3,7]});if(m==="secondary"){a.innerHTML=`
             <div class="richtext text boxContainer stakeholder-container popup-rich-text">
                 <div  class="cmp-text">
                     <p>
-                        <a href="${buttonURL}" target="_blank" rel="noopener noreferrer"> ${mainTitle}</a>
+                        <a href="${r}" target="_blank" rel="noopener noreferrer"> ${c}</a>
                     </p>
                 </div>
             </div>    
-        `;
-    return;
-  }
-  block.innerHTML = `
+        `;return}a.innerHTML=`
             <div class="richtext text boxContainer stakeholder-container popup-rich-text modal-cta">
                 <div  class="cmp-text">
-                    <p>${image.outerHTML.includes('picture') ? image.outerHTML : mainTitle}</p>
+                    <p>${n.outerHTML.includes("picture")?n.outerHTML:c}</p>
                 </div>
                 <div class="stake-pop-up dp-none">
                     <div class="popup stake-document-popup">
                         <div class="text popupText">
                             <div class="cmp-text">
                                 <div class="cpm-sub-text">
-                                    <p><span class="title">${title}</span></p>
-                                    <p><span class="description">${subTitle}</span></p>
+                                    <p><span class="title">${i}</span></p>
+                                    <p><span class="description">${l}</span></p>
                                     <p class="cross-container">
                                         <img src="/content/dam/piramalfinance/company/about-us/partnership/close.png" alt="close">
                                     </p>
                                 </div>
                                 <div class="popup-parent-cont">
                                     <div class="popupContainer">
-                                        ${content.innerHTML}
+                                        ${d.innerHTML}
                                         <p>
                                             <span class="popupbutton">
-                                                <a href="${buttonURL}"
+                                                <a href="${r}"
                                                     target="_blank">
-                                                    ${button}
+                                                    ${u}
                                                 </a>
                                             </span>
                                         </p>
@@ -52,90 +40,4 @@ export default function decorate(block) {
                     </div>
                 </div>
             </div>    
-    `;
-
-  block.querySelectorAll('.offer-documents.block .modal-cta >.cmp-text').forEach((blockCards) => {
-    blockCards.addEventListener('click', function (e) {
-      e.stopImmediatePropagation();
-
-      /* lending Partners Modal Open Analytics Start */
-
-      try {
-        const data = {};
-        data.click_text = this.querySelector('img').getAttribute('alt');
-        data.cta_position = e.target.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
-        ctaClickInteraction(data);
-      } catch (error) {
-        console.warn(error);
-      }
-
-      /* lending Partners Modal Open Analytics End */
-
-      e.target.closest('.cmp-text').classList.add('active');
-      const targetModal = e.target.closest('.popup-rich-text').querySelector('.stake-pop-up');
-      if (targetModal.classList.contains('dp-none')) {
-        targetModal.classList.add('dp-block');
-        document.body.style.overflow = 'hidden';
-        targetModal.classList.remove('dp-none');
-        document.querySelector('.modal-overlay').classList.add('overlay');
-        document.querySelector('.modal-overlay').classList.remove('dp-none');
-      } else {
-        targetModal.classList.add('dp-none');
-        targetModal.classList.remove('dp-block');
-        document.body.removeChild(overlay);
-        document.body.style.overflow = 'auto';
-        document.querySelector('.modal-overlay').classList.remove('overlay');
-        document.querySelector('.modal-overlay').classList.add('dp-none');
-      }
-      e.stopPropagation();
-      if (e.target.classList.contains('cross-container')) {
-        alert;
-      }
-    });
-  });
-
-  document.querySelectorAll('.stake-pop-up .text.popupText .cmp-text .cross-container img').forEach((ele) => {
-    ele.addEventListener('click', function (currentEle) {
-      /* lending Partners Modal Open Analytics Start */
-
-      try {
-        const data = {};
-        data.click_text = this.closest('.offer-documents-wrapper').querySelector('.stake-pop-up .stake-document-popup .cpm-sub-text p').textContent.trim();
-        data.cta_position = currentEle.target.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
-        ctaClickInteraction(data);
-      } catch (error) {
-        console.warn(error);
-      }
-
-      /* lending Partners Modal Open Analytics End */
-
-      currentEle.stopImmediatePropagation();
-      if (document.querySelector('.cmp-text.active')) document.querySelector('.cmp-text.active').classList.remove('active');
-      currentEle.target.closest('.stake-pop-up').classList.remove('dp-block');
-      currentEle.target.closest('.stake-pop-up').classList.add('dp-none');
-      document.body.style.overflow = 'auto';
-      document.querySelector('.modal-overlay').classList.remove('overlay');
-      document.querySelector('.modal-overlay').classList.add('dp-none');
-    });
-  });
-}
-
-//     block.addEventListener("click", function (e) {
-//         document.body.classList.add("popup-active");
-//     });
-
-//     document.querySelector(".cross-container").addEventListener("click", function (e) {
-//         e.stopPropagation();
-//         document.body.classList.remove("popup-active");
-//     });
-// }
-
-// // Create and append the overlay to the body
-// const overlay = document.createElement('div');
-// overlay.className = 'overlay';
-// document.body.appendChild(overlay);
-
-// // Add click event to overlay to close the popup
-// overlay.addEventListener('click', function () {
-//     document.body.classList.remove('popup-active');
-// });
+    `,a.querySelectorAll(".offer-documents.block .modal-cta >.cmp-text").forEach(s=>{s.addEventListener("click",function(t){t.stopImmediatePropagation();try{const o={};o.click_text=this.querySelector("img").getAttribute("alt"),o.cta_position=t.target.closest(".section").querySelector(".default-content-wrapper").querySelector("h1, h2, h3, h4, h5, h6").textContent.trim(),p(o)}catch(o){console.warn(o)}t.target.closest(".cmp-text").classList.add("active");const e=t.target.closest(".popup-rich-text").querySelector(".stake-pop-up");e.classList.contains("dp-none")?(e.classList.add("dp-block"),document.body.style.overflow="hidden",e.classList.remove("dp-none"),document.querySelector(".modal-overlay").classList.add("overlay"),document.querySelector(".modal-overlay").classList.remove("dp-none")):(e.classList.add("dp-none"),e.classList.remove("dp-block"),document.body.removeChild(overlay),document.body.style.overflow="auto",document.querySelector(".modal-overlay").classList.remove("overlay"),document.querySelector(".modal-overlay").classList.add("dp-none")),t.stopPropagation(),t.target.classList.contains("cross-container")})}),document.querySelectorAll(".stake-pop-up .text.popupText .cmp-text .cross-container img").forEach(s=>{s.addEventListener("click",function(t){try{const e={};e.click_text=this.closest(".offer-documents-wrapper").querySelector(".stake-pop-up .stake-document-popup .cpm-sub-text p").textContent.trim(),e.cta_position=t.target.closest(".section").querySelector(".default-content-wrapper").querySelector("h1, h2, h3, h4, h5, h6").textContent.trim(),p(e)}catch(e){console.warn(e)}t.stopImmediatePropagation(),document.querySelector(".cmp-text.active")&&document.querySelector(".cmp-text.active").classList.remove("active"),t.target.closest(".stake-pop-up").classList.remove("dp-block"),t.target.closest(".stake-pop-up").classList.add("dp-none"),document.body.style.overflow="auto",document.querySelector(".modal-overlay").classList.remove("overlay"),document.querySelector(".modal-overlay").classList.add("dp-none")})})}
