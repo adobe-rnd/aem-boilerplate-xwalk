@@ -14,3 +14,5 @@ import{fetchPlaceholders as d}from"../../scripts/aem.js";import{branchURLStr as 
                 </div>
             </div>
         </div>`}export default async function p(s){const a=await d(),r=nearestLoction(a);r&&(s.innerHTML=r),m(s)}
+
+        

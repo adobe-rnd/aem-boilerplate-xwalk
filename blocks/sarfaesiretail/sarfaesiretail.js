@@ -3,3 +3,5 @@ import{CFApiCall as f,targetObject as a}from"../../scripts/scripts.js";export de
                 ${t.map(n=>`<th>${n}</th>`).join("")}
             </tr>
         `}function L(t){return Object.keys(t).filter(n=>!n.includes("URL")||Object.keys(t).includes(n+" URL"))}
+
+        

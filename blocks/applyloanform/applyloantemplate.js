@@ -317,3 +317,4 @@ export function appplyLoanTemplate(a){function l(){const c=document.createElemen
             </div> 
         </div>
     </div>`}
+    

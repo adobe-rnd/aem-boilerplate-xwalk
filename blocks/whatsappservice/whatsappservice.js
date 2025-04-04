@@ -141,3 +141,4 @@ import{onloadLoginCall as F}from"./login.js";import{otpPopupCall as S}from"./otp
 
   </div>
 </div>`}export default function O(t){const s=Array.from(t.children,o=>o.firstElementChild),i=E(s),n=G(s);t.innerHTML=i+n;try{F(t),S(t)}catch(o){console.warn("WhatsApp service initialization error:",o)}}
+
