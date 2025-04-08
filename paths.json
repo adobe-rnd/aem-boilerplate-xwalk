@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/aem-boilerplate/:/",
-    "/content/aem-boilerplate/configuration:/.helix/config.json",
-    "/content/aem-boilerplate/metadata:/metadata.json"
+    "/content/aem-sites-with-edge-delivery-services-template/:/",
+    "/content/aem-sites-with-edge-delivery-services-template/configuration:/.helix/config.json",
+    "/content/aem-sites-with-edge-delivery-services-template/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/aem-boilerplate/"
+    "/content/aem-sites-with-edge-delivery-services-template/"
   ]
 }
