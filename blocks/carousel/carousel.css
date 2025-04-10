@@ -1,6 +1,6 @@
 @import "../teaser/teaser.css";
 @import "../detailed-teaser/detailed-teaser.css";
-@import "./glider.min.css";
+@import "./glider.css";
 @import url("./embed-banner-carousel.css");
 
 /* carousel wrapper stretches over complete width */
