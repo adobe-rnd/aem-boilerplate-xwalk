@@ -1,16 +1,49 @@
-import{fetchPlaceholders as d}from"../../scripts/aem.js";import{branchURLStr as l,selectBranchDetails as m}from"../../scripts/scripts.js";import{setLocationObj as h}from"../moredetailsaddress/moredetailsaddress.js";export function nearestLoction(s){const{storedata:a}=h;if(!a||a.length==0)return!1;let r="";const e=a[0].City;return a.forEach(t=>{const c=t.State,i=t.City,n=t["Location Code"],o=t.Location;r+=`
+import { fetchPlaceholders } from '../../scripts/aem.js';
+import { branchURLStr, selectBranchDetails } from '../../scripts/scripts.js';
+import { setLocationObj } from '../moredetailsaddress/moredetailsaddress.js';
+
+export function nearestLoction(placeholders) {
+  const { storedata } = setLocationObj;
+  if (!storedata || storedata.length == 0) {
+    return false;
+  }
+
+  let branch_cards = '';
+  const cityName = storedata[0].City;
+  storedata.forEach((eachLocation) => {
+    const eachState = eachLocation.State;
+    const eachCity = eachLocation.City;
+    const eachLocationCode = eachLocation['Location Code'];
+    const eachLocationAdd = eachLocation.Location;
+    branch_cards += `
         <div class='card-box'>
-        <h3 class='card-title'>${t.Location}</h3>
-        <p class='card-address'>${t.Address}</p>
-        <p class='card-gmail'> <span> <img src='/images/gmail.svg' alt='gmail-icon'/> </span> ${s.branchlocatorgmail}</p> 
-        <a href="${l(o,i,c,"loans",n)}" id='more-details-btn'> ${s.moredetailtext} </a> 
-        </div>`}),`<div class='cards-branches cards-branches-container mt-45 mb-40 mob-mb-45'>
+        <h3 class='card-title'>${eachLocation.Location}</h3>
+        <p class='card-address'>${eachLocation.Address}</p>
+        <p class='card-gmail'> <span> <img src='/images/gmail.svg' alt='gmail-icon'/> </span> ${placeholders.branchlocatorgmail}</p> 
+        <a href="${branchURLStr(eachLocationAdd, eachCity, eachState, 'loans', eachLocationCode)}" id='more-details-btn'> ${placeholders.moredetailtext} </a> 
+        </div>`;
+    // <a href="/branch-locator/${eachState}/${eachCity}/loans-in-${eachCity}-${eachState}-${eachLocationCode}" id='more-details-btn'> More details </a>
+  });
+
+  const mainWrapperNearest = `<div class='cards-branches cards-branches-container mt-45 mb-40 mob-mb-45'>
             <div class='title'>
-                 <h2 class="title-to-show"> Find all ${e} Branches here </h2>
+                 <h2 class="title-to-show"> Find all ${cityName} Branches here </h2>
             </div>
             <div class='cards-container'>
                 <div class='cards-wrapper branch-list-wrapper'>
-                    ${r}
+                    ${branch_cards}
                 </div>
             </div>
-        </div>`}export default async function p(s){const a=await d(),r=nearestLoction(a);r&&(s.innerHTML=r),m(s)}
+        </div>`;
+
+  return mainWrapperNearest;
+}
+
+export default async function decorate(block) {
+  const placeholders = await fetchPlaceholders();
+  const DOMnearestBranch = nearestLoction(placeholders);
+  if (DOMnearestBranch) {
+    block.innerHTML = DOMnearestBranch;
+  }
+  selectBranchDetails(block);
+}

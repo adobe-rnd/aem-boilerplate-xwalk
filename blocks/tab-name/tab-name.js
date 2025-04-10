@@ -1,1 +1,142 @@
-import{ctaClickInteraction as E}from"../../dl.js";import{createCarousle as w,getProps as T}from"../../scripts/scripts.js";function y(s,p){const d=document.createElement("button");return d.classList.add("carousel-control",s),d.innerHTML=p,d}export function generateTabName(s){const[p,d,C,n,S,g,H,I,...q]=T(s,{index:[4,5]}),b=p.split(","),v=d.split(","),h=[...q],M="";s.innerHTML="",s.classList.add(n||"normal");const u=document.createElement("div");u.classList.add("carousel-inner"),u.id="carouselInner",b.forEach((l,t)=>{const c=document.createElement("div"),r=document.createElement("img");r.src=h[t],r.alt=l,r.id=v[t].trim().replace(/ /g,"-"),c.id=v[t].trim().replace(/ /g,"-"),t?c.classList.add("carousel-item"):c.classList.add("carousel-item","active"),c.append(h[t]?r:l.trim()),u.append(c)});const L=y("prev",S?.outerHTML),f=y("next",g?.outerHTML);return L.classList.add(n==="normal"?"dp-none":"dp-normal"),f.classList.add(n==="normal"?"dp-none":"dp-normal"),s.append(u),n=="glider"?console.log("glider"):n==="carousel"&&w(s,L,f),s.addEventListener("click",l=>{let t=l.target;n=="glider"&&(t.closest(".glider-prev")||t.closest(".glider-next"))&&(t=t.closest(".nested-tab-name-child").querySelector(".carousel-item.active"));const{id:c}=t,r=c&&document.querySelector(`.tab-container[data-id=${c}]`),i=c&&document.querySelector(`.nested-tab-name-child[data-id=${c}]`);let m;if(i){const e=i.closest(".section");Array.from(i.children[0].children).forEach(a=>{a.classList.remove("active")}),n=="glider"||i.querySelector(".carousel-inner.glider")?m=i.children[0].children[0].children[0]:m=i.children[0].children[0],e.querySelectorAll(".tab-container[data-id]").forEach((a,o)=>{e.querySelector(".tab-name")?.children[0].children[o].classList.remove("active"),e.querySelector(".nested-tab-name-child")?.children[0]?.children[o]?.classList.remove("active"),a.classList.add("dp-none"),a.classList.remove("active")}),e.querySelector(`.tab-container[data-id=${m.id}]`).classList.add("active"),e.querySelector(`.tab-container[data-id=${m.id}]`).classList.remove("dp-none"),e.querySelectorAll(".nested-tab-name-child").forEach((a,o)=>{e.querySelector(".tab-name-nested").children[0].children[0].children[o].classList.remove("active"),a.classList.add("dp-none"),a.classList.remove("active")}),m.classList.add("active"),i.classList.remove("dp-none"),i.classList.add("active"),t.classList.add("active"),t.closest(".carousel-item")?.classList.add("active")}else if(r){const e=r.closest(".section");e.querySelectorAll(".tab-container").forEach((a,o)=>{e.querySelector(".tab-name")?.children[0].children[o].classList.remove("active"),n=="glider"?e.querySelector(".nested-tab-name-child.active")?.children[0]?.children[0]?.children[o]?.classList.remove("active"):e.querySelector(".nested-tab-name-child.active")?.children[0]?.children[o]?.classList.remove("active"),a.classList.add("dp-none"),a.classList.remove("active")}),r.classList.remove("dp-none"),r.classList.add("active"),t.classList.add("active"),t.closest(".carousel-item")?.classList.add("active")}document.querySelector(".section.tab-with-cards-wrapper .tab-name-wrapper")&&(document.querySelector(".section.partnerships-cards-wrapper").classList.contains(c)&&t.classList.contains("active")?document.querySelector(".section.partnerships-cards-wrapper").classList.remove("dp-none"):document.querySelector(".section.partnerships-cards-wrapper").classList.add("dp-none"));try{if(l.target.closest(".tab-name-wrapper")){const e={};e.click_text=l.target.textContent.trim(),e.cta_position=l.target.closest(".section").querySelector(".default-content-wrapper").querySelector("h1, h2, h3, h4, h5, h6").textContent.trim(),E(e)}}catch(e){console.warn(e)}}),s}export default function A(s){return generateTabName(s)}
+import { ctaClickInteraction } from '../../dl.js';
+import { createCarousle, getProps } from '../../scripts/scripts.js';
+
+function createButton(text, picture) {
+  const button = document.createElement('button');
+  button.classList.add('carousel-control', text);
+  button.innerHTML = (picture);
+  return button;
+}
+export function generateTabName(block) {
+  // const [name, id, type] = block.children;
+  // const names = name.innerText.split(",");
+  // const ids = id.innerText.split(",");
+  // const classes = type.innerText.trim();
+  const [name, id, typename, classes, prev, next, nestedTabId, nestedTabActive, ...imageSrc] = getProps(block, {
+    index: [4, 5],
+  });
+  const names = name.split(',');
+  const ids = id.split(',');
+  const imagesSrc = [...imageSrc];
+
+  const tabsTemplate = '';
+  block.innerHTML = '';
+  block.classList.add(classes || 'normal');
+  const carouselInner = document.createElement('div');
+  carouselInner.classList.add('carousel-inner');
+  carouselInner.id = 'carouselInner';
+  names.forEach((eachName, index) => {
+    const div = document.createElement('div');
+    const img = document.createElement('img');
+    img.src = imagesSrc[index];
+    img.alt = eachName;
+    img.id = ids[index].trim().replace(/ /g, '-');
+    div.id = ids[index].trim().replace(/ /g, '-');
+    if (index) {
+      div.classList.add('carousel-item');
+    } else {
+      div.classList.add('carousel-item', 'active');
+    }
+    div.append(imagesSrc[index] ? img : eachName.trim());
+    carouselInner.append(div);
+    // carouselInner.append(imagesSrc[index] ? img : div);
+    // observer.observe(div);
+    // tabsTemplate += `<div id="${ids[index].trim().replace(/ /g, '-')}">${eachName.trim()}</div>`
+  });
+
+  const prevButton = createButton('prev', prev?.outerHTML);
+  const nextButton = createButton('next', next?.outerHTML);
+  prevButton.classList.add(classes === 'normal' ? 'dp-none' : 'dp-normal');
+  nextButton.classList.add(classes === 'normal' ? 'dp-none' : 'dp-normal');
+  // <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+  // <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+  block.append(carouselInner);
+  // classes = classes == "normal" ? "glider" : classes; // Line to removed
+  if (classes == 'glider') {
+    console.log('glider');
+  } else if (classes === 'carousel') {
+    createCarousle(block, prevButton, nextButton);
+  }
+
+  block.addEventListener('click', (e) => {
+    let currentEl = e.target;
+    if (classes == 'glider' && (currentEl.closest('.glider-prev') || currentEl.closest('.glider-next'))) {
+      currentEl = currentEl.closest('.nested-tab-name-child').querySelector('.carousel-item.active');
+    }
+    const { id } = currentEl;
+    const tabContainer = id && document.querySelector(`.tab-container[data-id=${id}]`);
+    const nestedTabName = id && document.querySelector(`.nested-tab-name-child[data-id=${id}]`);
+    let firsttab;
+    if (nestedTabName) {
+      const section = nestedTabName.closest('.section');
+      Array.from(nestedTabName.children[0].children).forEach((eachTab) => {
+        eachTab.classList.remove('active');
+      });
+      if (classes == 'glider' || nestedTabName.querySelector('.carousel-inner.glider')) {
+        firsttab = nestedTabName.children[0].children[0].children[0];
+      } else {
+        firsttab = nestedTabName.children[0].children[0];
+      }
+      section.querySelectorAll('.tab-container[data-id]').forEach((el, index) => {
+        section.querySelector('.tab-name')?.children[0].children[index].classList.remove('active');
+        section.querySelector('.nested-tab-name-child')?.children[0]?.children[index]?.classList.remove('active');
+        el.classList.add('dp-none');
+        el.classList.remove('active');
+      });
+      section.querySelector(`.tab-container[data-id=${firsttab.id}]`).classList.add('active');
+      section.querySelector(`.tab-container[data-id=${firsttab.id}]`).classList.remove('dp-none');
+      section.querySelectorAll('.nested-tab-name-child').forEach((el, index) => {
+        // section.querySelector(".tab-name").children[0].children[index].classList.remove("active");
+        section.querySelector('.tab-name-nested').children[0].children[0].children[index].classList.remove('active');
+        el.classList.add('dp-none');
+        el.classList.remove('active');
+      });
+      firsttab.classList.add('active');
+      nestedTabName.classList.remove('dp-none');
+      nestedTabName.classList.add('active');
+      currentEl.classList.add('active');
+      currentEl.closest('.carousel-item')?.classList.add('active');
+    } else if (tabContainer) {
+      const section = tabContainer.closest('.section');
+      section.querySelectorAll('.tab-container').forEach((el, index) => {
+        // section.querySelector(".tab-name").children[0].children[index].classList.remove("active");
+        section.querySelector('.tab-name')?.children[0].children[index].classList.remove('active');
+        if (classes == 'glider') {
+          section.querySelector('.nested-tab-name-child.active')?.children[0]?.children[0]?.children[index]?.classList.remove('active');
+        } else {
+          section.querySelector('.nested-tab-name-child.active')?.children[0]?.children[index]?.classList.remove('active');
+        }
+        el.classList.add('dp-none');
+        el.classList.remove('active');
+      });
+      tabContainer.classList.remove('dp-none');
+      tabContainer.classList.add('active');
+      currentEl.classList.add('active');
+      currentEl.closest('.carousel-item')?.classList.add('active');
+    }
+    if (document.querySelector('.section.tab-with-cards-wrapper .tab-name-wrapper')) {
+      if (!(document.querySelector('.section.partnerships-cards-wrapper').classList.contains(id) && currentEl.classList.contains('active'))) {
+        document.querySelector('.section.partnerships-cards-wrapper').classList.add('dp-none');
+      } else {
+        document.querySelector('.section.partnerships-cards-wrapper').classList.remove('dp-none');
+      }
+    }
+
+    /* Corporate Analytics */
+    try {
+      if (e.target.closest('.tab-name-wrapper')) {
+        const data = {};
+        data.click_text = e.target.textContent.trim();
+        data.cta_position = e.target.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
+        ctaClickInteraction(data);
+      }
+    } catch (error) {
+      console.warn(error);
+    }
+  });
+  return block;
+}
+
+export default function decorate(block) {
+  return generateTabName(block);
+}
