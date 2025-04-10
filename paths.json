@@ -71,6 +71,7 @@
     "/content/piramalfinance-eds/in/en/api/sarfaesiwholesale:/api/sarfaesiwholesale.json",
     "/content/piramalfinance-eds/in/en/api/eauctioncsv:/api/eauctioncsv.json",
     "/content/piramalfinance-eds/in/en/api/authorisedcsv:/api/authorisedcsv.json",
+    "/content/piramalfinance-eds/in/en/meta-template:/meta-template.json",
     "/content/piramalfinance-eds/in/en/lang-path:/lang-path.json"
   ]
 }
