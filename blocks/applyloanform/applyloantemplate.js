@@ -1,18 +1,117 @@
-export function appplyLoanTemplate(a){function l(){const c=document.createElement("div");return a.options.forEach(i=>{const t=document.createElement("ul");for(const[d,r]of Object.entries(i)){const e=document.createElement("li");e.textContent=d,e.setAttribute("data-get-input","form-loan-type"),e.classList.add("subpoints"),t.appendChild(e),r.forEach(o=>{const s=document.createElement("li");s.textContent=o.litext,s.setAttribute("data-loan-type",o.loantype),s.setAttribute("data-loan-name",o.loanname),s.setAttribute("data-get-input","form-loan-type"),s.classList.add("subpoints"),t.appendChild(s)})}c.appendChild(t)}),c.innerHTML}const n=l();return`<div class="loan-form-sub-parent">
+export function appplyLoanTemplate(properties) {
+  /* const properties = {
+    rupeeIcon: "/images/rupee-icon.svg",
+    mainFormHeading: "Apply Loan In A Minute",
+    crossOne: "/images/close-icon.svg",
+    loanType: "I am looking for? ",
+    loanTypePlaceholder: "Select Loan Type",
+    loanAmount: "I need loan amount of ",
+    fullNames: "My full name is ",
+    fullNamesPlaceholder: "Enter Full Name",
+    mobileNumber: "My contact number is",
+    mobileNumberPlaceholder: "Enter Mobile Number",
+    checkboxTitle: "I am",
+    firstCheckText: "Salaried",
+    secondCheckText: "Doing business",
+    monthlyIncome: "My monthy income is",
+    datePicker: "My year of birth is",
+    datePickerPlaceholder: "DD/MM/YYYY",
+    state: "State",
+    statePlaceholder: "Enter State",
+    branch: "Branch",
+    branchPlaceholder: "Enter Branch",
+    checkboxText: "I accept the ",
+    checkboxAnchorText: "terms and conditions",
+    checkboxAnchorTextLink: "http://example.com",
+    verifyHead: "Verify Your Mobile Number",
+    sucessFirstImg: "/images/loan-sucess.png",
+    crossTwo: "/images/close-icon.svg",
+    FirstLineText: "Your request has been submitted successfully!",
+    SecondLineText: "Here is your QR code",
+    sucessSecondImg: "/images/scanner.svg",
+    MobileLineText: "Scan the QR code with your mobile app",
+    scanImgOne: "/content/dam/piramalfinance/homepage/banner-images/playstore.png",
+    scanImgTwo: "/content/dam/piramalfinance/homepage/banner-images/appstore.png",
+    errorImage: "/images/loan-error.png",
+    crossThree: "/images/close-icon.svg",
+    errorhead: "Request Failed",
+    errorSubhead: "There was an error processing your request.",
+    RedBoxText: "Please try again later.",
+    errorImage2: "/images/loan-error.png",
+    crossFour: " /images/close-icon.svg",
+    errorMessageOne: "Something went wrong",
+    errorMessageTwo: "Please try again.",
+    buttonOne: "Submit",
+    buttonTwo: "Verify OTP",
+    buttonThree: "Try Again",
+    options: [
+      {
+        "Personal Loans": [
+          { litext: "Loan less than 5 Lacs", loantype: "pl" },
+          { litext: "Loan more than 5 Lacs", loantype: "pl" },
+        ],
+      },
+      {
+        "Housing Loans": [{ litext: "Home Loan", loantype: "hl" }],
+      },
+      {
+        "Business Loans": [
+          { litext: "Business Loan", loantype: "ubl" },
+          { litext: "Loan against property", loantype: "msme" },
+          { litext: "Secured business loan", loantype: "msme" },
+        ],
+      },
+      {
+        "Other Loans": [{ litext: "Pre-owned Car Loan", loantype: "ucl" }],
+      },
+    ],
+  }; */
+
+  function createLoanTypeDropDown() {
+    const container = document.createElement('div');
+
+    properties.options.forEach((category) => {
+      const ul = document.createElement('ul');
+      for (const [key, value] of Object.entries(category)) {
+        const liCategory = document.createElement('li');
+        liCategory.textContent = key;
+        liCategory.setAttribute('data-get-input', 'form-loan-type');
+        liCategory.classList.add('subpoints');
+        ul.appendChild(liCategory);
+
+        value.forEach((item) => {
+          const liItem = document.createElement('li');
+          liItem.textContent = item.litext;
+          liItem.setAttribute('data-loan-type', item.loantype);
+          liItem.setAttribute('data-loan-name', item.loanname);
+          liItem.setAttribute('data-get-input', 'form-loan-type');
+          liItem.classList.add('subpoints');
+          ul.appendChild(liItem);
+        });
+      }
+      container.appendChild(ul);
+    });
+
+    return container.innerHTML;
+  }
+
+  const listofLoanTypes = createLoanTypeDropDown();
+
+  const appplyLoanTemplate = `<div class="loan-form-sub-parent">
         <div class="cmp-container">
              <div class="loan-form">
                 <div class="cmp-container">
                         <div class="loan-form-heading-parent ">
                             <div class="cmp-container">
                                 <div class="image">
-                                    <img data-src="${a.rupeeIcon}" src="${a.rupeeIcon}"
+                                    <img data-src="${properties.rupeeIcon}" src="${properties.rupeeIcon}"
                                         class="cmp-image__image lozad"  alt="send">
                                 </div>
                                 <div class="text">
-                                    <p>${a.mainFormHeading}</p>
+                                    <p>${properties.mainFormHeading}</p>
                                 </div>
                                 <div class="image crossimage">
-                                    <img data-src="${a.crossOne}" src="${a.crossOne}"
+                                    <img data-src="${properties.crossOne}" src="${properties.crossOne}"
                                         class="cmp-image__image lozad" alt="close-icon">
                                 </div>
                             </div>
@@ -22,10 +121,10 @@ export function appplyLoanTemplate(a){function l(){const c=document.createElemen
                                 id="loan-main-form" name="loan-main-form" class="cmp-form">
                                 <div class="text">
                                     <div class="cmp-form-text">
-                                        <label for="form-text">${a.loanType}<span>*</span></label>
+                                        <label for="form-text">${properties.loanType}<span>*</span></label>
                                         <div class="cmp-form-text-parent multiselectoptions">
                                             <input class="cmp-form-text__text" type="text" id="form-loan-type"
-                                                placeholder="${a.loanTypePlaceholder}" readonly  autocomplete="off">
+                                                placeholder="${properties.loanTypePlaceholder}" readonly  autocomplete="off">
                                             <span class="arrowimage"><img class="lozad" src="/images/down-arrow.png"
                                                     data-src="/images/down-arrow.png" alt="arrowimage" src="/images/down-arrow.png">
                                             </span>
@@ -34,7 +133,7 @@ export function appplyLoanTemplate(a){function l(){const c=document.createElemen
                                             <div class="option-form loan-form-drpdown">
 
                                                
-                                                   ${n}
+                                                   ${listofLoanTypes}
                                                    
                                                 
                                             </div>
@@ -43,9 +142,9 @@ export function appplyLoanTemplate(a){function l(){const c=document.createElemen
                                 </div>
                                 <div class="text">
                                     <div class="cmp-form-text">
-                                        <label for="form-text">${a.loanAmount}<span>*</span></label>
+                                        <label for="form-text">${properties.loanAmount}<span>*</span></label>
                                         <div class="cmp-form-text-parent">
-                                            <span class="rupee">\u20B9</span>
+                                            <span class="rupee">₹</span>
                                             <input class="cmp-form-text__text" type="text" data-value-type="money" id="form-loan-amount"  placeholder=""
                                             autocomplete="off">
                                         </div>
@@ -53,19 +152,19 @@ export function appplyLoanTemplate(a){function l(){const c=document.createElemen
                                 </div>
                                 <div class="text">
                                     <div class="cmp-form-text">
-                                        <label for="form-text">${a.fullNames}<span>*</span></label>
+                                        <label for="form-text">${properties.fullNames}<span>*</span></label>
                                         <div class="cmp-form-text-parent">
-                                            <input class="cmp-form-text__text" id="form-customer-name" data-value-type="name"  type="text" placeholder="${a.fullNamesPlaceholder}"
+                                            <input class="cmp-form-text__text" id="form-customer-name" data-value-type="name"  type="text" placeholder="${properties.fullNamesPlaceholder}"
                                                 autocomplete="off">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="text">
                                     <div class="cmp-form-text">
-                                        <label for="form-text">${a.mobileNumber}<span>*</span></label>
+                                        <label for="form-text">${properties.mobileNumber}<span>*</span></label>
                                         <div class="cmp-form-text-parent">
                                             <input class="cmp-form-text__text" type="text" id="form-customer-no" maxlength="10" data-validation="isvalidNumber" data-isvalid="false"
-                                                placeholder="${a.mobileNumberPlaceholder}" name="contact" inputmode="numeric" autocomplete="off">
+                                                placeholder="${properties.mobileNumberPlaceholder}" name="contact" inputmode="numeric" autocomplete="off">
                                             <span class="loan-form-err invalid-no-msg">
                                                 First digit should be 6 or 7 or 8 or 9.
                                             </span>
@@ -74,7 +173,7 @@ export function appplyLoanTemplate(a){function l(){const c=document.createElemen
                                 </div>
                                 <div class="loan-form-checkbox">
                                     <fieldset class="cmp-form-options--radio">
-                                        <legend class="cmp-form-options__legend">${a.checkboxTitle}</legend>
+                                        <legend class="cmp-form-options__legend">${properties.checkboxTitle}</legend>
                                         <div class="cmp-field-parent-parent">
                                             <div class="cmp-form-option-parent">
                                                 <label for="radio-salary" id="radio-salary-id"
@@ -83,7 +182,7 @@ export function appplyLoanTemplate(a){function l(){const c=document.createElemen
                                                         <input class="cmp-form-options__field--radio" id="radio-salary"
                                                             name="emplyoment" checked type="radio">
                                                         <span
-                                                            class="cmp-form-options__field-description">${a.firstCheckText}</span>
+                                                            class="cmp-form-options__field-description">${properties.firstCheckText}</span>
                                                         <img id="" class="icon coloricon lozad"
                                                             data-src="/images/salaried-after-selected-icon.svg"
                                                             alt="salaried-after-selected-icon" src="/images/salaried-after-selected-icon.svg">
@@ -101,7 +200,7 @@ export function appplyLoanTemplate(a){function l(){const c=document.createElemen
                                                     <div class="cmp-form-input-parent">
                                                         <input class="cmp-form-options__field--radio"
                                                             id="radio-business" name="emplyoment" type="radio">
-                                                        <span class="cmp-form-options__field-description">${a.secondCheckText}</span>
+                                                        <span class="cmp-form-options__field-description">${properties.secondCheckText}</span>
                                                         <img id="" class="icon coloricon lozad" src="/images/business-loan-after-selected-icon.svg"
                                                             data-src="/images/business-loan-after-selected-icon.svg"
                                                             alt="business-loan-after-selected-icon">
@@ -116,18 +215,18 @@ export function appplyLoanTemplate(a){function l(){const c=document.createElemen
                                 </div>
                                 <div class="text">
                                     <div class="cmp-form-text">
-                                        <label for="form-text">${a.monthlyIncome}<span>*</span></label>
+                                        <label for="form-text">${properties.monthlyIncome}<span>*</span></label>
                                         <div class="cmp-form-text-parent">
-                                            <span class="rupee">\u20B9</span>
+                                            <span class="rupee">₹</span>
                                             <input class="cmp-form-text__text" id="form-income" data-value-type="money"  type="text" placeholder="" name="text" autocomplete="off">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="text">
                                     <div class="cmp-form-text">
-                                        <label for="form-text">${a.datePicker}<span>*</span></label>
+                                        <label for="form-text">${properties.datePicker}<span>*</span></label>
                                         <div class="cmp-form-text-parent" id="dob-container">
-                                            <input class="cmp-form-text__text dobclass" type="text" placeholder="${a.datePickerPlaceholder}"
+                                            <input class="cmp-form-text__text dobclass" type="text" placeholder="${properties.datePickerPlaceholder}"
                                                 id="loan-form-dob" name="text" maxlength="10" autocomplete="off" data-value-type="date">
                                             <span class="arrowimage dobarrow" id="loan-form-cal-id"><img class="lozad" src="/images/calendar.png"
                                                 data-src="/images/calendar.png" alt="dobarrow">
@@ -141,9 +240,9 @@ export function appplyLoanTemplate(a){function l(){const c=document.createElemen
                                 </div>
                                 <div class="text">
                                     <div class="cmp-form-text">
-                                        <label for="form-text">${a.state}<span>*</span></label>
+                                        <label for="form-text">${properties.state}<span>*</span></label>
                                         <div class="cmp-form-text-parent stateparent laststate checkInputRegx" id="stateparent">
-                                            <input class="cmp-form-text__text" type="text" placeholder="${a.statePlaceholder}"  autocomplete="off"
+                                            <input class="cmp-form-text__text" type="text" placeholder="${properties.statePlaceholder}"  autocomplete="off"
                                                 id="form-state" name="text" >
                                             <span class="arrowimage laststate"><img class="lozad" src="/images/down-arrow.png"
                                                 data-src="/images/down-arrow.png" alt="arrowimage"></span>
@@ -157,10 +256,10 @@ export function appplyLoanTemplate(a){function l(){const c=document.createElemen
                                 
                                 <div class="text">
                                     <div class="cmp-form-text">
-                                        <label for="form-text">${a.branch}<span>*</span></label>
+                                        <label for="form-text">${properties.branch}<span>*</span></label>
                                         <div class="cmp-form-text-parent  branchparent checkInputRegx" id="branchparent">
                                             <input class="cmp-form-text__text" type="text"
-                                                placeholder="${a.branchPlaceholder}" id="form-branch-city" name="text"  autocomplete="off">
+                                                placeholder="${properties.branchPlaceholder}" id="form-branch-city" name="text"  autocomplete="off">
                                             <span class="arrowimage laststate"><img class="lozad" src="/images/down-arrow.png"
                                                 data-src="/images/down-arrow.png" alt="arrowimage"></span>
                                             <span class="loan-form-err">
@@ -186,33 +285,33 @@ export function appplyLoanTemplate(a){function l(){const c=document.createElemen
                                 </div>
                                 
                             </div>
-                            <p class="checkboxtext">${a.checkboxText}<a target="_blank" href="${a.checkboxAnchorTextLink}" class="spantext"><span>${a.checkboxAnchorText}</span></a></p>
+                            <p class="checkboxtext">${properties.checkboxText}<a target="_blank" href="${properties.checkboxAnchorTextLink}" class="spantext"><span>${properties.checkboxAnchorText}</span></a></p>
                             
                         </div>
                         <div class="loan-form-otp">
                             
                             <div class="loan-form-otp-parent">
                                 <img class="leftarrow lozad" src="/images/back-arrow.png" data-src="/images/back-arrow.png" alt="arrow">
-                                <p class="otphead">${a.verifyHead}</p>
+                                <p class="otphead">${properties.verifyHead}</p>
                                 <div class="otpsubheadcontainer">
-                                    <p class="otpsubhead">${a.otpsubhead} <span class="otp-phone-num" id="loan-form-otpnum">${a.otpnumber}</span></p>
-                                    <p class="otp-change-num" id="otp-change-num">${a.otpchangetext}</p>
+                                    <p class="otpsubhead">${properties.otpsubhead} <span class="otp-phone-num" id="loan-form-otpnum">${properties.otpnumber}</span></p>
+                                    <p class="otp-change-num" id="otp-change-num">${properties.otpchangetext}</p>
                                 </div>
                                
-                                <p class="otpsubsubhead">${a.otpsubsubhead}<code></code></p>
+                                <p class="otpsubsubhead">${properties.otpsubsubhead}<code></code></p>
                                  <div class="inputotp">
                                     <input type="text" id="loan-form-otp-input" maxlength="4">
-                                    <span id="otp-digits">${a.otpdigits}</span>
+                                    <span id="otp-digits">${properties.otpdigits}</span>
                                  </div>
                                  <div class="wrongotpmessage">
-                                    ${a.wrongotpmessage}
+                                    ${properties.wrongotpmessage}
                                  </div>
                                  <div class="resendtext">
                                     <p>
-                                        ${a.resendtext}
+                                        ${properties.resendtext}
                                     </p>
-                                    <button type="button" id="loan-form-resend-otp">${a.resendtextotp}</button>
-                                    <span class="timer">${a.resendtimer}</span>
+                                    <button type="button" id="loan-form-resend-otp">${properties.resendtextotp}</button>
+                                    <span class="timer">${properties.resendtimer}</span>
                             </div>
                            
                              </div>
@@ -223,21 +322,21 @@ export function appplyLoanTemplate(a){function l(){const c=document.createElemen
                         <div class="sucess-form">
                             <div class="sucess-form-parent">
                                 <div class="cross">
-                                    <img  class="loansucess lozad" src="${a.sucessFirstImg}" data-src="${a.sucessFirstImg}" alt="loan-sucess-img">
-                                    <img class="crossimage lozad" data-src="${a.crossTwo}" src="${a.crossTwo}" alt="cross-img">
+                                    <img  class="loansucess lozad" src="${properties.sucessFirstImg}" data-src="${properties.sucessFirstImg}" alt="loan-sucess-img">
+                                    <img class="crossimage lozad" data-src="${properties.crossTwo}" src="${properties.crossTwo}" alt="cross-img">
     
                                 </div>
-                                <p class="loan-request-text">${a.FirstLineText}</p>
-                                <p class="qrcode-text">${a.SecondLineText}</p>
+                                <p class="loan-request-text">${properties.FirstLineText}</p>
+                                <p class="qrcode-text">${properties.SecondLineText}</p>
                                 <div class="barcode-parent">
     
-                                    <img class="barcode lozad" src="${a.sucessSecondImg}" data-src="${a.sucessSecondImg}" alt="barcode">
+                                    <img class="barcode lozad" src="${properties.sucessSecondImg}" data-src="${properties.sucessSecondImg}" alt="barcode">
                                 </div>
                                 <div class="mobilescanner">
-                                    <p class="mobilescannertext">${a.MobileLineText}</p>
+                                    <p class="mobilescannertext">${properties.MobileLineText}</p>
                                     <div class="mobilebuttons">
-                                        <a href="${a.scanImgOneLink}"><img data-src="${a.scanImgOne}" src="${a.scanImgOne}" alt="Play Store" class="first-img lozad"></a>
-                                        <a href="${a.scanImgTwoLink}"><img data-src="${a.scanImgTwo}" src="${a.scanImgTwo}" alt="App Store" class="second-img lozad"></a>
+                                        <a href="${properties.scanImgOneLink}"><img data-src="${properties.scanImgOne}" src="${properties.scanImgOne}" alt="Play Store" class="first-img lozad"></a>
+                                        <a href="${properties.scanImgTwoLink}"><img data-src="${properties.scanImgTwo}" src="${properties.scanImgTwo}" alt="App Store" class="second-img lozad"></a>
                                         
                                     </div>
                                 </div>
@@ -249,18 +348,18 @@ export function appplyLoanTemplate(a){function l(){const c=document.createElemen
                                <div class="images">
                                    
     
-                                        <img class="errorimage lozad" data-src="${a.errorImage}" src="${a.errorImage}" alt="error">
+                                        <img class="errorimage lozad" data-src="${properties.errorImage}" src="${properties.errorImage}" alt="error">
                                   
                                     
-                                        <img class= "failformcross lozad" src="${a.crossThree}" data-src="${a.crossThree}" alt="cross">
+                                        <img class= "failformcross lozad" src="${properties.crossThree}" data-src="${properties.crossThree}" alt="cross">
                                 
                                </div>
-                               <p class="main-heading">${a.errorhead}</p>
-                               <p class="main-sub-heading">${a.errorSubhead}</p>
+                               <p class="main-heading">${properties.errorhead}</p>
+                               <p class="main-sub-heading">${properties.errorSubhead}</p>
                                <div class="redbox">
-                                <img class= "alertimg lozad" src="${a.errorwarning}" data-src="${a.errorwarning}" alt="error-warning">
+                                <img class= "alertimg lozad" src="${properties.errorwarning}" data-src="${properties.errorwarning}" alt="error-warning">
                                 
-                                <P>${a.RedBoxText}</P>
+                                <P>${properties.RedBoxText}</P>
                                </div>
     
                         </div>
@@ -268,14 +367,14 @@ export function appplyLoanTemplate(a){function l(){const c=document.createElemen
                             <div class="images">
                                 
     
-                                <img class="errorimage lozad" src="${a.errorImage2}" data-src="${a.errorImage2}" alt="error">
+                                <img class="errorimage lozad" src="${properties.errorImage2}" data-src="${properties.errorImage2}" alt="error">
                                
                                  
-                                 <img class="failformcross sw-wrongcross lozad" src="${a.crossFour}" data-src="${a.crossFour}" alt="cross">
+                                 <img class="failformcross sw-wrongcross lozad" src="${properties.crossFour}" data-src="${properties.crossFour}" alt="cross">
                              
                             </div>
-                            <p class="main-heading">${a.errorMessageOne}</p>
-                            <p class="main-sub-heading">${a.errorMessageTwo}</p>
+                            <p class="main-heading">${properties.errorMessageOne}</p>
+                            <p class="main-sub-heading">${properties.errorMessageTwo}</p>
                             
                         </div>
                 </div>
@@ -287,18 +386,18 @@ export function appplyLoanTemplate(a){function l(){const c=document.createElemen
             </div>
             <div class="loan-form-button-container first-form-button">
                 <button id="loan-form-button" class="cmp-container"> 
-                    <div class="btn-text">${a.buttonOne}</div>
+                    <div class="btn-text">${properties.buttonOne}</div>
                     <div class="loader loader-initialized"></div>
                 </button>
             </div>
             <div class="loan-form-button-container  loan-form-otp-button-container">
                 <button id="loan-from-otp-verify" class="cmp-container">
-                    <div class="btn-text"> ${a.buttonTwo}</div>
+                    <div class="btn-text"> ${properties.buttonTwo}</div>
                     <div class="loader"></div>
                 </button>
             </div> 
             <div class="sw-wrong-button-container">
-                <button  class="cmp-container">${a.buttonThree}
+                <button  class="cmp-container">${properties.buttonThree}
                 </button>
             </div>
     
@@ -316,4 +415,10 @@ export function appplyLoanTemplate(a){function l(){const c=document.createElemen
                    </div> 
             </div> 
         </div>
-    </div>`}
+    </div>`;
+
+  return appplyLoanTemplate;
+}
+
+/* <!-- loan-form-sub-otp   loan-form-success  loan-form-request-fail  loan-form-something-wrong -->
+<!-- btn-active loader-initialized --> */

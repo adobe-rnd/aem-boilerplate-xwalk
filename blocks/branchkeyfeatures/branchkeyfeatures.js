@@ -1,1 +1,76 @@
-import{CFApiCall as p,groupAllKeys as u}from"../../scripts/scripts.js";import{featureDropDownClick as f}from"../keyfeatures/keyfeatures.js";import{setLocationObj as m}from"../moredetailsaddress/moredetailsaddress.js";export default async function d(n){const{geoInfo:{city:s}}=m,o=n.textContent.trim(),a=document.createElement("div");let t="";if(sessionStorage.getItem("branchloanmapping"))t=JSON.parse(sessionStorage.getItem("branchloanmapping"));else{if(!o)return!1;const e=o&&await p(o),r=e&&e.data;t=u(r),sessionStorage.setItem("branchloanmapping",JSON.stringify(t))}Object.keys(t).forEach(e=>{if(t[e].includes(s)){const r=document.querySelector(`.${e}-key-feature`);r&&r.querySelectorAll(".keyfeatures-wrapper").forEach(i=>{a.append(i)})}else e=="personal-loan"&&document.querySelector(".personal-loan-key-feature").querySelector(".wrapper-creation-container").querySelectorAll(".keyfeatures-wrapper").forEach(function(r){r.remove()})}),document.querySelectorAll(".loans-fragment").forEach(e=>{e.remove()}),document.querySelector(".view-more-less-js .wrapper-creation-container").insertAdjacentHTML("beforeend",a.innerHTML);let c=document.querySelector(".view-more-less-js.wrappercreation-container");document.querySelectorAll(".view-more-less-js .wrapper-creation-container .keyfeatures-wrapper").length>0?document.querySelectorAll(".view-more-less-js .wrapper-creation-container .keyfeatures-wrapper").forEach((e,r)=>{r<=2?e.classList.remove("dp-none"):e.classList.add("dp-none")}):c.classList.add("dp-none");const l=document.querySelector(".view-more-less-js .wrapper-creation-container");try{f(l)}catch(e){console.warn(e)}n.classList.add("dp-none")}
+import { CFApiCall, groupAllKeys } from '../../scripts/scripts.js';
+import { featureDropDownClick } from '../keyfeatures/keyfeatures.js';
+import { setLocationObj } from '../moredetailsaddress/moredetailsaddress.js';
+
+export default async function decorate(block) {
+  const {
+    geoInfo: { city },
+  } = setLocationObj;
+  const linkURL = block.textContent.trim();
+
+  const keyFeatureDiv = document.createElement('div');
+
+  let jsonResponseData = '';
+  if(sessionStorage.getItem('branchloanmapping')){
+    jsonResponseData = JSON.parse(sessionStorage.getItem('branchloanmapping'));
+  }else{
+    if (!linkURL) {
+      return false;
+    }
+    const cfRepsonse = linkURL && await CFApiCall(linkURL);
+    const reponseData = cfRepsonse && cfRepsonse.data;
+    jsonResponseData = groupAllKeys(reponseData);
+    sessionStorage.setItem('branchloanmapping', JSON.stringify(jsonResponseData));
+  
+    /* const repsonseData = cfRepsonse && cfRepsonse.data[0].branchloanmapping;
+    const jsonResponseData = repsonseData && JSON.parse(repsonseData); */
+  }
+
+  Object.keys(jsonResponseData).forEach((eachKey) => {
+    if (jsonResponseData[eachKey].includes(city)) {
+      const getKeyFeatureEle = document.querySelector(`.${eachKey}-key-feature`);
+      if (getKeyFeatureEle) {
+        getKeyFeatureEle.querySelectorAll('.keyfeatures-wrapper').forEach((eachKeyFeatureEle) => {
+          keyFeatureDiv.append(eachKeyFeatureEle);
+        });
+      }
+    }else{
+      if(eachKey == 'personal-loan'){
+        document.querySelector('.personal-loan-key-feature').querySelector('.wrapper-creation-container').querySelectorAll('.keyfeatures-wrapper').forEach(function (eachfeature) {
+          eachfeature.remove();
+        });
+      }
+    }
+  });
+
+  document.querySelectorAll('.loans-fragment').forEach((eachEle) => {
+    eachEle.remove();
+  });
+
+  document.querySelector('.view-more-less-js .wrapper-creation-container').insertAdjacentHTML('beforeend', keyFeatureDiv.innerHTML);
+
+
+  let mainFeatureDiv = document.querySelector('.view-more-less-js.wrappercreation-container');
+  let featureWrapperCheck = document.querySelectorAll('.view-more-less-js .wrapper-creation-container .keyfeatures-wrapper').length;
+  if(featureWrapperCheck > 0){
+    document.querySelectorAll('.view-more-less-js .wrapper-creation-container .keyfeatures-wrapper').forEach((eackfeatures, index) => {
+      if (index <= 2) {
+        eackfeatures.classList.remove('dp-none');
+      } else {
+        eackfeatures.classList.add('dp-none');
+      }
+    });
+  }else{
+    mainFeatureDiv.classList.add('dp-none');
+  }
+
+  const featurePlus = document.querySelector('.view-more-less-js .wrapper-creation-container');
+
+  try {
+    featureDropDownClick(featurePlus);
+  } catch (error) {
+    console.warn(error);
+  }
+
+  block.classList.add('dp-none');
+}

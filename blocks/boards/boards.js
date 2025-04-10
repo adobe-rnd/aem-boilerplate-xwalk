@@ -1,1 +1,53 @@
-function l(e){const n=e?document.createElement("td"):document.createElement("th");return e||n.setAttribute("scope","col"),n}export default async function u(e){e.classList.add("code"),e.parentElement.classList.add("code-wrapper");const n=document.createElement("table"),r=document.createElement("div"),E=document.createElement("thead"),c=document.createElement("tbody"),p=!e.classList.contains("no-header");n.append(c),[...e.children].forEach((o,i)=>{const s=document.createElement("tr");c.append(s),[...o.firstElementChild?.firstElementChild?.children].forEach(t=>{const d=l(p?i:i+1);if(t.innerHTML.includes("img")&&t.textContent.trim()){t.remove();const a=document.createElement("p"),m=document.createElement("span");m.append(t.textContent.trim()),a.append(t.querySelector("img")),a.append(m),d.append(a)}else t.innerHTML.includes("img")?(t.remove(),d.append(t.querySelector("img"))):d.innerHTML=t.innerHTML;s.append(d)})}),e.innerHTML="",r.append(n),e.append(r)}
+/*
+ * Table Block
+ * Recreate a table
+ * https://www.hlx.live/developer/block-collection/table
+ */
+
+function buildCell(rowIndex) {
+  const cell = rowIndex ? document.createElement('td') : document.createElement('th');
+  if (!rowIndex) cell.setAttribute('scope', 'col');
+  return cell;
+}
+
+export default async function decorate(block) {
+  block.classList.add('code');
+  block.parentElement.classList.add('code-wrapper');
+  const table = document.createElement('table');
+  const div = document.createElement('div');
+  const thead = document.createElement('thead');
+  const tbody = document.createElement('tbody');
+
+  const header = !block.classList.contains('no-header');
+  // if (header) table.append(thead);
+  table.append(tbody);
+
+  [...block.children].forEach((child, i) => {
+    const row = document.createElement('tr');
+    // if (header && i === 0) thead.append(row);
+    // else
+    tbody.append(row);
+    [...child.firstElementChild?.firstElementChild?.children]?.forEach((col) => {
+    // [...child.children].forEach((col) => {
+      const cell = buildCell(header ? i : i + 1);
+      if (col.innerHTML.includes('img') && col.textContent.trim()) {
+        col.remove();
+        const p = document.createElement('p');
+        const span = document.createElement('span');
+        span.append(col.textContent.trim());
+        p.append(col.querySelector('img'));
+        p.append(span);
+        cell.append(p);
+      } else if (col.innerHTML.includes('img')) {
+        col.remove();
+        cell.append(col.querySelector('img'));
+      } else {
+        cell.innerHTML = col.innerHTML;
+      }
+      row.append(cell);
+    });
+  });
+  block.innerHTML = '';
+  div.append(table);
+  block.append(div);
+}

@@ -1,1 +1,21 @@
-export default function p(n){const c=n.parentElement.closest(".section"),o=Array.from(c.children);let r=!1,t,e;e=document.createElement("div"),e.classList.add("wrapper-creation-container"),o.forEach((a,i)=>{t+1==i||r?(r=!0,e.append(a)):a.classList.contains("wrappercreation-wrapper")&&(t=i)}),n.innerHTML="",n.appendChild(e)}
+export default function decorate(block) {
+  const mainParentContainer = block.parentElement.closest('.section');
+  const mainParentContainerChildren = Array.from(mainParentContainer.children);
+  let wrapperChecker = false;
+  let currentIndex; let
+    contentDiv;
+  contentDiv = document.createElement('div');
+  contentDiv.classList.add('wrapper-creation-container');
+
+  mainParentContainerChildren.forEach((child, index) => {
+    if (((currentIndex + 1) == index) || wrapperChecker) {
+      wrapperChecker = true;
+      contentDiv.append(child);
+    } else if (child.classList.contains('wrappercreation-wrapper')) {
+      currentIndex = index;
+    }
+  });
+
+  block.innerHTML = '';
+  block.appendChild(contentDiv);
+}

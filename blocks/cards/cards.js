@@ -1,1 +1,41 @@
-import{ctaClickInteraction as i}from"../../dl.js";import{createOptimizedPicture as o}from"../../scripts/aem.js";import{decoratePlaceholder as l,moveInstrumentation as n}from"../../scripts/scripts.js";export default async function s(c){c.innerHTML=await l(c);const a=document.createElement("ul");[...c.children].forEach(e=>{const t=document.createElement("li");for(n(e,t);e.firstElementChild;)t.append(e.firstElementChild);[...t.children].forEach(r=>{r.children.length===1&&r.querySelector("picture")?r.className="cards-card-image":r.className="cards-card-body"}),a.append(t)}),a.querySelectorAll("picture > img").forEach(e=>{const t=o(e.src,e.alt,!1,[{width:"750"}]);n(e,t.querySelector("img")),e.closest("picture").replaceWith(t)}),c.textContent="",c.append(a);try{c.closest(".section.ratings-card-wrapper")&&c.closest(".section.ratings-card-wrapper").querySelectorAll("a").forEach(e=>{e.addEventListener("click",t=>{const r={};r.click_text=t.target.textContent.trim(),r.cta_position=t.target.closest(".section").querySelector(".default-content-wrapper").querySelector("h1, h2, h3, h4, h5, h6").textContent.trim(),i(r)})})}catch(e){console.warn(e)}}
+import { ctaClickInteraction } from '../../dl.js';
+import { createOptimizedPicture } from '../../scripts/aem.js';
+import { decoratePlaceholder, moveInstrumentation } from '../../scripts/scripts.js';
+
+export default async function decorate(block) {
+  /* change to ul, li */
+  block.innerHTML = await decoratePlaceholder(block);
+  const ul = document.createElement('ul');
+  [...block.children].forEach((row) => {
+    const li = document.createElement('li');
+    moveInstrumentation(row, li);
+    while (row.firstElementChild) li.append(row.firstElementChild);
+    [...li.children].forEach((div) => {
+      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
+      else div.className = 'cards-card-body';
+    });
+    ul.append(li);
+  });
+  ul.querySelectorAll('picture > img').forEach((img) => {
+    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
+    moveInstrumentation(img, optimizedPic.querySelector('img'));
+    img.closest('picture').replaceWith(optimizedPic);
+  });
+  block.textContent = '';
+  block.append(ul);
+
+  try {
+    if (block.closest('.section.ratings-card-wrapper')) {
+      block.closest('.section.ratings-card-wrapper').querySelectorAll('a').forEach((eachAnchor) => {
+        eachAnchor.addEventListener('click', (e) => {
+          const data = {};
+          data.click_text = e.target.textContent.trim();
+          data.cta_position = e.target.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
+          ctaClickInteraction(data);
+        });
+      });
+    }
+  } catch (error) {
+    console.warn(error);
+  }
+}

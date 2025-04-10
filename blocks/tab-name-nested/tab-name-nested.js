@@ -1,1 +1,105 @@
-import{getProps as L}from"../../scripts/scripts.js";import{generateTabName as a}from"../tab-name/tab-name.js";export default function S(e){const[t,n,p,u,T,m,s,r,d,g]=L(e,{picture:!0}),h=n.split(","),o=b(e);e.innerHTML="";const i=a(l([o.children[2],o.children[3],"",d,s,r])),c=a(l([o.children[4],o.children[5],"",g,s,r]));i.dataset.id=h[0],c.dataset.id=h[1],i.classList.add("nested-tab-name-child","active"),c.classList.add("nested-tab-name-child","dp-none"),e.append(a(l([o.children[0],o.children[1],"","","<",">"]))),e.append(i),e.append(c),d=="glider"&&(i.classList.add("glider-int"),v(i,s,r)),g=="glider"&&(c.classList.add("glider-int"),v(c,s,r))}function b(e){const t=document.createElement("div");return t.innerHTML=e.innerHTML?e.innerHTML:e,t}function l(e){const t=document.createElement("div");return e.forEach(n=>{t.append(b(n))}),t}function v(e,t,n){const p=f("prev",t?.outerHTML),u=f("next",n?.outerHTML);e.append(p),e.append(u);const T=e.querySelector(".glider-prev"),m=e.querySelector(".glider-next");new IntersectionObserver(r=>{r.forEach(d=>{d.isIntersecting&&new Glider(e.querySelector(".carousel-inner"),{slidesToShow:2,slidesToScroll:1,scrollLock:!0,draggable:!0,arrows:{prev:T,next:m},responsive:[{breakpoint:767,settings:{slidesToShow:3,slidesToScroll:1}},{breakpoint:1025,settings:{slidesToShow:3,slidesToScroll:1}},{breakpoint:1300,settings:{slidesToShow:4,slidesToScroll:1}}]})})}).observe(e)}function f(e,t){const n=document.createElement("button");return n.classList.add(`glider-${e}`,e),n.innerHTML=t,n}
+import { createButton, createCarousle, getProps } from '../../scripts/scripts.js';
+import { generateTabName } from '../tab-name/tab-name.js';
+
+export default function decorate(block) {
+  const [parentTabName, parentTabId, child1TabName, child1TabId, child2TabName, child2TabId, prev, next, child1Type, child2Type] = getProps(block, {
+    picture: true,
+  });
+  // const names = parentTabName.split(",");
+  const ids = parentTabId.split(',');
+  // const child1names = child1TabName.split(",");
+  // const child1ids = child1TabId.split(",");
+  // const child2names = child2TabName.split(",");
+  // const child2ids = child2TabId.split(",");
+  const copyblock = copyElements(block);
+  block.innerHTML = '';
+  const child1 = generateTabName(createBlockElement([copyblock.children[2], copyblock.children[3], '', child1Type, prev, next]));
+  const child2 = generateTabName(createBlockElement([copyblock.children[4], copyblock.children[5], '', child2Type, prev, next]));
+  child1.dataset.id = ids[0];
+  child2.dataset.id = ids[1];
+  child1.classList.add('nested-tab-name-child', 'active');
+  child2.classList.add('nested-tab-name-child', 'dp-none');
+  block.append(generateTabName(createBlockElement([copyblock.children[0], copyblock.children[1], '', '', '<', '>'])));
+  block.append(child1);
+  block.append(child2);
+
+  if (child1Type == 'glider') {
+    child1.classList.add('glider-int');
+    createGlidder(child1, prev, next);
+  }
+  if (child2Type == 'glider') {
+    child2.classList.add('glider-int');
+    createGlidder(child2, prev, next);
+  }
+}
+
+function copyElements(el) {
+  const div = document.createElement('div');
+  div.innerHTML = el.innerHTML ? el.innerHTML : el;
+  return div;
+}
+function createBlockElement(children) {
+  const block = document.createElement('div');
+  children.forEach((child) => {
+    block.append(copyElements(child));
+  });
+  return block;
+}
+
+function createGlidder(childGilder, prev, next) {
+  const gliderPrevButton = createGliderButton('prev', prev?.outerHTML);
+  const gliderNextButton = createGliderButton('next', next?.outerHTML);
+
+  childGilder.append(gliderPrevButton);
+  childGilder.append(gliderNextButton);
+  const currentPrevButton = childGilder.querySelector('.glider-prev');
+  const currentNextButton = childGilder.querySelector('.glider-next');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        new Glider(childGilder.querySelector('.carousel-inner'), {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          scrollLock: true,
+          draggable: true,
+          arrows: {
+            prev: currentPrevButton,
+            next: currentNextButton,
+          },
+          responsive: [
+            {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+              },
+            },
+            {
+              breakpoint: 1025,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+              },
+            },
+            {
+              breakpoint: 1300,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 1,
+              },
+            },
+          ],
+        });
+      }
+    });
+  });
+  observer.observe(childGilder);
+}
+
+function createGliderButton(text, picture) {
+  const button = document.createElement('button');
+  button.classList.add(`glider-${text}`, text);
+  button.innerHTML = picture;
+  return button;
+}

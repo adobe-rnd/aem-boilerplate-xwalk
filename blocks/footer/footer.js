@@ -1,1 +1,49 @@
-import{footerInteraction as l}from"../../dl.js";import{getMetadata as f}from"../../scripts/aem.js";import{targetObject as d}from"../../scripts/scripts.js";import{loadFragment as m}from"../fragment/fragment.js";export default async function p(e){const n=f("footer"),s=n?new URL(n,window.location).pathname:"/footer",a=await m(s);e.textContent="";const c=document.createElement("div");for(;a.firstElementChild;)c.append(a.firstElementChild);e.append(c);try{e.querySelectorAll("li,p").forEach(o=>{o.addEventListener("click",t=>{if(t.target.closest(".footer-section-first")||t.target.closest(".footer-section-second"))try{const r=t.target.innerText,i=t.target.closest("ul")?.closest("li")?.querySelector("p")?.innerText;l(r,i,null,d.pageName)}catch(r){console.warn(r)}if(t.target.href.includes("/modals/"))return!1;t.stopPropagation()})}),e.closest("body")?.querySelector(".mobile-sticky-button")&&e.querySelector(".footer-last-wrapper").classList.add("padding-bottom-footer")}catch(o){console.warn(o)}}
+import { footerInteraction } from '../../dl.js';
+import { getMetadata } from '../../scripts/aem.js';
+import { targetObject } from '../../scripts/scripts.js';
+import { loadFragment } from '../fragment/fragment.js';
+
+/**
+ * loads and decorates the footer
+ * @param {Element} block The footer block element
+ */
+export default async function decorate(block) {
+  // load footer as fragment
+  const footerMeta = getMetadata('footer');
+  const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
+  const fragment = await loadFragment(footerPath);
+
+  // decorate footer DOM
+  block.textContent = '';
+  const footer = document.createElement('div');
+  while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
+
+  block.append(footer);
+  try {
+    block.querySelectorAll('li,p').forEach((el) => {
+      el.addEventListener('click', (e) => {
+        if (e.target.closest('.footer-section-first') || e.target.closest('.footer-section-second')) {
+          // console.log("click_text :: ", e.target.innerText);
+          // console.log("menu_category :: ", e.target.closest("ul")?.closest("li")?.querySelector("p")?.innerText);
+          try {
+            const click_text = e.target.innerText;
+            const menu_category = e.target.closest('ul')?.closest('li')?.querySelector('p')?.innerText;
+            footerInteraction(click_text, menu_category, null, targetObject.pageName);
+          } catch (error) {
+            console.warn(error);
+          }
+        }
+        if (e.target.href.includes('/modals/')) {
+          return false;
+        }
+        e.stopPropagation();
+      });
+    });
+
+    if (block.closest('body')?.querySelector('.mobile-sticky-button')) {
+      block.querySelector('.footer-last-wrapper').classList.add('padding-bottom-footer');
+    }
+  } catch (error) {
+    console.warn(error);
+  }
+}
