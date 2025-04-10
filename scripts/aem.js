@@ -11,7 +11,8 @@
  */
 
 /* eslint-env browser */
-
+const extJs = 'js';
+const extCss = 'css';
 /**
  * log RUM if part of the sample.
  * @param {string} checkpoint identifies the checkpoint in funnel
@@ -637,9 +638,9 @@ function buildBlock(blockName, content) {
  */
 export function getExtension(type) {
     if (type === 'js') {
-        return getMetadata('minify') === 'true' ? '.min.js' : '.js';
+        return getMetadata('minify') === 'true' ? `.min.${extJs}` : `.${extJs}`;
     } else if (type === 'css') {
-        return getMetadata('minify') === 'true' ? '.min.css' : '.css';
+        return getMetadata('minify') === 'true' ? `.min.${extCss}` : `.${extCss}`;
     }
 }
 
