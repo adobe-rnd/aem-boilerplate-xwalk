@@ -642,7 +642,7 @@ function autolinkModals(element) {
     if (origin && origin.href && origin.href.includes('/modals/')) {
       e.preventDefault();
       const { openModal } = await import(
-        `${window.hlx.codeBasePath}/blocks/modal/modal.js`
+        `${window.hlx.codeBasePath}/blocks/modal/modal${getExtension('js')}`
       );
       openModal(origin.href);
     }
