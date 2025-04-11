@@ -437,6 +437,16 @@ function wrapTextNodes(block) {
 function decorateButtons(element) {
     element.querySelectorAll('a').forEach((a) => {
         a.title = a.title || a.textContent;
+
+        // Clean Rel from href
+        if (a.hasAttribute('href') && a.href.includes('rel')) {
+            a.setAttribute('rel', getRelParam(a.href));
+            console.log('a :: ', a);
+            a.setAttribute('href', removeRelParam(a.getAttribute('href')));
+            a.textContent = a.textContent.replace(/([?&])?rel=[^&\s]*/gi, '').replace(/[?&]$/, '');
+            a.setAttribute('title', removeRelParam(a.getAttribute('title')));
+        }
+
         if (a.href !== a.textContent) {
             const up = a.parentElement;
             const twoup = a.parentElement.parentElement;
@@ -468,6 +478,23 @@ function decorateButtons(element) {
     });
 }
 
+export function removeRelParam (url){
+    try {
+      const parsedUrl = new URL(url);
+      parsedUrl.searchParams.delete('rel');
+      return parsedUrl.toString();
+    } catch (e) {
+      return url; // If not a valid URL, return as is
+    }
+  };
+export function getRelParam (url){
+    try {
+      const parsedUrl = new URL(url);
+      return parsedUrl.searchParams.get('rel');
+    } catch (e) {
+      return url; // If not a valid URL, return as is
+    }
+  };
 /**
  * Add <img> for icon, prefixed with codeBasePath and optional prefix.
  * @param {Element} [span] span element with icon classes

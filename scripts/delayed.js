@@ -127,40 +127,40 @@ const handlePathname = (anchor, placeholders) => {
   }
 }
 
-const handleReltags = async () => {
-  const anchors = document.querySelectorAll('a');
-  const placeholders = await fetchPlaceholders();
+// const handleReltags = async () => {
+//   const anchors = document.querySelectorAll('a');
+//   const placeholders = await fetchPlaceholders();
 
-  anchors.forEach(anchor => {
-    handlePathname(anchor, placeholders);
-    const getHref = anchor.href;
-    const relParamCheck = 'rel';
-    if(!getHref) return false;
-    const url = new URL(getHref);
-    const params = new URLSearchParams(url.search);
-    if(params.has(relParamCheck)){
-      let newRelContent = params.get(relParamCheck);
-      if(newRelContent.includes(',')){
-        anchor.rel = newRelContent.replaceAll(',', '');
-      }else{
-        anchor.rel = newRelContent;
-      }
+//   anchors.forEach(anchor => {
+//     handlePathname(anchor, placeholders);
+//     const getHref = anchor.href;
+//     const relParamCheck = 'rel';
+//     if(!getHref) return false;
+//     const url = new URL(getHref);
+//     const params = new URLSearchParams(url.search);
+//     if(params.has(relParamCheck)){
+//       let newRelContent = params.get(relParamCheck);
+//       if(newRelContent.includes(',')){
+//         anchor.rel = newRelContent.replaceAll(',', '');
+//       }else{
+//         anchor.rel = newRelContent;
+//       }
   
-      // Remove the parameter from the URL
-      function removeRelParameter(url) {
-        const urlObj = new URL(url); // Parse the URL
-        const searchParams = urlObj.searchParams; // Access query parameters
+//       // Remove the parameter from the URL
+//       function removeRelParameter(url) {
+//         const urlObj = new URL(url); // Parse the URL
+//         const searchParams = urlObj.searchParams; // Access query parameters
     
-        searchParams.delete(relParamCheck); // Remove the 'rel' parameter
+//         searchParams.delete(relParamCheck); // Remove the 'rel' parameter
     
-        return urlObj.toString(); // Return the modified URL
-      }
+//         return urlObj.toString(); // Return the modified URL
+//       }
   
-      anchor.href = removeRelParameter(getHref);
+//       anchor.href = removeRelParameter(getHref);
   
-    }
-  })
-};
+//     }
+//   })
+// };
 
 
 if (!window.location.hostname.includes('localhost') && !window.location.hostname.includes('author')) {
@@ -168,6 +168,6 @@ if (!window.location.hostname.includes('localhost') && !window.location.hostname
   loadHeadGTM();
   loadBodyGTM();
   loadMoengage();
-  handleReltags();
+  // handleReltags();
   loadAdobeScript();
 }
