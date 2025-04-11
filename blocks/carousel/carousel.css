@@ -121,16 +121,16 @@
   object-fit: contain;
 }
 
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .title>:where(h1,h2,h3,h4,h5,h6),
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .title>:where(h1, h2, h3, h4, h5, h6),
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .eyebrow,
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five .background .foreground .text .title>:where(h1,h2,h3,h4,h5,h6),
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five .background .foreground .text .title>:where(h1, h2, h3, h4, h5, h6),
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five .background .foreground .text .eyebrow,
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six .background .foreground .text .title>:where(h1,h2,h3,h4,h5,h6),
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six .background .foreground .text .title>:where(h1, h2, h3, h4, h5, h6),
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six .background .foreground .text .eyebrow,
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-seven .background .foreground .text .title>:where(h1,h2,h3,h4,h5,h6),
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-seven .background .foreground .text .title>:where(h1, h2, h3, h4, h5, h6),
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-seven .background .foreground .text .eyebrow,
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>:where(h1,h2,h3,h4,h5,h6),
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>:where(h1,h2,h3,h4,h5,h6)>strong {
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>:where(h1, h2, h3, h4, h5, h6),
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>:where(h1, h2, h3, h4, h5, h6)>strong {
   color: var(--black);
   font-family: "Nunito-Extrabold", sans-serif;
   font-size: 3rem;
@@ -189,21 +189,21 @@
   margin-top: 2rem;
 }
 
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.btn-bottom >.background .foreground .text .cta{
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.btn-bottom >.background .foreground .text .cta {
   position: absolute;
   bottom: 61px;
 }
 
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.btn-bottom .background .foreground .text .cta-image-wrapper{
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.btn-bottom .background .foreground .text .cta-image-wrapper {
   margin-bottom: 50px;
 }
 
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.btn-bottom >.background .foreground .text .cta-image-wrapper,
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.two-btn-bottom >.background .foreground .text .long-description{
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.two-btn-bottom >.background .foreground .text .long-description {
   margin-bottom: 75px;
 }
 
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.two-btn-bottom >.background .foreground .text .short-description{
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.two-btn-bottom >.background .foreground .text .short-description {
   position: absolute;
   bottom: 61px;
 }
@@ -252,12 +252,12 @@
   background-color: var(--white);
 }
 
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.--coralred>.background .foreground .text .title>:where(h1,h2,h3,h4,h5,h6) {
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.--coralred>.background .foreground .text .title>:where(h1, h2, h3, h4, h5, h6) {
   color: var(--orange);
 }
 
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-two>.background .foreground .text .title>:where(h1,h2,h3,h4,h5,h6),
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-seven .background .foreground .text .title>:where(h1,h2,h3,h4,h5,h6),
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-two>.background .foreground .text .title>:where(h1, h2, h3, h4, h5, h6),
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-seven .background .foreground .text .title>:where(h1, h2, h3, h4, h5, h6),
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-seven .background .foreground .text .eyebrow,
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-seven>.background .foreground .text .long-description>p {
   color: var(--white);
@@ -327,7 +327,7 @@
 }
 
 /* first banner css  */
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>:where(h1,h2,h3,h4,h5,h6)>strong {
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>:where(h1, h2, h3, h4, h5, h6)>strong {
   color: #349E58;
 }
 
@@ -379,7 +379,7 @@
 }
 
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner>.background .foreground .text .eyebrow,
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>:where(h1,h2,h3,h4,h5,h6) {
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>:where(h1, h2, h3, h4, h5, h6) {
   color: var(--darkcharcoal);
 }
 
@@ -469,8 +469,8 @@
   background-repeat: no-repeat;
 }
 
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>:where(h1,h2,h3,h4,h5,h6),
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>:where(h1,h2,h3,h4,h5,h6)>strong {
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>:where(h1, h2, h3, h4, h5, h6),
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>:where(h1, h2, h3, h4, h5, h6)>strong {
   color: var(--black);
   font-family: "Nunito-Extrabold", sans-serif;
   font-size: 3rem;
@@ -479,7 +479,7 @@
   margin-bottom: 16px;
 }
 
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>:where(h1,h2,h3,h4,h5,h6)>strong {
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>:where(h1, h2, h3, h4, h5, h6)>strong {
   display: block;
 }
 
@@ -520,16 +520,16 @@
     min-height: 440px;
   }
 
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .title>:where(h1,h2,h3,h4,h5,h6),
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .title>:where(h1, h2, h3, h4, h5, h6),
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .eyebrow,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five .background .foreground .text .title>:where(h1,h2,h3,h4,h5,h6),
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five .background .foreground .text .title>:where(h1, h2, h3, h4, h5, h6),
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-five .background .foreground .text .eyebrow,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six .background .foreground .text .title>:where(h1,h2,h3,h4,h5,h6),
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six .background .foreground .text .title>:where(h1, h2, h3, h4, h5, h6),
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six .background .foreground .text .eyebrow,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-seven .background .foreground .text .title>:where(h1,h2,h3,h4,h5,h6),
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-seven .background .foreground .text .title>:where(h1, h2, h3, h4, h5, h6),
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-seven .background .foreground .text .eyebrow,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>:where(h1,h2,h3,h4,h5,h6),
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>:where(h1,h2,h3,h4,h5,h6)>strong {
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>:where(h1, h2, h3, h4, h5, h6),
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-whatsapp-banner .background .foreground .long-description>:where(h1, h2, h3, h4, h5, h6)>strong {
     font-size: 1.5rem;
     line-height: 32px;
   }
@@ -550,9 +550,9 @@
   }
 
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.btn-bottom >.background .foreground .text .cta-image-wrapper,
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.two-btn-bottom >.background .foreground .text .long-description{
-  margin-bottom: unset;
-}
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.two-btn-bottom >.background .foreground .text .long-description {
+    margin-bottom: unset;
+  }
 
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .cta>a,
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li>p>a {
@@ -691,33 +691,42 @@
   .section.banner-carousel-wrapper.cities-page-align-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li {
     margin-top: 36px;
   }
+
   .section.banner-carousel-wrapper.cities-page-align-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
     bottom: 0;
   }
+
   .section.banner-carousel-wrapper.cities-page-align-banner .carousel-wrapper .carousel .panel-container .teaser {
     min-height: 400px;
   }
+
   .section.banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>p>br {
     display: none;
   }
+
   .section.banner-carousel-wrapper.business-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .short-description>ul>li {
     margin-top: 36px;
   }
+
   .section.banner-carousel-wrapper.flexi-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
     width: 200px;
     height: 138px;
   }
+
   .section.banner-carousel-wrapper.flexi-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
   .section.banner-carousel-wrapper.insta-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
     right: -10px;
   }
+
   .section.banner-carousel-wrapper.insta-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
     width: 200px;
     height: 152px;
   }
+
   .section.banner-carousel-wrapper.insta-loan-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
     bottom: 0;
   }
+
   .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-green,
   .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-blue,
   .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-violet {
@@ -727,13 +736,13 @@
   .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-green {
     background-image: url("/images/WhatsappBannerMobile.webp");
   }
-  
+
   .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-blue {
     background-image: url("/images/banner2-background-image-mobile.png");
   }
 
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>:where(h1,h2,h3,h4,h5,h6),
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>:where(h1,h2,h3,h4,h5,h6)>strong {
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>:where(h1, h2, h3, h4, h5, h6),
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>:where(h1, h2, h3, h4, h5, h6)>strong {
     font-size: 1.5rem;
     line-height: 32px;
     margin-bottom: unset;
@@ -773,9 +782,11 @@
   .section.banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description {
     margin-right: 10px;
   }
+
   .section.banner-carousel-wrapper.self-employed-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
     right: 10px;
   }
+
   .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>p {
     display: block;
   }
@@ -788,12 +799,15 @@
     line-height: 20px;
     margin-top: 12px;
   }
+
   .section.banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description>p {
     display: none;
   }
+
   .banner-carousel-wrapper.business-loan-mob-text-banner .carousel-wrapper .carousel .panel-container .teaser .foreground .long-description {
     margin-top: 0;
   }
+
   /* .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser .foreground .long-description>p {
       white-space: normal;
   }
@@ -813,7 +827,7 @@
     padding-top: 40px;
   }
 
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.carousel-heading-inline-mob>.background .foreground .text .long-description>:where(h1,h2,h3,h4,h5,h6)>strong {
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.carousel-heading-inline-mob>.background .foreground .text .long-description>:where(h1, h2, h3, h4, h5, h6)>strong {
     display: inline;
   }
 }
@@ -843,9 +857,11 @@
   .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
     right: 25px;
   }
+
   .banner-carousel-wrapper.capital-loan-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
     width: 53%;
   }
+
   .section.banner-carousel-wrapper.self-employed-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
     right: 75px;
   }
@@ -919,31 +935,39 @@
     object-position: bottom;
     object-fit: contain;
   }
-  .section.banner-scale-img .carousel-wrapper .carousel .panel-container .teaser .foreground{
+
+  .section.banner-scale-img .carousel-wrapper .carousel .panel-container .teaser .foreground {
     width: 64%;
   }
-  .section.banner-scale-img  .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .eyebrow{
+
+  .section.banner-scale-img .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .eyebrow {
     padding-top: 60px;
   }
+
   .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
     width: 814px;
     height: 394px;
   }
+
   .banner-carousel-wrapper.careers-page-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
     width: 80%;
     padding-top: 120px;
   }
+
   .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .carousel .panel-container .teaser {
     min-height: 627px;
-  } 
+  }
+
   .section.banner-carousel-wrapper.careers-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
   .section.banner-carousel-wrapper.business-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture,
   .section.banner-carousel-wrapper.personal-loan-sub-page-banner .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
     right: 0;
   }
+
   .banner-carousel-wrapper.business-loan-sub-page-banner .carousel-wrapper .carousel .panel-container .teaser .foreground {
     width: 80%;
   }
+
   .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-green,
   .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-blue,
   .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-violet {
@@ -954,32 +978,36 @@
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.two-btn-bottom >.background .foreground .text .short-description{
     bottom: 90px;
   }
+
 }
 
 /* ek lakh loan start */
 
-@media (width >= 900px) {
+@media (width >=900px) {
   .section.one-lakh-banner-modal .carousel-wrapper .carousel .panel-container .teaser .foreground {
-      max-width: 1240px;
-      margin: 0 auto;
-      width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    width: 100%;
   }
 }
-.section.one-lakh-banner-modal .carousel.block>.panel-container{
+
+.section.one-lakh-banner-modal .carousel.block>.panel-container {
   overflow: unset;
 }
-.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block>.background{
+
+.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block>.background {
   object-fit: contain;
   max-width: 100%;
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: top;
 }
+
 .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
   display: none;
 }
 
-.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description :where(h1,h2,h3,h4,h5,h6){
+.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description :where(h1, h2, h3, h4, h5, h6) {
   color: white;
   font-family: 'Nunito-Extrabold';
   font-weight: 800;
@@ -987,12 +1015,14 @@
   font-size: 3.5rem;
   line-height: 68px;
 }
-.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description >ul{
+
+.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul {
   display: flex;
   align-items: center;
   gap: 16px;
 }
-.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description >ul >li a{
+
+.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li a {
   background: var(--orange);
   border: none;
   border-radius: 8px;
@@ -1007,44 +1037,52 @@
   min-width: 145px;
   text-align: center;
 }
-.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description >ul >li a:hover{
+
+.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li a:hover {
   text-decoration: none;
 }
-.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description >ul >li:last-child a  {
+
+.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li:last-child a {
   background: var(--white);
   color: var(--greyishblue);
   display: flex;
   gap: 10px;
   align-items: center;
 }
-.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description >ul >li >a span img{
+
+.section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li>a span img {
   height: 24px;
   width: 24px;
   display: block;
 }
+
 @media screen and (min-width: 1025px) and (max-width: 1300px) {
   .section.one-lakh-banner-modal .carousel-wrapper .carousel .panel-container .teaser .foreground {
     width: 81.25%;
   }
 }
-@media (width <= 900px) {
+
+@media (width <=900px) {
   .section.one-lakh-banner-modal .carousel-wrapper .carousel .panel-container .teaser .foreground {
-      max-width: 100% ;
-      padding: 0 16px;
-      margin: 0 auto;
+    max-width: 100%;
+    padding: 0 16px;
+    margin: 0 auto;
   }
 }
+
 @media screen and (max-width:1024px) {
+
   /* .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li{
     display: block;
   } */
-  .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description >ul >li a{
+  .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li a {
     font-size: 0.875rem;
     line-height: 22px;
     padding: 16px 24px;
     width: auto;
   }
-  .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block>.background .front-picture{
+
+  .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block>.background .front-picture {
     position: absolute;
     top: 0;
     left: 0;
@@ -1054,7 +1092,8 @@
     min-height: 525px;
     z-index: -1;
   }
-  .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block>.background .front-picture img{
+
+  .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block>.background .front-picture img {
     display: block;
     width: 100%;
     height: 100%;
@@ -1066,25 +1105,30 @@
     background-size: cover;
   }
 }
+
 @media screen and (max-width:767px) {
-  .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description :where(h1,h2,h3,h4,h5,h6){
+  .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .long-description :where(h1, h2, h3, h4, h5, h6) {
     text-align: center;
     line-height: 36px;
     font-size: 1.75rem;
   }
-  .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description >ul{
+
+  .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul {
     justify-content: center;
   }
-  .section.one-lakh-banner-modal .carousel-wrapper .carousel .panel-container .teaser .foreground{
+
+  .section.one-lakh-banner-modal .carousel-wrapper .carousel .panel-container .teaser .foreground {
     display: flex;
     align-items: end;
     justify-content: center;
     min-height: 440px;
     padding: unset;
   }
-  .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description >ul >li a {
+
+  .section.one-lakh-banner-modal .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li a {
     min-width: 108px;
     padding: 12px 20px;
   }
 }
+
 /* ek lakh loan end */

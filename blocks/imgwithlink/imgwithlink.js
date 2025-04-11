@@ -38,7 +38,7 @@ function createImageWithLink(block) {
 
   // debugger;
   const createHref = blockDiv.children[textIndex]?.querySelector('a') ? blockDiv.children[textIndex]?.querySelector('a').cloneNode() : document.createElement('div');
-  console.log(createHref);
+  // console.log(createHref);
   createHref.href = hrefElem || 'javascript:void(0)';
   createHref.target = '_blank';
   createHref.classList.add('anchor-event-link');

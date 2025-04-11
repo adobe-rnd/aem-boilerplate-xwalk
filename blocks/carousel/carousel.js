@@ -35,12 +35,13 @@ const observer = new IntersectionObserver(updateButtons, { threshold: 0.6, rootM
 
 export default function decorate(block) {
   try {
-    if(window.location.pathname === '/personal-loan' && window.location.search){
+    if (window.location.pathname === '/personal-loan' && window.location.search && block.closest('.camp-btn')) {
       const a = block.querySelector('a');
-      const mobA = document.querySelector('.camp-btn').querySelector('a');
+      const mobA = document.querySelectorAll('.camp-btn')[1].querySelector('a');
       const url = new URL(a.href)
-      a.href = (url.origin+url.pathname + window.location.search);
-      mobA.href = (url.origin+url.pathname + window.location.search);
+      a.href = (url.origin + url.pathname + window.location.search);
+      mobA.href = (url.origin + url.pathname + window.location.search);
+      // console.log(mobA, '/n', a);
     }
   } catch (error) {
     console.warn(error);
@@ -59,9 +60,9 @@ export default function decorate(block) {
   slideNavButtons.classList.add('carousel-navigation-buttons');
   slideNavButtons.innerHTML = `
     <button type="button" class="slide-prev glider-prev" aria-label="${'Previous Slide'
-}">${block.children[0].outerHTML || '<'}</button>
+    }">${block.children[0].outerHTML || '<'}</button>
     <button type="button" class="slide-next glider-next" aria-label="${'Next Slide'
-}">${block.children[1].outerHTML || '>'}</button>
+    }">${block.children[1].outerHTML || '>'}</button>
   `;
   // block.appendChild(slideNavButtons);
 
@@ -83,8 +84,8 @@ export default function decorate(block) {
   [...panels].forEach((panel, i) => {
     // generate the  panel
     const [imagebg, image, classList, ...rest] = panel.children;
-    const bgColorCode =rest[rest.length-2].textContent.trim();
-    const bgLinearGradientColor =rest[rest.length-1].textContent.trim();
+    const bgColorCode = rest[rest.length - 2].textContent.trim();
+    const bgLinearGradientColor = rest[rest.length - 1].textContent.trim();
     const classesText = classList.textContent.trim();
     const classes = (classesText ? classesText.split(',') : []).map((c) => c && c.trim()).filter((c) => !!c);
     let blockType = 'teaser';
@@ -107,8 +108,8 @@ export default function decorate(block) {
     classes.forEach((c) => panel.classList.add(c.trim()));
     panel.dataset.panel = `panel_${i}`;
     panel.append(generateOtherComponent);
-    bgColorCode ? (panel.style.backgroundColor =  bgColorCode) : "";
-    bgLinearGradientColor ? (panel.style.backgroundImage =  bgLinearGradientColor) : "";
+    bgColorCode ? (panel.style.backgroundColor = bgColorCode) : "";
+    bgLinearGradientColor ? (panel.style.backgroundImage = bgLinearGradientColor) : "";
     panelContainer.append(panel);
 
     if (panels.length > 1) {

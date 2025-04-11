@@ -3,7 +3,7 @@ import { decodeHtmlSymbols, decoratePlaceholder } from "../../scripts/scripts.js
 import { mobileHeaderAnalytics } from "./code-analytics.js";
 import { decorateTable } from "./table.js";
 export default async function decorate(block) {
-  console.log(block.classList.toString());
+  // console.log(block.classList.toString());
   block.innerHTML = await decoratePlaceholder(block);
   if (block.classList.contains('table')) {
     decorateTable(block)
