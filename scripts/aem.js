@@ -439,7 +439,7 @@ function decorateButtons(element) {
         a.title = a.title || a.textContent;
 
         // Clean Rel from href
-        if (a.hasAttribute('href') && a.href.includes('rel')) {
+        if (a.hasAttribute('href') && a.href.includes('rel=')) {
             a.setAttribute('rel', getRelParam(a.href));
             // console.log('a :: ', a);
             a.setAttribute('href', removeRelParam(a.getAttribute('href')));
