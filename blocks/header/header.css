@@ -94,11 +94,6 @@ header {
   font-size: var(--body-font-size-xs);
 }
 
-.header .nav-wrapper #nav .section.nav-sections .default-content-wrapper ul li:last-child p {
-  padding: unset;
-  margin-right: 0;
-}
-
 .header .nav-wrapper #nav .section.nav-sections .default-content-wrapper ul li:nth-child(7) p {
   color: var(--piramal-neutral-80);
   cursor: pointer;
@@ -108,6 +103,11 @@ header {
   font-family: "Nunito-Semibold", sans-serif;
   text-decoration: none;
   padding: 15px 10px 0 3px;
+}
+
+.header .nav-wrapper #nav .section.nav-sections .default-content-wrapper ul li:last-child p {
+  padding: unset;
+  margin-right: 0;
 }
 
 .header .nav-wrapper #nav .section.nav-sections[aria-expanded="true"] .default-content-wrapper>ul>li>p {
@@ -232,7 +232,7 @@ header {
   width: 20px;
 }
 
-.header .nav-wrapper #nav .section.nav-sections .default-content-wrapper ul li:nth-child(7) p span img {
+.header .nav-wrapper #nav .nav-sections .default-content-wrapper ul li:last-child span img {
   width: 27px;
   height: 19px;
 }
