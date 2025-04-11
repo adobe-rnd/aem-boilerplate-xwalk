@@ -26,6 +26,11 @@
         "component": "text",
         "name": "facebook:title",
         "label": "Facebook Title"
+      },
+      {
+        "component": "text",
+        "name": "canonical",
+        "label": "Canonical URL"
       }
     ]
   },
@@ -1080,6 +1085,19 @@
               {
                 "name": "Dark",
                 "value": "dark"
+              }
+            ]
+          },
+          {
+            "name": "Text Color",
+            "children": [
+              {
+                "name": "Piramal Blue",
+                "value": "piramal-blue"
+              },
+              {
+                "name": "Piramal orange",
+                "value": "piramal-orange"
               }
             ]
           },

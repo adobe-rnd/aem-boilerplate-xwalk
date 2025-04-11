@@ -4,5 +4,5 @@ Fix #<gh-issue-id>
 
 Test URLs:
 
-- Before: https://main--prodpiramalfinance--WWWPiramalFinanceCOM.hlx.live/
-- After: https://<branch>--prodpiramalfinance--WWWPiramalFinanceCOM.hlx.live/
+- Before: https://main--prodpiramalfinance--WWWPiramalFinanceCOM.aem.live/
+- After: https://<branch>--prodpiramalfinance--WWWPiramalFinanceCOM.aem.live/

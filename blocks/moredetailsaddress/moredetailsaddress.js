@@ -1,3 +1,4 @@
+import { getMetadata } from "../../scripts/aem.js";
 import { CFApiCall, fetchAPI, getDay } from "../../scripts/scripts.js";
 
 export const setLocationObj = {
@@ -289,7 +290,7 @@ function nearBLBreadCrumb() {
   const separator = `<span class="breadcrumb-separator">${separatorSVG}</span>`;
 
   const breadcrumbItems = [
-    `<a href="/branch-locator/${newState}">${newSetState}</a>`,
+    `<a href="${getMetadata("primary-language-path")}/branch-locator/${newState}">${newSetState}</a>`,
   ];
 
   if (newCity == newLocation) {
@@ -319,7 +320,14 @@ function deg2rad(deg) {
   return deg * (Math.PI / 180);
 }
 
-function sortingNearestBranch(lat, lng, data) {
+// function sortByCityandState(data) {
+//   var fliterLocation = data.filter(function (location) {
+//     return location.City.toLowerCase() === setLocationObj.geoInfo.city.toLowerCase();
+//   });
+//   return fliterLocation;
+// }
+
+/* function sortingNearestBranch(lat, lng, data) {
   const filteredLocations = Object.values(data)
     .flat()
     .map((location) => {
@@ -336,7 +344,7 @@ function sortingNearestBranch(lat, lng, data) {
   console.log(filteredLocations);
 
   return filteredLocations;
-}
+} */
 
 function dropDownStateCity(response) {
   return response.reduce((acc, location) => {

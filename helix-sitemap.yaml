@@ -1,6 +1,44 @@
 sitemaps:
-  default:
-    source: /query-index.json
-    destination: /sitemap-english.xml
-    lastmod: YYYY-MM-DD
-    hreflang: en
+  example:
+    default: en
+    lastmod: YYYY-MM-DD  # Dynamic date to be updated for each request or generation
+    languages:
+      en:
+        source: /query-master.json
+        destination: /en/sitemap-index.xml
+        hreflang: en-in
+      hi:
+        source: /hi/query-master.json
+        destination: /hi/sitemap-index.xml
+        alternate: /hi/{path}
+        hreflang: hi-in
+      gu:
+        source: /gu/query-master.json
+        destination: /gu/sitemap-index.xml
+        alternate: /gu/{path}
+        hreflang: gu-in
+      mr:
+        source: /mr/query-master.json
+        destination: /mr/sitemap-index.xml
+        alternate: /mr/{path}
+        hreflang: mr-in
+      ta:
+        source: /ta/query-master.json
+        destination: /ta/sitemap-index.xml
+        alternate: /ta/{path}
+        hreflang: ta-in
+      te:
+        source: /te/query-master.json
+        destination: /te/sitemap-index.xml
+        alternate: /te/{path}
+        hreflang: te-in
+      kn:
+        source: /kn/query-master.json
+        destination: /kn/sitemap-index.xml
+        alternate: /kn/{path}
+        hreflang: kn-in
+      ml:
+        source: /ml/query-master.json
+        destination: /ml/sitemap-index.xml
+        alternate: /ml/{path}
+        hreflang: ml-in

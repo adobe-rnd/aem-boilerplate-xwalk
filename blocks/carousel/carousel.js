@@ -6,7 +6,7 @@ import { stateMasterApi, statemasterGetStatesApi } from '../applyloanform/statem
 import { validationJSFunc } from '../applyloanform/validation.js';
 import { generateDetailedTeaserDOM } from '../detailed-teaser/detailed-teaser.js';
 import { generateTeaserDOM } from '../teaser/teaser.js';
-import gliderMin from './glider.min.js';
+import gliderMin from './glider.js';
 
 const carouselContainerMapping = {};
 carouselContainerMapping['detailed-teaser'] = generateDetailedTeaserDOM;
@@ -41,11 +41,12 @@ export default function decorate(block) {
       const url = new URL(a.href)
       a.href = (url.origin + url.pathname + window.location.search);
       mobA.href = (url.origin + url.pathname + window.location.search);
-      console.log(mobA, '/n', a);
+      // console.log(mobA, '/n', a);
     }
   } catch (error) {
     console.warn(error);
   }
+  
   // the panels container
   const panelContainer = document.createElement('div');
   panelContainer.classList.add('panel-container', 'carousel-inner');

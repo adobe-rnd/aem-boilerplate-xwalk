@@ -16,5 +16,5 @@ Disallow: /*?*
 
 
 
-Sitemap: https://www.piramalfinance.com/sitemap-english.xml
+Sitemap: https://www.piramalfinance.com/sitemap-index.xml
 Sitemap: https://www.piramalfinance.com/sitemap-vidya.xml

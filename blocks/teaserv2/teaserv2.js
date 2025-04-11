@@ -63,7 +63,7 @@ export function renderTeaserHTMLFactory(props, block) {
 
   const mainLink = mainHref?.textContent.trim() || '';
   const container = document.createElement('a');
-  if (mainLink) container.href = mainLink;
+  container.href = mainLink ||  'javascript:void(0)';
 
   let bgImageSrc = bgImage?.querySelector('picture > img')?.src || '';
   let mobileSrc = mobileImg?.querySelector('picture > img')?.src || '';

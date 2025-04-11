@@ -5,6 +5,8 @@ import { toggleAllNavSections } from '../blocks/header/header.js';
 import { applyLoanInteraction, ctaClick, ctaClickInteraction, selectBranchInteraction } from '../dl.js';
 import {
   sampleRUM, loadHeader, loadFooter, decorateButtons, decorateIcons, decorateSections, decorateBlocks, decorateTemplateAndTheme, waitForLCP, loadBlocks, loadCSS, fetchPlaceholders,
+  getMetadata,
+  getExtension,
 } from './aem.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
@@ -564,7 +566,7 @@ export function decorateViewMore(block) {
 } */
 
 
-export function decorateAnchorTag(main) {
+export async function decorateAnchorTag(main) {
   try {
     main.querySelectorAll('a').forEach((anchor) => {
       const body = document.body;
@@ -625,7 +627,7 @@ export function moveInstrumentation(from, to) {
  * load fonts.css and set a session storage flag
  */
 async function loadFonts() {
-  await loadCSS(`${window.hlx.codeBasePath}/styles/fonts.css`);
+  await loadCSS(`${window.hlx.codeBasePath}/styles/fonts${getExtension('css')}`);
   try {
     if (!window.location.hostname.includes('localhost')) sessionStorage.setItem('fonts-loaded', 'true');
   } catch (e) {
@@ -640,7 +642,7 @@ function autolinkModals(element) {
     if (origin && origin.href && origin.href.includes('/modals/')) {
       e.preventDefault();
       const { openModal } = await import(
-        `${window.hlx.codeBasePath}/blocks/modal/modal.js`
+        `${window.hlx.codeBasePath}/blocks/modal/modal${getExtension('js')}`
       );
       openModal(origin.href);
     }
@@ -709,6 +711,12 @@ async function loadEager(doc) {
 async function loadLazy(doc) {
   autolinkModals(doc);
 
+  
+  const templateName = getMetadata('template');
+  if (templateName) {
+    await loadTemplate(doc, templateName);
+  }
+
   const main = doc.querySelector('main');
   await loadBlocks(main);
 
@@ -716,7 +724,7 @@ async function loadLazy(doc) {
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
   if (hash && element) element.scrollIntoView();
 
-  /* loadHeader(doc.querySelector("header")); */
+  loadHeader(doc.querySelector("header"));
   loadFooter(doc.querySelector('footer'));
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
@@ -738,8 +746,34 @@ function loadDelayed() {
   import('./sidekick.js').then(({ initSidekick }) => initSidekick());
 }
 
+async function loadTemplate(doc, templateName) {
+  try {
+    const cssLoaded = new Promise((resolve) => {
+      loadCSS(`${window.hlx.codeBasePath}/templates/${templateName}/${templateName}${getExtension('css')}`, resolve);
+    });
+    const decorationComplete = new Promise((resolve) => {
+      (async () => {
+        try {
+          const mod = await import(`../templates/${templateName}/${templateName}${getExtension('js')}`);
+          if (mod.default) {
+            await mod.default(doc);
+          }
+        } catch (error) {
+          // eslint-disable-next-line no-console
+          console.log(`failed to load module for ${templateName}`, error);
+        }
+        resolve();
+      })();
+    });
+    await Promise.all([cssLoaded, decorationComplete]);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.log(`failed to load block ${templateName}`, error);
+  }
+}
+
 async function loadPage() {
-  loadHeader(document.querySelector('header'));
+  // loadHeader(document.querySelector('header'));
   await loadingCustomCss();
   await loadEager(document);
   await loadLazy(document);
@@ -748,6 +782,20 @@ async function loadPage() {
 
 loadPage();
 
+
+async function loadingCustomCss() {
+  // load custom css files
+  const loadCssArray = [
+    `${window.hlx.codeBasePath}/styles/reset${getExtension('css')}`
+  ];
+  if(!getMetadata('template')){
+    loadCssArray.push(`${window.hlx.codeBasePath}/styles/common/common${getExtension('css')}`)
+  }
+  loadCssArray.forEach(async (eachCss) => {
+    await loadCSS(eachCss);
+  });
+}
+/* 
 async function loadingCustomCss() {
   // load custom css files
   const loadCssArray = [
@@ -817,7 +865,7 @@ async function loadingCustomCss() {
   loadCssArray.forEach(async (eachCss) => {
     await loadCSS(eachCss);
   });
-}
+} */
 
 /* async function loadingCustomCss() {
   // load custom css files
@@ -1044,6 +1092,7 @@ export function showingStateCity(searchInputAll) {
   });
 }
 
+
 /* setTimeout(() => {
   try {
     document.querySelectorAll('.open-form-on-click') && document.querySelectorAll('.open-form-on-click .button-container').forEach((eachApplyFormClick) => {
@@ -1241,10 +1290,10 @@ export function branchURLStr(location = '', city = '', state = '', urlstrhand, l
   const stateStr = sanitizeString(state);
 
   const urlMap = {
-    shorthand: () => `/branch-locator/${stateStr}/${cityStr}`,
-    shorthandstate: () => `/branch-locator/${stateStr}`,
+    shorthand: () => `${getMetadata("primary-language-path")}/branch-locator/${stateStr}/${cityStr}`,
+    shorthandstate: () => `${getMetadata("primary-language-path")}/branch-locator/${stateStr}`,
     loans: () => {
-      const baseUrl = '/branch-locator/loans-in-';
+      const baseUrl = `${getMetadata("primary-language-path")}/branch-locator/loans-in-`;
       const isLocationSameAsCity = locationAdd === cityStr;
       const segments = isLocationSameAsCity
         ? [cityStr, stateStr, locationcode]
@@ -1323,7 +1372,6 @@ export function groupAllKeys(array) {
     for (let key in current) {
       // Convert key to lowercase and replace spaces with hyphens for consistent key names
       let formattedKey = key.toLowerCase().replace(/\s+/g, '-');
-
       // If the key doesn't exist in the result object, initialize it with an empty array
       if (!result[formattedKey]) {
         result[formattedKey] = [];
@@ -1360,33 +1408,6 @@ const processAnchor = (anchor, body) => {
  
 };
 
-const handleReltags = (anchor) => {
-  const getHref = anchor.href;
-  const relParamCheck = 'rel';
-  const url = new URL(getHref);
-  const params = new URLSearchParams(url.search);
-  if(params.has(relParamCheck)){
-    let newRelContent = params.get(relParamCheck);
-    if(newRelContent.includes(',')){
-      anchor.rel = newRelContent.replaceAll(',', '');
-    }else{
-      anchor.rel = newRelContent;
-    }
-
-    // Remove the parameter from the URL
-    function removeRelParameter(url) {
-      const urlObj = new URL(url); // Parse the URL
-      const searchParams = urlObj.searchParams; // Access query parameters
-  
-      searchParams.delete(relParamCheck); // Remove the 'rel' parameter
-  
-      return urlObj.toString(); // Return the modified URL
-    }
-
-    anchor.href = removeRelParameter(getHref);
-
-  }
-};
 
 const handleModalPopup = (anchor, body) => {
   const dataid = anchor.href.split('/').pop();

@@ -204,7 +204,7 @@ async function buildBreadcrumbs() {
 export default async function decorate(block) {
   const path = getMetadata('nav') || '/nav';
   const fragment = await loadFragment(path);
-
+  block.classList.add('dp-none');
   // decorate nav DOM
   const nav = document.createElement('nav');
   nav.id = 'nav';
@@ -364,5 +364,5 @@ export default async function decorate(block) {
   const mobileLogo = a.cloneNode(true);
   mobileLogo.classList.add('mobile-logo');
   mobileSections?.prepend(mobileLogo);
-
+  block.classList.remove('dp-none');
 }

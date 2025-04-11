@@ -36,8 +36,10 @@ function createImageWithLink(block) {
     return document.createElement('div');
   }
 
-  const createHref = document.createElement('a');
-  createHref.href = hrefElem;
+  // debugger;
+  const createHref = blockDiv.children[textIndex]?.querySelector('a') ? blockDiv.children[textIndex]?.querySelector('a').cloneNode() : document.createElement('a');
+  // console.log(createHref);
+  createHref.href = hrefElem || 'javascript:void(0)';
   createHref.target = '_blank';
   createHref.classList.add('anchor-event-link');
   createHref.appendChild(blockPic);

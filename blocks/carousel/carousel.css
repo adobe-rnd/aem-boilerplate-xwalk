@@ -1,6 +1,6 @@
 @import "../teaser/teaser.css";
 @import "../detailed-teaser/detailed-teaser.css";
-@import "./glider.min.css";
+@import "./glider.css";
 @import url("./embed-banner-carousel.css");
 
 /* carousel wrapper stretches over complete width */
@@ -189,7 +189,7 @@
   margin-top: 2rem;
 }
 
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.btn-bottom>.background .foreground .text .cta {
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.btn-bottom >.background .foreground .text .cta {
   position: absolute;
   bottom: 61px;
 }
@@ -198,15 +198,16 @@
   margin-bottom: 50px;
 }
 
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.btn-bottom>.background .foreground .text .cta-image-wrapper,
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.two-btn-bottom>.background .foreground .text .long-description {
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.btn-bottom >.background .foreground .text .cta-image-wrapper,
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.two-btn-bottom >.background .foreground .text .long-description {
   margin-bottom: 75px;
 }
 
-.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.two-btn-bottom>.background .foreground .text .short-description {
+.section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.two-btn-bottom >.background .foreground .text .short-description {
   position: absolute;
   bottom: 61px;
 }
+
 
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text .cta>a,
 .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.teaser-block-six>.background .foreground .text .short-description>ul>li>p>a {
@@ -449,7 +450,7 @@
 }
 
 .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-green {
-  background-image: url("/images/WhatsAppBannerDesktop.png");
+  background-image: url("/images/WhatsAppBannerDesktop.webp");
 }
 
 .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-blue {
@@ -548,8 +549,8 @@
     margin-top: 12px;
   }
 
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.btn-bottom>.background .foreground .text .cta-image-wrapper,
-  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.two-btn-bottom>.background .foreground .text .long-description {
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.btn-bottom >.background .foreground .text .cta-image-wrapper,
+  .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block.two-btn-bottom >.background .foreground .text .long-description {
     margin-bottom: unset;
   }
 
@@ -733,7 +734,7 @@
   }
 
   .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-green {
-    background-image: url("/images/WhatsappBannerMobile.png");
+    background-image: url("/images/WhatsappBannerMobile.webp");
   }
 
   .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.carousel-item.slide-background-light-blue {

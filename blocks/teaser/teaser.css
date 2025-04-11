@@ -492,3 +492,15 @@
   }
 } */
 /* about us cards carousel end */
+
+.blue .eyebrow{
+color: blue !important;
+}
+
+.blue .long-description >p >u{
+color: blue !important;
+underline: unset;
+}
+.piramal-blue .long-description h2{
+    color: #3E6C95 !important;
+} 
