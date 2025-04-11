@@ -1,3 +1,20 @@
 User-agent: *
-Disallow: /
+Disallow: /configuration/
+Disallow: /nav/
+Disallow: /footer/
+Disallow: /metadata/
+Disallow: /fragments/
+Disallow: /style-guide/
+Disallow: /spreadsheets/
+Disallow: /scripts/
+Disallow: /styles/
+Disallow: /blocks/
+Disallow: /modals/
+Disallow: /fragment/
+Disallow: /*?*
+Disallow: /*?*
 
+
+
+Sitemap: https://www.piramalfinance.com/sitemap-index.xml
+Sitemap: https://www.piramalfinance.com/sitemap-vidya.xml
