@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://author-p133703-e1380816.adobeaemcloud.com/bin/franklin.delivery/WWWPiramalFinanceCOM/piramalfinance/main"
+    url: "https://author-p133703-e1380815.adobeaemcloud.com/bin/franklin.delivery/WWWPiramalFinanceCOM/prodpiramalfinance/main"
     type: "markup"
     suffix: ".html"
