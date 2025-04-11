@@ -263,17 +263,32 @@ function readBlockConfig(block) {
  * @param {string} href URL to the CSS file
  */
 function loadCSS(href, callback) {
-    if (!document.querySelector(`head > link[href="${href}"]`)) {
-        const link = document.createElement('link');
-        link.setAttribute('rel', 'stylesheet');
-        link.setAttribute('href', href);
-        if (typeof callback === 'function') {
-            link.onload = (e) => callback(e.type);
-            link.onerror = (e) => callback(e.type);
+    if (callback) {
+        if (!document.querySelector(`head > link[href="${href}"]`)) {
+            const link = document.createElement('link');
+            link.setAttribute('rel', 'stylesheet');
+            link.setAttribute('href', href);
+            if (typeof callback === 'function') {
+                link.onload = (e) => callback(e.type);
+                link.onerror = (e) => callback(e.type);
+            }
+            document.head.appendChild(link);
+        } else if (typeof callback === 'function') {
+            callback('noop');
         }
-        document.head.appendChild(link);
-    } else if (typeof callback === 'function') {
-        callback('noop');
+    } else {
+        return new Promise((resolve, reject) => {
+            if (!document.querySelector(`head > link[href="${href}"]`)) {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = href;
+                link.onload = resolve;
+                link.onerror = reject;
+                document.head.append(link);
+            } else {
+                resolve();
+            }
+        });
     }
 }
 
@@ -478,23 +493,23 @@ function decorateButtons(element) {
     });
 }
 
-export function removeRelParam (url){
+export function removeRelParam(url) {
     try {
-      const parsedUrl = new URL(url);
-      parsedUrl.searchParams.delete('rel');
-      return parsedUrl.toString();
+        const parsedUrl = new URL(url);
+        parsedUrl.searchParams.delete('rel');
+        return parsedUrl.toString();
     } catch (e) {
-      return url; // If not a valid URL, return as is
+        return url; // If not a valid URL, return as is
     }
-  };
-export function getRelParam (url){
+};
+export function getRelParam(url) {
     try {
-      const parsedUrl = new URL(url);
-      return parsedUrl.searchParams.get('rel');
+        const parsedUrl = new URL(url);
+        return parsedUrl.searchParams.get('rel');
     } catch (e) {
-      return url; // If not a valid URL, return as is
+        return url; // If not a valid URL, return as is
     }
-  };
+};
 /**
  * Add <img> for icon, prefixed with codeBasePath and optional prefix.
  * @param {Element} [span] span element with icon classes

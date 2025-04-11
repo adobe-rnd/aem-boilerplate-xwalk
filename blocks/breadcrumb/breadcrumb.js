@@ -80,7 +80,7 @@ export default async function decorate(block) {
       breadcrumbsText.push(`<a href="${multiUrls[index]}">${text}</a>`);
     });
 
-    generateBreadcrumbSchema(breadcrumbsText);
+    // generateBreadcrumbSchema(breadcrumbsText);
 
     block.innerHTML = '';
     block.classList.add(className);

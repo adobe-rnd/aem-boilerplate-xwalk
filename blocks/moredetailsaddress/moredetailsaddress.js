@@ -320,12 +320,12 @@ function deg2rad(deg) {
   return deg * (Math.PI / 180);
 }
 
-function sortByCityandState(data) {
-  var fliterLocation = data.filter(function (location) {
-    return location.City.toLowerCase() === setLocationObj.geoInfo.city.toLowerCase();
-  });
-  return fliterLocation;
-}
+// function sortByCityandState(data) {
+//   var fliterLocation = data.filter(function (location) {
+//     return location.City.toLowerCase() === setLocationObj.geoInfo.city.toLowerCase();
+//   });
+//   return fliterLocation;
+// }
 
 /* function sortingNearestBranch(lat, lng, data) {
   const filteredLocations = Object.values(data)
