@@ -1,10 +1,17 @@
 version: 1
 indices:
-  default:
+  site-en: &base-site
     include:
       - /**
     exclude:
       - /configuration/**
+      - /hi/**
+      - /gu/**
+      - /mr/**
+      - /ta/**
+      - /te/**
+      - /kn/**
+      - /ml/**
       - /nav/**
       - /footer/**
       - /metadata/**
@@ -13,7 +20,7 @@ indices:
       - /api/**
       - /fragment/**
       - /fragment
-    target: /query-index.json
+    target: /query-master.json
     properties:
       title:
         select: head > meta[property="og:title"]
@@ -45,3 +52,108 @@ indices:
       robots:
         select: head > meta[name="robots"]
         value: attribute(el, "content")
+  site-hi:
+    <<: *base-site
+    include:
+      - '/hi/**'
+    exclude:
+      - /hi/configuration/**
+      - /hi/nav/**
+      - /hi/footer/**
+      - /hi/metadata/**
+      - /hi/fragments/**
+      - /hi/style-guide/**
+      - /hi/api/**
+      - /hi/fragment/**
+      - /hi/fragment
+    target: /hi/query-master.json
+  site-gu:
+    <<: *base-site
+    include:
+      - '/gu/**'
+    exclude:
+      - /gu/configuration/**
+      - /gu/nav/**
+      - /gu/footer/**
+      - /gu/metadata/**
+      - /gu/fragments/**
+      - /gu/style-guide/**
+      - /gu/api/**
+      - /gu/fragment/**
+      - /gu/fragment
+    target: /gu/query-master.json
+  site-mr:
+    <<: *base-site
+    include:
+      - '/mr/**'
+    exclude:
+      - /mr/configuration/**
+      - /mr/nav/**
+      - /mr/footer/**
+      - /mr/metadata/**
+      - /mr/fragments/**
+      - /mr/style-guide/**
+      - /mr/api/**
+      - /mr/fragment/**
+      - /mr/fragment
+    target: /mr/query-master.json
+  site-ta:
+    <<: *base-site
+    include:
+      - '/ta/**'
+    exclude:
+      - /ta/configuration/**
+      - /ta/nav/**
+      - /ta/footer/**
+      - /ta/metadata/**
+      - /ta/fragments/**
+      - /ta/style-guide/**
+      - /ta/api/**
+      - /ta/fragment/**
+      - /ta/fragment
+    target: /ta/query-master.json
+  site-te:
+    <<: *base-site
+    include:
+      - '/te/**'
+    exclude:
+      - /te/configuration/**
+      - /te/nav/**
+      - /te/footer/**
+      - /te/metadata/**
+      - /te/fragments/**
+      - /te/style-guide/**
+      - /te/api/**
+      - /te/fragment/**
+      - /te/fragment
+    target: /te/query-master.json
+  site-kn:
+    <<: *base-site
+    include:
+      - '/kn/**'
+    exclude:
+      - /kn/configuration/**
+      - /kn/nav/**
+      - /kn/footer/**
+      - /kn/metadata/**
+      - /kn/fragments/**
+      - /kn/style-guide/**
+      - /kn/api/**
+      - /kn/fragment/**
+      - /kn/fragment
+    target: /kn/query-master.json
+  site-ml:
+    <<: *base-site
+    include:
+      - '/ml/**'
+    exclude:
+      - /ml/configuration/**
+      - /ml/nav/**
+      - /ml/footer/**
+      - /ml/metadata/**
+      - /ml/fragments/**
+      - /ml/style-guide/**
+      - /ml/api/**
+      - /ml/fragment/**
+      - /ml/fragment
+    target: /ml/query-master.json
