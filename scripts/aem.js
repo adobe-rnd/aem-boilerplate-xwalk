@@ -697,6 +697,7 @@ async function loadBlock(block) {
         block.dataset.blockStatus = 'loading';
         const { blockName } = block.dataset;
         try {
+            if(!blockName) {throw Error(`Block Name is ${blockName}`)}
             const cssLoaded = loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}${getExtension('css')}`);
             const decorationComplete = new Promise((resolve) => {
                 (async () => {

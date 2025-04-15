@@ -1,6 +1,6 @@
 /* .header and nav layout */
 @import url("../modal/modal.css");
-@import url('./header-neeyat.css');
+/* @import url('./header-neeyat.css'); */
 /* .header .nav-wrapper {
   background-color: var(--background-color);
   width: 100%;
@@ -232,7 +232,7 @@ header {
   width: 20px;
 }
 
-.header .nav-wrapper #nav .nav-sections .default-content-wrapper ul li:last-child span img {
+.header .nav-wrapper #nav .nav-sections .default-content-wrapper ul li:nth-child(7) span img {
   width: 27px;
   height: 19px;
 }
