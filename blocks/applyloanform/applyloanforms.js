@@ -289,6 +289,7 @@ export function applyLoanFormClick() {
 
     otparrow.addEventListener('click', (e) => {
       loaninnerform.classList.remove('loan-form-sub-otp');
+      document.querySelector('.wrongotpmessage').style.display = 'none';
       clearInterval(intervalTime);
       loanOtpInput().value = '';
     });
