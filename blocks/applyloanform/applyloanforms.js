@@ -538,9 +538,9 @@ export function applyLoanFormClick() {
       loanOtpInput().value = '';
     });
 
-    loanFormOtpBtn().addEventListener('click', () => {
-      clearInterval(intervalTime);
-    });
+    // loanFormOtpBtn().addEventListener('click', () => {
+    //   clearInterval(intervalTime);
+    // });
 
     function startTimer(footer_time_limit, footer_time_out) {
       clearInterval(footer_time_out);
