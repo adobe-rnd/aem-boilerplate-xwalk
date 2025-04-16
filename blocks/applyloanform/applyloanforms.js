@@ -535,6 +535,7 @@ export function applyLoanFormClick() {
     otpNumChange().addEventListener('click', () => {
       const loaninnerform = document.querySelector('.loan-form-sub-parent');
       loaninnerform.classList.remove('loan-form-sub-otp');
+      document.querySelector('.wrongotpmessage').style.display = 'none';
       clearInterval(intervalTime);
       loanOtpInput().value = '';
     });
