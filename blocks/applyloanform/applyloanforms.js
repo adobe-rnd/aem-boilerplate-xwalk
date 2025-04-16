@@ -289,6 +289,7 @@ export function applyLoanFormClick() {
 
     otparrow.addEventListener('click', (e) => {
       loaninnerform.classList.remove('loan-form-sub-otp');
+      document.querySelector('.wrongotpmessage').style.display = 'none';
       clearInterval(intervalTime);
       loanOtpInput().value = '';
     });
@@ -534,13 +535,14 @@ export function applyLoanFormClick() {
     otpNumChange().addEventListener('click', () => {
       const loaninnerform = document.querySelector('.loan-form-sub-parent');
       loaninnerform.classList.remove('loan-form-sub-otp');
+      document.querySelector('.wrongotpmessage').style.display = 'none';
       clearInterval(intervalTime);
       loanOtpInput().value = '';
     });
 
-    loanFormOtpBtn().addEventListener('click', () => {
-      clearInterval(intervalTime);
-    });
+    // loanFormOtpBtn().addEventListener('click', () => {
+    //   clearInterval(intervalTime);
+    // });
 
     function startTimer(footer_time_limit, footer_time_out) {
       clearInterval(footer_time_out);
