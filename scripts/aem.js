@@ -441,7 +441,6 @@ export function autoLinkLangPath(a) {
         if(local.origin === url.origin && url.pathname.startsWith('/') && !excludePath.filter((eachPath)=> url.pathname.includes(eachPath)).length && !excludeText.includes(a.textContent.trim().toLowerCase())){
             a.href =  langPath + url.pathname + url.search;
         }else if(excludeText.includes(a.textContent.trim().toLowerCase())){
-            debugger;
             a.href =  url.pathname + local.pathname.split('/').slice(2).join('/') + url.search;
         }
     } catch (error) {
