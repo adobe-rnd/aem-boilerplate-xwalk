@@ -77,7 +77,7 @@ export default async function decorate(block) {
     const breadcrumbsText = [];
     const multiUrls = multiUrl.innerText.trim().replace(/~/g, '/').split(',');
     multiText.innerText.trim().split(',').forEach((text, index) => {
-      breadcrumbsText.push(`<a href="${multiUrls[index]}">${text}</a>`);
+      breadcrumbsText.push(`<a href="${getMetadata('lang-path') + multiUrls[index]}">${text}</a>`);
     });
 
     generateBreadcrumbSchema(breadcrumbsText);
