@@ -153,12 +153,12 @@ function BLNavUpdate(block) {
   const separatorSVG = '<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9.00195L4.29293 5.70902C4.68182 5.32013 4.68182 4.68377 4.29293 4.29488L1 1.00195" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
   const separator = `<span class="breadcrumb-separator">${separatorSVG}</span>`;
 
-  const breadcrumbItems = [`<a href="${getMetadata("primary-language-path")}/branch-locator/${newState}">${newSetState}</a>`];
+  const breadcrumbItems = [`<a href="${getMetadata("lang-path")}/branch-locator/${newState}">${newSetState}</a>`];
 
   if (city) {
     const newCity = formatString(city);
     const newSetCity = formatString(city, true);
-    breadcrumbItems.push(`<a href="${getMetadata("primary-language-path")}/branch-locator/${newState}/${newCity}">${newSetCity}</a>`);
+    breadcrumbItems.push(`<a href="${getMetadata("lang-path")}/branch-locator/${newState}/${newCity}">${newSetCity}</a>`);
   }
 
   const breadCrumb = breadcrumbItems.map(item => `${separator}${item}`).join('');
