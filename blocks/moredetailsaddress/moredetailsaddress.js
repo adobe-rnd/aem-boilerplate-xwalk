@@ -86,30 +86,29 @@ async function onbranchDetails() {
   const userLocation = await returnLatLan();
   if (userLocation) {
     setLocationObj.distance = calculateDistance(setLocationObj.lat, setLocationObj.lng, userLocation.lat, userLocation.lng);
-    // const distanceElement = document.querySelector(".address-info ul li:nth-child(3)");
-    let distanceElement = document.createElement("li");
-    const addressUL = document.querySelector(".address-info ul");
+    const distanceElement = document.createElement("li");
+    const addressUl = document.querySelector(".address-info ul");
     if (setLocationObj.distance <= 40) {
       distanceElement.innerText = `${setLocationObj.distance.toFixed()} Km away from your location`;
-      addressUL.append(distanceElement)
+      addressUl.appendChild(distanceElement)
     } else {
       distanceElement.remove();
     }
-  } 
+  }
 
   // setLocationObj.storedata = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
   setLocationObj.storedata = sortByCityandState(setLocationObj.getExcelData[setLocationObj.geoInfo.state]);
 
   // setTimeout(reviewRender, 3000);
- /*  const reviewRatingObserver = new IntersectionObserver((entries) => {
+/*   const reviewRatingObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         reviewRender();
         reviewRatingObserver.unobserve(document.querySelector(".branchcustomer-review-cards"))
       }
     });
-  }, { rootMargin: "150px" }) */
-  // reviewRatingObserver.observe(document.querySelector(".branchcustomer-review-cards"));
+  }, { rootMargin: "150px" })
+  reviewRatingObserver.observe(document.querySelector(".branchcustomer-review-cards")); */
 
 }
 
@@ -170,10 +169,10 @@ function renderData() {
   document.querySelector(".address-title h1").innerText = setLocationObj.geoInfo.location;
   document.querySelector(".address-desktop p").innerText = setLocationObj.address;
   document.querySelector(".address-mobile p").innerText = setLocationObj.address;
-  /* const currentDay = getDay();
+ /*  const currentDay = getDay();
   setLocationObj.working?.forEach((element) => {
     if (element.includes(currentDay)) {
-      document.querySelector(".address-timing p").innerText = `${element}`;
+      // document.querySelector(".address-timing p").innerText = `${element}`;
     }
   }); */
 }
@@ -321,12 +320,12 @@ function deg2rad(deg) {
   return deg * (Math.PI / 180);
 }
 
-function sortByCityandState(data) {
-  var fliterLocation = data.filter(function (location) {
-    return location.City.toLowerCase() === setLocationObj.geoInfo.city.toLowerCase();
-  });
-  return fliterLocation;
-}
+// function sortByCityandState(data) {
+//   var fliterLocation = data.filter(function (location) {
+//     return location.City.toLowerCase() === setLocationObj.geoInfo.city.toLowerCase();
+//   });
+//   return fliterLocation;
+// }
 
 /* function sortingNearestBranch(lat, lng, data) {
   const filteredLocations = Object.values(data)
@@ -362,3 +361,9 @@ function firstLetterCap(str) {
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }
 
+function sortByCityandState(data) {
+  var fliterLocation = data.filter(function (location) {
+    return location.City.toLowerCase() === setLocationObj.geoInfo.city.toLowerCase();
+  });
+  return fliterLocation;
+}

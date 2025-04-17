@@ -69,6 +69,12 @@ async function updateURL() {
   }
 }
 
+/* function getBranchList() {
+  return setLocationObj.geoInfo.state && !setLocationObj.geoInfo.city
+    ? sortByState(setLocationObj.getExcelData)
+    : sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
+} */
+
 function getBranchList() {
   if (setLocationObj.geoInfo.state && !setLocationObj.geoInfo.city) {
     return sortByState(setLocationObj.getExcelData)
@@ -77,7 +83,7 @@ function getBranchList() {
   }
 }
 
-function sortByCityandState(data) {
+function sortByCityandState(data = []) {
   var fliterLocation = data.filter(function (location) {
     return location.City.toLowerCase() === setLocationObj.geoInfo.city.toLowerCase();
   });
@@ -301,6 +307,7 @@ async function handleStateClick(e, block) {
 
     // const branchList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
     const branchList = sortByCityandState(setLocationObj.getExcelData[setLocationObj.geoInfo.state]);
+
     await loadGoogleMapsAndRender(branchList);
 
     const multipleBranch = await innerBranchFunc(branchList);
@@ -326,6 +333,7 @@ async function handleCityClick(e, block) {
 
     // const branchList = sortingNearestBranch(setLocationObj.lat, setLocationObj.lng, setLocationObj.getExcelData);
     const branchList = sortByCityandState(setLocationObj.getExcelData[setLocationObj.geoInfo.state]);
+
     await loadGoogleMapsAndRender(branchList);
 
     const multipleBranch = await innerBranchFunc(branchList);
@@ -356,6 +364,8 @@ async function handleLocateMeClick(e, block) {
 
     await getStateCity(lat, lng);
     // const branchList = sortingNearestBranch(lat, lng, setLocationObj.getExcelData);
+    setLocationObj.geoInfo.state = setLocationObj.geoInfo.state ? firstLetterCap(setLocationObj.geoInfo.state) : setLocationObj.geoInfo.state;
+    
     let branchList = sortByCityandState(setLocationObj.getExcelData[setLocationObj.geoInfo.state]);
 
     if(branchList.length == 0){
@@ -438,3 +448,8 @@ function updateUIAfterLocateMe(block, nearestBranch, currentDistance) {
 function sortByState(data) {
   return Object.values(data[setLocationObj.geoInfo.state]);
 }
+
+function firstLetterCap(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
+
