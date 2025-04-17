@@ -705,8 +705,8 @@ function buildBlock(blockName, content) {
  * @param {Element} block The block element
  */
 export function getExtension(type) {
-    // const isMinify = getMetadata('minify') === 'true'
-    const isMinify = false
+    const isMinify = getMetadata('minify') === 'true'
+    // const isMinify = false
     if (type === 'js') {
         return isMinify ? `.min.${extJs}` : `.${extJs}`;
     } else if (type === 'css') {
