@@ -430,6 +430,25 @@ function wrapTextNodes(block) {
     });
 }
 
+export function autoLinkLangPath(a) {
+    try {
+        const url = new URL(a.href);
+        const local = new URL(window.location.href);
+        const pathname = url.pathname;
+        const langPath = getMetadata('lang-path');
+        const excludePath = ['/hi/' , '/mr/' , '/gu/' , '/te/' , '/ta/' , '/ml/' , '/kn/' , '/content/' , '/account/' , '/customer-service/' , '/neeyat'];
+        const excludeText = ['english' , 'हिन्दी' , 'ગુજરાતી' , 'मराठी' , 'தமிழ்' , 'മലയാളം' , 'ಕನ್ನಡ' , 'తెలుగు'];
+        if(local.origin === url.origin && url.pathname.startsWith('/') && !excludePath.filter((eachPath)=> url.pathname.includes(eachPath)).length && !excludeText.includes(a.textContent.trim().toLowerCase())){
+            a.href =  langPath + url.pathname + url.search;
+        }else if(excludeText.includes(a.textContent.trim().toLowerCase())){
+            debugger;
+            a.href =  url.pathname + local.pathname.split('/').slice(2).join('/') + url.search;
+        }
+    } catch (error) {
+        console.warn(error);
+    }
+}
+
 /**
  * Decorates paragraphs containing a single link as buttons.
  * @param {Element} element container element
@@ -441,11 +460,11 @@ function decorateButtons(element) {
         // Clean Rel from href
         if (a.hasAttribute('href') && a.href.includes('rel')) {
             a.setAttribute('rel', getRelParam(a.href));
-            console.log('a :: ', a);
             a.setAttribute('href', removeRelParam(a.getAttribute('href')));
             a.textContent = a.textContent.replace(/([?&])?rel=[^&\s]*/gi, '').replace(/[?&]$/, '');
             a.setAttribute('title', removeRelParam(a.getAttribute('title')));
         }
+        autoLinkLangPath(a);
 
         if (a.href !== a.textContent) {
             const up = a.parentElement;

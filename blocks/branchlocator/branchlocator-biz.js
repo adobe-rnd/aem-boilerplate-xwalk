@@ -64,7 +64,7 @@ async function updateURL() {
     if (resp.ok) {
       location.href = branchUrl
     } else {
-      location.href = getMetadata("primary-language-path")+'/branch-locator/maharashtra/mumbai';
+      location.href = getMetadata("lang-path")+'/branch-locator/maharashtra/mumbai';
     }
   }
 }

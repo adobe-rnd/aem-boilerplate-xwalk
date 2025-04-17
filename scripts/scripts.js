@@ -1290,10 +1290,10 @@ export function branchURLStr(location = '', city = '', state = '', urlstrhand, l
   const stateStr = sanitizeString(state);
 
   const urlMap = {
-    shorthand: () => `${getMetadata("primary-language-path")}/branch-locator/${stateStr}/${cityStr}`,
-    shorthandstate: () => `${getMetadata("primary-language-path")}/branch-locator/${stateStr}`,
+    shorthand: () => `${getMetadata("lang-path")}/branch-locator/${stateStr}/${cityStr}`,
+    shorthandstate: () => `${getMetadata("lang-path")}/branch-locator/${stateStr}`,
     loans: () => {
-      const baseUrl = `${getMetadata("primary-language-path")}/branch-locator/loans-in-`;
+      const baseUrl = `${getMetadata("lang-path")}/branch-locator/loans-in-`;
       const isLocationSameAsCity = locationAdd === cityStr;
       const segments = isLocationSameAsCity
         ? [cityStr, stateStr, locationcode]
