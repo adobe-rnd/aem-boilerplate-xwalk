@@ -430,22 +430,44 @@ function wrapTextNodes(block) {
     });
 }
 
-export function autoLinkLangPath(a) {
+export function autoLinkLangPath(anchor) {
     try {
-        const url = new URL(a.href);
-        const local = new URL(window.location.href);
-        const pathname = url.pathname;
+        const anchorUrl = new URL(anchor.href);
+        const currentUrl = new URL(window.location.href);
         const langPath = getMetadata('lang-path');
-        const excludePath = ['/hi/' , '/mr/' , '/gu/' , '/te/' , '/ta/' , '/ml/' , '/kn/' , '/content/' , '/account/' , '/customer-service/' , '/neeyat'];
-        const excludeText = ['english' , 'हिन्दी' , 'ગુજરાતી' , 'मराठी' , 'தமிழ்' , 'മലയാളം' , 'ಕನ್ನಡ' , 'తెలుగు'];
-        if(local.origin === url.origin && url.pathname.startsWith('/') && !excludePath.filter((eachPath)=> url.pathname.includes(eachPath)).length && !excludeText.includes(a.textContent.trim().toLowerCase())){
-            a.href =  langPath + url.pathname + url.search;
-        }else if(excludeText.includes(a.textContent.trim().toLowerCase())){
-            debugger;
-            a.href =  url.pathname + local.pathname.split('/').slice(2).join('/') + url.search;
+
+        const excludedPaths = [
+            '/hi/', '/mr/', '/gu/', '/te/', '/ta/',
+            '/ml/', '/kn/', '/content/', '/account/',
+            '/customer-service/', '/neeyat'
+        ];
+
+        const excludedTexts = [
+            'english', 'हिन्दी', 'ગુજરાતી', 'मराठी',
+            'தமிழ்', 'മലയാളം', 'ಕನ್ನಡ', 'తెలుగు'
+        ];
+
+        const anchorText = anchor.textContent.trim().toLowerCase();
+
+        const isSameOrigin = anchorUrl.origin === currentUrl.origin;
+        const isLocalPath = anchorUrl.pathname.startsWith('/');
+        const isExcludedPath = excludedPaths.some(path => anchorUrl.pathname.includes(path));
+        const isExcludedText = excludedTexts.includes(anchorText);
+
+        if (isSameOrigin && isLocalPath && !isExcludedPath && !isExcludedText) {
+            anchor.href = langPath + anchorUrl.pathname + anchorUrl.search;
+        } else if (isExcludedText) {
+            const pathSegments = currentUrl.pathname.split('/').slice(2);
+            if (pathSegments.length > 1) {
+                anchor.href = anchorUrl.pathname + '/' + pathSegments.join('/') + anchorUrl.search;
+            } else {
+                anchor.href = langPath
+                    ? currentUrl.pathname + anchorUrl.search
+                    : anchorUrl.pathname.split('/').slice(0, -1).join('/') + currentUrl.pathname + anchorUrl.search;
+            }
         }
     } catch (error) {
-        console.warn(error);
+        console.warn('autoLinkLangPath error:', error);
     }
 }
 
