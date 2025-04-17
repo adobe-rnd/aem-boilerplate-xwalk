@@ -462,7 +462,7 @@ export function autoLinkLangPath(anchor) {
                 anchor.href = anchorUrl.pathname + '/' + pathSegments.join('/') + anchorUrl.search;
             } else {
                 anchor.href = langPath
-                    ? currentUrl.pathname + anchorUrl.search
+                    ? anchorUrl.pathname.split('/').slice(0, -1).join('/') + '/'+ currentUrl.pathname.split('/').slice(2).join('/') + anchorUrl.search
                     : anchorUrl.pathname.split('/').slice(0, -1).join('/') + currentUrl.pathname + anchorUrl.search;
             }
         }
@@ -705,10 +705,12 @@ function buildBlock(blockName, content) {
  * @param {Element} block The block element
  */
 export function getExtension(type) {
+    // const isMinify = getMetadata('minify') === 'true'
+    const isMinify = false
     if (type === 'js') {
-        return getMetadata('minify') === 'true' ? `.min.${extJs}` : `.${extJs}`;
+        return isMinify ? `.min.${extJs}` : `.${extJs}`;
     } else if (type === 'css') {
-        return getMetadata('minify') === 'true' ? `.min.${extCss}` : `.${extCss}`;
+        return isMinify ? `.min.${extCss}` : `.${extCss}`;
     }
 }
 
