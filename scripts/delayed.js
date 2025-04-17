@@ -112,20 +112,20 @@ async function loadAdobeScript(){
   document.head.appendChild(script);
 }
 
-const handlePathname = (anchor, placeholders) => {
-  const pathname = new URL(anchor?.href)?.pathname;
-  const excludedPaths = placeholders.excludedpaths?.split(',');
-  const primaryLangPath = getMetadata("lang-path");
-  if (pathname?.startsWith('/') && !excludedPaths.some(path => pathname.startsWith(path) || pathname == '/')) {
-    const newPath = primaryLangPath ? primaryLangPath + pathname : pathname;
+// const handlePathname = (anchor, placeholders) => {
+//   const pathname = new URL(anchor?.href)?.pathname;
+//   const excludedPaths = placeholders.excludedpaths?.split(',');
+//   const primaryLangPath = getMetadata("lang-path");
+//   if (pathname?.startsWith('/') && !excludedPaths.some(path => pathname.startsWith(path) || pathname == '/')) {
+//     const newPath = primaryLangPath ? primaryLangPath + pathname : pathname;
     
-    if (anchor.textContent.trim()?.startsWith('/')) {
-      anchor.textContent = newPath;
-    }
+//     if (anchor.textContent.trim()?.startsWith('/')) {
+//       anchor.textContent = newPath;
+//     }
     
-    anchor.href = newPath;
-  }
-}
+//     anchor.href = newPath;
+//   }
+// }
 
 // const handleReltags = async () => {
 //   const anchors = document.querySelectorAll('a');

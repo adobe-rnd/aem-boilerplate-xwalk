@@ -80,7 +80,7 @@ export default async function decorate(block) {
       breadcrumbsText.push(`<a href="${getMetadata('lang-path') + multiUrls[index]}">${text}</a>`);
     });
 
-    generateBreadcrumbSchema(breadcrumbsText);
+    // generateBreadcrumbSchema(breadcrumbsText);
 
     block.innerHTML = '';
     block.classList.add(className);

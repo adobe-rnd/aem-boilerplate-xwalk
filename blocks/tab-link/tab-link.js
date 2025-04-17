@@ -2,7 +2,7 @@ import { ctaClickInteraction } from '../../dl.js';
 import {
   createButton, createCarousle, getProps, targetObject,
 } from '../../scripts/scripts.js';
-import Glider from '../carousel/glider.min.js';
+import Glider from '../carousel/glider.js';
 
 export default function decorate(block) {
   const isDesktop = window.matchMedia('(min-width: 1025px)');

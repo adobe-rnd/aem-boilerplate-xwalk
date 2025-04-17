@@ -185,6 +185,6 @@ function BLNavUpdate(block) {
   const script = document.createElement('script');
   script.type = 'application/ld+json';
   script.innerHTML = JSON.stringify(branchLocatorBreadCrumbSchema);
-  document.head.append(script);
+  // document.head.append(script);
 
 }

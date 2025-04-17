@@ -40,9 +40,9 @@ export default async function decorate(block) {
       console.warn(error);
     }
   });
-  if (block.closest('.section.faq-section-wrapper')) {
-    faqSchemaQA(faqQA);
-  }
+  // if (block.closest('.section.faq-section-wrapper')) {
+  //   faqSchemaQA(faqQA);
+  // }
   // use same styling as shade-box from /docs
   block.classList.add('shade-box');
   try {

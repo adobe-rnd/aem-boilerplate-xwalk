@@ -331,6 +331,12 @@ footer.footer-wrapper .footer {
 
 /*footer piramal logo css*/
 
+@media screen and (min-width:1300px) {
+  .footer-section-first .columns-wrapper .columns>div>div>p.button-container:nth-child(1) a .icon {
+    width: 158px;
+  }
+}
+
 @media screen and (max-width:1366px) {
   .footer-section-first .columns-wrapper p sup {
     right: 102px;
