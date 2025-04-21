@@ -328,6 +328,6 @@ export function lpOtpValidate(click_text,loan_type,page_type){
       page_type: page_type || '' 
       });
   } catch (error) {
-      console.log(error); 
+      console.warn(error); 
   }
 }

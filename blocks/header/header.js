@@ -1,5 +1,5 @@
 import { headerInteraction, navlogin } from '../../dl.js';
-import { fetchPlaceholders, getMetadata } from '../../scripts/aem.js';
+import { autoLinkLangPath, fetchPlaceholders, getMetadata } from '../../scripts/aem.js';
 import { body, targetObject } from '../../scripts/scripts.js';
 import { loadFragment } from '../fragment/fragment.js';
 
@@ -228,6 +228,7 @@ export default async function decorate(block) {
   a.append(image);
   a.setAttribute('href', '/');
   navBrand.append(a);
+  autoLinkLangPath(a);
   navBrand.replaceChild(a, navBrand.firstElementChild);
   let loginFlag = true;
   const navSections = nav.querySelector('.nav-sections');

@@ -11,7 +11,7 @@ import {
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
-console.log('Main Branch 1.3');
+// console.log('Main Branch 1.3');
 /**
  * Moves all the attributes from a given elmenet to another given element.
  * @param {Element} from the element to copy attributes from
@@ -468,7 +468,6 @@ export async function decoratePlaceholder(block, path) {
         Object.keys(resp).forEach((key) => {
           var value = resp[key];
           if (value && value.trim() && el.firstChild.textContent.trim() && el.firstChild.textContent.includes(`{${key}}`)) {
-            console.log(el.innerHTML, " :: ", el.firstChild.textContent);
             el.innerHTML = el.firstChild.textContent.replaceAll(`{${key}}`, value);
           }
           // if (value && value.trim() && !value.includes('<') && el.firstChild.textContent.trim() && el.firstChild.textContent.includes(`{${key}}`)) {

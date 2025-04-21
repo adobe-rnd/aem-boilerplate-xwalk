@@ -321,7 +321,7 @@ function verifyOtpBtnClick() {
       const click_text = e.target.textContent.trim() || "";
       lpOtpValidate(click_text,formLoanType,targetObject.pageName)
     } catch (error) {
-        console.log(error)
+        console.warn(error)
     }
     if (otpValue) {
       verfyOtpAPI(otpValue)
@@ -396,7 +396,6 @@ function resendOtpBtnClick() {
       .then(({ responseJson }) => {
         const otpAuthId = responseJson.authUniqueId;
         sessionStorage.setItem('otpAuthId', otpAuthId);
-        // console.log(responseJson.returnResponse.message);
       })
       .catch((error) => {
         console.warn(`resendOtpErr: ${error}`);
