@@ -62,7 +62,7 @@ async function updateURL() {
     var branchUrl = geoInfo.state && geoInfo.city ? branchURLStr(geoInfo.location, geoInfo.city, geoInfo.state, "shorthand") : branchURLStr(geoInfo.location, geoInfo.city, geoInfo.state, "shorthandstate");
     const resp = await fetch(branchUrl);
     if (resp.ok) {
-      location.href = getMetadata("lang-path")+branchUrl
+      location.href = branchUrl
     } else {
       location.href = getMetadata("lang-path")+'/branch-locator/maharashtra/mumbai';
     }
