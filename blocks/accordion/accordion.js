@@ -1,6 +1,5 @@
 import { fetchAPI } from '../../scripts/scripts.js';
 
-// console.log('Accordian');
 
 /* this function also gets called by accordion-group */
 export function generateAccordionDOM(block) {

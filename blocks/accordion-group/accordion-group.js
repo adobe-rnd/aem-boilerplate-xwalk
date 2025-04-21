@@ -6,7 +6,6 @@ import { documentRequired, generateAccordionDOM } from '../accordion/accordion.j
 const faqQA = [];
 export default async function decorate(block) {
   const resp = await fetchPlaceholders();
-  // console.log("placeholder resp :: ", resp);
   // each row is an accordion entry
   const accordions = [...block.children];
 
@@ -52,7 +51,7 @@ export default async function decorate(block) {
       documentRequired();
     }
   } catch (error) {
-    console.error(error);
+    console.warn(error);
   }
 }
 

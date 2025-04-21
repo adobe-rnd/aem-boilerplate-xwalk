@@ -73,6 +73,5 @@ function applyLoanFormJson(data) {
     mainObj.options.push(obj);
   }
   
-  // console.log(mainObj); // Debug to check the result
   return mainObj; // Return the structured object
 }
