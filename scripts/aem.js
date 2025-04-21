@@ -470,7 +470,7 @@ export function autoLinkLangPath(anchor) {
             const isExcludedPath = excludedPaths.some(path => anchorUrl.pathname.includes(path));
             const isExcludedText = excludedTexts.includes(anchorText);
     
-            let newHref = ''
+            let newHref = anchor.href;
             if (isSameOrigin && isLocalPath && !isExcludedPath && !isExcludedText) {
                 newHref = langPath + anchorUrl.pathname + anchorUrl.search;
             } else if (isExcludedText) {
