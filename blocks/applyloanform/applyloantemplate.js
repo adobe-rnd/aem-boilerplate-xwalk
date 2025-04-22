@@ -1,4 +1,6 @@
+import { getMetadata } from "../../scripts/aem.js";
 export function appplyLoanTemplate(properties) {
+    properties.checkboxAnchorTextLink = getMetadata('lang-path') + properties.checkboxAnchorTextLink;
   /* const properties = {
     rupeeIcon: "/images/rupee-icon.svg",
     mainFormHeading: "Apply Loan In A Minute",

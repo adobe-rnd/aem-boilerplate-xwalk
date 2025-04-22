@@ -265,6 +265,7 @@ export function applyLoanFormClick() {
       firstformbtn.addEventListener('click', () => {
         loaninnerform.classList.add('loan-form-sub-otp');
         otpPhoneNum().textContent = cutomerNo().value;
+        document.querySelector('.wrongotpmessage').style.display = 'none';
         startTimer(footer_time_limit, footer_time_out);
         const timerElement = document.querySelector('.applyloanform .timer');
         if (timerElement) {
