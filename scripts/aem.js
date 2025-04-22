@@ -474,7 +474,7 @@ export function autoLinkLangPath(anchor) {
             if (isSameOrigin && isLocalPath && !isExcludedPath && !isExcludedText) {
                 newHref = langPath + anchorUrl.pathname + anchorUrl.search;
             } else if (isExcludedText) {
-                const pathSegments = currentUrl.pathname.split('/').slice(2);
+                const pathSegments = (langPath && currentUrl.pathname.startsWith(langPath)) ? currentUrl.pathname.split('/').slice(2) :  currentUrl.pathname.split('/').slice(1);
                 if (pathSegments.length > 1) {
                     newHref = anchorUrl.pathname  + '/' + pathSegments.join('/') + anchorUrl.search;
                 } else {
