@@ -444,10 +444,28 @@ function wrapTextNodes(block) {
         }
     });
 }
-
+export function addRefAttribute(a) {
+    try {
+        if (a.hasAttribute('href') && a.href.includes('rel=')) {
+            a.setAttribute('rel', getRelParam(a));
+            // console.log('a :: ', a);
+            a.setAttribute('href', removeRelParam(a));
+            a.textContent = a.textContent.replace(/([?&])?rel=[^&\s]*/gi, '').replace(/[?&]$/, '');
+            a.setAttribute('title', a.getAttribute('title'));
+        }
+    } catch (error) {
+        console.warn(error);
+    }
+}
+export function autoLinkLangPaths(anchors) {
+    Array.from(anchors).forEach(function (anchor) {
+        autoLinkLangPath(anchor);
+    })
+}
 export function autoLinkLangPath(anchor) {
     try {
         if(anchor.href){
+            addRefAttribute(anchor);
             const anchorUrl = new URL(anchor.href);
             const currentUrl = new URL(window.location.href);
             const langPath = getMetadata('lang-path');
@@ -500,13 +518,7 @@ function decorateButtons(element) {
         a.title = a.title || a.textContent;
 
         // Clean Rel from href
-        if (a.hasAttribute('href') && a.href.includes('rel=')) {
-            a.setAttribute('rel', getRelParam(a.href));
-            // console.log('a :: ', a);
-            a.setAttribute('href', removeRelParam(a.getAttribute('href')));
-            a.textContent = a.textContent.replace(/([?&])?rel=[^&\s]*/gi, '').replace(/[?&]$/, '');
-            a.setAttribute('title', removeRelParam(a.getAttribute('title')));
-        }
+        
         autoLinkLangPath(a);
 
         if (a.href !== a.textContent) {
@@ -540,18 +552,18 @@ function decorateButtons(element) {
     });
 }
 
-export function removeRelParam(url) {
+export function removeRelParam(a) {
     try {
-        const parsedUrl = new URL(url);
+        const parsedUrl = new URL(a.href);
         parsedUrl.searchParams.delete('rel');
         return parsedUrl.toString();
     } catch (e) {
         return url; // If not a valid URL, return as is
     }
 };
-export function getRelParam(url) {
+export function getRelParam(a) {
     try {
-        const parsedUrl = new URL(url);
+        const parsedUrl = new URL(a.href);
         return parsedUrl.searchParams.get('rel');
     } catch (e) {
         return url; // If not a valid URL, return as is
