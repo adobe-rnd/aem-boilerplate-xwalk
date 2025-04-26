@@ -39,5 +39,11 @@
       "button",
       "title"
     ]
+  },
+  {
+    "id": "sample",
+    "components": [
+      "sample"
+    ]
   }
 ]
