@@ -257,6 +257,44 @@
         ]
       },
       {
+        "component": "multiselect",
+        "name": "classes_more",
+        "label": "More Block Options",
+        "maxSize": 2,
+        "options": [
+          {
+            "name": "VerticalAlignment",
+            "children": [
+              {
+                "name": "Top",
+                "value": "valign-top"
+              },
+              {
+                "name": "Middle",
+                "value": "valign-middle"
+              },
+              {
+                "name": "Bottom",
+                "value": "valign-bottom"
+              }
+            ]
+          },
+          {
+            "name": "BackgroundColor",
+            "children": [
+              {
+                "name": "Primary",
+                "value": "bg-color-primary"
+              },
+              {
+                "name": "Secondary",
+                "value": "bg-color-secondary"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "component": "boolean",
         "name": "classes_emphasized",
         "label": "Emphasized",
