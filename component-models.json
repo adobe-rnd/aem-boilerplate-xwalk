@@ -214,5 +214,67 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "sample",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Block Options",
+        "maxSize": 2,
+        "options": [
+          {
+            "name": "Alignment",
+            "children": [
+              {
+                "name": "Left",
+                "value": "align-left"
+              },
+              {
+                "name": "Center",
+                "value": "align-center"
+              },
+              {
+                "name": "Right",
+                "value": "align-right"
+              }
+            ]
+          },
+          {
+            "name": "Color",
+            "children": [
+              {
+                "name": "Primary",
+                "value": "color-primary"
+              },
+              {
+                "name": "Secondary",
+                "value": "color-secondary"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "name": "classes_emphasized",
+        "label": "Emphasized",
+        "value": false
+      },
+      {
+        "component": "boolean",
+        "name": "classes_somethingElse",
+        "label": "Something Else",
+        "value": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
   }
 ]
