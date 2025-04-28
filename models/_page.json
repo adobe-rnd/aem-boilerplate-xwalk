@@ -21,6 +21,11 @@
           "name": "keywords",
           "multi": true,
           "label": "Keywords"
+        },
+        {
+          "component": "aem-tag",
+          "name": "cq:tags",
+          "label": "Tags"
         }
       ]
     }
