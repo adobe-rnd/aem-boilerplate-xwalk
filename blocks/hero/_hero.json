@@ -40,6 +40,9 @@
           "value": "",
           "label": "Text",
           "valueType": "string"
+        },
+        {
+         "...": "../../models/_common.json#/button-fields"
         }
       ]
     }
