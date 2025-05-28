@@ -26,13 +26,36 @@
           "description": "The label shown for this section in the Content Tree"
         },
         {
-          "component": "multiselect",
+          "component": "select",
           "name": "style",
           "label": "Style",
           "options": [
             {
+              "name": "None",
+              "value": ""
+            },
+            {
               "name": "Highlight",
               "value": "highlight"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "paddings",
+          "label": "Paddings",
+          "options": [
+            {
+              "name": "None",
+              "value": "no-paddings"
+            },
+            {
+              "name": "Normal",
+              "value": ""
+            },
+            {
+              "name": "Large",
+              "value": "large-paddings"
             }
           ]
         }
