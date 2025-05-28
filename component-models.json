@@ -220,7 +220,7 @@
     "fields": [
       {
         "component": "tab",
-        "name": "content",
+        "name": "contentTab",
         "label": "Content"
       },
       {
@@ -256,7 +256,7 @@
       },
       {
         "component": "tab",
-        "name": "style",
+        "name": "styleTab",
         "label": "Style"
       },
       {
