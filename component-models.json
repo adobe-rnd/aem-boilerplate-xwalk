@@ -219,6 +219,11 @@
     "id": "teaser",
     "fields": [
       {
+        "component": "tab",
+        "name": "content",
+        "label": "Content"
+      },
+      {
         "component": "select",
         "name": "classes",
         "label": "Variants",
@@ -323,11 +328,6 @@
         "component": "text",
         "name": "ctaText",
         "label": "Text"
-      },
-      {
-        "component": "text",
-        "name": "ctaType",
-        "label": "Type"
       }
     ]
   }

@@ -24,6 +24,7 @@
             "page": {
               "resourceType": "core/franklin/components/block/v1/block/item",
               "template": {
+                "name": "CTA",
                 "model": "teaser-cta"
               }
             }
@@ -35,6 +36,11 @@
       {
         "id": "teaser",
         "fields": [
+          {
+            "component": "tab",
+            "name": "content",
+            "label": "Content"
+          },
           {
             "component": "select",
             "name": "classes",
@@ -140,11 +146,6 @@
             "component": "text",
             "name": "ctaText",
             "label": "Text"
-          },
-          {
-            "component": "text",
-            "name": "ctaType",
-            "label": "Type"
           }
         ]
       }
