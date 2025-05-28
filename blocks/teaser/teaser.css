@@ -1,3 +1,97 @@
+.teaser-container:has(.teaser.fullwidth:last-child) {
+    margin-bottom: 0;
+}
+
+.teaser-wrapper:has(.teaser.fullwidth) {
+    max-width: unset;
+    padding: unset;
+    max-height: 800px;
+}
+
 .teaser.block {
-    background-color: brown;
+    --padding: 2rem;
+    
+    display: grid;
+}
+
+.teaser.block.large-paddings {
+    --padding: 4rem;
+}
+
+.teaser.block.no-paddings {
+    --padding: 1rem;
+}
+
+.teaser.block > * {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.teaser-media img {
+    display: block;
+}
+
+.teaser.block .teaser-content {
+    max-width: calc(50% - 4rem);
+    background-color: rgb(255 255 255 / 50%);
+    padding: var(--padding);
+}
+
+.teaser.block .teaser-ctas {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.teaser.block .teaser-ctas li {
+    display: flex;
+}
+
+.teaser.block .teaser-ctas li p.button-container {
+    padding: 0;
+    margin: 0;
+}
+
+.teaser.block .teaser-ctas li.varianta a {
+    --link-color: lightgreen;
+    --background-color: #333;
+}
+
+.teaser.block .teaser-ctas li.variantb a {
+    --link-color: lightcoral;
+    --background-color: #333;
+}
+
+.teaser.block .teaser-ctas li.inverted a {
+    background-color: var(--background-color);
+    color: var(--link-color);
+}
+
+/* variant b */
+.teaser.block.variantb .teaser-content {
+    justify-self: end;
+}
+
+/* variant c */
+.teaser.block.variantc {
+    grid-template-rows: 2fr max-content;
+}
+
+.teaser.block.variantc .teaser-media img {
+    object-fit: cover;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+}
+
+.teaser.block.variantc .teaser-content {
+    grid-column: 1;
+    grid-row: 2;
+    max-width: unset;
+    background-color: lightslategray;
+    padding: 1rem var(--padding);
 }

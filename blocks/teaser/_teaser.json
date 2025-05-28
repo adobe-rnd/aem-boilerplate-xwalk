@@ -92,23 +92,12 @@
                 "value": "no-paddings"
               },
               {
-                "name": "Large",
-                "value": "large-paddings"
-              }
-            ]
-          },
-          {
-            "component": "select",
-            "name": "classes_margins",
-            "label": "Margins",
-            "options": [
-              {
-                "name": "None",
-                "value": "no-margins"
+                "name": "Normal",
+                "value": ""
               },
               {
                 "name": "Large",
-                "value": "large-margins"
+                "value": "large-paddings"
               }
             ]
           }
