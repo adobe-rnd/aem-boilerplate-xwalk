@@ -33,6 +33,28 @@
           "name": "rows",
           "value": "",
           "label": "Rows"
+        },
+        {
+          "component": "select",
+          "name": "classes",
+          "label": "Variants",
+          "maxSize": 2,
+          "options": [
+            {
+              "name": "Columns",
+              "value": ""
+            },
+            {
+              "name": "Table",
+              "value": "table"
+            }
+          ]
+        },
+        {
+          "component": "boolean",
+          "name": "classes_hashead",
+          "label": "Has Table Head?",
+          "condition": { "===": [{"var" : "classes"}, "table"] }
         }
       ]
     }
