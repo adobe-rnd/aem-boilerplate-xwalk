@@ -1,0 +1,161 @@
+{
+    "definitions": [
+      {
+        "title": "Teaser",
+        "id": "teaser",
+        "plugins": {
+          "xwalk": {
+            "page": {
+              "resourceType": "core/franklin/components/block/v1/block",
+              "template": {
+                "name": "Teaser",
+                "model": "teaser",
+                "filter": "teaser"
+              }
+            }
+          }
+        }
+      },
+      {
+        "title": "CTA",
+        "id": "teaser-cta",
+        "plugins": {
+          "xwalk": {
+            "page": {
+              "resourceType": "core/franklin/components/block/v1/block/item",
+              "template": {
+                "model": "teaser-cta"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "models": [
+      {
+        "id": "teaser",
+        "fields": [
+          {
+            "component": "select",
+            "name": "classes",
+            "label": "Variants",
+            "maxSize": 2,
+            "options": [
+              {
+                "name": "Variant A",
+                "value": "variantA"
+              },
+              {
+                "name": "Variant B",
+                "value": "variantB"
+              }, 
+              {
+                "name": "Variant C",
+                "value": "variantC"
+              }
+            ]
+          },
+          {
+            "component": "reference",
+            "name": "media",
+            "label": "Image",
+            "multi": false
+          },
+          {
+            "component": "richtext",
+            "name": "content",
+            "label": "Text"
+          },
+          {
+            "component": "tab",
+            "name": "style",
+            "label": "Style"
+          },
+          {
+            "component": "boolean",
+            "name": "classes_fullwidth",
+            "label": "Fullwidth?"
+          },
+          {
+            "component": "select",
+            "name": "classes_paddings",
+            "label": "Paddings",
+            "options": [
+              {
+                "name": "None",
+                "value": "no-paddings"
+              },
+              {
+                "name": "Large",
+                "value": "large-paddings"
+              }
+            ]
+          },
+          {
+            "component": "select",
+            "name": "classes_margins",
+            "label": "Margins",
+            "options": [
+              {
+                "name": "None",
+                "value": "no-margins"
+              },
+              {
+                "name": "Large",
+                "value": "large-margins"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "teaser-cta",
+        "fields": [
+          {
+            "component": "select",
+            "name": "classes",
+            "label": "Variant",
+            "options": [
+              {
+                "name": "Variant A",
+                "value": "variantA"
+              },
+              {
+                "name": "Variant B",
+                "value": "variantB"
+              }
+            ]
+          },
+          {
+            "component": "boolean",
+            "name": "classes_inverted",
+            "label": "Inverted?"
+          },
+          {
+            "component": "aem-content",
+            "name": "cta",
+            "label": "Link"
+          },
+          {
+            "component": "text",
+            "name": "ctaText",
+            "label": "Text"
+          },
+          {
+            "component": "text",
+            "name": "ctaType",
+            "label": "Type"
+          }
+        ]
+      }
+    ],
+    "filters": [
+      {
+        "id": "teaser",
+        "components": [
+          "teaser-cta"
+        ]
+      }
+    ]
+  }
+  

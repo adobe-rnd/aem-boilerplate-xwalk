@@ -16,7 +16,7 @@
       "cards",
       "columns",
       "fragment",
-      "sample"
+      "teaser"
     ]
   },
   {
@@ -41,9 +41,9 @@
     ]
   },
   {
-    "id": "sample",
+    "id": "teaser",
     "components": [
-      "sample"
+      "teaser-cta"
     ]
   }
 ]
