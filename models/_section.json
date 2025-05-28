@@ -42,7 +42,7 @@
         },
         {
           "component": "select",
-          "name": "paddings",
+          "name": "style_paddings",
           "label": "Paddings",
           "options": [
             {
