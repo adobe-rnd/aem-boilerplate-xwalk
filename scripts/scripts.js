@@ -710,7 +710,7 @@ async function loadEager(doc) {
 async function loadLazy(doc) {
   autolinkModals(doc);
 
-  
+
   const templateName = getMetadata('template');
   if (templateName) {
     await loadTemplate(doc, templateName);
@@ -741,6 +741,8 @@ async function loadLazy(doc) {
 function loadDelayed() {
   // eslint-disable-next-line import/no-cycle
   window.setTimeout(() => import('./delayed.js'), 3000);
+  const startEvent = new Event("load-event");
+  document.dispatchEvent(startEvent);
   // load anything that can be postponed to the latest here
   import('./sidekick.js').then(({ initSidekick }) => initSidekick());
 }
@@ -787,7 +789,7 @@ async function loadingCustomCss() {
   const loadCssArray = [
     `${window.hlx.codeBasePath}/styles/reset${getExtension('css')}`
   ];
-  if(!getMetadata('template')){
+  if (!getMetadata('template')) {
     loadCssArray.push(`${window.hlx.codeBasePath}/styles/common/common${getExtension('css')}`)
   }
   loadCssArray.forEach(async (eachCss) => {
@@ -972,7 +974,7 @@ body?.addEventListener('click', (e) => {
   } catch (error) {
     console.warn(error);
   }
-  
+
 });
 
 function handleModelClick(target, loaninnerform, modalOverlay) {
@@ -1024,7 +1026,7 @@ function handleBranchLocatorDropdown(target) {
   }
 }
 
-function handleAuthoriseAgencies(target){
+function handleAuthoriseAgencies(target) {
   if (!target.closest('.toggleCityContainer') && !target.closest('.select-container') && !target.closest('fieldset') && !target.closest('cityBlack')) {
     const selectContainer = document.querySelector('.select-container');
     const citiesContainer = document.querySelector('.cities-container');
@@ -1404,7 +1406,7 @@ const processAnchor = (anchor, body) => {
   if (anchor.href.includes('/modal-popup/')) {
     handleModalPopup(anchor, body);
   }
- 
+
 };
 
 

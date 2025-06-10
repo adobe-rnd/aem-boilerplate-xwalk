@@ -903,3 +903,10 @@ export {
     waitForLCP,
     wrapTextNodes,
 };
+
+window.onload = () => {
+  document.querySelector('.tab-link ul').scroll({
+    left: document.querySelector('.tab-link ul li strong').getBoundingClientRect().left - document.querySelector('.tab-link ul li').getBoundingClientRect().width - 45,
+    behavior: 'smooth',
+  });
+}
