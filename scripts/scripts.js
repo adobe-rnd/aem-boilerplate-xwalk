@@ -1,8 +1,8 @@
-import { formOpen, overlay } from '../blocks/applyloanform/applyloanforms.js';
-import { statemasterGetStatesApi } from '../blocks/applyloanform/statemasterapi.js';
-import { validationJSFunc } from '../blocks/applyloanform/validation.js';
+// import { formOpen, overlay } from '../blocks/applyloanform/applyloanforms.js';
+// import { statemasterGetStatesApi } from '../blocks/applyloanform/statemasterapi.js';
+// import { validationJSFunc } from '../blocks/applyloanform/validation.js';
 import { toggleAllNavSections } from '../blocks/header/header.js';
-import { applyLoanInteraction, ctaClick, ctaClickInteraction, selectBranchInteraction } from '../dl.js';
+import { applyLoanInteraction, ctaClick, selectBranchInteraction } from '../dl.js';
 import {
   sampleRUM, loadHeader, loadFooter, decorateButtons, decorateIcons, decorateSections, decorateBlocks, decorateTemplateAndTheme, waitForLCP, loadBlocks, loadCSS, fetchPlaceholders,
   getMetadata,
@@ -675,7 +675,7 @@ export async function decorateMain(main) {
   decorateSections(main);
   decorateBlocks(main);
   decorateImageIcons(main);
-  handleOpenFormOnClick(main);
+  // handleOpenFormOnClick(main);
   handleReadAll(main);
 }
 
@@ -1186,15 +1186,15 @@ function onClickReadAllBtn(e) {
 }
 
 
-export function handleOpenFormOnClick(el) {
+/* export function handleOpenFormOnClick(el) {
   const formButtons = el.querySelectorAll('.open-form-on-click .button-container');
   formButtons.forEach(button => {
     console.log(button);
     button.addEventListener('click', onCLickApplyFormOpen);
   });
-}
+} */
 
-function handleNeeyatClick(neeyatClick) {
+/* function handleNeeyatClick(neeyatClick) {
   if (!neeyatClick) return;
 
   const buttonIndex = getNeeyatButtonIndex(neeyatClick);
@@ -1207,14 +1207,14 @@ function handleNeeyatClick(neeyatClick) {
     }
   });
 }
-
+ */
 function getNeeyatButtonIndex(element) {
   return Array.from(element.classList)
     .find(className => className.startsWith('neeyat-button-'))
     ?.replace('neeyat-button-', '') || 0;
 }
 
-function onCLickApplyFormOpen(e) {
+/* function onCLickApplyFormOpen(e) {
   statemasterGetStatesApi();
   validationJSFunc();
   formOpen();
@@ -1236,7 +1236,7 @@ function onCLickApplyFormOpen(e) {
     console.warn(error);
   }
   e.preventDefault();
-}
+} */
 
 
 export function getDay() {

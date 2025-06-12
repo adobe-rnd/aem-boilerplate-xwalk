@@ -1,5 +1,6 @@
 import {
-  applyLoanNow, formInteraction, resendOtp, talkToExpert,
+  applyLoanInteraction,
+  applyLoanNow, ctaClick, formInteraction, resendOtp, talkToExpert,
 } from '../../dl.js';
 import { targetObject } from '../../scripts/scripts.js';
 import {
@@ -19,10 +20,44 @@ import {
   otpPhoneNum,
   stateInput,
 } from './loanformdom.js';
+import { statemasterGetStatesApi } from './statemasterapi.js';
 import { loanTypeDropdownSelect } from './utm.js';
+import { validationJSFunc } from './validation.js';
 
 export let overlay; export let emiOverlay; export let elgOverlay; export let loaninnerform; export let
   bodyElement;
+
+  export function handleOpenFormOnClick(el) {
+    const formButtons = el.querySelectorAll('.open-form-on-click .button-container');
+    formButtons.forEach(button => {
+      console.log(button);
+      button.addEventListener('click', onCLickApplyFormOpen);
+    });
+  }
+
+  function onCLickApplyFormOpen(e) {
+  statemasterGetStatesApi();
+  validationJSFunc();
+  formOpen();
+  try {
+    if (!e.target.closest('.section').classList.contains('banner-carousel-wrapper')) {
+      if (!e.target.closest('.section').classList.contains('documents-required-brown')) {
+        const data = {};
+        data.click_text = e.target.textContent.trim();
+        applyLoanInteraction(data);
+      }
+    }
+    if (e.target.closest('.section').classList.contains('documents-required-brown')) {
+      const click_text = e.target.textContent.trim();
+      const cta_category = e.target.closest('.section').querySelector('.default-content-wrapper').querySelector('h1, h2, h3, h4, h5, h6').textContent.trim();
+      const cta_position = '';
+      ctaClick(click_text, cta_category, cta_position, targetObject.pageName);
+    }
+  } catch (error) {
+    console.warn(error);
+  }
+  e.preventDefault();
+}
 
 export function createOverlay(el) {
   const overlay = document.createElement('div');
@@ -608,3 +643,6 @@ window.addEventListener('pageshow', (event) => {
     window.location.reload();
   }
 });
+
+
+  handleOpenFormOnClick(document);
