@@ -110,7 +110,8 @@ export default async function decorate(block) {
     breadcrumbLinks = [HomeLink.outerHTML];
   }
 
-  window.setTimeout(async () => {
+  // window.setTimeout(async () => {
+  document.addEventListener('load-event', async () => {
     const path = window.location.pathname;
     const paths = await getAllPathsExceptCurrent(path, startLevel);
     paths.forEach((pathPart) => breadcrumbLinks.push(createLink(pathPart).outerHTML));
@@ -124,7 +125,7 @@ export default async function decorate(block) {
     }
     breadcrumb.innerHTML = breadcrumbLinks.join(`<span class="breadcrumb-separator">${RIGHTARROW}</span>`);
     block.append(breadcrumb);
-  }, 0);
+  });
 }
 
 function generateBreadcrumbSchema(breadcrumbsText) {
@@ -139,11 +140,11 @@ function generateBreadcrumbSchema(breadcrumbsText) {
   });
 
   if (isBranchLocator) {
-    return; 
+    return;
   }
 
   div.querySelectorAll("a").forEach((ele, index) => {
-    
+
     listItems.push({
       "@type": "ListItem",
       "position": index + 1,
@@ -162,4 +163,7 @@ function generateBreadcrumbSchema(breadcrumbsText) {
   script.type = 'application/ld+json';
   script.innerHTML = JSON.stringify(breadCrumbSchema);
   document.head.append(script);
+
+
 }
+

@@ -73,7 +73,7 @@ async function loadMoengage() {
 
   try {
     let moengageContainer = document.getElementById("moengage-container");
-    if(!moengageContainer) return false;
+    if (!moengageContainer) return false;
     let navWrapper = document.querySelector(".nav-wrapper");
     let heightMoengage = moengageContainer.clientHeight;
     window.addEventListener('scroll', function (event) {
@@ -89,14 +89,14 @@ async function loadMoengage() {
   }
 }
 
-async function loadAdobeScript(){
+async function loadAdobeScript() {
   const placeholders = await fetchPlaceholders();
   const checkingEnv = location.href;
   let adobeScript;
-  if(checkingEnv.includes("uatmarketing.piramalfinance") || checkingEnv.includes("main--piramalfinance")){
+  if (checkingEnv.includes("uatmarketing.piramalfinance") || checkingEnv.includes("main--piramalfinance")) {
     adobeScript = placeholders.adobescriptstage;
   }
-  else if(checkingEnv.includes("www.piramalfinance") || checkingEnv.includes("main--prodpiramalfinance")){
+  else if (checkingEnv.includes("www.piramalfinance") || checkingEnv.includes("main--prodpiramalfinance")) {
     adobeScript = placeholders.adobescriptprod;
   }
   // Create a script element
@@ -118,11 +118,11 @@ async function loadAdobeScript(){
 //   const primaryLangPath = getMetadata("lang-path");
 //   if (pathname?.startsWith('/') && !excludedPaths.some(path => pathname.startsWith(path) || pathname == '/')) {
 //     const newPath = primaryLangPath ? primaryLangPath + pathname : pathname;
-    
+
 //     if (anchor.textContent.trim()?.startsWith('/')) {
 //       anchor.textContent = newPath;
 //     }
-    
+
 //     anchor.href = newPath;
 //   }
 // }
@@ -145,19 +145,19 @@ async function loadAdobeScript(){
 //       }else{
 //         anchor.rel = newRelContent;
 //       }
-  
+
 //       // Remove the parameter from the URL
 //       function removeRelParameter(url) {
 //         const urlObj = new URL(url); // Parse the URL
 //         const searchParams = urlObj.searchParams; // Access query parameters
-    
+
 //         searchParams.delete(relParamCheck); // Remove the 'rel' parameter
-    
+
 //         return urlObj.toString(); // Return the modified URL
 //       }
-  
+
 //       anchor.href = removeRelParameter(getHref);
-  
+
 //     }
 //   })
 // };
