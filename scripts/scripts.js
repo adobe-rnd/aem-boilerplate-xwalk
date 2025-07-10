@@ -6,10 +6,12 @@ import {
   decorateSections,
   decorateBlocks,
   decorateTemplateAndTheme,
+  readBlockConfig,
   waitForFirstImage,
   loadSection,
   loadSections,
   loadCSS,
+  toClassName,
 } from './aem.js';
 
 /**
@@ -58,13 +60,95 @@ async function loadFonts() {
   }
 }
 
+function buildTabs(main) {
+  // collect consecutive tab panels
+  const consecutiveTabPaneles = [[]];
+  // eslint-disable-next-line no-restricted-syntax
+  for (const section of main.children) {
+    const current = consecutiveTabPaneles[consecutiveTabPaneles.length - 1];
+    const metadataBlock = section.querySelector('.section-metadata');
+    const metadata = metadataBlock ? readBlockConfig(metadataBlock) : {};
+    const tabLabel = metadata['tab-label'];
+
+    if (!tabLabel) {
+      // section is not a tab panel
+      if (current.length > 0) {
+        // end of current list of consecutive tab panels
+        consecutiveTabPaneles.push([]);
+      }
+    } else {
+      current.push([tabLabel, section]);
+    }
+  }
+
+  // build tab lists
+  consecutiveTabPaneles.forEach((tabPanels, tabsIdx) => {
+    if (!tabPanels.length) return;
+
+    const [, firstTabPanel] = tabPanels[0];
+
+    const tabsPrefix = `tabs-${tabsIdx}`;
+    const tabList = document.createElement('ul');
+    tabList.role = 'tablist';
+    tabList.id = `${tabsPrefix}-tablist`;
+
+    tabPanels.forEach(([tabLabel, tabPanel], i) => {
+      const tabId = `${tabsPrefix}-tab-${toClassName(tabLabel)}`;
+      const tabPanelId = `${tabsPrefix}-panel-${toClassName(tabLabel)}`;
+
+      // build the tabs as buttons and append them to the tab list
+      const tabItem = document.createElement('button');
+      tabItem.id = tabId;
+      tabItem.role = 'tab';
+      tabItem.ariaSelected = i === 0;
+      tabItem.tabIndex = i === 0 ? 0 : -1;
+      tabItem.setAttribute('aria-controls', tabPanelId);
+      tabItem.textContent = tabLabel;
+
+      const li = document.createElement('li');
+      li.appendChild(tabItem);
+      tabList.appendChild(li);
+
+      // update the tab panel to use the tab id
+      tabPanel.id = tabPanelId;
+      tabPanel.setAttribute('aria-labelledby', tabId);
+      tabPanel.classList.add('hidden');
+
+      // update the tab panel to use the tab id
+      tabPanel.id = tabPanelId;
+      tabPanel.role = 'tabpanel';
+      tabPanel.tabIndex = 0;
+      tabPanel.setAttribute('aria-labelledby', tabId);
+      if (i > 0) tabPanel.setAttribute('hidden', '');
+    });
+
+    // if there is a previous section, and if the last content element is a tab-list block,
+    // add the tab list to it, otherwise create a new section and a tab-list block inside of
+    // it and prepend it before the first tab panel.
+    const previousSection = firstTabPanel.previousElementSibling;
+    let previousBlock = previousSection?.lastElementChild;
+    if (previousBlock?.matches('.section-metadata')) previousBlock = previousBlock.previousElementSibling;
+    if (previousBlock?.matches('.tab-list')) {
+      previousBlock.appendChild(tabList);
+    } else {
+      const tabListBlock = document.createElement('div');
+      tabListBlock.className = 'tab-list block';
+      tabListBlock.appendChild(tabList);
+      const section = document.createElement('div');
+      section.className = 'section';
+      section.appendChild(tabListBlock);
+      firstTabPanel.before(section);
+    }
+  });
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-function buildAutoBlocks() {
+function buildAutoBlocks(main) {
   try {
-    // TODO: add auto block, if needed
+    buildTabs(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
