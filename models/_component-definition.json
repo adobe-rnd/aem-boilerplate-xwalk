@@ -15,6 +15,17 @@
         },
         {
           "...": "./_button.json#/definitions"
+        },
+        {
+          "title": "Test",
+          "id": "test",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block"
+              }
+            }
+          }
         }
       ]
     },
