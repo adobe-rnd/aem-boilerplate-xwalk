@@ -1,4 +1,4 @@
-import { currenyCommaSeperation } from '../../scripts/scripts.js';
+import { currenyCommaSeperation } from '../../scripts/common.js';
 import { calculator } from './bizemielical.js';
 import { getCalculatorInput } from './getcalculatordata.js';
 

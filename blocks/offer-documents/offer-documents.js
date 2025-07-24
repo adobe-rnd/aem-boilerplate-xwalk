@@ -1,5 +1,5 @@
 import { ctaClickInteraction } from '../../dl.js';
-import { getProps } from '../../scripts/scripts.js';
+import { getProps } from '../../scripts/common.js';
 
 export default function decorate(block) {
   const [mainTitle, title, subTitle, content, button, buttonURL, type, image] = getProps(block, {

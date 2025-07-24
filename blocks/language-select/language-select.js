@@ -1,4 +1,4 @@
-import { getProps } from '../../scripts/scripts.js';
+import { getProps } from '../../scripts/common.js';
 
 export default function decorate(block) {
   // console.log(block);

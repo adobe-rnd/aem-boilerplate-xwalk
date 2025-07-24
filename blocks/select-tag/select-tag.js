@@ -1,4 +1,4 @@
-import { getProps } from '../../scripts/scripts.js';
+import { getProps } from '../../scripts/common.js';
 import { loader } from '../loader/loader.js';
 import { getSelectedLanguage, getLanguageByLocation, getLanguageByState } from './getSelectedLanguage.js';
 

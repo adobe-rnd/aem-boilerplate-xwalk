@@ -1,7 +1,6 @@
 import { ctaClickInteraction } from '../../dl.js';
-import {
-  createButton, createCarousle, getProps, targetObject,
-} from '../../scripts/scripts.js';
+import { targetObject } from '../../scripts/scripts.js';
+import { createButton, createCarousle, getProps } from '../../scripts/common.js';
 import Glider from '../carousel/glider.js';
 
 export default function decorate(block) {

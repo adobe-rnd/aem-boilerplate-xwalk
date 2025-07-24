@@ -1,4 +1,4 @@
-import { fetchAPI } from '../../scripts/scripts.js';
+import { fetchAPI } from '../../scripts/common.js';
 import {
   generateOTPAPI, getAccessToken, resendOtpAPI, showNetworkFailedScreen, verfyOtpAPI,
 } from '../applyloanform/loanformapi.js';

@@ -1,5 +1,5 @@
 import { fetchPlaceholders, getMetadata } from '../../scripts/aem.js';
-import { branchURLStr, CFApiCall } from '../../scripts/scripts.js';
+import { branchURLStr, CFApiCall } from '../../scripts/common.js';
 import { dropDownStateCity, locateMeClick, onloadBranchLocator } from './branchlocator-biz.js';
 import { setLocationObj } from './branchlocator-init.js';
 

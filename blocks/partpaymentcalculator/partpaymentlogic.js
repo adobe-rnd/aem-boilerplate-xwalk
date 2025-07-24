@@ -1,7 +1,7 @@
 // let partPayments = [
 //     { monthDifference: 6, partPayAmount: 60000 },
 
-import { currenyCommaSeperation } from '../../scripts/scripts.js';
+import { currenyCommaSeperation } from '../../scripts/common.js';
 
 //   ];
 function displayingDataFromElement(emi, effInt, totalSavings, monthCounter, interestAmtSum) {

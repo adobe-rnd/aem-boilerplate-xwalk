@@ -1,4 +1,4 @@
-import { fetchAPI } from '../../scripts/scripts.js';
+import { fetchAPI } from '../../scripts/common.js';
 
 let data;
 const gooleMapKey = "AIzaSyDx1HwnCLjSSIm_gADqaYAZhSBh7hgcwTQ";

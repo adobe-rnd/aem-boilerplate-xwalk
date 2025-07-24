@@ -1,4 +1,5 @@
-import { body, createCarousle, targetObject } from '../../scripts/scripts.js';
+import { targetObject } from '../../scripts/scripts.js';
+import { body, createCarousle } from '../../scripts/common.js';
 import { applyLoanFormClick, formOpen } from '../applyloanform/applyloanforms.js';
 import { buttonCLick } from '../applyloanform/loanformapi.js';
 import { loanutmForm } from '../applyloanform/loanutm.js';

@@ -3,7 +3,8 @@
 import {
   errorPopUp, formInteraction, generateLead, lpOtpValidate, resendOtp, thankYouPopUp, verifyOtp,
 } from '../../dl.js';
-import { fetchAPI, targetObject } from '../../scripts/scripts.js';
+import { targetObject } from '../../scripts/scripts.js';
+import { fetchAPI } from '../../scripts/common.js';
 import {
   accessTokenURL, generateOTPURL, leadAPIURL, otpTokenURL, resendOTPUrl, smsURL, verifyOTPURL,
 } from './loanformapiurls.js';

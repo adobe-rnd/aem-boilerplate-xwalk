@@ -1,4 +1,4 @@
-import { decorateViewMore } from '../../scripts/scripts.js';
+import { decorateViewMore } from '../../scripts/common.js';
 import { statemasterGetStatesApi } from '../applyloanform/statemasterapi.js';
 import { validationJSFunc } from '../applyloanform/validation.js';
 import { formOpen } from '../applyloanform/applyloanforms.js';

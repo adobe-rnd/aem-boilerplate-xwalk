@@ -1,5 +1,5 @@
 import { ctaClickInteraction } from '../../dl.js';
-import { createCarousle, getProps } from '../../scripts/scripts.js';
+import { createCarousle, getProps } from '../../scripts/common.js';
 
 function createButton(text, picture) {
   const button = document.createElement('button');

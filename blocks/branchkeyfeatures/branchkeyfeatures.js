@@ -1,4 +1,4 @@
-import { CFApiCall, groupAllKeys } from '../../scripts/scripts.js';
+import { CFApiCall, groupAllKeys } from '../../scripts/common.js';
 import { featureDropDownClick } from '../keyfeatures/keyfeatures.js';
 import { setLocationObj } from '../moredetailsaddress/moredetailsaddress.js';
 
