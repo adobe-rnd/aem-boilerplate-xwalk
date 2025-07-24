@@ -1,8 +1,7 @@
 // import { formOpen, overlay } from '../blocks/applyloanform/applyloanforms.js';
 // import { statemasterGetStatesApi } from '../blocks/applyloanform/statemasterapi.js';
 // import { validationJSFunc } from '../blocks/applyloanform/validation.js';
-import { toggleAllNavSections } from '../blocks/header/header.js';
-import { applyLoanInteraction, ctaClick, selectBranchInteraction } from '../dl.js';
+import {ctaClick } from '../dl.js';
 import {
   sampleRUM, loadHeader, loadFooter, decorateButtons, decorateIcons, decorateSections, decorateBlocks, decorateTemplateAndTheme, waitForLCP, loadBlocks, loadCSS, fetchPlaceholders,
   getMetadata,

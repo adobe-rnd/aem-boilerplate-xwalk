@@ -1,3 +1,4 @@
+import { selectBranchInteraction } from '../dl.js';
 import {getMetadata} from './aem.js';
 import { targetObject } from './scripts.js'
 
@@ -496,7 +497,8 @@ export function showingStateCity(searchInputAll) {
           const dataAnalytics = {};
           dataAnalytics.cta_position = e.target.closest('.cards-branches-container ')?.querySelector('.title h2')?.textContent.trim();
           dataAnalytics.branch_name = e.target.closest('.card-box')?.querySelector('.card-title')?.textContent.trim().replace(/\s+/g, ' ');
-          selectBranchInteraction(dataAnalytics);
+          selectBranchInteraction
+          (dataAnalytics);
         });
       } catch (error) {
         console.warn(error);

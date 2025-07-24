@@ -1,3 +1,4 @@
+import { toggleAllNavSections } from '../blocks/header/header.js';
 import { body, showingStateCity } from './common.js'
 
 export default function eventInit() {
