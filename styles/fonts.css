@@ -59,7 +59,7 @@
     src: url(.././fonts/icomoon.woff) format("woff");
     font-weight: 400;
     font-style: normal;
-    font-display: block
+    font-display: swap
 }
 
 [class^=icon-],
@@ -84,7 +84,7 @@
     src: url(../fonts/icomoon-download.woff) format("woff");
     font-weight: 400;
     font-style: normal;
-    font-display: block
+    font-display: swap
 }
 
 [class^=icon-],
@@ -109,7 +109,7 @@
     src: url(../fonts/icomoon-media.woff) format("woff");
     font-weight: 400;
     font-style: normal;
-    font-display: block
+    font-display: swap
 }
 
 [class^=icon-],
@@ -130,7 +130,7 @@
     src: url(../fonts/icomoon-media-bell.woff) format("woff");
     font-weight: 400;
     font-style: normal;
-    font-display: block
+    font-display: swap
 }
 
 [class^=icon-],
