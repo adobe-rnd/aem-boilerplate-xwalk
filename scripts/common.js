@@ -2,6 +2,19 @@ import { selectBranchInteraction } from '../dl.js';
 import {getMetadata} from './aem.js';
 import { targetObject } from './scripts.js'
 
+export function moveAttributes(from, to, attributes) {
+  if (!attributes) {
+    // eslint-disable-next-line no-param-reassign
+    attributes = [...from.attributes].map(({ nodeName }) => nodeName);
+  }
+  attributes.forEach((attr) => {
+    const value = from.getAttribute(attr);
+    if (value) {
+      to.setAttribute(attr, value);
+      from.removeAttribute(attr);
+    }
+  });
+}
 
 export function renderHelper(data, template, callBack) {
     const dom = document.createElement('div');

@@ -16,20 +16,6 @@ const LCP_BLOCKS = []; // add your LCP blocks to the list
  * @param {Element} from the element to copy attributes from
  * @param {Element} to the element to copy attributes to
  */
-export function moveAttributes(from, to, attributes) {
-  if (!attributes) {
-    // eslint-disable-next-line no-param-reassign
-    attributes = [...from.attributes].map(({ nodeName }) => nodeName);
-  }
-  attributes.forEach((attr) => {
-    const value = from.getAttribute(attr);
-    if (value) {
-      to.setAttribute(attr, value);
-      from.removeAttribute(attr);
-    }
-  });
-}
-
 /**
  * create an element.
  * @param {string} tagName the tag for the element
