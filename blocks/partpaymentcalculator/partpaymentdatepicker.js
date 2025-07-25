@@ -1,4 +1,4 @@
-import { currenyCommaSeperation } from '../../scripts/scripts.js';
+import { currenyCommaSeperation } from '../../scripts/common.js';
 import { updatePartPayment } from './partpaymentlogic.js';
 // import { nextMonth, firstElem, secondEle, parentContainer, count, array, partpaymentArra, datepickerObjFirstLoan, airDatePickerObj } from "./partpaymentcalculator.js";
 

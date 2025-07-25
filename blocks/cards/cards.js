@@ -1,6 +1,7 @@
 import { ctaClickInteraction } from '../../dl.js';
 import { createOptimizedPicture } from '../../scripts/aem.js';
-import { decoratePlaceholder, moveInstrumentation } from '../../scripts/scripts.js';
+import { decoratePlaceholder } from '../../scripts/scripts.js';
+import { moveInstrumentation } from '../../scripts/common.js';
 
 export default async function decorate(block) {
   /* change to ul, li */

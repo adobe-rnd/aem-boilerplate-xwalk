@@ -1,6 +1,7 @@
 import { ctaClick, ctaClickInteraction } from '../../dl.js';
 import { autoLinkLangPath } from '../../scripts/aem.js';
-import { renderHelper, targetObject } from '../../scripts/scripts.js';
+import { targetObject } from '../../scripts/scripts.js';
+import { renderHelper } from '../../scripts/common.js';
 import { loanProductsAnalytics } from './teaserv2-analytics.js';
 
 export default async function decorate(block) {

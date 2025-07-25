@@ -2,7 +2,8 @@ import { renderCalculatorData } from '../emiandeligiblitycalc/renderhpcal.js';
 import { homeLoanCalcFunc } from '../emiandeligiblitycalc/homeloancalculators.js';
 import { CalcHTM } from '../emiandeligiblitycalc/templatehtml1.js';
 import { firstTabActive } from '../emiandeligiblitycalc/commonfile.js';
-import { calculatorFlatStrLogic, CFApiCall, fetchAPI, targetObject } from '../../scripts/scripts.js';
+import { targetObject } from '../../scripts/scripts.js';
+import { calculatorFlatStrLogic, CFApiCall, fetchAPI } from '../../scripts/common.js';
 
 let calculatorType; let elgCalDiv; let elgOverlay; let overlay;
 

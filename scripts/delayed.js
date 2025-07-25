@@ -1,11 +1,13 @@
 // eslint-disable-next-line import/no-cycle
 import { fetchPlaceholders, getMetadata, sampleRUM } from './aem.js';
+import eventInit from './events.js';
 
 
 
 // Core Web Vitals RUM collection
 sampleRUM('cwv');
 
+eventInit();
 
 function loadServiceWorker() {
   if ('serviceWorker' in navigator) {

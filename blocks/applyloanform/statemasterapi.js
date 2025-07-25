@@ -1,5 +1,5 @@
 import { workFlowStatemaster } from './statemasterbiz.js';
-import { fetchAPI } from '../../scripts/scripts.js';
+import { fetchAPI } from '../../scripts/common.js';
 
 export function stateMasterApi() {
   const loaninnerform = document.querySelector('.loan-form-sub-parent');

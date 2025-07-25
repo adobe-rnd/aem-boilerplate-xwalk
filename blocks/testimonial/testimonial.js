@@ -1,4 +1,4 @@
-import { fetchAPI, getProps, renderHelper } from '../../scripts/scripts.js';
+import { fetchAPI, getProps, renderHelper } from '../../scripts/common.js';
 import { customerTemplateCopy, customerCardCopy } from './template.js';
 
 export default async function decorate(block) {

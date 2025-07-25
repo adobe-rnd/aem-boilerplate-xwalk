@@ -1,4 +1,4 @@
-import { calculatorFlatStrLogic, CFApiCall, currenyCommaSeperation, fetchAPI } from '../../scripts/scripts.js';
+import { calculatorFlatStrLogic, CFApiCall, currenyCommaSeperation, fetchAPI } from '../../scripts/common.js';
 import { homeLoanCalcFunc } from '../emiandeligiblitycalc/homeloancalculators.js';
 import { homeloanCalHTML } from '../homeloancalculatorv2/templatehtmlv2.js';
 

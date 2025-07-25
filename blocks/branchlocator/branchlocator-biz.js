@@ -1,6 +1,6 @@
 import { locateMeInteraction, selectBranchInteraction } from "../../dl.js";
 import { getMetadata, loadScript } from "../../scripts/aem.js";
-import { branchURLStr, fetchAPI, selectBranchDetails } from "../../scripts/scripts.js";
+import { branchURLStr, fetchAPI, selectBranchDetails } from "../../scripts/common.js";
 import returnLatLan from "./sort.js";
 import { initMap, searchBranchByURL } from "./branchlocator-api.js";
 import { setLocationObj } from "./branchlocator-init.js";

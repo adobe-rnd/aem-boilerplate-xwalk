@@ -1,4 +1,4 @@
-import { fetchAPI } from '../../scripts/scripts.js';
+import { fetchAPI } from '../../scripts/common.js';
 
 
 /* this function also gets called by accordion-group */

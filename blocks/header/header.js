@@ -1,6 +1,7 @@
 import { headerInteraction, navlogin } from '../../dl.js';
 import { autoLinkLangPath, fetchPlaceholders, getMetadata } from '../../scripts/aem.js';
-import { body, targetObject } from '../../scripts/scripts.js';
+import { targetObject } from '../../scripts/scripts.js';
+import { body } from '../../scripts/common.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 // media query match that indicates mobile/tablet width

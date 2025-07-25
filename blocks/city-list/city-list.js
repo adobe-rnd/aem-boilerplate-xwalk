@@ -1,6 +1,6 @@
 import { ctaClickInteraction } from '../../dl.js';
 import { getMetadata } from '../../scripts/aem.js';
-import { fetchAPI, getProps, renderHelper } from '../../scripts/scripts.js';
+import { fetchAPI, getProps, renderHelper } from '../../scripts/common.js';
 
 export default async function decorate(block) {
   const [url] = getProps(block);

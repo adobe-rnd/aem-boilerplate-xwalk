@@ -1,5 +1,5 @@
 import { fetchPlaceholders } from '../../scripts/aem.js';
-import { branchURLStr, selectBranchDetails } from '../../scripts/scripts.js';
+import { branchURLStr, selectBranchDetails } from '../../scripts/common.js';
 import { setLocationObj } from '../moredetailsaddress/moredetailsaddress.js';
 
 export function nearestLoction(placeholders) {

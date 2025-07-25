@@ -3,7 +3,7 @@ import { firstTabActive } from "./commonfile.js"; */
 import { homeloanCalHTML } from './templatehtmlv2.js';
 import { homeLoanCalcFunc } from './homeloancalculators.js';
 import { calculatorTypeTabClick, mainTabClick, renderEmiEligibility } from './combineemieligibility.js';
-import { calculatorFlatStrLogic, CFApiCall, fetchAPI } from '../../scripts/scripts.js';
+import { calculatorFlatStrLogic, CFApiCall, fetchAPI } from '../../scripts/common.js';
 
 let calculatorType; let emiCalDiv; let emiOverlay;
 

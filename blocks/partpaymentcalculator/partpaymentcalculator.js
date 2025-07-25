@@ -1,4 +1,4 @@
-import { CFApiCall, fetchAPI } from '../../scripts/scripts.js';
+import { CFApiCall, fetchAPI } from '../../scripts/common.js';
 import { homeLoanCalcFunc } from '../emiandeligiblitycalc/homeloancalculators.js';
 import { onloadDatePickerCalls } from './partpaymentdatepicker.js';
 import { partPaymentCalHTML } from './partpaymenttemplate.js';

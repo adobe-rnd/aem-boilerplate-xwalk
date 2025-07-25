@@ -1,4 +1,4 @@
-import { currenyCommaSeperation } from '../../scripts/scripts.js';
+import { currenyCommaSeperation } from '../../scripts/common.js';
 import { resetCalculator } from './resetCalculator.js';
 
 /* document.addEventListener("DOMContentLoaded", function () {

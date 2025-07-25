@@ -7,7 +7,7 @@ import { validationJSFunc } from './validation.js';
 import AirDatepicker from '../datepickerlib/datepickerlib.js';
 import Popper from '../datepickerlib/popper.js';
 import { buttonCLick } from './loanformapi.js';
-import { CFApiCall, fetchAPI } from '../../scripts/scripts.js';
+import { CFApiCall, fetchAPI } from '../../scripts/common.js';
 
 export default async function decorate(block) {
   const cfURL = block.textContent.trim();

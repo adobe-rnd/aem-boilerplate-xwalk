@@ -1,4 +1,5 @@
-import { CFApiCall, targetObject } from '../../scripts/scripts.js';
+import { targetObject } from '../../scripts/scripts.js';
+import { CFApiCall } from '../../scripts/common.js';
 import { ctaClickInteraction } from '../../dl.js';
 
 export default async function decorate(block) {

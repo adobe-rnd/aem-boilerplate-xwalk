@@ -1,4 +1,4 @@
-import { showingStateCity } from "../../scripts/scripts.js";
+import { showingStateCity } from "../../scripts/common.js";
 import { onClickCity, onClickState } from "./branchlocator-biz.js";
 import { setLocationObj } from "./branchlocator-init.js";
 import { sortElements } from "./sort.js";

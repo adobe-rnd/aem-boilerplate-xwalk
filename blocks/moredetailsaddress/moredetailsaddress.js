@@ -1,5 +1,5 @@
 import { getMetadata } from "../../scripts/aem.js";
-import { CFApiCall, fetchAPI, getDay } from "../../scripts/scripts.js";
+import { CFApiCall, fetchAPI, getDay } from "../../scripts/common.js";
 
 export const setLocationObj = {
   getExcelData: null,

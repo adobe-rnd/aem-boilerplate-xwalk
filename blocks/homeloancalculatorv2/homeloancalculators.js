@@ -1,5 +1,6 @@
 import { ctaClick } from '../../dl.js';
-import { currenyCommaSeperation, targetObject } from '../../scripts/scripts.js';
+import { targetObject } from '../../scripts/scripts.js';
+import { currenyCommaSeperation } from '../../scripts/common.js';
 import { renderCalculatorData } from './renderhpcal.js';
 import { resetCalculator } from './resetCalculator.js';
 

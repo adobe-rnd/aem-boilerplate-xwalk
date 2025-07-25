@@ -1,4 +1,4 @@
-import { createButton, createCarousle, getProps } from '../../scripts/scripts.js';
+import { createButton, createCarousle, getProps } from '../../scripts/common.js';
 import { generateTabName } from '../tab-name/tab-name.js';
 
 export default function decorate(block) {
