@@ -5,15 +5,14 @@ export function loanTypeDropdownSelect() {
   const loanTypeDrpParent = document.querySelector('.loan-form-drpdown');
   if (loanTypeDrpParent) {
     const loanOption = loanTypeDrpParent.querySelectorAll('.subpoints');
-    const redirectionLonTypes = ['loan less than 5 lacs', 'loan more than 5 lacs'];
+    const redirectionLonTypes = ['loan less than 1 lacs'];
     loanOption.forEach((option) => {
       option.addEventListener('click', () => {
         const optionTxt = option.textContent.trim();
         loanTypeInput.value = optionTxt;
         if (redirectionLonTypes.includes(optionTxt.toLocaleLowerCase())) {
           let checkURLText = {
-            "loan less than 5 lacs" : "less-than-5lacs",
-            "loan more than 5 lacs" : "more-than-5lacs",
+            "loan less than 1 lacs" : "less-than-1lacs"
           }
           let makewebFormURL= checkURLText[optionTxt.toLocaleLowerCase()];
           loanFormUTM(makewebFormURL);
