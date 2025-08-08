@@ -35,8 +35,7 @@ export async function loanFormUTM(makewebFormURL) {
   const placeholders = await fetchPlaceholders();
   let redirectionLink = placeholders.formredirectionlink; //'https://www.piramalfinance.com/loan';
   const utm_device = isMobile.any() ? 'MWEB' : 'DWEB';
-  const utm_source = window.lo
-  cation.pathname.split('/').pop().replace(/\.html$/, '');
+  const utm_source = window.location.pathname.split('/').pop().replace(/\.html$/, '');
 
   // redirectionLink = `${redirectionLink}?utm_device=${utm_device}&utm_source=website-leadform-${utm_source}`;
   redirectionLink = `${redirectionLink}?utm_device=${utm_device}&utm_source=website-leadform-${makewebFormURL}`;
