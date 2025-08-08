@@ -272,12 +272,6 @@ async function loadEager(doc) {
 async function loadLazy(doc) {
   autolinkModals(doc);
 
-
-  const templateName = getMetadata('template');
-  if (templateName) {
-    await loadTemplate(doc, templateName);
-  }
-
   const main = doc.querySelector('main');
   await loadBlocks(main);
 
@@ -337,6 +331,10 @@ async function loadTemplate(doc, templateName) {
 
 async function loadPage() {
   // loadHeader(document.querySelector('header'));
+  const templateName = getMetadata('template');
+  if (templateName) {
+    await loadTemplate(document, templateName);
+  }
   await loadingCustomCss();
   await loadEager(document);
   await loadLazy(document);
