@@ -8,6 +8,16 @@ export function validationJSFunc() {
   const checkEmptyFor = [loanProduct(), formLoanAmt(), cutomerName(), cutomerIncome(), stateInput(), branchInput(), formTc()];
   const checkDateFor = [formDobInput()];
   const checkValidPlaceFor = [stateInput(), branchInput()];
+  const checkLoanAmtFor = [formLoanAmt()];
+  const checkcustomerIncome = [cutomerIncome()];
+
+  cutomerIncome().addEventListener('input', function (e) {
+    isValidIncome(e.target);
+  })
+
+  formLoanAmt().addEventListener('input', function (e) {
+    isValidLoanAmt(e.target);
+  })
 
   loanFormContainer().addEventListener('input', ({ target }) => {
     if (target.tagName != 'INPUT') return;
@@ -19,6 +29,8 @@ export function validationJSFunc() {
 
       return false;
     }
+
+    // console.log(target);
 
     if (target.dataset.valueType == 'name') {
       target.value = target.value.replace(/[^a-zA-Z ]+/g, '');
@@ -32,8 +44,10 @@ export function validationJSFunc() {
     const isNUmberValidations = checkNumberFor.every((input) => isValidNumber(input, target));
     const isPlaceValidations = checkValidPlaceFor.every((input) => isValidPlace(input, target));
     const isDateValidations = checkDateFor.every((input) => validateAndFormatDate(input, target));
+    const isLoanAmtValidation = checkLoanAmtFor.every((input) => isValidLoanAmt(input, target));
+    const isCustIncomeValidation = checkcustomerIncome.every((input) => isValidIncome(input, target));
 
-    if (isEmptyValidations && isNUmberValidations && isPlaceValidations && isDateValidations) {
+    if (isEmptyValidations && isNUmberValidations && isPlaceValidations && isDateValidations && isLoanAmtValidation && isCustIncomeValidation) {
       loanFromBtn().classList.add('loan-form-button-active');
     } else {
       loanFromBtn().classList.remove('loan-form-button-active');
@@ -94,6 +108,36 @@ function isValidNumber(input, target) {
   return mobRegex && inputValue.length == 10;
 }
 
+function isValidLoanAmt(input, target) {
+  const inputValue = input.value.replace(/,/g, '');
+  const amount = parseInt(inputValue, 10);
+
+  const loanType = document.querySelector('#form-loan-type')?.value;
+
+  const mobileErrorMsg = document.querySelector('.invalid-loanamount-msg');
+  if (loanType.trim().toLowerCase() !== 'personal loan' && input !== target) return;
+  if (amount < 100000) {
+    mobileErrorMsg.style.display = 'block';
+  } else {
+    mobileErrorMsg.style.display = 'none';
+  }
+}
+
+function isValidIncome(input, target) {
+  const inputValue = input.value.replace(/,/g, '');
+  const amount = parseInt(inputValue, 10);
+
+  const loanType = document.querySelector('#form-loan-type')?.value;
+
+  const mobileErrorMsg = document.querySelector('.invalid-monthlyincome-msg');
+  if (loanType.trim().toLowerCase() !== 'personal loan' && input !== target) return;
+  if (amount < 25000) {
+    mobileErrorMsg.style.display = 'block';
+  } else {
+    mobileErrorMsg.style.display = 'none';
+  }
+}
+
 function isValidPlace(input, target) {
   const isSelected = input.classList.contains('place-selected');
 
@@ -148,8 +192,8 @@ function isValidDate(dateString, input, target) {
 
   const isValidDate = (
     date.getFullYear() === year
-        && date.getMonth() === month
-        && date.getDate() === day
+    && date.getMonth() === month
+    && date.getDate() === day
   );
 
   if (isValidDate && (input == target)) {
