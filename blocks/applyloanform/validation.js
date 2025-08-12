@@ -120,6 +120,7 @@ function isValidLoanAmt(input, target) {
     mobileErrorMsg.style.display = 'block';
   } else {
     mobileErrorMsg.style.display = 'none';
+    return true;
   }
 }
 
@@ -135,6 +136,7 @@ function isValidIncome(input, target) {
     mobileErrorMsg.style.display = 'block';
   } else {
     mobileErrorMsg.style.display = 'none';
+    return true;
   }
 }
 
