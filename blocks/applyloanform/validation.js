@@ -55,7 +55,7 @@ loanFormContainer().addEventListener('input', ({ target }) => {
   const isCustIncomeValidation = checkcustomerIncome.every((input) => isValidIncome(input, target));
   const isDobValidation = checkDateFor.every((input) => isValidDob(input));
 
-  if (isEmptyValidations && isNUmberValidations && isPlaceValidations && isDateValidations && isLoanAmtValidation && isCustIncomeValidation) {
+  if (isEmptyValidations && isNUmberValidations && isPlaceValidations && isDateValidations && isLoanAmtValidation && isCustIncomeValidation && isDobValidation) {
     loanFromBtn().classList.add('loan-form-button-active');
   } else {
     loanFromBtn().classList.remove('loan-form-button-active');
