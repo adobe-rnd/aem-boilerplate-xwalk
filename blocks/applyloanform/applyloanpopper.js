@@ -104,6 +104,7 @@ export function applyLoanPopper() {
 
        const errMsg = document.querySelector('.invalid-date-msg');
        dobInput.dataset.validdate == "true" ? errMsg.style.display = "none" : errMsg.style.display = "block";
+       dobInput.dataset.validdate == "true" ?  loanFromBtn().classList.add('loan-form-button-active') :  loanFromBtn().classList.remove('loan-form-button-active');
       },
 
       locale: {
@@ -167,12 +168,14 @@ export function applyLoanPopper() {
         const dobInput = formDobInput();
         if(!loanType || !dobInput) return;
         if (loanType.trim().toLowerCase() !== 'personal loan') return;
+
         
        const age =  calculateAgeFromInput(formattedDate);
        dobInput.dataset.validdate = age < 23 ? "false" : "true";
 
        const errMsg = document.querySelector('.invalid-date-msg');
        dobInput.dataset.validdate == "true" ? errMsg.style.display = "none" : errMsg.style.display = "block";
+       dobInput.dataset.validdate == "true" ?  loanFromBtn().classList.add('loan-form-button-active') :  loanFromBtn().classList.remove('loan-form-button-active');
       },
 
       locale: {
