@@ -234,7 +234,7 @@ export function appplyLoanTemplate(properties) {
                                     <div class="cmp-form-text">
                                         <label for="form-text">${properties.datePicker}<span>*</span></label>
                                         <div class="cmp-form-text-parent" id="dob-container">
-                                            <input class="cmp-form-text__text dobclass" type="text" placeholder="${properties.datePickerPlaceholder}" data-validdate=" "
+                                            <input class="cmp-form-text__text dobclass" type="text" placeholder="${properties.datePickerPlaceholder}" data-validdate=""
                                                 id="loan-form-dob" name="text" maxlength="10" autocomplete="off" data-value-type="date">
                                             <span class="arrowimage dobarrow" id="loan-form-cal-id"><img class="lozad" src="/images/calendar.png"
                                                 data-src="/images/calendar.png" alt="dobarrow">
