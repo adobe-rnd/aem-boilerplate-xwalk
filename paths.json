@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/aem-sites-with-edge-delivery-services-template/:/",
-    "/content/aem-sites-with-edge-delivery-services-template/configuration:/.helix/config.json",
-    "/content/aem-sites-with-edge-delivery-services-template/metadata:/metadata.json"
+    "/content/columns-example/:/",
+    "/content/columns-example/configuration:/.helix/config.json",
+    "/content/columns-example/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/aem-sites-with-edge-delivery-services-template/"
+    "/content/columns-example/"
   ]
 }
