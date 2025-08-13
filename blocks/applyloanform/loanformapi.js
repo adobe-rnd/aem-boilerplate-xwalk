@@ -427,7 +427,9 @@ function getProductMap(product, occupation) {
 
   if (product == 'ubl') return occupation == 'business' ? 'bussinessLoan' : false;
 
-  if (product == 'pl') return occupation == 'salaried' ? 'personalLoan' : false;
+  // if (product == 'pl') return occupation == 'salaried' ? 'personalLoan' : false;
+  if (product == 'pl') return occupation == 'salaried' ? 'personalLoan' : true;
+
 
   if (product == 'ucl') return occupation == 'salaried' ? 'preOwnedCarLoanSAL' : 'preOwnedCarLoanSE';
 
