@@ -10,70 +10,69 @@ export function validationJSFunc() {
   const checkValidPlaceFor = [stateInput(), branchInput()];
   const checkLoanAmtFor = [formLoanAmt()];
   const checkcustomerIncome = [cutomerIncome()];
+  
 
-  cutomerIncome().addEventListener('input', function (e) {
-    isValidIncome(e.target);
-  })
+loanFormContainer().addEventListener('input', ({ target }) => {
+  if (target.tagName != 'INPUT') return;
 
-  formLoanAmt().addEventListener('input', function (e) {
-    isValidLoanAmt(e.target);
-  })
+  if (target.dataset.valueType == 'money') {
+    let inputValue = target.value;
+    inputValue = inputValue.replace(/^0|\D/g, '');
+    target.value = currenyCommaSeperation(inputValue);
 
-  loanFormContainer().addEventListener('input', ({ target }) => {
-    if (target.tagName != 'INPUT') return;
-
-    if (target.dataset.valueType == 'money') {
-      let inputValue = target.value;
-      inputValue = inputValue.replace(/^0|\D/g, '');
-      target.value = currenyCommaSeperation(inputValue);
-
-      return false;
+    if (target.id === 'form-income') {
+      isValidIncome(target);
     }
 
-    // console.log(target);
-
-    if (target.dataset.valueType == 'name') {
-      target.value = target.value.replace(/[^a-zA-Z ]+/g, '');
+    if (target.id === 'form-loan-amount') {
+      isValidLoanAmt(target);
     }
 
-    if (target.dataset.valueType == 'date') {
-      target.value = target.value.replace(/\D/g, '');
-    }
+    return false;
+  }
 
-    const isEmptyValidations = checkEmptyFor.every(isEmpty);
-    const isNUmberValidations = checkNumberFor.every((input) => isValidNumber(input, target));
-    const isPlaceValidations = checkValidPlaceFor.every((input) => isValidPlace(input, target));
-    const isDateValidations = checkDateFor.every((input) => validateAndFormatDate(input, target));
-    const isLoanAmtValidation = checkLoanAmtFor.every((input) => isValidLoanAmt(input, target));
-    const isCustIncomeValidation = checkcustomerIncome.every((input) => isValidIncome(input, target));
+  if (target.dataset.valueType == 'name') {
+    target.value = target.value.replace(/[^a-zA-Z ]+/g, '');
+  }
 
-    if (isEmptyValidations && isNUmberValidations && isPlaceValidations && isDateValidations && isLoanAmtValidation && isCustIncomeValidation) {
-      loanFromBtn().classList.add('loan-form-button-active');
-    } else {
-      loanFromBtn().classList.remove('loan-form-button-active');
-    }
+  if (target.dataset.valueType == 'date') {
+    target.value = target.value.replace(/\D/g, '');
+  }
+
+  const isEmptyValidations = checkEmptyFor.every(isEmpty);
+  const isNUmberValidations = checkNumberFor.every((input) => isValidNumber(input, target));
+  const isPlaceValidations = checkValidPlaceFor.every((input) => isValidPlace(input, target));
+  const isDateValidations = checkDateFor.every((input) => validateAndFormatDate(input, target));
+  const isLoanAmtValidation = checkLoanAmtFor.every((input) => isValidLoanAmt(input, target));
+  const isCustIncomeValidation = checkcustomerIncome.every((input) => isValidIncome(input, target));
+
+  if (isEmptyValidations && isNUmberValidations && isPlaceValidations && isDateValidations && isLoanAmtValidation && isCustIncomeValidation) {
+    loanFromBtn().classList.add('loan-form-button-active');
+  } else {
+    loanFromBtn().classList.remove('loan-form-button-active');
+  }
+});
+
+loanOtpInput().addEventListener('input', ({ currentTarget }) => {
+  const inputValue = currentTarget.value.trim();
+  currentTarget.value = inputValue.replace(/\D/g, '');
+  document.querySelector('#otp-digits').textContent = `${currentTarget.value.length}/4 Digits`;
+
+  if (currentTarget.value.length == 4) {
+    loanFormOtpBtn().classList.add('loan-form-button-active');
+  } else {
+    loanFormOtpBtn().classList.remove('loan-form-button-active');
+  }
+});
+
+const StateBranchRegx = document.querySelectorAll('.checkInputRegx input');
+
+StateBranchRegx.forEach((input) => {
+  input.addEventListener('input', ({ currentTarget }) => {
+    const inputValue = currentTarget.value;
+    currentTarget.value = inputValue.replace(/[^a-zA-Z ]+/g, '');
   });
-
-  loanOtpInput().addEventListener('input', ({ currentTarget }) => {
-    const inputValue = currentTarget.value.trim();
-    currentTarget.value = inputValue.replace(/\D/g, '');
-    document.querySelector('#otp-digits').textContent = `${currentTarget.value.length}/4 Digits`;
-
-    if (currentTarget.value.length == 4) {
-      loanFormOtpBtn().classList.add('loan-form-button-active');
-    } else {
-      loanFormOtpBtn().classList.remove('loan-form-button-active');
-    }
-  });
-
-  const StateBranchRegx = document.querySelectorAll('.checkInputRegx input');
-
-  StateBranchRegx.forEach((input) => {
-    input.addEventListener('input', ({ currentTarget }) => {
-      const inputValue = currentTarget.value;
-      currentTarget.value = inputValue.replace(/[^a-zA-Z ]+/g, '');
-    });
-  });
+});
 }
 
 function isEmpty(input) {
@@ -155,6 +154,29 @@ function isValidPlace(input, target) {
   return isSelected;
 }
 
+export function calculateAgeFromInput(dateString) {
+  if (!dateString.includes('/')) return;
+
+  const [day, month, year] = dateString.split('/');
+  const birthDate = new Date(`${year}-${month}-${day}`);
+
+  if (isNaN(birthDate)) {
+    console.log("Invalid date format");
+    return;
+  }
+
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const m = today.getMonth() - birthDate.getMonth();
+
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+
+  console.log("Age is:", age);
+  return age;
+}
+
 function validateAndFormatDate(input, target) {
   const inputField = input;
   const inputValue = inputField.value;
@@ -171,12 +193,9 @@ function validateAndFormatDate(input, target) {
       }
 
       if (input == target) {
-        const errMsg = input.closest('.cmp-form-text-parent').querySelector('.loan-form-err');
-        if (isDate) {
-          errMsg.style.display = 'none';
-        } else {
-          errMsg.style.display = 'block';
-        }
+        console.log(input.dataset.validdate);
+        const errMsg = document.querySelector('.invalid-date-msg');
+        input.dataset.validdate == "true" ? errMsg.style.display = "none" : errMsg.style.display = "block";
       }
     }
   }
