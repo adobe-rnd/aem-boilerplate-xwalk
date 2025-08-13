@@ -225,7 +225,7 @@ export function appplyLoanTemplate(properties) {
                                             <span class="rupee">₹</span>
                                             <input class="cmp-form-text__text" id="form-income" data-value-type="money"  type="text" placeholder="" name="text" autocomplete="off">
                                             <span class="loan-form-err invalid-monthlyincome-msg">
-                                                Minimum salary should be 25,000..
+                                                Minimum salary should be 25,000.
                                             </span>
                                         </div>
                                     </div>
@@ -234,14 +234,13 @@ export function appplyLoanTemplate(properties) {
                                     <div class="cmp-form-text">
                                         <label for="form-text">${properties.datePicker}<span>*</span></label>
                                         <div class="cmp-form-text-parent" id="dob-container">
-                                            <input class="cmp-form-text__text dobclass" type="text" placeholder="${properties.datePickerPlaceholder}"
+                                            <input class="cmp-form-text__text dobclass" type="text" placeholder="${properties.datePickerPlaceholder}" data-validdate=" "
                                                 id="loan-form-dob" name="text" maxlength="10" autocomplete="off" data-value-type="date">
                                             <span class="arrowimage dobarrow" id="loan-form-cal-id"><img class="lozad" src="/images/calendar.png"
                                                 data-src="/images/calendar.png" alt="dobarrow">
                                             </span>
-    
                                             <span class="loan-form-err invalid-date-msg">
-                                                Kindly enter proper date of birth
+                                                Minimum age should be 23 years.
                                             </span>
                                         </div>
                                     </div>
