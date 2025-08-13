@@ -104,7 +104,7 @@ export function applyLoanPopper() {
 
        const errMsg = document.querySelector('.invalid-date-msg');
        dobInput.dataset.validdate == "true" ? errMsg.style.display = "none" : errMsg.style.display = "block";
-       dobInput.dataset.validdate == "true" ?  loanFromBtn().classList.add('loan-form-button-active') :  loanFromBtn().classList.remove('loan-form-button-active');
+      //  dobInput.dataset.validdate == "true" ?  loanFromBtn().classList.add('loan-form-button-active') :  loanFromBtn().classList.remove('loan-form-button-active');
       },
 
       locale: {
@@ -175,7 +175,7 @@ export function applyLoanPopper() {
 
        const errMsg = document.querySelector('.invalid-date-msg');
        dobInput.dataset.validdate == "true" ? errMsg.style.display = "none" : errMsg.style.display = "block";
-       dobInput.dataset.validdate == "true" ?  loanFromBtn().classList.add('loan-form-button-active') :  loanFromBtn().classList.remove('loan-form-button-active');
+      //  dobInput.dataset.validdate == "true" ?  loanFromBtn().classList.add('loan-form-button-active') :  loanFromBtn().classList.remove('loan-form-button-active');
       },
 
       locale: {

@@ -28,7 +28,7 @@ const loadProduct = {
     location: 'branch selected', profile: 'se', age: { min: 21 }, income: { min: 15000 },
   },
   personalLoan: {
-    location: 'branch selected', profile: 'sal', age: { min: 23, max: 57 }, income: { min: 20000 }, loan: { min: 500000 },
+    location: 'branch selected', profile: 'sal', age: { min: 23, max: 60 }, income: { min: 25000 }, loan: { min: 100000 },
   },
   preOwnedCarLoanSAL: {
     location: 'branch selected', profile: 'sal', age: { min: 21, max: 60 }, income: { min: 16666 }, loan: { max: 1500000 },
