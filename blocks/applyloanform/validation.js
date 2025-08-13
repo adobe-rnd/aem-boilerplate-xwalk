@@ -10,6 +10,14 @@ export function validationJSFunc() {
   const checkValidPlaceFor = [stateInput(), branchInput()];
   const checkLoanAmtFor = [formLoanAmt()];
   const checkcustomerIncome = [cutomerIncome()];
+
+  cutomerIncome().addEventListener('input', function (e) {
+    isValidIncome(e.target);
+  })
+
+  formLoanAmt().addEventListener('input', function (e) {
+    isValidLoanAmt(e.target);
+  })
   
 
 loanFormContainer().addEventListener('input', ({ target }) => {
@@ -20,13 +28,13 @@ loanFormContainer().addEventListener('input', ({ target }) => {
     inputValue = inputValue.replace(/^0|\D/g, '');
     target.value = currenyCommaSeperation(inputValue);
 
-    if (target.id === 'form-income') {
-      isValidIncome(target);
-    }
+    // if (target.id === 'form-income') {
+    //   isValidIncome(target);
+    // }
 
-    if (target.id === 'form-loan-amount') {
-      isValidLoanAmt(target);
-    }
+    // if (target.id === 'form-loan-amount') {
+    //   isValidLoanAmt(target);
+    // }
 
     return false;
   }
@@ -45,6 +53,7 @@ loanFormContainer().addEventListener('input', ({ target }) => {
   const isDateValidations = checkDateFor.every((input) => validateAndFormatDate(input, target));
   const isLoanAmtValidation = checkLoanAmtFor.every((input) => isValidLoanAmt(input, target));
   const isCustIncomeValidation = checkcustomerIncome.every((input) => isValidIncome(input, target));
+  const isDobValidation = checkDateFor.every((input) => isValidDob(input));
 
   if (isEmptyValidations && isNUmberValidations && isPlaceValidations && isDateValidations && isLoanAmtValidation && isCustIncomeValidation) {
     loanFromBtn().classList.add('loan-form-button-active');
@@ -161,7 +170,6 @@ export function calculateAgeFromInput(dateString) {
   const birthDate = new Date(`${year}-${month}-${day}`);
 
   if (isNaN(birthDate)) {
-    console.log("Invalid date format");
     return;
   }
 
@@ -172,9 +180,11 @@ export function calculateAgeFromInput(dateString) {
   if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
     age--;
   }
-
-  console.log("Age is:", age);
   return age;
+}
+
+function isValidDob(input) {
+  return  input.dataset.validdate == "true";
 }
 
 function validateAndFormatDate(input, target) {
@@ -193,7 +203,6 @@ function validateAndFormatDate(input, target) {
       }
 
       if (input == target) {
-        console.log(input.dataset.validdate);
         const errMsg = document.querySelector('.invalid-date-msg');
         input.dataset.validdate == "true" ? errMsg.style.display = "none" : errMsg.style.display = "block";
       }
