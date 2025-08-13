@@ -1,4 +1,4 @@
-import { formDobInput } from './loanformdom.js';
+import { formDobInput, loanFromBtn } from './loanformdom.js';
 import { calculateAgeFromInput } from './validation.js';
 
 export let dpObj;
