@@ -1,4 +1,4 @@
-import { dpObj } from './applyloanpopper.js';
+import { dpObj, validateDOBForPL } from './applyloanpopper.js';
 import {
   branchInput, cutomerIncome, cutomerName, cutomerNo, formDobInput, formLoanAmt, formTc, loanFormContainer, loanFormOtpBtn, loanFromBtn, loanOtpInput, loanProduct, stateInput,
 } from './loanformdom.js';
@@ -9,13 +9,29 @@ export function clearPLLoanError() {
   loanMsgErrorMsg.style.display = 'none';
   monthlyMsgErrorMsg.style.display = 'none';
 }
+export function validatePLLoan() {
+      if(loanProduct().dataset.loanType !== "pl"){
+        clearPLLoanError();
+        return
+      }
+    const checkLoanAmtFor = [formLoanAmt()];
+  const checkDateFor = [formDobInput()];
+  const checkcustomerIncome = [cutomerIncome()];
+  const isLoanAmtValidation = checkLoanAmtFor.every((input) => isValidLoanAmt(input, formLoanAmt()));
+  const isCustIncomeValidation = checkcustomerIncome.every((input) => isValidIncome(input, cutomerIncome()));
+  const isDobValidation = checkDateFor.every((input) => isValidDob(input));
+  validateDOBForPL();
+  if(isCustIncomeValidation && isLoanAmtValidation && isDobValidation){
+        loanFromBtn().classList.add('loan-form-button-active');
+      }else {
+        loanFromBtn().classList.remove('loan-form-button-active');
+      }
+}
 export function validationJSFunc() {
   const checkNumberFor = [cutomerNo()];
   const checkEmptyFor = [loanProduct(), formLoanAmt(), cutomerName(), cutomerIncome(), stateInput(), branchInput(), formTc()];
   const checkDateFor = [formDobInput()];
   const checkValidPlaceFor = [stateInput(), branchInput()];
-  const checkLoanAmtFor = [formLoanAmt()];
-  const checkcustomerIncome = [cutomerIncome()];
 
   // cutomerIncome().addEventListener('input', function (e) {
   //   isValidIncome(e.target);
@@ -28,7 +44,6 @@ export function validationJSFunc() {
 
 loanFormContainer().addEventListener('input', ({ target }) => {
   if (target.tagName != 'INPUT') return;
-
   if (target.dataset.valueType == 'money') {
     let inputValue = target.value;
     inputValue = inputValue.replace(/^0|\D/g, '');
@@ -63,18 +78,11 @@ loanFormContainer().addEventListener('input', ({ target }) => {
   const isNUmberValidations = checkNumberFor.every((input) => isValidNumber(input, target));
   const isPlaceValidations = checkValidPlaceFor.every((input) => isValidPlace(input, target));
   const isDateValidations = checkDateFor.every((input) => validateAndFormatDate(input, target));
-  const isLoanAmtValidation = checkLoanAmtFor.every((input) => isValidLoanAmt(input, target));
-  const isCustIncomeValidation = checkcustomerIncome.every((input) => isValidIncome(input, target));
-  const isDobValidation = checkDateFor.every((input) => isValidDob(input));
-
+  
   if (isEmptyValidations && isNUmberValidations && isPlaceValidations && isDateValidations ) {
     
     if(loanProduct().dataset.loanType === "pl"){
-      if(isCustIncomeValidation && isLoanAmtValidation && isDobValidation){
-        loanFromBtn().classList.add('loan-form-button-active');
-      }else {
-        loanFromBtn().classList.remove('loan-form-button-active');
-      }
+      validatePLLoan();
     }else{
       loanFromBtn().classList.add('loan-form-button-active');
     }
@@ -182,7 +190,7 @@ function isValidLoanAmt(input, target) {
   const loanType = document.querySelector('#form-loan-type')?.value;
 
   const loanMsgErrorMsg = document.querySelector('.invalid-loanamount-msg');
-  if (loanType.trim().toLowerCase() !== 'personal loan' || input !== target) return true;
+  if (loanType.trim().toLowerCase() !== 'personal loan') return true;
   if (amount < 100000) {
     loanMsgErrorMsg.style.display = 'block';
     return false;
@@ -199,7 +207,7 @@ function isValidIncome(input, target) {
   const loanType = document.querySelector('#form-loan-type')?.value;
 
   const mobileErrorMsg = document.querySelector('.invalid-monthlyincome-msg');
-  if (loanType.trim().toLowerCase() !== 'personal loan' || input !== target) return true;
+  if (loanType.trim().toLowerCase() !== 'personal loan') return true;
   if (amount < 25000) {
     mobileErrorMsg.style.display = 'block';
     return false;
