@@ -28,12 +28,21 @@ loanFormContainer().addEventListener('input', ({ target }) => {
     inputValue = inputValue.replace(/^0|\D/g, '');
     target.value = currenyCommaSeperation(inputValue);
 
-    if (target.id === 'form-income') {
-      isValidIncome(target);
-    }
+    const isPLLoan = loanProduct().dataset.loanType === "pl";
+    const loanMsgErrorMsg = document.querySelector('.invalid-loanamount-msg');
+    const monthlyMsgErrorMsg = document.querySelector('.invalid-monthlyincome-msg');
 
-    if (target.id === 'form-loan-amount') {
-      isValidLoanAmt(target);
+    if(isPLLoan){
+      if (target.id === 'form-income') {
+        isValidIncome(target);
+      }
+
+      if (target.id === 'form-loan-amount') {
+        isValidLoanAmt(target);
+      }
+    }else {
+      loanMsgErrorMsg.style.display = 'none';
+      monthlyMsgErrorMsg.style.display = 'none';
     }
 
     // return false;
@@ -55,8 +64,17 @@ loanFormContainer().addEventListener('input', ({ target }) => {
   const isCustIncomeValidation = checkcustomerIncome.every((input) => isValidIncome(input, target));
   const isDobValidation = checkDateFor.every((input) => isValidDob(input));
 
-  if (isEmptyValidations && isNUmberValidations && isPlaceValidations && isDateValidations && isLoanAmtValidation && isCustIncomeValidation && isDobValidation) {
-    loanFromBtn().classList.add('loan-form-button-active');
+  if (isEmptyValidations && isNUmberValidations && isPlaceValidations && isDateValidations ) {
+    
+    if(loanProduct().dataset.loanType === "pl"){
+      if(isCustIncomeValidation && isLoanAmtValidation && isDobValidation){
+        loanFromBtn().classList.add('loan-form-button-active');
+      }else {
+        loanFromBtn().classList.remove('loan-form-button-active');
+      }
+    }else{
+      loanFromBtn().classList.add('loan-form-button-active');
+    }
   } else {
     loanFromBtn().classList.remove('loan-form-button-active');
   }
@@ -110,7 +128,8 @@ export function checkAllFieldValidation() {
 
   // Check if the loan amount and income are valid for personal loans
   const loanType = document.querySelector('#form-loan-type')?.value;
-  const isLoanValid = loanType.toLowerCase() === 'personal loan' ? isLoanAmtValidation && isIncomeValidations : true;
+  if(loanType.trim().toLowerCase() !== 'personal loan') return;
+  const isLoanValid = loanType.trim().toLowerCase() === 'personal loan' ? isLoanAmtValidation && isIncomeValidations : true;
 
   // Check if all the validations pass
   if (isEmptyValidations && isNumberValidations && isLoanValid && isPlaceValidations && isDateValidations) {
@@ -159,13 +178,13 @@ function isValidLoanAmt(input, target) {
 
   const loanType = document.querySelector('#form-loan-type')?.value;
 
-  const mobileErrorMsg = document.querySelector('.invalid-loanamount-msg');
-  if (loanType.trim().toLowerCase() !== 'personal loan' && input !== target) return;
+  const loanMsgErrorMsg = document.querySelector('.invalid-loanamount-msg');
+  if (loanType.trim().toLowerCase() !== 'personal loan' || input !== target) return true;
   if (amount < 100000) {
-    mobileErrorMsg.style.display = 'block';
+    loanMsgErrorMsg.style.display = 'block';
     return false;
   } else {
-    mobileErrorMsg.style.display = 'none';
+    loanMsgErrorMsg.style.display = 'none';
     return true;
   }
 }
@@ -177,14 +196,14 @@ function isValidIncome(input, target) {
   const loanType = document.querySelector('#form-loan-type')?.value;
 
   const mobileErrorMsg = document.querySelector('.invalid-monthlyincome-msg');
-  if (loanType.trim().toLowerCase() !== 'personal loan' && input !== target) return;
+  if (loanType.trim().toLowerCase() !== 'personal loan' || input !== target) return true;
   if (amount < 25000) {
     mobileErrorMsg.style.display = 'block';
     return false;
   } else {
     mobileErrorMsg.style.display = 'none';
     return true;
-  }
+  } 
 }
 
 function isValidPlace(input, target) {
@@ -223,6 +242,8 @@ export function calculateAgeFromInput(dateString) {
 }
 
 function isValidDob(input) {
+  const loanType = document.querySelector('#form-loan-type')?.value;
+  if (loanType.trim().toLowerCase() !== 'personal loan') return;
   return  input.dataset.validdate == "true";
 }
 

@@ -33,10 +33,14 @@ export function stateMasterApi() {
 
 export function statemasterGetStatesApi() {
   return new Promise((resolve, reject) => {
-    const url = '/graphql/execute.json/piramalfinance/State%20City%20Master';
+    // const url = '/graphql/execute.json/piramalfinance/State%20City%20Master';
 
+    let url = '/graphql/execute.json/piramalfinance/State%20City%20Master';
+    if(window.location.href.includes('localhost')){
+      url = 'https://www.piramalfinance.com/graphql/execute.json/piramalfinance/State%20City%20Master';
+    }
     // let stateMasterGraphQLQuery = "query MyQuery { statemasterList { items { state, data } } }";
-
+    
     fetchAPI('GET', url)
       .then(async (response) => {
         const responseJson = await response.json();
