@@ -126,6 +126,7 @@ function isValidLoanAmt(input, target) {
   if (loanType.trim().toLowerCase() !== 'personal loan' && input !== target) return;
   if (amount < 100000) {
     mobileErrorMsg.style.display = 'block';
+    return false;
   } else {
     mobileErrorMsg.style.display = 'none';
     return true;
@@ -142,6 +143,7 @@ function isValidIncome(input, target) {
   if (loanType.trim().toLowerCase() !== 'personal loan' && input !== target) return;
   if (amount < 25000) {
     mobileErrorMsg.style.display = 'block';
+    return false;
   } else {
     mobileErrorMsg.style.display = 'none';
     return true;
