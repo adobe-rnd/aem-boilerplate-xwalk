@@ -11,13 +11,13 @@ export function validationJSFunc() {
   const checkLoanAmtFor = [formLoanAmt()];
   const checkcustomerIncome = [cutomerIncome()];
 
-  cutomerIncome().addEventListener('input', function (e) {
-    isValidIncome(e.target);
-  })
+  // cutomerIncome().addEventListener('input', function (e) {
+  //   isValidIncome(e.target);
+  // })
 
-  formLoanAmt().addEventListener('input', function (e) {
-    isValidLoanAmt(e.target);
-  })
+  // formLoanAmt().addEventListener('input', function (e) {
+  //   isValidLoanAmt(e.target);
+  // })
   
 
 loanFormContainer().addEventListener('input', ({ target }) => {
@@ -28,15 +28,15 @@ loanFormContainer().addEventListener('input', ({ target }) => {
     inputValue = inputValue.replace(/^0|\D/g, '');
     target.value = currenyCommaSeperation(inputValue);
 
-    // if (target.id === 'form-income') {
-    //   isValidIncome(target);
-    // }
+    if (target.id === 'form-income') {
+      isValidIncome(target);
+    }
 
-    // if (target.id === 'form-loan-amount') {
-    //   isValidLoanAmt(target);
-    // }
+    if (target.id === 'form-loan-amount') {
+      isValidLoanAmt(target);
+    }
 
-    return false;
+    // return false;
   }
 
   if (target.dataset.valueType == 'name') {
