@@ -34,6 +34,7 @@ import { createOptimizedPicture } from '../../../scripts/aem.js';
 
 const formSubscriptions = {};
 const formModels = {};
+const renderPromises = {};
 
 function disableElement(el, value) {
   el.toggleAttribute('disabled', value === true);
@@ -67,10 +68,21 @@ async function fieldChanged(payload, form, generateFormRendition) {
   const { changes, field: fieldModel } = payload;
   const {
     id, name, fieldType, ':type': componentType, readOnly, type, displayValue, displayFormat, displayValueExpression,
-    activeChild,
+    activeChild, qualifiedName
   } = fieldModel;
   const field = form.querySelector(`#${id}`);
   if (!field) {
+    // Check if there's a pending render promise where qualifiedName is a substring
+    if (qualifiedName) {
+      const matchingKey = Object.keys(renderPromises).find(key => qualifiedName.includes(key));
+      if (matchingKey) {
+        await renderPromises[matchingKey];
+        // Clear the promise after it's resolved
+        delete renderPromises[matchingKey];
+        // Retry field changed after the render is complete
+        await fieldChanged(payload, form, generateFormRendition);
+      }
+    }
     return;
   }
   const fieldWrapper = field?.closest('.field-wrapper');
@@ -201,7 +213,8 @@ async function fieldChanged(payload, form, generateFormRendition) {
           const removeId = prevValue.id;
           field?.querySelector(`#${removeId}`)?.remove();
         } else {
-          generateFormRendition({ items: [currentValue] }, field?.querySelector('.repeat-wrapper'), form.dataset?.id);
+          const promise = generateFormRendition({ items: [currentValue] }, field?.querySelector('.repeat-wrapper'), form.dataset?.id);
+          renderPromises[currentValue?.qualifiedName] = promise;
         }
         break;
       case 'activeChild': handleActiveChild(activeChild, form);
