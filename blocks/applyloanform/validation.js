@@ -3,6 +3,12 @@ import {
   branchInput, cutomerIncome, cutomerName, cutomerNo, formDobInput, formLoanAmt, formTc, loanFormContainer, loanFormOtpBtn, loanFromBtn, loanOtpInput, loanProduct, stateInput,
 } from './loanformdom.js';
 
+export function clearPLLoanError() {
+  const loanMsgErrorMsg = document.querySelector('.invalid-loanamount-msg');
+  const monthlyMsgErrorMsg = document.querySelector('.invalid-monthlyincome-msg');
+  loanMsgErrorMsg.style.display = 'none';
+  monthlyMsgErrorMsg.style.display = 'none';
+}
 export function validationJSFunc() {
   const checkNumberFor = [cutomerNo()];
   const checkEmptyFor = [loanProduct(), formLoanAmt(), cutomerName(), cutomerIncome(), stateInput(), branchInput(), formTc()];
@@ -29,8 +35,6 @@ loanFormContainer().addEventListener('input', ({ target }) => {
     target.value = currenyCommaSeperation(inputValue);
 
     const isPLLoan = loanProduct().dataset.loanType === "pl";
-    const loanMsgErrorMsg = document.querySelector('.invalid-loanamount-msg');
-    const monthlyMsgErrorMsg = document.querySelector('.invalid-monthlyincome-msg');
 
     if(isPLLoan){
       if (target.id === 'form-income') {
@@ -41,8 +45,7 @@ loanFormContainer().addEventListener('input', ({ target }) => {
         isValidLoanAmt(target);
       }
     }else {
-      loanMsgErrorMsg.style.display = 'none';
-      monthlyMsgErrorMsg.style.display = 'none';
+      clearPLLoanError()
     }
 
     // return false;
