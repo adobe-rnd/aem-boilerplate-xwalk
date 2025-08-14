@@ -43,7 +43,6 @@ export function validationJSFunc() {
   
 
 loanFormContainer().addEventListener('input', ({ target }) => {
-  debugger;
   if (target.tagName != 'INPUT') return;
   if (target.dataset.valueType == 'money') {
     let inputValue = target.value;
@@ -83,7 +82,6 @@ loanFormContainer().addEventListener('input', ({ target }) => {
   if (isEmptyValidations && isNUmberValidations && isPlaceValidations && isDateValidations ) {
     
     if(loanProduct().dataset.loanType === "pl"){
-      debugger;
       validatePLLoan();
     }else{
       loanFromBtn().classList.add('loan-form-button-active');

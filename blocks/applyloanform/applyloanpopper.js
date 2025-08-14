@@ -108,7 +108,6 @@ export function applyLoanPopper() {
       maxDate: new Date(),
 
       onSelect({ formattedDate }) {
-        debugger
         validateDOBForPL();
         //  dobInput.dataset.validdate == "true" ?  loanFromBtn().classList.add('loan-form-button-active') :  loanFromBtn().classList.remove('loan-form-button-active');
       },
