@@ -6,8 +6,10 @@ import {
 export function clearPLLoanError() {
   const loanMsgErrorMsg = document.querySelector('.invalid-loanamount-msg');
   const monthlyMsgErrorMsg = document.querySelector('.invalid-monthlyincome-msg');
+  const dateErrorMsg = document.querySelector('.invalid-date-msg');
   loanMsgErrorMsg.style.display = 'none';
   monthlyMsgErrorMsg.style.display = 'none';
+  dateErrorMsg.style.display = 'none';
 }
 export function validatePLLoan() {
       if(loanProduct().dataset.loanType !== "pl"){
