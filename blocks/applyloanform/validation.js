@@ -4,12 +4,12 @@ import {
 } from './loanformdom.js';
 
 export function validationJSFunc() {
-  // const checkNumberFor = [cutomerNo()];
-  // const checkEmptyFor = [loanProduct(), formLoanAmt(), cutomerName(), cutomerIncome(), stateInput(), branchInput(), formTc()];
-  // const checkDateFor = [formDobInput()];
-  // const checkValidPlaceFor = [stateInput(), branchInput()];
-  // const checkLoanAmtFor = [formLoanAmt()];
-  // const checkcustomerIncome = [cutomerIncome()];
+  const checkNumberFor = [cutomerNo()];
+  const checkEmptyFor = [loanProduct(), formLoanAmt(), cutomerName(), cutomerIncome(), stateInput(), branchInput(), formTc()];
+  const checkDateFor = [formDobInput()];
+  const checkValidPlaceFor = [stateInput(), branchInput()];
+  const checkLoanAmtFor = [formLoanAmt()];
+  const checkcustomerIncome = [cutomerIncome()];
 
   // cutomerIncome().addEventListener('input', function (e) {
   //   isValidIncome(e.target);
@@ -47,21 +47,19 @@ loanFormContainer().addEventListener('input', ({ target }) => {
     target.value = target.value.replace(/\D/g, '');
   }
 
-  // const isEmptyValidations = checkEmptyFor.every(isEmpty);
-  // const isNUmberValidations = checkNumberFor.every((input) => isValidNumber(input, target));
-  // const isPlaceValidations = checkValidPlaceFor.every((input) => isValidPlace(input, target));
-  // const isDateValidations = checkDateFor.every((input) => validateAndFormatDate(input, target));
-  // const isLoanAmtValidation = checkLoanAmtFor.every((input) => isValidLoanAmt(input, target));
-  // const isCustIncomeValidation = checkcustomerIncome.every((input) => isValidIncome(input, target));
-  // const isDobValidation = checkDateFor.every((input) => isValidDob(input));
+  const isEmptyValidations = checkEmptyFor.every(isEmpty);
+  const isNUmberValidations = checkNumberFor.every((input) => isValidNumber(input, target));
+  const isPlaceValidations = checkValidPlaceFor.every((input) => isValidPlace(input, target));
+  const isDateValidations = checkDateFor.every((input) => validateAndFormatDate(input, target));
+  const isLoanAmtValidation = checkLoanAmtFor.every((input) => isValidLoanAmt(input, target));
+  const isCustIncomeValidation = checkcustomerIncome.every((input) => isValidIncome(input, target));
+  const isDobValidation = checkDateFor.every((input) => isValidDob(input));
 
-  // if (isEmptyValidations && isNUmberValidations && isPlaceValidations && isDateValidations && isLoanAmtValidation && isCustIncomeValidation && isDobValidation) {
-  //   loanFromBtn().classList.add('loan-form-button-active');
-  // } else {
-  //   loanFromBtn().classList.remove('loan-form-button-active');
-  // }
-
-  checkAllFieldValidation()
+  if (isEmptyValidations && isNUmberValidations && isPlaceValidations && isDateValidations && isLoanAmtValidation && isCustIncomeValidation && isDobValidation) {
+    loanFromBtn().classList.add('loan-form-button-active');
+  } else {
+    loanFromBtn().classList.remove('loan-form-button-active');
+  }
 });
 
 loanOtpInput().addEventListener('input', ({ currentTarget }) => {
@@ -87,27 +85,41 @@ StateBranchRegx.forEach((input) => {
 }
 
 export function checkAllFieldValidation() {
-  const checkNumberFor = [cutomerNo()];
-  const checkEmptyFor = [loanProduct(), formLoanAmt(), cutomerName(), cutomerIncome(), stateInput(), branchInput(), formTc()];
-  const checkDateFor = [formDobInput()];
-  const checkValidPlaceFor = [stateInput(), branchInput()];
-  const checkLoanAmtFor = [formLoanAmt()];
-  const checkcustomerIncome = [cutomerIncome()];
+  // Select all form fields to validate
+  const formFields = [
+    cutomerNo(),
+    loanProduct(),
+    formLoanAmt(),
+    cutomerName(),
+    cutomerIncome(),
+    stateInput(),
+    branchInput(),
+    formTc(),
+    formDobInput()
+  ];
 
-  const isEmptyValidations = checkEmptyFor.every(isEmpty);
-  const isNUmberValidations = checkNumberFor.every((input) => isValidNumber(input, target));
-  const isPlaceValidations = checkValidPlaceFor.every((input) => isValidPlace(input, target));
-  const isDateValidations = checkDateFor.every((input) => validateAndFormatDate(input, target));
-  const isLoanAmtValidation = checkLoanAmtFor.every((input) => isValidLoanAmt(input, target));
-  const isCustIncomeValidation = checkcustomerIncome.every((input) => isValidIncome(input, target));
-  const isDobValidation = checkDateFor.every((input) => isValidDob(input));
+  // Check if the field is empty
+  const isEmptyValidations = formFields.every(isEmpty);
 
-  if (isEmptyValidations && isNUmberValidations && isPlaceValidations && isDateValidations && isLoanAmtValidation && isCustIncomeValidation && isDobValidation) {
+  // Validate specific fields (phone number, loan amount, etc.)
+  const isNumberValidations = isValidNumber(cutomerNo()); // Assuming you only need to check the phone number
+  const isLoanAmtValidation = isValidLoanAmt(formLoanAmt());
+  const isIncomeValidations = isValidIncome(cutomerIncome());
+  const isDateValidations = isValidDob(formDobInput()); // Ensure this returns true if valid
+  const isPlaceValidations = isValidPlace(stateInput()) && isValidPlace(branchInput());
+
+  // Check if the loan amount and income are valid for personal loans
+  const loanType = document.querySelector('#form-loan-type')?.value;
+  const isLoanValid = loanType.toLowerCase() === 'personal loan' ? isLoanAmtValidation && isIncomeValidations : true;
+
+  // Check if all the validations pass
+  if (isEmptyValidations && isNumberValidations && isLoanValid && isPlaceValidations && isDateValidations) {
     loanFromBtn().classList.add('loan-form-button-active');
   } else {
     loanFromBtn().classList.remove('loan-form-button-active');
   }
 }
+
 
 function isEmpty(input) {
   if (input.value == null) return false;
