@@ -3,6 +3,9 @@ import { calculateAgeFromInput, checkAllFieldValidation } from './validation.js'
 
 export let dpObj;
 export function validateDOBForPL() {
+    if(loanProduct().dataset.loanType !== 'pl'){
+      return 
+    }
      const loanType = document.querySelector('#form-loan-type')?.value;
      const formattedDate = formDobInput()?.value;
         const dobInput = formDobInput();

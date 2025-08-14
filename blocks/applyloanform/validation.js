@@ -275,10 +275,10 @@ function validateAndFormatDate(input, target) {
         isDate = true;
       }
 
-      if (input == target) {
-        const errMsg = document.querySelector('.invalid-date-msg');
-        input.dataset.validdate == "true" ? errMsg.style.display = "none" : errMsg.style.display = "block";
-      }
+      // if (input == target) {
+      //   const errMsg = document.querySelector('.invalid-date-msg');
+      //   input.dataset.validdate == "true" ? errMsg.style.display = "none" : errMsg.style.display = "block";
+      // }
     }
   }
 
