@@ -2,6 +2,7 @@ import {
   brachDropDownUl, branchInput, loanProduct, stateDropDownUL, stateInput,
 } from './loanformdom.js';
 import { statemasterDataMap } from './statemasterDataMapping.js';
+import { clearPLLoanError, checkAllFieldValidation } from './validation.js';
 
 let statemasterGlobal = statemasterDataMap.get('statemasterGlobal') || {};
 let productStatemaster = {};
@@ -28,7 +29,7 @@ function stateMasterProcessData(statemasterRaw) {
 }
 
 function renderStatemaster(statemaster) {
-  const states = Object.keys(statemaster).sort();
+  const states = Object.keys(statemaster).sort(); 
 
   renderDefaultStates(states);
 
@@ -57,6 +58,8 @@ function renderStatemaster(statemaster) {
 
   loanProduct().addEventListener('change', ({ currentTarget }) => {
     stateLoanFilter(currentTarget.dataset.loanType);
+     clearPLLoanError();
+     checkAllFieldValidation()
   });
 
   stateInput().addEventListener('keyup', ({ currentTarget }) => {
