@@ -1,5 +1,5 @@
 import { formDobInput, loanFromBtn } from './loanformdom.js';
-import { calculateAgeFromInput } from './validation.js';
+import { calculateAgeFromInput, checkAllFieldValidation } from './validation.js';
 
 export let dpObj;
 
@@ -104,6 +104,7 @@ export function applyLoanPopper() {
 
        const errMsg = document.querySelector('.invalid-date-msg');
        dobInput.dataset.validdate == "true" ? errMsg.style.display = "none" : errMsg.style.display = "block";
+       checkAllFieldValidation();
       //  dobInput.dataset.validdate == "true" ?  loanFromBtn().classList.add('loan-form-button-active') :  loanFromBtn().classList.remove('loan-form-button-active');
       },
 
@@ -176,6 +177,7 @@ export function applyLoanPopper() {
        const errMsg = document.querySelector('.invalid-date-msg');
        dobInput.dataset.validdate == "true" ? errMsg.style.display = "none" : errMsg.style.display = "block";
       //  dobInput.dataset.validdate == "true" ?  loanFromBtn().classList.add('loan-form-button-active') :  loanFromBtn().classList.remove('loan-form-button-active');
+      checkAllFieldValidation();
       },
 
       locale: {
