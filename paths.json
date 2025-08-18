@@ -72,6 +72,8 @@
     "/content/piramalfinance-eds/in/en/api/eauctioncsv:/api/eauctioncsv.json",
     "/content/piramalfinance-eds/in/en/api/authorisedcsv:/api/authorisedcsv.json",
     "/content/piramalfinance-eds/in/en/meta-template:/meta-template.json",
-    "/content/piramalfinance-eds/in/en/lang-path:/lang-path.json"
+    "/content/piramalfinance-eds/in/en/lang-path:/lang-path.json",
+    "/content/piramalfinance-eds/in/apply-form-loan:/apply-form-loan.json",
+    "/content/piramalfinance-eds/in/en/api/state-city-master/personal-loan-state-city-master:/api/state-city-master/personal-loan-state-city-master.json"
   ]
 }
