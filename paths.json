@@ -74,6 +74,10 @@
     "/content/piramalfinance-eds/in/en/meta-template:/meta-template.json",
     "/content/piramalfinance-eds/in/en/lang-path:/lang-path.json",
     "/content/piramalfinance-eds/in/apply-form-loan:/apply-form-loan.json",
-    "/content/piramalfinance-eds/in/en/api/state-city-master/personal-loan-state-city-master:/api/state-city-master/personal-loan-state-city-master.json"
+    "/content/piramalfinance-eds/in/en/api/state-city-master/personal-loan-state-city-master:/api/state-city-master/personal-loan-state-city-master.json",
+    "/content/piramalfinance-eds/in/en/api/state-city-master/business-loan-state-city-master:/api/state-city-master/business-loan-state-city-master.json",
+    "/content/piramalfinance-eds/in/en/api/state-city-master/home-loan-state-city-master:/api/state-city-master/home-loan-state-city-master.json",
+    "/content/piramalfinance-eds/in/en/api/state-city-master/secured-business-loan-state-city-master:/api/state-city-master/secured-business-loan-state-city-master.json",
+    "/content/piramalfinance-eds/in/en/api/state-city-master/loan-against-property-state-city-master:/api/state-city-master/loan-against-property-state-city-master.json"
   ]
 }
