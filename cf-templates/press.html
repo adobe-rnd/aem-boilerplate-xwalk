@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{title}}</title>
+    <title>{{properties.title}}</title>
   </head>
   <body>
     <header></header>
     <main>
       <div>
-        <p>{{properties.elements.date.value}}</p>
-        <p>{{properties.elements.author.value}}</p>
-        <p>{{properties.elements.newsTitle.value}}</p>
-        <p>{{properties.elements.text.value}}</p>
-        <p>{{properties.elements.image.value}}</p>
+        <p><strong>Date:</strong> {{#properties.elements.date.value}}{{#formatDate}}{{.}}{{/formatDate}}{{/properties.elements.date.value}}</p>
+        <p><strong>Author:</strong> {{properties.elements.author.value}}</p>
+        <p><strong>Title:</strong> {{properties.elements.newsTitle.value}}</p>
+        <p><strong>Content:</strong> {{{properties.elements.text.value}}}</p>
+        {{#properties.elements.image.value}}
+        <p><strong>Image:</strong> <img src="{{.}}" alt="Press image" /></p>
+        {{/properties.elements.image.value}}
       </div>
     </main>
     <footer></footer>
