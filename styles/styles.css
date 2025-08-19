@@ -255,3 +255,53 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+/* column sections */
+main > div[data-section-type="column-section"] {
+  display: inline-grid;
+  column-gap: 0;
+  background-color: lightblue;
+  margin: 0;
+  padding: 0;
+}
+
+
+main > div[data-section-type="column-section"].width-10 {
+  width: 10%;
+}
+
+main > div[data-section-type="column-section"].width-20 {
+  width: 20%;
+}
+
+main > div[data-section-type="column-section"].width-30 {
+  width: 30%;
+}
+
+main > div[data-section-type="column-section"].width-40 {
+  width: 40%;
+}
+
+main > div[data-section-type="column-section"].width-50 {
+  width: 50%;
+}
+
+main > div[data-section-type="column-section"].width-60 {
+  width: 60%;
+}
+
+main > div[data-section-type="column-section"].width-70 {
+  width: 70%;
+}
+
+main > div[data-section-type="column-section"].width-80 {
+  width: 80%;
+}
+
+main > div[data-section-type="column-section"].width-90 {
+  width: 90%;
+}
+
+main > div[data-section-type="column-section"].width-100 {
+  width: 100%;
+}

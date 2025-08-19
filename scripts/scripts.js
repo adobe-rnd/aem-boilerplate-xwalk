@@ -6,6 +6,7 @@ import {
   decorateSections,
   decorateBlocks,
   decorateTemplateAndTheme,
+  readBlockConfig,
   waitForFirstImage,
   loadSection,
   loadSections,
@@ -58,11 +59,48 @@ async function loadFonts() {
   }
 }
 
+function buildColumnSections(main) {
+  // auto block runs before section/block decoration so
+  // we have scan for section metadata
+  function isColumnSection(section) {
+    const metadataBlock = section.querySelector('.section-metadata');
+    const metadata = metadataBlock ? readBlockConfig(metadataBlock) : {};
+    return metadata['section-type'] === 'column-section';
+  }
+
+  let activeColumns = false;
+
+  // go through all sections and find consecutive column sections
+  for (let i = 0; i < main.children.length; i++) {
+    const section = main.children[i];
+
+    // if we have to start a new colunms container
+    if (isColumnSection(section) && !activeColumns) {
+      // add a class so it can be styled as a inline
+      columnSectionsContainer.classList.add('column-sections-container');
+      // replace the first found column section with the flex container
+      section.replaceWith(columnSectionsContainer);
+      // add move the first found column section into the flex container itself
+      columnSectionsContainer.appendChild(section);  
+      continue;
+    }
+    // if we have to add an addtional column section to the current container
+    if (isColumnSection(section) && columnSectionsContainer) {
+      // add the column section to the flex container
+      columnSectionsContainer.appendChild(section);
+      continue;
+    }
+    // if we have to end the current column section container 
+    if (!isColumnSection(section) && columnSectionsContainer) {
+      columnSectionsContainer = null
+    }
+  }
+}
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-function buildAutoBlocks() {
+function buildAutoBlocks(main) {  
   try {
     // TODO: add auto block, if needed
   } catch (error) {
@@ -83,6 +121,7 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  // buildColumnSections(main);
 }
 
 /**
