@@ -59,43 +59,49 @@ async function loadFonts() {
   }
 }
 
-function buildColumnSections(main) {
-  // auto block runs before section/block decoration so
-  // we have scan for section metadata
-  function isColumnSection(section) {
-    const metadataBlock = section.querySelector('.section-metadata');
-    const metadata = metadataBlock ? readBlockConfig(metadataBlock) : {};
-    return metadata['section-type'] === 'column-section';
-  }
+function addColumnSectionsWrapper(main) {
+  // nothing to do if no children
+  if (main.children.length === 0) return;
 
-  let activeColumns = false;
+  // initialize the column sections container to null
+  let columnSectionsContainer = null;
 
-  // go through all sections and find consecutive column sections
-  for (let i = 0; i < main.children.length; i++) {
-    const section = main.children[i];
+  // get the first child
+  let section  = main.children[0];
 
-    // if we have to start a new colunms container
-    if (isColumnSection(section) && !activeColumns) {
-      // add a class so it can be styled as a inline
-      columnSectionsContainer.classList.add('column-sections-container');
-      // replace the first found column section with the flex container
-      section.replaceWith(columnSectionsContainer);
-      // add move the first found column section into the flex container itself
-      columnSectionsContainer.appendChild(section);  
-      continue;
+  // as long as there are sections left
+  while (section) {
+    // get pointer to the next section
+    let nextSection = section.nextElementSibling;
+    
+    // if its a column section ...
+    if (section.dataset.sectionType === 'column-section') {
+      // ...and we dont have a fex container yet
+      if (!columnSectionsContainer) {
+        // create a new flex container
+        columnSectionsContainer = document.createElement('div');
+        // add a class so it can be styled as flex container
+        columnSectionsContainer.classList.add('column-sections-container');
+        // replace the first found column section with the flex container
+        section.replaceWith(columnSectionsContainer);
+        // and add the first column section to the flex container
+        columnSectionsContainer.appendChild(section);
+      } else { // if we have a flex container already ...
+        // ... add the column section to the flex container
+        columnSectionsContainer.appendChild(section);
+      }
+    } else { // if its not a column section ...
+      if (columnSectionsContainer) { // .. and have a flex container already
+        // ... end it
+        columnSectionsContainer = null;
+      }
     }
-    // if we have to add an addtional column section to the current container
-    if (isColumnSection(section) && columnSectionsContainer) {
-      // add the column section to the flex container
-      columnSectionsContainer.appendChild(section);
-      continue;
-    }
-    // if we have to end the current column section container 
-    if (!isColumnSection(section) && columnSectionsContainer) {
-      columnSectionsContainer = null
-    }
+
+    // move to the next section
+    section = nextSection;
   }
 }
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
@@ -121,7 +127,8 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
-  // buildColumnSections(main);
+  // add wrapper for column sections
+  addColumnSectionsWrapper(main);
 }
 
 /**

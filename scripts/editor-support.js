@@ -104,8 +104,27 @@ function attachEventListners(main) {
   ].forEach((eventType) => main?.addEventListener(eventType, async (event) => {
     event.stopPropagation();
     const applied = await applyChanges(event);
-    if (!applied) window.location.reload();
+    if (applied){
+      showPercentage(document.querySelector('main'));
+    } else {
+      window.location.reload();
+    }
   }));
+}
+
+function showPercentage(main) {
+  const columnSections = main.querySelectorAll('div[data-section-type="column-section"]');
+  columnSections.forEach(section => {
+      section.dataset.aueLabel = "Column (" + (section.classList.contains('width-10') ? '10%' :
+        section.classList.contains('width-20') ? '20%' :
+        section.classList.contains('width-30') ? '30%' :
+        section.classList.contains('width-40') ? '40%' :
+        section.classList.contains('width-50') ? '50%' :
+        section.classList.contains('width-60') ? '60%' :
+        section.classList.contains('width-70') ? '70%' :
+        section.classList.contains('width-80') ? '80%' :
+        section.classList.contains('width-90') ? '90%' : '100%') + ")";
+  });
 }
 
 attachEventListners(document.querySelector('main'));
@@ -117,3 +136,5 @@ decorateRichtext();
 // for new richtext-instrumented elements. this happens for example when using experimentation.
 const observer = new MutationObserver(() => decorateRichtext());
 observer.observe(document, { attributeFilter: ['data-richtext-prop'], subtree: true });
+
+showPercentage(document.querySelector('main'));
