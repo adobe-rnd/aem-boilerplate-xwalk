@@ -232,6 +232,7 @@ main > .section {
   margin: 40px 0;
 }
 
+main > .column-sections-container,
 main > .section > div {
   max-width: 1200px;
   margin: auto;
@@ -243,6 +244,7 @@ main > .section:first-of-type {
 }
 
 @media (width >= 900px) {
+  main > .column-sections-container,
   main > .section > div {
     padding: 0 32px;
   }
