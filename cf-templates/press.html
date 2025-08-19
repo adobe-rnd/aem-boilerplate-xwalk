@@ -10,7 +10,7 @@
         <!-- default title content -->
         <h1>{{properties.elements.newsTitle.value}}</h1>
         <!--default text content-->
-        <p><strong>Date:&nbsp;</strong>{{properties.elements.date.value}}&nbsp;<strong>Author:</strong>&nbsp;{{properties.elements.author.value}}</p>
+        <p><strong>Date:&nbsp;</strong>{{#formatDate}}{{properties.elements.date.value}}{{/formatDate}}&nbsp;<strong>Author:</strong>&nbsp;{{properties.elements.author.value}}</p>
         <!-- default text content-->
         <p>{{{properties.elements.text.value}}}</p>
         <!-- default image content -->
