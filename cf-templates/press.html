@@ -7,19 +7,21 @@
     <header></header>
     <main>
       <div>
-        <!-- default title content -->
-        <h1>{{properties.elements.newsTitle.value}}</h1>
+        <div class="hero">
+          <div>
+            <div>
+              <p>
+                <picture>
+                  <img loading="lazy" alt="" src="{{properties.elements.image.value}}">
+                </picture>
+              </p>
+              <h1>{{properties.elements.newsTitle.value}}</h1>
+            </div>
+          </div>
+        </div>
         <!--default text content-->
-        <p><strong>Date:&nbsp;</strong>{{properties.elements.date.value}}&nbsp;<strong>Author:</strong>&nbsp;{{properties.elements.author.value}}</p>
-        <!-- default text content-->
+        <p><strong>Author:</strong>&nbsp;{{properties.elements.author.value}}</p>
         <p>{{{properties.elements.text.value}}}</p>
-        <!-- default image content -->
-        {{properties.elements.image.value}}
-        <p>
-          <picture>
-            <img src="{{properties.elements.image.value}}"/>
-          </picture>
-        </p>
       </div>
     </main>
     <footer></footer>
