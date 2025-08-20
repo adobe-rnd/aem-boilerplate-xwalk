@@ -214,7 +214,12 @@ header {
   padding-top: 0;
 }
 
-.header .nav-wrapper #nav .nav-sections .default-content-wrapper p:last-child img {
+.header .nav-wrapper #nav .nav-sections .default-content-wrapper ul li:nth-child(7) span img {
+  width: 27px;
+  height: 19px;
+}
+
+.header .nav-wrapper #nav .nav-sections .default-content-wrapper ul li p:last-child img {
   position: absolute;
   height: 25px;
   width: 25px;
@@ -230,11 +235,6 @@ header {
 .header .nav-wrapper #nav>div.section.nav-sections>div>ul>li:nth-child(2)>ul>li>p>span>img {
   height: 20px;
   width: 20px;
-}
-
-.header .nav-wrapper #nav .nav-sections .default-content-wrapper ul li:nth-child(7) span img {
-  width: 27px;
-  height: 19px;
 }
 
 .header .nav-wrapper #nav section.nav-sections[aria-expanded="true"] .default-content-wrapper ul>li:nth-child(7) p span img {
@@ -1253,5 +1253,8 @@ body.modal-open footer {
   }
   .header .nav-wrapper #nav .section.nav-sections .default-content-wrapper ul li:nth-child(7) p{
     padding: 14px 10px 0 3px;
+  }
+  .header .nav-wrapper #nav .section.nav-sections .default-content-wrapper ul li:last-child p {
+    padding: unset;
   }
 }
