@@ -1,4 +1,4 @@
-import { workFlowStatemaster } from './statemasterbiz.js';
+import { workFlowStatemaster, stateMasterProcessApiData, stateMasterProcessGraphqlData } from './statemasterbiz.js';
 import { fetchAPI } from '../../scripts/common.js';
 
 export function stateMasterApi() {
@@ -31,20 +31,25 @@ export function stateMasterApi() {
   });
 }
 
-export function statemasterGetStatesApi() {
-  return new Promise((resolve, reject) => {
-    // const url = '/graphql/execute.json/piramalfinance/State%20City%20Master';
+export function statemasterGetStatesApi(loanType) {
+  const allowedtype = ['pl', 'las', 'lamf'].includes(loanType);
+  const fetchUrl = '/api/state-city-master/personal-loan-state-city-master.json';
 
-    let url = '/graphql/execute.json/piramalfinance/State%20City%20Master';
-    if(window.location.href.includes('localhost')){
-      url = 'https://www.piramalfinance.com/graphql/execute.json/piramalfinance/State%20City%20Master';
-    }
-    // let stateMasterGraphQLQuery = "query MyQuery { statemasterList { items { state, data } } }";
-    
+  const graphqlUrl = window.location.href.includes('localhost') 
+  ? 'https://www.piramalfinance.com/graphql/execute.json/piramalfinance/State%20City%20Master'
+  : '/graphql/execute.json/piramalfinance/State%20City%20Master';
+
+  const url = allowedtype ? fetchUrl : graphqlUrl;
+
+  return new Promise((resolve, reject) => {
     fetchAPI('GET', url)
       .then(async (response) => {
         const responseJson = await response.json();
-        workFlowStatemaster(responseJson.data.statemasterList.items);
+        const statemaster = allowedtype 
+        ? stateMasterProcessApiData(responseJson.data) 
+        : stateMasterProcessGraphqlData(responseJson.data.statemasterList.items);
+
+        workFlowStatemaster(statemaster);
       })
       .catch((error) => {
         console.warn(error);
