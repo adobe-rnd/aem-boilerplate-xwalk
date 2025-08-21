@@ -94,12 +94,14 @@ function  renderStatemaster(statemaster) {
       clearPLLoanError();
       validatePLLoan();
       const allowedtype = ['pl', 'las', 'lamf'].includes(currentTarget.dataset.loanType);
+      const isAllowed = statemasterDataMap.get('allowedType');
+      const checkedType = typeof isAllowed === 'boolean' ? isAllowed : false;
   
-      if (allowedtype && !statemasterDataMap.get('allowedType')) {
+      if (allowedtype && !checkedType) {
         statemasterGetStatesApi(currentTarget.dataset.loanType);
         statemasterDataMap.set('allowedType', true);
       }
-      else if (!allowedtype && statemasterDataMap.get('allowedType')) {
+      else if (!allowedtype && checkedType) {
         statemasterGetStatesApi(currentTarget.dataset.loanType);
         statemasterDataMap.set('allowedType', false);
       }

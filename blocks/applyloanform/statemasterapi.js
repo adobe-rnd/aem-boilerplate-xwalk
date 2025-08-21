@@ -29,6 +29,8 @@ export function stateMasterApi() {
       }
     });
   });
+
+  sessionStorage.removeItem('allowedType');
 }
 
 export function statemasterGetStatesApi(loanType) {
