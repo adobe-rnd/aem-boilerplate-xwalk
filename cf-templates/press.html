@@ -12,28 +12,29 @@
             <div>
               <p>
                 <picture>
-                  <img src="{{properties.elements.image.value}}">
+                  <img src="{{{properties.elements.image.value}}}">
                 </picture>
               </p>
               <h1>{{properties.elements.newsTitle.value}}</h1>
             </div>
           </div>
         </div>
-        <p>
-          <picture>
-            <img src="{{properties.elements.image2.value}}">
-          </picture>
-        </p>
-        <p>
-          <picture>
-            <img src="{{properties.elements.image3.value}}">
-          </picture>
-        </p>
-        <p><strong>Author:</strong>&nbsp;{{properties.elements.author.value}}</p>
-        <p>{{{properties.elements.text.value}}}</p>
-        <p>image url: {{properties.elements.image.value}}</p>
-        <p>image2 url: {{properties.elements.image2.value}}</p>
-        <p>image3 url: {{properties.elements.image3.value}}</p>
+        <p><strong>Author:</strong> {{properties.elements.author.value}}</p>
+        <div class="columns">
+          <div>
+            <div>
+              <p>
+                <picture>
+                  <img src="{{{properties.elements.image2.value}}}">
+                </picture>
+              </p> 
+            </div>
+            <div>
+              <p>
+                <p>{{{properties.elements.text.value}}}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <footer></footer>
