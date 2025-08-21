@@ -75,7 +75,7 @@ function  renderStatemaster(statemaster) {
         productStates = [];
       });
     });
-    
+
     stateInput().addEventListener('change', ({ currentTarget }) => {
       const state = (productStates.length ? productStates : states).filter((state) => state.toLowerCase() === currentTarget.value.toLowerCase())[0];
       if (state) {
@@ -95,12 +95,11 @@ function  renderStatemaster(statemaster) {
       validatePLLoan();
       const allowedtype = ['pl', 'las', 'lamf'].includes(currentTarget.dataset.loanType);
   
-      if (allowedtype) {
+      if (allowedtype && !statemasterDataMap.get('allowedType')) {
         statemasterGetStatesApi(currentTarget.dataset.loanType);
         statemasterDataMap.set('allowedType', true);
-        return;
       }
-      else if (statemasterDataMap.get('allowedType')) {
+      else if (!allowedtype && statemasterDataMap.get('allowedType')) {
         statemasterGetStatesApi(currentTarget.dataset.loanType);
         statemasterDataMap.set('allowedType', false);
       }
