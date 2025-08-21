@@ -60,44 +60,28 @@ async function loadFonts() {
 }
 
 function addColumnSectionsWrapper(main) {
-  // nothing to do if no children
   if (main.children.length === 0) return;
-
-  // initialize the column sections container to null
-  let columnSectionsContainer = null;
-
-  // get the first child
+  let columnSectionsWrapper = null;
   let section  = main.children[0];
 
-  // as long as there are sections left
   while (section) {
-    // get pointer to the next section
     let nextSection = section.nextElementSibling;
-    
     // if its a column section ...
-    if (section.dataset.sectionType === 'column-section') {
-      // ...and we dont have a fex container yet
-      if (!columnSectionsContainer) {
-        // create a new flex container
-        columnSectionsContainer = document.createElement('div');
-        // add a class so it can be styled as flex container
-        columnSectionsContainer.classList.add('column-sections-container');
-        // replace the first found column section with the flex container
-        section.replaceWith(columnSectionsContainer);
-        // and add the first column section to the flex container
-        columnSectionsContainer.appendChild(section);
+    if (section.classList.contains('column')) {
+      // ...and we dont have a column wrapper yet
+      if (!columnSectionsWrapper) {
+        columnSectionsWrapper = document.createElement('div');
+        columnSectionsWrapper.classList.add('column-sections-wrapper');
+        section.replaceWith(columnSectionsWrapper);
+        columnSectionsWrapper.appendChild(section);
       } else { // if we have a flex container already ...
-        // ... add the column section to the flex container
-        columnSectionsContainer.appendChild(section);
+        columnSectionsWrapper.appendChild(section);
       }
     } else { // if its not a column section ...
-      if (columnSectionsContainer) { // .. and have a flex container already
-        // ... end it
-        columnSectionsContainer = null;
+      if (columnSectionsWrapper) { // .. and we have an active wrapper
+        columnSectionsWrapper = null;
       }
     }
-
-    // move to the next section
     section = nextSection;
   }
 }

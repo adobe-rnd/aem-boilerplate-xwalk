@@ -113,7 +113,7 @@ function attachEventListners(main) {
 }
 
 function showPercentage(main) {
-  const columnSections = main.querySelectorAll('div[data-section-type="column-section"]');
+  const columnSections = main.querySelectorAll('div.section.column');
   columnSections.forEach(section => {
       section.dataset.aueLabel = "Column (" + (section.classList.contains('width-10') ? '10%' :
         section.classList.contains('width-20') ? '20%' :
@@ -123,7 +123,7 @@ function showPercentage(main) {
         section.classList.contains('width-60') ? '60%' :
         section.classList.contains('width-70') ? '70%' :
         section.classList.contains('width-80') ? '80%' :
-        section.classList.contains('width-90') ? '90%' : '100%') + ")";
+        section.classList.contains('width-90') ? '90%' : 'remaining space') + ")";
   });
 }
 

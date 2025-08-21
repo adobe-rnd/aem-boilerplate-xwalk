@@ -87,7 +87,7 @@
                   "model": "column-section",
                   "filter": "column-section",
                   "name": "Column",
-                  "section-type": "column-section"
+                  "style_sectiontype": "column"
                 }
               }
             }
