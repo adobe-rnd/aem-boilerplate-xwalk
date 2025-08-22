@@ -37,7 +37,7 @@ const loadProduct = {
     location: 'branch selected', profile: 'se', age: { min: 23, max: 65 }, income: { min: 20833 }, loan: { max: 1500000 },
   },
   loanAgainstSecurity: {
-    location: 'branch selected', age: { min: 23, max: 60 }, income: { min: 25000 }, loan: { min: 100000 },
+    location: 'branch selected', age:  { min: 23, max: 60 }, income: { min: 25000 }, loan: { min: 100000 },
   },
 };
  
