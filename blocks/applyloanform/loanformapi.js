@@ -433,6 +433,8 @@ function getProductMap(product, occupation) {
 
   if (product == 'ucl') return occupation == 'salaried' ? 'preOwnedCarLoanSAL' : 'preOwnedCarLoanSE';
 
+  if(product == 'las' || product == 'lamf') return 'personalLoan' ;
+
   return false;
 }
 
