@@ -130,7 +130,7 @@
       },
       {
         "component": "multiselect",
-        "name": "Column Style(s)",
+        "name": "style",
         "label": "Style",
         "options": [
           {
