@@ -274,7 +274,6 @@ main .section.highlight {
   main div.column-sections-wrapper div.section.column {
     flex: 0 1 auto;
     background-color: var(--light-color);
-    box-shadow: 0 0 10px 0 rgb(0 0 0 / 50%);
     padding: 10px;
   }
 
