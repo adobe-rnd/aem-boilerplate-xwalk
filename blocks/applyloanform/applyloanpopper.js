@@ -3,14 +3,17 @@ import { calculateAgeFromInput, checkAllFieldValidation } from './validation.js'
 
 export let dpObj;
 export function validateDOBForPL() {
-    if(loanProduct().dataset.loanType !== 'pl'){
-      return 
+    const loanTypeAttr = loanProduct()?.dataset.loanType;
+    if (!["pl", "las", "lamf"].includes(loanTypeAttr)) {
+      return;
     }
      const loanType = document.querySelector('#form-loan-type')?.value;
      const formattedDate = formDobInput()?.value;
         const dobInput = formDobInput();
         if(!loanType || !dobInput) return;
-        if (loanType.trim().toLowerCase() !== 'personal loan') return;
+        if (!["personal loan", "loan against security", "loan against mutual funds"].includes(loanType.trim().toLowerCase())) {
+          return;
+        }
         
        const age =  calculateAgeFromInput(formattedDate);
        dobInput.dataset.validdate = age < 23 ? "false" : "true";
