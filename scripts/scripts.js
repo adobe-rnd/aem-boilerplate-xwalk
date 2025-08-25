@@ -6,7 +6,6 @@ import {
   decorateSections,
   decorateBlocks,
   decorateTemplateAndTheme,
-  readBlockConfig,
   waitForFirstImage,
   loadSection,
   loadSections,
@@ -62,10 +61,9 @@ async function loadFonts() {
 function addColumnSectionsWrapper(main) {
   if (main.children.length === 0) return;
   let columnSectionsWrapper = null;
-  let section  = main.children[0];
-
+  let section = main.children[0];
   while (section) {
-    let nextSection = section.nextElementSibling;
+    const nextSection = section.nextElementSibling;
     // if its a column section ...
     if (section.classList.contains('column')) {
       // ...and we dont have a column wrapper yet
@@ -77,10 +75,9 @@ function addColumnSectionsWrapper(main) {
       } else { // if we have a flex container already ...
         columnSectionsWrapper.appendChild(section);
       }
-    } else { // if its not a column section ...
-      if (columnSectionsWrapper) { // .. and we have an active wrapper
-        columnSectionsWrapper = null;
-      }
+    // if its not a column section and we have an active wrapper
+    } else if (columnSectionsWrapper) {
+      columnSectionsWrapper = null;
     }
     section = nextSection;
   }
@@ -90,7 +87,7 @@ function addColumnSectionsWrapper(main) {
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-function buildAutoBlocks(main) {  
+function buildAutoBlocks() {
   try {
     // TODO: add auto block, if needed
   } catch (error) {
