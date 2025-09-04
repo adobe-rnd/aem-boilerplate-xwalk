@@ -31,7 +31,7 @@
                 },
                 {
                     "component": "select",
-                    "label": "Data type of submitted value",
+                    "label": "Save value as",
                     "name": "type",
                     "valueType": "string",
                     "options": [

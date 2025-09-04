@@ -636,7 +636,7 @@
       },
       {
         "component": "select",
-        "label": "Data type of submitted value",
+        "label": "Save value as",
         "name": "type",
         "valueType": "string",
         "value": "string[]",
@@ -839,7 +839,7 @@
       },
       {
         "component": "select",
-        "label": "Data type of submitted value",
+        "label": "Save value as",
         "name": "type",
         "valueType": "string",
         "options": [
@@ -1327,7 +1327,7 @@
       },
       {
         "component": "select",
-        "label": "Data type of submitted value",
+        "label": "Save value as",
         "name": "type",
         "valueType": "string",
         "value": "number",
@@ -3020,7 +3020,7 @@
       },
       {
         "component": "select",
-        "label": "Data type of submitted value",
+        "label": "Save value as",
         "name": "type",
         "valueType": "string",
         "options": [
