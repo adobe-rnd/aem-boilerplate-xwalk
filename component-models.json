@@ -1981,14 +1981,30 @@
         "name": "minOccur",
         "label": "Minimum repetitions",
         "valueType": "number",
-        "description": "Minimum number of times the fragment appears on the form"
+        "description": "Minimum number of times the fragment appears on the form",
+        "condition": {
+          "===": [
+            {
+              "var": "repeatable"
+            },
+            true
+          ]
+        }
       },
       {
         "component": "number",
         "name": "maxOccur",
         "label": "Maximum repetitions",
         "valueType": "number",
-        "description": "Maximum number of times the fragment can appear on the form"
+        "description": "Maximum number of times the fragment can appear on the form",
+        "condition": {
+          "===": [
+            {
+              "var": "repeatable"
+            },
+            true
+          ]
+        }
       },
       {
         "component": "tab",
