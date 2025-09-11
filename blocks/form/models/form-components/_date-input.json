@@ -35,9 +35,6 @@
                     "valueType": "date"
                 },
                 {
-                    "...": "../form-common/_help-container.json#/fields"
-                },
-                {
                     "component": "tab",
                     "label": "Validation",
                     "name": "validation"
@@ -81,6 +78,9 @@
                             "value": "d/M/y"
                         }
                     ]
+                },
+                {
+                    "...": "../form-common/_help-container.json#/fields"
                 }
             ]
         }

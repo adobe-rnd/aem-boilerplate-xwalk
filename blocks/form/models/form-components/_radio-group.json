@@ -91,15 +91,15 @@
                     ]
                 },
                 {
-                    "...": "../form-common/_help-container.json#/fields"
-                },
-                {
                     "component": "tab",
                     "label": "Validation",
                     "name": "validation"
                 },
                 {
                     "...": "../form-common/_basic-validation-fields.json#/fields"
+                },
+                {
+                    "...": "../form-common/_help-container.json#/fields"
                 }
             ]
         }

@@ -51,9 +51,6 @@
                     ]
                 },
                 {
-                    "...": "../form-common/_help-container.json#/fields"
-                },
-                {
                     "component": "tab",
                     "label": "Validation",
                     "name": "validation"
@@ -93,6 +90,9 @@
                             "value": "#,###,##0%"
                         }
                     ]
+                },
+                {
+                    "...": "../form-common/_help-container.json#/fields"
                 }
             ]
         }

@@ -32,9 +32,6 @@
             "...": "../../models/form-common/_basic-input-fields.json#/fields"
           },
           {
-            "...": "../../models/form-common/_help-container.json#/fields"
-          },
-          {
             "component": "tab",
             "label": "Validation",
             "name": "validation"
@@ -53,6 +50,9 @@
             "label": "Step Value",
             "valueType": "number",
             "description": "Step value for the range"
+          },
+          {
+            "...": "../../models/form-common/_help-container.json#/fields"
           }
         ]
       }

@@ -32,15 +32,15 @@
           "...": "../form-common/_basic-input-default-value-fields.json#/fields"
         },
         {
-          "...": "../form-common/_help-container.json#/fields"
-        },
-        {
           "component": "tab",
           "label": "Validation",
           "name": "validation"
         },
         {
           "...": "../form-common/_number-validation-fields.json#/fields"
+        },
+        {
+          "...": "../form-common/_help-container.json#/fields"
         }
       ]
     }

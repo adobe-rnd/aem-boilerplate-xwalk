@@ -51,9 +51,6 @@
                 "valueType": "string"
                 },
                 {
-                    "...": "../form-common/_help-container.json#/fields"
-                },
-                {
                     "component": "tab",
                     "label": "Validation",
                     "name": "validation"
@@ -85,6 +82,9 @@
                     "name": "acceptMessage",
                     "label": "File type error message",
                     "valueType": "string"
+                },
+                {
+                    "...": "../form-common/_help-container.json#/fields"
                 }
             ]
         }
