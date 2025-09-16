@@ -9,6 +9,9 @@ permissions:
   contents: write
   pull-requests: write
 
+  actions: write
+  id-token: write
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -32,7 +35,7 @@ jobs:
 
       - name: Create sync branch and rebase
         run: |
-          BRANCH="sync-xwalk-$(date +'%Y-%m-%d')"
+          BRANCH="sync-xwalk"
           git checkout -b "$BRANCH" origin/main
 
           set +e
@@ -45,6 +48,14 @@ jobs:
           done
           set -e
 
+          # Revert any workflow file changes from upstream
+          git checkout origin/main -- .github/
+          
+          # If there are any staged changes to workflow files, commit the reversion
+          if ! git diff --cached --quiet .github/; then
+            git commit -m "Revert workflow file changes from upstream sync"
+          fi
+
           git push origin "$BRANCH"
           echo "BRANCH_NAME=$BRANCH" >> $GITHUB_ENV
 
@@ -52,11 +63,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh pr create \
-            --title "chore:monthly sync from xwalk" \
-            --body "This PR syncs changes from [aem-boilerplate-xwalk](https://github.com/adobe-rnd/aem-boilerplate-xwalk) into this fork.  
-            - Branch: $BRANCH_NAME  
-            - All conflicts (if any) were auto-committed during rebase." \
-            --base main \
-            --head "$BRANCH_NAME" \
+          curl -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "title": "chore:monthly sync from xwalk",
+              "body": "This PR syncs changes from [aem-boilerplate-xwalk](https://github.com/adobe-rnd/aem-boilerplate-xwalk) into this fork.\n- Branch: '"$BRANCH_NAME"'\n- All conflicts (if any) were auto-committed during rebase.\n- Note: Workflow files (.github/workflows/) are reverted to match our main and must be synced manually if required.",
+              "head": "'"$BRANCH_NAME"'",
+              "base": "main"
+            }' \
+            https://api.github.com/repos/adobe-rnd/aem-boilerplate-forms/pulls \
             || echo "PR may already exist. Skipping..."
