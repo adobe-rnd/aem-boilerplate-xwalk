@@ -57,7 +57,7 @@
     --form-wizard-step-legend-padding: 10px;
     --form-wizard-step-legend-font-size: 1.1rem;
     --form-field-gap: 5px;
-    
+
     /* Card styling variables */
     --form-card-border-color: #e0e0e0;
     --form-card-border-radius: 4px;
@@ -138,7 +138,7 @@ main .form form .field-invalid .field-description {
     color: var(--form-error-color);
     padding-inline-start: 5px;
   }
-  
+
   /**
    * Required field indicator not required for checkboxes and radio buttons
    */
@@ -146,7 +146,7 @@ main .form form .field-invalid .field-description {
   .checkbox-wrapper > label::after {
       content: none;
   }
-  
+
   main .form form .checkbox-wrapper.field-invalid {
       flex-wrap: wrap;
   }
@@ -339,7 +339,7 @@ main .form form fieldset.cards.horizontal > .checkbox-wrapper {
 
 main .form form fieldset.cards.horizontal > .radio-wrapper > label,
 main .form form fieldset.cards.horizontal > .checkbox-wrapper > label {
-    min-width: -webkit-fill-available; 
+    min-width: -webkit-fill-available;
 }
 
 main .form form fieldset.cards > .radio-wrapper > input,
@@ -395,11 +395,11 @@ main .form form fieldset.cards > .checkbox-wrapper > label > img {
     main .form form fieldset.cards > .checkbox-wrapper {
         min-width: 100%;
     }
-    
+
     main .form form fieldset.cards.horizontal {
         flex-wrap: wrap;
     }
-    
+
     main .form form fieldset.cards.horizontal > .radio-wrapper,
     main .form form fieldset.cards.horizontal > .checkbox-wrapper {
         min-width: 100%;
@@ -517,7 +517,7 @@ main .form .button-wrapper button {
 }
 
 main .form .button-wrapper button:hover {
-    border: 3px solid var(#fff);
+    border: 3px solid #fff;
     color: #fff;
     background-color: var(--button-secondary-color);
 }
@@ -738,7 +738,7 @@ main .form form .field-wrapper.col-1 {
 main .form form .wizard > .field-description {
     width: 100%;
 }
-  
+
 main .form form .checkbox-wrapper.field-invalid > .field-description {
       order: 1;
 }
@@ -778,7 +778,7 @@ main div.form-wrapper {
     :root {
         --form-field-horz-gap: 10px;
     }
-    
+
     main .form form .wizard  {
         .wizard-menu-items {
             gap: 20px;

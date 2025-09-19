@@ -92,18 +92,18 @@ describe('Universal Editor Authoring Test Cases', () => {
             testChildren(getContainerChildNodes(node, fd), formDef, fieldMap);
           } else if (fd.properties['fd:fragment'] && node.classList.contains('edit-mode')) {
             testAnnotation(node, fd, 'component', 'form-fragment');
-            
+
             // Test fragment wrapper classes and structure
             assert.equal(node.classList.contains('fragment-wrapper'), true, 'Fragment should have fragment-wrapper class');
             assert.equal(node.classList.contains('edit-mode'), true, 'Fragment should have edit-mode class');
-            
+
             if (Object.keys(fd[':items']).length === 0) {
               // Empty fragment - should match selector for "Adaptive Form Fragment" text
               assert.equal(node.matches('.fragment-wrapper.edit-mode:not(:has(> :not(legend)))'), true, 'Empty fragment should match selector for "Adaptive Form Fragment" text');
             } else {
               // Non-empty fragment - should match selector for "CLICK TO EXPAND" text
               assert.equal(node.matches('.fragment-wrapper.edit-mode:has(> :not(legend))'), true, 'Non-empty fragment should match selector for expand text');
-              
+
               // Test expansion behavior
               handleEditorSelect({
                 target: node,
@@ -253,7 +253,7 @@ describe('Universal Editor Authoring Test Cases', () => {
     assert.equal(firstTab.classList.contains('accordion-collapse'), false); // first tab open by default
     handleAccordionNavigation(formElPrev.querySelector('.accordion'), secondTab, true); // trigger second tab open
     assert.equal(secondTab.classList.contains('accordion-collapse'), false); // should be open
-    assert.equal(firstTab.classList.contains('accordion-collapse'), false); 
+    assert.equal(firstTab.classList.contains('accordion-collapse'), true);
     handleAccordionNavigation(formElPrev.querySelector('.accordion'), firstTab, true);
     assert.equal(firstTab.classList.contains('accordion-collapse'), false); // should also be open (not toggle case)
     document.body.replaceChildren();
@@ -306,11 +306,11 @@ describe('Universal Editor Authoring Test Cases', () => {
     await renderForm(ueFormDefForWizardNavigationTest);
     const formEl = document.querySelector('form');
     const wizardEl = formEl.querySelector('.wizard');
-    
+
     // Find the nested panel element in the rendered HTML
     const nestedPanel = formEl.querySelector('[data-id="panelcontainer-nested"]');
     assert.ok(nestedPanel, 'Nested panel should exist');
-    
+
     // Set up the event with the actual nested panel element
     const ueSelectNestedPanelEvent = {
       target: nestedPanel,
@@ -319,15 +319,15 @@ describe('Universal Editor Authoring Test Cases', () => {
         resource: 'urn:aemconnection:/content/ng-test1/index/jcr:content/root/section_0/form/panelcontainer_1310348320/panelcontainer/nested_panel',
       },
     };
-    
+
     // Test that selecting the nested panel navigates to its parent panel
     handleEditorSelect(ueSelectNestedPanelEvent);
-    
+
     // Verify that the parent panel is the current step, not the nested panel
     const currentStep = wizardEl.querySelector('.current-wizard-step');
     assert.equal(currentStep.dataset.id, 'panelcontainer-4a4625c3cf', 'Should navigate to parent panel, not nested panel');
     assert.equal(currentStep.querySelector('legend').textContent, 'Panel', 'Should show parent panel title');
-    
+
     document.body.replaceChildren();
   });
 });
