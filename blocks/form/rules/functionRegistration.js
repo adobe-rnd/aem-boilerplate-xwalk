@@ -19,7 +19,7 @@
  ************************************************************************ */
 import { registerFunctions } from './model/afb-runtime.js';
 
-export default async function registerCustomFunctions() {
+export default async function registerCustomFunctions(customFunctionsPath, codeBasePath) {
   try {
     // eslint-disable-next-line no-inner-declarations
     function registerFunctionsInRuntime(module) {
@@ -36,11 +36,15 @@ export default async function registerCustomFunctions() {
       }
     }
 
-    const customFunctionModule = await import('../functions.js');
     const ootbFunctionModule = await import('./functions.js');
     registerFunctionsInRuntime(ootbFunctionModule);
-    registerFunctionsInRuntime(customFunctionModule);
+    if (codeBasePath != null && codeBasePath !== undefined && customFunctionsPath
+      && customFunctionsPath !== undefined) {
+      const customFunctionModule = await import(`${codeBasePath}${customFunctionsPath}`);
+      registerFunctionsInRuntime(customFunctionModule);
+    }
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.log(`error occured while registering custom functions in web worker ${e.message}`);
   }
 }

@@ -1,6 +1,9 @@
 import assert from 'assert';
 
 export const sample = {
+  properties: {
+    customFunctionsPath: '/form/functions.js',
+  },
   items: [
     {
       id: 'textinput-9ae7fb61e4',
@@ -86,3 +89,5 @@ export function op(block) {
 export function expect(block) {
   assert.equal(getValue(block, '#textinput-a01ceb1c74'), 'fname lname');
 }
+
+export const opDelay = 200;
