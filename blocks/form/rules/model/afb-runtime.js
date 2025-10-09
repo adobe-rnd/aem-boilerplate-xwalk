@@ -20,7 +20,7 @@
 
 /*
  *  Package: @aemforms/af-core
- *  Version: 0.22.156
+ *  Version: 0.22.157
  */
 import { propertyChange, ExecuteRule, Initialize, RemoveItem, Change, FormLoad, FieldChanged, ValidationComplete, Valid, Invalid, SubmitSuccess, CustomEvent, RequestSuccess, RequestFailure, SubmitError, Submit, Save, Reset, SubmitFailure, Focus, RemoveInstance, AddInstance, AddItem, Click } from './afb-events.js';
 import Formula from '../formula/index.js';
@@ -2539,18 +2539,11 @@ class Container extends Scriptable {
                 return;
             }
             this._data = dataGroup;
-            const result = this.syncDataAndFormModel(dataGroup);
+            this.syncDataAndFormModel(dataGroup);
             const newLength = this.items.length;
-            result.added.forEach((item) => {
-                this.notifyDependents(propertyChange('items', item.getState(), null));
-                item.dispatch(new Initialize());
-            });
             for (let i = 0; i < newLength; i += 1) {
                 this._children[i].dispatch(new ExecuteRule());
             }
-            result.removed.forEach((item) => {
-                this.notifyDependents(propertyChange('items', null, item.getState()));
-            });
         }
         else if (typeof this._data === 'undefined') {
             console.warn(`Data node is null, hence importData did not work for panel "${this.name}". Check if parent has a dataRef set to null.`);
@@ -2580,6 +2573,13 @@ class Container extends Scriptable {
                     result.removed.push(this._children.pop());
                 }
             }
+            result.added.forEach((item) => {
+                this.notifyDependents(propertyChange('items', item.getState(), null));
+                item.dispatch(new Initialize());
+            });
+            result.removed.forEach((item) => {
+                this.notifyDependents(propertyChange('items', null, item.getState()));
+            });
         }
         this._children.forEach(x => {
             let dataModel = x.bindToDataModel(contextualDataModel);
