@@ -9,7 +9,7 @@ export const sample = {
         id: 'rb1id',
         fieldType: 'radio-group',
         name: 'rb1-uv',
-        type: 'number',
+        type: 'number[]',
         enum: [0, 1],
       }],
     },
@@ -18,13 +18,13 @@ export const sample = {
       fieldType: 'radio-group',
       name: 'rb1-uv',
       visible: true,
-      type: 'number',
+      type: 'number[]',
       enumNames: [
         'Item 1',
         'Item 2',
       ],
       label: {
-        value: 'Radio Group',
+        value: 'Check Box Group',
       },
       enum: [
         0,
@@ -42,6 +42,6 @@ export function op(block) {
 export function expect(block) {
   assert.equal(block.querySelector('input[id="rb1-uv"]').checked, true, 'radio-button in other group is selected');
   assert.equal(block.querySelector('input[id="rb1-uv-1"]').checked, false, 'radio-button in other group is selected');
-  assert.equal(block.querySelector('input[id="rb1-uv-2"]').checked, true, 'radio-button in other group is not selected');
+  assert.equal(block.querySelector('input[id="rb1-uv-2"]').checked, false, 'radio-button in other group is selected');
   assert.equal(block.querySelector('input[id="rb1-uv-3"]').checked, false, 'radio-button in other group is selected');
 }
