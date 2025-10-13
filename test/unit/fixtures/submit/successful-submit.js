@@ -56,7 +56,7 @@ export const sample = {
 };
 
 export function op(block) {
-  const radio = block.querySelectorAll('input[name="radio-group-boolean"]')[0];
+  const radio = block.querySelectorAll('input[name="radio-group-boolean_radio-group-boolean"]')[0];
   radio.click();
   radio.dispatchEvent(new Event('change', { bubbles: true }));
   const btn = block.querySelector('#button');

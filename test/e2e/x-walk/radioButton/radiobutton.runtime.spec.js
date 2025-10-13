@@ -29,7 +29,7 @@ test.describe("Form with Radio Button Input", () => {
     const radioButtons = page.locator(`#${id} input[data-field-type="radio-group"]`);
     const count = await radioButtons.count();
     for (let i = 0; i < count; i++) {
-      await expect(radioButtons.nth(i)).toHaveAttribute('name', expectedName);
+      await expect(radioButtons.nth(i)).toHaveAttribute('name', `${id}_${expectedName}`);
     }
   });
 
