@@ -29,7 +29,7 @@ jobs:
             .renovaterc.json \
             CHANGELOG.md
 
-      - name: Remove Form Developement Files
+      - name: Remove Form Development Files
         run: |
           rm -rf \
             .circleci .npmrc test rollup playwright.config.js
@@ -41,9 +41,7 @@ jobs:
 
       - name: Update Package.json
         run: |
-          rm -rf package.json package-lock.json
-          mv package-prod.json package.json
-          mv package-prod-lock.json package-lock.json  
+          rm -rf package.json package-lock.json  
 
       - name: Initialize README
         # replace {repo} and {owner} with the actual values
