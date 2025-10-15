@@ -161,6 +161,55 @@
     ]
   },
   {
+    "id": "cf-teaser-selector",
+    "fields": [
+      {
+        "component": "aem-content-fragment",
+        "name": "cfpath",
+        "label": "Teaser Content Fragment Path",
+        "variationName": "contentFragmentVariation",
+        "validation": {
+          "rootPath": "/content/dam"
+        }
+      },
+      {
+        "component": "text",
+        "name": "contentFragmentVariation",
+        "hidden": true
+      },
+      {
+        "component": "select",
+        "name": "classes_cta-position",
+        "label": "CTA Position",
+        "options": [
+          {
+            "name": "right",
+            "value": "right"
+          },
+          {
+            "name": "bottom",
+            "value": "bottom"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "classes_text-color",
+        "label": "Text Color",
+        "options": [
+          {
+            "name": "Bright",
+            "value": "bright"
+          },
+          {
+            "name": "Dark",
+            "value": "dark"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "columns",
     "fields": [
       {
