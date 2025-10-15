@@ -7,7 +7,7 @@ const universalEditorBase = new UniversalEditorBase();
 const componentName = 'Text Input';
 const component = 'textinput';
 
-test.describe.skip('Forms Authoring in Universal Editor tests', () => {
+test.describe('Forms Authoring in Universal Editor tests', () => {
   const testURL = 'https://author-p133911-e1313554.adobeaemcloud.com/ui#/@formsinternal01/aem/universal-editor/canvas/author-p133911-e1313554.adobeaemcloud.com/content/aem-boilerplate-forms-xwalk-collaterals/componentValidation.html';
   let frame, iframe, properties, componentPathInUE;
 

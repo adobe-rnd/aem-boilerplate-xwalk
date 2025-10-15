@@ -8,7 +8,7 @@ const componentName = 'Email Input';
 const component = 'emailinput';
 const randomValues = Date.now();
 
-test.describe.skip('Component properties validation in UE', () => {
+test.describe('Component properties validation in UE', () => {
   const testURL = 'https://author-p133911-e1313554.adobeaemcloud.com/ui#/@formsinternal01/aem/universal-editor/canvas/author-p133911-e1313554.adobeaemcloud.com/content/aem-boilerplate-forms-xwalk-collaterals/componentPropertyValidation.html';
 
   test('Component title validation in UE @chromium-only', async ({ page }) => {
@@ -35,7 +35,7 @@ test.describe.skip('Component properties validation in UE', () => {
     await expect(componentProperties).toContainText(componentName);
 
     // Ensure property field is visible, reload if not
-    const isPropertyVisible = frame.locator('.is-canvas [class="is-field is-container"]').first();
+    const isPropertyVisible = frame.locator('.is-canvas [class*="TabsPanel-tabs"]').last();
     if (!await isPropertyVisible.isVisible({ timeout: 6000 })) {
       await page.reload();
       await expect(isPropertyVisible).toBeVisible({ timeout: 10000 });

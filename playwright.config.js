@@ -6,7 +6,7 @@ const loginAuthExists = fs.existsSync('./LoginAuth.json');
 
 export default defineConfig({
   // Only use global setup in CI environment
-  // globalSetup: process.env.CI ? './test/e2e/global-setup.js' : undefined,
+  globalSetup: process.env.CI ? './test/e2e/global-setup.js' : null,
   testDir: './test/e2e',
   /* Run tests in files in parallel */
   fullyParallel: true,
