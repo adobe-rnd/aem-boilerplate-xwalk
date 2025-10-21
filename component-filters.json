@@ -25,6 +25,10 @@
     ]
   },
   {
+    "id": "cards-empty",
+    "components": []
+  },
+  {
     "id": "columns",
     "components": [
       "column"

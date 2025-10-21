@@ -11,6 +11,28 @@ import {
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 
+// set the filter for an UE editable
+function setUEFilter(element, filter) {
+  element.dataset.aueFilter = filter;
+}
+function updateUEInstrumentation() {
+  const main = document.querySelector('main');
+  const cardsBlocks = main.querySelectorAll('div.block.cards');
+  cardsBlocks.forEach((cardsBlock) => {
+    const numCards = cardsBlock.querySelectorAll('li')?.length || 0;
+    if (numCards <= 1) {
+      cardsBlock.append('At least 2 cards are required');
+      return;
+    }
+    if (numCards === 3) {
+      setUEFilter(cardsBlock, 'cards-empty');
+    } else {
+      setUEFilter(cardsBlock, 'cards');
+    }    
+  });
+}
+
+
 async function applyChanges(event) {
   // redecorate default content and blocks on patches (in the properties rail)
   const { detail } = event;
@@ -104,7 +126,11 @@ function attachEventListners(main) {
   ].forEach((eventType) => main?.addEventListener(eventType, async (event) => {
     event.stopPropagation();
     const applied = await applyChanges(event);
-    if (!applied) window.location.reload();
+    if (applied) {
+      updateUEInstrumentation();
+    } else {
+      window.location.reload();
+    }
   }));
 }
 
@@ -117,3 +143,6 @@ decorateRichtext();
 // for new richtext-instrumented elements. this happens for example when using experimentation.
 const observer = new MutationObserver(() => decorateRichtext());
 observer.observe(document, { attributeFilter: ['data-richtext-prop'], subtree: true });
+
+// update UE component filters on page load
+updateUEInstrumentation();

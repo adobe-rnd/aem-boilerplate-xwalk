@@ -58,6 +58,11 @@
       "components": [
         "card"
       ]
+    },
+    {
+      "id": "cards-empty",
+      "components": [
+      ]
     }
   ]
 }
