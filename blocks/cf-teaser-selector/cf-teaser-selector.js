@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+
 export default async function decorate(block) {
   // hard coded for demo purposes, this should be stored in config service
   const aemPublishUrl = 'https://publish-p130360-e1272151.adobeaemcloud.com';
