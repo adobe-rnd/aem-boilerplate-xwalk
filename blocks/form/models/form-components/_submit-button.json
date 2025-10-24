@@ -1,0 +1,38 @@
+{
+  "definitions": [
+    {
+      "title": "Submit",
+      "id": "form-submit-button",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/fd/components/form/actions/submit/v1/submit",
+            "template": {
+              "jcr:title": "Submit",
+              "buttonType": "submit",
+              "fieldType": "button"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "form-submit-button",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "Basic",
+          "name": "basic"
+        },
+        {
+          "...": "../form-common/_basic-fields.json#/fields"
+        },
+        {
+          "...": "../form-common/_help-container.json#/fields"
+        }
+      ]
+    }
+  ]
+}

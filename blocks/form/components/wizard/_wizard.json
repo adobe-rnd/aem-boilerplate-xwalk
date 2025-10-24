@@ -1,0 +1,49 @@
+{
+  "definitions": [
+    {
+      "title": "Wizard",
+      "id": "wizard",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer",
+            "template": {
+              "jcr:title": "Wizard",
+              "fieldType": "panel",
+              "fd:viewType": "wizard",
+              "minOccur": 1,
+              "panel1": {
+                "jcr:title": "Item 1",
+                "fieldType": "panel",
+                "sling:resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer"
+              },
+              "panel2": {
+                "jcr:title": "Item 2",
+                "fieldType": "panel",
+                "sling:resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "wizard",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "Basic",
+          "name": "basic"
+        },
+        {
+          "...": "../../models/form-common/_basic-input-fields.json#/fields"
+        },
+        {
+          "...": "../../models/form-common/_help-container.json#/fields"
+        }
+      ]
+    }
+  ]
+}

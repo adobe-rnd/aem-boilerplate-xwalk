@@ -1,0 +1,49 @@
+{
+    "fields": [
+        {
+            "...": "./_basic-validation-fields.json#/fields"
+        },
+        {
+            "component": "number",
+            "name": "minLength",
+            "label": "Minimum number of characters",
+            "valueType": "number",
+            "description": "Minimum length of the text in the field"
+        },
+        {
+            "component": "text",
+            "name": "minLengthMessage",
+            "valueType": "string",
+            "label": "Minimum characters error message",
+            "description": "Error message shown when less than minimum characters are entered."
+        },
+        {
+            "component": "number",
+            "name": "maxLength",
+            "label": "Maximum number of characters",
+            "valueType": "number",
+            "description": "Maximum length of the text in the field"
+        },
+        {
+            "component": "text",
+            "name": "maxLengthMessage",
+            "valueType": "string",
+            "label": "Maximum characters error message",
+            "description": "Error message shown when more than maximum characters are entered."
+        },
+        {
+            "component": "text",
+            "name": "pattern",
+            "valueType": "string",
+            "label": "Pattern",
+            "description": "Regular Expression is permitted."
+        },
+        {
+            "component": "text",
+            "name": "validatePictureClauseMessage",
+            "valueType": "string",
+            "label": "Pattern Error message",
+            "description": "Error message shown when the pattern is not matched."
+        }
+    ]
+}

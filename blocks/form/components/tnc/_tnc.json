@@ -1,0 +1,82 @@
+{
+  "definitions": [
+    {
+      "title": "Terms and conditions",
+      "id": "tnc",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/fd/components/form/termsandconditions/v1/termsandconditions",
+            "template": {
+              "jcr:title": "Terms and conditions",
+              "fieldType": "panel",
+              "fd:viewType": "tnc",
+              "text": {
+                "value": "Text related to the terms and conditions come here.",
+                "sling:resourceType": "core/fd/components/form/text/v1/text",
+                "fieldType": "plain-text",
+                "textIsRich": true
+              },
+              "link": {
+                "enum": ["dummy-link-1"],
+                "type": "string[]",
+                "fd:viewType": "toggleable-link",
+                "title": "I agree to the terms & conditions",
+                "enumNames": [
+                  "Privacy policy."
+                ],
+                "sling:resourceType": "core/fd/components/form/checkboxgroup/v1/checkboxgroup",
+                "fieldType": "checkbox-group",
+                "fd:rules": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "validationStatus": "valid"
+                },
+                "fd:events": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "change": [
+                    "if(length($field.$value) == length($field.$enum), dispatchEvent($parent.approvalcheckbox, 'custom:setProperty', {enabled : true()}), {})"
+                  ]
+                }
+              },
+              "approvalcheckbox": {
+                "name": "approvalcheckbox",
+                "jcr:title": "I agree to the terms & conditions.",
+                "sling:resourceType": "core/fd/components/form/checkbox/v1/checkbox",
+                "fieldType": "checkbox",
+                "required": true,
+                "type": "string",
+                "enum": [
+                  "true"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "tnc",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "Basic",
+          "name": "basic"
+        },
+        {
+          "...": "../../models/form-common/_basic-input-fields.json#/fields"
+        },
+        {
+          "component": "boolean",
+          "name": "showLink",
+          "label": "Replace consent text with weblink(s)",
+          "valueType": "boolean"
+        },
+        {
+          "...": "../../models/form-common/_help-container.json#/fields"
+        }
+      ]
+    }
+  ]
+}

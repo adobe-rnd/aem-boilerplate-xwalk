@@ -1,0 +1,99 @@
+{
+  "definitions": [
+    {
+      "title": "Dropdown List",
+      "id": "drop-down",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/fd/components/form/dropdown/v1/dropdown",
+            "template": {
+              "jcr:title": "Drop Down List",
+              "fieldType": "drop-down",
+              "enum": [
+                "0",
+                "1"
+              ],
+              "enumNames": [
+                "Item 1",
+                "Item 2"
+              ],
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "drop-down",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "Basic",
+          "name": "basic"
+        },
+        {
+          "...": "../form-common/_basic-select-fields.json#/fields"
+        },
+        {
+          "component": "boolean",
+          "label": "Allow multiple selection",
+          "name": "multiSelect",
+          "valueType": "boolean"
+        },
+        {
+          "component": "select",
+          "label": "Save value as",
+          "name": "type",
+          "valueType": "string",
+          "value": "number",
+          "options": [
+            {
+              "name": "String",
+              "value": "string"
+            },
+            {
+              "name": "Boolean",
+              "value": "boolean"
+            },
+            {
+              "name": "Number",
+              "value": "number"
+            },
+            {
+              "name": "String[]",
+              "value": "string[]"
+            },
+            {
+              "name": "Boolean[]",
+              "value": "boolean[]"
+            },
+            {
+              "name": "Number[]",
+              "value": "number[]"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "placeholder",
+          "label": "Placeholder text",
+          "valueType": "string"
+        },
+        {
+          "component": "tab",
+          "label": "Validation",
+          "name": "validation"
+        },
+        {
+          "...": "../form-common/_basic-validation-fields.json#/fields"
+        },
+        {
+          "...": "../form-common/_help-container.json#/fields"
+        }
+      ]
+    }
+  ]
+}

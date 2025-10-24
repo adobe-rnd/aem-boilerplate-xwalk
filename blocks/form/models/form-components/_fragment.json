@@ -1,0 +1,94 @@
+{
+    "definitions": [
+        {
+            "title": "Form Fragment",
+            "id": "form-fragment",
+            "plugins": {
+                "xwalk": {
+                    "page": {
+                        "resourceType": "core/fd/components/form/fragment/v1/fragment",
+                        "template": {
+                            "jcr:title": "Fragment",
+                            "fieldType": "panel",
+                            "minOccur": 1
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "models": [
+        {
+            "id": "form-fragment",
+            "fields": [
+                {
+                    "component": "tab",
+                    "label": "Basic",
+                    "name": "basic"
+                },
+                {
+                    "...": "../form-common/_basic-input-fields.json#/fields"
+                },
+                {
+                    "component": "aem-content",
+                    "name": "fragmentPath",
+                    "label": "Fragment reference",
+                    "valueType": "string",
+                    "validation": {
+                        "rootPath": "/content/forms/af"
+                    }
+                },
+                {
+                    "component": "edit-fragment",
+                    "name": "editFragment",
+                    "label": "Edit Fragment",
+                    "valueType": "boolean"
+                },
+                {
+                    "component": "tab",
+                    "label": "Repeat Fragment",
+                    "name": "repeat"
+                },
+                {
+                    "component": "boolean",
+                    "name": "repeatable",
+                    "label": "Make fragment repeatable",
+                    "valueType": "boolean"
+                },
+                {
+                    "component": "number",
+                    "name": "minOccur",
+                    "label": "Minimum repetitions",
+                    "valueType": "number",
+                    "description": "Minimum number of times the fragment appears on the form",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "repeatable"
+                            },
+                            true
+                        ]
+                    }
+                },
+                {
+                    "component": "number",
+                    "name": "maxOccur",
+                    "label": "Maximum repetitions",
+                    "valueType": "number",
+                    "description": "Maximum number of times the fragment can appear on the form",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "repeatable"
+                            },
+                            true
+                        ]
+                    }
+                },
+                {
+                    "...": "../form-common/_help-container.json#/fields"
+                }
+            ]
+        }
+    ]
+}

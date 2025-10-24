@@ -1,0 +1,107 @@
+{
+    "definitions": [
+        {
+            "title": "Radio Group",
+            "id": "radio-group",
+            "plugins": {
+                "xwalk": {
+                    "page": {
+                        "resourceType": "core/fd/components/form/radiobutton/v1/radiobutton",
+                        "template": {
+                            "jcr:title": "Radio Group",
+                            "fieldType": "radio-group",
+                            "enum": [
+                                "0",
+                                "1"
+                            ],
+                            "enumNames": [
+                                "Item 1",
+                                "Item 2"
+                            ],
+                            "orientation": "horizontal"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "models": [
+        {
+            "id": "radio-group",
+            "fields": [
+                {
+                    "component": "tab",
+                    "label": "Basic",
+                    "name": "basic"
+                },
+                {
+                    "...": "../form-common/_basic-select-fields.json#/fields"
+                },
+                {
+                    "component": "select",
+                    "name": "variant",
+                    "label": "Variant",
+                    "options": [
+                        {
+                            "name": "Default",
+                            "value": "default"
+                        },
+                        {
+                            "name": "Cards",
+                            "value": "cards"
+                        }
+                    ],
+                    "value": "default"
+                },
+                {
+                    "component": "select",
+                    "label": "Save value as",
+                    "name": "type",
+                    "valueType": "string",
+                    "options": [
+                        {
+                            "name": "String",
+                            "value": "string"
+                        },
+                        {
+                            "name": "Boolean",
+                            "value": "boolean"
+                        },
+                        {
+                            "name": "Number",
+                            "value": "number"
+                        }
+                    ]
+                },
+                {
+                    "component": "radio-group",
+                    "label": "Display Options",
+                    "name": "orientation",
+                    "valueType": "string",
+                    "value": "horizontal",
+                    "options": [
+                        {
+                            "name": "Horizontally",
+                            "value": "horizontal"
+                        },
+                        {
+                            "name": "Vertically",
+                            "value": "vertical"
+                        }
+                    ]
+                },
+                {
+                    "component": "tab",
+                    "label": "Validation",
+                    "name": "validation"
+                },
+                {
+                    "...": "../form-common/_basic-validation-fields.json#/fields"
+                },
+                {
+                    "...": "../form-common/_help-container.json#/fields"
+                }
+            ]
+        }
+    ]
+}

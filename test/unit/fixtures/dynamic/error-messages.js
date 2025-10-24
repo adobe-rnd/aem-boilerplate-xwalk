@@ -1,0 +1,179 @@
+import assert from 'assert';
+import { setValue } from '../../testUtils.js';
+
+export const sample = {
+  action: 'http://localhost:3000/submit',
+  items: [
+    {
+      fieldType: 'text-input',
+      id: 'f1',
+      name: 'f1_text',
+      required: true,
+      constraintMessages: {
+        required: 'Please fill in this field.',
+      },
+    },
+    {
+      fieldType: 'number-input',
+      id: 'f2',
+      name: 'f2_number',
+      required: true,
+      maximum: 10,
+      minimum: 2,
+      constraintMessages: {
+        required: 'Please fill in this field.',
+      },
+    },
+    {
+      fieldType: 'radio-group',
+      id: 'f3',
+      name: 'f3_radio',
+      required: true,
+      enum: ['a', 'b'],
+      enumNames: ['a', 'b'],
+      constraintMessages: {
+        required: 'Please fill in this field.',
+      },
+    },
+    {
+      fieldType: 'checkbox-group',
+      id: 'f4',
+      name: 'f4_checkbox',
+      required: true,
+      enum: ['a', 'b'],
+      enumNames: ['a', 'b'],
+      constraintMessages: {
+        required: 'Please fill in this field.',
+      },
+    },
+    {
+      id: 'f5',
+      fieldType: 'file-input',
+      name: 'f5_file',
+      type: 'file',
+      required: true,
+      accept: [
+        'audio/*',
+        ' video/*',
+        ' image/*',
+        ' application/pdf',
+      ],
+      constraintMessages: {
+        required: 'Please fill in this field.',
+      },
+    },
+    {
+      fieldType: 'email',
+      id: 'f6',
+      name: 'f6_text',
+      required: true,
+      constraintMessages: {
+        required: 'Please fill in this field.',
+      },
+    },
+    {
+      id: 'f7',
+      fieldType: 'number-input',
+      name: 'f7_number',
+      type: 'number',
+    },
+    {
+      id: 'f8',
+      fieldType: 'number-input',
+      name: 'f8_number',
+      type: 'integer',
+    },
+    {
+      fieldType: 'button',
+      id: 'button',
+      buttonType: 'submit',
+      events: {
+        click: 'submitForm()',
+      },
+    },
+  ],
+};
+
+export function op(block) {
+  const btn = block.querySelector('#button');
+  setValue(block, '#f7', 123.123);
+  setValue(block, '#f8', 123.123);
+  btn.click();
+  const form = block.querySelector('form');
+  form.dispatchEvent(new Event('submit'));
+}
+
+export function expect(block) {
+  // text input error message
+  const f1 = block.querySelector('#f1').parentElement;
+  const f1Message = f1.querySelector('.field-invalid .field-description');
+  assert.equal(f1Message.textContent, 'Please fill in this field.', 'Required error message for text input');
+  setValue(block, '#f1', 'abc');
+  assert.equal(f1.classList.contains('.field-invalid'), false, 'field-invalid class not getting removed once field is valid');
+  assert.equal(f1.querySelector('.field-invalid .field-description'), undefined, 'Not Required error message for text input');
+
+  // number input error message
+  const f2 = block.querySelector('#f2').parentElement;
+  const f2Message = f2.querySelector('.field-invalid .field-description');
+  assert.equal(f2Message.textContent, 'Please fill in this field.', 'Required error message for number input');
+  setValue(block, '#f2', 5);
+  assert.equal(f2.querySelector('.field-invalid .field-description'), undefined, 'Not Required error message for number input');
+  setValue(block, '#f2', 1);
+  const minMessage = f2.querySelector('.field-invalid .field-description').textContent;
+  assert.equal(minMessage, 'Value must be greater than or equal to 2.', 'minimum error message for number input');
+  setValue(block, '#f2', 11);
+  const maxMessage = f2.querySelector('.field-invalid .field-description').textContent;
+  assert.equal(maxMessage, 'Value must be less than or equal to 10.', 'maximum error message for number input');
+
+  // radio buttons error message
+  const f3 = block.querySelector('#f3');
+  const f3Message = f3.querySelector('.field-invalid .field-description');
+  assert.equal(f3Message.textContent, 'Please fill in this field.', 'Required error message for radio buttons');
+  const radio = f3.querySelectorAll('input')[0];
+  radio.click();
+  radio.dispatchEvent(new Event('change', { bubbles: true }));
+  assert.equal(f3.querySelector('.field-invalid .field-description'), undefined, 'Not required error message for radio buttons');
+
+  // checkbox group error message
+  const f4 = block.querySelector('#f4');
+  const f4Message = f4.querySelector('.field-invalid .field-description');
+  assert.equal(f4Message.textContent, 'Please fill in this field.', 'Required error message for checkbox group');
+  const checkbox = f4.querySelectorAll('input')[0];
+  checkbox.click();
+  checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+  assert.equal(f4.querySelector('.field-invalid .field-description'), undefined, 'Not required error message for checkbox group');
+
+  // file input error message
+  const f5 = block.querySelector('#f5').closest('.field-wrapper');
+  const f5Message = f5.querySelector('.field-invalid .field-description');
+  // eslint-disable-next-line max-len
+  assert.equal(f5Message.textContent, 'Please fill in this field.', 'Required error message for file input');
+  const input = block.querySelector('#f5');
+  const file = new File([new ArrayBuffer(1024)], 'file1.png', { type: 'image/png' });
+  const event = new Event('change', {
+    bubbles: true,
+    cancelable: true,
+  });
+  event.files = [file];
+  input.dispatchEvent(event);
+
+  // email input error message
+  const f6 = block.querySelector('#f6').closest('.field-wrapper');
+  const f6Message = f6.querySelector('.field-invalid .field-description');
+  assert.equal(f6Message.textContent, 'Please fill in this field.', 'Required error message for file input');
+  setValue(block, '#f6', 'abc');
+  assert.equal(f6.querySelector('.field-invalid .field-description').textContent, 'Specify the value in allowed format : email.', 'Invalid email error message');
+
+  //number input with type number(decimal) shouldn't display stepMismatch error message
+  const f7 = block.querySelector('#f7').closest('.field-wrapper');
+  const f7Message = f7.querySelector('.field-invalid .field-description');
+  assert.equal(f7Message, undefined, 'Error message shouldn\'t trigger for decimal values');
+
+  // number input with integer type should trigger stepMismatch error
+  const f8 = block.querySelector('#f8').closest('.field-wrapper');
+  const f8Message = f8.querySelector('.field-invalid .field-description');
+  assert.equal(f8Message.textContent, "Constraints not satisfied", 'Error message should trigger for decimal values');
+
+}
+
+export const opDelay = 100;

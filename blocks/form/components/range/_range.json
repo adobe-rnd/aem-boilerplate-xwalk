@@ -1,0 +1,60 @@
+{
+    "definitions": [
+      {
+        "title": "Range",
+        "id": "range",
+        "plugins": {
+          "xwalk": {
+            "page": {
+              "resourceType": "core/fd/components/form/numberinput/v1/numberinput",
+              "template": {
+                "jcr:title": "Range",
+                "fieldType": "number-input",
+                "fd:viewType": "range",
+                "enabled": true,
+                "visible": true
+              }
+            }
+          }
+        }
+      }
+    ],
+    "models": [
+      {
+        "id": "range",
+        "fields": [
+          {
+            "component": "tab",
+            "label": "Basic",
+            "name": "basic"
+          },
+          {
+            "...": "../../models/form-common/_basic-input-fields.json#/fields"
+          },
+          {
+            "component": "tab",
+            "label": "Validation",
+            "name": "validation"
+          },
+          {
+            "...": "../../models/form-common/_number-validation-fields.json#/fields"
+          },
+          {
+            "component": "tab",
+            "label": "Custom Properties",
+            "name": "custom"
+          },
+          {
+            "component": "number",
+            "name": "stepValue",
+            "label": "Step Value",
+            "valueType": "number",
+            "description": "Step value for the range"
+          },
+          {
+            "...": "../../models/form-common/_help-container.json#/fields"
+          }
+        ]
+      }
+    ]
+}

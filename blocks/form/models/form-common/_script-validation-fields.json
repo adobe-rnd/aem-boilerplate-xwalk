@@ -1,0 +1,14 @@
+{
+    "fields": [
+        {
+            "...": "./_basic-validation-fields.json#/fields"
+        },
+        {
+            "component": "text",
+            "name": "validateExpMessage",
+            "label": "Script validation message",
+            "valueType": "string",
+            "description": "Displayed when validation script fails."
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    "definitions": [
+        {
+            "title": "Accordion",
+            "id": "form-accordion",
+            "plugins": {
+                "xwalk": {
+                    "page": {
+                        "resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer",
+                        "template": {
+                            "jcr:title": "Accordion",
+                            "fieldType": "panel",
+                            "fd:viewType": "accordion",
+                            "minOccur": 1,
+                            "panel1": {
+                                "jcr:title": "Item 1",
+                                "fieldType": "panel",
+                                "sling:resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer"
+                            },
+                            "panel2": {
+                                "jcr:title": "Item 2",
+                                "fieldType": "panel",
+                                "sling:resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "models": [
+        {
+            "id": "accordion",
+            "fields": [
+                {
+                    "component": "tab",
+                    "label": "Basic",
+                    "name": "basic"
+                },
+                {
+                    "...": "../../models/form-common/_basic-input-fields.json#/fields"
+                },
+                {
+                    "...": "../../models/form-common/_help-container.json#/fields"
+                }
+            ]
+        }
+    ]
+}

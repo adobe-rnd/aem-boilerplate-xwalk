@@ -1,0 +1,37 @@
+{
+    "fields": [
+        {
+            "...": "./_basic-validation-fields.json#/fields"
+        },
+        {
+            "component": "date-time",
+            "name": "minimumDate",
+            "label": "Minimum date",
+            "valueType": "date",
+            "description": "Minimum date allowed in the field",
+            "valueFormat": "YYYY-MM-DD[T]HH:mm:ss.000-00:00"
+        },
+        {
+            "component": "text",
+            "name": "minimumMessage",
+            "valueType": "string",
+            "label": "Minimum error message",
+            "description": "Error message shown when the date entered is before the minimum date."
+        },
+        {
+            "component": "date-time",
+            "name": "maximumDate",
+            "label": "Maximum date",
+            "valueType": "date",
+            "description": "Maximum date allowed in the field",
+            "valueFormat": "YYYY-MM-DD[T]HH:mm:ss.000-00:00"
+        },
+        {
+            "component": "text",
+            "name": "maximumMessage",
+            "valueType": "string",
+            "label": "Maximum error message",
+            "description": "Error message shown when the date entered is after the maximum date."
+        }
+    ]
+}

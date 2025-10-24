@@ -1,0 +1,48 @@
+{
+  "definitions": [
+    {
+      "title": "Telephone input",
+      "id": "telephone-input",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/fd/components/form/telephoneinput/v1/telephoneinput",
+            "template": {
+              "jcr:title": "Telephone Input",
+              "fieldType": "text-input"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "telephone-input",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "Basic",
+          "name": "basic"
+        },
+        {
+          "...": "../form-common/_basic-input-placeholder-fields.json#/fields"
+        },
+        {
+          "...": "../form-common/_basic-input-default-value-fields.json#/fields"
+        },
+        {
+          "component": "tab",
+          "label": "Validation",
+          "name": "validation"
+        },
+        {
+          "...": "../form-common/_number-validation-fields.json#/fields"
+        },
+        {
+          "...": "../form-common/_help-container.json#/fields"
+        }
+      ]
+    }
+  ]
+}

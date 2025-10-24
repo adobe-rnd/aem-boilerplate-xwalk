@@ -1,0 +1,98 @@
+{
+    "definitions": [
+        {
+            "title": "Checkbox",
+            "id": "checkbox",
+            "plugins": {
+                "xwalk": {
+                    "page": {
+                        "resourceType": "core/fd/components/form/checkbox/v1/checkbox",
+                        "template": {
+                            "jcr:title": "Checkbox",
+                            "fieldType": "checkbox",
+                            "checkedValue": "on"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "models": [
+        {
+            "id": "checkbox",
+            "fields": [
+                {
+                    "component": "tab",
+                    "label": "Basic",
+                    "name": "basic"
+                },
+                {
+                    "...": "../form-common/_basic-input-fields.json#/fields"
+                },
+                {
+                    "component": "select",
+                    "label": "Save value as",
+                    "name": "type",
+                    "valueType": "string",
+                    "options": [
+                        {
+                            "name": "String",
+                            "value": "string"
+                        },
+                        {
+                            "name": "Boolean",
+                            "value": "boolean"
+                        },
+                        {
+                            "name": "Number",
+                            "value": "number"
+                        }
+                    ]
+                },
+                {
+                    "component": "text",
+                    "name": "checkedValue",
+                    "label": "When Checked, return value",
+                    "valueType": "string"
+                },
+                {
+                    "component": "boolean",
+                    "name": "enableUncheckedValue",
+                    "label": "Preserve Uncheck state value.",
+                    "valueType": "boolean"
+                },
+                {
+                    "component": "text",
+                    "name": "uncheckedValue",
+                    "label": "When Unchecked, return value",
+                    "valueType": "string",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "enableUncheckedValue"
+                            },
+                            true
+                        ]
+                    }
+                },
+                {
+                    "component": "text",
+                    "name": "default",
+                    "label": "Default Value",
+                    "valueType": "string"
+                },
+                {
+                    "component": "tab",
+                    "label": "Validation",
+                    "name": "validation"
+                },
+                {
+                    "...": "../form-common/_basic-validation-fields.json#/fields"
+                },
+                {
+                    "...": "../form-common/_help-container.json#/fields"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+/** styling for range */
+main .form .range-widget-wrapper.decorated input[type="range"] {
+    margin: unset;
+    padding: unset;
+    appearance: none;
+    height: 5px;
+    border-radius: 5px;
+    border: none;
+    background-image: linear-gradient(to right, var(--button-primary-color) calc(100% * var(--current-steps)/var(--total-steps)), #C5C5C5 calc(100% * var(--current-steps)/var(--total-steps)));
+}
+ 
+main .form .range-widget-wrapper.decorated input[type="range"]:focus {
+    outline: none;
+}
+ 
+.range-widget-wrapper.decorated input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid var(--button-primary-color);
+    cursor: pointer;
+    outline: 3px solid #fff;
+}
+ 
+.range-widget-wrapper.decorated input[type="range"]:focus::-webkit-slider-thumb {
+    border-color: var(--button-primary-color);
+}
+ 
+.range-widget-wrapper.decorated .range-bubble {
+    color: #17252e;
+    font-size: 20px;
+    line-height: 28px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 12px;
+}
+ 
+.range-widget-wrapper.decorated .range-min,
+.range-widget-wrapper.decorated .range-max {
+    font-size: 14px;
+    line-height: 22px;
+    color: #494f50;
+    margin-top: 16px;
+    display: inline-block;
+}
+ 
+.range-widget-wrapper.decorated .range-max {
+    float: right;
+}

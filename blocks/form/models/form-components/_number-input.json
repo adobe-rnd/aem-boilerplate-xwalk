@@ -1,0 +1,100 @@
+{
+    "definitions": [
+        {
+            "title": "Number Input",
+            "id": "number-input",
+            "plugins": {
+                "xwalk": {
+                    "page": {
+                        "resourceType": "core/fd/components/form/numberinput/v1/numberinput",
+                        "template": {
+                            "jcr:title": "Number Input",
+                            "fieldType": "number-input"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "models": [
+        {
+            "id": "number-input",
+            "fields": [
+                {
+                    "component": "tab",
+                    "label": "Basic",
+                    "name": "basic"
+                },
+                {
+                    "...": "../form-common/_basic-input-placeholder-fields.json#/fields"
+                },
+                {
+                    "component": "number",
+                    "name": "default",
+                    "label": "Default Value",
+                    "valueType": "number"
+                },
+                {
+                    "component": "select",
+                    "name": "type",
+                    "label": "Number type",
+                    "valueType": "string",
+                    "options": [
+                        {
+                            "name": "Integer (1234)",
+                            "value": "integer"
+                        },
+                        {
+                            "name": "Decimal (1234.000)",
+                            "value": "number"
+                        }
+                    ]
+                },
+                {
+                    "component": "tab",
+                    "label": "Validation",
+                    "name": "validation"
+                },
+                {
+                    "...": "../form-common/_number-validation-fields.json#/fields"
+                },
+                {
+                    "component": "tab",
+                    "label": "Formats",
+                    "name": "formats"
+                },
+                {
+                    "component": "select",
+                    "label": "Display Format",
+                    "name": "displayFormat",
+                    "valueType": "string",
+                    "options": [
+                        {
+                            "name": "No Pattern",
+                            "value": ""
+                        },
+                        {
+                            "name": "$1,234.21",
+                            "value": "¤#,##0.00"
+                        },
+                        {
+                            "name": "$1234.21",
+                            "value": "¤####0.00"
+                        },
+                        {
+                            "name": "1,234.210",
+                            "value": "#,###,##0.000"
+                        },
+                        {
+                            "name": "123,421%",
+                            "value": "#,###,##0%"
+                        }
+                    ]
+                },
+                {
+                    "...": "../form-common/_help-container.json#/fields"
+                }
+            ]
+        }
+    ]
+}

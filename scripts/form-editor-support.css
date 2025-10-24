@@ -1,0 +1,166 @@
+/** ***********************************************************************
+* ADOBE CONFIDENTIAL
+* ___________________
+*
+* Copyright 2024 Adobe
+* All Rights Reserved.
+*
+* NOTICE: All information contained herein is, and remains
+* the property of Adobe and its suppliers, if any. The intellectual
+* and technical concepts contained herein are proprietary to Adobe
+* and its suppliers and are protected by all applicable intellectual
+* property laws, including trade secret and copyright laws.
+* Dissemination of this information or reproduction of this material
+* is strictly forbidden unless prior written permission is obtained
+* from Adobe.
+
+* Adobe permits you to use and modify this file solely in accordance with
+* the terms of the Adobe license agreement accompanying it.
+************************************************************************ */
+main .form form.edit-mode label[data-visible='false'],
+main .form form.edit-mode legend[data-visible='false']{
+    display: none !important;
+}
+
+main .form form.edit-mode .fragment-wrapper:not(.edit-mode){
+    display: none;
+}
+
+main .form form:not(.edit-mode) .fragment-wrapper.edit-mode{
+    display: none;
+}
+
+main .form form.edit-mode .fragment-wrapper.edit-mode {
+    position: relative;
+    border: 2px dashed rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 15px;
+    max-height: 300px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+main .form form.edit-mode .fragment-wrapper.edit-mode > legend:first-of-type {
+    width: auto;
+    padding: 0 8px;
+    margin-left: -8px;
+}
+
+/* Targets empty fragments (those with only a legend) in both normal and expanded states to center their content */
+main .form form.edit-mode .fragment-wrapper.edit-mode:not(:has(> :not(legend))),
+main .form form.edit-mode .fragment-wrapper.edit-mode.fragment-expanded:not(:has(> :not(legend))) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Shows "Adaptive Form Fragment" text when fragment is empty (has only legend) in both normal and expanded states */
+main .form form.edit-mode .fragment-wrapper.edit-mode:not(:has(> :not(legend)))::before,
+main .form form.edit-mode .fragment-wrapper.edit-mode.fragment-expanded:not(:has(> :not(legend)))::before {
+    content: "Adaptive Form Fragment";
+    font-size: 20px;
+    font-weight: 500;
+}
+
+main .form form.edit-mode .fragment-wrapper.edit-mode:has(> :not(legend))::before {
+    content: '<< CLICK TO EXPAND >>';
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    font-size: 13px;
+    color: #2680eb;
+    z-index: 2;
+    white-space: nowrap;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    background: white;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+main .form form.edit-mode .fragment-wrapper.edit-mode:has(> :not(legend))::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.7) 40%,
+    rgba(255, 255, 255, 0.9) 100%
+    );
+    pointer-events: none;
+}
+
+main .form form.edit-mode .fragment-wrapper.edit-mode.fragment-expanded:has(> :not(legend))::before {
+    display: none;
+}
+
+main .form form.edit-mode .fragment-wrapper.edit-mode.fragment-expanded:has(> :not(legend))::after {
+    display: none;
+}
+
+main .form form.edit-mode .fragment-wrapper.edit-mode.fragment-expanded {
+    max-height: none;
+}
+
+main .form form.edit-mode .fragment-wrapper.edit-mode .fragment-title {
+    text-align: left;
+    color: #4b4b4b;
+    padding-left: 25px;
+}
+
+form.edit-mode:not(:has(*)) {
+    display: flex !important;
+    justify-content: center;
+    padding: 15px;
+    background: linear-gradient(180deg,rgba(0 0 0 / 5%),rgba(255 255 255 / 5%),rgba(0 0 0 / 5%)),
+    linear-gradient(90deg,rgba(0 0 0 / 5%),rgba(255 255 255 / 5%),rgba(0 0 0 / 5%));
+}
+
+form.edit-mode:not(:has(*))::before {
+    content: "Adaptive Form";
+}
+
+form.edit-mode .modal dialog {
+    display: inline-block;
+    position: relative;
+}
+
+:root.adobe-ue-edit .grecaptcha-badge {
+    visibility: hidden ;
+}
+
+:root.adobe-ue-preview .grecaptcha-badge {
+    visibility: visible ;
+}
+
+main .form form.edit-mode .captcha-wrapper {
+    border-width: 1px;
+    padding: 15px;
+    font-weight: normal;
+    font-size: 15px;
+    text-align: left;
+    color: #4b4b4b;
+    border-color: rgba(0 0 0 / 15%);
+    border-radius: 4px;
+    background: linear-gradient(180deg,rgba(0 0 0 / 5%),rgba(255 255 255 / 5%),rgba(0 0 0 / 5%)),
+    linear-gradient(90deg,rgba(0 0 0 / 5%),rgba(255 255 255 / 5%),rgba(0 0 0 / 5%));
+}
+
+.adobe-ue-edit .embed-adaptive-form-wrapper:not(:has(form, a)) > div {
+    display: flex !important;
+    justify-content: center;
+    padding: 15px;
+    background: linear-gradient(180deg,rgba(0 0 0 / 5%),rgba(255 255 255 / 5%),rgba(0 0 0 / 5%)),
+    linear-gradient(90deg,rgba(0 0 0 / 5%),rgba(255 255 255 / 5%),rgba(0 0 0 / 5%));
+}
+
+.adobe-ue-edit .embed-adaptive-form-wrapper:not(:has(form, a)) > div::before {
+    content: "Select an Adaptive Form";
+}

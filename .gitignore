@@ -7,3 +7,13 @@ helix-importer-ui
 .DS_Store
 *.bak
 .idea
+.nyc_output
+
+.env*
+.vscode
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+test/e2e/reports/
+LoginAuth.json

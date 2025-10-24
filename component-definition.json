@@ -128,6 +128,510 @@
           }
         },
         {
+          "title": "Embed Adaptive Form",
+          "id": "embed-adaptive-form",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Embed Adaptive Form",
+                  "model": "embed-adaptive-form"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Adaptive Form",
+          "id": "form",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "fd/franklin/components/form/v1/form",
+                "template": {
+                  "fieldType": "form",
+                  "fd:version": "2.1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Button",
+          "id": "form-button",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/button/v1/button",
+                "template": {
+                  "jcr:title": "Button",
+                  "fieldType": "button"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Checkbox group",
+          "id": "checkbox-group",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/checkboxgroup/v1/checkboxgroup",
+                "template": {
+                  "jcr:title": "Checkbox Group",
+                  "fieldType": "checkbox-group",
+                  "enum": [
+                    "0",
+                    "1"
+                  ],
+                  "enumNames": [
+                    "Item 1",
+                    "Item 2"
+                  ],
+                  "orientation": "horizontal",
+                  "type": "string[]"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Checkbox",
+          "id": "checkbox",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/checkbox/v1/checkbox",
+                "template": {
+                  "jcr:title": "Checkbox",
+                  "fieldType": "checkbox",
+                  "checkedValue": "on"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Date Input",
+          "id": "date-input",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/datepicker/v1/datepicker",
+                "template": {
+                  "jcr:title": "Date Input",
+                  "fieldType": "date-input"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Dropdown List",
+          "id": "drop-down",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/dropdown/v1/dropdown",
+                "template": {
+                  "jcr:title": "Drop Down List",
+                  "fieldType": "drop-down",
+                  "enum": [
+                    "0",
+                    "1"
+                  ],
+                  "enumNames": [
+                    "Item 1",
+                    "Item 2"
+                  ],
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Email",
+          "id": "email",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/emailinput/v1/emailinput",
+                "template": {
+                  "jcr:title": "Email Input",
+                  "fieldType": "email"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "File Attachment",
+          "id": "file-input",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/fileinput/v2/fileinput",
+                "template": {
+                  "jcr:title": "File Attachment",
+                  "fieldType": "file-input",
+                  "accept": [
+                    "audio/*",
+                    "video/*",
+                    "image/*",
+                    "text/*",
+                    "application/pdf"
+                  ],
+                  "buttonText": "Attach",
+                  "dragDropText": "Drag and Drop To Upload",
+                  "type": "file"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Form Fragment",
+          "id": "form-fragment",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/fragment/v1/fragment",
+                "template": {
+                  "jcr:title": "Fragment",
+                  "fieldType": "panel",
+                  "minOccur": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Image",
+          "id": "form-image",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/image/v1/image",
+                "template": {
+                  "jcr:title": "Image",
+                  "fieldType": "image"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Number Input",
+          "id": "number-input",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/numberinput/v1/numberinput",
+                "template": {
+                  "jcr:title": "Number Input",
+                  "fieldType": "number-input"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Panel",
+          "id": "panel",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer",
+                "template": {
+                  "jcr:title": "Panel",
+                  "fieldType": "panel",
+                  "minOccur": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Radio Group",
+          "id": "radio-group",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/radiobutton/v1/radiobutton",
+                "template": {
+                  "jcr:title": "Radio Group",
+                  "fieldType": "radio-group",
+                  "enum": [
+                    "0",
+                    "1"
+                  ],
+                  "enumNames": [
+                    "Item 1",
+                    "Item 2"
+                  ],
+                  "orientation": "horizontal"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Captcha (Invisible)",
+          "id": "captcha",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/recaptcha/v1/recaptcha",
+                "template": {
+                  "jcr:title": "Captcha (Invisible)",
+                  "fieldType": "captcha"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Reset",
+          "id": "form-reset-button",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/actions/reset/v1/reset",
+                "template": {
+                  "jcr:title": "Reset",
+                  "buttonType": "reset",
+                  "fieldType": "button"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Submit",
+          "id": "form-submit-button",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/actions/submit/v1/submit",
+                "template": {
+                  "jcr:title": "Submit",
+                  "buttonType": "submit",
+                  "fieldType": "button"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Telephone input",
+          "id": "telephone-input",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/telephoneinput/v1/telephoneinput",
+                "template": {
+                  "jcr:title": "Telephone Input",
+                  "fieldType": "text-input"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Text Input",
+          "id": "text-input",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/textinput/v1/textinput",
+                "template": {
+                  "jcr:title": "Text Input",
+                  "fieldType": "text-input"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Text",
+          "id": "plain-text",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/text/v1/text",
+                "template": {
+                  "jcr:title": "Text",
+                  "fieldType": "plain-text",
+                  "textIsRich": true,
+                  "value": "Adaptive Form Text Component"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Accordion",
+          "id": "form-accordion",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer",
+                "template": {
+                  "jcr:title": "Accordion",
+                  "fieldType": "panel",
+                  "fd:viewType": "accordion",
+                  "minOccur": 1,
+                  "panel1": {
+                    "jcr:title": "Item 1",
+                    "fieldType": "panel",
+                    "sling:resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer"
+                  },
+                  "panel2": {
+                    "jcr:title": "Item 2",
+                    "fieldType": "panel",
+                    "sling:resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Modal",
+          "id": "form-modal",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer",
+                "template": {
+                  "jcr:title": "Modal",
+                  "fieldType": "panel",
+                  "fd:viewType": "modal",
+                  "visible": false
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Password",
+          "id": "password",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/textinput/v1/textinput",
+                "template": {
+                  "jcr:title": "Password",
+                  "fieldType": "text-input",
+                  "fd:viewType": "password"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Rating",
+          "id": "rating",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/numberinput/v1/numberinput",
+                "template": {
+                  "jcr:title": "Rating",
+                  "fieldType": "number-input",
+                  "fd:viewType": "rating"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Terms and conditions",
+          "id": "tnc",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/termsandconditions/v1/termsandconditions",
+                "template": {
+                  "jcr:title": "Terms and conditions",
+                  "fieldType": "panel",
+                  "fd:viewType": "tnc",
+                  "text": {
+                    "value": "Text related to the terms and conditions come here.",
+                    "sling:resourceType": "core/fd/components/form/text/v1/text",
+                    "fieldType": "plain-text",
+                    "textIsRich": true
+                  },
+                  "link": {
+                    "enum": [
+                      "dummy-link-1"
+                    ],
+                    "type": "string[]",
+                    "fd:viewType": "toggleable-link",
+                    "title": "I agree to the terms & conditions",
+                    "enumNames": [
+                      "Privacy policy."
+                    ],
+                    "sling:resourceType": "core/fd/components/form/checkboxgroup/v1/checkboxgroup",
+                    "fieldType": "checkbox-group",
+                    "fd:rules": {
+                      "jcr:primaryType": "nt:unstructured",
+                      "validationStatus": "valid"
+                    },
+                    "fd:events": {
+                      "jcr:primaryType": "nt:unstructured",
+                      "change": [
+                        "if(length($field.$value) == length($field.$enum), dispatchEvent($parent.approvalcheckbox, 'custom:setProperty', {enabled : true()}), {})"
+                      ]
+                    }
+                  },
+                  "approvalcheckbox": {
+                    "name": "approvalcheckbox",
+                    "jcr:title": "I agree to the terms & conditions.",
+                    "sling:resourceType": "core/fd/components/form/checkbox/v1/checkbox",
+                    "fieldType": "checkbox",
+                    "required": true,
+                    "type": "string",
+                    "enum": [
+                      "true"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Wizard",
+          "id": "wizard",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer",
+                "template": {
+                  "jcr:title": "Wizard",
+                  "fieldType": "panel",
+                  "fd:viewType": "wizard",
+                  "minOccur": 1,
+                  "panel1": {
+                    "jcr:title": "Item 1",
+                    "fieldType": "panel",
+                    "sling:resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer"
+                  },
+                  "panel2": {
+                    "jcr:title": "Item 2",
+                    "fieldType": "panel",
+                    "sling:resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Fragment",
           "id": "fragment",
           "plugins": {
@@ -152,6 +656,30 @@
                 "template": {
                   "name": "Hero",
                   "model": "hero"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Custom Form Components",
+      "id": "custom-components",
+      "components": [
+        {
+          "title": "Range",
+          "id": "range",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/numberinput/v1/numberinput",
+                "template": {
+                  "jcr:title": "Range",
+                  "fieldType": "number-input",
+                  "fd:viewType": "range",
+                  "enabled": true,
+                  "visible": true
                 }
               }
             }

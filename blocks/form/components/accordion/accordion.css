@@ -1,0 +1,60 @@
+/* Accordion styling */
+:root {
+    --color-accordion-legend-background: #F3F6FD;
+    --color-accordion-collapse-icon: #1c3fca;
+    --color-accordion-border: #ecedf3;
+}
+
+main .form fieldset.accordion legend.accordion-legend {
+    padding: 24px 32px;
+    background-color: var(--color-accordion-legend-background);
+    position: relative;
+    margin-bottom: 0;
+}
+
+main .form .accordion > fieldset > legend.accordion-legend[data-visible='false'] {
+    display:block !important;
+    color:var(--color-accordion-legend-background);
+    user-select: none;
+}
+
+main .form .accordion > fieldset > legend::after {
+    content: '\221F';
+    color: var(--color-accordion-collapse-icon);
+    font-size: 19px;
+    display: inline;
+    position: absolute;
+    transition: transform 0s;
+    transform: rotate(-45deg);
+    margin-top: -5px;
+    right: 22px;
+    cursor: pointer;
+}
+
+main .form .accordion > fieldset.accordion-collapse > legend::after {
+    transform: rotate(-225deg);
+    margin-top: 0;
+}
+
+main .form fieldset.accordion-collapse > :not(legend) {
+    display: none !important;
+}
+
+
+main .form fieldset.accordion fieldset > :not(legend) {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+}
+
+main .form fieldset.accordion > fieldset:not(.checkbox-group-wrapper, .radio-group-wrapper) {
+    border: 1px solid var(--color-accordion-border);
+    margin: 0;
+}
+
+main .form fieldset.accordion  fieldset.accordion-collapse {
+    border: unset;
+}
+
+main .form fieldset.accordion {
+    row-gap: 0;
+}

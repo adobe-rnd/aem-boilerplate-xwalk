@@ -1,0 +1,10 @@
+{
+  "fields": [
+    {
+      "component": "text",
+      "name": "default",
+      "label": "Default Value",
+      "valueType": "string"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+name: Sync from xwalk to forms (monthly)
+
+on:
+  schedule:
+    - cron: "0 0 1 * *" # Runs at 00:00 on the 1st of every month
+  workflow_dispatch: # allow manual trigger
+
+permissions:
+  contents: write
+  pull-requests: write
+
+  actions: write
+  id-token: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout fork repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Add upstream repo
+        run: |
+          git remote add upstream https://github.com/adobe-rnd/aem-boilerplate-xwalk.git
+          git fetch upstream
+
+      - name: Create sync branch and rebase
+        run: |
+          BRANCH="sync-xwalk"
+          git checkout -b "$BRANCH" origin/main
+
+          set +e
+          git rebase upstream/main
+          while [ $? -ne 0 ]; do
+            echo "Merge conflicts detected — auto-committing resolution..."
+            git add -A
+            git commit -m "Auto-resolve conflict during monthly sync with xwalk"
+            git rebase --continue
+          done
+          set -e
+
+          # Revert any workflow file changes from upstream
+          git checkout origin/main -- .github/
+          
+          # If there are any staged changes to workflow files, commit the reversion
+          if ! git diff --cached --quiet .github/; then
+            git commit -m "Revert workflow file changes from upstream sync"
+          fi
+
+          git push origin "$BRANCH"
+          echo "BRANCH_NAME=$BRANCH" >> $GITHUB_ENV
+
+      - name: Create Pull Request
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "title": "chore:monthly sync from xwalk",
+              "body": "This PR syncs changes from [aem-boilerplate-xwalk](https://github.com/adobe-rnd/aem-boilerplate-xwalk) into this fork.\n- Branch: '"$BRANCH_NAME"'\n- All conflicts (if any) were auto-committed during rebase.\n- Note: Workflow files (.github/workflows/) are reverted to match our main and must be synced manually if required.",
+              "head": "'"$BRANCH_NAME"'",
+              "base": "main"
+            }' \
+            https://api.github.com/repos/adobe-rnd/aem-boilerplate-forms/pulls \
+            || echo "PR may already exist. Skipping..."

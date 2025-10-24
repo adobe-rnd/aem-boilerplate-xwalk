@@ -1,0 +1,92 @@
+{
+    "definitions": [
+        {
+            "title": "File Attachment",
+            "id": "file-input",
+            "plugins": {
+                "xwalk": {
+                    "page": {
+                        "resourceType": "core/fd/components/form/fileinput/v2/fileinput",
+                        "template": {
+                            "jcr:title": "File Attachment",
+                            "fieldType": "file-input",
+                            "accept": [
+                                "audio/*",
+                                "video/*",
+                                "image/*",
+                                "text/*",
+                                "application/pdf"
+                            ],
+                            "buttonText": "Attach",
+                            "dragDropText": "Drag and Drop To Upload",
+                            "type": "file"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "models": [
+        {
+            "id": "file-input",
+            "fields": [
+                {
+                    "component": "tab",
+                    "label": "Basic",
+                    "name": "basic"
+                },
+                {
+                    "...": "../form-common/_basic-input-fields.json#/fields"
+                },
+                {
+                    "component": "text",
+                    "name": "buttonText",
+                    "label": "Button Title",
+                    "valueType": "string"
+                },
+                {
+                "component": "richtext",
+                "name": "dragDropText",
+                "label": "Drag Drop Text",
+                "valueType": "string"
+                },
+                {
+                    "component": "tab",
+                    "label": "Validation",
+                    "name": "validation"
+                },
+                {
+                    "...": "../form-common/_basic-validation-fields.json#/fields"
+                },
+                {
+                    "component": "number",
+                    "name": "maxFileSize",
+                    "label": "Maximum file size (MB)",
+                    "valueType": "string"
+                },
+                {
+                    "component": "text",
+                    "name": "maxFileSizeMessage",
+                    "label": "Maximum file size error message",
+                    "valueType": "string"
+                },
+                {
+                    "component": "text",
+                    "name": "accept",
+                    "label": "Allowed file types",
+                    "valueType": "string",
+                    "multi": true
+                },
+                {
+                    "component": "text",
+                    "name": "acceptMessage",
+                    "label": "File type error message",
+                    "valueType": "string"
+                },
+                {
+                    "...": "../form-common/_help-container.json#/fields"
+                }
+            ]
+        }
+    ]
+}

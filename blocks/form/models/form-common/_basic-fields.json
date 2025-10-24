@@ -1,0 +1,93 @@
+{
+    "fields": [
+        {
+            "component": "text",
+            "name": "name",
+            "label": "Name",
+            "valueType": "string",
+            "required": true,
+            "valueFormat": "regexp",
+            "validation": {
+                "regExp": "^(?!\\$)[A-Za-z0-9_]+$",
+                "customErrorMsg": "Name must only contain letters, numbers, or underscores and cannot start with $"
+            }
+        },
+        {
+            "component": "text",
+            "name": "jcr:title",
+            "label": "Title",
+            "valueType": "string"
+        },
+        {
+            "component": "boolean",
+            "name": "visible",
+            "label": "Show Component",
+            "valueType": "boolean",
+            "value": true
+        },
+        {
+            "component": "boolean",
+            "name": "enabled",
+            "label": "Enable Component",
+            "valueType": "boolean",
+            "value": true
+        },
+        {
+            "component": "select",
+            "name": "colspan",
+            "label": "Column Span",
+            "valueType": "string",
+            "value": "12",
+            "options": [
+                {
+                    "name": "1 column",
+                    "value": "1"
+                },
+                {
+                    "name": "2 column",
+                    "value": "2"
+                },
+                {
+                    "name": "3 column",
+                    "value": "3"
+                },
+                {
+                    "name": "4 column",
+                    "value": "4"
+                },
+                {
+                    "name": "5 column",
+                    "value": "5"
+                },
+                {
+                    "name": "6 column",
+                    "value": "6"
+                },
+                {
+                    "name": "7 column",
+                    "value": "7"
+                },
+                {
+                    "name": "8 column",
+                    "value": "8"
+                },
+                {
+                    "name": "9 column",
+                    "value": "9"
+                },
+                {
+                    "name": "10 column",
+                    "value": "10"
+                },
+                {
+                    "name": "11 column",
+                    "value": "11"
+                },
+                {
+                    "name": "12 column",
+                    "value": "12"
+                }
+            ]
+        }
+    ]
+}

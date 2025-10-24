@@ -1,0 +1,54 @@
+{
+    "definitions": [
+        {
+            "title": "Text Input",
+            "id": "text-input",
+            "plugins": {
+                "xwalk": {
+                    "page": {
+                        "resourceType": "core/fd/components/form/textinput/v1/textinput",
+                        "template": {
+                            "jcr:title": "Text Input",
+                            "fieldType": "text-input"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "models": [
+        {
+            "id": "text-input",
+            "fields": [
+                {
+                    "component": "tab",
+                    "label": "Basic",
+                    "name": "basic"
+                },
+                {
+                    "...": "../form-common/_basic-input-placeholder-fields.json#/fields"
+                },
+                {
+                    "...": "../form-common/_basic-input-default-value-fields.json#/fields"
+                },
+                {
+                    "component": "boolean",
+                    "name": "multiLine",
+                    "label": "Allow multiple lines",
+                    "valueType": "boolean"
+                },
+                {
+                    "component": "tab",
+                    "label": "Validation",
+                    "name": "validation"
+                },
+                {
+                    "...": "../form-common/_string-validation-fields.json#/fields"
+                },
+                {
+                    "...": "../form-common/_help-container.json#/fields"
+                }
+            ]
+        }
+    ]
+}
