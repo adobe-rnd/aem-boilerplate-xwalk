@@ -476,6 +476,16 @@ main .form form div[data-variant="addDeleteButtons"] .item-remove {
     display: block;
 }
 
+/* Hide add button when add instance is disabled */
+main .form form .repeat-wrapper[data-add-instance="false"] .item-add {
+  display: none;
+}
+
+/* Hide remove buttons when remove instance is disabled */
+main .form form .repeat-wrapper[data-remove-instance="false"] .item-remove {
+  display: none;
+}
+
 /* End of Repeatable Styling */
 main .form .file-description{
   display: flex;

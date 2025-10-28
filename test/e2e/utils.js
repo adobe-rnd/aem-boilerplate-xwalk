@@ -1,4 +1,5 @@
 import { execSync } from 'node:child_process';
+import {expect} from "./fixtures.js";
 
 function executeGitCommand(command) {
   return execSync(command)
@@ -11,6 +12,27 @@ export async function getFieldModel(page, id) {
     return window.myForm._fields[id]._jsonModel;
   }, id);
 }
+
+export async function testRepeatablePanel(page, panelLocator) {
+  const panel = page.locator(panelLocator);
+  const addButton = page.getByText('Add');
+  const deleteButtons = page.getByText('Delete');
+  await expect(panel).toHaveCount(1);
+  await expect(addButton).toBeVisible();
+  await addButton.click();
+  await expect(panel).toHaveCount(2);
+  const panelCount = await panel.count();
+  for (let i = 0; i < panelCount; i++) {
+    await expect(panel.nth(i)).toBeVisible();
+  }
+  await expect(addButton).toBeHidden();
+  await expect(deleteButtons).toHaveCount(2);
+  await expect(deleteButtons.last()).toBeVisible();
+  await deleteButtons.last().click();
+  await expect(addButton).toBeVisible();
+  await expect(panel).toHaveCount(1);
+}
+
 // eslint-disable-next-line max-len
 export async function fillField(page, componentTitle, inputValues) {
   switch (componentTitle) {

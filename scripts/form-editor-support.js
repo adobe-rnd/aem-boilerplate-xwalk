@@ -20,6 +20,7 @@
 import decorate, { generateFormRendition } from '../blocks/form/form.js';
 import { loadCSS } from './aem.js';
 import { handleAccordionNavigation } from '../blocks/form/components/accordion/accordion.js';
+import { createButton as createRepeatButton } from '../blocks/form/components/repeat/repeat.js';
 
 window.currentMode = 'preview';
 let activeWizardStep;
@@ -102,6 +103,32 @@ function annotateContainer(fieldWrapper, fd) {
   fieldWrapper.setAttribute('data-aue-filter', 'form');
 }
 
+function annotateRepeatablePanel(fieldWrapper) {
+  const hasAddButton = fieldWrapper.querySelector('.repeat-actions .item-add');
+  const hasRemoveButton = fieldWrapper.querySelector('.item-remove');
+
+  if (!hasAddButton) {
+    let repeatActions = fieldWrapper.querySelector('.repeat-actions');
+    if (!repeatActions) {
+      repeatActions = document.createElement('div');
+      repeatActions.className = 'repeat-actions';
+      const legend = fieldWrapper.querySelector('legend');
+      if (legend) {
+        legend.insertAdjacentElement('afterend', repeatActions);
+      } else {
+        fieldWrapper.insertAdjacentElement('afterbegin', repeatActions);
+      }
+    }
+    const addButton = createRepeatButton('Add', 'add');
+    repeatActions.appendChild(addButton);
+  }
+
+  if (!hasRemoveButton) {
+    const removeButton = createRepeatButton('Delete', 'remove');
+    fieldWrapper.appendChild(removeButton);
+  }
+}
+
 export function getContainerChildNodes(container, fd) {
   if (fd[':type'] === 'modal') {
     return container.querySelector('.modal-content')?.childNodes;
@@ -129,6 +156,9 @@ function annotateItems(items, formDefinition, formFieldMap) {
               annotateFormFragment(fieldWrapper, fd);
             } else {
               annotateContainer(fieldWrapper, fd);
+              if (fd.repeatable === true) {
+                annotateRepeatablePanel(fieldWrapper);
+              }
               annotateItems(getContainerChildNodes(fieldWrapper, fd), formDefinition, formFieldMap);
               // retain wizard step selection
               if (activeWizardStep === fieldWrapper.dataset.id) {
