@@ -11,6 +11,67 @@ import {
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 
+/**
+ * Format time string to show only hours and minutes (HH:MM)
+ */
+function formatTime(timeString) {
+  const parts = timeString.trim().split(':');
+  if (parts.length >= 2) {
+    return `${parts[0]}:${parts[1]}`;
+  }
+  return timeString;
+}
+
+function updateLabel(element, startLabel) {
+  const timeCell = element.querySelector('div:first-child');
+  const timeParagraphs = timeCell ? Array.from(timeCell.querySelectorAll('p')) : [];
+  const timeText = timeParagraphs
+    .map(p => formatTime(p.textContent.trim()))
+    .filter(Boolean)
+    .join(' - ');
+  
+  // Get title from strong tag in any cell
+  const strongText = element.querySelector('strong')?.textContent;
+  
+  let breakTitle = startLabel;
+  if (timeText && strongText) {
+    breakTitle = `${timeText} - ${strongText}`;
+  } else if (timeText) {
+    breakTitle = timeText;
+  } else if (strongText) {
+    breakTitle = strongText;
+  }
+  
+  element.setAttribute('data-aue-label', breakTitle);
+}
+
+export function updateUEInstrumentation(){
+  const main = document.querySelector('main');
+
+  // update day label
+  main?.querySelectorAll('[data-aue-label="Day"]')?.forEach((element) => {
+    const strongText = element.querySelector('strong')?.textContent;
+    const dayTitle = strongText ? strongText : 'Day';
+    element.setAttribute('data-aue-label', dayTitle);
+  });
+  
+  // update venue label
+  main?.querySelectorAll('[data-aue-label="Venue"]')?.forEach((element) => {
+    const strongText = element.querySelector('strong')?.textContent;
+    const venueTitle = strongText ? strongText : 'Venue';
+    element.setAttribute('data-aue-label', venueTitle);
+  });
+  
+  // update break label
+  main?.querySelectorAll('[data-aue-label="Break"]')?.forEach((element) => {
+    updateLabel(element, 'Break');
+  });
+  
+  main?.querySelectorAll('[data-aue-label="Session"]')?.forEach((element) => {
+    updateLabel(element, 'Session');
+  });
+}
+
 async function applyChanges(event) {
   // redecorate default content and blocks on patches (in the properties rail)
   const { detail } = event;
@@ -104,7 +165,11 @@ function attachEventListners(main) {
   ].forEach((eventType) => main?.addEventListener(eventType, async (event) => {
     event.stopPropagation();
     const applied = await applyChanges(event);
-    if (!applied) window.location.reload();
+    if (applied) {
+      updateUEInstrumentation();
+    } else {
+      window.location.reload();
+    }
   }));
 }
 

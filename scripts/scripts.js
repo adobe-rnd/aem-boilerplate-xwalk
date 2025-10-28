@@ -11,6 +11,7 @@ import {
   loadSections,
   loadCSS,
 } from './aem.js';
+import { updateUEInstrumentation } from './editor-support.js';
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -140,6 +141,7 @@ function loadDelayed() {
 
 async function loadPage() {
   await loadEager(document);
+  updateUEInstrumentation();
   await loadLazy(document);
   loadDelayed();
 }
