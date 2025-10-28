@@ -3,7 +3,7 @@ import { UniversalEditorBase } from '../../main/page/universalEditorBasePage.js'
 
 const universalEditorBase = new UniversalEditorBase();
 const { selectors } = universalEditorBase;
-const fieldPath = 'root/section/form';
+const fieldPath = 'content/root/section/form';
 const componentName = 'Email Input';
 const component = 'emailinput';
 const randomValues = Date.now();
@@ -21,10 +21,13 @@ test.describe('Component properties validation in UE', () => {
     const contentTree = frame.locator(selectors.contentTree);
 
     await expect(frame.locator(selectors.propertyPagePath)).toBeVisible();
-    await expect(componentPathInUE).toBeVisible({ timeout: 20000 });
+    if (!await componentPathInUE.isVisible({ timeout: 20000 })) {
+      await page.reload();
+      await expect(componentPathInUE).toBeVisible({ timeout: 20000 });
+    }
     await expect(contentTree).toBeVisible({ timeout: 10000 });
     await contentTree.click();
-    const componentPathInContentTree = frame.locator(`li[data-resource$="/${fieldPath}/${component}"][class*="treenode"]`).first();
+    const componentPathInContentTree = frame.locator(`li[data-resource$="${fieldPath}/${component}"][class*="treenode"]`).first();
     await expandContentTreeField(page, frame, fieldPath);
     await expect(componentPathInContentTree).toBeVisible();
     await componentPathInContentTree.scrollIntoViewIfNeeded();
@@ -56,7 +59,7 @@ test.describe('Component properties validation in UE', () => {
 async function expandContentTreeField(page, frame,  path) {
   const nodeNames = path.split('/').filter(Boolean);
   for (const nodeName of nodeNames) {
-    const expandButtonSelector = `li[data-resource$="/${nodeName}"][class*="treenode"] button`;
+    const expandButtonSelector = `li[data-resource$="${nodeName}"][class*="treenode"] button`;
     const expandButton = frame.locator(expandButtonSelector).first();
     await expect(expandButton).toBeVisible({ timeout: 5000 });
 
@@ -67,5 +70,6 @@ async function expandContentTreeField(page, frame,  path) {
     }
   }
 }
+
 
 
