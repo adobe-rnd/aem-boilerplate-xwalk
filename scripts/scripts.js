@@ -12,8 +12,6 @@ import {
   loadCSS,
 } from './aem.js';
 
-import updateUEInstrumentation from './editor-support.js';
-
 /**
  * Moves all the attributes from a given elmenet to another given element.
  * @param {Element} from the element to copy attributes from
@@ -46,6 +44,67 @@ export function moveInstrumentation(from, to) {
       .map(({ nodeName }) => nodeName)
       .filter((attr) => attr.startsWith('data-aue-') || attr.startsWith('data-richtext-')),
   );
+}
+
+/**
+ * Format time string to show only hours and minutes (HH:MM)
+ */
+function formatTime(timeString) {
+  const parts = timeString.trim().split(':');
+  if (parts.length >= 2) {
+    return `${parts[0]}:${parts[1]}`;
+  }
+  return timeString;
+}
+
+function updateLabel(element, startLabel) {
+  const timeCell = element.querySelector('div:first-child');
+  const timeParagraphs = timeCell ? Array.from(timeCell.querySelectorAll('p')) : [];
+  const timeText = timeParagraphs
+    .map((p) => formatTime(p.textContent.trim()))
+    .filter(Boolean)
+    .join(' - ');
+
+  // Get title from strong tag in any cell
+  const strongText = element.querySelector('strong')?.textContent;
+
+  let breakTitle = startLabel;
+  if (timeText && strongText) {
+    breakTitle = `${timeText} - ${strongText}`;
+  } else if (timeText) {
+    breakTitle = timeText;
+  } else if (strongText) {
+    breakTitle = strongText;
+  }
+
+  element.setAttribute('data-aue-label', breakTitle);
+}
+
+export function updateUEInstrumentation() {
+  const main = document.querySelector('main');
+
+  // update day label
+  main?.querySelectorAll('[data-aue-label="Day"]')?.forEach((element) => {
+    const strongText = element.querySelector('strong')?.textContent;
+    const dayTitle = strongText || 'Day';
+    element.setAttribute('data-aue-label', dayTitle);
+  });
+
+  // update venue label
+  main?.querySelectorAll('[data-aue-label="Venue"]')?.forEach((element) => {
+    const strongText = element.querySelector('strong')?.textContent;
+    const venueTitle = strongText || 'Venue';
+    element.setAttribute('data-aue-label', venueTitle);
+  });
+
+  // update break label
+  main?.querySelectorAll('[data-aue-label="Break"]')?.forEach((element) => {
+    updateLabel(element, 'Break');
+  });
+
+  main?.querySelectorAll('[data-aue-label="Session"]')?.forEach((element) => {
+    updateLabel(element, 'Session');
+  });
 }
 
 /**
