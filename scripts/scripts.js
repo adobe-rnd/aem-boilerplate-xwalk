@@ -11,7 +11,8 @@ import {
   loadSections,
   loadCSS,
 } from './aem.js';
-import { updateUEInstrumentation } from './editor-support.js';
+
+import updateUEInstrumentation from './editor-support.js';
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
