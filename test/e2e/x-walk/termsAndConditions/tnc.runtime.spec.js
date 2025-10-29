@@ -3,7 +3,7 @@ import { openPage } from '../../utils.js';
 
 let requestPayload = null;
 const checkboxLocator = 'input[type="checkbox"]';
-const termsAndConditionsLocator = 'div[class*="tnc-text-decoration"]';
+const termsAndConditionsLocator = 'div[class*="tnc__text-decoration"]';
 const partialUrl = '/L2NvbnRlbnQvYWVtLWJvaWxlcnBsYXRlLWZvcm1zLXh3YWxrLWNvbGxhdGVyYWxzL3Rlcm1zLWFuZC1jb25kaXRpb24vamNyOmNvbnRlbnQvcm9vdC9zZWN0aW9uL2Zvcm0=';
 
 test.describe('validation of components in UE publish mode', async () => {

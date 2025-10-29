@@ -1,8 +1,3 @@
 {
-  "extends": ["config:recommended"],
-  "packageRules": [{
-      "matchDepTypes": ["devDependencies"],
-      "labels": ["ignore-psi-check"], 
-      "automerge": true
-  }]
+  "extends": ["config:recommended"]
 }
