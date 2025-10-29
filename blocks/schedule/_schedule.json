@@ -134,7 +134,6 @@
           "valueType": "time",
           "name": "time_starttime",
           "label": "Start Time",
-
           "condition": { "or": [
             { "===" : [
               { "var": "classes" }, "session-entry"]
