@@ -1,4 +1,4 @@
-const textIntersectionClass = 'tnc-text-intersect';
+const textIntersectionClass = 'tnc__text-intersect';
 const textDecorationClass = 'tnc-text-decoration';
 
 class TermsAndConditions {
