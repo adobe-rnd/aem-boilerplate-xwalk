@@ -6,8 +6,9 @@
   "type": "module",
   "scripts": {
     "lint:js": "eslint . --ext .json,.js,.mjs",
-    "lint:css": "stylelint blocks/**/*.css styles/*.css",
+    "lint:css": "stylelint \"blocks/**/*.css\" \"styles/*.css\"",
     "lint": "npm run lint:js && npm run lint:css",
+    "lint:fix": "npm run lint:js -- --fix && npm run lint:css -- --fix",
     "build:json": "npm-run-all -p build:json:models build:json:definitions build:json:filters",
     "build:json:models": "merge-json-cli -i \"models/_component-models.json\" -o \"component-models.json\"",
     "build:json:definitions": "merge-json-cli -i \"models/_component-definition.json\" -o \"component-definition.json\"",
@@ -66,7 +67,7 @@
     "enquirer": "2.4.1",
     "eslint": "8.57.1",
     "eslint-config-airbnb-base": "15.0.0",
-    "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-import": "2.32.0",
     "eslint-plugin-json": "3.1.0",
     "eslint-plugin-xwalk": "github:adobe-rnd/eslint-plugin-xwalk#v0.1.3",
     "fs-extra": "11.2.0",
@@ -86,8 +87,8 @@
     "rollup-plugin-license": "^3.0.1",
     "rollup-plugin-terser": "^7.0.2",
     "sinon": "^17.0.1",
-    "stylelint": "16.12.0",
-    "stylelint-config-standard": "36.0.1"
+    "stylelint": "16.21.1",
+    "stylelint-config-standard": "38.0.0"
   },
   "mocha": {
     "spec": "test/**/*.test.js",
