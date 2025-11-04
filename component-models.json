@@ -3,12 +3,6 @@
     "id": "page-metadata",
     "fields": [
       {
-        "component": "text",
-        "name": "initialContentRefTarget",
-        "value": "true",
-        "hidden": true
-      },
-      {
         "component": "select",
         "name": "template",
         "label": "Template",
@@ -23,7 +17,7 @@
           }
         ],
         "condition": {
-          "!==": [
+          "===": [
             {
               "var": "initialContentRefTarget"
             },
@@ -82,7 +76,7 @@
           }
         ],
         "condition": {
-          "!==": [
+          "===": [
             {
               "var": "initialContentRefTarget"
             },
