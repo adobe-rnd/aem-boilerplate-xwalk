@@ -1,0 +1,246 @@
+{
+  "definitions": [
+    {
+      "title": "Cub Teaser",
+      "id": "cub-teaser",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "CUB Teaser",
+              "filter": "cub-teaser",
+              "model": "cub-teaser",
+              "teaser_titleType": "h2"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "CUB Teaser FAQ",
+      "id": "cub-teaser-faq",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Cub Teaser FAQ",
+              "model": "cub-teaser-faq"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "cub-teaser",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "Image",
+          "name": "imagetab"
+        },
+        {
+          "component": "reference",
+          "name": "image",
+          "label": "Image"
+        },
+        {
+          "component": "tab",
+          "label": "Texts",
+          "name": "texttab"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "teaser_pretitle",
+          "label": "Pretitle"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "teaser_title",
+          "label": "Title",
+          "required": true
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "teaser_titleType",
+          "label": "Heading type for title",
+          "options": [
+            {
+              "name": "h2",
+              "value": "h2"
+            },
+            {
+              "name": "h3",
+              "value": "h3"
+            }
+          ]
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "teaser_description",
+          "label": "Description"
+        },
+        {
+          "component": "tab",
+          "label": "Links",
+          "name": "linkstab"
+        },
+        {
+          "component": "select",
+          "name": "links_link1icon",
+          "label": "Link 1 Icon",
+          "options": [
+            {
+              "name": "Info",
+              "value": "info"
+            },
+            {
+              "name": "Video",
+              "value": "video"
+            },
+            {
+              "name": "Currency",
+              "value": "currency"
+            },
+            {
+              "name": "Credit Card",
+              "value": "credit-card"
+            }
+          ]
+        },
+        {
+          "component": "aem-content",
+          "name": "links_link1",
+          "label": "Link 1"
+        },
+        {
+          "component": "text",
+          "name": "links_link1Text",
+          "label": "Link 1 Text"
+        },
+        {
+          "component": "select",
+          "name": "links_link2icon",
+          "label": "Link 2 Icon",
+          "options": [
+            {
+              "name": "Info",
+              "value": "info"
+            },
+            {
+              "name": "Video",
+              "value": "video"
+            },
+            {
+              "name": "Currency",
+              "value": "currency"
+            },
+            {
+              "name": "Credit Card",
+              "value": "credit-card"
+            }
+          ]
+        },
+        {
+          "component": "aem-content",
+          "name": "links_link2",
+          "label": "Link 2"
+        },
+        {
+          "component": "text",
+          "name": "links_link2Text",
+          "label": "Link 2 Text"
+        },
+        {
+          "component": "tab",
+          "label": "CTA Buttons",
+          "name": "cta_buttonstab"
+        },
+        {
+          "component": "text",
+          "name": "cta_button1Text",
+          "label": "Button 1 Text"
+        },
+        {
+          "component": "aem-content",
+          "name": "cta_button1",
+          "label": "Button 1 Link"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "cta_button1Type",
+          "label": "Button 1Style",
+          "options": [
+            {
+              "name": "Primary",
+              "value": "secondary"
+            },
+            {
+              "name": "Secondary",
+              "value": "Primary"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "cta_button2Text",
+          "label": "Button 2 Text"
+        },
+        {
+          "component": "aem-content",
+          "name": "cta_button2",
+          "label": "Button 2 Link"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "cta_button2Type",
+          "label": "Button 2 Style",
+          "options": [
+            {
+              "name": "Primary",
+              "value": "secondary"
+            },
+            {
+              "name": "Secondary",
+              "value": "Primary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cub-teaser-faq",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "question",
+          "label": "Question"
+        },
+        {
+          "component": "richtext",
+          "name": "answer",
+          "label": "Answer",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "cub-teaser",
+      "components": [
+        "cub-teaser-faq"
+      ]
+    }
+  ]
+}

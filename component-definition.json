@@ -128,6 +128,38 @@
           }
         },
         {
+          "title": "Cub Teaser",
+          "id": "cub-teaser",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "CUB Teaser",
+                  "filter": "cub-teaser",
+                  "model": "cub-teaser",
+                  "teaser_titleType": "h2"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "CUB Teaser FAQ",
+          "id": "cub-teaser-faq",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Cub Teaser FAQ",
+                  "model": "cub-teaser-faq"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Fragment",
           "id": "fragment",
           "plugins": {

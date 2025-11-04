@@ -6,6 +6,10 @@
     ]
   },
   {
+    "id": "empty",
+    "components": []
+  },
+  {
     "id": "section",
     "components": [
       "text",
@@ -15,7 +19,8 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "cub-teaser"
     ]
   },
   {
@@ -37,6 +42,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "cub-teaser",
+    "components": [
+      "cub-teaser-faq"
     ]
   }
 ]

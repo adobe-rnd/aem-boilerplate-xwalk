@@ -1,0 +1,280 @@
+/* the block div itself is a container for the entire block */
+.block.cub-teaser {
+  padding: 40px;
+  border-radius: 8px;
+  margin: 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* the div containg image and texts */
+.block.cub-teaser > div:first-child {
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+  margin-bottom: 32px;
+  align-items: flex-start;
+}
+
+/* image container */
+.block.cub-teaser .cub-teaser-image {
+  flex: 0 0 400px;
+}
+
+.block.cub-teaser .cub-teaser-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.block.cub-teaser .cub-teaser-text {
+  flex: 1;
+}
+
+/* pretitle:target the p that is immediately followed by a h2 or h3 */
+.block.cub-teaser .cub-teaser-text > p:first-child {
+  display: inline-block;
+  background-image: linear-gradient(90deg, #ff6000, #f90);
+  color: white;
+  padding: 2px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  position: relative;
+}
+
+.block.cub-teaser .cub-teaser-text > p:first-child::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13px 0 13px 13px;
+  border-color: transparent transparent transparent #f90;
+  content: "";
+}
+
+/* teaser title , target h2 and h3 */
+.block.cub-teaser .cub-teaser-text h2,
+.block.cub-teaser .cub-teaser-text h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 20px 0;
+  line-height: 1.3;
+}
+
+/* teaser description, target the p right after the h2 or h3 */
+.block.cub-teaser .cub-teaser-text > h2 + p,
+.block.cub-teaser .cub-teaser-text > h3 + p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0 0 16px 0;
+}
+
+.block.cub-teaser .cub-teaser-text em {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #999;
+  margin: 0 0 16px 0;
+  font-style: normal;
+}
+
+/* links container */
+.block.cub-teaser .cub-teaser-links .button-container {
+  margin: 0;
+  padding: 0;
+}
+
+
+.block.cub-teaser .cub-teaser-links  a.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  padding:0px;
+  font-size: 14px;
+  color: #999;
+  background-color: white;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+}
+
+.block.cub-teaser .cub-teaser-links  a.button::before {
+  padding-right:10px;
+}
+.block.cub-teaser .cub-teaser-links  a.button.video::before {
+  content: "\e903";
+}
+
+.block.cub-teaser .cub-teaser-links  a.button.currency::before {
+  content: "\e900";
+}
+
+.block.cub-teaser .cub-teaser-links  a.button.credit-card::before {
+  content: "\e901";
+}
+
+.block.cub-teaser .cub-teaser-links  a.button.info::before {
+  content: "\e902";
+}
+
+
+/* the cta buttons container */
+.block.cub-teaser .cub-teaser-cta {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.block.cub-teaser .cub-teaser-cta .button-container {
+  margin: 0;
+}
+
+.block.cub-teaser .cub-teaser-cta a.button {
+  display: inline-block;
+  background: #006644;
+  color: white;
+  padding: 16px 32px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.block.cub-teaser .cub-teaser-cta a.button:hover {
+  background: #005533;
+}
+
+/* the secondary cta button */
+.block.cub-teaser .cub-teaser-cta a.button.secondary {
+  background: transparent;
+  color: #006644;
+  border: 2px solid #006644;
+}
+
+.block.cub-teaser .cub-teaser-cta a.button.secondary:hover {
+  background: #f0f0f0;
+}
+
+/* the FAQ items container */
+.block.cub-teaser .cub-teaser-faq-item {
+  border-top: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+.block.cub-teaser .cub-teaser-faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  padding-right: 40px;
+}
+
+.block.cub-teaser .cub-teaser-faq-question p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.block.cub-teaser .cub-teaser-faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  font-weight: 300;
+  color: #666;
+  transition: transform 0.3s ease;
+}
+
+.block.cub-teaser .cub-teaser-faq-item.active .cub-teaser-faq-question::after {
+  content: "−";
+}
+
+.block.cub-teaser .cub-teaser-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-top: 0;
+  display: none;
+}
+
+/* show the answer when the FAQ item is active */
+.block.cub-teaser .cub-teaser-faq-item.active .cub-teaser-faq-answer {
+  display: block;
+}
+
+.block.cub-teaser .cub-teaser-faq-item.active .cub-teaser-faq-answer {
+  max-height: 1000px;
+  padding-top: 16px;
+}
+
+.block.cub-teaser .cub-teaser-faq-answer p,
+.block.cub-teaser .cub-teaser-faq-answer ol,
+.block.cub-teaser .cub-teaser-faq-answer ul {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #666;
+  margin: 0 0 12px 0;
+}
+
+.block.cub-teaser .cub-teaser-faq-answer p:last-child,
+.block.cub-teaser .cub-teaser-faq-answer ol:last-child,
+.block.cub-teaser .cub-teaser-faq-answer ul:last-child {
+  margin-bottom: 0;
+}
+
+.block.cub-teaser .cub-teaser-faq-answer a {
+  color: #006644;
+  text-decoration: underline;
+}
+
+.block.cub-teaser .cub-teaser-faq-answer a:hover {
+  color: #005533;
+}
+
+@media (max-width: 768px) {
+  .block.cub-teaser {
+    padding: 20px;
+  }
+
+  .block.cub-teaser > div:first-child {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .block.cub-teaser .cub-teaser-image {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .block.cub-teaser .cub-teaser-text h2,
+  .block.cub-teaser .cub-teaser-text h3 {
+    font-size: 24px;
+  }
+
+  .block.cub-teaser .cub-teaser-cta {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .block.cub-teaser .cub-teaser-cta a.button {
+    display: block;
+    text-align: center;
+  }
+}

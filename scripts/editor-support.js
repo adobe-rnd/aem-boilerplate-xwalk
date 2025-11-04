@@ -11,6 +11,42 @@ import {
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 
+/* example hook to get the state of a block */
+function getState(block) {
+  // e.g store the currently selected slide before the update
+}
+
+/* example hook to set the state of a block */
+function setState(block, state) {
+  // e.g restore the previously selected slide on the updated carousel
+}
+
+function updateUEInstrumentation() {
+  const main = document.querySelector('main');
+
+  // update FAQ entry labels to show first 10 characters of the question
+  main?.querySelectorAll('[data-aue-model="cub-teaser"]')?.forEach((teaser) => {
+    const label = teaser.querySelector('[data-aue-prop="teaser_title"]')?.textContent.trim().slice(0, 10);
+    if (label) {
+      teaser.dataset.aueLabel = `Teaser: ${label} ...`;
+    }
+
+    // for demo purposes, only allow max 3 FAQ entries
+    const numberOfFAQEntries = teaser.querySelectorAll('[data-aue-model="cub-teaser-faq"]').length || 0;
+    if (numberOfFAQEntries >= 3) {
+      teaser.dataset.aueFilter = 'empty';
+    }
+  });
+
+  // update FAQ entry labels to show first 10 characters of the question
+  main?.querySelectorAll('[data-aue-model="cub-teaser-faq"]')?.forEach((faqEntry) => {
+    const label = faqEntry.firstElementChild.textContent.trim().slice(0, 10);
+    if (label) {
+      faqEntry.dataset.aueLabel = `FAQ: ${label}...`;
+    }
+  });
+}
+
 async function applyChanges(event) {
   // redecorate default content and blocks on patches (in the properties rail)
   const { detail } = event;
@@ -48,6 +84,7 @@ async function applyChanges(event) {
 
     const block = element.parentElement?.closest('.block[data-aue-resource]') || element?.closest('.block[data-aue-resource]');
     if (block) {
+      const state = getState(block);
       const blockResource = block.getAttribute('data-aue-resource');
       const newBlock = parsedUpdate.querySelector(`[data-aue-resource="${blockResource}"]`);
       if (newBlock) {
@@ -59,6 +96,7 @@ async function applyChanges(event) {
         decorateRichtext(newBlock);
         await loadBlock(newBlock);
         block.remove();
+        setState(newBlock, state);
         newBlock.style.display = null;
         return true;
       }
@@ -93,6 +131,22 @@ async function applyChanges(event) {
   return false;
 }
 
+function handleSelection(event) {
+  // get event details
+  const { detail } = event;
+  const resource = detail?.resource;
+
+  if (resource) {
+    // get the element that has that resource
+    const element = document.querySelector(`[data-aue-resource="${resource}"]`);
+    // if selected element is a FAQ item, make sure its open,
+    //  so the question/answer are visible and editable
+    if (element.dataset.aueModel === 'cub-teaser-faq') {
+      element.classList.add('active');
+    }
+  }
+}
+
 function attachEventListners(main) {
   [
     'aue:content-patch',
@@ -104,8 +158,15 @@ function attachEventListners(main) {
   ].forEach((eventType) => main?.addEventListener(eventType, async (event) => {
     event.stopPropagation();
     const applied = await applyChanges(event);
-    if (!applied) window.location.reload();
+    if (!applied) {
+      window.location.reload();
+    } else {
+      updateUEInstrumentation();
+    }
   }));
+
+  // if a component is selected
+  main?.addEventListener('aue:ui-select', handleSelection);
 }
 
 attachEventListners(document.querySelector('main'));
@@ -117,3 +178,16 @@ decorateRichtext();
 // for new richtext-instrumented elements. this happens for example when using experimentation.
 const observer = new MutationObserver(() => decorateRichtext());
 observer.observe(document, { attributeFilter: ['data-richtext-prop'], subtree: true });
+
+// example hook: when entering edit mode ..
+document.addEventListener('aue:ui-edit', () => {
+  // e.g. stop animation of a carousel
+});
+
+// example hook: when entering preview mode ...
+document.addEventListener('aue:ui-preview', () => {
+  // e.g. restart animation of a carousel
+});
+
+// update the UE instrumentation on inital load
+updateUEInstrumentation();
