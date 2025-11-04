@@ -15,7 +15,15 @@
             "name": "Article",
             "value": "article"
           }
-        ]
+        ],
+        "condition": {
+          "!==": [
+            {
+              "var": "initialContentRefTarget"
+            },
+            "true"
+          ]
+        }
       },
       {
         "component": "text",
@@ -66,7 +74,15 @@
             "name": "Article",
             "value": "article"
           }
-        ]
+        ],
+        "condition": {
+          "!==": [
+            {
+              "var": "initialContentRefTarget"
+            },
+            "true"
+          ]
+        }
       },
       {
         "component": "container",
