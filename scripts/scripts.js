@@ -11,6 +11,7 @@ import {
   loadSections,
   loadCSS,
 } from './aem.js';
+import applyGovernance from './governance.js';
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -141,6 +142,9 @@ function loadDelayed() {
 async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
+  // we apply governance after decorating the blocks
+  // so that also blocks that get rearranged can be targeted by the restrictions
+  await applyGovernance();
   loadDelayed();
 }
 

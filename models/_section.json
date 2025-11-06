@@ -52,6 +52,11 @@
         "columns",
         "fragment"
       ]
+    },
+    {
+      "id": "empty",
+      "components": [
+      ]
     }
   ]
 }
