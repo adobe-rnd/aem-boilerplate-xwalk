@@ -123,7 +123,7 @@
 
     // Apply filter rules
     const filteredComponents = componentFilters.map((filter) => {
-      const { id, components } = filter;
+      const { components } = filter;
       let filteredComponentList = [...components];
 
       // Apply allow filter first (if set)
@@ -151,7 +151,7 @@
       }
 
       return {
-        id,
+        ...filter,
         components: filteredComponentList,
       };
     });
