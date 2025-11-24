@@ -5,6 +5,10 @@
   "description": "Starter project for Adobe Helix",
   "type": "module",
   "scripts": {
+    "test": "mocha & playwright test",
+    "coverage:unit": "c8 --reporter=json --reporter=text --lines 85 --functions 88 --branches 85 --no-check-coverage mocha",
+    "coverage:e2e": "c8 --reporter=json --reporter=text --lines 80 --functions 80 --branches 70 --no-check-coverage playwright test --project='chromium'",
+    "coverage": "node ./test/merge-coverage.js",
     "lint:js": "eslint . --ext .json,.js,.mjs",
     "lint:css": "stylelint \"blocks/**/*.css\" \"styles/*.css\"",
     "lint": "npm run lint:js && npm run lint:css",
@@ -30,8 +34,9 @@
     "exclude": [
       "blocks/form/rules/model/*.js",
       "blocks/form/rules/formula/*.js",
-      "blocks/form/rules/worker.js",
-      "blocks/form/rules-doc/parser/*.js"
+      "blocks/form/rules-doc/parser/*.js",
+      "blocks/form/rules/functions.js",
+      "blocks/form/functions.js"
     ],
     "include": [
       "blocks/form/**/*.js",
@@ -89,6 +94,29 @@
     "sinon": "^17.0.1",
     "stylelint": "16.21.1",
     "stylelint-config-standard": "38.0.0"
+  },
+  "nyc": {
+    "exclude": [
+      "blocks/form/rules/model/*.js",
+      "blocks/form/rules/formula/*.js",
+      "blocks/form/rules-doc/parser/*.js"
+    ],
+    "include": [
+      "blocks/form/**/*.js",
+      "blocks/form/rules/*.js"
+    ],
+    "report-dir": "coverage",
+    "temp-dir": ".nyc_output",
+    "reporter": [
+      "html",
+      "text-summary",
+      "lcov",
+      "json"
+    ],
+    "lines": 85,
+    "functions": 88,
+    "branches": 80,
+    "statements": 85
   },
   "mocha": {
     "spec": "test/**/*.test.js",

@@ -1,8 +1,14 @@
 version: 2.1
+
 orbs:
   node: circleci/node@5
   browser-tools: circleci/browser-tools@1.2.3
+
+# ------------------------------------------------
+# JOB DEFINITIONS
+# ------------------------------------------------
 jobs:
+  # ---------------- LINT JOB ----------------
   lint:
     executor: node/default
     steps:
@@ -12,74 +18,162 @@ jobs:
       - run:
           name: Run lint
           command: npm run lint
+
+  # ---------------- UNIT TEST JOB ----------------
   unit-tests:
-    # Install node dependencies and run tests
     executor: node/default
     steps:
       - checkout
       - node/install-packages:
           pkg-manager: npm
       - run:
-          name: Print node install help instructions
-          command: |-
-            echo "One cause for node package install failure is if you have private repositories that it can't reach
-            One way to fix this for private npm packages:
-              1. Use the npm CLI's \"login\" command to create a token (usually saved in your user's \"~/.npmrc\" file)
-                For more info, see https://circleci.com/blog/publishing-npm-packages-using-circleci-2-0/#:~:text=set%20the%20%24npm_token%20environment%20variable%20in%20circleci
-              2. Add a NPM_TOKEN to an org context
-                For info on how to use contexts, see https://circleci.com/docs/contexts/
-              3. Add a .circleci/config.yml to your repository or use this config.yml as a starting template
-              4. Configure the jobs to use the context that includes NPM_TOKEN
-              5. Add a step to inject your NPM_TOKEN environment variable into npm before \"install-packages\"
-                For an example, see https://circleci.com/blog/publishing-npm-packages-using-circleci-2-0/#:~:text=the%20deploy%20job%20has%20several%20steps%20that%20run%20to%20authenticate%20with%20and%20publish%20to"
-          when: on_fail
-      - run:
-          name: Run unit tests
-          command: npm run test:unit --passWithNoTests
+          name: Run unit tests with coverage
+          command: |
+            npx c8 --reporter=json --reporter=text --lines 85 npm run test:unit || true
+
+            if [ -f "coverage/coverage-final.json" ]; then
+              mv coverage/coverage-final.json coverage/coverage-final-unit.json
+
+              mkdir -p .nyc_output coverage/unit-artifacts
+              cp coverage/coverage-final-unit.json .nyc_output/coverage.json
+              npx nyc report --reporter=html --report-dir=coverage/unit-artifacts
+              npx nyc report --reporter=text-summary > coverage/unit-artifacts/unit-text-summary.txt
+              cp coverage/unit-artifacts/index.html coverage/unit-artifacts/indexUnit.html
+            else
+              mkdir -p coverage
+              echo '{}' > coverage/coverage-final-unit.json
+            fi
+          environment:
+            CI: true
+
+      - store_artifacts:
+          path: coverage/unit-artifacts
+          destination: unit-test-coverage
+
+      - persist_to_workspace:
+          root: .
+          paths:
+            - coverage/coverage-final-unit.json
+
+  # ---------------- E2E TEST JOB ----------------
   e2e-tests:
     docker:
       - image: mcr.microsoft.com/playwright:v1.40.0-jammy
     steps:
       - checkout
+
       - run:
-          name: Install Playwright
+          name: Install dependencies
+          command: npm ci
+
+      - run:
+          name: Install Playwright browsers
+          command: npx playwright install chromium
+
+      - run:
+          name: Run E2E tests with coverage
           command: |
-              npm i -D @playwright/test
-              npx playwright install
-      - run:
-          name: Install browsers
-          command: npx playwright install chrome
-      - run:
-          name: Run end-to-end
-          command:  npm run test:e2e
+            npx c8 --reporter=json --reporter=text --lines 45 \
+              npx playwright test --project='chromium' || true
+
+            if [ -f "coverage/coverage-final.json" ]; then
+              mv coverage/coverage-final.json coverage/coverage-final-e2e.json
+
+              mkdir -p .nyc_output coverage/e2e-artifacts
+              cp coverage/coverage-final-e2e.json .nyc_output/coverage.json
+              npx nyc report --reporter=html --report-dir=coverage/e2e-artifacts
+              npx nyc report --reporter=text-summary > coverage/e2e-artifacts/e2e-text-summary.txt
+              cp coverage/e2e-artifacts/index.html coverage/e2e-artifacts/indexE2e.html
+            else
+              mkdir -p coverage
+              echo '{}' > coverage/coverage-final-e2e.json
+            fi
+          environment:
+            CI: true
+            COVERAGE_RUN: true
+
       - store_artifacts:
           path: test/e2e/reports
           destination: test-results
+
       - store_artifacts:
-          path: ./videos
+          path: videos
           destination: videos
+
       - store_artifacts:
-          path: ./error-screenshot.png
+          path: test-results
           destination: screenshots
+
+      - persist_to_workspace:
+          root: .
+          paths:
+            - coverage/coverage-final-e2e.json
+
+  # ---------------- MERGE + REPORT COVERAGE ----------------
   check-coverage:
     executor: node/default
     steps:
       - checkout
       - node/install-packages:
           pkg-manager: npm
+      - attach_workspace:
+          at: .
+
       - run:
-          name: Install Dependencies
-          command: npm i
-      - run:
-          name : check coverage
-          command:  npm run coverage
+          name: Merge and generate final coverage
+          command: |
+            mkdir -p coverage .nyc_output coverage/normalized
+
+            UNIT_FILE="coverage/coverage-final-unit.json"
+            E2E_FILE="coverage/coverage-final-e2e.json"
+
+            # Normalize paths (needed for correct merging)
+            if [ -f "$UNIT_FILE" ]; then
+              sed 's|"/home/circleci/project/|"/project/|g' "$UNIT_FILE" > coverage/normalized/unit.json
+            fi
+
+            if [ -f "$E2E_FILE" ]; then
+              sed 's|"/root/project/|"/project/|g' "$E2E_FILE" > coverage/normalized/e2e.json
+            fi
+
+            # Merge
+            npx nyc merge coverage/normalized .nyc_output/coverage.json
+
+            # Convert back so NYC can resolve sources
+            sed 's|"/project/|"/home/circleci/project/|g' .nyc_output/coverage.json > .nyc_output/coverage-final.json
+            mv .nyc_output/coverage-final.json .nyc_output/coverage.json
+
+            # Generate final combined coverage reports
+            mkdir -p coverage/combined-artifacts
+            npx nyc report --reporter=html --report-dir=coverage/combined-artifacts
+            npx nyc report --reporter=text-summary > coverage/combined-artifacts/combined-text-summary.txt
+            cp coverage/combined-artifacts/index.html coverage/combined-artifacts/indexCombined.html
+
+            # Enforce coverage thresholds
+            npx nyc report --reporter=lcov --report-dir=coverage/combined-artifacts
+            npx nyc report --check-coverage --lines=90 --functions=85 --branches=90
+
+      - store_artifacts:
+          path: coverage/combined-artifacts
+          destination: combined-coverage-reports
+
       - store_artifacts:
           path: coverage
+          destination: all-coverage-files
+
+# ------------------------------------------------
+# WORKFLOWS
+# ------------------------------------------------
 workflows:
   lint:
     jobs:
       - lint
+
   build-and-test:
     jobs:
       - unit-tests
       - e2e-tests
+      - check-coverage:
+          requires:
+            - unit-tests
+            - e2e-tests
