@@ -9,7 +9,7 @@ function applyRestrictions(allowedSelectors) {
       if (value === 'Image' || value === 'Title' || value === 'Button') {
         cssSelector += `[data-aue-model="${value.toLowerCase()}"] `;
       } else if (value === 'Text') {
-        cssSelector += `[data-aue-type="richtext"] `;
+        cssSelector += '[data-aue-type="richtext"] ';
       } else {
         cssSelector += `[data-aue-label="${value}"] `;
       }
