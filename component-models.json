@@ -211,6 +211,12 @@
     "id": "form-button",
     "fields": [
       {
+        "component": "container",
+        "name": "button_label",
+        "label": "Form Button",
+        "collapsible": false
+      },
+      {
         "component": "tab",
         "label": "Basic",
         "name": "basic"
@@ -326,6 +332,12 @@
   {
     "id": "checkbox-group",
     "fields": [
+      {
+        "component": "container",
+        "name": "checkbox_group_label",
+        "label": "Checkbox Group",
+        "collapsible": false
+      },
       {
         "component": "tab",
         "label": "Basic",
@@ -567,6 +579,12 @@
     "id": "checkbox",
     "fields": [
       {
+        "component": "container",
+        "name": "checkbox_label",
+        "label": "Single Checkbox",
+        "collapsible": false
+      },
+      {
         "component": "tab",
         "label": "Basic",
         "name": "basic"
@@ -783,6 +801,12 @@
   {
     "id": "date-input",
     "fields": [
+      {
+        "component": "container",
+        "name": "date_picker_label",
+        "label": "Date Picker",
+        "collapsible": false
+      },
       {
         "component": "tab",
         "label": "Basic",
@@ -1028,6 +1052,12 @@
     "id": "drop-down",
     "fields": [
       {
+        "component": "container",
+        "name": "dropdown_label",
+        "label": "Dropdown",
+        "collapsible": false
+      },
+      {
         "component": "tab",
         "label": "Basic",
         "name": "basic"
@@ -1259,6 +1289,12 @@
     "id": "email",
     "fields": [
       {
+        "component": "container",
+        "name": "email_input_label",
+        "label": "Email Field",
+        "collapsible": false
+      },
+      {
         "component": "tab",
         "label": "Basic",
         "name": "basic"
@@ -1478,6 +1514,12 @@
     "id": "file-input",
     "fields": [
       {
+        "component": "container",
+        "name": "file_upload_label",
+        "label": "File Upload",
+        "collapsible": false
+      },
+      {
         "component": "tab",
         "label": "Basic",
         "name": "basic"
@@ -1680,6 +1722,12 @@
     "id": "form-fragment",
     "fields": [
       {
+        "component": "container",
+        "name": "form_fragment_label",
+        "label": "Form Fragment",
+        "collapsible": false
+      },
+      {
         "component": "tab",
         "label": "Basic",
         "name": "basic"
@@ -1876,6 +1924,12 @@
     "id": "form-image",
     "fields": [
       {
+        "component": "container",
+        "name": "image_label",
+        "label": "Image",
+        "collapsible": false
+      },
+      {
         "component": "text",
         "name": "name",
         "label": "Name",
@@ -1975,6 +2029,12 @@
   {
     "id": "multiline-input",
     "fields": [
+      {
+        "component": "container",
+        "name": "text_area_label",
+        "label": "Text Area",
+        "collapsible": false
+      },
       {
         "component": "tab",
         "label": "Basic",
@@ -2200,6 +2260,12 @@
   {
     "id": "number-input",
     "fields": [
+      {
+        "component": "container",
+        "name": "number_field_label",
+        "label": "Number Field",
+        "collapsible": false
+      },
       {
         "component": "tab",
         "label": "Basic",
@@ -2454,6 +2520,12 @@
   {
     "id": "panel",
     "fields": [
+      {
+        "component": "container",
+        "name": "panel_label",
+        "label": "Panel / Section",
+        "collapsible": false
+      },
       {
         "component": "tab",
         "label": "Basic",
@@ -2727,6 +2799,12 @@
     "id": "radio-group",
     "fields": [
       {
+        "component": "container",
+        "name": "radio_group_label",
+        "label": "Radio Group",
+        "collapsible": false
+      },
+      {
         "component": "tab",
         "label": "Basic",
         "name": "basic"
@@ -2966,6 +3044,12 @@
     "id": "captcha",
     "fields": [
       {
+        "component": "container",
+        "name": "captcha_label",
+        "label": "Captcha (Invisible reCAPTCHA)",
+        "collapsible": false
+      },
+      {
         "component": "text",
         "name": "name",
         "label": "Name",
@@ -2977,6 +3061,12 @@
   {
     "id": "form-reset-button",
     "fields": [
+      {
+        "component": "container",
+        "name": "reset_button_label",
+        "label": "Reset Form Button",
+        "collapsible": false
+      },
       {
         "component": "tab",
         "label": "Basic",
@@ -3094,6 +3184,12 @@
     "id": "form-submit-button",
     "fields": [
       {
+        "component": "container",
+        "name": "submit_button_label",
+        "label": "Submit Form Button",
+        "collapsible": false
+      },
+      {
         "component": "tab",
         "label": "Basic",
         "name": "basic"
@@ -3209,6 +3305,12 @@
   {
     "id": "telephone-input",
     "fields": [
+      {
+        "component": "container",
+        "name": "phone_number_field_label",
+        "label": "Phone Number Field",
+        "collapsible": false
+      },
       {
         "component": "tab",
         "label": "Basic",
@@ -3414,6 +3516,12 @@
   {
     "id": "text-input",
     "fields": [
+      {
+        "component": "container",
+        "name": "text_field_label",
+        "label": "Text Field",
+        "collapsible": false
+      },
       {
         "component": "tab",
         "label": "Basic",
@@ -3640,6 +3748,12 @@
     "id": "plain-text",
     "fields": [
       {
+        "component": "container",
+        "name": "static_text_label",
+        "label": "Static Text / Display Text",
+        "collapsible": false
+      },
+      {
         "component": "text",
         "name": "name",
         "label": "Name",
@@ -3721,6 +3835,127 @@
   {
     "id": "accordion",
     "fields": [
+      {
+        "component": "container",
+        "name": "accordion_label",
+        "label": "Accordion",
+        "collapsible": false,
+        "fields": [
+          {
+            "component": "text",
+            "name": "name",
+            "label": "Name",
+            "valueType": "string",
+            "required": true,
+            "valueFormat": "regexp",
+            "validation": {
+              "regExp": "^[^$].*",
+              "customErrorMsg": "Name cannot start with $"
+            }
+          },
+          {
+            "component": "text",
+            "name": "jcr:title",
+            "label": "Title",
+            "valueType": "string"
+          },
+          {
+            "component": "boolean",
+            "name": "hideTitle",
+            "label": "Hide title",
+            "valueType": "boolean"
+          },
+          {
+            "component": "datasource-bindref",
+            "name": "dataRef",
+            "label": "Bind reference",
+            "valueType": "string"
+          },
+          {
+            "component": "boolean",
+            "name": "unboundFormElement",
+            "label": "Mark as Unbound Form Element",
+            "valueType": "boolean"
+          },
+          {
+            "component": "boolean",
+            "name": "visible",
+            "label": "Show Component",
+            "valueType": "boolean",
+            "value": true
+          },
+          {
+            "component": "boolean",
+            "name": "enabled",
+            "label": "Enable Component",
+            "valueType": "boolean",
+            "value": true
+          },
+          {
+            "component": "boolean",
+            "name": "readOnly",
+            "label": "Read-only",
+            "valueType": "boolean"
+          },
+          {
+            "component": "select",
+            "name": "colspan",
+            "label": "Column Span",
+            "valueType": "string",
+            "value": "12",
+            "options": [
+              {
+                "name": "1 column",
+                "value": "1"
+              },
+              {
+                "name": "2 column",
+                "value": "2"
+              },
+              {
+                "name": "3 column",
+                "value": "3"
+              },
+              {
+                "name": "4 column",
+                "value": "4"
+              },
+              {
+                "name": "5 column",
+                "value": "5"
+              },
+              {
+                "name": "6 column",
+                "value": "6"
+              },
+              {
+                "name": "7 column",
+                "value": "7"
+              },
+              {
+                "name": "8 column",
+                "value": "8"
+              },
+              {
+                "name": "9 column",
+                "value": "9"
+              },
+              {
+                "name": "10 column",
+                "value": "10"
+              },
+              {
+                "name": "11 column",
+                "value": "11"
+              },
+              {
+                "name": "12 column",
+                "value": "12"
+              }
+            ]
+          }
+        ]
+      },
       {
         "component": "tab",
         "label": "Basic",
@@ -4002,6 +4237,12 @@
     "id": "password",
     "fields": [
       {
+        "component": "container",
+        "name": "password_field_label",
+        "label": "Password Field",
+        "collapsible": false
+      },
+      {
         "component": "tab",
         "label": "Basic",
         "name": "basic"
@@ -4209,6 +4450,12 @@
     "id": "range",
     "fields": [
       {
+        "component": "container",
+        "name": "range_label",
+        "label": "Range",
+        "collapsible": false
+      },
+      {
         "component": "tab",
         "label": "Basic",
         "name": "basic"
@@ -4414,6 +4661,12 @@
     "id": "rating",
     "fields": [
       {
+        "component": "container",
+        "name": "rating_label",
+        "label": "Rating",
+        "collapsible": false
+      },
+      {
         "component": "tab",
         "label": "Basic",
         "name": "basic"
@@ -4606,6 +4859,12 @@
   {
     "id": "tnc",
     "fields": [
+      {
+        "component": "container",
+        "name": "tnc_label",
+        "label": "Terms and conditions",
+        "collapsible": false
+      },
       {
         "component": "tab",
         "label": "Basic",

@@ -1,14 +1,14 @@
 {
     "definitions": [
         {
-            "title": "Panel",
+            "title": "Panel / Section",
             "id": "panel",
             "plugins": {
                 "xwalk": {
                     "page": {
                         "resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer",
                         "template": {
-                            "jcr:title": "Panel",
+                            "jcr:title": "Panel / Section",
                             "fieldType": "panel",
                             "minOccur": 1
                         }
@@ -21,6 +21,12 @@
         {
             "id": "panel",
             "fields": [
+                {
+                    "component": "container",
+                    "name": "panel_label",
+                    "label": "Panel / Section",
+                    "collapsible": false
+                },
                 {
                     "component": "tab",
                     "label": "Basic",

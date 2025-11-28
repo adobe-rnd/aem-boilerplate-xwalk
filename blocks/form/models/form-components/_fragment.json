@@ -8,7 +8,7 @@
                     "page": {
                         "resourceType": "core/fd/components/form/fragment/v1/fragment",
                         "template": {
-                            "jcr:title": "Fragment",
+                            "jcr:title": "Form Fragment",
                             "fieldType": "panel",
                             "minOccur": 1
                         }
@@ -21,6 +21,12 @@
         {
             "id": "form-fragment",
             "fields": [
+                {
+                    "component": "container",
+                    "name": "form_fragment_label",
+                    "label": "Form Fragment",
+                    "collapsible": false
+                },
                 {
                     "component": "tab",
                     "label": "Basic",

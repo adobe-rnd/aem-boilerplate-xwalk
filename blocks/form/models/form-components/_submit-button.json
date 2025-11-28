@@ -1,14 +1,14 @@
 {
   "definitions": [
     {
-      "title": "Submit",
+      "title": "Submit Form Button",
       "id": "form-submit-button",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/fd/components/form/actions/submit/v1/submit",
             "template": {
-              "jcr:title": "Submit",
+              "jcr:title": "Submit Form Button",
               "buttonType": "submit",
               "fieldType": "button"
             }
@@ -21,6 +21,12 @@
     {
       "id": "form-submit-button",
       "fields": [
+        {
+          "component": "container",
+          "name": "submit_button_label",
+          "label": "Submit Form Button",
+          "collapsible": false
+        },
         {
           "component": "tab",
           "label": "Basic",

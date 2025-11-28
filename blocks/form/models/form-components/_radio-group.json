@@ -30,6 +30,12 @@
             "id": "radio-group",
             "fields": [
                 {
+                    "component": "container",
+                    "name": "radio_group_label",
+                    "label": "Radio Group",
+                    "collapsible": false
+                },
+                {
                     "component": "tab",
                     "label": "Basic",
                     "name": "basic"

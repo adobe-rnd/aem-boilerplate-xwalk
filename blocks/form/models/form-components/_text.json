@@ -1,14 +1,14 @@
 {
   "definitions": [
     {
-      "title": "Text",
+      "title": "Static Text / Display Text",
       "id": "plain-text",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/fd/components/form/text/v1/text",
             "template": {
-              "jcr:title": "Text",
+              "jcr:title": "Static Text / Display Text",
               "fieldType": "plain-text",
               "textIsRich": true,
               "value": "Adaptive Form Text Component"
@@ -22,6 +22,12 @@
     {
       "id": "plain-text",
       "fields": [
+        {
+          "component": "container",
+          "name": "static_text_label",
+          "label": "Static Text / Display Text",
+          "collapsible": false
+        },
         {
           "component": "text",
           "name": "name",

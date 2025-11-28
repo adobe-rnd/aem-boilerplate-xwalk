@@ -1,14 +1,14 @@
 {
     "definitions": [
         {
-            "title": "Captcha (Invisible)",
+            "title": "Captcha (Invisible reCAPTCHA)",
             "id": "captcha",
             "plugins": {
                 "xwalk": {
                     "page": {
                         "resourceType": "core/fd/components/form/recaptcha/v1/recaptcha",
                         "template": {
-                            "jcr:title": "Captcha (Invisible)",
+                            "jcr:title": "Captcha (Invisible reCAPTCHA)",
                             "fieldType": "captcha"
                         }
                     }
@@ -20,6 +20,12 @@
         {
             "id": "captcha",
             "fields": [
+                {
+                    "component": "container",
+                    "name": "captcha_label",
+                    "label": "Captcha (Invisible reCAPTCHA)",
+                    "collapsible": false
+                },
                 {
                     "component": "text",
                     "name": "name",

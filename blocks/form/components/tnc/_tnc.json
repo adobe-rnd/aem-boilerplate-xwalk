@@ -60,6 +60,12 @@
       "id": "tnc",
       "fields": [
         {
+          "component": "container",
+          "name": "tnc_label",
+          "label": "Terms and conditions",
+          "collapsible": false
+        },
+        {
           "component": "tab",
           "label": "Basic",
           "name": "basic"

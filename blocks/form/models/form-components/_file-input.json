@@ -1,14 +1,14 @@
 {
     "definitions": [
         {
-            "title": "File Attachment",
+            "title": "File Upload",
             "id": "file-input",
             "plugins": {
                 "xwalk": {
                     "page": {
                         "resourceType": "core/fd/components/form/fileinput/v2/fileinput",
                         "template": {
-                            "jcr:title": "File Attachment",
+                            "jcr:title": "File Upload",
                             "fieldType": "file-input",
                             "accept": [
                                 "audio/*",
@@ -30,6 +30,12 @@
         {
             "id": "file-input",
             "fields": [
+                {
+                    "component": "container",
+                    "name": "file_upload_label",
+                    "label": "File Upload",
+                    "collapsible": false
+                },
                 {
                     "component": "tab",
                     "label": "Basic",

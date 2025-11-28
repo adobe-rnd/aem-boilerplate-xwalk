@@ -5,6 +5,12 @@
       "id": "multiline-input",
       "fields": [
         {
+          "component": "container",
+          "name": "text_area_label",
+          "label": "Text Area",
+          "collapsible": false
+        },
+        {
           "component": "tab",
           "label": "Basic",
           "name": "basic"

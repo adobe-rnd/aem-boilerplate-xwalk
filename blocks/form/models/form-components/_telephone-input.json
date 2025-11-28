@@ -1,14 +1,14 @@
 {
   "definitions": [
     {
-      "title": "Telephone input",
+      "title": "Phone Number Field",
       "id": "telephone-input",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/fd/components/form/telephoneinput/v1/telephoneinput",
             "template": {
-              "jcr:title": "Telephone Input",
+              "jcr:title": "Phone Number Field",
               "fieldType": "text-input"
             }
           }
@@ -20,6 +20,12 @@
     {
       "id": "telephone-input",
       "fields": [
+        {
+          "component": "container",
+          "name": "phone_number_field_label",
+          "label": "Phone Number Field",
+          "collapsible": false
+        },
         {
           "component": "tab",
           "label": "Basic",

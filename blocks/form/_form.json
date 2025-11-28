@@ -15,23 +15,74 @@
         }
       }
     },
-    {
-      "...": "./models/form-components/_*.json#/definitions"
-    },
     { 
       "...": "./components/accordion/_accordion.json#/definitions" 
+    },
+    {
+      "...": "./models/form-components/_recaptcha.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_checkbox-group.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_date-input.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_drop-down.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_email.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_file-input.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_button.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_fragment.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_image.json#/definitions"
     },
     { 
       "...": "./components/modal/_modal.json#/definitions" 
     },
+    {
+      "...": "./models/form-components/_number-input.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_panel.json#/definitions"
+    },
     { 
       "...": "./components/password/_password.json#/definitions" 
+    },
+    {
+      "...": "./models/form-components/_telephone-input.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_radio-group.json#/definitions"
     },
     { 
       "...": "./components/rating/_rating.json#/definitions" 
     },
+    {
+      "...": "./models/form-components/_reset-button.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_checkbox.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_text.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_submit-button.json#/definitions"
+    },
     { 
       "...": "./components/tnc/_tnc.json#/definitions" 
+    },
+    {
+      "...": "./models/form-components/_text-input.json#/definitions"
     },
     { 
       "...": "./components/wizard/_wizard.json#/definitions" 
