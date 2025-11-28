@@ -24,12 +24,6 @@
         "id": "range",
         "fields": [
           {
-            "component": "container",
-            "name": "range_label",
-            "label": "Range",
-            "collapsible": false
-          },
-          {
             "component": "tab",
             "label": "Basic",
             "name": "basic"

@@ -1,14 +1,14 @@
 {
     "definitions": [
         {
-            "title": "Text Field",
+            "title": "Text Input",
             "id": "text-input",
             "plugins": {
                 "xwalk": {
                     "page": {
                         "resourceType": "core/fd/components/form/textinput/v1/textinput",
                         "template": {
-                            "jcr:title": "Text Field",
+                            "jcr:title": "Text Input",
                             "fieldType": "text-input"
                         }
                     }
@@ -20,12 +20,6 @@
         {
             "id": "text-input",
             "fields": [
-                {
-                    "component": "container",
-                    "name": "text_field_label",
-                    "label": "Text Field",
-                    "collapsible": false
-                },
                 {
                     "component": "tab",
                     "label": "Basic",

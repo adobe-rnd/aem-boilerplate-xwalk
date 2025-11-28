@@ -1,14 +1,14 @@
 {
   "definitions": [
     {
-      "title": "Form Button",
+      "title": "Button",
       "id": "form-button",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/fd/components/form/button/v1/button",
             "template": {
-              "jcr:title": "Form Button",
+              "jcr:title": "Button",
               "fieldType": "button"
             }
           }
@@ -20,12 +20,6 @@
     {
       "id": "form-button",
       "fields": [
-        {
-          "component": "container",
-          "name": "button_label",
-          "label": "Form Button",
-          "collapsible": false
-        },
         {
           "component": "tab",
           "label": "Basic",
