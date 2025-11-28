@@ -1,14 +1,14 @@
 {
   "definitions": [
     {
-      "title": "Reset Form Button",
+      "title": "Reset",
       "id": "form-reset-button",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/fd/components/form/actions/reset/v1/reset",
             "template": {
-              "jcr:title": "Reset Form Button",
+              "jcr:title": "Reset",
               "buttonType": "reset",
               "fieldType": "button"
             }
@@ -21,12 +21,6 @@
     {
       "id": "form-reset-button",
       "fields": [
-        {
-          "component": "container",
-          "name": "reset_button_label",
-          "label": "Reset Form Button",
-          "collapsible": false
-        },
         {
           "component": "tab",
           "label": "Basic",

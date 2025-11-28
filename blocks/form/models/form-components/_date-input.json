@@ -1,14 +1,14 @@
 {
     "definitions": [
         {
-            "title": "Date Picker",
+            "title": "Date Input",
             "id": "date-input",
             "plugins": {
                 "xwalk": {
                     "page": {
                         "resourceType": "core/fd/components/form/datepicker/v1/datepicker",
                         "template": {
-                            "jcr:title": "Date Picker",
+                            "jcr:title": "Date Input",
                             "fieldType": "date-input"
                         }
                     }
@@ -20,12 +20,6 @@
         {
             "id": "date-input",
             "fields": [
-                {
-                    "component": "container",
-                    "name": "date_picker_label",
-                    "label": "Date Picker",
-                    "collapsible": false
-                },
                 {
                     "component": "tab",
                     "label": "Basic",

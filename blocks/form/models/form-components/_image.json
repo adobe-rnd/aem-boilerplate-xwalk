@@ -21,12 +21,6 @@
             "id": "form-image",
             "fields": [
                 {
-                    "component": "container",
-                    "name": "image_label",
-                    "label": "Image",
-                    "collapsible": false
-                },
-                {
                     "component": "text",
                     "name": "name",
                     "label": "Name",

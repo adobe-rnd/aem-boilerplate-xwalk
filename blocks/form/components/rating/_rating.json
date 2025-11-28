@@ -22,12 +22,6 @@
       "id": "rating",
       "fields": [
         {
-          "component": "container",
-          "name": "rating_label",
-          "label": "Rating",
-          "collapsible": false
-        },
-        {
           "component": "tab",
           "label": "Basic",
           "name": "basic"
