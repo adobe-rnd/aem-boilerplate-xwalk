@@ -27,6 +27,13 @@
     "id": "image",
     "fields": [
       {
+        "component": "text",
+        "name": "aueLabel",
+        "label": "Editor Label",
+        "description": "The label of this component in the editor overlay and content tree.",
+        "value": "Image"
+      },
+      {
         "component": "reference",
         "name": "image",
         "label": "Image",
@@ -42,6 +49,13 @@
   {
     "id": "title",
     "fields": [
+      {
+        "component": "text",
+        "name": "aueLabel",
+        "label": "Editor Label",
+        "description": "The label of this component in the editor overlay and content tree.",
+        "value": "Title"
+      },
       {
         "component": "text",
         "name": "title",
@@ -81,8 +95,27 @@
     ]
   },
   {
+    "id": "text",
+    "fields": [
+      {
+        "component": "text",
+        "name": "aueLabel",
+        "label": "Editor Label",
+        "description": "The label of this component in the editor overlay and content tree.",
+        "value": "Text"
+      }
+    ]
+  },
+  {
     "id": "button",
     "fields": [
+      {
+        "component": "text",
+        "name": "aueLabel",
+        "label": "Editor Label",
+        "description": "The label of this component in the editor overlay and content tree.",
+        "value": "Button"
+      },
       {
         "component": "aem-content",
         "name": "link",
@@ -142,8 +175,27 @@
     ]
   },
   {
+    "id": "cards",
+    "fields": [
+      {
+        "component": "text",
+        "name": "aueLabel",
+        "label": "Editor Label",
+        "description": "The label of this component in the editor overlay and content tree.",
+        "value": "Cards"
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
+      {
+        "component": "text",
+        "name": "aueLabel",
+        "label": "Editor Label",
+        "description": "The label of this component in the editor overlay and content tree.",
+        "value": "Card"
+      },
       {
         "component": "reference",
         "valueType": "string",
@@ -165,6 +217,13 @@
     "fields": [
       {
         "component": "text",
+        "name": "aueLabel",
+        "label": "Editor Label",
+        "description": "The label of this component in the editor overlay and content tree.",
+        "value": "Columns"
+      },
+      {
+        "component": "text",
         "valueType": "number",
         "name": "columns",
         "value": "",
@@ -183,6 +242,13 @@
     "id": "fragment",
     "fields": [
       {
+        "component": "text",
+        "name": "aueLabel",
+        "label": "Editor Label",
+        "description": "The label of this component in the editor overlay and content tree.",
+        "value": "Fragment"
+      },
+      {
         "component": "aem-content",
         "name": "reference",
         "label": "Reference"
@@ -192,6 +258,13 @@
   {
     "id": "hero",
     "fields": [
+      {
+        "component": "text",
+        "name": "aueLabel",
+        "label": "Editor Label",
+        "description": "The label of this component in the editor overlay and content tree.",
+        "value": "Hero"
+      },
       {
         "component": "reference",
         "valueType": "string",

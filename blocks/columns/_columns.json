@@ -8,6 +8,8 @@
           "page": {
             "resourceType": "core/franklin/components/columns/v1/columns",
             "template": {
+              "model": "columns",
+              "template": "columns",
               "columns": "2",
               "rows": "1"
             }
@@ -20,6 +22,13 @@
     {
       "id": "columns",
       "fields": [
+        {
+          "component": "text",
+          "name": "aueLabel",
+          "label": "Editor Label",
+          "description": "The label of this component in the editor overlay and content tree.",
+          "value": "Columns"
+        },
         {
           "component": "text",
           "valueType": "number",

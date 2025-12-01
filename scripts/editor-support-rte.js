@@ -12,6 +12,8 @@ export function decorateRichtext(container = document) {
     delete element.dataset.richtextProp;
     delete element.dataset.richtextFilter;
     delete element.dataset.richtextLabel;
+    delete element.dataset.richtextModel;
+    delete element.dataset.richtextComponent;
   }
 
   let element;
@@ -21,6 +23,8 @@ export function decorateRichtext(container = document) {
       richtextProp,
       richtextFilter,
       richtextLabel,
+      richtextModel,
+      richtextComponent,
     } = element.dataset;
     deleteInstrumentation(element);
     const siblings = [];
@@ -35,7 +39,7 @@ export function decorateRichtext(container = document) {
 
     let orphanElements;
     if (richtextResource && richtextProp) {
-      orphanElements = document.querySelectorAll(`[data-richtext-id="${richtextResource}"][data-richtext-prop="${richtextProp}"]`);
+      orphanElements = document.querySelectorAll(`[data-richtext-resource="${richtextResource}"][data-richtext-prop="${richtextProp}"]`);
     } else {
       const editable = element.closest('[data-aue-resource]');
       if (editable) {
@@ -59,6 +63,8 @@ export function decorateRichtext(container = document) {
       if (richtextProp) group.dataset.aueProp = richtextProp;
       if (richtextLabel) group.dataset.aueLabel = richtextLabel;
       if (richtextFilter) group.dataset.aueFilter = richtextFilter;
+      if (richtextModel) group.dataset.aueModel = richtextModel;
+      if (richtextComponent) group.dataset.aueComponent = richtextComponent;
       group.dataset.aueType = 'richtext';
       element.replaceWith(group);
       group.append(element, ...siblings);

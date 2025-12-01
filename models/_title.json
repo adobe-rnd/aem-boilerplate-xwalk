@@ -21,6 +21,13 @@
       "fields": [
         {
           "component": "text",
+          "name": "aueLabel",
+          "label": "Editor Label",
+          "description": "The label of this component in the editor overlay and content tree.",
+          "value": "Title"
+        },
+        {
+          "component": "text",
           "name": "title",
           "label": "Title"
         },

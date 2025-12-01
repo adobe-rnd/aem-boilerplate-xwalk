@@ -20,6 +20,13 @@
       "id": "button",
       "fields": [
         {
+          "component": "text",
+          "name": "aueLabel",
+          "label": "Editor Label",
+          "description": "The label of this component in the editor overlay and content tree.",
+          "value": "Button"
+        },
+        {
           "component": "aem-content",
           "name": "link",
           "label": "Link"

@@ -7,7 +7,9 @@
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/image/v1/image",
-            "template": {}
+            "template": {
+              "model": "image"
+            }
           }
         }
       }
@@ -17,6 +19,13 @@
     {
       "id": "image",
       "fields": [
+        {
+          "component": "text",
+          "name": "aueLabel",
+          "label": "Editor Label",
+          "description": "The label of this component in the editor overlay and content tree.",
+          "value": "Image"
+        },
         {
           "component": "reference",
           "name": "image",
