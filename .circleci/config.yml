@@ -4,11 +4,7 @@ orbs:
   node: circleci/node@5
   browser-tools: circleci/browser-tools@1.2.3
 
-# ------------------------------------------------
-# JOB DEFINITIONS
-# ------------------------------------------------
 jobs:
-  # ---------------- LINT JOB ----------------
   lint:
     executor: node/default
     steps:
@@ -19,7 +15,6 @@ jobs:
           name: Run lint
           command: npm run lint
 
-  # ---------------- UNIT TEST JOB ----------------
   unit-tests:
     executor: node/default
     steps:
@@ -29,7 +24,10 @@ jobs:
       - run:
           name: Run unit tests with coverage
           command: |
-            npx c8 --reporter=json --reporter=text --lines 85 npm run test:unit || true
+            set +e
+            npx c8 --reporter=json --reporter=text --lines 85 npm run test:unit
+            TEST_EXIT=$?
+            set -e
 
             if [ -f "coverage/coverage-final.json" ]; then
               mv coverage/coverage-final.json coverage/coverage-final-unit.json
@@ -43,8 +41,8 @@ jobs:
               mkdir -p coverage
               echo '{}' > coverage/coverage-final-unit.json
             fi
-          environment:
-            CI: true
+
+            exit $TEST_EXIT
 
       - store_artifacts:
           path: coverage/unit-artifacts
@@ -55,26 +53,25 @@ jobs:
           paths:
             - coverage/coverage-final-unit.json
 
-  # ---------------- E2E TEST JOB ----------------
   e2e-tests:
     docker:
       - image: mcr.microsoft.com/playwright:v1.40.0-jammy
     steps:
       - checkout
-
       - run:
           name: Install dependencies
           command: npm ci
-
       - run:
           name: Install Playwright browsers
           command: npx playwright install chromium
-
       - run:
           name: Run E2E tests with coverage
           command: |
+            set +e
             npx c8 --reporter=json --reporter=text --lines 45 \
-              npx playwright test --project='chromium' || true
+              npx playwright test --project='chromium'
+            TEST_EXIT=$?
+            set -e
 
             if [ -f "coverage/coverage-final.json" ]; then
               mv coverage/coverage-final.json coverage/coverage-final-e2e.json
@@ -88,18 +85,15 @@ jobs:
               mkdir -p coverage
               echo '{}' > coverage/coverage-final-e2e.json
             fi
-          environment:
-            CI: true
-            COVERAGE_RUN: true
+
+            exit $TEST_EXIT
 
       - store_artifacts:
           path: test/e2e/reports
           destination: test-results
-
       - store_artifacts:
           path: videos
           destination: videos
-
       - store_artifacts:
           path: test-results
           destination: screenshots
@@ -109,7 +103,6 @@ jobs:
           paths:
             - coverage/coverage-final-e2e.json
 
-  # ---------------- MERGE + REPORT COVERAGE ----------------
   check-coverage:
     executor: node/default
     steps:
@@ -118,7 +111,6 @@ jobs:
           pkg-manager: npm
       - attach_workspace:
           at: .
-
       - run:
           name: Merge and generate final coverage
           command: |
@@ -127,7 +119,6 @@ jobs:
             UNIT_FILE="coverage/coverage-final-unit.json"
             E2E_FILE="coverage/coverage-final-e2e.json"
 
-            # Normalize paths (needed for correct merging)
             if [ -f "$UNIT_FILE" ]; then
               sed 's|"/home/circleci/project/|"/project/|g' "$UNIT_FILE" > coverage/normalized/unit.json
             fi
@@ -136,20 +127,16 @@ jobs:
               sed 's|"/root/project/|"/project/|g' "$E2E_FILE" > coverage/normalized/e2e.json
             fi
 
-            # Merge
             npx nyc merge coverage/normalized .nyc_output/coverage.json
 
-            # Convert back so NYC can resolve sources
             sed 's|"/project/|"/home/circleci/project/|g' .nyc_output/coverage.json > .nyc_output/coverage-final.json
             mv .nyc_output/coverage-final.json .nyc_output/coverage.json
 
-            # Generate final combined coverage reports
             mkdir -p coverage/combined-artifacts
             npx nyc report --reporter=html --report-dir=coverage/combined-artifacts
             npx nyc report --reporter=text-summary > coverage/combined-artifacts/combined-text-summary.txt
             cp coverage/combined-artifacts/index.html coverage/combined-artifacts/indexCombined.html
 
-            # Enforce coverage thresholds
             npx nyc report --reporter=lcov --report-dir=coverage/combined-artifacts
             npx nyc report --check-coverage --lines=90 --functions=85 --branches=90
 
@@ -161,9 +148,6 @@ jobs:
           path: coverage
           destination: all-coverage-files
 
-# ------------------------------------------------
-# WORKFLOWS
-# ------------------------------------------------
 workflows:
   lint:
     jobs:

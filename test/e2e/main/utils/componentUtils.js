@@ -4,7 +4,7 @@ export class ComponentUtils {
   selectors = {
     contentTreeLabel: '[aria-label="Content tree"]',
     deleteButton: 'button[aria-label="Delete"]',
-    componentList: 'div[role="presentation"][class$="spectrum-Submenu-wrapper"]'
+    componentList: 'div[class*="menu"]'
   };
 
   async addComponent(frame, componentName) {
