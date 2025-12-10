@@ -168,6 +168,7 @@ export default class DocBasedFormToAF {
     'Pattern Error Message': 'constraintMessages.pattern',
     'Min Error Message': 'constraintMessages.min',
     'Max Error Message': 'constraintMessages.max',
+    'Custom Type': ':type',
   };
 
   fieldMapping = new Map([
@@ -267,10 +268,12 @@ export default class DocBasedFormToAF {
      * @param {any} field FieldJson
      */
   #transformFieldType(field) {
-    field[':type'] = field.fieldType;
+    if (!field[':type']) {
+      field[':type'] = field.fieldType;
+    }
     if (this.fieldMapping.has(field?.fieldType)) {
       field.fieldType = this.fieldMapping.get(field?.fieldType);
-    } if (this.containerNamesSet.has(field.name)) {
+    } else if (this.containerNamesSet.has(field.name)) {
       field.fieldType = 'panel';
     }
   }
