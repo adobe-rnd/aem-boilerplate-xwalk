@@ -9,7 +9,7 @@ export class UniversalEditorBase {
     contentTree: 'button[aria-label="Content tree"]',
     dataSource: 'button[aria-label="Data Sources"]',
     mainInContentTree: 'li > [class*="content expandable collapsed"]',
-    adaptiveFormPathInUE: 'main[class="Canvas"] button[data-resource$="content/root/section/form"]',
+    adaptiveFormPathInUE: 'main button[data-resource$="content/root/section/form"]',
     adaptiveFormDropdown: 'li[data-resource*="content/root/section/form"] button[aria-label]',
     adaptiveFormInContentTree: 'li[data-resource*="content/root/section/form"] label[title="Adaptive Form"]',
     componentPath: 'div[class="form block edit-mode"] [data-aue-resource*="/',
@@ -53,7 +53,7 @@ export class UniversalEditorBase {
   }
 
   componentLocatorForUe(component) {
-    return `main[class="Canvas"] [data-resource*="/${component}"]`;
+    return `main [data-resource*="/${component}"]`;
   }
 
   async waitForCountToDecreaseByOne(adaptiveFormPath, initialCount) {

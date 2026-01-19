@@ -7,7 +7,7 @@ export class CanvasUtils {
   }
 
   getComponentLocator(frame, component) {
-    return frame.locator(`main[class="Canvas"] [data-resource*="/${component}"]`);
+    return frame.locator(`main [data-resource*="/${component}"]`);
   }
 
   async isComponentPresent(frame, component, timeout) {

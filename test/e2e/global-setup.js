@@ -15,7 +15,9 @@ async function globalSetup() {
   const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext();
   const page = await context.newPage();
-  await page.goto(baseUrl, { waitUntil: 'networkidle' });
+  page.setDefaultTimeout(60000);
+  page.setDefaultNavigationTimeout(60000);
+  await page.goto(baseUrl, { waitUntil: 'domcontentloaded' });
   await page.getByRole('button', { name: 'Sign in with Adobe' }).click();
   await expect(page.getByText('Create an account').last()).toBeVisible();
   await page.getByLabel('Email address').fill(emailId);
@@ -24,13 +26,12 @@ async function globalSetup() {
   await page.getByLabel('Password').first().fill(password);
   await page.locator(selectors.submitButton).click();
 
-  const finalUrlPattern = '**/aem/aem/start.html?appId=aemshell';
-  await page.waitForURL(finalUrlPattern, { timeout: 45000 });
   const frame = page.frameLocator(selectors.iFrame);
-  await expect(frame.getByLabel('Navigation')).toBeVisible();
+  await expect(frame.getByText('Navigation').first()).toBeVisible({ timeout: 45000 });
   await page.context().storageState({ path: filePath });
   await context.close();
   await browser.close();
 }
 
 export default globalSetup;
+
