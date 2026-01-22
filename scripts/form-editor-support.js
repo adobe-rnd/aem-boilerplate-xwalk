@@ -17,7 +17,7 @@
  * Adobe permits you to use and modify this file solely in accordance with
  * the terms of the Adobe license agreement accompanying it.
  ************************************************************************ */
-import decorate, { generateFormRendition } from '../blocks/form/form.js';
+import decorate, { generateFormRendition, fetchForm } from '../blocks/form/form.js';
 import { loadCSS } from './aem.js';
 import { handleAccordionNavigation } from '../blocks/form/components/accordion/accordion.js';
 import { createButton as createRepeatButton } from '../blocks/form/components/repeat/repeat.js';
@@ -233,13 +233,31 @@ export function handleEditorSelect(event) {
   }
 }
 
-async function renderFormBlock(form, editMode) {
+export async function renderFormBlock(form, editMode) {
   const block = form.closest('.block[data-aue-resource]');
   if ((editMode && !block.classList.contains('edit-mode')) || !editMode) {
     block.classList.toggle('edit-mode', editMode);
-    const formDefResp = await fetch(`${form.dataset.formpath}.model.json`);
-    const formDef = await formDefResp.json();
     const div = form.parentElement;
+    let formDef;
+    try {
+      const formDefResp = await fetch(`${form.dataset.formpath}.model.json`);
+      formDef = await formDefResp.json();
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.warn('Failed to fetch form model json:', error);
+      try {
+        formDef = await fetchForm(document.location.pathname);
+      } catch (fallbackError) {
+        // eslint-disable-next-line no-console
+        console.error('Failed to fetch fallback form definition:', fallbackError);
+        return null;
+      }
+    }
+
+    if (!formDef) {
+      return null;
+    }
+
     div.replaceChildren();
     const pre = document.createElement('pre');
     const code = document.createElement('code');
