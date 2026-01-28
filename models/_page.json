@@ -21,6 +21,12 @@
           "name": "keywords",
           "multi": true,
           "label": "Keywords"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "json-ld",
+          "label": "Structured Data"
         }
       ]
     }
