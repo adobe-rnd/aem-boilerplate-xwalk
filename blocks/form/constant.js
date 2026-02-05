@@ -4,8 +4,51 @@ export const dragDropText = 'Drag and Drop To Upload';
 export const DEFAULT_THANK_YOU_MESSAGE = 'Thank you for your submission.';
 
 // Logging Configuration
+// Control logging via URL parameter: ?log=<level>
+// Valid levels: debug, info, error, off, warn → returns that level
+// Invalid/empty values (including 'on') → returns 'warn' (fallback)
+// AEM preview/live URLs (*.page, *.live) or localhost → returns 'warn'
+const VALID_LOG_LEVELS = ['error', 'debug', 'warn', 'info', 'off'];
+
+export const getLogLevelFromURL = (urlString = null) => {
+  // Semantic constants for log level defaults
+  const DEFAULT_LOG_LEVEL = 'off'; // Used when no logging is explicitly requested
+  const FALLBACK_LOG_LEVEL = 'warn'; // Used for invalid/empty values or AEM preview
+
+  try {
+    // Extract URL object from either parameter or current context
+    let url;
+    if (urlString) {
+      // Explicit URL string provided (for workers - they need page URL passed from main thread)
+      url = new URL(urlString);
+    } else if (typeof window !== 'undefined' && window.location) {
+      // Main thread context - use page URL
+      url = new URL(window.location.href);
+    } else {
+      return DEFAULT_LOG_LEVEL; // No URL available
+    }
+
+    const { searchParams, hostname } = url;
+
+    // Check if logging should be enabled (explicit param or AEM preview)
+    const logParam = searchParams.get('log');
+    if (logParam !== null || hostname.match(/\.(page|live)$|^localhost$/)) {
+      // Return valid log level or fallback to warn for invalid/empty values
+      if (VALID_LOG_LEVELS.includes(logParam)) return logParam;
+      return FALLBACK_LOG_LEVEL;
+    }
+
+    // Default - no logging
+    return DEFAULT_LOG_LEVEL;
+  } catch (error) {
+    // Fallback to default if URL parsing fails
+    return DEFAULT_LOG_LEVEL;
+  }
+};
+// Logging Configuration
 // To set log level, modify this constant:
-export const LOG_LEVEL = 'error'; // Available options: 'off', 'debug', 'info', 'warn', 'error'
+// Available options: 'off', 'debug', 'info', 'warn', 'error'
+export const LOG_LEVEL = getLogLevelFromURL();
 
 export const defaultErrorMessages = {
   accept: 'The specified file type not supported.',

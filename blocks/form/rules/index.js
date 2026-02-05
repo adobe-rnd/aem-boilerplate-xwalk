@@ -314,7 +314,7 @@ function applyRuleEngine(htmlForm, form, captcha) {
 
 export async function loadRuleEngine(formDef, htmlForm, captcha, genFormRendition, data) {
   const ruleEngine = await import('./model/afb-runtime.js');
-  const form = ruleEngine.restoreFormInstance(formDef, data);
+  const form = ruleEngine.restoreFormInstance(formDef, data, { logLevel: LOG_LEVEL });
   window.myForm = form;
   formModels[htmlForm.dataset?.id] = form;
   const subscriptions = formSubscriptions[htmlForm.dataset?.id];
@@ -354,6 +354,8 @@ async function initializeRuleEngineWorker(formDef, renderHTMLForm) {
     return renderHTMLForm(form.getState(true), data);
   }
   const myWorker = new Worker(`${window.hlx.codeBasePath}/blocks/form/rules/RuleEngineWorker.js`, { type: 'module' });
+  // Pass the current URL to the worker for log level determination
+  const currentUrl = window.location.href;
   // Trigger the worker to start form initialization
   myWorker.postMessage({
     name: 'init',
@@ -362,6 +364,7 @@ async function initializeRuleEngineWorker(formDef, renderHTMLForm) {
       search: window.location.search || '',
     },
     codeBasePath: window.hlx.codeBasePath,
+    url: currentUrl, // Pass URL for log level determination
   });
 
   return new Promise((resolve) => {

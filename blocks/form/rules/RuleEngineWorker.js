@@ -20,7 +20,7 @@
 import { createFormInstance } from './model/afb-runtime.js';
 import registerCustomFunctions from './functionRegistration.js';
 import { fetchData } from '../util.js';
-import { LOG_LEVEL } from '../constant.js';
+import { getLogLevelFromURL } from '../constant.js';
 
 let customFunctionRegistered = false;
 
@@ -29,8 +29,9 @@ export default class RuleEngine {
 
   fieldChanges = [];
 
-  constructor(formDef) {
-    this.form = createFormInstance(formDef, undefined, LOG_LEVEL);
+  constructor(formDef, url) {
+    const logLevel = getLogLevelFromURL(url);
+    this.form = createFormInstance(formDef, undefined, logLevel);
     this.form.subscribe((e) => {
       const { payload } = e;
       this.fieldChanges.push(payload);
@@ -57,7 +58,8 @@ onmessage = async (e) => {
       case 'init': {
         const { search, ...formDef } = event.data.payload;
         initPayload = event.data.payload;
-        ruleEngine = new RuleEngine(formDef);
+        ruleEngine = new RuleEngine(formDef, event.data.url);
+        // eslint-disable-next-line no-case-declarations
         const state = ruleEngine.getState();
         // Informing the main thread that the form is initialized
         postMessage({
