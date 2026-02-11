@@ -75,11 +75,12 @@ onmessage = async (e) => {
         break;
     }
   }
-  // prefills form data, waits for all async operations
-  // to complete, then restores state and syncs field changes to main thread
+  // prefills form data, waits for all async operations to complete, then restores state and
+  // syncs field changes to main thread. fetchData only called here (worker) when prefill enabled.
   if (e.data.name === 'decorated') {
     const { search, ...formDef } = initPayload;
-    const data = await fetchData(formDef.id, search);
+    const needsPrefill = formDef?.properties?.['fd:formDataEnabled'] === true;
+    const data = needsPrefill ? await fetchData(formDef.id, search) : null;
     if (data) {
       ruleEngine.form.importData(data);
     }

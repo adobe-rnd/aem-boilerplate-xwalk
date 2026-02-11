@@ -19,6 +19,40 @@
  ************************************************************************ */
 import { registerFunctions } from './model/afb-runtime.js';
 
+const preloadedUrls = new Set();
+
+/**
+ * Preloads script URLs so the browser fetches them once; main and worker
+ * then get cache on import(). Call as soon as formDef is available (runtime).
+ * customFunctionsPath comes from form JSON (formDef.properties.customFunctionsPath).
+ * @param {string} [customFunctionsPath] - From formDef.properties.customFunctionsPath
+ * @param {string} [codeBasePath] - e.g. window.hlx?.codeBasePath
+ */
+export function preloadFunctionScripts(customFunctionsPath, codeBasePath) {
+  if (typeof document === 'undefined' || !document?.head) return;
+  const base = (typeof codeBasePath === 'string' && codeBasePath !== '')
+    ? codeBasePath.replace(/\/$/, '')
+    : '';
+  const prefix = base ? `${base}/` : '/';
+  const paths = [`${prefix}blocks/form/rules/functions.js`];
+  if (typeof customFunctionsPath === 'string' && customFunctionsPath.trim() !== '') {
+    paths.push(`${prefix}${customFunctionsPath.replace(/^\//, '').trim()}`);
+  }
+  paths.forEach((href) => {
+    try {
+      const url = href.startsWith('http') ? href : new URL(href, window.location.origin).href;
+      if (preloadedUrls.has(url)) return;
+      preloadedUrls.add(url);
+      const link = document.createElement('link');
+      link.rel = 'modulepreload';
+      link.href = url;
+      document.head.appendChild(link);
+    } catch {
+      // Skip invalid URL or DOM error; do not break form init
+    }
+  });
+}
+
 export default async function registerCustomFunctions(customFunctionsPath, codeBasePath) {
   try {
     // eslint-disable-next-line no-inner-declarations

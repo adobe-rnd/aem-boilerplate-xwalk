@@ -28,7 +28,7 @@ import {
   createRadioOrCheckboxUsingEnum,
   fetchData,
 } from '../util.js';
-import registerCustomFunctions from './functionRegistration.js';
+import registerCustomFunctions, { preloadFunctionScripts } from './functionRegistration.js';
 import { LOG_LEVEL } from '../constant.js';
 import { createOptimizedPicture } from '../../../scripts/aem.js';
 
@@ -348,9 +348,12 @@ export async function loadRuleEngine(formDef, htmlForm, captcha, genFormRenditio
 
 async function initializeRuleEngineWorker(formDef, renderHTMLForm) {
   if (typeof Worker === 'undefined') {
-    const data = await fetchData(formDef?.id, window.location.search || '');
+    // No worker: fetch prefill only when enabled (worker path does the same in RuleEngineWorker.js)
+    const needsPrefill = formDef?.properties?.['fd:formDataEnabled'] === true;
+    const data = needsPrefill ? await fetchData(formDef?.id, window.location.search || '') : null;
     const ruleEngine = await import('./model/afb-runtime.js');
-    const form = ruleEngine.createFormInstance({ ...formDef, data }, undefined, LOG_LEVEL);
+    const formDefWithData = { ...formDef, ...(data != null && { data }) };
+    const form = ruleEngine.createFormInstance(formDefWithData, undefined, LOG_LEVEL);
     return renderHTMLForm(form.getState(true), data);
   }
   const myWorker = new Worker(`${window.hlx.codeBasePath}/blocks/form/rules/RuleEngineWorker.js`, { type: 'module' });
@@ -404,6 +407,7 @@ async function initializeRuleEngineWorker(formDef, renderHTMLForm) {
 }
 
 export async function initAdaptiveForm(formDef, createForm) {
+  preloadFunctionScripts(formDef?.properties?.customFunctionsPath, window.hlx?.codeBasePath);
   await registerCustomFunctions(formDef?.properties?.customFunctionsPath || '/blocks/form/functions.js', window.hlx?.codeBasePath);
   const response = await initializeRuleEngineWorker(formDef, createForm);
   return response?.form;
