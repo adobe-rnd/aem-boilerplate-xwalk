@@ -4,7 +4,7 @@ This project is a website built with Edge Delivery Services in Adobe Experience 
 
 ## Project Overview
 
-This project is based on the https://github.com/adobe/aem-boilerplate/ project and set up as a new project. You are expected to follow the coding style and practices established in the boilerplate, but add functionality according to the needs of the site currently developed.
+This project is based on the https://github.com/adobe-rnd/aem-boilerplate-xwalk/ project and set up as a new project. You are expected to follow the coding style and practices established in the boilerplate, but add functionality according to the needs of the site currently developed.
 
 The repository provides the basic structure, blocks, and configuration needed to run a complete site with `*.aem.live` as the backend.
 
@@ -27,22 +27,28 @@ The repository provides the basic structure, blocks, and configuration needed to
 ## Project Structure
 
 ```
-├── blocks/          # Reusable content blocks
-    └── {blockname}/   - Individual block directory
-        ├── {blockname}.js      # Block's JavaScript
-        └── {blockname}.css     # Block's styles
-├── styles/          # Global styles and CSS
-    ├── styles.css          # Minimal global styling and layout for your website required for LCP
-    ├── lazy-styles.css     # Additional global styling and layout for below the fold/post LCP content
-    └── fonts.css           # Font definitions
-├── scripts/         # JavaScript libraries and utilities
-    ├── aem.js           # Core AEM Library for Edge Delivery page decoration logic (NEVER MODIFY THIS FILE)
-    ├── scripts.js       # Global JavaScript utilities, main entry point for page decoration
-    └── delayed.js       # Delayed functionality such as martech loading
-├── fonts/           # Web fonts
-├── icons/           # SVG icons
-├── head.html        # Global HTML head content
-└── 404.html         # Custom 404 page
+├── blocks/                     # Reusable content blocks
+    └── {blockname}/              - Individual block directory
+        ├── {blockname}.js          # Block's JavaScript
+        └── {blockname}.css         # Block's styles
+        └── _{blockname}.json       # Block's component definitions, models and filters for Universal Editor
+├── styles/                     # Global styles and CSS
+    ├── styles.css                  # Minimal global styling and layout for your website required for LCP
+    ├── lazy-styles.css             # Additional global styling and layout for below the fold/post LCP content
+    └── fonts.css                   # Font definitions
+├── scripts/                    # JavaScript libraries and utilities
+    ├── aem.js                      # Core AEM Library for Edge Delivery page decoration logic (NEVER MODIFY THIS FILE)
+    ├── scripts.js                  # Global JavaScript utilities, main entry point for page decoration
+    └── delayed.js                  # Delayed functionality such as martech loading
+    └── editor-support.js           # JavaScript functions used to enhance the WYSIWYG authoring experience in Universal Editor
+├── models/                     # Folder containing component definitions, models and filters for default content, pages, sections etc.
+├── fonts/                      # Web fonts
+├── icons/                      # SVG icons
+├── head.html                   # Global HTML head content
+├── 404.html                    # Custom 404 page
+├── component-definitions.json  # Aggregate of component definitions from each block and the models/ folder
+├── component-models.json       # Aggregate of component models from each block and the models/ folder
+└── component-models.json       # Aggregate of component filters from each block and the models/ folder
 ```
 
 ## Code Style Guidelines
@@ -80,6 +86,18 @@ Background on content and markup structure can be found at https://www.aem.live/
 
 You can inspect the contents of any page with `curl http://localhost:3000/path/to/page`, `curl http://localhost:3000/path/to/page.md`, and `curl http://localhost:3000/path/to/page.plain.html`
 
+### Content Modeling
+
+Modeling the content for blocks and sections must follow the best practices on https://www.aem.live/developer/component-model-definitions
+
+After making changes to the models in partial files (`_{blockname}` for example) run `npm run build:json` to regenerate the arragated files definitions, models and filters.
+
+Use `npm run lint` to verify the models follow the best practices. You can refer to https://github.com/adobe-rnd/eslint-plugin-xwalk?tab=readme-ov-file#rules for more details about the applied rules.
+
+Remember, building semantically appealing block, section and document models is key to  built websites with Edge Delivery Services in Adobe Experience Manager Sites as a Cloud Service using Universal Editor.
+
+You can find plenty of examples, also for complex use cases, on GitHub https://github.com/adobe-rnd/aem-boilerplate-xwalk/pulls?q=is%3Aopen+is%3Apr+label%3AExample
+
 ### Blocks
 
 Blocks are the re-usable building blocks of AEM. Blocks add styling and functionality to content. Each block has an initial content structure it expects, and transforms the html in the block using DOM APIs to render a final structure. 
@@ -104,10 +122,6 @@ export default async function decorate(block) {
 Use `curl` and `console.log` to inspect the HTML delivered by the backend and the DOM nodes to be decorated before making assumptions. Remember that authors may omit or add fields to a block, so your code must handle this gracefully.
 
 Each block should be self-contained and re-useable, with CSS and JS files following the naming convention: `blockname.css`, `blockname.js`. Blocks should be responsive and accessible by default.
-
-### Auto-Blocking
-
-Auto-blocking is the process of creating blocks that aren't explicitly authored into the page based on patterns in the content. See the `buildAutoBlocks` function in `scripts.js`.
 
 ### Three-Phase Page Loading
 
