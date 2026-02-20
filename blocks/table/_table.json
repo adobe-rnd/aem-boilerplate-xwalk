@@ -49,11 +49,9 @@
       "rte": {
         "toolbar": {
           "format": ["bold", "italic", "underline", "strike"],
-          "blocks": ["paragraph", "code_block"],
-          "list": ["bullet_list", "ordered_list"],
           "insert": ["link", "unlink", "table"],
           "editor": ["removeformat"],
-          "sections": ["format", "alignment", "list"]
+          "sections": ["format", "list", "insert", "editor"]
         }
       }
     }

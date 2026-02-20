@@ -50,14 +50,6 @@
           "underline",
           "strike"
         ],
-        "blocks": [
-          "paragraph",
-          "code_block"
-        ],
-        "list": [
-          "bullet_list",
-          "ordered_list"
-        ],
         "insert": [
           "link",
           "unlink",
@@ -68,8 +60,9 @@
         ],
         "sections": [
           "format",
-          "alignment",
-          "list"
+          "list",
+          "insert",
+          "editor"
         ]
       }
     }
