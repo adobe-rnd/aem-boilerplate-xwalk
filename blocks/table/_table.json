@@ -51,7 +51,7 @@
           "format": ["bold", "italic", "underline", "strike"],
           "insert": ["link", "unlink", "table"],
           "editor": ["removeformat"],
-          "sections": ["format", "list", "insert", "editor"]
+          "sections": ["format", "insert", "editor"]
         }
       }
     }
