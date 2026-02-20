@@ -214,5 +214,29 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "table",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "value": "",
+        "label": "Title"
+      },
+      {
+        "component": "hidden",
+        "name": "titleType",
+        "value": "h3",
+        "label": "Type Type"
+      },
+      {
+        "component": "richtext",
+        "name": "table",
+        "value": "",
+        "label": "Table",
+        "valueType": "string"
+      }
+    ]
   }
 ]

@@ -15,7 +15,8 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "table"
     ]
   },
   {
@@ -38,5 +39,39 @@
       "button",
       "title"
     ]
+  },
+  {
+    "id": "table",
+    "rte": {
+      "toolbar": {
+        "format": [
+          "bold",
+          "italic",
+          "underline",
+          "strike"
+        ],
+        "blocks": [
+          "paragraph",
+          "code_block"
+        ],
+        "list": [
+          "bullet_list",
+          "ordered_list"
+        ],
+        "insert": [
+          "link",
+          "unlink",
+          "table"
+        ],
+        "editor": [
+          "removeformat"
+        ],
+        "sections": [
+          "format",
+          "alignment",
+          "list"
+        ]
+      }
+    }
   }
 ]
