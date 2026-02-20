@@ -158,8 +158,8 @@
           }
         },
         {
-          "title": "Hero",
-          "id": "hero",
+          "title": "Table",
+          "id": "table",
           "plugins": {
             "xwalk": {
               "page": {
