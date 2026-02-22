@@ -11,6 +11,25 @@ import {
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 
+function showPercentage(main) {
+  const columnSections = main.querySelectorAll('div.section.column');
+  columnSections.forEach((section) => {
+    const getColumnWidth = () => {
+      if (section.classList.contains('width-10')) return '10%';
+      if (section.classList.contains('width-20')) return '20%';
+      if (section.classList.contains('width-30')) return '30%';
+      if (section.classList.contains('width-40')) return '40%';
+      if (section.classList.contains('width-50')) return '50%';
+      if (section.classList.contains('width-60')) return '60%';
+      if (section.classList.contains('width-70')) return '70%';
+      if (section.classList.contains('width-80')) return '80%';
+      if (section.classList.contains('width-90')) return '90%';
+      return 'remaining space';
+    };
+    section.dataset.aueLabel = `Column (${getColumnWidth()})`;
+  });
+}
+
 async function applyChanges(event) {
   // redecorate default content and blocks on patches (in the properties rail)
   const { detail } = event;
@@ -104,7 +123,11 @@ function attachEventListners(main) {
   ].forEach((eventType) => main?.addEventListener(eventType, async (event) => {
     event.stopPropagation();
     const applied = await applyChanges(event);
-    if (!applied) window.location.reload();
+    if (applied) {
+      showPercentage(document.querySelector('main'));
+    } else {
+      window.location.reload();
+    }
   }));
 }
 
@@ -117,3 +140,5 @@ decorateRichtext();
 // for new richtext-instrumented elements. this happens for example when using experimentation.
 const observer = new MutationObserver(() => decorateRichtext());
 observer.observe(document, { attributeFilter: ['data-richtext-prop'], subtree: true });
+
+showPercentage(document.querySelector('main'));

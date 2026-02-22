@@ -142,6 +142,94 @@
     ]
   },
   {
+    "id": "column-section",
+    "fields": [
+      {
+        "component": "select",
+        "name": "style_width",
+        "label": "Colum Width",
+        "description": "The width of the column section",
+        "options": [
+          {
+            "name": "10% Width",
+            "value": "width-10"
+          },
+          {
+            "name": "20% Width",
+            "value": "width-20"
+          },
+          {
+            "name": "30% Width",
+            "value": "width-30"
+          },
+          {
+            "name": "40% Width",
+            "value": "width-40"
+          },
+          {
+            "name": "50% Width",
+            "value": "width-50"
+          },
+          {
+            "name": "60% Width",
+            "value": "width-60"
+          },
+          {
+            "name": "70% Width",
+            "value": "width-70"
+          },
+          {
+            "name": "80% Width",
+            "value": "width-80"
+          },
+          {
+            "name": "90% Width",
+            "value": "width-90"
+          },
+          {
+            "name": "Remaining Space",
+            "value": "width-100"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "style_sectiontype",
+        "value": "column",
+        "hidden": true,
+        "description": "fix marker class to identify column sections"
+      },
+      {
+        "component": "select",
+        "name": "style_background",
+        "label": "Background Color",
+        "description": "Background color of the column section",
+        "options": [
+          {
+            "name": "white",
+            "value": "background-white"
+          },
+          {
+            "name": "light grey",
+            "value": "background-light-grey"
+          },
+          {
+            "name": "light blue",
+            "value": "background-light-blue"
+          },
+          {
+            "name": "light green",
+            "value": "background-light-green"
+          },
+          {
+            "name": "light red",
+            "value": "background-light-red"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {

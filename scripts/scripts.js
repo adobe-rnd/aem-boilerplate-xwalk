@@ -58,6 +58,31 @@ async function loadFonts() {
   }
 }
 
+function addColumnSectionsWrapper(main) {
+  if (main.children.length === 0) return;
+  let columnSectionsWrapper = null;
+  let section = main.children[0];
+  while (section) {
+    const nextSection = section.nextElementSibling;
+    // if its a column section ...
+    if (section.classList.contains('column')) {
+      // ...and we dont have a column wrapper yet
+      if (!columnSectionsWrapper) {
+        columnSectionsWrapper = document.createElement('div');
+        columnSectionsWrapper.classList.add('column-sections-wrapper');
+        section.replaceWith(columnSectionsWrapper);
+        columnSectionsWrapper.appendChild(section);
+      } else { // if we have a flex container already ...
+        columnSectionsWrapper.appendChild(section);
+      }
+    // if its not a column section and we have an active wrapper
+    } else if (columnSectionsWrapper) {
+      columnSectionsWrapper = null;
+    }
+    section = nextSection;
+  }
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
@@ -83,6 +108,8 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  // add wrapper for column sections
+  addColumnSectionsWrapper(main);
 }
 
 /**
