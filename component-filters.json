@@ -19,6 +19,10 @@
     ]
   },
   {
+    "id": "empty",
+    "components": []
+  },
+  {
     "id": "cards",
     "components": [
       "card"
