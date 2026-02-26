@@ -1,0 +1,243 @@
+{
+  "definitions": [
+    {
+      "title": "Schedule",
+      "id": "schedule",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Schedule",
+              "model": "schedule",
+              "filter": "schedule",
+              "titleType": "strong"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Add Session",
+      "id": "schedulesession",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Session",
+              "model": "schedulesentry",
+              "classes": "session-entry",
+              "entry_titleType": "strong"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Add Break",
+      "id": "schedulebreak",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Break",
+              "model": "schedulesentry",
+              "classes": "break-entry",
+              "entry_titleType": "strong"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Add Day",
+      "id": "scheduleday",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Day",
+              "model": "schedulesentry",
+              "classes": "day-entry",
+              "entry_titleType": "strong"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Add Venue",
+      "id": "schedulevenue",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Venue",
+              "model": "schedulesentry",
+              "classes": "venue-entry",
+              "entry_titleType": "strong"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "schedule",
+      "fields": [
+        {
+          "component": "text",
+          "name": "title",
+          "label": "Title",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "titleType",
+          "hidden": true
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "label": "Description"
+        },
+        {
+          "component": "date-time",
+          "valueType": "date",
+          "name": "date_startdate",
+          "label": "Start Date"
+        },
+        {
+          "component": "date-time",
+          "valueType": "date",
+          "name": "date_enddate",
+          "label": "End Date"
+        }
+      ]
+    },
+    {
+      "id": "schedulesentry",
+      "fields": [
+        {
+          "component": "text",
+          "name": "classes",
+          "hidden": true,
+          "description": "to identify the type of entry and set classes accordingly"
+        },
+        {
+          "component": "date-time",
+          "valueType": "time",
+          "name": "time_starttime",
+          "label": "Start Time",
+          "condition": { "or": [
+            { "===" : [
+              { "var": "classes" }, "session-entry"]
+            },
+            { "===" : [
+              { "var": "classes" }, "break-entry"]
+            }
+          ]}
+        },
+        {
+          "component": "date-time",
+          "valueType": "time",
+          "name": "time_endtime",
+          "label": "End Time",
+          "condition": { "or": [
+            { "===" : [
+              { "var": "classes" }, "session-entry"]
+            },
+            { "===" : [
+              { "var": "classes" }, "break-entry"]
+            }
+          ]}
+        },
+        {
+          "component": "text",
+          "name": "entry_title",
+          "label": "Title"
+        },
+        {
+          "component": "text",
+          "name": "entry_titleType",
+          "hidden": true
+        },
+        {
+          "component": "richtext",
+          "name": "entry_description",
+          "label": "Description"
+        },
+        {
+          "component": "container",
+          "name": "speakers",
+          "label": "Speaker(s)",
+          "collapsible": true,
+          "multi": true,
+          "condition": { "===" : [{ "var": "classes" }, "session-entry"]},
+          "fields": [
+            {
+              "component": "text",
+              "name": "name",
+              "label": "Name"
+            },
+            {
+              "component": "text",
+              "name": "nameType",
+              "value": "strong",
+              "hidden": true
+            },
+            {
+              "component": "text",
+              "name": "title",
+              "label": "Title"
+            },
+            {
+              "component": "text",
+              "name": "titleType",
+              "value": "em",
+              "hidden": true
+            },
+            {
+              "component": "text",
+              "name": "company",
+              "label": "Company"
+            },
+            {
+              "component": "text",
+              "name": "companyType",
+              "hidden": true
+            },
+            {
+              "component": "reference",
+              "name": "image",
+              "label": "Image"
+            },
+            {
+              "component": "aem-content",
+              "name": "links",
+              "label": "Links",
+              "multi": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "schedule",
+      "components": [
+        "schedulesession",
+        "scheduleday",
+        "schedulevenue",
+        "schedulebreak"
+      ]
+    }
+  ]
+}
+

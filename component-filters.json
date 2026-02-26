@@ -15,7 +15,8 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "schedule"
     ]
   },
   {
@@ -37,6 +38,15 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "schedule",
+    "components": [
+      "schedulesession",
+      "scheduleday",
+      "schedulevenue",
+      "schedulebreak"
     ]
   }
 ]
