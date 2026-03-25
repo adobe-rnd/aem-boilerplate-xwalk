@@ -36,10 +36,10 @@ async function applyChanges(event) {
       const newMain = parsedUpdate.querySelector(`[data-aue-resource="${resource}"]`);
       newMain.style.display = 'none';
       element.insertAdjacentElement('afterend', newMain);
+      element.remove();
       decorateMain(newMain);
       decorateRichtext(newMain);
       await loadSections(newMain);
-      element.remove();
       newMain.style.display = null;
       // eslint-disable-next-line no-use-before-define
       attachEventListners(newMain);
@@ -53,12 +53,12 @@ async function applyChanges(event) {
       if (newBlock) {
         newBlock.style.display = 'none';
         block.insertAdjacentElement('afterend', newBlock);
+        block.remove();
         decorateButtons(newBlock);
         decorateIcons(newBlock);
         decorateBlock(newBlock);
         decorateRichtext(newBlock);
         await loadBlock(newBlock);
-        block.remove();
         newBlock.style.display = null;
         return true;
       }
@@ -71,13 +71,13 @@ async function applyChanges(event) {
           const [newSection] = newElements;
           newSection.style.display = 'none';
           element.insertAdjacentElement('afterend', newSection);
+          element.remove();
           decorateButtons(newSection);
           decorateIcons(newSection);
           decorateRichtext(newSection);
           decorateSections(parentElement);
           decorateBlocks(parentElement);
           await loadSections(parentElement);
-          element.remove();
           newSection.style.display = null;
         } else {
           element.replaceWith(...newElements);
