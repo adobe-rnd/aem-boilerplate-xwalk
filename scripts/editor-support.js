@@ -11,18 +11,8 @@ import {
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 
-async function applyChanges(event) {
+async function applyChanges(resource, content) {
   // redecorate default content and blocks on patches (in the properties rail)
-  const { detail } = event;
-
-  const resource = detail?.request?.target?.resource // update, patch components
-    || detail?.request?.target?.container?.resource // update, patch, add to sections
-    || detail?.request?.to?.container?.resource; // move in sections
-  if (!resource) return false;
-  const updates = detail?.response?.updates;
-  if (!updates.length) return false;
-  const { content } = updates[0];
-  if (!content) return false;
 
   // load dompurify
   await loadScript(`${window.hlx.codeBasePath}/scripts/dompurify.min.js`);
@@ -34,15 +24,16 @@ async function applyChanges(event) {
   if (element) {
     if (element.matches('main')) {
       const newMain = parsedUpdate.querySelector(`[data-aue-resource="${resource}"]`);
+      if (!newMain) return false;
       newMain.style.display = 'none';
       element.insertAdjacentElement('afterend', newMain);
-      element.remove();
       decorateMain(newMain);
       decorateRichtext(newMain);
       await loadSections(newMain);
+      element.remove();
       newMain.style.display = null;
       // eslint-disable-next-line no-use-before-define
-      attachEventListners(newMain);
+      attachEventListeners(newMain);
       return true;
     }
 
@@ -53,12 +44,12 @@ async function applyChanges(event) {
       if (newBlock) {
         newBlock.style.display = 'none';
         block.insertAdjacentElement('afterend', newBlock);
-        block.remove();
         decorateButtons(newBlock);
         decorateIcons(newBlock);
         decorateBlock(newBlock);
         decorateRichtext(newBlock);
         await loadBlock(newBlock);
+        block.remove();
         newBlock.style.display = null;
         return true;
       }
@@ -71,13 +62,13 @@ async function applyChanges(event) {
           const [newSection] = newElements;
           newSection.style.display = 'none';
           element.insertAdjacentElement('afterend', newSection);
-          element.remove();
           decorateButtons(newSection);
           decorateIcons(newSection);
           decorateRichtext(newSection);
           decorateSections(parentElement);
           decorateBlocks(parentElement);
           await loadSections(parentElement);
+          element.remove();
           newSection.style.display = null;
         } else {
           element.replaceWith(...newElements);
@@ -93,7 +84,38 @@ async function applyChanges(event) {
   return false;
 }
 
-function attachEventListners(main) {
+// Debounce rapid events per resource: when multiple events arrive for the same
+// resource within a short window (e.g. UE dispatching one event per property in
+// a batch PATCH), only the last event is processed. This prevents blocks from
+// being re-rendered multiple times and avoids race conditions in async handlers.
+const DEBOUNCE_MS = 20;
+const pendingEvents = new Map();
+
+function handleEvent(event) {
+  event.stopPropagation();
+
+  const resource = event.detail?.request?.target?.resource // update, patch components
+    || event.detail?.request?.target?.container?.resource // update, patch, add to sections
+    || event.detail?.request?.to?.container?.resource; // move in sections
+  if (!resource) return;
+
+  const updates = event.detail?.response?.updates;
+  if (!updates?.length) return;
+  const { content } = updates[0];
+  if (!content) return;
+
+  // clear any pending timer for this resource and schedule a new one
+  const pending = pendingEvents.get(resource);
+  if (pending) clearTimeout(pending);
+
+  pendingEvents.set(resource, setTimeout(async () => {
+    pendingEvents.delete(resource);
+    const applied = await applyChanges(resource, content);
+    if (!applied) window.location.reload();
+  }, DEBOUNCE_MS));
+}
+
+function attachEventListeners(main) {
   [
     'aue:content-patch',
     'aue:content-update',
@@ -101,14 +123,10 @@ function attachEventListners(main) {
     'aue:content-move',
     'aue:content-remove',
     'aue:content-copy',
-  ].forEach((eventType) => main?.addEventListener(eventType, async (event) => {
-    event.stopPropagation();
-    const applied = await applyChanges(event);
-    if (!applied) window.location.reload();
-  }));
+  ].forEach((eventType) => main?.addEventListener(eventType, handleEvent));
 }
 
-attachEventListners(document.querySelector('main'));
+attachEventListeners(document.querySelector('main'));
 
 // decorate rich text
 // this has to happen after decorateMain(), and everythime decorateBlocks() is called
