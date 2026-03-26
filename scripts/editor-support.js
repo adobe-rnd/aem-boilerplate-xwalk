@@ -11,7 +11,11 @@ import {
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 
+let promiseChanges$ = Promise.resolve();
+
 async function applyChanges(event) {
+  await promiseChanges$;
+
   // redecorate default content and blocks on patches (in the properties rail)
   const { detail } = event;
 
@@ -34,6 +38,7 @@ async function applyChanges(event) {
   if (element) {
     if (element.matches('main')) {
       const newMain = parsedUpdate.querySelector(`[data-aue-resource="${resource}"]`);
+      if (!newMain) return false;
       newMain.style.display = 'none';
       element.insertAdjacentElement('afterend', newMain);
       decorateMain(newMain);
@@ -42,7 +47,7 @@ async function applyChanges(event) {
       element.remove();
       newMain.style.display = null;
       // eslint-disable-next-line no-use-before-define
-      attachEventListners(newMain);
+      attachEventListeners(newMain);
       return true;
     }
 
@@ -93,7 +98,7 @@ async function applyChanges(event) {
   return false;
 }
 
-function attachEventListners(main) {
+function attachEventListeners(main) {
   [
     'aue:content-patch',
     'aue:content-update',
@@ -103,12 +108,13 @@ function attachEventListners(main) {
     'aue:content-copy',
   ].forEach((eventType) => main?.addEventListener(eventType, async (event) => {
     event.stopPropagation();
-    const applied = await applyChanges(event);
+    promiseChanges$ = applyChanges(event);
+    const applied = await promiseChanges$;
     if (!applied) window.location.reload();
   }));
 }
 
-attachEventListners(document.querySelector('main'));
+attachEventListeners(document.querySelector('main'));
 
 // decorate rich text
 // this has to happen after decorateMain(), and everythime decorateBlocks() is called
