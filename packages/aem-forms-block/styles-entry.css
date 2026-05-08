@@ -1,0 +1,7 @@
+@import "../../blocks/form/form.css";
+@import "../../blocks/form/components/accordion/accordion.css";
+@import "../../blocks/form/components/modal/modal.css";
+@import "../../blocks/form/components/password/password.css";
+@import "../../blocks/form/components/range/range.css";
+@import "../../blocks/form/components/rating/rating.css";
+@import "../../blocks/form/components/tnc/tnc.css";

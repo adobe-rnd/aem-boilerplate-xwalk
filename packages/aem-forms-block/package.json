@@ -1,0 +1,32 @@
+{
+  "name": "@aemforms/af-forms-block",
+  "version": "1.3.0",
+  "description": "AEM Adaptive Forms block for Edge Delivery Services",
+  "type": "module",
+  "exports": {
+    ".": "./dist/form.js",
+    "./form.css": "./dist/form.css"
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "node build.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "adobe",
+    "aem",
+    "adaptive-forms",
+    "edge-delivery-services"
+  ],
+  "author": "Adobe",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adobe/aem-boilerplate-forms.git"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}

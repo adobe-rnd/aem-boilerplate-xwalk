@@ -28,6 +28,7 @@
     "update": "npm run update:core && npm run update:formula && npm run update:formatters",
     "update:mappings": "node tools/update-mappings.js",
     "create:custom-component": "node tools/forms-scaffolder.js",
+    "build:pkg": "cd packages/aem-forms-block && npm install && npm run build",
     "postinstall": "npx playwright install chromium"
   },
   "c8": {

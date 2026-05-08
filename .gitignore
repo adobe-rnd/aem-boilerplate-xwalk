@@ -20,3 +20,7 @@ LoginAuth.json
 
 # Skill distribution zip
 create-custom-component.zip
+
+# npm package build artifacts
+packages/aem-forms-block/dist/
+packages/aem-forms-block/node_modules/
