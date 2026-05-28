@@ -122,3 +122,7 @@ decorateRichtext();
 // for new richtext-instrumented elements. this happens for example when using experimentation.
 const observer = new MutationObserver(() => decorateRichtext());
 observer.observe(document, { attributeFilter: ['data-richtext-prop'], subtree: true });
+
+if (window.parent?.location.pathname.includes('/diffresources.html') && window.frameElement?.id) {
+  import('./editor-support-diff.js');
+}
