@@ -194,6 +194,7 @@
     "fields": [
       {
         "component": "reference",
+        "required": true,
         "valueType": "string",
         "name": "image",
         "label": "Image",
@@ -208,6 +209,7 @@
       },
       {
         "component": "richtext",
+        "required": true,
         "name": "text",
         "value": "",
         "label": "Text",
