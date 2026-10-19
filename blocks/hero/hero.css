@@ -30,6 +30,82 @@
   height: 100%;
 }
 
+.hero.hero-slideshow {
+  isolation: isolate;
+  padding-bottom: 64px;
+}
+
+.hero.hero-slideshow .hero-slides {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero.hero-slideshow .hero-slides > li {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.hero.hero-slideshow .hero-slides > li[hidden] {
+  display: none;
+}
+
+.hero.hero-slideshow .hero-slides picture {
+  z-index: auto;
+  display: block;
+}
+
+.hero.hero-slideshow .hero-slides img {
+  display: block;
+}
+
+.hero.hero-slideshow .hero-indicators {
+  position: absolute;
+  inset: auto 0 12px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.hero.hero-slideshow .hero-indicator {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hero.hero-slideshow .hero-indicator::before {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #333;
+  box-shadow: 0 0 0 1px #333;
+  content: '';
+}
+
+.hero.hero-slideshow .hero-indicator[aria-pressed='true']::before {
+  background: #fff;
+}
+
+.hero.hero-slideshow .hero-indicator:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -4px;
+  box-shadow: 0 0 0 2px #333;
+}
+
 @media (width >= 900px) {
   .hero {
     padding: 40px 32px;
