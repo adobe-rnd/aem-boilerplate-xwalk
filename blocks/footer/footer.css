@@ -1020,3 +1020,76 @@ footer.footer-wrapper .footer {
     max-width: 81.25%;
   }
 }
+
+/* These overrides must come last to win over the older footer rules, so the order check is switched off here */
+/* stylelint-disable no-descending-specificity */
+
+/* ===== Brand typography (Piramal Brand Guidelines 2023, p.24-27) =====
+   Same rules as the header:
+   - headings: Nunito Bold, 16px (14px on mobile)
+   - links and text: Montserrat Regular, 14px; small print 12px
+   Older rules above set fonts per item and per breakpoint, so these use !important. */
+
+/* Headings: column titles, Credit Report, Download Piramal App, Have Questions?, Follow us on */
+footer .footer .footer-section-second h2,
+footer .footer .footer-section-first p>a,
+footer .footer .footer-section-third .cards-card-body p,
+footer .footer .footer-section-third>.default-content-wrapper>p,
+footer .footer .footer-follow-us-wrapper h2,
+footer .footer .risk-gradation h2,
+footer .footer .risk-gradation h2 strong {
+  font-family: var(--brand-heading-font) !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+
+/* Links and text: footer links, phone number, Risk Gradation popup text */
+footer .footer .footer-section-second a,
+footer .footer .footer-section-second a>sub,
+footer .footer .footer-section-third>.default-content-wrapper>p>a,
+footer .footer .risk-gradation p,
+footer .footer .risk-gradation li {
+  font-family: var(--brand-text-font) !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+/* Company name and CIN: text with emphasis (Montserrat Medium) */
+footer .footer .footer-last-wrapper p>strong {
+  font-family: var(--brand-text-font) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+/* Small print: registered address and copyright line */
+footer .footer .footer-last-wrapper p {
+  font-family: var(--brand-text-font) !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+}
+
+@media screen and (width <= 767px) {
+  footer .footer .footer-section-second h2,
+  footer .footer .footer-section-first p>a,
+  footer .footer .footer-section-third .cards-card-body p,
+  footer .footer .footer-section-third>.default-content-wrapper>p,
+  footer .footer .footer-follow-us-wrapper h2,
+  footer .footer .risk-gradation h2,
+  footer .footer .risk-gradation h2 strong {
+    font-size: 14px !important;
+  }
+
+  /* 14px links need a taller line so wrapped lines don't touch */
+  footer .footer .footer-section-second ul>li>ul>li>a {
+    line-height: 1.25rem;
+  }
+}
+
+/* Small gap so footer link columns never touch on mobile and tablet */
+@media screen and (width <= 1024px) {
+  footer .footer .footer-section-second .columns>div>div {
+    padding-right: 8px;
+  }
+}
+
+/* stylelint-enable no-descending-specificity */

@@ -1877,7 +1877,9 @@ body.modal-open footer {
     width: 16px;
   }
 
-  .header-wrapper.primary nav#nav>div.section.nav-brand>div>ul>li>ul>li>ul[aria-expanded="true"] {
+  /* Same left padding when open and closed, so sub-items don't jump sideways while the list opens/closes */
+  .header-wrapper.primary nav#nav>div.section.nav-brand>div>ul>li>ul>li>ul[aria-expanded="true"],
+  .header-wrapper.primary nav#nav>div.section.nav-brand>div>ul>li>ul>li>ul[aria-expanded="false"] {
     padding-left: unset;
   }
 }
@@ -2245,3 +2247,76 @@ body.modal-open footer {
 .header .nav-wrapper #nav .section.nav-sections .default-content-wrapper>ul>li.login-drop[aria-expanded="true"]>p>a {
   color: var(--black) !important;
 }
+
+/* These overrides must come last to win over the older menu rules, so the order check is switched off here */
+/* stylelint-disable no-descending-specificity */
+
+/* ===== Brand typography (Piramal Brand Guidelines 2023, p.24-27) =====
+   Same rules as the footer:
+   - headings / menu titles: Nunito Bold
+   - links and text: Montserrat Regular, 14px
+   Desktop menu = .nav-sections, mobile menu = .nav-brand (built when the hamburger is opened).
+   Many older rules above set fonts item by item (some with !important), so these use !important too. */
+
+/* Links and text inside the dropdowns / mobile menu (top menu items are styled below) */
+header .nav-wrapper #nav .nav-sections>.default-content-wrapper ul ul :is(a, p, sub),
+header .nav-wrapper #nav .nav-brand>.default-content-wrapper ul ul :is(a, p, sub) {
+  font-family: var(--brand-text-font) !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+/* Top menu items (Loan Products, Branch Locator ... Login): Nunito Bold, keep their existing sizes */
+header .nav-wrapper #nav .nav-sections>.default-content-wrapper>ul>li>p,
+header .nav-wrapper #nav .nav-sections>.default-content-wrapper>ul>li>p>a {
+  font-family: var(--brand-heading-font) !important;
+  font-weight: 700 !important;
+}
+
+/* Desktop column titles (Home Loan, Investor Corner, Help & Support ...) and
+   rows with an icon (Personal Loan, Gold Loan, About Piramal Finance, Careers ...): Nunito Bold 16px */
+header .nav-wrapper #nav .nav-sections>.default-content-wrapper>ul>li>ul>li>p,
+header .nav-wrapper #nav .nav-sections>.default-content-wrapper>ul>li>ul>li>p>a,
+header .nav-wrapper #nav .nav-sections>.default-content-wrapper ul ul a:has(>.icon) {
+  font-family: var(--brand-heading-font) !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+
+/* Mobile section labels (Loan Products ...): Nunito Bold 16px */
+header .nav-wrapper #nav .nav-brand>.default-content-wrapper>ul>li>p,
+header .nav-wrapper #nav .nav-brand>.default-content-wrapper>ul>li>p>a {
+  font-family: var(--brand-heading-font) !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+
+/* Mobile menu rows (Home Loan, Branch Locator, About us ...), mobile rows with an icon
+   (Personal Loan, About Piramal Finance ...) and rows that open a sub-list in either menu
+   (Dividend, NCDs, Investor Corner on mobile ...): Nunito Bold 14px */
+header .nav-wrapper #nav .nav-brand>.default-content-wrapper>ul>li>ul>li>p,
+header .nav-wrapper #nav .nav-brand>.default-content-wrapper>ul>li>ul>li>p>a,
+header .nav-wrapper #nav .nav-brand>.default-content-wrapper ul ul a:has(>.icon),
+header .nav-wrapper #nav .nav-sections>.default-content-wrapper li li li:has(>ul)>p,
+header .nav-wrapper #nav .nav-sections>.default-content-wrapper li li li:has(>ul)>p>a,
+header .nav-wrapper #nav .nav-brand>.default-content-wrapper li li li:has(>ul)>p,
+header .nav-wrapper #nav .nav-brand>.default-content-wrapper li li li:has(>ul)>p>a {
+  font-family: var(--brand-heading-font) !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+}
+
+/* Login card: title = heading, "Know more" = text (Medium for emphasis) */
+header .nav-wrapper #nav li.login-drop .login-item-title {
+  font-family: var(--brand-heading-font) !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+
+header .nav-wrapper #nav li.login-drop .login-item-more {
+  font-family: var(--brand-text-font) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+/* stylelint-enable no-descending-specificity */
