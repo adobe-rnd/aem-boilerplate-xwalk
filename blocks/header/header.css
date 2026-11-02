@@ -2271,9 +2271,11 @@ header .nav-wrapper #nav .nav-sections>.default-content-wrapper>ul>li>p>a {
   font-weight: 700 !important;
 }
 
-/* Desktop column titles (Home Loan, Investor Corner, Help & Support ...): Nunito Bold 16px */
+/* Desktop column titles (Home Loan, Investor Corner, Help & Support ...) and
+   rows with an icon (Personal Loan, Gold Loan, About Piramal Finance, Careers ...): Nunito Bold 16px */
 header .nav-wrapper #nav .nav-sections>.default-content-wrapper>ul>li>ul>li>p,
-header .nav-wrapper #nav .nav-sections>.default-content-wrapper>ul>li>ul>li>p>a {
+header .nav-wrapper #nav .nav-sections>.default-content-wrapper>ul>li>ul>li>p>a,
+header .nav-wrapper #nav .nav-sections>.default-content-wrapper ul ul a:has(>.icon) {
   font-family: var(--brand-heading-font) !important;
   font-size: 16px !important;
   font-weight: 700 !important;
