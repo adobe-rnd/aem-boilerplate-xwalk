@@ -1877,7 +1877,9 @@ body.modal-open footer {
     width: 16px;
   }
 
-  .header-wrapper.primary nav#nav>div.section.nav-brand>div>ul>li>ul>li>ul[aria-expanded="true"] {
+  /* Same left padding when open and closed, so sub-items don't jump sideways while the list opens/closes */
+  .header-wrapper.primary nav#nav>div.section.nav-brand>div>ul>li>ul>li>ul[aria-expanded="true"],
+  .header-wrapper.primary nav#nav>div.section.nav-brand>div>ul>li>ul>li>ul[aria-expanded="false"] {
     padding-left: unset;
   }
 }
