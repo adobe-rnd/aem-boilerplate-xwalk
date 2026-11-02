@@ -2289,10 +2289,12 @@ header .nav-wrapper #nav .nav-brand>.default-content-wrapper>ul>li>p>a {
   font-weight: 700 !important;
 }
 
-/* Mobile menu rows (Home Loan, Branch Locator, About us ...) and
-   rows that open a sub-list in either menu (Dividend, NCDs, Investor Corner on mobile ...): Nunito Bold 14px */
+/* Mobile menu rows (Home Loan, Branch Locator, About us ...), mobile rows with an icon
+   (Personal Loan, About Piramal Finance ...) and rows that open a sub-list in either menu
+   (Dividend, NCDs, Investor Corner on mobile ...): Nunito Bold 14px */
 header .nav-wrapper #nav .nav-brand>.default-content-wrapper>ul>li>ul>li>p,
 header .nav-wrapper #nav .nav-brand>.default-content-wrapper>ul>li>ul>li>p>a,
+header .nav-wrapper #nav .nav-brand>.default-content-wrapper ul ul a:has(>.icon),
 header .nav-wrapper #nav .nav-sections>.default-content-wrapper li li li:has(>ul)>p,
 header .nav-wrapper #nav .nav-sections>.default-content-wrapper li li li:has(>ul)>p>a,
 header .nav-wrapper #nav .nav-brand>.default-content-wrapper li li li:has(>ul)>p,
