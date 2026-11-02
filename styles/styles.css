@@ -234,6 +234,10 @@ textarea:focus {
     --body-font-family: roboto, roboto-fallback;
     --heading-font-family: var(--body-font-family);
     --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono", monospace;
+
+    /* Brand fonts (Piramal Brand Guidelines 2023): headings = Nunito Bold, text = Montserrat */
+    --brand-heading-font: "Nunito-Bold", sans-serif;
+    --brand-text-font: "Montserrat", sans-serif;
     --body-font-size-m: 22px;
     --body-font-size-s: 18px;
     --body-font-size-xs: 16px;
