@@ -30,10 +30,22 @@
   }
 </style>
 
-<script type="module">
-  import(`/scripts/aem${window.getExtension("js")}`);
-  import(`/scripts/scripts${window.getExtension("js")}`);
+<script>
+  // Start loading the main styles straight away, in parallel with the scripts.
+  // scripts.js waits for window.stylesLoaded before showing the page.
+  window.stylesLoaded = new Promise((resolve) => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = `/styles/styles${getExtension('css')}`;
+    link.onload = resolve;
+    link.onerror = resolve; // show the page even if the styles fail
+    document.head.append(link);
+  });
 </script>
+<!-- Download the files scripts.js imports at the same time as scripts.js, not after it -->
+<link rel="modulepreload" href="/scripts/dom-helper.js" />
+<link rel="modulepreload" href="/dl.js" />
+
 <noscript>
   <link rel="stylesheet" href="/styles/no-script-style.css" />
 </noscript>
@@ -44,10 +56,11 @@
 <link as="font" crossorigin="" href="/fonts/NunitoBold.woff2" rel="preconnect" type="font/woff2" />
 <link as="font" crossorigin="" href="/fonts/NunitoExtraBold.woff2" rel="preconnect" type="font/woff2" />
 <link as="font" crossorigin="" href="/fonts/NunitoExtraLight.woff2" rel="preconnect" type="font/woff2" />
-
-<script>
-  setTimeout(() => document.body.classList.add('appear'), 3000);
-  // document.write(`<link rel="stylesheet" href="/styles/styles${window.getExtension('css')}" />`);
+<script type="module">
+  // If the main scripts fail to load, show the page anyway (never a blank page)
+  const showPage = () => document.body.classList.add('appear');
+  import(`/scripts/aem${window.getExtension("js")}`).catch(showPage);
+  import(`/scripts/scripts${window.getExtension("js")}`).catch(showPage);
 </script>
 
 <link rel="apple-touch-icon" href="/content/dam/piramalfinance/icons/piramalfinance-fav-icon.ico" />
