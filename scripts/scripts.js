@@ -300,8 +300,8 @@ export async function decorateMain(main) {
  */
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
-  // Start loading the main styles straight away
-  const stylesLoaded = loadCSS(`${window.hlx.codeBasePath}/styles/styles${getExtension('css')}`);
+  // Main styles are already loading from head.html; load them here only if that did not run
+  const stylesLoaded = window.stylesLoaded || loadCSS(`${window.hlx.codeBasePath}/styles/styles${getExtension('css')}`);
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
   if (main) {

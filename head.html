@@ -30,6 +30,22 @@
   }
 </style>
 
+<script>
+  // Start loading the main styles straight away, in parallel with the scripts.
+  // scripts.js waits for window.stylesLoaded before showing the page.
+  window.stylesLoaded = new Promise((resolve) => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = `/styles/styles${getExtension('css')}`;
+    link.onload = resolve;
+    link.onerror = resolve; // show the page even if the styles fail
+    document.head.append(link);
+  });
+</script>
+<!-- Download the files scripts.js imports at the same time as scripts.js, not after it -->
+<link rel="modulepreload" href="/scripts/dom-helper.js" />
+<link rel="modulepreload" href="/dl.js" />
+
 <noscript>
   <link rel="stylesheet" href="/styles/no-script-style.css" />
 </noscript>
