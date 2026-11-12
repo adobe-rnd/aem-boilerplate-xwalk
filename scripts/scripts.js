@@ -300,13 +300,16 @@ export async function decorateMain(main) {
  */
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
+  // Start loading the main styles straight away
+  const stylesLoaded = loadCSS(`${window.hlx.codeBasePath}/styles/styles${getExtension('css')}`);
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
     // await waitForLCP(LCP_BLOCKS);
-    await loadHeader(doc.querySelector('header'));
+    await stylesLoaded.catch(() => {});
     document.body.classList.add('appear');
+    await loadHeader(doc.querySelector('header'));
     await loadBlock(main.querySelector(".section"));
   }
 
@@ -885,7 +888,7 @@ async function loadPage() {
     loadingCustomCss();
   }
 
-  loadCSS(`${window.hlx.codeBasePath}/styles/styles${getExtension('css')}`);
+  // loadCSS(`${window.hlx.codeBasePath}/styles/styles${getExtension('css')}`);
 
   //  loadResetCss();
   await loadEager(document);
