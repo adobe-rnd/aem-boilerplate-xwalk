@@ -299,7 +299,7 @@ export async function decorateMain(main) {
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
-  document.documentElement.lang = 'en';
+  document.documentElement.lang = 'en-IN';
   // Main styles are already loading from head.html; load them here only if that did not run
   const stylesLoaded = window.stylesLoaded || loadCSS(`${window.hlx.codeBasePath}/styles/styles${getExtension('css')}`);
   decorateTemplateAndTheme();

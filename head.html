@@ -42,6 +42,25 @@
     document.head.append(link);
   });
 </script>
+
+<script>
+  // SEO: tell search engines this page is English (India), with x-default pointing to the same page.
+  // Only added on the page's own canonical URL (not on copies whose canonical points elsewhere).
+  (function addHreflang() {
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical || new URL(canonical.href).pathname !== window.location.pathname) return;
+    // Skip the regional language folders (currently English copies, not real translations)
+    if (/^\/(hi|gu|mr|ta|te|kn|ml)(\/|$)/.test(window.location.pathname)) return;
+    ['en-in', 'x-default'].forEach((lang) => {
+      const link = document.createElement('link');
+      link.rel = 'alternate';
+      link.hreflang = lang;
+      link.href = canonical.href;
+      document.head.append(link);
+    });
+  }());
+</script>
+
 <!-- Download the files scripts.js imports at the same time as scripts.js, not after it -->
 <link rel="modulepreload" href="/scripts/dom-helper.js" />
 <link rel="modulepreload" href="/dl.js" />
